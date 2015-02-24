@@ -18,7 +18,7 @@
 				files: ['css/*.scss'],
 				tasks: ['sass:styleguide', 'shell']
 			}
-		}
+		},
 		shell: {
 			options: {
 				stderr: false
