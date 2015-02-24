@@ -1,0 +1,70 @@
+﻿//Colors
+//
+//
+//Styleguide 2 
+//
+// If you are in a sass environment you can use sass variables
+
+//Primary
+//
+//Blue
+//	<ul class="swatch-list">
+//		<li class="spacer material-depth-2 blue-500-swatch"></li>
+//		<li class="spacer material-depth-2 blue-300-swatch"></li>
+//		<li class="spacer material-depth-2 blue-100-swatch"></li>
+//	</ul>
+//
+//Styleguide 2.1 
+
+//Secondary
+//
+//Orange
+//	<ul class="swatch-list">
+//		<li class="spacer material-depth-2 orange-400-swatch"></li>  
+//	</ul>
+//
+//Gray
+//	<ul class="swatch-list">
+//		<li class="spacer material-depth-2 gray-054-swatch"> </li>
+//		<li class="spacer material-depth-2 gray-300-swatch"></li>  
+//		<li class="spacer material-depth-2 gray-012-swatch"></li>
+//	</ul>
+// 
+//Styleguide 2.2 
+
+$blue-500: #1976D2;
+$blue-300: #64b5f6;
+$blue-100: #BBDEFB;
+$orange-400: #FFA726;
+$gray-300: #E0E0E0;
+$gray012: rgba(0,0,0,0.06);
+$gray054: rgba(0,0,0,0.54);
+$full-padding: 10px;
+$half-padding: 3px;
+$trasnition-timing: all 0.5s ease;
+
+// These classes are just for styleguide
+.swatch-list {
+
+	.blue-500-swatch {
+			background:$blue-500!important;
+	}
+	.blue-300-swatch {
+			background:$blue-300!important;
+	}
+	.blue-100-swatch {
+			background:$blue-100!important;
+	}
+	.orange-400-swatch {
+			background:$orange-400!important;
+	}
+	.gray-054-swatch {
+			background:$gray054!important;
+	}
+	.gray-300-swatch {
+			background:$gray-300!important;
+	}
+	.gray-012-swatch {
+			background:$gray012!important;
+	}
+} 
