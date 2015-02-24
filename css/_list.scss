@@ -1,0 +1,81 @@
+﻿//Lists
+//
+// Options can only effect the list item it is a part of. Options can have a tooltip and an icon and they are displayed only if the item is selected.
+// It is the "leave-behinds" concept :  http://www.google.com/design/spec/components/list-controls.html#list-controls-types-of-list-controls 
+//
+// Note : It's also good to provide totals at each column bottom in a grid when it's relevant.
+//
+//Markup:
+//<ul class="wfm-list">
+//	<li class="wfm-list-item material-depth-1">
+//		List Item 1
+//		<div class="wfm-list-menu pull-right">
+//			<span>
+//				Options
+//			</span>
+//		</div>
+//	</li>
+//	<li class="wfm-list-item material-depth-1">
+//		List Item 2
+//		<div class="wfm-list-menu pull-right">
+//			<span>
+//				Options
+//			</span>
+//		</div>
+//	</li>
+//	<li class="wfm-list-item material-depth-1">
+//		List Item 3
+//		<div class="wfm-list-menu pull-right">
+//			<span>
+//				Options
+//			</span>
+//		</div>
+//	</li>
+//</ul>
+//
+//Styleguide 1.2 
+//
+
+.wfm-list {
+	padding-left: 0px;
+	list-style: none;
+	margin: 5px;
+}
+
+.wfm-list-item {
+	margin-bottom: 10px;
+	padding: $full-padding;
+	cursor: pointer;
+
+	&:active, &:focus, &:active:hover, &:focus:hover {
+	background-color: $blue-500 !important;
+	}
+
+	&:hover{
+		background-color: $blue-100;
+	}
+}
+
+.wfm-list-menu {
+	width: 0;
+	float: right;
+	overflow: hidden;
+	display: inline-block;
+	transition: $trasnition-timing;
+	height: 18px;
+}
+
+.wfm-list-item-selected {
+	background-color: $blue-500;
+	color: white;
+	svg > path {
+		fill: white!important;
+	}
+	.wfm-list-menu {
+		width: 90px;
+	} 
+}
+
+.wfm-list-item:hover > .wfm-list-menu {
+	width: 90px;
+}
