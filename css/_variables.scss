@@ -28,6 +28,9 @@
 //		<li class="spacer material-depth-2 gray-054-swatch"> </li>
 //		<li class="spacer material-depth-2 gray-300-swatch"></li>  
 //		<li class="spacer material-depth-2 gray-012-swatch"></li>
+//		<li class="spacer material-depth-2 gray-026-swatch"></li>
+//		<li class="spacer material-depth-2 gray-087-swatch"></li>
+//		<li class="spacer material-depth-2 gray-100-swatch"></li>
 //	</ul>
 // 
 //Styleguide 2.2 
@@ -38,7 +41,10 @@ $blue-100: #BBDEFB;
 $orange-400: #FFA726;
 $gray-300: #E0E0E0;
 $gray012: rgba(0,0,0,0.06);
+$gray026: rgba(0,0,0,0.26);
 $gray054: rgba(0,0,0,0.54);
+$gray087: rgba(0,0,0,0.87);
+$gray100: rgba(0,0,0,1);
 $full-padding: 10px;
 $half-padding: 3px;
 $trasnition-timing: all 0.5s ease;
@@ -66,5 +72,14 @@ $trasnition-timing: all 0.5s ease;
 	}
 	.gray-012-swatch {
 			background:$gray012!important;
+	}
+	.gray-026-swatch {
+			background:$gray026!important;
+	}
+	.gray-087-swatch {
+			background:$gray087!important;
+	}
+	.gray-100-swatch {
+			background:$gray100!important;
 	}
 } 
