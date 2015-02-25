@@ -383,7 +383,7 @@ It is the &quot;leave-behinds&quot; concept :  <a href="http://www.google.com/de
 
 
       <div class="kss-description">
-        <p>Some rules about forms</p>
+        <p>Forms are more understandable with icons. Add one for every input if possible.</p>
 
       </div>
     </div>
@@ -711,7 +711,50 @@ In general, providing ways to filter and sort on tables, lists, grid is good.</p
       <h3 class="kss-title kss-title--level-3">
         <a class="kss-title__permalink" href="#kssref-1.8.1">
           <span class="kss-title__ref">1.8.1</span
-          >
+          >Default table
+          <span class="kss-title__permalink-hash">#permalink</span>
+        </a>
+      </h3>
+
+
+      <div class="kss-description">
+        <p>Numbers must be right aligned.</p>
+<p>Text ?</p>
+
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          <table class="wfm-table">
+<thead><tr><th>texts</th><th>numbers</th></tr></thead>
+<tbody><tr><td>text1</td><td class="number-cell">2135847</td></tr>
+<tr><td>text1</td><td class="number-cell">2.3546</td></tr>
+</tbody>
+</table>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;table class=&quot;wfm-table&quot;&gt;
+&lt;thead&gt;&lt;tr&gt;&lt;th&gt;texts&lt;/th&gt;&lt;th&gt;numbers&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;text1&lt;/td&gt;&lt;td class=&quot;number-cell&quot;&gt;2135847&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;text1&lt;/td&gt;&lt;td class=&quot;number-cell&quot;&gt;2.3546&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-1.8.2" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink" href="#kssref-1.8.2">
+          <span class="kss-title__ref">1.8.2</span
+          >two dimensions table
           <span class="kss-title__permalink-hash">#permalink</span>
         </a>
       </h3>
@@ -724,17 +767,21 @@ In general, providing ways to filter and sort on tables, lists, grid is good.</p
           Example
         </div>
         <div class="kss-modifier__example">
-          <table class="table">
-<thead><tr><th>column header</th><th>column header</th></tr></thead>
-<tbody><tr><td>1</td><td>2</td></tr> </tbody>
+          <table class="wfm-table wfm-table-multi">
+<thead><tr><th></th><th>column header</th><th>column header</th></tr></thead>
+<tbody><tr><td>row header</td><td>1</td><td>2</td></tr>
+<tr><td>row header</td><td>1</td><td>2</td></tr>
+</tbody>
 </table>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;table class=&quot;table&quot;&gt;
-&lt;thead&gt;&lt;tr&gt;&lt;th&gt;column header&lt;/th&gt;&lt;th&gt;column header&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;/tr&gt; &lt;/tbody&gt;
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;table class=&quot;wfm-table wfm-table-multi&quot;&gt;
+&lt;thead&gt;&lt;tr&gt;&lt;th&gt;&lt;/th&gt;&lt;th&gt;column header&lt;/th&gt;&lt;th&gt;column header&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;row header&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;row header&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
 &lt;/table&gt;</code></pre>
       </div>
 

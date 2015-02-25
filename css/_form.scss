@@ -1,7 +1,7 @@
-﻿
+
 //Forms
 //
-// Some rules about forms
+// Forms are more understandable with icons. Add one for every input if possible.
 //
 //Styleguide 1.4
 //
@@ -31,9 +31,28 @@
 input {
 	width: 100%;
 	margin: 5px 0;
-	padding: $full-padding;
+	padding: 5px 0 2px;
 	border: none;
-	border-bottom: 1px solid $gray-300 !important;
+  color: $gray087;
+	border-bottom: 1px solid $gray-300;
+  &:focus {
+    border-bottom: 2px solid $blue-300;
+  }
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+  color: $gray026;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: $gray026;
+  opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: $gray026;
+  opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color: $gray026;
 }
 
 // Select
@@ -56,3 +75,4 @@ input {
 //
 //Styleguide 1.4.4
 //
+
