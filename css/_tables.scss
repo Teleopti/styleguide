@@ -9,13 +9,63 @@
 
 // Default table
 //
-
+//Numbers must be right aligned.
+//
+//Text ?
 //
 //Markup:
-//<table class="table">
-//<thead><tr><th>column header</th><th>column header</th></tr></thead> 
-//<tbody><tr><td>1</td><td>2</td></tr> </tbody>
+//<table class="wfm-table">
+//<thead><tr><th>texts</th><th>numbers</th></tr></thead> 
+//<tbody><tr><td>text1</td><td class="number-cell">2135847</td></tr>
+// <tr><td>text1</td><td class="number-cell">2.3546</td></tr>
+// </tbody>
 //</table>
 //
 //Styleguide 1.8.1
 //
+
+// two dimensions table
+//
+//Markup:
+//<table class="wfm-table wfm-table-multi">
+//<thead><tr><th></th><th>column header</th><th>column header</th></tr></thead> 
+//<tbody><tr><td>row header</td><td>1</td><td>2</td></tr> 
+// <tr><td>row header</td><td>1</td><td>2</td></tr>
+// </tbody>
+//</table>
+//
+//Styleguide 1.8.2
+//
+
+.wfm-table {
+	width: 100%;
+	td, th {
+		border: 1px solid $gray026;
+		color: $gray054;
+		padding: 5px;
+		text-align: center;
+	}
+	th{
+		color: $gray087;
+		border-top:none;
+		/*&:first-child{
+			border-left: none;
+		}
+		&:last-child{
+			border-right: none;
+		}*/
+	}
+}
+
+.wfm-table .number-cell {
+	text-align: right;
+}
+
+.wfm-table-multi {
+	th:first-child,td:first-child{
+		color: $gray087;	
+		border-left:none;
+		font-weight:600;
+	}
+}
+
