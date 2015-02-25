@@ -105,11 +105,6 @@
 	cursor:pointer;
 	width:100%;
 	margin:5px 0;
-	
-	span{
-		float:right;
-		margin-right:10px;
-	}
 } 
 
 .notice-default{
@@ -123,9 +118,8 @@
 }
 
 .notice-error{
-	color:#111111;
+	color:#ffffff;
 	background-color:$red-600;
-
 }
 
 .notice-detail{
@@ -139,6 +133,11 @@
 
 .expandable label {
 	font-weight:inherit;
+	
+	span{
+		float:right;
+		margin-right:10px;
+	}
 }
 
 .expandable article {
