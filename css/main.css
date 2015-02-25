@@ -12,6 +12,12 @@
   background: #E0E0E0 !important; }
 .swatch-list .gray-012-swatch {
   background: rgba(0, 0, 0, 0.06) !important; }
+.swatch-list .gray-026-swatch {
+  background: rgba(0, 0, 0, 0.26) !important; }
+.swatch-list .gray-087-swatch {
+  background: rgba(0, 0, 0, 0.87) !important; }
+.swatch-list .gray-100-swatch {
+  background: black !important; }
 
 .material-depth-1 {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16); }
@@ -323,3 +329,26 @@ input {
   padding: 10px;
   border: none;
   border-bottom: 1px solid #E0E0E0 !important; }
+
+.wfm-btn {
+  border: none;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 3px; }
+
+.wfm-btn-default {
+  color: #0099ff;
+  background-color: transparent; }
+  .wfm-btn-default:hover {
+    background-color: #ececec; }
+
+.wfm-btn-primary {
+  color: #8d8d8d;
+  background-color: #ececec; }
+  .wfm-btn-primary:active {
+    color: #ffffff;
+    background-color: #0099ff; }
+
+.wfm-btn-active {
+  color: #ffffff;
+  background-color: #0099ff; }

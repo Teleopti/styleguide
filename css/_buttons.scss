@@ -8,8 +8,49 @@
 
 // Default buttons
 //
+//The default button is 'printed' on the material and only show its area when hovered, it uses capital letters to differentiate it from a link.
+//The Secondary buttons area is always visible and should mainly be used for functions. 
+//The Active buttons area is highlighted by default and should only be used TODO
+//
 //Markup:
-//<button class="btn btn-default">default</button> 
+//<button class="wfm-btn wfm-btn-default">DEFAULT</button> 
+//<button class="wfm-btn wfm-btn-primary">Primary</button> 
+//<button class="wfm-btn wfm-btn-active">Active</button> 
 //
 //Styleguide 1.6.1
 //
+
+
+.wfm-btn{
+	border:none;
+	padding:10px;
+	margin:5px;
+	border-radius:3px;
+}
+
+.wfm-btn-default{
+	color:#0099ff;
+	background-color:transparent;
+	
+	&:hover{
+		background-color:#ececec;
+	}
+}
+
+.wfm-btn-primary{
+	color:#8d8d8d;
+	background-color:#ececec;
+	
+	&:active{
+		color:#ffffff;
+		background-color:#0099ff;
+	}
+}
+
+.wfm-btn-active{
+	color:#ffffff;
+	background-color:#0099ff;
+}
+
+
+
