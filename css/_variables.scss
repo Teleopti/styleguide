@@ -20,7 +20,7 @@
 //
 //Orange
 //	<ul class="swatch-list">
-//		<li class="spacer material-depth-2 orange-400-swatch"></li>  
+//		<li class="spacer material-depth-2 orange-600-swatch"></li>  
 //	</ul>
 //
 //Gray
@@ -38,7 +38,7 @@
 $blue-500: #1976D2;
 $blue-300: #64b5f6;
 $blue-100: #BBDEFB;
-$orange-400: #FFA726;
+$orange-600: #FB8C00;
 $gray-300: #E0E0E0;
 $gray012: rgba(0,0,0,0.06);
 $gray026: rgba(0,0,0,0.26);
@@ -61,7 +61,7 @@ $trasnition-timing: all 0.5s ease;
 	.blue-100-swatch {
 			background:$blue-100!important;
 	}
-	.orange-400-swatch {
+	.orange-600-swatch {
 			background:$orange-400!important;
 	}
 	.gray-054-swatch {
