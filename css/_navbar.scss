@@ -9,9 +9,58 @@
 // Topbar
 //
 //Markup:
-//<div class="navbar navbar-default navbar-static-top"> 
-//  <div class="container"><div class="navbar-header"><a class="navbar-brand">Teleopti WFM</a></div></div> 
+//<div class="navbar navbar-default"> 
+//  <div class="container">
+//		<div class="navbar-header">
+//			<div class="content">
+//				<span class="brand">Teleopti WFM</span>
+//				<span class="breadbin">
+//					<a href="#" class="crumb">Settings ></a>
+//					<a href="#" class="crumb">Options</a>
+//				</span>
+//				<span class="right-actions">
+//					<a href="#"><i class="mdi mdi-logout"></i></a>
+//				</span>
+//			</div>
+//		</div>
+//	</div> 
 //</div>
 //
 //Styleguide 1.5.1
 // 
+
+
+.navbar {
+    background-color: $blue-500;
+    border-radius: 0;
+	border: none;
+
+	a{
+		color: white !important;
+		text-decoration:none;
+		display:inline-block;
+		font-size: 14px;
+	}
+	
+	.brand{
+		color: white !important;
+	}
+	
+	.content {
+		height: 50px;
+		padding: 15px;
+		font-size: 18px;
+		line-height: 20px;
+		margin-left: -15px;
+	}
+	
+	.breadbin{
+		margin-left:30px;
+	}
+	
+	.right-actions{
+		position:absolute;
+		right:5px;
+		top:30%;
+	}
+}
