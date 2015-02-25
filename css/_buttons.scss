@@ -8,8 +8,87 @@
 
 // Default buttons
 //
+//The default button is 'printed' on the material and only show its area when hovered, it uses capital letters to differentiate it from a link.
+//The Secondary buttons area is always visible and should mainly be used for functions. 
+//
 //Markup:
-//<button class="btn btn-default">default</button> 
+//<button class="wfm-btn wfm-btn-invis-default">DEFAULT</button> 
+//<button class="wfm-btn wfm-btn-invis-primary">PRIMARY</button>
+//<button class="wfm-btn wfm-btn-default material-depth-1">Primary</button>
+//<button class="wfm-btn wfm-btn-primary material-depth-1">Primary</button> 
+//<button class="wfm-btn wfm-btn-invis-disabled">DISABLED</button>
+//<button class="wfm-btn wfm-fab">+</button>
 //
 //Styleguide 1.6.1
 //
+
+.wfm-btn {
+	border:none;
+	padding:10px;
+	margin:5px;
+	border-radius:3px;
+}
+
+.wfm-btn-invis-default {
+	color:$gray100;
+	background-color:transparent;
+	
+	&:hover{
+		background-color:#ececec;
+	}
+}
+
+.wfm-btn-invis-primary {
+	color:$blue-500;
+	background-color:transparent;
+	
+	&:hover{
+		background-color:#ececec;
+	}
+}
+
+.wfm-btn-invis-disabled {
+	color:$gray026;
+	background-color:transparent;
+	
+	&:hover{
+		cursor: not-allowed;
+	}
+}
+
+.wfm-btn-default {
+	color:$gray087;
+	background-color:#ffffff;
+	box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.16);
+	
+		&:hover{
+		box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.26);
+	}
+}
+
+.wfm-btn-primary {
+	color:#ffffff;
+	background-color:#0099ff;
+	box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.16);
+	
+		&:hover{
+		box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.26);
+	}
+}
+
+.wfm-fab{
+	text-align:center;
+	width:50px;
+	height:50px;
+	border-radius:50%;
+	color:#ffffff;
+	background-color:$orange-400;
+	box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.16);
+	
+		&:hover{
+		box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.26);
+	}
+}
+
+
+

@@ -1,4 +1,4 @@
-﻿// Tables
+// Tables
 //
 // If a table take time to be loaded, a loading bar should be displayed during this time.
 // A table must be displayed in alphabetical order, except for specific use case.
@@ -9,13 +9,59 @@
 
 // Default table
 //
-
+//Numbers must be right aligned.
+//
+//Text ?
 //
 //Markup:
-//<table class="table">
-//<thead><tr><th>column header</th><th>column header</th></tr></thead> 
-//<tbody><tr><td>1</td><td>2</td></tr> </tbody>
+//<table class="wfm-table">
+//<thead><tr><th>texts</th><th>numbers</th></tr></thead>
+//<tbody><tr><td>text1</td><td class="number-cell">2135847</td></tr>
+// <tr><td>text1</td><td class="number-cell">2.3546</td></tr>
+// </tbody>
 //</table>
 //
 //Styleguide 1.8.1
 //
+
+// Two dimensions table
+//
+//Markup:
+//<table class="wfm-table wfm-table-multi">
+//<thead><tr><th></th><th>column header</th><th>column header</th></tr></thead>
+//<tbody><tr><td>row header</td><td>1</td><td>2</td></tr>
+// <tr><td>row header</td><td>1</td><td>2</td></tr>
+// </tbody>
+//</table>
+//
+//Styleguide 1.8.2
+//
+
+.wfm-table {
+	width: 100%;
+  text-align: left;
+}
+
+.wfm-table td, th {
+  border: 1px solid $gray-100;
+  color: $gray054;
+  padding: 5px;
+}
+
+.wfm-table th {
+  color: $gray087;
+  background-color: $blue-100;
+  text-align: center;
+}
+
+
+.wfm-table .number-cell {
+	text-align: right;
+}
+
+.wfm-table-multi th:first-child,td:first-child{
+  color: $gray087;
+  font-weight:600;
+  background-color: $blue-100;
+}
+

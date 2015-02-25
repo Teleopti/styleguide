@@ -16,7 +16,7 @@
 		watch: {
 			styleguide: {
 				files: ['css/*.scss'],
-				tasks: ['sass:styleguide', 'shell']
+				tasks: ['sass:dist','sass:styleguide','shell']
 			}
 		},
 		shell: {
@@ -35,5 +35,5 @@
 
 	// Default task(s).
 	grunt.registerTask('default', ['watch:styleguide']); 
-	grunt.registerTask('dist', ['sass:styleguide', 'shell']); // this task is kind of package
+	grunt.registerTask('dist', ['sass:dist','sass:styleguide', 'shell']); // this task is kind of package
 };

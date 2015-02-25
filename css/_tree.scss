@@ -8,27 +8,19 @@
 //		<ol class="tree-line angular-ui-tree-nodes">
 //			<li ui-tree-node>
 //				<div>
-//					Parent
+//					<i class="mdi mdi-menu-down"></i> Parent
 //					<ol>
-//						<li class="angular-ui-tree-handle">
-//							child
-//						</li>
-//						<li class="angular-ui-tree-handle">
-//							child
-//						</li>
-//						<li class="angular-ui-tree-handle">
-//							child
-//						</li>
+//						<li class="angular-ui-tree-handle"> <i class="mdi mdi-menu-down"></i> child </li>
+//						<li class="angular-ui-tree-handle"> child </li>
+//						<li class="angular-ui-tree-handle"> child </li>
 //					</ol>
 //				</div>
 //			</li>
 //			<li ui-tree-node>
 //				<div>
-//					Parent
+//					<i class="mdi mdi-menu-down"></i> Parent
 //					<ol>
-//						<li class="angular-ui-tree-handle">
-//							child
-//						</li>
+//						<li class="angular-ui-tree-handle" flex="row" flex> <div flex><i class="mdi mdi-menu-down"></i></div> <div flex>child</div> </li>
 //					</ol>
 //				</div>
 //			</li>
@@ -46,12 +38,20 @@
 	padding-bottom: 5px;
 	background-color: #f5f5f5;
 	box-shadow: inset  0px 2px 5px 0px rgba(0, 0, 0, 0.16);
-	list-style-type: none;
+	vertical-align: middle;
+}
+
+.tree ol { 
+	list-style: none;
 }
 
 .tree-line div{
 	padding: $half-padding;
 	margin: 2px;
+}
+
+.tree i {
+	font-size:32px;
 }
 
 .angular-ui-tree-handle {
