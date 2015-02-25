@@ -13,5 +13,15 @@
 }
 
 #kss-node .kss-section {
-	max-width: 100%;
+	max-width: 80%;
+}
+
+.kss-style code {
+	font-size: 12px;
+	line-height: 14px !important;
+	font-family: Menlo,Monaco,"Andale Mono","lucida console","Courier New",monospace;
+}
+
+#kss-node ol.linenums li {
+	border:none;
 }
