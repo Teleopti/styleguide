@@ -113,11 +113,17 @@
   padding-bottom: 5px;
   background-color: #f5f5f5;
   box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.16);
-  list-style-type: none; }
+  vertical-align: middle; }
+
+.tree ol {
+  list-style: none; }
 
 .tree-line div {
   padding: 3px;
   margin: 2px; }
+
+.tree i {
+  font-size: 32px; }
 
 .angular-ui-tree-handle {
   cursor: pointer;

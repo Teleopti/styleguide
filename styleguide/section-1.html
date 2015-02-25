@@ -1,0 +1,905 @@
+﻿<!DOCTYPE html>
+<!--[if lte IE 6]>            <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IEMobile 7]>          <html class="no-js iem7" lang="en"> <![endif]-->
+<!--[if (IE 7)&(!IEMobile)]>  <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>                <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>KSS: Living Style Guide</title>
+
+  <meta name="description" content="">
+  <meta name="generator" content="kss-node">
+  <meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:400,500,700,400italic">
+	<link rel="stylesheet" href="public/kss.css">
+	<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/material-spinner.css">
+	<link rel="stylesheet" href="../vendor/angular-ui-tree/angular-ui-tree.min.css">
+	<link rel="stylesheet" href="../vendor/materialdesignicons.min.css" media="all"  type="text/css" />
+
+	<link rel="stylesheet" href="public/styleguide.css">
+	<link rel="stylesheet" href="../css/main.css">
+  
+</head>
+<body id="kss-node">
+
+<div class="kss-sidebar kss-style">
+  <header class="kss-header">
+    <h1 class="kss-doc-title">kss-node<br>Style Guide</h1>
+  </header>
+  <nav class="kss-nav">
+    <ul class="kss-nav__menu">
+      <li class="kss-nav__menu-item">
+        <a href="./">
+          <span class="kss-nav__ref">0</span
+          ><span class="kss-nav__name">Overview</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-1.html">
+          <span class="kss-nav__ref">1</span
+          ><span class="kss-nav__name">Style Rules</span>
+        </a>
+        <ul class="kss-nav__menu-child">
+            <li class="kss-nav__menu-item">
+              <a href="section-1.html#kssref-1.1">
+                <span class="kss-nav__ref">1.1</span
+                ><span class="kss-nav__name">Depth</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-1.html#kssref-1.2">
+                <span class="kss-nav__ref">1.2</span
+                ><span class="kss-nav__name">Lists</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-1.html#kssref-1.3">
+                <span class="kss-nav__ref">1.3</span
+                ><span class="kss-nav__name">Trees</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-1.html#kssref-1.4">
+                <span class="kss-nav__ref">1.4</span
+                ><span class="kss-nav__name">Forms</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-1.html#kssref-1.5">
+                <span class="kss-nav__ref">1.5</span
+                ><span class="kss-nav__name">Navbar</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-1.html#kssref-1.6">
+                <span class="kss-nav__ref">1.6</span
+                ><span class="kss-nav__name">Buttons</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-1.html#kssref-1.7">
+                <span class="kss-nav__ref">1.7</span
+                ><span class="kss-nav__name">Typography</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-1.html#kssref-1.8">
+                <span class="kss-nav__ref">1.8</span
+                ><span class="kss-nav__name">Tables</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-1.html#kssref-1.9">
+                <span class="kss-nav__ref">1.9</span
+                ><span class="kss-nav__name">Loading bar</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-1.html#kssref-1.10">
+                <span class="kss-nav__ref">1.10</span
+                ><span class="kss-nav__name">Errors</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-1.html#kssref-1.11">
+                <span class="kss-nav__ref">1.11</span
+                ><span class="kss-nav__name">Tooltips</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-1.html#kssref-1.12">
+                <span class="kss-nav__ref">1.12</span
+                ><span class="kss-nav__name">Modals</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-1.html#kssref-1.13">
+                <span class="kss-nav__ref">1.13</span
+                ><span class="kss-nav__name">Context menus</span>
+              </a>
+            </li>
+        </ul>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-2.html">
+          <span class="kss-nav__ref">2</span
+          ><span class="kss-nav__name">Colors</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-3.html">
+          <span class="kss-nav__ref">3</span
+          ><span class="kss-nav__name">Do not</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-4.html">
+          <span class="kss-nav__ref">4</span
+          ><span class="kss-nav__name">Icons</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+<article role="main" class="kss-main">
+
+      <div     id="kssref-1" class="kss-section kss-section--depth-1">
+
+    <div class="kss-style">
+      <h1 class="kss-title kss-title--level-1">
+        <a class="kss-title__permalink" href="#kssref-1">
+          <span class="kss-title__ref">1</span
+          >Style Rules
+          <span class="kss-title__permalink-hash">#permalink</span>
+        </a>
+      </h1>
+
+
+      <div class="kss-description">
+        <p>Here are detailed all the style rules for the web application.</p>
+
+      </div>
+    </div>
+
+
+      </div>
+      <section id="kssref-1.1" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-1.1">
+          <span class="kss-title__ref">1.1</span
+          >Depth
+          <span class="kss-title__permalink-hash">#permalink</span>
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>Getting a deeper look into the styles of shadows and positioning.</p>
+<p>Keep the number of stacked layers to a minimum and the total number of layer below 3 (including the background).</p>
+
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          <div class="spacer"> Background </div>
+<div class="spacer material-depth-1"> Layer 1 </div>
+<div class="spacer material-depth-2"> Layer 2 </div>
+<div class="spacer material-depth-1">
+<p class="material-depth-2"> Stacked </p>
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;spacer&quot;&gt; Background &lt;/div&gt;
+&lt;div class=&quot;spacer material-depth-1&quot;&gt; Layer 1 &lt;/div&gt;
+&lt;div class=&quot;spacer material-depth-2&quot;&gt; Layer 2 &lt;/div&gt;
+&lt;div class=&quot;spacer material-depth-1&quot;&gt;
+&lt;p class=&quot;material-depth-2&quot;&gt; Stacked &lt;/p&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-1.2" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-1.2">
+          <span class="kss-title__ref">1.2</span
+          >Lists
+          <span class="kss-title__permalink-hash">#permalink</span>
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>Options can only effect the list item it is a part of. Options can have a tooltip and an icon and they are displayed only if the item is selected.
+It is the &quot;leave-behinds&quot; concept :  <a href="http://www.google.com/design/spec/components/list-controls.html#list-controls-types-of-list-controls">http://www.google.com/design/spec/components/list-controls.html#list-controls-types-of-list-controls</a></p>
+<p>Note : It&#39;s also good to provide totals at each column bottom in a grid when it&#39;s relevant.</p>
+
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          <ul class="wfm-list">
+<li class="wfm-list-item material-depth-1">
+	List Item 1
+	<div class="wfm-list-menu pull-right">
+		<span>
+			Options
+		</span>
+	</div>
+</li>
+<li class="wfm-list-item material-depth-1">
+	List Item 2
+	<div class="wfm-list-menu pull-right">
+		<span>
+			Options
+		</span>
+	</div>
+</li>
+<li class="wfm-list-item material-depth-1">
+	List Item 3
+	<div class="wfm-list-menu pull-right">
+		<span>
+			Options
+		</span>
+	</div>
+</li>
+</ul>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;ul class=&quot;wfm-list&quot;&gt;
+&lt;li class=&quot;wfm-list-item material-depth-1&quot;&gt;
+	List Item 1
+	&lt;div class=&quot;wfm-list-menu pull-right&quot;&gt;
+		&lt;span&gt;
+			Options
+		&lt;/span&gt;
+	&lt;/div&gt;
+&lt;/li&gt;
+&lt;li class=&quot;wfm-list-item material-depth-1&quot;&gt;
+	List Item 2
+	&lt;div class=&quot;wfm-list-menu pull-right&quot;&gt;
+		&lt;span&gt;
+			Options
+		&lt;/span&gt;
+	&lt;/div&gt;
+&lt;/li&gt;
+&lt;li class=&quot;wfm-list-item material-depth-1&quot;&gt;
+	List Item 3
+	&lt;div class=&quot;wfm-list-menu pull-right&quot;&gt;
+		&lt;span&gt;
+			Options
+		&lt;/span&gt;
+	&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-1.3" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-1.3">
+          <span class="kss-title__ref">1.3</span
+          >Trees
+          <span class="kss-title__permalink-hash">#permalink</span>
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>Based on angular tree</p>
+
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          <div class="tree">
+<div ui-tree>
+	<ol class="tree-line angular-ui-tree-nodes">
+		<li ui-tree-node>
+			<div>
+				<i class="mdi mdi-menu-down"></i> Parent
+				<ol>
+					<li class="angular-ui-tree-handle"> <i class="mdi mdi-menu-down"></i> child </li>
+					<li class="angular-ui-tree-handle"> child </li>
+					<li class="angular-ui-tree-handle"> child </li>
+				</ol>
+			</div>
+		</li>
+		<li ui-tree-node>
+			<div>
+				<i class="mdi mdi-menu-down"></i> Parent
+				<ol>
+					<li class="angular-ui-tree-handle" flex="row" flex> <div flex><i class="mdi mdi-menu-down"></i></div> <div flex>child</div> </li>
+				</ol>
+			</div>
+		</li>
+	</ol>
+</div>
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;tree&quot;&gt;
+&lt;div ui-tree&gt;
+	&lt;ol class=&quot;tree-line angular-ui-tree-nodes&quot;&gt;
+		&lt;li ui-tree-node&gt;
+			&lt;div&gt;
+				&lt;i class=&quot;mdi mdi-menu-down&quot;&gt;&lt;/i&gt; Parent
+				&lt;ol&gt;
+					&lt;li class=&quot;angular-ui-tree-handle&quot;&gt; &lt;i class=&quot;mdi mdi-menu-down&quot;&gt;&lt;/i&gt; child &lt;/li&gt;
+					&lt;li class=&quot;angular-ui-tree-handle&quot;&gt; child &lt;/li&gt;
+					&lt;li class=&quot;angular-ui-tree-handle&quot;&gt; child &lt;/li&gt;
+				&lt;/ol&gt;
+			&lt;/div&gt;
+		&lt;/li&gt;
+		&lt;li ui-tree-node&gt;
+			&lt;div&gt;
+				&lt;i class=&quot;mdi mdi-menu-down&quot;&gt;&lt;/i&gt; Parent
+				&lt;ol&gt;
+					&lt;li class=&quot;angular-ui-tree-handle&quot; flex=&quot;row&quot; flex&gt; &lt;div flex&gt;&lt;i class=&quot;mdi mdi-menu-down&quot;&gt;&lt;/i&gt;&lt;/div&gt; &lt;div flex&gt;child&lt;/div&gt; &lt;/li&gt;
+				&lt;/ol&gt;
+			&lt;/div&gt;
+		&lt;/li&gt;
+	&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-1.4" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-1.4">
+          <span class="kss-title__ref">1.4</span
+          >Forms
+          <span class="kss-title__permalink-hash">#permalink</span>
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>Some rules about forms</p>
+
+      </div>
+    </div>
+
+
+      </section>
+      <section id="kssref-1.4.1" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink" href="#kssref-1.4.1">
+          <span class="kss-title__ref">1.4.1</span
+          >Standard input
+          <span class="kss-title__permalink-hash">#permalink</span>
+        </a>
+      </h3>
+
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          <input type="text" placeholder="Name..."  />
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;input type=&quot;text&quot; placeholder=&quot;Name...&quot;  /&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-1.4.2" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink" href="#kssref-1.4.2">
+          <span class="kss-title__ref">1.4.2</span
+          >Search input
+          <span class="kss-title__permalink-hash">#permalink</span>
+        </a>
+      </h3>
+
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          <form class="filter-form">
+	<svg style="width: 18px; height: 18px;" viewBox="0 0 24 24">
+		<path fill="#000000" d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" />
+	</svg>
+	<input type="text" placeholder="Search ..." />
+</form>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form class=&quot;filter-form&quot;&gt;
+	&lt;svg style=&quot;width: 18px; height: 18px;&quot; viewBox=&quot;0 0 24 24&quot;&gt;
+		&lt;path fill=&quot;#000000&quot; d=&quot;M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z&quot; /&gt;
+	&lt;/svg&gt;
+	&lt;input type=&quot;text&quot; placeholder=&quot;Search ...&quot; /&gt;
+&lt;/form&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-1.4.3" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink" href="#kssref-1.4.3">
+          <span class="kss-title__ref">1.4.3</span
+          >Select
+          <span class="kss-title__permalink-hash">#permalink</span>
+        </a>
+      </h3>
+
+
+      <div class="kss-description">
+        <p>TODO</p>
+
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          <select><option>1</option></select>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;select&gt;&lt;option&gt;1&lt;/option&gt;&lt;/select&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-1.4.4" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink" href="#kssref-1.4.4">
+          <span class="kss-title__ref">1.4.4</span
+          >Radio buttons
+          <span class="kss-title__permalink-hash">#permalink</span>
+        </a>
+      </h3>
+
+
+      <div class="kss-description">
+        <p>TODO</p>
+
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          <input type="radio" name"radioName" value="option A" />option A
+ <input type="radio" name"radioName" value="option B" />option B
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;input type=&quot;radio&quot; name&quot;radioName&quot; value=&quot;option A&quot; /&gt;option A
+ &lt;input type=&quot;radio&quot; name&quot;radioName&quot; value=&quot;option B&quot; /&gt;option B</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-1.5" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-1.5">
+          <span class="kss-title__ref">1.5</span
+          >Navbar
+          <span class="kss-title__permalink-hash">#permalink</span>
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>In WFM, the navbar is at top of the page (based on bootstrap right now)</p>
+
+      </div>
+    </div>
+
+
+      </section>
+      <section id="kssref-1.5.1" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink" href="#kssref-1.5.1">
+          <span class="kss-title__ref">1.5.1</span
+          >Topbar
+          <span class="kss-title__permalink-hash">#permalink</span>
+        </a>
+      </h3>
+
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          <div class="navbar navbar-default navbar-static-top">
+ <div class="container"><div class="navbar-header"><a class="navbar-brand">Teleopti WFM</a></div></div>
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;navbar navbar-default navbar-static-top&quot;&gt;
+ &lt;div class=&quot;container&quot;&gt;&lt;div class=&quot;navbar-header&quot;&gt;&lt;a class=&quot;navbar-brand&quot;&gt;Teleopti WFM&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-1.6" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-1.6">
+          <span class="kss-title__ref">1.6</span
+          >Buttons
+          <span class="kss-title__permalink-hash">#permalink</span>
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>Avoid non specific actions as a label of an action.
+For example, &quot;OK&quot; and &quot;GO&quot; are not specific but &quot;SAVE USER&quot; and &quot;GO ON DASHBOARD&quot; are.</p>
+
+      </div>
+    </div>
+
+
+      </section>
+      <section id="kssref-1.6.1" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink" href="#kssref-1.6.1">
+          <span class="kss-title__ref">1.6.1</span
+          >Default buttons
+          <span class="kss-title__permalink-hash">#permalink</span>
+        </a>
+      </h3>
+
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          <button class="btn btn-default">default</button>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;button class=&quot;btn btn-default&quot;&gt;default&lt;/button&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-1.7" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-1.7">
+          <span class="kss-title__ref">1.7</span
+          >Typography
+          <span class="kss-title__permalink-hash">#permalink</span>
+        </a>
+      </h2>
+
+
+    </div>
+
+
+      </section>
+      <section id="kssref-1.7.1" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink" href="#kssref-1.7.1">
+          <span class="kss-title__ref">1.7.1</span
+          >Titles
+          <span class="kss-title__permalink-hash">#permalink</span>
+        </a>
+      </h3>
+
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          <h1>heading 1</h1>
+<h2>heading 2</h2>
+<h3>heading 3</h3>
+<h4>heading 4</h4>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;h1&gt;heading 1&lt;/h1&gt;
+&lt;h2&gt;heading 2&lt;/h2&gt;
+&lt;h3&gt;heading 3&lt;/h3&gt;
+&lt;h4&gt;heading 4&lt;/h4&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-1.8" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-1.8">
+          <span class="kss-title__ref">1.8</span
+          >Tables
+          <span class="kss-title__permalink-hash">#permalink</span>
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>If a table take time to be loaded, a loading bar should be displayed during this time.
+A table must be displayed in alphabetical order, except for specific use case.
+In general, providing ways to filter and sort on tables, lists, grid is good.</p>
+
+      </div>
+    </div>
+
+
+      </section>
+      <section id="kssref-1.8.1" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink" href="#kssref-1.8.1">
+          <span class="kss-title__ref">1.8.1</span
+          >
+          <span class="kss-title__permalink-hash">#permalink</span>
+        </a>
+      </h3>
+
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          <table class="table">
+<thead><tr><th>column header</th><th>column header</th></tr></thead>
+<tbody><tr><td>1</td><td>2</td></tr> </tbody>
+</table>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;table class=&quot;table&quot;&gt;
+&lt;thead&gt;&lt;tr&gt;&lt;th&gt;column header&lt;/th&gt;&lt;th&gt;column header&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;/tr&gt; &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-1.9" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-1.9">
+          <span class="kss-title__ref">1.9</span
+          >Loading bar
+          <span class="kss-title__permalink-hash">#permalink</span>
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>TODO</p>
+
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          Markup:
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">Markup:</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-1.10" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-1.10">
+          <span class="kss-title__ref">1.10</span
+          >Errors
+          <span class="kss-title__permalink-hash">#permalink</span>
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>TODO</p>
+
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          Markup:
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">Markup:</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-1.11" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-1.11">
+          <span class="kss-title__ref">1.11</span
+          >Tooltips
+          <span class="kss-title__permalink-hash">#permalink</span>
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>TODO</p>
+
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          Markup:
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">Markup:</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-1.12" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-1.12">
+          <span class="kss-title__ref">1.12</span
+          >Modals
+          <span class="kss-title__permalink-hash">#permalink</span>
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>TODO</p>
+
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          Markup:
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">Markup:</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-1.13" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-1.13">
+          <span class="kss-title__ref">1.13</span
+          >Context menus
+          <span class="kss-title__permalink-hash">#permalink</span>
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>Context menus must be used carefully : they should be minimalistic (5 actions maximum) maybe with icons (?)</p>
+
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          Markup:
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">Markup:</code></pre>
+      </div>
+
+      </section>
+</article>
+
+<!-- SCRIPTS -->
+<script src="public/kss.js"></script>
+<script src="public/prettify.js"></script>
+<script>
+  prettyPrint();
+</script>
+
+
+
+<!-- Automatically generated using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
+</body>
+</html>
