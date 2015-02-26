@@ -6,7 +6,7 @@
 <!--[if (gte IE 9)|(gt IEMobile 7)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>KSS: Living Style Guide</title>
+  <title>Teleopti WFM Living Style Guide</title>
 
   <meta name="description" content="">
   <meta name="generator" content="kss-node">
@@ -15,8 +15,8 @@
 	<link rel="stylesheet" href="public/kss.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../css/material-spinner.css">
-	<link rel="stylesheet" href="../vendor/angular-ui-tree/angular-ui-tree.min.css">
-	<link rel="stylesheet" href="../vendor/materialdesignicons.min.css" media="all"  type="text/css" />
+	<link rel="stylesheet" href="../vendor/angular-ui-tree.min.css">
+	<link rel="stylesheet" href="../css/materialdesignicons.min.css" media="all"  type="text/css" />
 
 	<link rel="stylesheet" href="public/styleguide.css">
 	<link rel="stylesheet" href="../css/main.css">
@@ -69,7 +69,7 @@
             <li class="kss-nav__menu-item">
               <a href="section-1.html#kssref-1.5">
                 <span class="kss-nav__ref">1.5</span
-                ><span class="kss-nav__name">Navbar</span>
+                ><span class="kss-nav__name">Navbars</span>
               </a>
             </li>
             <li class="kss-nav__menu-item">
@@ -99,7 +99,7 @@
             <li class="kss-nav__menu-item">
               <a href="section-1.html#kssref-1.10">
                 <span class="kss-nav__ref">1.10</span
-                ><span class="kss-nav__name">Alerts</span>
+                ><span class="kss-nav__name">Notices</span>
               </a>
             </li>
             <li class="kss-nav__menu-item">
@@ -120,6 +120,18 @@
                 ><span class="kss-nav__name">Context menus</span>
               </a>
             </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-1.html#kssref-1.14">
+                <span class="kss-nav__ref">1.14</span
+                ><span class="kss-nav__name">Accordions</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-1.html#kssref-1.15">
+                <span class="kss-nav__ref">1.15</span
+                ><span class="kss-nav__name">Calendar</span>
+              </a>
+            </li>
         </ul>
       </li>
       <li class="kss-nav__menu-item">
@@ -131,7 +143,7 @@
       <li class="kss-nav__menu-item">
         <a href="section-3.html">
           <span class="kss-nav__ref">3</span
-          ><span class="kss-nav__name">Do not</span>
+          ><span class="kss-nav__name">Resources</span>
         </a>
       </li>
       <li class="kss-nav__menu-item">
@@ -234,27 +246,33 @@ It is the &quot;leave-behinds&quot; concept :  <a href="http://www.google.com/de
         </div>
         <div class="kss-modifier__example">
           <ul class="wfm-list">
-<li class="wfm-list-item material-depth-1">
+<li>
 	List Item 1
-	<div class="wfm-list-menu pull-right">
-		<span>
+	<div class="wfm-leave-behind">
+	<span>
+		<p>
 			Options
-		</span>
+		</p>
+	</span>
 	</div>
 </li>
-<li class="wfm-list-item material-depth-1">
+<li>
 	List Item 2
-	<div class="wfm-list-menu pull-right">
+	<div class="wfm-leave-behind">
 		<span>
-			Options
+			<i class="mdi mdi-content-copy"></i>
+			<i class="mdi mdi-pencil"></i>
+			<i class="mdi mdi-delete"></i>
 		</span>
 	</div>
 </li>
-<li class="wfm-list-item material-depth-1">
+<li class="active">
 	List Item 3
-	<div class="wfm-list-menu pull-right">
+	<div class="wfm-leave-behind">
 		<span>
-			Options
+			<p>
+				Right behind
+			</p>
 		</span>
 	</div>
 </li>
@@ -264,27 +282,33 @@ It is the &quot;leave-behinds&quot; concept :  <a href="http://www.google.com/de
 
       <div class="kss-markup kss-style">
         <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;ul class=&quot;wfm-list&quot;&gt;
-&lt;li class=&quot;wfm-list-item material-depth-1&quot;&gt;
+&lt;li&gt;
 	List Item 1
-	&lt;div class=&quot;wfm-list-menu pull-right&quot;&gt;
-		&lt;span&gt;
+	&lt;div class=&quot;wfm-leave-behind&quot;&gt;
+	&lt;span&gt;
+		&lt;p&gt;
 			Options
-		&lt;/span&gt;
+		&lt;/p&gt;
+	&lt;/span&gt;
 	&lt;/div&gt;
 &lt;/li&gt;
-&lt;li class=&quot;wfm-list-item material-depth-1&quot;&gt;
+&lt;li&gt;
 	List Item 2
-	&lt;div class=&quot;wfm-list-menu pull-right&quot;&gt;
+	&lt;div class=&quot;wfm-leave-behind&quot;&gt;
 		&lt;span&gt;
-			Options
+			&lt;i class=&quot;mdi mdi-content-copy&quot;&gt;&lt;/i&gt;
+			&lt;i class=&quot;mdi mdi-pencil&quot;&gt;&lt;/i&gt;
+			&lt;i class=&quot;mdi mdi-delete&quot;&gt;&lt;/i&gt;
 		&lt;/span&gt;
 	&lt;/div&gt;
 &lt;/li&gt;
-&lt;li class=&quot;wfm-list-item material-depth-1&quot;&gt;
+&lt;li class=&quot;active&quot;&gt;
 	List Item 3
-	&lt;div class=&quot;wfm-list-menu pull-right&quot;&gt;
+	&lt;div class=&quot;wfm-leave-behind&quot;&gt;
 		&lt;span&gt;
-			Options
+			&lt;p&gt;
+				Right behind
+			&lt;/p&gt;
 		&lt;/span&gt;
 	&lt;/div&gt;
 &lt;/li&gt;
@@ -317,22 +341,24 @@ It is the &quot;leave-behinds&quot; concept :  <a href="http://www.google.com/de
         <div class="kss-modifier__example">
           <div class="tree">
 <div ui-tree>
-	<ol class="tree-line angular-ui-tree-nodes">
+	<ol class="angular-ui-tree-nodes">
 		<li ui-tree-node>
 			<div>
-				<i class="mdi mdi-menu-down"></i> Parent
+				Parent
 				<ol>
-					<li class="angular-ui-tree-handle"> <i class="mdi mdi-menu-down"></i> child </li>
 					<li class="angular-ui-tree-handle"> child </li>
-					<li class="angular-ui-tree-handle"> child </li>
+					<ol>
+						<li class="angular-ui-tree-handle"> child </li>
+						<li class="angular-ui-tree-handle"> child </li>
+					</ol>
 				</ol>
 			</div>
 		</li>
 		<li ui-tree-node>
 			<div>
-				<i class="mdi mdi-menu-down"></i> Parent
+				Parent
 				<ol>
-					<li class="angular-ui-tree-handle" flex="row" flex> <div flex><i class="mdi mdi-menu-down"></i></div> <div flex>child</div> </li>
+					<li class="angular-ui-tree-handle active-tree">child</li>
 				</ol>
 			</div>
 		</li>
@@ -345,22 +371,24 @@ It is the &quot;leave-behinds&quot; concept :  <a href="http://www.google.com/de
       <div class="kss-markup kss-style">
         <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;tree&quot;&gt;
 &lt;div ui-tree&gt;
-	&lt;ol class=&quot;tree-line angular-ui-tree-nodes&quot;&gt;
+	&lt;ol class=&quot;angular-ui-tree-nodes&quot;&gt;
 		&lt;li ui-tree-node&gt;
 			&lt;div&gt;
-				&lt;i class=&quot;mdi mdi-menu-down&quot;&gt;&lt;/i&gt; Parent
+				Parent
 				&lt;ol&gt;
-					&lt;li class=&quot;angular-ui-tree-handle&quot;&gt; &lt;i class=&quot;mdi mdi-menu-down&quot;&gt;&lt;/i&gt; child &lt;/li&gt;
 					&lt;li class=&quot;angular-ui-tree-handle&quot;&gt; child &lt;/li&gt;
-					&lt;li class=&quot;angular-ui-tree-handle&quot;&gt; child &lt;/li&gt;
+					&lt;ol&gt;
+						&lt;li class=&quot;angular-ui-tree-handle&quot;&gt; child &lt;/li&gt;
+						&lt;li class=&quot;angular-ui-tree-handle&quot;&gt; child &lt;/li&gt;
+					&lt;/ol&gt;
 				&lt;/ol&gt;
 			&lt;/div&gt;
 		&lt;/li&gt;
 		&lt;li ui-tree-node&gt;
 			&lt;div&gt;
-				&lt;i class=&quot;mdi mdi-menu-down&quot;&gt;&lt;/i&gt; Parent
+				Parent
 				&lt;ol&gt;
-					&lt;li class=&quot;angular-ui-tree-handle&quot; flex=&quot;row&quot; flex&gt; &lt;div flex&gt;&lt;i class=&quot;mdi mdi-menu-down&quot;&gt;&lt;/i&gt;&lt;/div&gt; &lt;div flex&gt;child&lt;/div&gt; &lt;/li&gt;
+					&lt;li class=&quot;angular-ui-tree-handle active-tree&quot;&gt;child&lt;/li&gt;
 				&lt;/ol&gt;
 			&lt;/div&gt;
 		&lt;/li&gt;
@@ -424,7 +452,7 @@ It is the &quot;leave-behinds&quot; concept :  <a href="http://www.google.com/de
       <h3 class="kss-title kss-title--level-3">
         <a class="kss-title__permalink" href="#kssref-1.4.2">
           <span class="kss-title__ref">1.4.2</span
-          >Search input
+          >Input with prepend
           <span class="kss-title__permalink-hash">#permalink</span>
         </a>
       </h3>
@@ -437,22 +465,18 @@ It is the &quot;leave-behinds&quot; concept :  <a href="http://www.google.com/de
           Example
         </div>
         <div class="kss-modifier__example">
-          <form class="filter-form">
-	<svg style="width: 18px; height: 18px;" viewBox="0 0 24 24">
-		<path fill="#000000" d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" />
-	</svg>
+          <div class="input-prepend">
+	<i class="mdi mdi-magnify"></i>
 	<input type="text" placeholder="Search ..." />
-</form>
+</div>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form class=&quot;filter-form&quot;&gt;
-	&lt;svg style=&quot;width: 18px; height: 18px;&quot; viewBox=&quot;0 0 24 24&quot;&gt;
-		&lt;path fill=&quot;#000000&quot; d=&quot;M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z&quot; /&gt;
-	&lt;/svg&gt;
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;input-prepend&quot;&gt;
+	&lt;i class=&quot;mdi mdi-magnify&quot;&gt;&lt;/i&gt;
 	&lt;input type=&quot;text&quot; placeholder=&quot;Search ...&quot; /&gt;
-&lt;/form&gt;</code></pre>
+&lt;/div&gt;</code></pre>
       </div>
 
       </section>
@@ -462,6 +486,40 @@ It is the &quot;leave-behinds&quot; concept :  <a href="http://www.google.com/de
       <h3 class="kss-title kss-title--level-3">
         <a class="kss-title__permalink" href="#kssref-1.4.3">
           <span class="kss-title__ref">1.4.3</span
+          >Input with append
+          <span class="kss-title__permalink-hash">#permalink</span>
+        </a>
+      </h3>
+
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          <div class="input-append">
+	<input type="text" placeholder="Filter ..." />
+	<i class="mdi mdi-filter"></i>
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;input-append&quot;&gt;
+	&lt;input type=&quot;text&quot; placeholder=&quot;Filter ...&quot; /&gt;
+	&lt;i class=&quot;mdi mdi-filter&quot;&gt;&lt;/i&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-1.4.4" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink" href="#kssref-1.4.4">
+          <span class="kss-title__ref">1.4.4</span
           >Select
           <span class="kss-title__permalink-hash">#permalink</span>
         </a>
@@ -488,12 +546,12 @@ It is the &quot;leave-behinds&quot; concept :  <a href="http://www.google.com/de
       </div>
 
       </section>
-      <section id="kssref-1.4.4" class="kss-section kss-section--depth-3">
+      <section id="kssref-1.4.5" class="kss-section kss-section--depth-3">
 
     <div class="kss-style">
       <h3 class="kss-title kss-title--level-3">
-        <a class="kss-title__permalink" href="#kssref-1.4.4">
-          <span class="kss-title__ref">1.4.4</span
+        <a class="kss-title__permalink" href="#kssref-1.4.5">
+          <span class="kss-title__ref">1.4.5</span
           >Radio buttons
           <span class="kss-title__permalink-hash">#permalink</span>
         </a>
@@ -511,23 +569,47 @@ It is the &quot;leave-behinds&quot; concept :  <a href="http://www.google.com/de
           Example
         </div>
         <div class="kss-modifier__example">
-          <input type="radio" name"radioName" value="option A" />option A
- <input type="radio" name"radioName" value="option B" />option B
+          <form>
+	<div class="wfm-radio">
+       <input type="radio" id="radio1" name="radioName" value="Value1" />
+		<label for="radio1">
+			<span>This</span>
+		</label>
+	</div>
+	<div class="wfm-radio">
+       <input type="radio" id="radio2" name="radioName" value="Value2"/>
+		<label for="radio2">
+			<span>That</span>
+		</label>
+	</div>
+</form>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;input type=&quot;radio&quot; name&quot;radioName&quot; value=&quot;option A&quot; /&gt;option A
- &lt;input type=&quot;radio&quot; name&quot;radioName&quot; value=&quot;option B&quot; /&gt;option B</code></pre>
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form&gt;
+	&lt;div class=&quot;wfm-radio&quot;&gt;
+       &lt;input type=&quot;radio&quot; id=&quot;radio1&quot; name=&quot;radioName&quot; value=&quot;Value1&quot; /&gt;
+		&lt;label for=&quot;radio1&quot;&gt;
+			&lt;span&gt;This&lt;/span&gt;
+		&lt;/label&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;wfm-radio&quot;&gt;
+       &lt;input type=&quot;radio&quot; id=&quot;radio2&quot; name=&quot;radioName&quot; value=&quot;Value2&quot;/&gt;
+		&lt;label for=&quot;radio2&quot;&gt;
+			&lt;span&gt;That&lt;/span&gt;
+		&lt;/label&gt;
+	&lt;/div&gt;
+&lt;/form&gt;</code></pre>
       </div>
 
       </section>
-      <section id="kssref-1.4.5" class="kss-section kss-section--depth-3">
+      <section id="kssref-1.4.6" class="kss-section kss-section--depth-3">
 
     <div class="kss-style">
       <h3 class="kss-title kss-title--level-3">
-        <a class="kss-title__permalink" href="#kssref-1.4.5">
-          <span class="kss-title__ref">1.4.5</span
+        <a class="kss-title__permalink" href="#kssref-1.4.6">
+          <span class="kss-title__ref">1.4.6</span
           >Checkboxes
           <span class="kss-title__permalink-hash">#permalink</span>
         </a>
@@ -545,14 +627,34 @@ It is the &quot;leave-behinds&quot; concept :  <a href="http://www.google.com/de
           Example
         </div>
         <div class="kss-modifier__example">
-          <input type="checkbox" name"checkName" value="option A" />option A
- <input type="checkbox" name"checkName" value="option B" />option B
+               <div class="wfm-slider">
+       <input type="checkbox" id="slide1" />
+		<label for="slide1">
+			<span>Toggle</span>
+		</label>
+     </div>
+	<div class="wfm-checkbox">
+       <input type="checkbox" id="check1" />
+		<label for="check1">
+			<span>Check</span>
+		</label>
+	</div>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;input type=&quot;checkbox&quot; name&quot;checkName&quot; value=&quot;option A&quot; /&gt;option A
- &lt;input type=&quot;checkbox&quot; name&quot;checkName&quot; value=&quot;option B&quot; /&gt;option B</code></pre>
+        <pre class="prettyprint linenums lang-html"><code data-language="html">     &lt;div class=&quot;wfm-slider&quot;&gt;
+       &lt;input type=&quot;checkbox&quot; id=&quot;slide1&quot; /&gt;
+		&lt;label for=&quot;slide1&quot;&gt;
+			&lt;span&gt;Toggle&lt;/span&gt;
+		&lt;/label&gt;
+     &lt;/div&gt;
+	&lt;div class=&quot;wfm-checkbox&quot;&gt;
+       &lt;input type=&quot;checkbox&quot; id=&quot;check1&quot; /&gt;
+		&lt;label for=&quot;check1&quot;&gt;
+			&lt;span&gt;Check&lt;/span&gt;
+		&lt;/label&gt;
+	&lt;/div&gt;</code></pre>
       </div>
 
       </section>
@@ -562,7 +664,7 @@ It is the &quot;leave-behinds&quot; concept :  <a href="http://www.google.com/de
       <h2 class="kss-title kss-title--level-2">
         <a class="kss-title__permalink" href="#kssref-1.5">
           <span class="kss-title__ref">1.5</span
-          >Navbar
+          >Navbars
           <span class="kss-title__permalink-hash">#permalink</span>
         </a>
       </h2>
@@ -588,6 +690,10 @@ It is the &quot;leave-behinds&quot; concept :  <a href="http://www.google.com/de
       </h3>
 
 
+      <div class="kss-description">
+        <p>TODO</p>
+
+      </div>
     </div>
 
       <div class="kss-modifier__wrapper">
@@ -595,15 +701,125 @@ It is the &quot;leave-behinds&quot; concept :  <a href="http://www.google.com/de
           Example
         </div>
         <div class="kss-modifier__example">
-          <div class="navbar navbar-default navbar-static-top">
- <div class="container"><div class="navbar-header"><a class="navbar-brand">Teleopti WFM</a></div></div>
+          <div class="material-depth-1 navbar navbar-default">
+ <div class="container">
+	<div class="navbar-header">
+		<div class="content">
+			<span class="brand">Teleopti WFM</span>
+			<span class="breadbin">
+				<a href="#" class="crumb">Settings ></a>
+				<a href="#" class="crumb">Options</a>
+			</span>
+			<span class="right-actions">
+				<a href="#"><i class="mdi mdi-logout"></i></a>
+			</span>
+		</div>
+	</div>
+</div>
 </div>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;navbar navbar-default navbar-static-top&quot;&gt;
- &lt;div class=&quot;container&quot;&gt;&lt;div class=&quot;navbar-header&quot;&gt;&lt;a class=&quot;navbar-brand&quot;&gt;Teleopti WFM&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;material-depth-1 navbar navbar-default&quot;&gt;
+ &lt;div class=&quot;container&quot;&gt;
+	&lt;div class=&quot;navbar-header&quot;&gt;
+		&lt;div class=&quot;content&quot;&gt;
+			&lt;span class=&quot;brand&quot;&gt;Teleopti WFM&lt;/span&gt;
+			&lt;span class=&quot;breadbin&quot;&gt;
+				&lt;a href=&quot;#&quot; class=&quot;crumb&quot;&gt;Settings &gt;&lt;/a&gt;
+				&lt;a href=&quot;#&quot; class=&quot;crumb&quot;&gt;Options&lt;/a&gt;
+			&lt;/span&gt;
+			&lt;span class=&quot;right-actions&quot;&gt;
+				&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;mdi mdi-logout&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+			&lt;/span&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-1.5.2" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink" href="#kssref-1.5.2">
+          <span class="kss-title__ref">1.5.2</span
+          >Headers
+          <span class="kss-title__permalink-hash">#permalink</span>
+        </a>
+      </h3>
+
+
+      <div class="kss-description">
+        <p>The first header is used to indicate a new area or panel, any headers within that panel will have the second header.</p>
+
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          <div class="wfm-block sub-header">
+First header title
+</div>
+<div class="wfm-block bottom-header">
+Second header title
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;wfm-block sub-header&quot;&gt;
+First header title
+&lt;/div&gt;
+&lt;div class=&quot;wfm-block bottom-header&quot;&gt;
+Second header title
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-1.5.3" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink" href="#kssref-1.5.3">
+          <span class="kss-title__ref">1.5.3</span
+          >Header group
+          <span class="kss-title__permalink-hash">#permalink</span>
+        </a>
+      </h3>
+
+
+      <div class="kss-description">
+        <p>The first header is used to indicate a new area or panel, any headers within that panel will have the second header.</p>
+
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          <div class="wfm-block sub-header">
+First header title
+</div>
+<div class="wfm-block bottom-header">
+Second header title
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;wfm-block sub-header&quot;&gt;
+First header title
+&lt;/div&gt;
+&lt;div class=&quot;wfm-block bottom-header&quot;&gt;
+Second header title
 &lt;/div&gt;</code></pre>
       </div>
 
@@ -848,12 +1064,12 @@ In general, providing ways to filter and sort on tables, lists, grid is good.</p
           Example
         </div>
         <div class="kss-modifier__example">
-          Markup:
+          <progress class="progress-bar demo"></progress>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">Markup:</code></pre>
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;progress class=&quot;progress-bar demo&quot;&gt;&lt;/progress&gt;</code></pre>
       </div>
 
       </section>
@@ -863,16 +1079,20 @@ In general, providing ways to filter and sort on tables, lists, grid is good.</p
       <h2 class="kss-title kss-title--level-2">
         <a class="kss-title__permalink" href="#kssref-1.10">
           <span class="kss-title__ref">1.10</span
-          >Alerts
+          >Notices
           <span class="kss-title__permalink-hash">#permalink</span>
         </a>
       </h2>
 
 
       <div class="kss-description">
-        <p>There are several different error markers. The default one is used to provide information to the user.
-The warning notice should be used to alert the user that something have to be done before they can continue.
-The error notice should only be triggered when something goes wrong in the background.</p>
+        <p>There are several different notice markers:</p>
+<ul>
+<li>The default one is used to provide information to the user. </br></li>
+<li>Details are never shown alone, but rather beneath one of the others. </br></li>
+<li>The warning notice should be used to alert the user that something have to be done before they can continue.</br></li>
+<li>The error notice should only be triggered when something goes wrong in the background.</li>
+</ul>
 
       </div>
     </div>
@@ -882,42 +1102,18 @@ The error notice should only be triggered when something goes wrong in the backg
           Example
         </div>
         <div class="kss-modifier__example">
-          <section class="expandable">
-	<input id="ac-1" name="accordion-1" type="checkbox" checked="false">
-	<label for="ac-1" class="main-row notice-default">This is a default notice. <span>></span></label>
-	<article class="ac-small">
-		<div class="main-row notice-detail">Did you know that this can be expanded to show details?</div>
-		<div class="main-row notice-detail">Well you do now</div>
-	</article>
-</section>
-<section class="expandable">
-	<input id="ac-2" name="accordion-2" type="checkbox" checked="false">
-	<label for="ac-2" class="main-row notice-warning">Hey, have a look at this warning notice.<span>></span></label>
-	<article class="ac-small">
-		<div class="main-row notice-detail">Agen Lisas contract could not be fulfilled.</div>
-	</article>
-</section>
-<div class="main-row notice-error">Something triggered this error notice.</div>
+          <div class="notice default">Hello, let me tell you about notice blocks.<span>></span></div>
+<div class="notice detail">I was expanded to show details.<span>></span></div>
+<div class="notice warning">Make sure to read all of the styleguide.<span>></span></div>
+<div class="notice error">Something triggered this error notice.<span>></span></div>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;section class=&quot;expandable&quot;&gt;
-	&lt;input id=&quot;ac-1&quot; name=&quot;accordion-1&quot; type=&quot;checkbox&quot; checked=&quot;false&quot;&gt;
-	&lt;label for=&quot;ac-1&quot; class=&quot;main-row notice-default&quot;&gt;This is a default notice. &lt;span&gt;&gt;&lt;/span&gt;&lt;/label&gt;
-	&lt;article class=&quot;ac-small&quot;&gt;
-		&lt;div class=&quot;main-row notice-detail&quot;&gt;Did you know that this can be expanded to show details?&lt;/div&gt;
-		&lt;div class=&quot;main-row notice-detail&quot;&gt;Well you do now&lt;/div&gt;
-	&lt;/article&gt;
-&lt;/section&gt;
-&lt;section class=&quot;expandable&quot;&gt;
-	&lt;input id=&quot;ac-2&quot; name=&quot;accordion-2&quot; type=&quot;checkbox&quot; checked=&quot;false&quot;&gt;
-	&lt;label for=&quot;ac-2&quot; class=&quot;main-row notice-warning&quot;&gt;Hey, have a look at this warning notice.&lt;span&gt;&gt;&lt;/span&gt;&lt;/label&gt;
-	&lt;article class=&quot;ac-small&quot;&gt;
-		&lt;div class=&quot;main-row notice-detail&quot;&gt;Agen Lisas contract could not be fulfilled.&lt;/div&gt;
-	&lt;/article&gt;
-&lt;/section&gt;
-&lt;div class=&quot;main-row notice-error&quot;&gt;Something triggered this error notice.&lt;/div&gt;</code></pre>
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;notice default&quot;&gt;Hello, let me tell you about notice blocks.&lt;span&gt;&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;notice detail&quot;&gt;I was expanded to show details.&lt;span&gt;&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;notice warning&quot;&gt;Make sure to read all of the styleguide.&lt;span&gt;&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;notice error&quot;&gt;Something triggered this error notice.&lt;span&gt;&gt;&lt;/span&gt;&lt;/div&gt;</code></pre>
       </div>
 
       </section>
@@ -992,6 +1188,146 @@ The error notice should only be triggered when something goes wrong in the backg
         <a class="kss-title__permalink" href="#kssref-1.13">
           <span class="kss-title__ref">1.13</span
           >Context menus
+          <span class="kss-title__permalink-hash">#permalink</span>
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>Context menus must be used carefully : they should be minimalistic (5 actions maximum) maybe with icons (?)</p>
+
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          Markup:
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">Markup:</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-1.14" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-1.14">
+          <span class="kss-title__ref">1.14</span
+          >Accordions
+          <span class="kss-title__permalink-hash">#permalink</span>
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>Accordions can hide a number of wfm-blocks, how do we load them all in a good way TODO</p>
+
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          <form>
+<section class="wfm-accordion">
+<div>
+	<input id="ac-1" name="accordion-1" type="radio" checked="true">
+	<label for="ac-1">Header 1</label>
+		<article>
+			<div>
+				<input id="ac-1-1" name="accordion-1-1" type="radio">
+				<label for="ac-1-1" class="sub-label">Header 1-1</label>
+				<article>
+					<div class="wfm-block">First things first</div>
+					<div class="wfm-block">And let me tell you</div>
+				</article>
+			</div>
+			<div>
+				<input id="ac-1-2" name="accordion-1-2" type="radio">
+				<label for="ac-1-2" class="sub-label">Header 1-2</label>
+				<article>
+					<div class="wfm-block">Something else</div>
+				</article>
+			</div>
+		</article>
+	</div>
+<div>
+	<input id="ac-2" name="accordion-1" type="radio">
+	<label for="ac-2">Header 2</label>
+		<article>
+			<div class="wfm-block">And let me tell you</div>
+		</article>
+</div>
+<div>
+	<input id="ac-3" name="accordion-1" type="radio">
+	<label for="ac-3">Header 3</label>
+		<article>
+			<div class="wfm-block">Thats it</div>
+		</article>
+</div>
+</section>
+</form>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form&gt;
+&lt;section class=&quot;wfm-accordion&quot;&gt;
+&lt;div&gt;
+	&lt;input id=&quot;ac-1&quot; name=&quot;accordion-1&quot; type=&quot;radio&quot; checked=&quot;true&quot;&gt;
+	&lt;label for=&quot;ac-1&quot;&gt;Header 1&lt;/label&gt;
+		&lt;article&gt;
+			&lt;div&gt;
+				&lt;input id=&quot;ac-1-1&quot; name=&quot;accordion-1-1&quot; type=&quot;radio&quot;&gt;
+				&lt;label for=&quot;ac-1-1&quot; class=&quot;sub-label&quot;&gt;Header 1-1&lt;/label&gt;
+				&lt;article&gt;
+					&lt;div class=&quot;wfm-block&quot;&gt;First things first&lt;/div&gt;
+					&lt;div class=&quot;wfm-block&quot;&gt;And let me tell you&lt;/div&gt;
+				&lt;/article&gt;
+			&lt;/div&gt;
+			&lt;div&gt;
+				&lt;input id=&quot;ac-1-2&quot; name=&quot;accordion-1-2&quot; type=&quot;radio&quot;&gt;
+				&lt;label for=&quot;ac-1-2&quot; class=&quot;sub-label&quot;&gt;Header 1-2&lt;/label&gt;
+				&lt;article&gt;
+					&lt;div class=&quot;wfm-block&quot;&gt;Something else&lt;/div&gt;
+				&lt;/article&gt;
+			&lt;/div&gt;
+		&lt;/article&gt;
+	&lt;/div&gt;
+&lt;div&gt;
+	&lt;input id=&quot;ac-2&quot; name=&quot;accordion-1&quot; type=&quot;radio&quot;&gt;
+	&lt;label for=&quot;ac-2&quot;&gt;Header 2&lt;/label&gt;
+		&lt;article&gt;
+			&lt;div class=&quot;wfm-block&quot;&gt;And let me tell you&lt;/div&gt;
+		&lt;/article&gt;
+&lt;/div&gt;
+&lt;div&gt;
+	&lt;input id=&quot;ac-3&quot; name=&quot;accordion-1&quot; type=&quot;radio&quot;&gt;
+	&lt;label for=&quot;ac-3&quot;&gt;Header 3&lt;/label&gt;
+		&lt;article&gt;
+			&lt;div class=&quot;wfm-block&quot;&gt;Thats it&lt;/div&gt;
+		&lt;/article&gt;
+&lt;/div&gt;
+&lt;/section&gt;
+&lt;/form&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-1.15" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-1.15">
+          <span class="kss-title__ref">1.15</span
+          >Calendar
           <span class="kss-title__permalink-hash">#permalink</span>
         </a>
       </h2>
