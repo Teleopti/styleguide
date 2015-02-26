@@ -8,6 +8,8 @@
 
 // Topbar
 //
+// TODO
+//
 //Markup:
 //<div class="material-depth-1 navbar navbar-default"> 
 //  <div class="container">
@@ -29,11 +31,16 @@
 //Styleguide 1.5.1
 // 
 
-// Sub header
+// Sub headers
+//
+// The first header is used to indicate a new area or panel, any headers within that panel will have the second header.
 //
 //Markup:
 //<div class="wfm-block sub-header"> 
-// Header title
+//	First header title
+//</div>
+//<div class="wfm-block bottom-header"> 
+//	Second header title
 //</div>
 //
 //Styleguide 1.5.2
@@ -41,7 +48,12 @@
 
 .sub-header{
 	background-color: $blue-500;
-	color:$white;
+	color: $white;
+}
+
+.bottom-header{
+	background-color: $blue-300;
+	color: $gray087;
 }
 
 .navbar {

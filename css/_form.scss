@@ -31,7 +31,7 @@
 //
 //Markup:
 //	<div class="input-append">
-//		<input type="text" placeholder="Search ..." />
+//		<input type="text" placeholder="Filter ..." />
 //		<i class="mdi mdi-filter"></i>
 //	</div>
 //
@@ -129,7 +129,7 @@ select {
 // TODO
 //
 //Markup:
-//	<form action="" class="wfm-radioform">
+//	<form action="">
 //		<div class="wfm-radio">
 //        <input type="radio" id="radio1" name="radioName" value="Value1" />
 //			<label for="radio1">
@@ -198,7 +198,7 @@ select {
 	}
 
 	input[type=radio]:checked ~ label {
-		background-color: $blue-500;
+		background-color: $blue-300;
 	}
 	
 	span{
@@ -211,6 +211,7 @@ select {
 	input[type='checkbox'] {
 		display:none;
 	}
+	
 	label {
 		background-color: $gray-300;
 		width: 25px;
@@ -221,7 +222,8 @@ select {
 		-webkit-transition: background-color .2s ease-in-out;
 		transition: background-color .2s ease-in-out;
 	}
-	label:after {
+	
+	label:before {
 		content: "";
 		display: block;
 		padding-left:5px;
@@ -232,11 +234,12 @@ select {
 		cursor: pointer;
 		position: absolute;
 	}
+	
 	input[type=checkbox]:checked ~ label {
-		background-color: $blue-500;
+		background-color: $blue-300;
 	}
 
-	input[type=checkbox]:checked ~ label:after {
+	input[type=checkbox]:checked ~ label:before {
 		content: "✓";
 	}
 
@@ -280,7 +283,7 @@ select {
 		transition: left .2s ease-in-out;
 	}
 	input[type=checkbox]:checked ~ label {
-		background-color: $blue-500;
+		background-color: $blue-300;
 	}
 
 	input[type=checkbox]:checked ~ label:after {
