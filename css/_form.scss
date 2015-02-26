@@ -79,7 +79,17 @@ input[type='text']{
 }
 
 input[type='radio']{
-	margin: 5px 0;
+	content: "";
+	padding-left:5px;
+	padding-top:2px;
+	width: 20px;
+	height: 20px;
+	color: $white;
+	cursor: pointer;
+}
+
+input[type=radio]:checked ~ label {
+	background-color: $blue-500;
 }
 
 ::-webkit-input-placeholder { /* WebKit browsers */
@@ -119,9 +129,19 @@ select {
 // TODO
 //
 //Markup:
-//	<form action="">
-//		<input type="radio" name="radioName" value="value1"> This<br>
-//		<input type="radio" name="radioName" value="value2"> That
+//	<form action="" class="wfm-radioform">
+//		<div class="wfm-radio">
+//        <input type="radio" id="radio1" name="radioName" value="Value1" />
+//			<label for="radio1">
+//				<span>This</span>
+//			</label>
+//		</div>
+//		<div class="wfm-radio">
+//        <input type="radio" id="radio2" name="radioName" value="Value2"/>
+//			<label for="radio2">
+//				<span>That</span>
+//			</label>
+//		</div>
 //	</form>
 //
 //Styleguide 1.4.5
@@ -132,87 +152,142 @@ select {
 // TODO
 //
 //Markup:
-//      <div class="slider">
+//      <div class="wfm-slider">
 //        <input type="checkbox" id="slide1" />
-//        <label for="slide1"></label>
+//			<label for="slide1">
+//				<span>Toggle</span>
+//			</label>
 //      </div>
 //		<div class="wfm-checkbox">
 //        <input type="checkbox" id="check1" />
-//        <label for="check1"></label>
+//			<label for="check1">
+//				<span>Check</span>
+//			</label>
 //		</div>
 //
 //Styleguide 1.4.6
 //
 
-.wfm-checkbox input[type='checkbox'] {
-	display:none;
-}
-.wfm-checkbox label {
-	background-color: $gray-300;
-	width: 25px;
-	height: 25px;
-	margin:5px;
-	border-radius:4px;
-	text-align:center;
-	-webkit-transition: background-color .2s ease-in-out;
-    transition: background-color .2s ease-in-out;
-}
-.wfm-checkbox label:after {
-	content: "";
-	display: block;
-	padding-left:5px;
-	padding-top:2px;
-	width: 20px;
-	height: 20px;
-	color: $white;
-	cursor: pointer;
-	position: absolute;
-}
-.wfm-checkbox input[type=checkbox]:checked ~ label {
-	background-color: $blue-500;
+.wfm-radio {
+
+	input[type='radio'] {
+		display:none;
+	}
+
+	label {
+		background-color: $gray-300;
+		width: 25px;
+		height: 25px;
+		margin: 5px;
+		border-radius: 50px;
+		text-align:center;
+		-webkit-transition: background-color .2s ease-in-out;
+		transition: background-color .2s ease-in-out;
+	}
+
+	label:after {
+		content: "";
+		display: block;
+		padding-left:5px;
+		padding-top:2px;
+		width: 20px;
+		height: 20px;
+		color: $white;
+		cursor: pointer;
+		position: absolute;
+	}
+
+	input[type=radio]:checked ~ label {
+		background-color: $blue-500;
+	}
+	
+	span{
+		margin-left: 45px;
+	}
 }
 
-.wfm-checkbox input[type=checkbox]:checked ~ label:after {
-	content: "✓";
+.wfm-checkbox {
+
+	input[type='checkbox'] {
+		display:none;
+	}
+	label {
+		background-color: $gray-300;
+		width: 25px;
+		height: 25px;
+		margin: 5px;
+		border-radius: 4px;
+		text-align: center;
+		-webkit-transition: background-color .2s ease-in-out;
+		transition: background-color .2s ease-in-out;
+	}
+	label:after {
+		content: "";
+		display: block;
+		padding-left:5px;
+		padding-top:2px;
+		width: 20px;
+		height: 20px;
+		color: $white;
+		cursor: pointer;
+		position: absolute;
+	}
+	input[type=checkbox]:checked ~ label {
+		background-color: $blue-500;
+	}
+
+	input[type=checkbox]:checked ~ label:after {
+		content: "✓";
+	}
+
+	span{
+		margin-left: 45px;
+	}
 }
 
-.slider{
+.wfm-slider {
+
 	width: 55px;
 	height: 26px;
 	margin: 5px;
 	position: relative;
-}
-.slider input[type='checkbox'] {
-	display:none;
-}
-.slider label {
-	position: absolute;
-	background-color: $gray-300;
-	width: 100%;
-	height: 100%;
-	border-radius: 42px;
-	-webkit-transition: background-color .2s ease-in-out;
-    transition: background-color .2s ease-in-out;
-}
-.slider label:after {
-	content: "";
-	display: block;
-	width: 20px;
-	height: 20px;
-	border-radius: 44px;
-	cursor: pointer;
-	position: absolute;
-	top: 3px;
-	z-index: 1;
-	left: 5px;
-	background-color: $white;
-	-webkit-transition: left .2s ease-in-out;
-    transition: left .2s ease-in-out;
-}
-.slider input[type=checkbox]:checked ~ label {
-	background-color: $blue-500;
-}
 
-.slider input[type=checkbox]:checked ~ label:after {
-	left: 30px;
+	input[type='checkbox'] {
+		display: none;
+	}
+	label {
+		position: absolute;
+		background-color: $gray-300;
+		width: 100%;
+		height: 100%;
+		border-radius: 42px;
+		-webkit-transition: background-color .2s ease-in-out;
+		transition: background-color .2s ease-in-out;
+	}
+	label:after {
+		content: "";
+		display: block;
+		width: 20px;
+		height: 20px;
+		border-radius: 44px;
+		cursor: pointer;
+		position: absolute;
+		top: 3px;
+		z-index: 1;
+		left: 5px;
+		background-color: $white;
+		-webkit-transition: left .2s ease-in-out;
+		transition: left .2s ease-in-out;
+	}
+	input[type=checkbox]:checked ~ label {
+		background-color: $blue-500;
+	}
+
+	input[type=checkbox]:checked ~ label:after {
+		left: 30px;
+	}
+	
+	span{
+		margin-left: 65px;
+	}
 }
