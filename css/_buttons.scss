@@ -58,7 +58,7 @@
 
 .wfm-btn-default {
 	color:$gray087;
-	background-color:#ffffff;
+	background-color:$white;
 	box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.16);
 	
 		&:hover{
@@ -67,7 +67,7 @@
 }
 
 .wfm-btn-primary {
-	color:#ffffff;
+	color:$white;
 	background-color:$blue-500;
 	box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.16);
 	
@@ -81,7 +81,7 @@
 	width:50px;
 	height:50px;
 	border-radius:50%;
-	color:#ffffff;
+	color:$white;
 	background-color:$orange-400;
 	box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.16);
 	
