@@ -7,7 +7,7 @@
 //
 //Markup:
 //<ul class="wfm-list">
-//	<li class="wfm-block wfm-list-item material-depth-1">
+//	<li class="wfm-block material-depth-1">
 //		List Item 1
 //		<div class="wfm-leave-behind">
 //		<span>
@@ -17,7 +17,7 @@
 //		</span>
 //		</div>
 //	</li>
-//	<li class="wfm-block wfm-list-item material-depth-1">
+//	<li class="wfm-block material-depth-1">
 //		List Item 2
 //		<div class="wfm-leave-behind">
 //			<span>
@@ -27,7 +27,7 @@
 //			</span>	
 //		</div>
 //	</li>
-//	<li class="wfm-block wfm-list-item material-depth-1">
+//	<li class="wfm-block material-depth-1">
 //		List Item 3
 //		<div class="wfm-leave-behind">
 //			<span>
@@ -45,13 +45,12 @@
 .wfm-list {
 	padding-left: 0px;
 	list-style: none;
-	margin: 5px;
 	background-color: white;
 }
 
-.wfm-list-item {
+.wfm-list li {
 	cursor: pointer;
-
+	margin-bottom: 10px;
 	/*
 	&:active, &:focus, &:active:hover, &:focus:hover {
 		background-color: $blue-500 !important;
@@ -60,6 +59,9 @@
 
 	&:hover{
 		background-color: $blue-100;
+	}
+	&:last-child{
+		margin-bottom:0;
 	}
 }
 
