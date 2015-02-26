@@ -96,6 +96,7 @@
 }
 
 .notice {
+	@extend .wfm-block;
 	cursor:pointer;
 	color:#111111;
 	display:inline-block;
@@ -141,10 +142,10 @@
 // * The error notice should only be triggered when something goes wrong in the background. 
 //
 //Markup: 
-//	<div class="wfm-block notice default">Hello, let me tell you about notice blocks.<span>></span></div>
-//	<div class="wfm-block notice detail">I was expanded to show details.<span>></span></div>
-//	<div class="wfm-block notice warning">Make sure to read all of the styleguide.<span>></span></div>
-//	<div class="wfm-block notice error">Something triggered this error notice.<span>></span></div>
+//	<div class="notice default">Hello, let me tell you about notice blocks.<span>></span></div>
+//	<div class="notice detail">I was expanded to show details.<span>></span></div>
+//	<div class="notice warning">Make sure to read all of the styleguide.<span>></span></div>
+//	<div class="notice error">Something triggered this error notice.<span>></span></div>
 //	
 //
 //Styleguide 1.10
@@ -170,93 +171,12 @@
 //Styleguide 1.13
 //
 
-// Accordions
+// Calendar
 //
-// Accordions can hide a number of wfm-blocks, how do we load them all in a good way TODO
-//
+// Context menus must be used carefully : they should be minimalistic (5 actions maximum) maybe with icons (?)
+//§
 //Markup:
-//<form>
-//<section class="wfm-accordion">
-//	<div>
-//		<input id="ac-1" name="accordion-1" type="radio" checked="true">
-//		<label for="ac-1" class="wfm-block">Header 1</label>
-//			<article>
-//				<div>
-//					<input id="ac-1-1" name="accordion-1-1" type="radio">
-//					<label for="ac-1-1" class="wfm-block sub-label">Header 1-1</label>
-//					<article>
-//						<div class="wfm-block">First things first</div>
-//						<div class="wfm-block">And let me tell you</div>
-//					</article>
-//				</div>
-//				<div>
-//					<input id="ac-1-2" name="accordion-1-2" type="radio">
-//					<label for="ac-1-2" class="wfm-block sub-label">Header 1-2</label>
-//					<article>
-//						<div class="wfm-block">Something else</div>
-//					</article>
-//				</div>
-//			</article>
-//		</div>
-//	<div>
-//		<input id="ac-2" name="accordion-1" type="radio">
-//		<label for="ac-2" class="wfm-block">Header 2</label>
-//			<article>
-//				<div class="wfm-block">And let me tell you</div>
-//			</article>
-//	</div>
-//	<div>
-//		<input id="ac-3" name="accordion-1" type="radio">
-//		<label for="ac-3" class="wfm-block">Header 3</label>
-//			<article>
-//				<div class="wfm-block">Thats it</div>
-//			</article>
-//	</div>
-//</section>
-//</form>
+//	
 //
-//Styleguide 1.14
+//Styleguide 1.15
 //
-
-/*Acco*/
-.wfm-accordion {
-	width: 100%;
-
-	label {
-		position: relative;
-		z-index: 20;
-		cursor: pointer;
-		color: $white;
-		background-color:$blue-500;
-		margin-bottom:0;
-		border-bottom:1px solid $white;
-		font-weight:inherit;
-	}
-	
-	.sub-label{
-		background-color: $blue-300;
-		color: $gray087;
-	}
-
-	input[type='radio'] {
-		display:none;
-	}
-
-	article {
-		overflow: hidden;
-		position: relative;
-		z-index: 10;
-		max-height: 0;
-		-webkit-transition: max-height 0.8s;
-		-moz-transition: max-height 0.8s;
-		transition: max-height 0.8s;
-		overflow: hidden;
-	}
-
-	input:checked ~ article {
-		max-height: 500px;
-		-webkit-transition: max-height 0.8s;
-		-moz-transition: max-height 0.8s;
-		transition: max-height 0.8s;
-	}
-}

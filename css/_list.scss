@@ -7,7 +7,7 @@
 //
 //Markup:
 //<ul class="wfm-list">
-//	<li class="wfm-block material-depth-1">
+//	<li>
 //		List Item 1
 //		<div class="wfm-leave-behind">
 //		<span>
@@ -17,7 +17,7 @@
 //		</span>
 //		</div>
 //	</li>
-//	<li class="wfm-block material-depth-1">
+//	<li>
 //		List Item 2
 //		<div class="wfm-leave-behind">
 //			<span>
@@ -27,7 +27,7 @@
 //			</span>	
 //		</div>
 //	</li>
-//	<li class="wfm-block material-depth-1">
+//	<li class="active">
 //		List Item 3
 //		<div class="wfm-leave-behind">
 //			<span>
@@ -46,11 +46,18 @@
 	padding-left: 0px;
 	list-style: none;
 	background-color: white;
+	
+	.active{
+		border-left: 2px solid blue;
+		background-color: $white;
+	}
 }
 
 .wfm-list li {
+	@extend .wfm-block;
 	cursor: pointer;
-	margin-bottom: 10px;
+	overflow: hidden;
+	background-color:$gray-100;
 	/*
 	&:active, &:focus, &:active:hover, &:focus:hover {
 		background-color: $blue-500 !important;
@@ -65,18 +72,20 @@
 	}
 }
 
+
+
 .wfm-leave-behind {
 	width: 0;
 	float: right;
 	overflow: hidden;
-	height: 45px;
 	margin-top: -12px;
 	background-color: $gray012;
 	transition: $trasnition-timing;
 	-webkit-box-shadow: inset 0 2px 5px 0 rgba(0, 0, 0, 0.16);
 	-moz-box-shadow: inset 0 2px 5px 0 rgba(0, 0, 0, 0.16);
 	box-shadow: inset 0 2px 5px 0 rgba(0, 0, 0, 0.16);
-	padding-top: 10px;
+	padding-top: 12px;
+	padding-bottom:5px;
 	
 	span{
 		white-space:nowrap;
@@ -107,6 +116,6 @@
 	} 
 }
 
-.wfm-list-item:hover > .wfm-leave-behind {
+.wfm-list li:hover > .wfm-leave-behind {
 	width: 110px;
 }
