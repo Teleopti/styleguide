@@ -1,5 +1,5 @@
 ﻿
-// Navbar
+// Navbars
 //
 // In WFM, the navbar is at top of the page (based on bootstrap right now)
 //
@@ -8,10 +8,101 @@
 
 // Topbar
 //
+// TODO
+//
 //Markup:
-//<div class="navbar navbar-default navbar-static-top"> 
-//  <div class="container"><div class="navbar-header"><a class="navbar-brand">Teleopti WFM</a></div></div> 
+//<div class="material-depth-1 navbar navbar-default"> 
+//  <div class="container">
+//		<div class="navbar-header">
+//			<div class="content">
+//				<span class="brand">Teleopti WFM</span>
+//				<span class="breadbin">
+//					<a href="#" class="crumb">Settings ></a>
+//					<a href="#" class="crumb">Options</a>
+//				</span>
+//				<span class="right-actions">
+//					<a href="#"><i class="mdi mdi-logout"></i></a>
+//				</span>
+//			</div>
+//		</div>
+//	</div> 
 //</div>
 //
 //Styleguide 1.5.1
 // 
+
+// Headers
+//
+// The first header is used to indicate a new area or panel, any headers within that panel will have the second header.
+//
+//Markup:
+//<div class="wfm-block sub-header"> 
+//	First header title
+//</div>
+//<div class="wfm-block bottom-header"> 
+//	Second header title
+//</div>
+//
+//Styleguide 1.5.2
+// 
+
+// Header group
+//
+// The first header is used to indicate a new area or panel, any headers within that panel will have the second header.
+//
+//Markup:
+//<div class="wfm-block sub-header"> 
+//	First header title
+//</div>
+//<div class="wfm-block bottom-header"> 
+//	Second header title
+//</div>
+//
+//Styleguide 1.5.3
+// 
+
+.sub-header{
+	background-color: $blue-500;
+	color: $white;
+}
+
+.bottom-header{
+	background-color: $blue-300;
+	color: $gray087;
+}
+
+.navbar {
+    background-color: $blue-500;
+    border-radius:0;
+	border: none;
+	margin-bottom:0;
+	
+	a{
+		color: $white !important;
+		text-decoration:none;
+		display:inline-block;
+		font-size: 14px;
+	}
+	
+	.brand{
+		color: $white !important;
+	}
+	
+	.content {
+		height: 50px;
+		padding: 15px;
+		font-size: 18px;
+		line-height: 20px;
+		margin-left: -15px;
+	}
+	
+	.breadbin{
+		margin-left:30px;
+	}
+	
+	.right-actions{
+		position:absolute;
+		right:5px;
+		top:30%;
+	}
+}

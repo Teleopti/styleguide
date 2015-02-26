@@ -23,6 +23,12 @@
     border-radius: 2px;
 }
 
+
+.wfm-block {
+	padding:5px;
+	width:100%;
+} 
+
 .material-block-header {
     min-height: 60px;
     border-bottom: 1px solid $gray-300;
@@ -36,15 +42,6 @@
 
 .material-title {
     color: rgba(0,0,0,0.54);
-}
-
-.navbar {
-    background-color: $blue-500;
-    border :none;
-
-	a{
-		color: white !important;
-	}
 }
 
 .success {
@@ -98,64 +95,32 @@
 	border-bottom: 1px solid #ddd;
 }
 
-.main-row {
-	padding-left:5px;
-	padding-top:12px;
-	padding-bottom:12px;
+.notice {
+	@extend .wfm-block;
 	cursor:pointer;
-	width:100%;
-	margin:5px 0;
-} 
-
-.notice-default{
 	color:#111111;
-	background-color:$blue-100;
-}
+	display:inline-block;
 
-.notice-warning{
-	color:#111111;
-	background-color:$orange-600;
-}
+	&.default{
+		background-color:$blue-100;
+	}
 
-.notice-error{
-	color:#ffffff;
-	background-color:$red-600;
-}
+	&.warning{
+		background-color:$orange-600;
+	}
 
-.notice-detail{
-	color:#111111;
-	background: #efefef;
-}
+	&.error{
+		background-color:$red-600;
+	}
 
-.expandable input {
-    display: none;
-}
-
-.expandable label {
-	font-weight:inherit;
+	&.detail{
+		background: #efefef;
+	}
 	
 	span{
 		float:right;
-		margin-right:10px;
+		padding:0 10px;
 	}
-}
-
-.expandable article {
-	width:100%;
-    margin-top: -1px;
-    overflow: hidden;
-    height: 0;
-    position: relative;
-    z-index: 10;
-}
-
-.expandable input:checked ~ article.ac-small {
-    height: auto;
-}
-.expandable input:checked ~ label span {
-    -ms-transform: rotate(90deg); /* IE 9 */
-    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
-    transform: rotate(90deg);
 }
 
 // Loading bar
@@ -163,34 +128,65 @@
 // TODO
 //
 //Markup:
-//	
+//<progress class="progress-bar demo"></progress>
 //
 //Styleguide 1.9
 //
 
-// Alerts
+body {
+    background-color: #aaa;
+    padding: 10px;
+}
+
+.progress-bar {
+    background: $blue-100;
+    height: 5px;
+    width: 0;
+	margin:0;
+    max-width: 100%;
+	border-radius:0!important;
+}
+
+.demo{
+    -webkit-animation: demo 2s 1 forwards;
+    -moz-animation: demo 2s 1 forwards;
+    -ms-animation: demo 2s 1 forwards;
+    animation: demo 2s 1 forwards;
+}
+
+@-webkit-keyframes demo { 
+    from { }
+    to { width: 100% }
+}
+
+@-moz-keyframes demo { 
+    from { }
+    to { width: 100% }
+}
+
+@-ms-keyframes demo { 
+    from { }
+    to { width: 100% }
+}
+
+@keyframes demo { 
+    from { }
+    to { width: 100% }
+}
+
+// Notices
 //
-// There are several different error markers. The default one is used to provide information to the user. 
-// The warning notice should be used to alert the user that something have to be done before they can continue.
-// The error notice should only be triggered when something goes wrong in the background. 
+// There are several different notice markers:
+// * The default one is used to provide information to the user. </br>
+// * Details are never shown alone, but rather beneath one of the others. </br>
+// * The warning notice should be used to alert the user that something have to be done before they can continue.</br>
+// * The error notice should only be triggered when something goes wrong in the background. 
 //
 //Markup: 
-//<section class="expandable">
-//		<input id="ac-1" name="accordion-1" type="checkbox" checked="false">
-//		<label for="ac-1" class="main-row notice-default">This is a default notice. <span>></span></label>
-//		<article class="ac-small">
-//			<div class="main-row notice-detail">Did you know that this can be expanded to show details?</div>
-//			<div class="main-row notice-detail">Well you do now</div>
-//		</article>
-//</section>
-//<section class="expandable">
-//		<input id="ac-2" name="accordion-2" type="checkbox" checked="false">
-//		<label for="ac-2" class="main-row notice-warning">Hey, have a look at this warning notice.<span>></span></label>
-//		<article class="ac-small">
-//			<div class="main-row notice-detail">Agen Lisas contract could not be fulfilled.</div>
-//		</article>
-//</section>
-//<div class="main-row notice-error">Something triggered this error notice.</div>
+//	<div class="notice default">Hello, let me tell you about notice blocks.<span>></span></div>
+//	<div class="notice detail">I was expanded to show details.<span>></span></div>
+//	<div class="notice warning">Make sure to read all of the styleguide.<span>></span></div>
+//	<div class="notice error">Something triggered this error notice.<span>></span></div>
 //	
 //
 //Styleguide 1.10

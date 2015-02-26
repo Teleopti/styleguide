@@ -21,14 +21,15 @@
 //Orange
 //	<ul class="swatch-list">
 //		<li class="spacer material-depth-2 orange-400-swatch"></li>
+//		<li class="spacer material-depth-2 red-600-swatch"></li>
 //	</ul>
 //
 //Gray
 //	<ul class="swatch-list">
-//		<li class="spacer material-depth-2 gray-054-swatch"> </li>
-//		<li class="spacer material-depth-2 gray-300-swatch"></li>
 //		<li class="spacer material-depth-2 gray-012-swatch"></li>
+//		<li class="spacer material-depth-2 gray-300-swatch"></li>
 //		<li class="spacer material-depth-2 gray-026-swatch"></li>
+//		<li class="spacer material-depth-2 gray-054-swatch"> </li>
 //		<li class="spacer material-depth-2 gray-087-swatch"></li>
 //		<li class="spacer material-depth-2 gray-100-swatch"></li>
 //	</ul>
@@ -48,6 +49,8 @@ $gray026: rgba(0,0,0,0.26);
 $gray054: rgba(0,0,0,0.54);
 $gray087: rgba(0,0,0,0.87);
 $gray100: rgba(0,0,0,1);
+$white: #ffffff;
+
 $full-padding: 10px;
 $half-padding: 3px;
 $trasnition-timing: all 0.5s ease;
@@ -66,6 +69,9 @@ $trasnition-timing: all 0.5s ease;
 	}
 	.orange-400-swatch {
 			background:$orange-400!important;
+	}
+	.red-600-swatch {
+			background:$red-600!important;
 	}
 	.gray-054-swatch {
 			background:$gray054!important;

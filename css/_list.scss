@@ -7,27 +7,33 @@
 //
 //Markup:
 //<ul class="wfm-list">
-//	<li class="wfm-list-item material-depth-1">
+//	<li>
 //		List Item 1
-//		<div class="wfm-list-menu pull-right">
-//			<span>
+//		<div class="wfm-leave-behind">
+//		<span>
+//			<p>
 //				Options
-//			</span>
+//			</p>
+//		</span>
 //		</div>
 //	</li>
-//	<li class="wfm-list-item material-depth-1">
+//	<li>
 //		List Item 2
-//		<div class="wfm-list-menu pull-right">
+//		<div class="wfm-leave-behind">
 //			<span>
-//				Options
-//			</span>
+//				<i class="mdi mdi-content-copy"></i>
+//				<i class="mdi mdi-pencil"></i>
+//				<i class="mdi mdi-delete"></i>
+//			</span>	
 //		</div>
 //	</li>
-//	<li class="wfm-list-item material-depth-1">
+//	<li class="active">
 //		List Item 3
-//		<div class="wfm-list-menu pull-right">
+//		<div class="wfm-leave-behind">
 //			<span>
-//				Options
+//				<p>
+//					Right behind
+//				</p>
 //			</span>
 //		</div>
 //	</li>
@@ -39,30 +45,64 @@
 .wfm-list {
 	padding-left: 0px;
 	list-style: none;
-	margin: 5px;
+	background-color: white;
+	
+	.active{
+		border-left: 2px solid blue;
+		background-color: $white;
+	}
 }
 
-.wfm-list-item {
-	margin-bottom: 10px;
-	padding: $full-padding;
+.wfm-list li {
+	@extend .wfm-block;
 	cursor: pointer;
-
+	overflow: hidden;
+	background-color:$gray-100;
+	/*
 	&:active, &:focus, &:active:hover, &:focus:hover {
-	background-color: $blue-500 !important;
+		background-color: $blue-500 !important;
 	}
+	*/
 
 	&:hover{
 		background-color: $blue-100;
 	}
+	&:last-child{
+		margin-bottom:0;
+	}
 }
 
-.wfm-list-menu {
+
+
+.wfm-leave-behind {
 	width: 0;
 	float: right;
 	overflow: hidden;
-	display: inline-block;
+	margin-top: -12px;
+	background-color: $gray012;
 	transition: $trasnition-timing;
-	height: 18px;
+	-webkit-box-shadow: inset 0 2px 5px 0 rgba(0, 0, 0, 0.16);
+	-moz-box-shadow: inset 0 2px 5px 0 rgba(0, 0, 0, 0.16);
+	box-shadow: inset 0 2px 5px 0 rgba(0, 0, 0, 0.16);
+	padding-top: 12px;
+	padding-bottom:5px;
+	
+	span{
+		white-space:nowrap;
+	}
+	
+	i{	
+		positon: justify;
+		padding-left: 5px;
+		padding-top: 2px;
+		font-size: 18px;
+		margin: 0 5px;
+	}
+	
+	p{
+		padding-left:5px;
+		margin:0 5px;
+	}
 }
 
 .wfm-list-item-selected {
@@ -72,10 +112,10 @@
 		fill: white!important;
 	}
 	.wfm-list-menu {
-		width: 90px;
+		width: 110px;
 	} 
 }
 
-.wfm-list-item:hover > .wfm-list-menu {
-	width: 90px;
+.wfm-list li:hover > .wfm-leave-behind {
+	width: 110px;
 }
