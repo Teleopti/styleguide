@@ -5,22 +5,24 @@
 //Markup:
 //<div class="tree">
 //	<div ui-tree>
-//		<ol class="tree-line angular-ui-tree-nodes">
+//		<ol class="angular-ui-tree-nodes">
 //			<li ui-tree-node>
 //				<div>
-//					<i class="mdi mdi-menu-down"></i> Parent
+//					Parent
 //					<ol>
-//						<li class="angular-ui-tree-handle"> <i class="mdi mdi-menu-down"></i> child </li>
 //						<li class="angular-ui-tree-handle"> child </li>
-//						<li class="angular-ui-tree-handle"> child </li>
+//						<ol>
+//							<li class="angular-ui-tree-handle"> child </li>
+//							<li class="angular-ui-tree-handle"> child </li>
+//						</ol>
 //					</ol>
 //				</div>
 //			</li>
 //			<li ui-tree-node>
 //				<div>
-//					<i class="mdi mdi-menu-down"></i> Parent
+//					Parent
 //					<ol>
-//						<li class="angular-ui-tree-handle" flex="row" flex> <div flex><i class="mdi mdi-menu-down"></i></div> <div flex>child</div> </li>
+//						<li class="angular-ui-tree-handle active-tree">child</li>
 //					</ol>
 //				</div>
 //			</li>
@@ -35,23 +37,37 @@
 .tree {
 	max-height: 800px;
 	overflow-y: auto;
-	padding-bottom: 5px;
 	background-color: #f5f5f5;
 	box-shadow: inset  0px 2px 5px 0px rgba(0, 0, 0, 0.16);
 	vertical-align: middle;
-}
 
-.tree ol { 
-	list-style: none;
-}
 
-.tree-line div{
-	padding: $half-padding;
-	margin: 2px;
-}
+	ol { 
+		@extend .wfm-block;
+		list-style: none;
+	}
 
-.tree i {
-	font-size:32px;
+	li{
+		@extend .wfm-block;
+		border-left: 2px solid $blue-500;
+
+		.active-tree{
+			background-color:$white;
+		}
+		
+		.active-tree:after{
+			float:right;
+			height: 25px;
+			width: 25px;
+			border-radius: 50px;
+			text-align: center;
+			color: $white;
+			margin-top:-2px;
+			padding-top: 2px;
+			background-color: $blue-300;
+			content:"✓";
+		}
+	}
 }
 
 .angular-ui-tree-handle {
