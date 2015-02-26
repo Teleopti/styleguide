@@ -136,6 +136,7 @@
 //
 // There are several different notice markers:
 // * The default one is used to provide information to the user. </br>
+// * Details are never shown alone, but rather beneath one of the others. </br>
 // * The warning notice should be used to alert the user that something have to be done before they can continue.</br>
 // * The error notice should only be triggered when something goes wrong in the background. 
 //
@@ -174,7 +175,88 @@
 // Accordions can hide a number of wfm-blocks, how do we load them all in a good way TODO
 //
 //Markup:
-//	
+//<form>
+//<section class="wfm-accordion">
+//	<div>
+//		<input id="ac-1" name="accordion-1" type="radio" checked="true">
+//		<label for="ac-1" class="wfm-block">Header 1</label>
+//			<article>
+//				<div>
+//					<input id="ac-1-1" name="accordion-1-1" type="radio">
+//					<label for="ac-1-1" class="wfm-block sub-label">Header 1-1</label>
+//					<article>
+//						<div class="wfm-block">First things first</div>
+//						<div class="wfm-block">And let me tell you</div>
+//					</article>
+//				</div>
+//				<div>
+//					<input id="ac-1-2" name="accordion-1-2" type="radio">
+//					<label for="ac-1-2" class="wfm-block sub-label">Header 1-2</label>
+//					<article>
+//						<div class="wfm-block">Something else</div>
+//					</article>
+//				</div>
+//			</article>
+//		</div>
+//	<div>
+//		<input id="ac-2" name="accordion-1" type="radio">
+//		<label for="ac-2" class="wfm-block">Header 2</label>
+//			<article>
+//				<div class="wfm-block">And let me tell you</div>
+//			</article>
+//	</div>
+//	<div>
+//		<input id="ac-3" name="accordion-1" type="radio">
+//		<label for="ac-3" class="wfm-block">Header 3</label>
+//			<article>
+//				<div class="wfm-block">Thats it</div>
+//			</article>
+//	</div>
+//</section>
+//</form>
 //
 //Styleguide 1.14
 //
+
+/*Acco*/
+.wfm-accordion {
+	width: 100%;
+
+	label {
+		position: relative;
+		z-index: 20;
+		cursor: pointer;
+		color: $white;
+		background-color:$blue-500;
+		margin-bottom:0;
+		border-bottom:1px solid $white;
+		font-weight:inherit;
+	}
+	
+	.sub-label{
+		background-color: $blue-300;
+		color: $gray087;
+	}
+
+	input[type='radio'] {
+		display:none;
+	}
+
+	article {
+		overflow: hidden;
+		position: relative;
+		z-index: 10;
+		max-height: 0;
+		-webkit-transition: max-height 0.8s;
+		-moz-transition: max-height 0.8s;
+		transition: max-height 0.8s;
+		overflow: hidden;
+	}
+
+	input:checked ~ article {
+		max-height: 500px;
+		-webkit-transition: max-height 0.8s;
+		-moz-transition: max-height 0.8s;
+		transition: max-height 0.8s;
+	}
+}

@@ -78,20 +78,6 @@ input[type='text']{
   }
 }
 
-input[type='radio']{
-	content: "";
-	padding-left:5px;
-	padding-top:2px;
-	width: 20px;
-	height: 20px;
-	color: $white;
-	cursor: pointer;
-}
-
-input[type=radio]:checked ~ label {
-	background-color: $blue-500;
-}
-
 ::-webkit-input-placeholder { /* WebKit browsers */
   color: $gray026;
 }
@@ -129,7 +115,7 @@ select {
 // TODO
 //
 //Markup:
-//	<form action="">
+//	<form>
 //		<div class="wfm-radio">
 //        <input type="radio" id="radio1" name="radioName" value="Value1" />
 //			<label for="radio1">
@@ -169,7 +155,6 @@ select {
 //
 
 .wfm-radio {
-
 	input[type='radio'] {
 		display:none;
 	}
