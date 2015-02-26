@@ -128,10 +128,51 @@
 // TODO
 //
 //Markup:
-//	
+//<progress class="progress-bar demo"></progress>
 //
 //Styleguide 1.9
 //
+
+body {
+    background-color: #aaa;
+    padding: 10px;
+}
+
+.progress-bar {
+    background: $blue-100;
+    height: 5px;
+    width: 0;
+	margin:0;
+    max-width: 100%;
+	border-radius:0!important;
+}
+
+.demo{
+    -webkit-animation: demo 2s 1 forwards;
+    -moz-animation: demo 2s 1 forwards;
+    -ms-animation: demo 2s 1 forwards;
+    animation: demo 2s 1 forwards;
+}
+
+@-webkit-keyframes demo { 
+    from { }
+    to { width: 100% }
+}
+
+@-moz-keyframes demo { 
+    from { }
+    to { width: 100% }
+}
+
+@-ms-keyframes demo { 
+    from { }
+    to { width: 100% }
+}
+
+@keyframes demo { 
+    from { }
+    to { width: 100% }
+}
 
 // Notices
 //
@@ -169,14 +210,4 @@
 //	
 //
 //Styleguide 1.13
-//
-
-// Calendar
-//
-// Context menus must be used carefully : they should be minimalistic (5 actions maximum) maybe with icons (?)
-//§
-//Markup:
-//	
-//
-//Styleguide 1.15
 //
