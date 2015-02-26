@@ -119,8 +119,10 @@ select {
 // TODO
 //
 //Markup:
-//	<input type="radio" name"radioName" value="option A" />option A
-//  <input type="radio" name"radioName" value="option B" />option B
+//	<form action="">
+//		<input type="radio" name="radioName" value="value1"> This<br>
+//		<input type="radio" name="radioName" value="value2"> That
+//	</form>
 //
 //Styleguide 1.4.5
 //

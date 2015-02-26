@@ -29,6 +29,20 @@
 //Styleguide 1.5.1
 // 
 
+// Sub header
+//
+//Markup:
+//<div class="wfm-block sub-header"> 
+// Header title
+//</div>
+//
+//Styleguide 1.5.2
+// 
+
+.sub-header{
+	background-color: $blue-500;
+	color:$white;
+}
 
 .navbar {
     background-color: $blue-500;
