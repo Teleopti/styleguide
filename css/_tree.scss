@@ -22,7 +22,7 @@
 //				<div>
 //					Parent
 //					<ol>
-//						<li class="angular-ui-tree-handle active-tree">child</li>
+//						<li class="angular-ui-tree-handle active">child</li>
 //					</ol>
 //				</div>
 //			</li>
@@ -55,19 +55,21 @@
 			background-color:$white;
 		}
 		
-		.active-tree:after{
-			float:right;
-			height: 25px;
-			width: 25px;
-			border-radius: 50px;
-			text-align: center;
-			color: $white;
-			margin-top:-2px;
-			padding-top: 2px;
-			background-color: $blue-300;
-			content:"✓";
-		}
+		
 	}
+}
+
+.tree .active:after{
+	float:right;
+	height: 25px;
+	width: 25px;
+	border-radius: 50px;
+	text-align: center;
+	color: $white;
+	margin-top:-2px;
+	padding-top: 2px;
+	background-color: $blue-300;
+	content:"✓";
 }
 
 .angular-ui-tree-handle {

@@ -102,3 +102,29 @@
 //
 //Styleguide 5.1 
 
+.demo{
+    -webkit-animation: demo 2s 1 forwards;
+    -moz-animation: demo 2s 1 forwards;
+    -ms-animation: demo 2s 1 forwards;
+    animation: demo 2s 1 forwards;
+}
+
+@-webkit-keyframes demo { 
+    from { }
+    to { width: 100% }
+}
+
+@-moz-keyframes demo { 
+    from { }
+    to { width: 100% }
+}
+
+@-ms-keyframes demo { 
+    from { }
+    to { width: 100% }
+}
+
+@keyframes demo { 
+    from { }
+    to { width: 100% }
+}

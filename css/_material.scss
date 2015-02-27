@@ -7,6 +7,12 @@
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.19);
 }
 
+.material-trench-1{
+	-webkit-box-shadow: inset 0 2px 5px 0 rgba(0, 0, 0, 0.16);
+	-moz-box-shadow: inset 0 2px 5px 0 rgba(0, 0, 0, 0.16);
+	box-shadow: inset 0 2px 5px 0 rgba(0, 0, 0, 0.16);
+}
+
 .material-header {
     background-color: $blue-500;
     position: absolute;
@@ -44,57 +50,6 @@
     color: rgba(0,0,0,0.54);
 }
 
-.success {
-    color: green;
-}
-.fail {
-    color: red;
-}
-
-
-.filter-form svg {
-	margin-top: 8px;
-	right: 4%;
-	position: absolute;
-}
-
-.selected {
-	background-color: $blue-500;
-	color: white;
-	padding: 0 $half-padding;
-	transition: $trasnition-timing;
-}
-
-.wfm-toggle-group {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	li {
-		display: inline-block;
-		width: 48%;
-		text-align: center;
-	
-		label {
-			width: 100%;
-			padding: 12px;
-			margin-top:-1px;
-			text-transform: uppercase;
-			cursor:pointer;
-			font-weight: 500;
-			color: $gray054;
-		}
-		label.active {
-			border-top: 3px solid $orange-400;
-			font-weight: 700;
-		}
-	}
-}
-
-.row > .container{
-	padding-bottom: 9px;
-	border-bottom: 1px solid #ddd;
-}
-
 // Loading bar
 //
 // TODO
@@ -105,11 +60,6 @@
 //Styleguide 1.9
 //
 
-body {
-    background-color: #aaa;
-    padding: 10px;
-}
-
 .wfm-progress-bar {
     background: $blue-100;
     height: 5px;
@@ -117,33 +67,6 @@ body {
 	margin:0;
     max-width: 100%;
 	border-radius:0!important;
-}
-
-.demo{
-    -webkit-animation: demo 2s 1 forwards;
-    -moz-animation: demo 2s 1 forwards;
-    -ms-animation: demo 2s 1 forwards;
-    animation: demo 2s 1 forwards;
-}
-
-@-webkit-keyframes demo { 
-    from { }
-    to { width: 100% }
-}
-
-@-moz-keyframes demo { 
-    from { }
-    to { width: 100% }
-}
-
-@-ms-keyframes demo { 
-    from { }
-    to { width: 100% }
-}
-
-@keyframes demo { 
-    from { }
-    to { width: 100% }
 }
 
 // Notices
@@ -155,10 +78,10 @@ body {
 // * The error notice should only be triggered when something goes wrong in the background. 
 //
 //Markup: 
-//	<div class="notice default">Hello, let me tell you about notice blocks.<span>></span></div>
-//	<div class="notice detail">I was expanded to show details.<span>></span></div>
-//	<div class="notice warning">Make sure to read all of the styleguide.<span>></span></div>
-//	<div class="notice error">Something triggered this error notice.<span>></span></div>
+//	<div class="notice default">Hello, let me tell you about notice blocks.</div>
+//	<div class="notice detail">I was expanded to show details.</div>
+//	<div class="notice warning">Make sure to read all of the styleguide.</div>
+//	<div class="notice error">Something triggered this error notice.</div>
 //	
 //
 //Styleguide 1.10
@@ -184,11 +107,6 @@ body {
 
 	&.detail{
 		background: $gray012;
-	}
-	
-	span{
-		float:right;
-		padding:0 10px;
 	}
 }
 
@@ -236,49 +154,21 @@ body {
 //Styleguide 1.14
 //
 
-// Context menu
-//
-// Context menus must be used carefully : they should be minimalistic (5 actions maximum) maybe with icons (?)
-//
-//Markup:
-//<section contextmenu="mymenu">right click me in firefox</section>
-//<menu type="context" id="mymenu">
-//	<menuitem label="Option 1"></menuitem>
-//	<menuitem label="Option 2"></menuitem>
-//	<menu label="More">
-//		<menuitem label="Option 3"></menuitem>
-//		<menuitem label="Option 4"></menuitem>
-//	</menu>
-//</menu>
-//	
-//Styleguide 1.14.1
-//
-
-// Drop menus
+// Context menus
 //
 //TODO
 //
 //Markup:
-//<div class="material-depth-1 navbar navbar-default"> 
-//  <div class="container">
-//		<div class="navbar-header">
-//			<div class="content">
-//				<span class="right-actions">
-//					<div class="dropdown">
-//					  <label><i class="mdi mdi-dots-vertical"></i></label>
-//  					<ul >
-//	    					<li class="material-depth-2"><span>Option 1</span></li>
-//	    					<li class="material-depth-2"><span>Option 2</span></li>
-//	    					<li class="material-depth-2"><span>Option 3</span></li>
-//  					</ul>
-//					</div>
-//				</span>
-//			</div>
-//		</div>
-//	</div> 
+//<div class="dropdown">
+//	<label><i class="mdi mdi-dots-vertical"></i></label>
+//  <ul >
+//	    <li class="material-depth-2"><span>Option 1</span></li>
+//	    <li class="material-depth-2"><span>Option 2</span></li>
+//	  <li class="material-depth-2"><span>Option 3</span></li>
+//  </ul>
 //</div>
 //	
-//Styleguide 1.14.2
+//Styleguide 1.14.1
 //
 
 .dropdown {
