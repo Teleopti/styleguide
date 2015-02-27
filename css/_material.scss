@@ -231,12 +231,111 @@ body {
 //Styleguide 1.13
 //
 
-// Context menus
+//Menus
+//	
+//Styleguide 1.14
+//
+
+// Context menu
 //
 // Context menus must be used carefully : they should be minimalistic (5 actions maximum) maybe with icons (?)
 //
 //Markup:
+//<section contextmenu="mymenu">right click me in firefox</section>
+//<menu type="context" id="mymenu">
+//	<menuitem label="Option 1"></menuitem>
+//	<menuitem label="Option 2"></menuitem>
+//	<menu label="More">
+//		<menuitem label="Option 3"></menuitem>
+//		<menuitem label="Option 4"></menuitem>
+//	</menu>
+//</menu>
 //	
+//Styleguide 1.14.1
 //
-//Styleguide 1.14
+
+// Drop menus
 //
+//TODO
+//
+//Markup:
+//<div class="material-depth-1 navbar navbar-default"> 
+//  <div class="container">
+//		<div class="navbar-header">
+//			<div class="content">
+//				<span class="right-actions">
+//					<div class="dropdown">
+//					  <label><i class="mdi mdi-dots-vertical"></i></label>
+//  					<ul >
+//	    					<li class="material-depth-2"><span>Option 1</span></li>
+//	    					<li class="material-depth-2"><span>Option 2</span></li>
+//	    					<li class="material-depth-2"><span>Option 3</span></li>
+//  					</ul>
+//					</div>
+//				</span>
+//			</div>
+//		</div>
+//	</div> 
+//</div>
+//	
+//Styleguide 1.14.2
+//
+
+.dropdown {
+	cursor: pointer;
+
+	label {
+		float:right;
+		width: 25px;
+		height: 25px;
+		border-radius: 4px;
+		text-align: center;
+		display: inline-block;
+		transition: all 0.2s linear 0s;
+		cursor: pointer;
+		color:$white;
+	}
+	
+	i{
+		margin-left:12px;
+		margin-top:4px ;
+	}
+
+	 ul {
+		margin: 0px;
+		padding: 0px;
+		list-style: none;
+		width: 100%;
+	}
+
+	 li {
+		background-color:$white!important;
+		margin: 0px;
+		padding: 0px;
+		width: 150px;
+		max-height: 0px;
+		overflow: hidden;
+		box-sizing: border-box;
+		transition: max-height 0.2s linear 0s;
+	}
+
+	 li span {
+		display: inline-block;
+		font-size:14px;
+	}
+	
+	li:hover{
+		background-color:$blue-300!important;
+	}
+}
+
+.dropdown:hover label {
+	background: $blue-300;
+}
+
+.dropdown:hover li {
+	max-height: 60px;
+	padding: 5px;
+}
+
+
