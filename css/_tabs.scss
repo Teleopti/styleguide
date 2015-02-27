@@ -89,6 +89,7 @@
 		transition: 0.3s all ease-in-out;
 		border-radius: 0 !important; /*overrides bootstrap*/
 		margin-bottom: 0 !important; /*overrides bootstrap*/
+		font-size: 100% !important; /*overrides bootstrap*/
 	}
 	.tab-container {
 		@extend .wfm-block;
