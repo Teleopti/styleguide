@@ -31,30 +31,37 @@
 // 
 //
 
-
-
-//Resources
+//Layouts
 //
-//Here you can find some links to go further in CSS best practices
+//
 //
 //Styleguide 3
 // 
 //
 
-//Urls
+//Panels
 //
+//Styleguide 3.1
+// 
 //
-// http://philipwalton.com/articles/css-architecture/
-//
-// http://styleguides.io/
-//
-// http://alistapart.com/article/creating-style-guides
-//
-// http://axbom.com/slaying-5-ux-myths-good-mankind/
-//
-//Styleguide 3.1 
 
+//Panel grids
+//
+//Styleguide 3.2
+// 
+//
 
+//Sidenavs
+//
+//Styleguide 3.3
+// 
+//
+
+//Graphs
+//
+//Styleguide 3.4
+// 
+//
 
 //Icons 
 //
@@ -73,3 +80,51 @@
 //Styleguide 4.1
 //
 
+//Resources
+//
+//Here you can find some links to go further in CSS best practices
+//
+//Styleguide 5
+// 
+//
+
+//Urls
+//
+// https://developer.mozilla.org/en-US/docs/Web/CSS
+//
+// http://philipwalton.com/articles/css-architecture/
+//
+// http://styleguides.io/
+//
+// http://alistapart.com/article/creating-style-guides
+//
+// http://axbom.com/slaying-5-ux-myths-good-mankind/
+//
+//Styleguide 5.1 
+
+.demo{
+    -webkit-animation: demo 2s 1 forwards;
+    -moz-animation: demo 2s 1 forwards;
+    -ms-animation: demo 2s 1 forwards;
+    animation: demo 2s 1 forwards;
+}
+
+@-webkit-keyframes demo { 
+    from { }
+    to { width: 100% }
+}
+
+@-moz-keyframes demo { 
+    from { }
+    to { width: 100% }
+}
+
+@-ms-keyframes demo { 
+    from { }
+    to { width: 100% }
+}
+
+@keyframes demo { 
+    from { }
+    to { width: 100% }
+}

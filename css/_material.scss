@@ -7,6 +7,12 @@
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.19);
 }
 
+.material-trench-1{
+	-webkit-box-shadow: inset 0 2px 5px 0 rgba(0, 0, 0, 0.16);
+	-moz-box-shadow: inset 0 2px 5px 0 rgba(0, 0, 0, 0.16);
+	box-shadow: inset 0 2px 5px 0 rgba(0, 0, 0, 0.16);
+}
+
 .material-header {
     background-color: $blue-500;
     position: absolute;
@@ -44,56 +50,42 @@
     color: rgba(0,0,0,0.54);
 }
 
-.success {
-    color: green;
-}
-.fail {
-    color: red;
+// Loading bar
+//
+// TODO
+//
+//Markup:
+//<progress class="wfm-progress-bar demo"></progress>
+//
+//Styleguide 1.9
+//
+
+.wfm-progress-bar {
+    background: $blue-100;
+    height: 5px;
+    width: 0;
+	margin:0;
+    max-width: 100%;
+	border-radius:0!important;
 }
 
-
-.filter-form svg {
-	margin-top: 8px;
-	right: 4%;
-	position: absolute;
-}
-
-.selected {
-	background-color: $blue-500;
-	color: white;
-	padding: 0 $half-padding;
-	transition: $trasnition-timing;
-}
-
-.wfm-toggle-group {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	li {
-		display: inline-block;
-		width: 48%;
-		text-align: center;
-	
-		label {
-			width: 100%;
-			padding: 12px;
-			margin-top:-1px;
-			text-transform: uppercase;
-			cursor:pointer;
-			font-weight: 500;
-			color: $gray054;
-		}
-		label.active {
-			border-top: 3px solid $orange-400;
-			font-weight: 700;
-		}
-	}
-}
-
-.row > .container{
-	padding-bottom: 9px;
-	border-bottom: 1px solid #ddd;
-}
+// Notices
+//
+// There are several different notice markers:
+// * The default one is used to provide information to the user. </br>
+// * Details are never shown alone, but rather beneath one of the others. </br>
+// * The warning notice should be used to alert the user that something have to be done before they can continue.</br>
+// * The error notice should only be triggered when something goes wrong in the background. 
+//
+//Markup: 
+//	<div class="notice default">Hello, let me tell you about notice blocks.</div>
+//	<div class="notice detail">I was expanded to show details.</div>
+//	<div class="notice warning">Make sure to read all of the styleguide.</div>
+//	<div class="notice error">Something triggered this error notice.</div>
+//	
+//
+//Styleguide 1.10
+//
 
 .notice {
 	@extend .wfm-block;
@@ -114,83 +106,38 @@
 	}
 
 	&.detail{
-		background: #efefef;
-	}
-	
-	span{
-		float:right;
-		padding:0 10px;
+		background: $gray012;
 	}
 }
 
-// Loading bar
+// Notifications
 //
 // TODO
 //
 //Markup:
-//<progress class="progress-bar demo"></progress>
+//<ul class="notification-list">
+//	<li><i class="mdi mdi-alert-circle"></i>Notifications are great!</li>
+//	<li><i class="mdi mdi-alert-circle"></i>Have another one.</li>
+//</ul>
 //
-//Styleguide 1.9
+//Styleguide 1.11
 //
 
-body {
-    background-color: #aaa;
-    padding: 10px;
+.notification-list{
+	list-style:none;
+	padding-left:0!important;
+	
+	li{
+		@extend .wfm-block;	
+		background-color:$gray012;
+		cursor:pointer;
+	}
+	
+	i{
+		padding-right:5px;
+		color: $gray054;
+	}
 }
-
-.progress-bar {
-    background: $blue-100;
-    height: 5px;
-    width: 0;
-	margin:0;
-    max-width: 100%;
-	border-radius:0!important;
-}
-
-.demo{
-    -webkit-animation: demo 2s 1 forwards;
-    -moz-animation: demo 2s 1 forwards;
-    -ms-animation: demo 2s 1 forwards;
-    animation: demo 2s 1 forwards;
-}
-
-@-webkit-keyframes demo { 
-    from { }
-    to { width: 100% }
-}
-
-@-moz-keyframes demo { 
-    from { }
-    to { width: 100% }
-}
-
-@-ms-keyframes demo { 
-    from { }
-    to { width: 100% }
-}
-
-@keyframes demo { 
-    from { }
-    to { width: 100% }
-}
-
-// Notices
-//
-// There are several different notice markers:
-// * The default one is used to provide information to the user. </br>
-// * Details are never shown alone, but rather beneath one of the others. </br>
-// * The warning notice should be used to alert the user that something have to be done before they can continue.</br>
-// * The error notice should only be triggered when something goes wrong in the background. 
-//
-//Markup: 
-//	<div class="notice default">Hello, let me tell you about notice blocks.<span>></span></div>
-//	<div class="notice detail">I was expanded to show details.<span>></span></div>
-//	<div class="notice warning">Make sure to read all of the styleguide.<span>></span></div>
-//	<div class="notice error">Something triggered this error notice.<span>></span></div>
-//	
-//
-//Styleguide 1.10
-//
 
 // Tooltips
 //
@@ -199,15 +146,86 @@ body {
 //Markup:
 //	
 //
-//Styleguide 1.11
+//Styleguide 1.13
+//
+
+//Menus
+//	
+//Styleguide 1.14
 //
 
 // Context menus
 //
-// Context menus must be used carefully : they should be minimalistic (5 actions maximum) maybe with icons (?)
+//TODO
 //
 //Markup:
+//<div class="dropdown">
+//	<label><i class="mdi mdi-dots-vertical"></i></label>
+//  <ul >
+//	    <li class="material-depth-2"><span>Option 1</span></li>
+//	    <li class="material-depth-2"><span>Option 2</span></li>
+//	  <li class="material-depth-2"><span>Option 3</span></li>
+//  </ul>
+//</div>
 //	
+//Styleguide 1.14.1
 //
-//Styleguide 1.13
-//
+
+.dropdown {
+	cursor: pointer;
+
+	label {
+		float:right;
+		width: 25px;
+		height: 25px;
+		border-radius: 4px;
+		text-align: center;
+		display: inline-block;
+		transition: all 0.2s linear 0s;
+		cursor: pointer;
+		color:$white;
+	}
+	
+	i{
+		margin-left:12px;
+		margin-top:4px ;
+	}
+
+	 ul {
+		margin: 0px;
+		padding: 0px;
+		list-style: none;
+		width: 100%;
+	}
+
+	 li {
+		background-color:$white!important;
+		margin: 0px;
+		padding: 0px;
+		width: 150px;
+		max-height: 0px;
+		overflow: hidden;
+		box-sizing: border-box;
+		transition: max-height 0.2s linear 0s;
+	}
+
+	 li span {
+		display: inline-block;
+		font-size:14px;
+	}
+	
+	li:hover{
+		background-color:$gray-300!important;
+	}
+}
+
+.dropdown:hover label {
+	background: $blue-300;
+}
+
+.dropdown:hover li {
+	max-height: 60px;
+	padding: 5px;
+}
+
+

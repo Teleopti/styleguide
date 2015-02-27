@@ -1,0 +1,103 @@
+// Tabs
+//
+//Markup:
+//<article class="tab-group">
+//  <input type="radio" name="tabs" id="tab-1" checked="checked" />
+//  <label class="label" for="tab-1">
+//    TAB 1
+//  </label>
+//  <section >
+//    <div class="tab-container">
+//		x
+//    </div>
+//  </section>
+//  <input type="radio" name="tabs" id="tab-2" />
+//  <label class="label" for="tab-2">
+//    TAB 2
+//  </label>
+//  <section >
+//    <div class="tab-container">
+//		y
+//    </div>
+//  </section>
+//  <input type="radio" name="tabs" id="tab-3" />
+//  <label class="label" for="tab-3">
+//    TAB 3
+//  </label>
+//  <section >
+//    <div class="tab-container">
+//		z
+//    </div>
+//  </section>
+//</article>
+//
+//Styleguide 1.16
+//
+
+ .tab-group {
+	  width: 100%;
+	  display: -webkit-box;
+	  display: -webkit-flex;
+	  display: -ms-flexbox;
+	  display: flex;
+	  -webkit-flex-wrap: wrap;
+		  -ms-flex-wrap: wrap;
+			  flex-wrap: wrap;
+	  -webkit-box-align: center;
+	  -webkit-align-items: center;
+		  -ms-flex-align: center;
+			  align-items: center;
+	  -webkit-box-pack: center;
+	  -webkit-justify-content: center;
+		  -ms-flex-pack: center;
+			  justify-content: center;
+	  border: 1px solid rgba(0, 0, 0, 0.1);
+	  overflow: hidden;
+  
+	input[type=radio] {
+		display:none;
+	}
+
+	input[type=radio]:checked + .label {
+		color: $white;
+		border-bottom: 3px solid $orange-400;
+		
+	}
+	
+	input[type=radio]:checked + .label + section {
+		display: block;
+	}
+	
+	.label {
+		padding:10px!important; /*twice that of wfm-block*/
+		position: relative;
+		z-index: 2;
+		-webkit-box-ordinal-group: 0;
+		-webkit-order: -1;
+		-ms-flex-order: -1;
+		order: -1;
+		-webkit-box-flex: 1;
+		-webkit-flex-grow: 1;
+		-ms-flex-positive: 1;
+		flex-grow: 1;
+		min-width: 100px;
+		border-bottom: 3px solid $blue-500;
+		background-color: $blue-500;
+		text-align: center;
+		-webkit-transition: 0.3s all ease-in-out;
+		transition: 0.3s all ease-in-out;
+		border-radius: 0 !important; /*overrides bootstrap*/
+		margin-bottom: 0 !important; /*overrides bootstrap*/
+	}
+	.tab-container {
+		@extend .wfm-block;
+		background-color: $gray012;
+	}
+	section {
+		  display: none;
+		  position: relative;
+		  z-index: 1;
+		  width: 100%;
+		  overflow: hidden;
+	}
+}

@@ -24,19 +24,6 @@
 //Styleguide 1.8.1
 //
 
-// Two dimensions table
-//
-//Markup:
-//<table class="wfm-table wfm-table-multi">
-//<thead><tr><th></th><th>column header</th><th>column header</th></tr></thead>
-//<tbody><tr><td>row header</td><td>1</td><td>2</td></tr>
-// <tr><td>row header</td><td>1</td><td>2</td></tr>
-// </tbody>
-//</table>
-//
-//Styleguide 1.8.2
-//
-
 .wfm-table {
 	width: 100%;
   text-align: left;
@@ -54,14 +41,70 @@
   text-align: center;
 }
 
-
 .wfm-table .number-cell {
 	text-align: right;
 }
 
-.wfm-table-multi th:first-child,td:first-child{
-  color: $gray087;
-  font-weight:600;
-  background-color: $blue-100;
+// Two dimensions table
+//
+//Markup:
+//<table class="wfm-table wfm-table-multi">
+//<thead><tr><th></th><th>column header</th><th>column header</th></tr></thead>
+//<tbody><tr><td>row header</td><td>1</td><td>2</td></tr>
+// <tr><td>row header</td><td>1</td><td>2</td></tr>
+// </tbody>
+//</table>
+//
+//Styleguide 1.8.2
+//
+
+.wfm-table-multi{
+	th:first-child,td:first-child{
+	  color: $gray087;
+	  font-weight:600;
+	  background-color: $blue-100;
+	}
 }
 
+// Table symbols
+//
+//Markup:
+//<table class="wfm-table">
+//<thead><tr><th>name</th><th>mark</th></tr></thead>
+//<tbody><tr><td>staffing</td><td class="number-cell"><span class="table-mark">
+//	<i class="mdi mdi-alert-box staffing-mark"></i></span>
+//</td></tr>
+//<tr><td>notice</td><td class="number-cell">
+//	<span class="table-mark"><i class="mdi mdi-alert notice-mark"></i></span>
+//</td></tr>
+//<tr><td>error</td><td class="number-cell">
+//	<span class="table-mark"><i class="mdi mdi-alert-octagon error-mark"></i></span>
+//</td></tr>
+//<tr><td>type (depending on color)</td><td class="number-cell">
+//	<span class="table-mark"><i class="mdi mdi-bookmark type-mark"></i></span>
+//</td></tr>
+// </tbody>
+//</table>
+//
+//Styleguide 1.8.3
+//
+
+.table-mark {
+	font-size: 150%;
+
+	.notice-mark {
+		color: $orange-600;
+	}
+	
+	.staffing-mark {
+		color: $blue-500;
+	}
+	
+	.error-mark {
+		color: $red-600;
+	}
+	
+	.type-mark{
+		color: $blue-300;
+	}
+}

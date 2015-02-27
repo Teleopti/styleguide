@@ -133,27 +133,6 @@ select {
 //Styleguide 1.4.5
 //
 
-// Checkboxes
-//
-// TODO
-//
-//Markup:
-//      <div class="wfm-slider">
-//        <input type="checkbox" id="slide1" />
-//			<label for="slide1">
-//				<span>Toggle</span>
-//			</label>
-//      </div>
-//		<div class="wfm-checkbox">
-//        <input type="checkbox" id="check1" />
-//			<label for="check1">
-//				<span>Check</span>
-//			</label>
-//		</div>
-//
-//Styleguide 1.4.6
-//
-
 .wfm-radio {
 	input[type='radio'] {
 		display:none;
@@ -161,11 +140,12 @@ select {
 
 	label {
 		background-color: $gray-300;
-		width: 25px;
-		height: 25px;
+		width: 18px;
+		height: 18px;
 		margin: 5px;
 		border-radius: 50px;
 		text-align:center;
+		cursor: pointer;
 		-webkit-transition: background-color .2s ease-in-out;
 		transition: background-color .2s ease-in-out;
 	}
@@ -178,7 +158,6 @@ select {
 		width: 20px;
 		height: 20px;
 		color: $white;
-		cursor: pointer;
 		position: absolute;
 	}
 
@@ -191,47 +170,20 @@ select {
 	}
 }
 
-.wfm-checkbox {
-
-	input[type='checkbox'] {
-		display:none;
-	}
-	
-	label {
-		background-color: $gray-300;
-		width: 25px;
-		height: 25px;
-		margin: 5px;
-		border-radius: 4px;
-		text-align: center;
-		-webkit-transition: background-color .2s ease-in-out;
-		transition: background-color .2s ease-in-out;
-	}
-	
-	label:before {
-		content: "";
-		display: block;
-		padding-left:5px;
-		padding-top:2px;
-		width: 20px;
-		height: 20px;
-		color: $white;
-		cursor: pointer;
-		position: absolute;
-	}
-	
-	input[type=checkbox]:checked ~ label {
-		background-color: $blue-300;
-	}
-
-	input[type=checkbox]:checked ~ label:before {
-		content: "✓";
-	}
-
-	span{
-		margin-left: 45px;
-	}
-}
+// Sliders
+//
+// TODO
+//
+//Markup:
+//      <div class="wfm-slider">
+//        <input type="checkbox" id="slide1" />
+//			<label for="slide1">
+//				<span>Toggle</span>
+//			</label>
+//      </div>
+//
+//Styleguide 1.4.6
+//
 
 .wfm-slider {
 
@@ -277,5 +229,68 @@ select {
 	
 	span{
 		margin-left: 65px;
+	}
+}
+
+// Checkboxes
+//
+// TODO
+//
+//Markup:
+//		<div class="wfm-checkbox">
+//        <input type="checkbox" id="check1" />
+//			<label for="check1">
+//				<span>Check</span>
+//			</label>
+//		</div>
+//		<div class="wfm-checkbox">
+//        <input type="checkbox" id="check2" />
+//			<label for="check2">
+//				<span>Check</span>
+//			</label>
+//		</div>
+//
+//Styleguide 1.4.7
+//
+
+.wfm-checkbox {
+
+	input[type='checkbox'] {
+		display:none;
+	}
+	
+	label {
+		background-color: $gray-300;
+		width: 18px;
+		height: 18px;
+		margin: 5px;
+		border-radius: 4px;
+		text-align: center;
+		-webkit-transition: background-color .2s ease-in-out;
+		transition: background-color .2s ease-in-out;
+	}
+	
+	label:before {
+		content: "";
+		display: block;
+		padding-left:5px;
+		padding-top:2px;
+		width: 20px;
+		height: 20px;
+		color: $white;
+		cursor: pointer;
+		position: absolute;
+	}
+	
+	input[type=checkbox]:checked ~ label {
+		background-color: $blue-300;
+	}
+
+	input[type=checkbox]:checked ~ label:before {
+		content: "✓";
+	}
+
+	span{
+		margin-left: 45px;
 	}
 }

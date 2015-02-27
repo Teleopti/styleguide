@@ -13,7 +13,7 @@ Main concepts
 1. Maintain consistency.
 2. Avoid unnecessary clicks.
 3. Automatic tasks in background. 
-4. "Nature doesn't like empty space, and so don't users". 
+4. "Nature doesn't like empty space, and neither do users". 
 6. From the previous rule : Never provide an empty form but suggest things or display placeholders.
 7. Learning from users habits.
 8. Adapt to scale.
@@ -28,7 +28,7 @@ Other things to keep in mind
 For example when a list is displayed : actions icons can be displayed only when an item is selected. See list section for an example.
 2. If an action takes time (ajax request...) => display a loading bar (or a spinner). See loading bar section.
 3. Tables, lists... etc should be sorted according to context (alphabetical order for example).
-4. Giving visual identity to objects (by icons for example).
+4. Giving visual identity to objects (by icons and colors for example).
 5. In general, providing ways to filter, sort and export to excel on tables, lists, grid is good.
 6. Actions history must be available.
 7. If possible, provide undo/redo feature.

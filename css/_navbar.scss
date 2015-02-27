@@ -46,21 +46,6 @@
 //Styleguide 1.5.2
 // 
 
-// Header group
-//
-// The first header is used to indicate a new area or panel, any headers within that panel will have the second header.
-//
-//Markup:
-//<div class="wfm-block sub-header"> 
-//	First header title
-//</div>
-//<div class="wfm-block bottom-header"> 
-//	Second header title
-//</div>
-//
-//Styleguide 1.5.3
-// 
-
 .sub-header{
 	background-color: $blue-500;
 	color: $white;
