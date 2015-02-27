@@ -76,16 +76,12 @@
 		position: relative;
 		z-index: 10;
 		max-height: 0;
-		-webkit-transition: max-height 0.8s;
-		-moz-transition: max-height 0.8s;
 		transition: max-height 0.8s;
 		overflow: hidden;
 	}
 	
 	input:checked ~ article {
 		max-height: 500px;
-		-webkit-transition: max-height 0.8s;
-		-moz-transition: max-height 0.8s;
 		transition: max-height 0.8s;
 	}
 }

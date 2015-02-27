@@ -71,17 +71,14 @@
 //Markup:
 //<table class="wfm-table">
 //<thead><tr><th>name</th><th>mark</th></tr></thead>
-//<tbody><tr><td>staffing</td><td class="number-cell"><span class="table-mark">
-//	<i class="mdi mdi-alert-box staffing-mark"></i></span>
+//<tbody><tr><td>staffing</td><td class="number-cell">
+//	<span class="table-mark staffing-mark">
 //</td></tr>
 //<tr><td>notice</td><td class="number-cell">
-//	<span class="table-mark"><i class="mdi mdi-alert notice-mark"></i></span>
+//	<span class="table-mark notice-mark"></span>
 //</td></tr>
 //<tr><td>error</td><td class="number-cell">
-//	<span class="table-mark"><i class="mdi mdi-alert-octagon error-mark"></i></span>
-//</td></tr>
-//<tr><td>type (depending on color)</td><td class="number-cell">
-//	<span class="table-mark"><i class="mdi mdi-bookmark type-mark"></i></span>
+//	<span class="table-mark error-mark"></span>
 //</td></tr>
 // </tbody>
 //</table>
@@ -93,18 +90,18 @@
 	font-size: 150%;
 
 	.notice-mark {
-		color: $orange-600;
+		background-color: $orange-600;
 	}
 	
 	.staffing-mark {
-		color: $blue-500;
+		background-color: $blue-500;
 	}
 	
 	.error-mark {
-		color: $red-600;
+		background-color: $red-600;
 	}
 	
 	.type-mark{
-		color: $blue-300;
+		background-color: $blue-300;
 	}
 }

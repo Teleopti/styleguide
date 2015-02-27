@@ -10,7 +10,8 @@
 //
 //Getting a deeper look into the styles of shadows and positioning.
 //
-//Keep the number of stacked layers to a minimum and the total number of layer below 3 (including the background).
+//Keep the number of stacked layers to a minimum and the total number of layer below 3 (including the background). If a raised element lives inside of another raised element it should have a higher material-depth number.
+//Elements floating above the main layout (such as context menus) should have the highest material-depth number possible (2).
 //
 //Markup:
 //<div class="spacer"> Background </div>
@@ -65,17 +66,21 @@
 
 //Icons 
 //
-//
+//By default we use material icons : http://materialdesignicons.com/
 //
 //Styleguide 4
 // 
 //
 
-// Default set of icons 
+// Table symbols
 //
-// We use material icons : http://materialdesignicons.com/
+// TODO
 //
-//TODO
+//Markup:
+//	<i class="mdi mdi-alert-box"></i>
+//	<i class="mdi mdi-alert"></i>
+//	<i class="mdi mdi-alert-octagon"></i>
+//	<i class="mdi mdi-bookmark"></i>
 //
 //Styleguide 4.1
 //

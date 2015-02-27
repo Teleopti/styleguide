@@ -1,0 +1,78 @@
+
+//Menus
+//	
+//Styleguide 1.14
+//
+
+// Context menus
+//
+//Context menus should be used carefully and only where relevant. In the cases where it is used, limit the number of items to a maximum of 5. A menu item can not open another menu and there are no nested menues
+//
+//Markup:
+//<div class="dropdown">
+//	<label><i class="mdi mdi-dots-vertical"></i></label>
+//  <ul >
+//	    <li class="material-depth-2"><span>Option 1</span></li>
+//	    <li class="material-depth-2"><span>Option 2</span></li>
+//	  <li class="material-depth-2"><span>Option 3 is a long one, to show how they wrap</span></li>
+//  </ul>
+//</div>
+//	
+//Styleguide 1.14.1
+//
+
+.dropdown {
+	cursor: pointer;
+
+	label {
+		background-color: $blue-500;
+		width: 18px;
+		height: 18px;
+		border-radius: 4px;
+		text-align: center;
+		display: inline-block;
+		transition: all 0.2s linear 0s;
+		cursor: pointer;
+		color:$white;
+	}
+	
+	i{
+		margin-left:8px;
+	}
+
+	 ul {
+		margin: 0px;
+		padding: 0px;
+		list-style: none;
+		width: 50%;
+	}
+
+	 li {
+		background-color:$white!important;
+		margin: 0px;
+		padding: 0px;
+		width: inherit;
+		max-height: 0px;
+		overflow: hidden;
+		box-sizing: border-box;
+		transition: max-height 0.2s linear 0s;
+	}
+
+	 li span {
+		display: inline-block;
+		font-size:14px;
+	}
+	
+	li:hover{
+		background-color:$gray-300!important;
+	}
+}
+
+.dropdown:hover label {
+	background: $blue-300;
+}
+
+.dropdown:hover li {
+	max-height: 60px;
+	padding: 5px;
+}

@@ -43,13 +43,14 @@ input[type='text']{
 	margin: 5px 0;
 	padding: 5px 5px 2px;
 	border: none;
-  color: $gray087;
+	color: $gray087;
 	border-bottom: 1px solid $gray-300;
-  &:focus {
-    border: none;
-    outline: none;
-    border-bottom: 2px solid $blue-300;
-  }
+	
+	&:focus {
+		border: none;
+		outline: none;
+		border-bottom: 2px solid $blue-300;
+	}
 }
 
 .input-prepend {
@@ -166,7 +167,8 @@ select {
 	}
 	
 	span{
-		margin-left: 45px;
+		/*label width + 5px*/
+		margin-left: 23px;
 	}
 }
 
@@ -187,8 +189,8 @@ select {
 
 .wfm-slider {
 
-	width: 55px;
-	height: 26px;
+	width: 48px;
+	height: 18px;
 	margin: 5px;
 	position: relative;
 
@@ -200,19 +202,19 @@ select {
 		background-color: $gray-300;
 		width: 100%;
 		height: 100%;
-		border-radius: 42px;
+		border-radius: 40px;
 		-webkit-transition: background-color .2s ease-in-out;
 		transition: background-color .2s ease-in-out;
 	}
 	label:after {
 		content: "";
 		display: block;
-		width: 20px;
-		height: 20px;
+		width: 14px;
+		height: 14px;
 		border-radius: 44px;
 		cursor: pointer;
 		position: absolute;
-		top: 3px;
+		top: 2px;
 		z-index: 1;
 		left: 5px;
 		background-color: $white;
@@ -228,7 +230,8 @@ select {
 	}
 	
 	span{
-		margin-left: 65px;
+		/*Slider width + 5px*/
+		margin-left: 53px;
 	}
 }
 
@@ -263,7 +266,6 @@ select {
 		background-color: $gray-300;
 		width: 18px;
 		height: 18px;
-		margin: 5px;
 		border-radius: 4px;
 		text-align: center;
 		-webkit-transition: background-color .2s ease-in-out;
@@ -273,8 +275,6 @@ select {
 	label:before {
 		content: "";
 		display: block;
-		padding-left:5px;
-		padding-top:2px;
 		width: 20px;
 		height: 20px;
 		color: $white;
@@ -291,6 +291,7 @@ select {
 	}
 
 	span{
-		margin-left: 45px;
+		/*Slider width + 5px*/
+		margin-left: 23px;
 	}
 }

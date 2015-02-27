@@ -1,7 +1,7 @@
 // Tabs
 //
 //Markup:
-//<article class="tab-group">
+//<div class="tab-group">
 //  <input type="radio" name="tabs" id="tab-1" checked="checked" />
 //  <label class="label" for="tab-1">
 //    TAB 1
@@ -29,7 +29,7 @@
 //		z
 //    </div>
 //  </section>
-//</article>
+//</div>
 //
 //Styleguide 1.16
 //
@@ -71,6 +71,7 @@
 	.label {
 		padding:10px!important; /*twice that of wfm-block*/
 		position: relative;
+		cursor:pointer;
 		z-index: 2;
 		-webkit-box-ordinal-group: 0;
 		-webkit-order: -1;

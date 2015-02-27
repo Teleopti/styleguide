@@ -17,7 +17,7 @@
 //		</span>
 //		</div>
 //	</li>
-//	<li>
+//	<li class="active">
 //		List Item 2
 //		<div class="wfm-leave-behind">
 //			<span>
@@ -27,7 +27,7 @@
 //			</span>	
 //		</div>
 //	</li>
-//	<li class="active">
+//	<li>
 //		List Item 3
 //		<div class="wfm-leave-behind">
 //			<span>
@@ -45,10 +45,9 @@
 .wfm-list {
 	padding-left: 0px;
 	list-style: none;
-	background-color: white;
 	
 	.active{
-		border-left: 2px solid blue;
+		border-left: 3px solid $blue-500;
 		background-color: $white;
 	}
 }
@@ -58,6 +57,7 @@
 	cursor: pointer;
 	overflow: hidden;
 	background-color:$gray-100;
+	border-left: 3px solid transparent;
 	/*
 	&:active, &:focus, &:active:hover, &:focus:hover {
 		background-color: $blue-500 !important;
@@ -65,14 +65,9 @@
 	*/
 
 	&:hover{
-		background-color: $blue-100;
-	}
-	&:last-child{
-		margin-bottom:0;
+		border-left: 3px solid $gray-300;
 	}
 }
-
-
 
 .wfm-leave-behind {
 	@extend .material-trench-1;
