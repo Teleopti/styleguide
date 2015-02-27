@@ -65,20 +65,21 @@
 	  background-color: $blue-100;
 	}
 }
-
+/*
 // Table symbols
 //
 //Markup:
 //<table class="wfm-table">
-//<thead><tr><th>name</th><th>mark</th></tr></thead>
-//<tbody><tr><td>staffing</td><td class="number-cell">
-//	<span class="table-mark staffing-mark">
+//<thead><tr><th>name</th><th>column header</th></tr></thead>
+//<tbody>
+//	<tr class="staffing-row"><td>staffing</td><td class="number-cell">
+//	1
 //</td></tr>
-//<tr><td>notice</td><td class="number-cell">
-//	<span class="table-mark notice-mark"></span>
+//<tr class="notice-row"><td>notice</td><td class="number-cell">
+//	3
 //</td></tr>
-//<tr><td>error</td><td class="number-cell">
-//	<span class="table-mark error-mark"></span>
+//<tr class="error-row"><td>error</td><td class="number-cell">
+//	3
 //</td></tr>
 // </tbody>
 //</table>
@@ -86,22 +87,16 @@
 //Styleguide 1.8.3
 //
 
-.table-mark {
-	font-size: 150%;
-
-	.notice-mark {
+tr {
+	&.notice-row {
 		background-color: $orange-600;
 	}
 	
-	.staffing-mark {
+	&.staffing-row {
 		background-color: $blue-500;
 	}
 	
-	.error-mark {
+	&.error-row {
 		background-color: $red-600;
 	}
-	
-	.type-mark{
-		background-color: $blue-300;
-	}
-}
+}*/

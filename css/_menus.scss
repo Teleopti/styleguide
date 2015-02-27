@@ -6,7 +6,8 @@
 
 // Context menus
 //
-//Context menus should be used carefully and only where relevant. In the cases where it is used, limit the number of items to a maximum of 5. A menu item can not open another menu and there are no nested menues
+//Context menus should be used carefully and only where relevant. In the cases where it is used, limit the number of items to a maximum of 5. 
+//A menu item can not open another menu and there are no nested menus. If more options are needed, use a Select instead. 
 //
 //Markup:
 //<div class="dropdown">
@@ -55,7 +56,7 @@
 		max-height: 0px;
 		overflow: hidden;
 		box-sizing: border-box;
-		transition: max-height 0.2s linear 0s;
+		transition: max-height 0.5s linear;
 	}
 
 	 li span {

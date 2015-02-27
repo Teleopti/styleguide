@@ -33,7 +33,7 @@
 
 // Headers
 //
-// The first header is used to indicate a new area or panel, any headers within that panel will have the second header.
+// The first header is used to indicate a new area or panel, any headers within that panel will have the second header. A secondary header should not live within another secondary header.
 //
 //Markup:
 //<div class="wfm-block sub-header"> 

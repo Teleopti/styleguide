@@ -38,7 +38,7 @@
 //Styleguide 1.4.3
 //
 
-input[type='text']{
+input[type='text'], select{
 	width: 100%;
 	margin: 5px 0;
 	padding: 5px 5px 2px;
@@ -99,16 +99,24 @@ input[type='text']{
 // TODO
 //
 //Markup:
-//	<select><option>1</option></select>
+//	<select>
+//		<option>1</option>
+//		<option>2</option>
+//		<option>3</option>
+//		<option>4</option>
+//		<option>5</option>
+//		<option>6</option>
+//		<option>7</option>
+//		<option>8</option>
+//		<option>9</option>
+//		<option>10</option>
+//	</select>
 //
 //Styleguide 1.4.4
 //
 
-select {
-  width: 100%;
-  outline:none;
-  border: none;
-  border-bottom: 1px solid $gray-300;
+select option{
+	@extend .wfm-block;
 }
 
 // Radio buttons
