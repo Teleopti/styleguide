@@ -334,18 +334,16 @@ select option{
 	}
 
 	label {
+		@extend .material-trench-1;
 		background-color: $gray-300;
 		width: 34px;
 		height: 34px;
-		border-radius: 4px;
 		text-align: center;
 		cursor: pointer;
-		transition: all .2s ease-in-out;
 	}
 	
 	label i{
-		padding-top: 10px;
-		padding-left: 5px;
+		padding-top: 5px;
 	}
 
 	input[type=checkbox]:checked ~ label {

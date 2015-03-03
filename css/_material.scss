@@ -1,4 +1,8 @@
 
+body{
+	background-color: $gray012;
+}
+
 .material-depth-1 {
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16);
 }
@@ -51,6 +55,31 @@
 
 .material-title {
     color: rgba(0,0,0,0.54);
+}
+
+.layout-container .sidenav {
+	background-color: $white;
+	-webkit-flex: auto;
+	flex: auto;
+	flex-basis: 15%;
+	top:0;
+	bottom:0;
+}
+
+.layout-container {
+  width:100%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+
+.layout-container .content {
+	-webkit-flex: auto;
+	flex: auto;
+	padding: 10px;
+	flex-basis: 70%;
+	margin: 10px;
 }
 
 // Loading bar

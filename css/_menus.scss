@@ -18,6 +18,14 @@
 //		<span>Option 3 is a long one, to show how they wrap</span>
 //	</div> 
 //</div>
+//<div class="dropdown" tabindex="0"> 
+//	<i class="mdi mdi-account"></i>
+//	<div class="inner right material-depth-2">
+//		<span>Option 1</span>
+//		<span>Option 2</span>
+//		<span>Option 3 is a long one, to show how they wrap</span>
+//	</div> 
+//</div>
 //	
 //Styleguide 1.14.1
 //
@@ -42,12 +50,15 @@
 	}
 }
 .inner{
-	margin-left:-1100%;
 	width:1200%;
-    position: absolute;
-    visibility: hidden;
-    transition: 0.5s visibility;
+	position: absolute;
+	visibility: hidden;
+	transition: 0.5s visibility;
 	background:$white;
+
+	&.right{
+		margin-left:-1100%;
+	}
 }
 
 .inner span{
