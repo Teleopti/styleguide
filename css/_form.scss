@@ -303,3 +303,48 @@ select option{
 		margin-left: 23px;
 	}
 }
+
+//Sidenav toggles
+//
+//Markup:
+//<div class="sidenav-toggle">
+//	<input type="checkbox" id="nav-right" />
+//	<label for="nav-right">
+//		<i class="mdi mdi-fast-forward"></i>
+//	</label>
+//</div>
+//<div class="sidenav-toggle">
+//	<input type="checkbox" id="nav-left" />
+//	<label for="nav-left">
+//		<i class="mdi mdi-rewind"></i>
+//	</label>
+//</div>
+//	
+//Styleguide 1.4.8
+//
+
+.sidenav-toggle {
+
+	input[type='checkbox'] {
+		display:none;
+	}
+
+	label {
+		background-color: $gray-300;
+		width: 34px;
+		height: 34px;
+		border-radius: 4px;
+		text-align: center;
+		cursor: pointer;
+		transition: all .2s ease-in-out;
+	}
+	
+	label i{
+		padding-top: 10px;
+		padding-left: 5px;
+	}
+
+	input[type=checkbox]:checked ~ label {
+		transform: scale(-1, 1);
+	}
+}
