@@ -143,6 +143,7 @@ select option{
 //
 
 .wfm-radio {
+@extend .wfm-block;
 	input[type='radio'] {
 		display:none;
 	}
@@ -265,7 +266,9 @@ select option{
 //
 
 .wfm-checkbox {
-
+	margin-left: 5px; 
+	@extend .wfm-block;
+	
 	input[type='checkbox'] {
 		display:none;
 	}
@@ -301,6 +304,7 @@ select option{
 	span{
 		/*Slider width + 5px*/
 		margin-left: 23px;
+		white-space:nowrap;
 	}
 }
 

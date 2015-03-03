@@ -12,7 +12,7 @@
 //
 //Markup:
 //<div class="material-depth-1 navbar navbar-default"> 
-//  <div class="container">
+//  <div class="wfm-container">
 //		<div class="navbar-header">
 //			<div class="content">
 //				<span class="brand">Teleopti WFM</span>
@@ -81,6 +81,10 @@
 		margin-left: -15px;
 	}
 	
+	.wfm-container{
+		padding-left:5px;
+	}
+	
 	.breadbin{
 		margin-left:30px;
 	}
@@ -89,5 +93,6 @@
 		position:absolute;
 		right:5px;
 		top:30%;
+		display:inline-block;
 	}
 }
