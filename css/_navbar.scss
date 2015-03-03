@@ -20,9 +20,11 @@
 //					<a href="#" class="crumb">Settings ></a>
 //					<a href="#" class="crumb">Options</a>
 //				</span>
-//				<span class="right-actions">
-//					<a href="#"><i class="mdi mdi-logout"></i></a>
-//				</span>
+//				<div class="right-actions">
+//					<span><a><i class="mdi mdi-account"></i></a></span>
+//					<span><a><i class="mdi mdi-settings"></i></a></span>
+//					<span><a><i class="mdi mdi-logout"></i></a></span>
+//				</div>
 //			</div>
 //		</div>
 //	</div> 
@@ -66,7 +68,6 @@
 		color: $white !important;
 		text-decoration:none;
 		display:inline-block;
-		font-size: 14px;
 	}
 	
 	.brand{
@@ -93,6 +94,8 @@
 		position:absolute;
 		right:5px;
 		top:30%;
-		display:inline-block;
 	}
+	 .right-actions span{
+		display:inline-block;
+	 }
 }

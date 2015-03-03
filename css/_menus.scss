@@ -12,7 +12,7 @@
 //Markup:
 //<div class="dropdown" tabindex="0"> 
 //	<i class="mdi mdi-account"></i>
-//	<div class="inner">
+//	<div class="inner material-depth-2">
 //		<span>Option 1</span>
 //		<span>Option 2</span>
 //		<span>Option 3 is a long one, to show how they wrap</span>
@@ -22,19 +22,28 @@
 //Styleguide 1.14.1
 //
 .dropdown{
-	width: 18px;
+	width: 25px;
 	content: " ";
 	position: relative;
 	cursor: pointer;
+	font-size:14px;
+}
+
+.dropdown:focus {
+	background-color:$white;
 	
-	&:focus .inner{
+	.inner{
 		visibility: visible;
 		pointer-events: auto;
+	}
+	
+	i{
+		color: $gray087!important;
 	}
 }
 .inner{
 	margin-left:-1100%;
-	width:1200%!important;
+	width:1200%;
     position: absolute;
     visibility: hidden;
     transition: 0.5s visibility;
@@ -44,6 +53,7 @@
 .inner span{
 	display:block;
 	@extend .wfm-block;
+	border-bottom:1px solid $gray012;
 	
 	&:hover{
 		background-color:$gray012;
