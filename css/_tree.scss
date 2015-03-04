@@ -43,12 +43,12 @@
 
 
 	ol { 
-		@extend .wfm-block;
 		list-style: none;
 	}
 
 	li{
 		@extend .wfm-block;
+		padding-left:0!important;
 		border-left: 3px solid $blue-500;
 
 		.active-tree{
@@ -69,11 +69,12 @@
 	color: $white;
 	margin-top:-2px;
 	padding-top: 2px;
-	background-color: $blue-300;
+	background-color: $green-400;
 	content:"✓";
 }
 
 .angular-ui-tree-handle {
+	@extend .wfm-block;
 	cursor: pointer;
 	font-weight: 500;
 	-webkit-transition: all .2s ease-in-out;

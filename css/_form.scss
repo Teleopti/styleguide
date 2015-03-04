@@ -40,8 +40,6 @@
 
 input[type='text'], select{
 	width: 100%;
-	margin: 5px 0;
-	padding: 5px 5px 2px;
 	border: none;
 	color: $gray087;
 	border-bottom: 1px solid $gray-300;
@@ -63,6 +61,8 @@ input[type='text'], select{
   input[type='text'] {
     display: inline-block;
     width: 95%;
+	margin: 5px 0;
+	padding: 5px 5px 2px;
   }
 }
 
@@ -76,6 +76,8 @@ input[type='text'], select{
   input[type='text'] {
     display: inline-block;
     width: 95%;
+	margin: 5px 0;
+	padding: 5px 5px 2px;
   }
 }
 
