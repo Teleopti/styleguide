@@ -85,7 +85,7 @@
 	}
 	
 	.wfm-container{
-		padding-left:5px;
+		padding-left:$full-padding;
 	}
 	
 	.breadbin{
@@ -95,7 +95,7 @@
 	
 	.right-actions{
 		position:absolute;
-		right:5px;
+		right:$full-padding;
 		top:30%;
 	}
 	 .right-actions span{

@@ -55,13 +55,13 @@ input[type='text'], select{
   i {
     display: inline-block;
     font-weight:600;
-    width: 2%;
+    width: 5%;
   }
   input[type='text'] {
     display: inline-block;
-    width: 95%;
+    width: 92%;
 	margin: 5px 0;
-	padding: 5px 5px 2px;
+	padding: $full-padding $full-padding 2px;
   }
 }
 
@@ -76,7 +76,7 @@ input[type='text'], select{
     display: inline-block;
     width: 92%;
 	margin: 5px 0;
-	padding: 5px 5px 2px;
+	padding: $full-padding $full-padding 2px;
   }
 }
 
@@ -164,7 +164,7 @@ select option{
 	label:after {
 		content: "";
 		display: block;
-		padding-left:5px;
+		padding-left:$full-padding;
 		padding-top:2px;
 		width: 20px;
 		height: 20px;
@@ -349,7 +349,7 @@ select option{
 		height: 34px;
 		text-align: center;
 		cursor: pointer;
-		transition: all 0.2s ease-in-out 0.2s;
+		transition: all 0.2s ease-in-out;
 	}
 	
 	label i{

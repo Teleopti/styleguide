@@ -38,7 +38,7 @@ body{
 }
 
 .wfm-block {
-	padding:5px;
+	padding:$full-padding;
 	width:100%;
 } 
 
@@ -69,6 +69,7 @@ body{
 
 .layout-container {
   width:100%;
+  height:100%;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: row;
@@ -115,7 +116,7 @@ body{
 .help-text {
 	background-color:$white;
 	text-align: center;
-	padding: 5px;
+	padding: $full-padding;
 }
 
 .help-widget {
