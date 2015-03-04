@@ -8,9 +8,8 @@
 
 //Depth
 //
-//Getting a deeper look into the styles of shadows and positioning.
-//
-//Keep the number of stacked layers to a minimum and the total number of layer below 3 (including the background). If a raised element lives inside of another raised element it should have a higher material-depth number.
+//Getting a deeper look into the styles of shadows and positioning. The first thing we need to understand is the concept of stacked material (see http://goo.gl/A2ZAOH ).
+//Keep the number of stacked layers to a minimum and the total number of layer below 3 (including the background). If a raised element lives inside of another raised element it should have a higher material-depth number (i.e a panel with a depth of 1 can have one panel with a depth of 2 above (inside) it.) 
 //Elements floating above the main layout (such as context menus) should have the highest material-depth number possible (2).
 //
 //Markup:
