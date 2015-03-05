@@ -21,16 +21,16 @@
 
 .modal-box {
 	.modalbg {
-	  position: fixed;
-	  top: 0;
-	  right: 0;
-	  bottom: 0;
-	  left: 0;
-	  background: rgba(0, 0, 0, 0);
-	  z-index: 99999;
-	  transition: all 0.3s ease-in-out;
-	  display: block;
-	  pointer-events: none;
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: rgba(0, 0, 0, 0);
+		z-index: 99999;
+		transition: all 0.1s ease-in-out;
+		display: block;
+		pointer-events: none;
 	}
 	
 	.modalbg .dialog {
@@ -44,16 +44,16 @@
 	}
 
 	.modalbg:target {
-	  display: block;
-	  pointer-events: auto;
-	  background: $gray026;
-	  transition: all 0.5s ease-in-out;
+		display: block;
+		pointer-events: auto;
+		background: $gray026;
+		transition: $trasnition-timing;
 	}
 	
 	.modalbg:target .dialog {
-	  top: -20px;
-	  transition: all 0.5s ease-out;
-	  -transition-delay: 0.4s;
+		top: -20px;
+		transition: $trasnition-timing;
+		-transition-delay: 0.4s;
 	}
 	
 	.dismiss{
@@ -62,6 +62,6 @@
 	}
 	
 	i {
-	  color: $gray026;
+		color: $gray026;
 	}
 }

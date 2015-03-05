@@ -36,7 +36,7 @@
 //
 //Styleguide 2.2
 
-$blue-500: #1976D2;
+$blue-500: #0099FF; /*Teleopti blue*/
 $blue-300: #64b5f6;
 $blue-100: #BBDEFB;
 
@@ -55,8 +55,8 @@ $gray100: rgba(0,0,0,1);
 $white: #ffffff;
 
 $full-padding: 5px; /*sets wfm-block*/
-$half-padding: 3px;
-$trasnition-timing: all 0.5s ease;
+$half-padding: 3px; /*depricated, remove if used in code*/
+$trasnition-timing: all 0.5s ease-in-out;
 
 // These classes are just for styleguide
 .swatch-list {

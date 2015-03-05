@@ -30,7 +30,6 @@ body{
     height: 100%;
 	padding: $full-padding;
     background-color: white;
-    border-radius: 2px;
 }
 
 .container-block {
@@ -41,12 +40,6 @@ body{
 	padding:$full-padding;
 	width:100%;
 } 
-
-.material-block-header {
-    min-height: 60px;
-    border-bottom: 1px solid $gray-300;
-    padding: $full-padding;
-}
 
 .material-block-content {
     padding: $full-padding;

@@ -39,10 +39,10 @@
 //A secondary header should not live within another secondary header, rather, make a new secondary header to make skimming through the panel simple.
 //
 //Markup:
-//<div class="wfm-block sub-header"> 
+//<div class="sub-header"> 
 //	First header title
 //</div>
-//<div class="wfm-block bottom-header"> 
+//<div class="bottom-header"> 
 //	Second header title
 //</div>
 //
@@ -50,11 +50,13 @@
 // 
 
 .sub-header{
+	@extend .wfm-block;
 	background-color: $blue-500;
 	color: $white;
 }
 
 .bottom-header{
+	@extend .wfm-block;
 	background-color: $blue-300;
 	color: $gray087;
 }
