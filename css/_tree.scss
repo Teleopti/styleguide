@@ -77,8 +77,7 @@
 	@extend .wfm-block;
 	cursor: pointer;
 	font-weight: 500;
-	-webkit-transition: all .2s ease-in-out;
-	transition: all .2s ease-in-out;
+	transition: $trasnition-timing;
 	
 	&:hover {
 		background-color: $gray012;
