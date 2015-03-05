@@ -1,7 +1,7 @@
 
 //Forms
 //
-// Forms are more understandable with icons. Add one for every input if possible.
+// Input fields are more understandable with icons. Add one for every input if possible but make sure to keep it relevant and consistent.
 //
 //Styleguide 1.4
 //
@@ -122,7 +122,7 @@ select option{
 
 // Radio buttons
 //
-// TODO
+// Radio buttons are a group of options that can only have one item selected at a time.  
 //
 //Markup:
 //	<form>
@@ -184,7 +184,7 @@ select option{
 
 // Sliders
 //
-// TODO
+// The slider is used to toggle between two states (show/hide) and should have a ng-model to be able to use Angulars ng-show or ng-hide (http://goo.gl/M5U1oC)
 //
 //Markup:
 //      <div class="wfm-slider">
@@ -256,7 +256,7 @@ select option{
 
 // Checkboxes
 //
-// TODO
+// Checkboxes work the same way as radio buttons, except that any number of items can be selected. When faced with a large group of checkboxes, consider having a 'toggle all' option for easy management.
 //
 //Markup:
 //		<div class="wfm-checkbox">
@@ -318,6 +318,8 @@ select option{
 }
 
 //Sidenav toggles
+//
+//Sidenav toggles are a pair of checkboxes that controls the visibility of the sidenavs. The toggles are not part of the sidenav (if they were they would be hidden aswell and the user would be unable to show the sidenav without reloading the page). They instead trigger a Angular ng-hide on their respective sidenav.
 //
 //Markup:
 //<div class="sidenav-toggle">
