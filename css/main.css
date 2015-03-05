@@ -1,7 +1,9 @@
 @charset "UTF-8";
+/*Teleopti blue*/
 /*sets wfm-block*/
+/*depricated, remove if used in code*/
 .swatch-list .blue-500-swatch {
-  background: #1976D2 !important; }
+  background: #0099FF !important; }
 .swatch-list .blue-300-swatch {
   background: #64b5f6 !important; }
 .swatch-list .blue-100-swatch {
@@ -41,7 +43,7 @@ body {
   box-shadow: inset 0 2px 5px 0 rgba(0, 0, 0, 0.16); }
 
 .material-header {
-  background-color: #1976D2;
+  background-color: #0099FF;
   position: absolute;
   min-height: 130px;
   width: 100%;
@@ -51,20 +53,14 @@ body {
 .material-block {
   height: 100%;
   padding: 5px;
-  background-color: white;
-  border-radius: 2px; }
+  background-color: white; }
 
 .container-block, .tab-group .tab-container {
   background-color: #f5f5f5; }
 
-.wfm-block, .tile-footer, .tree li, .angular-ui-tree-handle, .wfm-list li, select option, .wfm-radio, .wfm-checkbox, .wfm-accordion input[type='radio'] + label, .inner span, .tab-group .tab-container, .notice, .notification-list li {
+.wfm-block, .tile-footer, .tree li, .angular-ui-tree-handle, .wfm-list li, select option, .wfm-radio, .wfm-checkbox, .sub-header, .bottom-header, .wfm-accordion input[type='radio'] + label, .inner span, .tab-group .tab-container, .notice, .notification-list li {
   padding: 5px;
   width: 100%; }
-
-.material-block-header {
-  min-height: 60px;
-  border-bottom: 1px solid #E0E0E0;
-  padding: 5px; }
 
 .material-block-content {
   padding: 5px;
@@ -128,7 +124,7 @@ body {
     list-style: none; }
   .tree li {
     padding-left: 0 !important;
-    border-left: 3px solid #1976D2; }
+    border-left: 3px solid #0099FF; }
     .tree li .active-tree {
       background-color: #ffffff; }
 
@@ -147,13 +143,12 @@ body {
 .angular-ui-tree-handle {
   cursor: pointer;
   font-weight: 500;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out; }
+  transition: all 0.5s ease-in-out; }
   .angular-ui-tree-handle:hover {
     background-color: rgba(0, 0, 0, 0.06); }
 
 .angular-ui-tree-handle.selected {
-  background-color: #1976D2;
+  background-color: #0099FF;
   color: #ffffff; }
   .angular-ui-tree-handle.selected:hover {
     color: rgba(0, 0, 0, 0.87);
@@ -163,7 +158,7 @@ body {
   padding-left: 0px;
   list-style: none; }
   .wfm-list .active {
-    border-left: 3px solid #1976D2;
+    border-left: 3px solid #0099FF;
     background-color: #ffffff; }
 
 .wfm-list li {
@@ -186,7 +181,7 @@ body {
   margin-top: -12px;
   margin-bottom: -12px;
   background-color: rgba(0, 0, 0, 0.06);
-  transition: all 0.5s ease;
+  transition: all 0.5s ease-in-out;
   padding-top: 12px;
   padding-bottom: 5px; }
   .wfm-leave-behind span {
@@ -271,7 +266,7 @@ md-tooltip[md-direction="top"] {
   margin-bottom: 8px; }
 
 md-tooltip .md-background {
-  background: #1976D2;
+  background: #0099FF;
   position: absolute;
   left: 50%;
   width: 256px;
@@ -515,7 +510,7 @@ input[type='text'], select {
   transform: scale(-1, 1); }
 
 .sub-header {
-  background-color: #1976D2;
+  background-color: #0099FF;
   color: #ffffff; }
 
 .bottom-header {
@@ -523,7 +518,7 @@ input[type='text'], select {
   color: rgba(0, 0, 0, 0.87); }
 
 .navbar {
-  background-color: #1976D2;
+  background-color: #0099FF;
   border-radius: 0;
   border: none;
   margin-bottom: 0; }
@@ -565,7 +560,7 @@ input[type='text'], select {
     background-color: #ececec; }
 
 .wfm-btn-invis-primary {
-  color: #1976D2;
+  color: #0099FF;
   background-color: transparent; }
   .wfm-btn-invis-primary:hover {
     background-color: #ececec; }
@@ -582,7 +577,7 @@ input[type='text'], select {
 
 .wfm-btn-primary {
   color: #ffffff;
-  background-color: #1976D2; }
+  background-color: #0099FF; }
 
 .wfm-fab {
   text-align: center;
@@ -657,7 +652,7 @@ tr {
   left: 0;
   background: transparent;
   z-index: 99999;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.1s ease-in-out;
   display: block;
   pointer-events: none; }
 .modal-box .modalbg .dialog {
@@ -674,7 +669,7 @@ tr {
   transition: all 0.5s ease-in-out; }
 .modal-box .modalbg:target .dialog {
   top: -20px;
-  transition: all 0.5s ease-out;
+  transition: all 0.5s ease-in-out;
   -transition-delay: 0.4s; }
 .modal-box .dismiss {
   float: right;
@@ -689,9 +684,8 @@ tr {
     z-index: 20;
     cursor: pointer;
     color: #ffffff;
-    background-color: #1976D2;
+    background-color: #0099FF;
     margin-bottom: 0;
-    border-bottom: 1px solid #ffffff;
     font-weight: inherit; }
   .wfm-accordion input[type='radio'] + .sub-label {
     background-color: #64b5f6;
@@ -704,7 +698,8 @@ tr {
     z-index: 10;
     max-height: 0;
     transition: max-height 0.8s;
-    overflow: hidden; }
+    overflow: hidden;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06); }
   .wfm-accordion input:checked ~ article {
     max-height: 1000px;
     transition: max-height 0.8s; }
@@ -778,11 +773,10 @@ tr {
     -ms-flex-positive: 1;
     flex-grow: 1;
     min-width: 100px !important;
-    border-bottom: 6px solid #1976D2;
-    background-color: #1976D2;
+    border-bottom: 6px solid #0099FF;
+    background-color: #0099FF;
     text-align: center;
-    -webkit-transition: 0.3s all ease-in-out;
-    transition: 0.3s all ease-in-out;
+    transition: all 0.5s ease-in-out;
     border-radius: 0 !important;
     /*overrides bootstrap*/
     margin-bottom: 0 !important;
@@ -798,6 +792,7 @@ tr {
 
 .notice {
   cursor: pointer;
+  margin: 5px;
   color: #111111;
   display: inline-block; }
   .notice.default {
@@ -807,7 +802,8 @@ tr {
   .notice.error {
     background-color: #E53935; }
   .notice.detail {
-    background: rgba(0, 0, 0, 0.06); }
+    background: rgba(0, 0, 0, 0.06);
+    margin: -5px 5px 5px; }
 
 .notification-list {
   list-style: none;
