@@ -28,7 +28,7 @@ body{
 
 .material-block {
     height: 100%;
-    min-height: 400px;
+	padding: $full-padding;
     background-color: white;
     border-radius: 2px;
 }
