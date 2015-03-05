@@ -38,18 +38,16 @@
 //Styleguide 1.4.3
 //
 
-input[type='text']{
-	width: 100%;
-	margin: 5px 0;
-	padding: 5px 5px 2px;
+input[type='text'], select{
 	border: none;
-  color: $gray087;
+	color: $gray087;
 	border-bottom: 1px solid $gray-300;
-  &:focus {
-    border: none;
-    outline: none;
-    border-bottom: 2px solid $blue-300;
-  }
+	
+	&:focus {
+		border: none;
+		outline: none;
+		border-bottom: 2px solid $blue-300;
+	}
 }
 
 .input-prepend {
@@ -57,11 +55,13 @@ input[type='text']{
   i {
     display: inline-block;
     font-weight:600;
-    width: 2%;
+    width: 5%;
   }
   input[type='text'] {
     display: inline-block;
-    width: 95%;
+    width: 92%;
+	margin: 5px 0;
+	padding: $full-padding $full-padding 2px;
   }
 }
 
@@ -70,11 +70,13 @@ input[type='text']{
   i {
     display: inline-block;
     font-weight:600;
-    width: 2%;
+    width: 5%;
   }
   input[type='text'] {
     display: inline-block;
-    width: 95%;
+    width: 92%;
+	margin: 5px 0;
+	padding: $full-padding $full-padding 2px;
   }
 }
 
@@ -98,16 +100,24 @@ input[type='text']{
 // TODO
 //
 //Markup:
-//	<select><option>1</option></select>
+//	<select>
+//		<option>1</option>
+//		<option>2</option>
+//		<option>3</option>
+//		<option>4</option>
+//		<option>5</option>
+//		<option>6</option>
+//		<option>7</option>
+//		<option>8</option>
+//		<option>9</option>
+//		<option>10</option>
+//	</select>
 //
 //Styleguide 1.4.4
 //
 
-select {
-  width: 100%;
-  outline:none;
-  border: none;
-  border-bottom: 1px solid $gray-300;
+select option{
+	@extend .wfm-block;
 }
 
 // Radio buttons
@@ -134,6 +144,7 @@ select {
 //
 
 .wfm-radio {
+@extend .wfm-block;
 	input[type='radio'] {
 		display:none;
 	}
@@ -153,7 +164,7 @@ select {
 	label:after {
 		content: "";
 		display: block;
-		padding-left:5px;
+		padding-left:$full-padding;
 		padding-top:2px;
 		width: 20px;
 		height: 20px;
@@ -166,7 +177,8 @@ select {
 	}
 	
 	span{
-		margin-left: 45px;
+		/*label width + 5px*/
+		margin-left: 23px;
 	}
 }
 
@@ -178,7 +190,7 @@ select {
 //      <div class="wfm-slider">
 //        <input type="checkbox" id="slide1" />
 //			<label for="slide1">
-//				<span>Toggle</span>
+//				<span>stuff</span>
 //			</label>
 //      </div>
 //
@@ -187,8 +199,8 @@ select {
 
 .wfm-slider {
 
-	width: 55px;
-	height: 26px;
+	width: 48px;
+	height: 18px;
 	margin: 5px;
 	position: relative;
 
@@ -200,19 +212,19 @@ select {
 		background-color: $gray-300;
 		width: 100%;
 		height: 100%;
-		border-radius: 42px;
+		border-radius: 40px;
 		-webkit-transition: background-color .2s ease-in-out;
 		transition: background-color .2s ease-in-out;
 	}
 	label:after {
 		content: "";
 		display: block;
-		width: 20px;
-		height: 20px;
+		width: 14px;
+		height: 14px;
 		border-radius: 44px;
 		cursor: pointer;
 		position: absolute;
-		top: 3px;
+		top: 2px;
 		z-index: 1;
 		left: 5px;
 		background-color: $white;
@@ -228,7 +240,17 @@ select {
 	}
 	
 	span{
-		margin-left: 65px;
+		/*Slider width + 5px*/
+		margin-left: 53px;
+		white-space:nowrap;
+	}
+	
+	span:before {
+		content:"Show ";
+	}
+	
+	input[type=checkbox]:checked ~ label span:before {
+		content:"Hide ";
 	}
 }
 
@@ -254,7 +276,9 @@ select {
 //
 
 .wfm-checkbox {
-
+	margin-left: 5px; 
+	@extend .wfm-block;
+	
 	input[type='checkbox'] {
 		display:none;
 	}
@@ -263,7 +287,6 @@ select {
 		background-color: $gray-300;
 		width: 18px;
 		height: 18px;
-		margin: 5px;
 		border-radius: 4px;
 		text-align: center;
 		-webkit-transition: background-color .2s ease-in-out;
@@ -273,8 +296,6 @@ select {
 	label:before {
 		content: "";
 		display: block;
-		padding-left:5px;
-		padding-top:2px;
 		width: 20px;
 		height: 20px;
 		color: $white;
@@ -291,6 +312,51 @@ select {
 	}
 
 	span{
-		margin-left: 45px;
+		margin-left: 23px;
+		white-space:nowrap;
+	}
+}
+
+//Sidenav toggles
+//
+//Markup:
+//<div class="sidenav-toggle">
+//	<input type="checkbox" id="nav-right" />
+//	<label for="nav-right">
+//		<i class="mdi mdi-fast-forward"></i>
+//	</label>
+//</div>
+//<div class="sidenav-toggle">
+//	<input type="checkbox" id="nav-left" />
+//	<label for="nav-left">
+//		<i class="mdi mdi-rewind"></i>
+//	</label>
+//</div>
+//	
+//Styleguide 1.4.8
+//
+
+.sidenav-toggle {
+
+	input[type='checkbox'] {
+		display:none;
+	}
+
+	label {
+		@extend .material-trench-1;
+		background-color: $gray-300;
+		width: 34px;
+		height: 34px;
+		text-align: center;
+		cursor: pointer;
+		transition: all 0.2s ease-in-out;
+	}
+	
+	label i{
+		padding-top: 5px;
+	}
+
+	input[type=checkbox]:checked ~ label {
+		transform: scale(-1, 1);
 	}
 }

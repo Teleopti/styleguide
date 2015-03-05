@@ -1,9 +1,9 @@
 ﻿//Lists
 //
-// Options can only effect the list item it is a part of. Options can have a tooltip and an icon and they are displayed only if the item is selected.
-// It is the "leave-behinds" concept :  http://www.google.com/design/spec/components/list-controls.html#list-controls-types-of-list-controls 
+// A list can have several options attached to it in a so called 'leave-behind' (http://goo.gl/DMxAHS), however, options can only effect the list item they are a part of. Individual options can have a tooltip and an icon and they are displayed only if the item is hovered or clicked.
+// If the list is long enough to extend outside of the main workarea it should be scrollable to avoid making the main view scroll.  
 //
-// Note : It's also good to provide totals at each column bottom in a grid when it's relevant.
+// If there are actions that affect the whole list (such as create new or delete all) they should be placed above or below the list.
 //
 //Markup:
 //<ul class="wfm-list">
@@ -17,7 +17,7 @@
 //		</span>
 //		</div>
 //	</li>
-//	<li>
+//	<li class="active">
 //		List Item 2
 //		<div class="wfm-leave-behind">
 //			<span>
@@ -27,7 +27,7 @@
 //			</span>	
 //		</div>
 //	</li>
-//	<li class="active">
+//	<li>
 //		List Item 3
 //		<div class="wfm-leave-behind">
 //			<span>
@@ -45,10 +45,9 @@
 .wfm-list {
 	padding-left: 0px;
 	list-style: none;
-	background-color: white;
 	
 	.active{
-		border-left: 2px solid blue;
+		border-left: 3px solid $blue-500;
 		background-color: $white;
 	}
 }
@@ -58,6 +57,7 @@
 	cursor: pointer;
 	overflow: hidden;
 	background-color:$gray-100;
+	border-left: 3px solid transparent;
 	/*
 	&:active, &:focus, &:active:hover, &:focus:hover {
 		background-color: $blue-500 !important;
@@ -65,14 +65,9 @@
 	*/
 
 	&:hover{
-		background-color: $blue-100;
-	}
-	&:last-child{
-		margin-bottom:0;
+		border-left: 3px solid $gray-300;
 	}
 }
-
-
 
 .wfm-leave-behind {
 	@extend .material-trench-1;
@@ -91,7 +86,7 @@
 	}
 	
 	i{	
-		positon: justify;
+		position: justify;
 		padding-left: 5px;
 		padding-top: 2px;
 		font-size: 18px;

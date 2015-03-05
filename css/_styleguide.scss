@@ -8,9 +8,9 @@
 
 //Depth
 //
-//Getting a deeper look into the styles of shadows and positioning.
-//
-//Keep the number of stacked layers to a minimum and the total number of layer below 3 (including the background).
+//Getting a deeper look into the styles of shadows and positioning. The first thing we need to understand is the concept of stacked material (see http://goo.gl/A2ZAOH ).
+//Keep the number of stacked layers to a minimum and the total number of layer below 3 (including the background). If a raised element lives inside of another raised element it should have a higher material-depth number (i.e a panel with a depth of 1 can have one panel with a depth of 2 above (inside) it.) 
+//Elements floating above the main layout (such as context menus) should have the highest material-depth number possible (2).
 //
 //Markup:
 //<div class="spacer"> Background </div>
@@ -53,6 +53,28 @@
 
 //Sidenavs
 //
+//Markup:
+//<div class="layout-container">
+//	<div class="sidenav material-depth-1">
+//		<div class="wfm-block sub-header">Head</div>
+//	</div>
+//	<div class="sidenav-toggle">
+//		<input type="checkbox" id="nav-left" />
+//		<label for="nav-left">
+//			<i class="mdi mdi-rewind"></i>
+//		</label>
+//	</div>
+//	<div class="sidenav-toggle">
+//		<input type="checkbox" id="nav-right" />
+//		<label for="nav-right">
+//			<i class="mdi mdi-fast-forward"></i>
+//		</label>
+//	</div>
+//	<div class="sidenav material-depth-1">
+//		<div class="wfm-block sub-header">Head</div>
+//	</div>
+//</div>
+//
 //Styleguide 3.3
 // 
 //
@@ -65,17 +87,21 @@
 
 //Icons 
 //
-//
+//By default we use material icons : http://materialdesignicons.com/
 //
 //Styleguide 4
 // 
 //
 
-// Default set of icons 
+// Table symbols
 //
-// We use material icons : http://materialdesignicons.com/
+// TODO
 //
-//TODO
+//Markup:
+//	<i class="mdi mdi-alert-box"></i>
+//	<i class="mdi mdi-alert"></i>
+//	<i class="mdi mdi-alert-octagon"></i>
+//	<i class="mdi mdi-bookmark"></i>
 //
 //Styleguide 4.1
 //

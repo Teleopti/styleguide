@@ -1,18 +1,18 @@
 ﻿
 // Navbars
 //
-// In WFM, the navbar is at top of the page (based on bootstrap right now)
+//
 //
 //Styleguide 1.5
 //
 
 // Topbar
 //
-// TODO
+// The topbar is at top of the page, and contains the brand, some breadcrumbs, a global search and some actions. Since the topbar is always imported into the template it should remain as global as possible.
 //
 //Markup:
 //<div class="material-depth-1 navbar navbar-default"> 
-//  <div class="container">
+//  <div class="wfm-container">
 //		<div class="navbar-header">
 //			<div class="content">
 //				<span class="brand">Teleopti WFM</span>
@@ -20,9 +20,11 @@
 //					<a href="#" class="crumb">Settings ></a>
 //					<a href="#" class="crumb">Options</a>
 //				</span>
-//				<span class="right-actions">
-//					<a href="#"><i class="mdi mdi-logout"></i></a>
-//				</span>
+//				<div class="right-actions">
+//					<span><a><i class="mdi mdi-account"></i></a></span>
+//					<span><a><i class="mdi mdi-settings"></i></a></span>
+//					<span><a><i class="mdi mdi-logout"></i></a></span>
+//				</div>
 //			</div>
 //		</div>
 //	</div> 
@@ -33,7 +35,8 @@
 
 // Headers
 //
-// The first header is used to indicate a new area or panel, any headers within that panel will have the second header.
+//The normal header is used to indicate a new area or panel, any headers within that panel will have the second header (however, try to keep the total number of headers within one panel as low as possible).
+//A secondary header should not live within another secondary header, rather, make a new secondary header to make skimming through the panel simple.
 //
 //Markup:
 //<div class="wfm-block sub-header"> 
@@ -66,11 +69,11 @@
 		color: $white !important;
 		text-decoration:none;
 		display:inline-block;
-		font-size: 14px;
 	}
 	
 	.brand{
 		color: $white !important;
+		font-weight: bold;
 	}
 	
 	.content {
@@ -81,13 +84,21 @@
 		margin-left: -15px;
 	}
 	
+	.wfm-container{
+		padding-left:$full-padding;
+	}
+	
 	.breadbin{
 		margin-left:30px;
+		font-size: 75%;
 	}
 	
 	.right-actions{
 		position:absolute;
-		right:5px;
+		right:$full-padding;
 		top:30%;
 	}
+	 .right-actions span{
+		display:inline-block;
+	 }
 }

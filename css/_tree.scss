@@ -22,7 +22,7 @@
 //				<div>
 //					Parent
 //					<ol>
-//						<li class="angular-ui-tree-handle active">child</li>
+//						<li class="angular-ui-tree-handle selected">child</li>
 //					</ol>
 //				</div>
 //			</li>
@@ -35,21 +35,21 @@
 
 
 .tree {
+	@extend .material-trench-1;
 	max-height: 800px;
 	overflow-y: auto;
 	background-color: #f5f5f5;
-	box-shadow: inset  0px 2px 5px 0px rgba(0, 0, 0, 0.16);
 	vertical-align: middle;
 
 
 	ol { 
-		@extend .wfm-block;
 		list-style: none;
 	}
 
 	li{
 		@extend .wfm-block;
-		border-left: 2px solid $blue-500;
+		padding-left:0!important;
+		border-left: 3px solid $blue-500;
 
 		.active-tree{
 			background-color:$white;
@@ -59,7 +59,8 @@
 	}
 }
 
-.tree .active:after{
+.angular-ui-tree-handle.selected:after{
+	@extend .material-depth-1;
 	float:right;
 	height: 25px;
 	width: 25px;
@@ -68,13 +69,17 @@
 	color: $white;
 	margin-top:-2px;
 	padding-top: 2px;
-	background-color: $blue-300;
+	background-color: $green-400;
 	content:"✓";
 }
 
 .angular-ui-tree-handle {
+	@extend .wfm-block;
 	cursor: pointer;
 	font-weight: 500;
+	-webkit-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+	
 	&:hover {
 		background-color: $gray012;
 	}
@@ -82,7 +87,9 @@
 
 .angular-ui-tree-handle.selected {
 	background-color: $blue-500;
+	color: $white;
 	&:hover {
+		color: $gray087;
 		background-color: $blue-300;
 	}
 }

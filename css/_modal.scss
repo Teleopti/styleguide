@@ -3,7 +3,65 @@
 // TODO 
 //
 //Markup:
-//	
+//<div class="modal-box">
+//<a href="#openModal1">Open</a>
+//<div id="openModal1" class="modalbg">
+//	<div class="dialog">
+//		<a href="#close1" title="Close1" class="dismiss">
+//			<i class="mdi mdi-close-circle"></i>
+//		</a>
+//  	<h4>Hello</h4>
+//		I am modal
+//	</div>
+//</div>
+//</div>
 //
 //Styleguide 1.12
 //
+
+.modal-box {
+	.modalbg {
+	  position: fixed;
+	  top: 0;
+	  right: 0;
+	  bottom: 0;
+	  left: 0;
+	  background: rgba(0, 0, 0, 0);
+	  z-index: 99999;
+	  transition: all 0.3s ease-in-out;
+	  display: block;
+	  pointer-events: none;
+	}
+	
+	.modalbg .dialog {
+		@extend material-depth-2;
+		width: 400px;
+		position: relative;
+		top: -1000px;
+		margin: 10% auto;
+		padding: 5px 20px 13px 20px;
+		background: $white;	
+	}
+
+	.modalbg:target {
+	  display: block;
+	  pointer-events: auto;
+	  background: $gray026;
+	  transition: all 0.5s ease-in-out;
+	}
+	
+	.modalbg:target .dialog {
+	  top: -20px;
+	  transition: all 0.5s ease-out;
+	  -transition-delay: 0.4s;
+	}
+	
+	.dismiss{
+		float: right;
+		font-size: 18px;
+	}
+	
+	i {
+	  color: $gray026;
+	}
+}

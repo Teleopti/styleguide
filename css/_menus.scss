@@ -1,0 +1,72 @@
+
+//Menus
+//	
+//Styleguide 1.14
+//
+
+// Context menus
+//
+//Context menus should be used carefully and only where relevant. In the cases where it is used, limit the number of items to a maximum of 5. 
+//A menu item can not open another menu and there are no nested menus. If more options are needed, use a Select instead. 
+//
+//Markup:
+//<div class="dropdown" tabindex="0"> 
+//	<i class="mdi mdi-account"></i>
+//	<div class="inner material-depth-2">
+//		<span>Option 1</span>
+//		<span>Option 2</span>
+//		<span>Option 3 is a long one, to show how they wrap</span>
+//	</div> 
+//</div>
+//<div class="dropdown" tabindex="0"> 
+//	<i class="mdi mdi-account"></i>
+//	<div class="inner right material-depth-2">
+//		<span>Option 1</span>
+//		<span>Option 2</span>
+//		<span>Option 3 is a long one, to show how they wrap</span>
+//	</div> 
+//</div>
+//	
+//Styleguide 1.14.1
+//
+.dropdown{
+	width: 25px;
+	content: " ";
+	position: relative;
+	cursor: pointer;
+	font-size:14px;
+}
+
+.dropdown:focus {
+	background-color:$white;
+	
+	.inner{
+		visibility: visible;
+		pointer-events: auto;
+	}
+	
+	i{
+		color: $gray087!important;
+	}
+}
+.inner{
+	width:1200%;
+	position: absolute;
+	visibility: hidden;
+	transition: 0.5s visibility;
+	background:$white;
+
+	&.right{
+		margin-left:-1100%;
+	}
+}
+
+.inner span{
+	display:block;
+	@extend .wfm-block;
+	border-bottom:1px solid $gray012;
+	
+	&:hover{
+		background-color:$gray012;
+	}
+}
