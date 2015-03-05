@@ -31,7 +31,7 @@
   <nav class="kss-nav">
     <ul class="kss-nav__menu">
       <li class="kss-nav__menu-item">
-        <a href="./">
+        <a href="./index.html">
           <span class="kss-nav__ref">0</span
           ><span class="kss-nav__name">Overview</span>
         </a>
@@ -138,12 +138,6 @@
                 ><span class="kss-nav__name">Tabs</span>
               </a>
             </li>
-            <li class="kss-nav__menu-item">
-              <a href="section-1.html#kssref-1.17">
-                <span class="kss-nav__ref">1.17</span
-                ><span class="kss-nav__name">Calendar</span>
-              </a>
-            </li>
         </ul>
       </li>
       <li class="kss-nav__menu-item">
@@ -206,8 +200,9 @@
 
 
       <div class="kss-description">
-        <p>Getting a deeper look into the styles of shadows and positioning.</p>
-<p>Keep the number of stacked layers to a minimum and the total number of layer below 3 (including the background).</p>
+        <p>Getting a deeper look into the styles of shadows and positioning. The first thing we need to understand is the concept of stacked material (see <a href="http://goo.gl/A2ZAOH">http://goo.gl/A2ZAOH</a> ).
+Keep the number of stacked layers to a minimum and the total number of layer below 3 (including the background). If a raised element lives inside of another raised element it should have a higher material-depth number (i.e a panel with a depth of 1 can have one panel with a depth of 2 above (inside) it.)
+Elements floating above the main layout (such as context menus) should have the highest material-depth number possible (2).</p>
 
       </div>
     </div>
@@ -248,9 +243,9 @@
 
 
       <div class="kss-description">
-        <p>Options can only effect the list item it is a part of. Options can have a tooltip and an icon and they are displayed only if the item is selected.
-It is the &quot;leave-behinds&quot; concept :  <a href="http://www.google.com/design/spec/components/list-controls.html#list-controls-types-of-list-controls">http://www.google.com/design/spec/components/list-controls.html#list-controls-types-of-list-controls</a></p>
-<p>Note : It&#39;s also good to provide totals at each column bottom in a grid when it&#39;s relevant.</p>
+        <p>A list can have several options attached to it in a so called &#39;leave-behind&#39; (<a href="http://goo.gl/DMxAHS">http://goo.gl/DMxAHS</a>), however, options can only effect the list item they are a part of. Individual options can have a tooltip and an icon and they are displayed only if the item is hovered or clicked.
+If the list is long enough to extend outside of the main workarea it should be scrollable to avoid making the main view scroll.</p>
+<p>If there are actions that affect the whole list (such as create new or delete all) they should be placed above or below the list.</p>
 
       </div>
     </div>
@@ -271,7 +266,7 @@ It is the &quot;leave-behinds&quot; concept :  <a href="http://www.google.com/de
 	</span>
 	</div>
 </li>
-<li>
+<li class="active">
 	List Item 2
 	<div class="wfm-leave-behind">
 		<span>
@@ -281,7 +276,7 @@ It is the &quot;leave-behinds&quot; concept :  <a href="http://www.google.com/de
 		</span>
 	</div>
 </li>
-<li class="active">
+<li>
 	List Item 3
 	<div class="wfm-leave-behind">
 		<span>
@@ -307,7 +302,7 @@ It is the &quot;leave-behinds&quot; concept :  <a href="http://www.google.com/de
 	&lt;/span&gt;
 	&lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;
+&lt;li class=&quot;active&quot;&gt;
 	List Item 2
 	&lt;div class=&quot;wfm-leave-behind&quot;&gt;
 		&lt;span&gt;
@@ -317,7 +312,7 @@ It is the &quot;leave-behinds&quot; concept :  <a href="http://www.google.com/de
 		&lt;/span&gt;
 	&lt;/div&gt;
 &lt;/li&gt;
-&lt;li class=&quot;active&quot;&gt;
+&lt;li&gt;
 	List Item 3
 	&lt;div class=&quot;wfm-leave-behind&quot;&gt;
 		&lt;span&gt;
@@ -372,7 +367,7 @@ It is the &quot;leave-behinds&quot; concept :  <a href="http://www.google.com/de
 			<div>
 				Parent
 				<ol>
-					<li class="angular-ui-tree-handle active">child</li>
+					<li class="angular-ui-tree-handle selected">child</li>
 				</ol>
 			</div>
 		</li>
@@ -402,7 +397,7 @@ It is the &quot;leave-behinds&quot; concept :  <a href="http://www.google.com/de
 			&lt;div&gt;
 				Parent
 				&lt;ol&gt;
-					&lt;li class=&quot;angular-ui-tree-handle active&quot;&gt;child&lt;/li&gt;
+					&lt;li class=&quot;angular-ui-tree-handle selected&quot;&gt;child&lt;/li&gt;
 				&lt;/ol&gt;
 			&lt;/div&gt;
 		&lt;/li&gt;
@@ -546,12 +541,34 @@ It is the &quot;leave-behinds&quot; concept :  <a href="http://www.google.com/de
           Example
         </div>
         <div class="kss-modifier__example">
-          <select><option>1</option></select>
+          <select>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	<option>6</option>
+	<option>7</option>
+	<option>8</option>
+	<option>9</option>
+	<option>10</option>
+</select>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;select&gt;&lt;option&gt;1&lt;/option&gt;&lt;/select&gt;</code></pre>
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;select&gt;
+	&lt;option&gt;1&lt;/option&gt;
+	&lt;option&gt;2&lt;/option&gt;
+	&lt;option&gt;3&lt;/option&gt;
+	&lt;option&gt;4&lt;/option&gt;
+	&lt;option&gt;5&lt;/option&gt;
+	&lt;option&gt;6&lt;/option&gt;
+	&lt;option&gt;7&lt;/option&gt;
+	&lt;option&gt;8&lt;/option&gt;
+	&lt;option&gt;9&lt;/option&gt;
+	&lt;option&gt;10&lt;/option&gt;
+&lt;/select&gt;</code></pre>
       </div>
 
       </section>
@@ -637,7 +654,7 @@ It is the &quot;leave-behinds&quot; concept :  <a href="http://www.google.com/de
                <div class="wfm-slider">
        <input type="checkbox" id="slide1" />
 		<label for="slide1">
-			<span>Toggle</span>
+			<span>stuff</span>
 		</label>
      </div>
         </div>
@@ -647,7 +664,7 @@ It is the &quot;leave-behinds&quot; concept :  <a href="http://www.google.com/de
         <pre class="prettyprint linenums lang-html"><code data-language="html">     &lt;div class=&quot;wfm-slider&quot;&gt;
        &lt;input type=&quot;checkbox&quot; id=&quot;slide1&quot; /&gt;
 		&lt;label for=&quot;slide1&quot;&gt;
-			&lt;span&gt;Toggle&lt;/span&gt;
+			&lt;span&gt;stuff&lt;/span&gt;
 		&lt;/label&gt;
      &lt;/div&gt;</code></pre>
       </div>
@@ -706,6 +723,55 @@ It is the &quot;leave-behinds&quot; concept :  <a href="http://www.google.com/de
       </div>
 
       </section>
+      <section id="kssref-1.4.8" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink">
+          <span class="kss-title__ref">1.4.8</span
+          >Sidenav toggles
+        </a>
+      </h3>
+
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          <div class="sidenav-toggle">
+<input type="checkbox" id="nav-right" />
+<label for="nav-right">
+	<i class="mdi mdi-fast-forward"></i>
+</label>
+</div>
+<div class="sidenav-toggle">
+<input type="checkbox" id="nav-left" />
+<label for="nav-left">
+	<i class="mdi mdi-rewind"></i>
+</label>
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;sidenav-toggle&quot;&gt;
+&lt;input type=&quot;checkbox&quot; id=&quot;nav-right&quot; /&gt;
+&lt;label for=&quot;nav-right&quot;&gt;
+	&lt;i class=&quot;mdi mdi-fast-forward&quot;&gt;&lt;/i&gt;
+&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sidenav-toggle&quot;&gt;
+&lt;input type=&quot;checkbox&quot; id=&quot;nav-left&quot; /&gt;
+&lt;label for=&quot;nav-left&quot;&gt;
+	&lt;i class=&quot;mdi mdi-rewind&quot;&gt;&lt;/i&gt;
+&lt;/label&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
       <section id="kssref-1.5" class="kss-section kss-section--depth-2">
 
     <div class="kss-style">
@@ -717,10 +783,6 @@ It is the &quot;leave-behinds&quot; concept :  <a href="http://www.google.com/de
       </h2>
 
 
-      <div class="kss-description">
-        <p>In WFM, the navbar is at top of the page (based on bootstrap right now)</p>
-
-      </div>
     </div>
 
 
@@ -737,7 +799,7 @@ It is the &quot;leave-behinds&quot; concept :  <a href="http://www.google.com/de
 
 
       <div class="kss-description">
-        <p>TODO</p>
+        <p>The topbar is at top of the page, and contains the brand, some breadcrumbs, a global search and some actions. Since the topbar is always imported into the template it should remain as global as possible.</p>
 
       </div>
     </div>
@@ -748,7 +810,7 @@ It is the &quot;leave-behinds&quot; concept :  <a href="http://www.google.com/de
         </div>
         <div class="kss-modifier__example">
           <div class="material-depth-1 navbar navbar-default">
- <div class="container">
+ <div class="wfm-container">
 	<div class="navbar-header">
 		<div class="content">
 			<span class="brand">Teleopti WFM</span>
@@ -756,9 +818,11 @@ It is the &quot;leave-behinds&quot; concept :  <a href="http://www.google.com/de
 				<a href="#" class="crumb">Settings ></a>
 				<a href="#" class="crumb">Options</a>
 			</span>
-			<span class="right-actions">
-				<a href="#"><i class="mdi mdi-logout"></i></a>
-			</span>
+			<div class="right-actions">
+				<span><a><i class="mdi mdi-account"></i></a></span>
+				<span><a><i class="mdi mdi-settings"></i></a></span>
+				<span><a><i class="mdi mdi-logout"></i></a></span>
+			</div>
 		</div>
 	</div>
 </div>
@@ -768,7 +832,7 @@ It is the &quot;leave-behinds&quot; concept :  <a href="http://www.google.com/de
 
       <div class="kss-markup kss-style">
         <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;material-depth-1 navbar navbar-default&quot;&gt;
- &lt;div class=&quot;container&quot;&gt;
+ &lt;div class=&quot;wfm-container&quot;&gt;
 	&lt;div class=&quot;navbar-header&quot;&gt;
 		&lt;div class=&quot;content&quot;&gt;
 			&lt;span class=&quot;brand&quot;&gt;Teleopti WFM&lt;/span&gt;
@@ -776,9 +840,11 @@ It is the &quot;leave-behinds&quot; concept :  <a href="http://www.google.com/de
 				&lt;a href=&quot;#&quot; class=&quot;crumb&quot;&gt;Settings &gt;&lt;/a&gt;
 				&lt;a href=&quot;#&quot; class=&quot;crumb&quot;&gt;Options&lt;/a&gt;
 			&lt;/span&gt;
-			&lt;span class=&quot;right-actions&quot;&gt;
-				&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;mdi mdi-logout&quot;&gt;&lt;/i&gt;&lt;/a&gt;
-			&lt;/span&gt;
+			&lt;div class=&quot;right-actions&quot;&gt;
+				&lt;span&gt;&lt;a&gt;&lt;i class=&quot;mdi mdi-account&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/span&gt;
+				&lt;span&gt;&lt;a&gt;&lt;i class=&quot;mdi mdi-settings&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/span&gt;
+				&lt;span&gt;&lt;a&gt;&lt;i class=&quot;mdi mdi-logout&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/span&gt;
+			&lt;/div&gt;
 		&lt;/div&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
@@ -798,7 +864,8 @@ It is the &quot;leave-behinds&quot; concept :  <a href="http://www.google.com/de
 
 
       <div class="kss-description">
-        <p>The first header is used to indicate a new area or panel, any headers within that panel will have the second header.</p>
+        <p>The normal header is used to indicate a new area or panel, any headers within that panel will have the second header (however, try to keep the total number of headers within one panel as low as possible).
+A secondary header should not live within another secondary header, rather, make a new secondary header to make skimming through the panel simple.</p>
 
       </div>
     </div>
@@ -839,8 +906,9 @@ Second header title
 
 
       <div class="kss-description">
-        <p>Avoid non specific actions as a label of an action.
-For example, &quot;OK&quot; and &quot;GO&quot; are not specific but &quot;SAVE USER&quot; and &quot;GO ON DASHBOARD&quot; are.</p>
+        <p>When using buttons, avoid non specific actions as a label.
+For example, &quot;OK&quot; and &quot;GO&quot; are not specific while &quot;SAVE USER&quot; and &quot;GO ON DASHBOARD&quot; are.
+This helps the user understand what the action will do and what object it will effect.</p>
 
       </div>
     </div>
@@ -872,7 +940,7 @@ The Secondary buttons area is always visible and should mainly be used for funct
         <div class="kss-modifier__example">
           <button class="wfm-btn wfm-btn-invis-default">DEFAULT</button>
 <button class="wfm-btn wfm-btn-invis-primary">PRIMARY</button>
-<button class="wfm-btn wfm-btn-default material-depth-1">Primary</button>
+<button class="wfm-btn wfm-btn-default material-depth-1">Default</button>
 <button class="wfm-btn wfm-btn-primary material-depth-1">Primary</button>
 <button class="wfm-btn wfm-btn-invis-disabled">DISABLED</button>
 <button class="wfm-btn wfm-fab">+</button>
@@ -882,7 +950,7 @@ The Secondary buttons area is always visible and should mainly be used for funct
       <div class="kss-markup kss-style">
         <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;DEFAULT&lt;/button&gt;
 &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;PRIMARY&lt;/button&gt;
-&lt;button class=&quot;wfm-btn wfm-btn-default material-depth-1&quot;&gt;Primary&lt;/button&gt;
+&lt;button class=&quot;wfm-btn wfm-btn-default material-depth-1&quot;&gt;Default&lt;/button&gt;
 &lt;button class=&quot;wfm-btn wfm-btn-primary material-depth-1&quot;&gt;Primary&lt;/button&gt;
 &lt;button class=&quot;wfm-btn wfm-btn-invis-disabled&quot;&gt;DISABLED&lt;/button&gt;
 &lt;button class=&quot;wfm-btn wfm-fab&quot;&gt;+&lt;/button&gt;</code></pre>
@@ -1037,63 +1105,6 @@ In general, providing ways to filter and sort on tables, lists, grid is good.</p
       </div>
 
       </section>
-      <section id="kssref-1.8.3" class="kss-section kss-section--depth-3">
-
-    <div class="kss-style">
-      <h3 class="kss-title kss-title--level-3">
-        <a class="kss-title__permalink">
-          <span class="kss-title__ref">1.8.3</span
-          >Table symbols
-        </a>
-      </h3>
-
-
-    </div>
-
-      <div class="kss-modifier__wrapper">
-        <div class="kss-modifier__heading kss-style">
-          Example
-        </div>
-        <div class="kss-modifier__example">
-          <table class="wfm-table">
-<thead><tr><th>name</th><th>mark</th></tr></thead>
-<tbody><tr><td>staffing</td><td class="number-cell"><span class="table-mark">
-<i class="mdi mdi-alert-box staffing-mark"></i></span>
-</td></tr>
-<tr><td>notice</td><td class="number-cell">
-<span class="table-mark"><i class="mdi mdi-alert notice-mark"></i></span>
-</td></tr>
-<tr><td>error</td><td class="number-cell">
-<span class="table-mark"><i class="mdi mdi-alert-octagon error-mark"></i></span>
-</td></tr>
-<tr><td>type (depending on color)</td><td class="number-cell">
-<span class="table-mark"><i class="mdi mdi-bookmark type-mark"></i></span>
-</td></tr>
-</tbody>
-</table>
-        </div>
-      </div>
-
-      <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;table class=&quot;wfm-table&quot;&gt;
-&lt;thead&gt;&lt;tr&gt;&lt;th&gt;name&lt;/th&gt;&lt;th&gt;mark&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;staffing&lt;/td&gt;&lt;td class=&quot;number-cell&quot;&gt;&lt;span class=&quot;table-mark&quot;&gt;
-&lt;i class=&quot;mdi mdi-alert-box staffing-mark&quot;&gt;&lt;/i&gt;&lt;/span&gt;
-&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;notice&lt;/td&gt;&lt;td class=&quot;number-cell&quot;&gt;
-&lt;span class=&quot;table-mark&quot;&gt;&lt;i class=&quot;mdi mdi-alert notice-mark&quot;&gt;&lt;/i&gt;&lt;/span&gt;
-&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;error&lt;/td&gt;&lt;td class=&quot;number-cell&quot;&gt;
-&lt;span class=&quot;table-mark&quot;&gt;&lt;i class=&quot;mdi mdi-alert-octagon error-mark&quot;&gt;&lt;/i&gt;&lt;/span&gt;
-&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;type (depending on color)&lt;/td&gt;&lt;td class=&quot;number-cell&quot;&gt;
-&lt;span class=&quot;table-mark&quot;&gt;&lt;i class=&quot;mdi mdi-bookmark type-mark&quot;&gt;&lt;/i&gt;&lt;/span&gt;
-&lt;/td&gt;&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;</code></pre>
-      </div>
-
-      </section>
       <section id="kssref-1.9" class="kss-section kss-section--depth-2">
 
     <div class="kss-style">
@@ -1227,12 +1238,34 @@ In general, providing ways to filter and sort on tables, lists, grid is good.</p
           Example
         </div>
         <div class="kss-modifier__example">
-          Markup:
+          <div class="modal-box">
+<a href="#openModal1">Open</a>
+<div id="openModal1" class="modalbg">
+<div class="dialog">
+	<a href="#close1" title="Close1" class="dismiss">
+		<i class="mdi mdi-close-circle"></i>
+	</a>
+ 	<h4>Hello</h4>
+	I am modal
+</div>
+</div>
+</div>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">Markup:</code></pre>
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;modal-box&quot;&gt;
+&lt;a href=&quot;#openModal1&quot;&gt;Open&lt;/a&gt;
+&lt;div id=&quot;openModal1&quot; class=&quot;modalbg&quot;&gt;
+&lt;div class=&quot;dialog&quot;&gt;
+	&lt;a href=&quot;#close1&quot; title=&quot;Close1&quot; class=&quot;dismiss&quot;&gt;
+		&lt;i class=&quot;mdi mdi-close-circle&quot;&gt;&lt;/i&gt;
+	&lt;/a&gt;
+ 	&lt;h4&gt;Hello&lt;/h4&gt;
+	I am modal
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</code></pre>
       </div>
 
       </section>
@@ -1294,7 +1327,8 @@ In general, providing ways to filter and sort on tables, lists, grid is good.</p
 
 
       <div class="kss-description">
-        <p>TODO</p>
+        <p>Context menus should be used carefully and only where relevant. In the cases where it is used, limit the number of items to a maximum of 5.
+A menu item can not open another menu and there are no nested menus. If more options are needed, use a Select instead.</p>
 
       </div>
     </div>
@@ -1304,25 +1338,41 @@ In general, providing ways to filter and sort on tables, lists, grid is good.</p
           Example
         </div>
         <div class="kss-modifier__example">
-          <div class="dropdown">
-<label><i class="mdi mdi-dots-vertical"></i></label>
- <ul >
-    <li class="material-depth-2"><span>Option 1</span></li>
-    <li class="material-depth-2"><span>Option 2</span></li>
-  <li class="material-depth-2"><span>Option 3</span></li>
- </ul>
+          <div class="dropdown" tabindex="0">
+<i class="mdi mdi-account"></i>
+<div class="inner material-depth-2">
+	<span>Option 1</span>
+	<span>Option 2</span>
+	<span>Option 3 is a long one, to show how they wrap</span>
+</div>
+</div>
+<div class="dropdown" tabindex="0">
+<i class="mdi mdi-account"></i>
+<div class="inner right material-depth-2">
+	<span>Option 1</span>
+	<span>Option 2</span>
+	<span>Option 3 is a long one, to show how they wrap</span>
+</div>
 </div>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;dropdown&quot;&gt;
-&lt;label&gt;&lt;i class=&quot;mdi mdi-dots-vertical&quot;&gt;&lt;/i&gt;&lt;/label&gt;
- &lt;ul &gt;
-    &lt;li class=&quot;material-depth-2&quot;&gt;&lt;span&gt;Option 1&lt;/span&gt;&lt;/li&gt;
-    &lt;li class=&quot;material-depth-2&quot;&gt;&lt;span&gt;Option 2&lt;/span&gt;&lt;/li&gt;
-  &lt;li class=&quot;material-depth-2&quot;&gt;&lt;span&gt;Option 3&lt;/span&gt;&lt;/li&gt;
- &lt;/ul&gt;
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;dropdown&quot; tabindex=&quot;0&quot;&gt;
+&lt;i class=&quot;mdi mdi-account&quot;&gt;&lt;/i&gt;
+&lt;div class=&quot;inner material-depth-2&quot;&gt;
+	&lt;span&gt;Option 1&lt;/span&gt;
+	&lt;span&gt;Option 2&lt;/span&gt;
+	&lt;span&gt;Option 3 is a long one, to show how they wrap&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;dropdown&quot; tabindex=&quot;0&quot;&gt;
+&lt;i class=&quot;mdi mdi-account&quot;&gt;&lt;/i&gt;
+&lt;div class=&quot;inner right material-depth-2&quot;&gt;
+	&lt;span&gt;Option 1&lt;/span&gt;
+	&lt;span&gt;Option 2&lt;/span&gt;
+	&lt;span&gt;Option 3 is a long one, to show how they wrap&lt;/span&gt;
+&lt;/div&gt;
 &lt;/div&gt;</code></pre>
       </div>
 
@@ -1452,7 +1502,7 @@ In general, providing ways to filter and sort on tables, lists, grid is good.</p
           Example
         </div>
         <div class="kss-modifier__example">
-          <article class="tab-group">
+          <div class="tab-group">
  <input type="radio" name="tabs" id="tab-1" checked="checked" />
  <label class="label" for="tab-1">
    TAB 1
@@ -1480,12 +1530,12 @@ In general, providing ways to filter and sort on tables, lists, grid is good.</p
 	z
    </div>
  </section>
-</article>
+</div>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;article class=&quot;tab-group&quot;&gt;
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;tab-group&quot;&gt;
  &lt;input type=&quot;radio&quot; name=&quot;tabs&quot; id=&quot;tab-1&quot; checked=&quot;checked&quot; /&gt;
  &lt;label class=&quot;label&quot; for=&quot;tab-1&quot;&gt;
    TAB 1
@@ -1513,38 +1563,7 @@ In general, providing ways to filter and sort on tables, lists, grid is good.</p
 	z
    &lt;/div&gt;
  &lt;/section&gt;
-&lt;/article&gt;</code></pre>
-      </div>
-
-      </section>
-      <section id="kssref-1.17" class="kss-section kss-section--depth-2">
-
-    <div class="kss-style">
-      <h2 class="kss-title kss-title--level-2">
-        <a class="kss-title__permalink">
-          <span class="kss-title__ref">1.17</span
-          >Calendar
-        </a>
-      </h2>
-
-
-      <div class="kss-description">
-        <p>Context menus must be used carefully : they should be minimalistic (5 actions maximum) maybe with icons (?)</p>
-
-      </div>
-    </div>
-
-      <div class="kss-modifier__wrapper">
-        <div class="kss-modifier__heading kss-style">
-          Example
-        </div>
-        <div class="kss-modifier__example">
-          Markup:
-        </div>
-      </div>
-
-      <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">Markup:</code></pre>
+&lt;/div&gt;</code></pre>
       </div>
 
       </section>
