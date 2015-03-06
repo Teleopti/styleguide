@@ -29,7 +29,7 @@ body{
 .material-block {
     height: 100%;
 	padding: $full-padding;
-    background-color: white;
+    background-color: $white;
 }
 
 .container-block {
@@ -52,6 +52,7 @@ body{
 
 .layout-container .sidenav {
 	background-color: $white;
+	position:relative;
 	-webkit-flex: auto;
 	flex: auto;
 	flex-basis: 15%;
@@ -101,7 +102,12 @@ body{
 // TODO
 //
 //Markup:
-//	
+//	<span>
+//		<a>Trigger</a> 
+//		<md-tooltip>
+//			Here is your tip
+//		</md-tooltip>
+//	</span>
 //
 //Styleguide 1.13
 //

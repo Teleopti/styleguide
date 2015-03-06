@@ -63,7 +63,7 @@ md-tooltip {
             transform: translate3d(0, 30%, 0);
     margin-bottom: 8px; }
   md-tooltip .md-background {
-	background:  $blue-500;
+	background:  $green-400;
     position: absolute;
     left: 50%;
     width: 256px;
@@ -106,26 +106,26 @@ md-tooltip {
     -webkit-animation: tooltipBackgroundHide 0.2s linear;
             animation: tooltipBackgroundHide 0.2s linear; }
   md-tooltip[width-32="1"].md-show .md-background {
-    -webkit-animation-duration: 900ms;
-            animation-duration: 900ms; }
+    -webkit-animation-duration: 90ms;
+            animation-duration: 90ms; }
   md-tooltip[width-32="2"].md-show .md-background {
-    -webkit-animation-duration: 800ms;
-            animation-duration: 800ms; }
+    -webkit-animation-duration: 80ms;
+            animation-duration: 80ms; }
   md-tooltip[width-32="3"].md-show .md-background {
-    -webkit-animation-duration: 700ms;
-            animation-duration: 700ms; }
+    -webkit-animation-duration: 70ms;
+            animation-duration: 70ms; }
   md-tooltip[width-32="4"].md-show .md-background {
-    -webkit-animation-duration: 600ms;
-            animation-duration: 600ms; }
+    -webkit-animation-duration: 60ms;
+            animation-duration: 60ms; }
   md-tooltip[width-32="5"].md-show .md-background {
-    -webkit-animation-duration: 500ms;
-            animation-duration: 500ms; }
+    -webkit-animation-duration: 50ms;
+            animation-duration: 50ms; }
   md-tooltip[width-32="6"].md-show .md-background {
-    -webkit-animation-duration: 400ms;
-            animation-duration: 400ms; }
+    -webkit-animation-duration: 40ms;
+            animation-duration: 40ms; }
   md-tooltip[width-32="7"].md-show .md-background {
-    -webkit-animation-duration: 300ms;
-            animation-duration: 300ms; }
+    -webkit-animation-duration: 30ms;
+            animation-duration: 30ms; }
   md-tooltip[width-32="8"].md-show .md-background {
-    -webkit-animation-duration: 200ms;
-            animation-duration: 200ms; }
+    -webkit-animation-duration: 20ms;
+            animation-duration: 20ms; }
