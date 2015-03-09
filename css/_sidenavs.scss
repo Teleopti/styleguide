@@ -1,0 +1,113 @@
+//Sidenavs
+//
+//Markup:
+//<div class="layout-container">
+//	<div class="sidenav material-depth-1">
+//		<div class="wfm-block sub-header">Head</div>
+//	</div>
+//	<div class="sidenav-toggle">
+//	<div class="sidenav-wrapper left">
+//		<input type="checkbox" id="nav-left" />
+//		<label for="nav-left">
+//			<i class="mdi mdi-rewind"></i>
+//		</label>
+//	</div>
+//	</div>
+//	<div class="sidenav-toggle">
+//	<div class="sidenav-wrapper right">
+//		<input type="checkbox" id="nav-right" />
+//		<label for="nav-right">
+//			<i class="mdi mdi-fast-forward"></i> 
+//		</label>
+//	</div>
+//	</div>
+//	<div class="sidenav material-depth-1">
+//		<div class="wfm-block sub-header">Head</div>
+//	</div>
+//</div>
+//
+//Styleguide 3.3
+// 
+//
+
+//Sidenav toggles
+//
+//Sidenav toggles are a pair of checkboxes that controls the visibility of the sidenavs. The toggles are not part of the sidenav (if they were they would be hidden aswell and the user would be unable to show the sidenav without reloading the page). They instead trigger a Angular ng-hide on their respective sidenav.
+//
+//Markup:
+//<div class="sidenav-toggle">
+//<div class="sidenav-wrapper left">
+//	<input type="checkbox" id="nav-right" />
+//	<label for="nav-right">
+//		<i class="mdi mdi-fast-forward"></i>
+//	</label>
+//</div>
+//</div>
+//<div class="sidenav-toggle">
+//<div class="sidenav-wrapper right">
+//	<input type="checkbox" id="nav-left" />
+//	<label for="nav-left">
+//		<i class="mdi mdi-rewind"></i>
+//	</label>
+//</div>
+//</div>
+//	
+//Styleguide 1.4.8
+//
+
+.sidenav-toggle {
+
+	input[type='checkbox'] {
+		display:none;
+	}
+	
+	label {
+		background-color: $white;
+		text-align: center;
+		cursor: pointer;
+		transition: all 0.5s ease-in-out;
+		max-width: none;
+		margin: 0;
+	}
+	
+	label i {
+		margin: 5px;
+	}
+
+	input[type=checkbox]:checked ~ label {
+		transform: scale(-1, 1);
+	}
+}
+
+.sidenav-toggle .sidenav-wrapper {
+		@extend .material-depth-1;
+		background-color: $white;
+		cursor: pointer;
+		margin-top: 10px;
+		&.left {
+			box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.26);
+		}
+		&.right {
+			box-shadow: -2px 2px 5px 0 rgba(0, 0, 0, 0.26);
+		}
+}
+
+.layout-container .sidenav {
+	background-color: $white;
+	-webkit-flex: auto;
+	flex: auto;
+	flex-basis: 15%;
+	top:0;
+	height: 1050px;
+	bottom:0;
+	  -webkit-transition: all ease-in-out 0.5s;
+	transition: all 0.5s ease-in-out;
+}
+
+.sidenav.left.ng-hide {
+  -webkit-transform: translate(-100%,0%);
+}
+
+.sidenav.right.ng-hide { 
+  -webkit-transform: translate(100%,0%);
+}

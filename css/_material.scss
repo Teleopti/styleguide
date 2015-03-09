@@ -4,11 +4,11 @@ body{
 }
 
 .material-depth-1 {
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 }
 
 .material-depth-2 {
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
 }
 
 .material-trench-1{
@@ -50,15 +50,7 @@ body{
     color: rgba(0,0,0,0.54);
 }
 
-.layout-container .sidenav {
-	background-color: $white;
-	-webkit-flex: auto;
-	flex: auto;
-	flex-basis: 15%;
-	top:0;
-	height: 1050px;
-	bottom:0;
-}
+
 
 .layout-container {
   width:100%;
