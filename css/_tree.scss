@@ -47,15 +47,8 @@
 	}
 
 	li{
-		@extend .wfm-block;
-		padding-left:0!important;
-		border-left: 3px solid $blue-500;
-
-		.active-tree{
-			background-color:$white;
-		}
-		
-		
+		padding-left: 5px;
+		border-top: 1px solid $gray012;
 	}
 }
 
@@ -85,10 +78,6 @@
 }
 
 .angular-ui-tree-handle.selected {
-	background-color: $blue-500;
-	color: $white;
-	&:hover {
-		color: $gray087;
-		background-color: $blue-300;
-	}
+	padding-left: 5px;
+	border-left: 3px solid $blue-500;
 }

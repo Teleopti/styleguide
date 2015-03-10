@@ -49,6 +49,18 @@
 //Styleguide 1.5.2
 // 
 
+// Sidenav headers
+//
+// TODO
+//
+//Markup:
+//<div class="sidenav-header"> 
+//	Place me in your sidenav!
+//</div>
+//
+//Styleguide 1.5.3
+// 
+
 .sub-header{
 	@extend .wfm-block;
 	background-color: $blue-500;
@@ -59,6 +71,13 @@
 	@extend .wfm-block;
 	background-color: $blue-300;
 	color: $gray087;
+}
+
+.sidenav-header{
+	width: 100%;
+	padding: 10px;
+	background-color: $blue-500;
+	color: $white;
 }
 
 .navbar {
