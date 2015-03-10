@@ -111,3 +111,14 @@
 .sidenav.right.ng-hide { 
   -webkit-transform: translate(100%,0%);
 }
+
+.help-text {
+	background-color:$white;
+	text-align: center;
+	padding: $full-padding;
+}
+
+.help-widget {
+	position: absolute;
+	bottom: 0;
+}

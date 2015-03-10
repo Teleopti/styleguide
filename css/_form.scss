@@ -54,7 +54,6 @@ input[type='text'], select{
   width: 100%;
   i {
     display: inline-block;
-    font-weight:600;
     width: 5%;
   }
   input[type='text'] {
@@ -243,14 +242,6 @@ select option{
 		/*Slider width + 5px*/
 		margin-left: 53px;
 		white-space:nowrap;
-	}
-	
-	span:before {
-		content:"Show ";
-	}
-	
-	input[type=checkbox]:checked ~ label span:before {
-		content:"Hide ";
 	}
 }
 
