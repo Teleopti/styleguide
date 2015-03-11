@@ -59,6 +59,7 @@
 	background-color:$gray-100;
 	border-left: 3px solid transparent;
 	border-top:1px solid $gray012;
+
 	/*
 	&:active, &:focus, &:active:hover, &:focus:hover {
 		background-color: $blue-500 !important;
@@ -70,6 +71,11 @@
 	}
 }
 
+.wfm-list-item-selected{
+	border-left: 3px solid $blue-500!important;
+	background-color: $white !important;
+}
+
 .wfm-leave-behind {
 	@extend .material-trench-1;
 	width: 0;
@@ -77,6 +83,7 @@
 	overflow: hidden;
 	margin-top: -12px;
 	margin-bottom: -12px;
+	margin-right: -5px;
 	background-color: $gray012;
 	transition: $trasnition-timing;
 	padding-top: 12px;
@@ -97,6 +104,16 @@
 	p{
 		padding-left:5px;
 		margin:0 5px;
+	}
+	
+	&:before{
+		color: $blue-100;
+		content:"<";
+		width: 5px;
+		height: 10px;
+		margin-left: -22px;
+		position: absolute;
+		padding: 0 5px;
 	}
 }
 
