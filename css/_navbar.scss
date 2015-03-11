@@ -123,3 +123,65 @@
 		display:inline-block;
 	 }
 }
+
+/*search*/
+
+
+.global-search {
+	font-size: 14px !important;
+	padding-left: 5px;}
+
+.search-results {
+	position: fixed;
+	width: 270px;
+	font-size: 14px;
+	display: block;
+	max-height: 75%;
+	overflow-y: scroll; 
+	margin: 5px -30px;
+	
+	.category-icon {
+		border-radius: 50%;
+		width: 25px;
+		margin-right: 5px;
+		height: 25px;
+		vertical-align: middle;
+		background-color: lightgray;
+	}
+}
+
+/*
+.animate-repeat {
+	list-style:none;
+	box-sizing:border-box;
+}
+
+ animte the search results
+
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter,
+.animate-repeat.ng-leave {
+	-webkit-transition:all 0.3s ease-in;
+	transition:all 0.3s ease-in;
+}
+
+.animate-repeat.ng-leave.ng-leave-active,
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter {
+	opacity: 0;
+}
+
+.animate-repeat.ng-leave,
+.animate-repeat.ng-move.ng-move-active,
+.animate-repeat.ng-enter.ng-enter-active {
+	opacity: 1;
+}
+
+.animate-repeat.ng-leave-stagger, .animate-repeat.ng-enter-stagger {
+	-webkit-transition-delay: 0.1s;
+	transition-delay: 0.1s;
+
+	-webkit-transition-duration: 0s;
+	transition-duration: 0s;
+} 
+*/
