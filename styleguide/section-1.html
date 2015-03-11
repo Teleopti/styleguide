@@ -11,6 +11,7 @@
   <meta name="description" content="">
   <meta name="generator" content="kss-node">
   <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/0.8.2/angular-material.min.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:400,500,700,400italic">
 	<link rel="stylesheet" href="public/kss.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
@@ -112,6 +113,12 @@
               <a href="section-1.html#kssref-1.12">
                 <span class="kss-nav__ref">1.12</span
                 ><span class="kss-nav__name">Modals</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-1.html#kssref-1.13">
+                <span class="kss-nav__ref">1.13</span
+                ><span class="kss-nav__name">Tooltips</span>
               </a>
             </li>
             <li class="kss-nav__menu-item">
@@ -746,32 +753,40 @@ If the list is long enough to extend outside of the main workarea it should be s
         </div>
         <div class="kss-modifier__example">
           <div class="sidenav-toggle">
+<div class="sidenav-wrapper left">
 <input type="checkbox" id="nav-right" />
 <label for="nav-right">
 	<i class="mdi mdi-fast-forward"></i>
 </label>
 </div>
+</div>
 <div class="sidenav-toggle">
+<div class="sidenav-wrapper right">
 <input type="checkbox" id="nav-left" />
 <label for="nav-left">
 	<i class="mdi mdi-rewind"></i>
 </label>
+</div>
 </div>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
         <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;sidenav-toggle&quot;&gt;
+&lt;div class=&quot;sidenav-wrapper left&quot;&gt;
 &lt;input type=&quot;checkbox&quot; id=&quot;nav-right&quot; /&gt;
 &lt;label for=&quot;nav-right&quot;&gt;
 	&lt;i class=&quot;mdi mdi-fast-forward&quot;&gt;&lt;/i&gt;
 &lt;/label&gt;
 &lt;/div&gt;
+&lt;/div&gt;
 &lt;div class=&quot;sidenav-toggle&quot;&gt;
+&lt;div class=&quot;sidenav-wrapper right&quot;&gt;
 &lt;input type=&quot;checkbox&quot; id=&quot;nav-left&quot; /&gt;
 &lt;label for=&quot;nav-left&quot;&gt;
 	&lt;i class=&quot;mdi mdi-rewind&quot;&gt;&lt;/i&gt;
 &lt;/label&gt;
+&lt;/div&gt;
 &lt;/div&gt;</code></pre>
       </div>
 
@@ -894,6 +909,41 @@ First header title
 &lt;/div&gt;
 &lt;div class=&quot;bottom-header&quot;&gt;
 Second header title
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-1.5.3" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink">
+          <span class="kss-title__ref">1.5.3</span
+          >Sidenav headers
+        </a>
+      </h3>
+
+
+      <div class="kss-description">
+        <p>TODO</p>
+
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          <div class="sidenav-header">
+Place me in your sidenav!
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;sidenav-header&quot;&gt;
+Place me in your sidenav!
 &lt;/div&gt;</code></pre>
       </div>
 
@@ -1196,7 +1246,7 @@ There are several different markers to make the type of notice easy to spot:</p>
 
 
       <div class="kss-description">
-        <p>Notifications are more global and general that notices. They can function more like a actions archive.</p>
+        <p>Notifications are more global and general compared to notices. They can function more like a actions archive. All notifications are shown in the right sidenav.</p>
 
       </div>
     </div>
@@ -1271,6 +1321,47 @@ There are several different markers to make the type of notice easy to spot:</p>
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-1.13" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink">
+          <span class="kss-title__ref">1.13</span
+          >Tooltips
+        </a>
+      </h2>
+
+
+      <div class="kss-description">
+        <p>TODO</p>
+
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          <span>
+	<a>Trigger</a>
+	<md-tooltip>
+		Here is your tip
+	</md-tooltip>
+</span>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;span&gt;
+	&lt;a&gt;Trigger&lt;/a&gt;
+	&lt;md-tooltip&gt;
+		Here is your tip
+	&lt;/md-tooltip&gt;
+&lt;/span&gt;</code></pre>
       </div>
 
       </section>
@@ -1591,6 +1682,8 @@ Please note that a menu item can not open another menu and there are no nested m
 <!-- SCRIPTS -->
 <script src="public/kss.js"></script>
 <script src="public/prettify.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.2/angular-material.min.js"></script>
 <script>
   prettyPrint();
 </script>
