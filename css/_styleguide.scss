@@ -33,9 +33,56 @@
 
 //Layouts
 //
-//
+//Here you can find some templates for your layout. These should be used in the template you want to render, so you wont have to worry about the sidenavs or the navbar.
 //
 //Styleguide 3
+// 
+//
+
+//Basic layout
+//
+//Markup:
+//<div>
+//	<div class="row">
+//		<div class="col-lg-12">
+//			<h4>View title</h4>
+//			<p>Keep the title consistent, even in navigation and links. Im the description by the way.</p>
+//		</div>
+//	</div>
+//	<div class="row">
+//		<div class="col-lg-12">
+//			This is the content		
+//		</div>
+//	</div>
+//</div>
+//
+//Styleguide 3.0.1
+// 
+//
+
+//Column layout
+//
+//The column layout uses some custom bootstrap (http://goo.gl/yYXeSV) to stay responsive. 
+//
+//Markup:
+//<div>
+//	<div class="row">
+//		<div class="col-lg-12">
+//			<h4>View title</h4>
+//			<p>Keep the title consistent, even in navigation and links. Im the description by the way.</p>
+//		</div>
+//	</div>
+//	<div class="row">
+//		<div class="col-lg-4">
+//			This is  some content		
+//		</div>
+//		<div class="col-lg-8">
+//			This is  also content		
+//		</div>
+//	</div>
+//</div>
+//
+//Styleguide 3.0.2
 // 
 //
 
