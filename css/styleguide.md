@@ -12,13 +12,13 @@ Main concepts
 
 1. Maintain consistency.
 2. Avoid unnecessary clicks.
-3. Automatic tasks in background. 
+3. Automate tasks in background. 
 4. "Nature doesn't like empty space, and neither do users". 
 6. From the previous rule : Never provide an empty form but suggest things or display placeholders.
-7. Learning from users habits.
+7. Learn from users habits.
 8. Adapt to scale.
 9. Be aware of performance. Don't display a big bunch of data which doesn't fit in the screen. Consider aggregating data as an entry point. If it's not possible, then use infinite scrolling or pagination
-10. Should be responsive
+10. Be responsive
 
 
 Other things to keep in mind
@@ -47,13 +47,5 @@ Notifications
 ---
 
 At the top of the right panel, we provide notifications. It must be possible for the user to unsuscribe/resuscribe on each notification.
-If the notification is about something in backgound, it's good to give a way to stop it.
+If the notification is about something in backgound, it's good to give a way to stop notifications. Whenever there is a risk that several notifications are created at once, make sure they are aggregated into more manageable alerts.
 
-
-General layout
----
-
-TODO
-
-Left and right panels are togglable between hidden and visible state.
-Some intra panels can be hidden (notifications, help ...).

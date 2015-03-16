@@ -61,7 +61,7 @@
 
 	input[type=radio]:checked + .label {
 		color: $white;
-		border-bottom: 3px solid $orange-400;
+		border-bottom: 3px solid $pink-500;
 		
 	}
 	
@@ -83,8 +83,8 @@
 		-ms-flex-positive: 1;
 		flex-grow: 1;
 		min-width: 100px!important;
-		border-bottom: 3px solid $blue-500;
-		background-color: $blue-500;
+		border-bottom: 3px solid $blue-300;
+		background-color: $blue-300;
 		text-align: center;
 		transition: $trasnition-timing;
 		border-radius: 0 !important; /*overrides bootstrap*/

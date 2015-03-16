@@ -1,5 +1,5 @@
 
-// Accordions
+// Accordions *TODO*
 //
 // Accordions are expandable and collapseable areas that can hide a number of wfm-blocks, By default only one accordion item can be open at a time, however, when having nested accordions it is sometimes  better to allow the user to keep several open at once.
 //
@@ -49,39 +49,13 @@
 
 .wfm-accordion {
 	width: 100%;
-
-	input[type='radio'] + label {
-		@extend .wfm-block;
-		position: relative;
-		z-index: 20;
-		cursor: pointer;
-		color: $white;
-		background-color:$blue-500;
-		margin-bottom:0;
-		font-weight:inherit;
-	}
-	
-	input[type='radio'] + .sub-label{
-		background-color: $blue-300;
-		color: $gray087;
-	}
-
-	input[type='radio'] {
-		display:none;
-	}
-
-	article {
-		overflow: hidden;
-		position: relative;
-		z-index: 10;
-		max-height: 0;
-		transition: max-height 0.8s;
-		overflow: hidden;
-		border-bottom: 1px solid $gray012;
-	}
-	
-	input:checked ~ article {
-		max-height: 1000px;
-		transition: max-height 0.8s;
-	}
 }
+
+.wfm-accordionul{
+	list-style: none;
+}
+ .accordion-head:hover{
+	border-bottom: 1px solid $gray012;
+	cursor:pointer;
+	transition: $trasnition-timing;
+ }

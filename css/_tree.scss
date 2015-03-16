@@ -47,22 +47,19 @@
 	}
 
 	li{
-		padding-left: 5px;
+		margin: 0 5px;
 		border-top: 1px solid $gray012;
 	}
 }
 
 .angular-ui-tree-handle.selected:after{
-	@extend .material-depth-1;
 	float:right;
 	height: 25px;
 	width: 25px;
-	border-radius: 50px;
 	text-align: center;
-	color: $white;
+	color: $gray087;
 	margin-top:-2px;
 	padding-top: 2px;
-	background-color: $green-400;
 	content:"✓";
 	transform: scale(1,1);
 }
@@ -80,6 +77,22 @@
 
 .angular-ui-tree-handle.selected {
 	padding-left: 5px;
-	border-left: 3px solid $blue-500;
-	background-color: $white;
+	border-left: 3px solid $pink-500;
+	background-color: $green-100;
+}
+
+.toggle-handle {
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	margin-right: 5px;
+	padding-top: 4px;
+}
+
+.toggle-handle.open i {
+	transform: rotate(90deg);
+}
+
+.tree-toggle-group{
+	display:flex;
 }

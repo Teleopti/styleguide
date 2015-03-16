@@ -47,7 +47,7 @@
 	list-style: none;
 	
 	.active{
-		border-left: 3px solid $blue-500;
+		border-left: 3px solid $pink-500;
 		background-color: $white;
 	}
 }
@@ -72,7 +72,7 @@
 }
 
 .wfm-list-item-selected{
-	border-left: 3px solid $blue-500!important;
+	border-left: 3px solid $pink-500!important;
 	background-color: $white !important;
 }
 
