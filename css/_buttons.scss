@@ -7,20 +7,28 @@
 //Styleguide 1.6
 //
 
-// Default buttons
+// Flat buttons
 //
-//The default button is 'printed' on the material and only show its area when hovered, it uses capital letters to differentiate it from a link.
-//The Secondary buttons area is always visible and should mainly be used for functions. 
+//The flat buttons are 'printed' on the material and only show its area when hovered, it uses capital letters to differentiate it from a link.
 //
 //Markup:
 //<button class="wfm-btn wfm-btn-invis-default">DEFAULT</button> 
 //<button class="wfm-btn wfm-btn-invis-primary">PRIMARY</button>
+//
+//Styleguide 1.6.1
+//
+
+// Raised buttons
+//
+//The raised buttons area is always visible. 
+//
+//Markup:
 //<button class="wfm-btn wfm-btn-default material-depth-1">Default</button>
 //<button class="wfm-btn wfm-btn-primary material-depth-1">Primary</button> 
 //<button class="wfm-btn wfm-btn-invis-disabled">DISABLED</button>
 //<button class="wfm-btn wfm-fab">+</button>
 //
-//Styleguide 1.6.1
+//Styleguide 1.6.2
 //
 
 .wfm-btn {
