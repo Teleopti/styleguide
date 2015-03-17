@@ -47,12 +47,12 @@
 		display: block;
 		pointer-events: auto;
 		background: $gray026;
-		transition: $trasnition-timing;
+transition: $transition-timing;
 	}
 	
 	.modalbg:target .dialog {
 		top: -20px;
-		transition: $trasnition-timing;
+transition: $transition-timing;
 		-transition-delay: 0.4s;
 	}
 	

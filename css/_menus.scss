@@ -6,24 +6,25 @@
 
 // Context menus
 //
-//Context menus should be used carefully and only where relevant. In the cases where it is used, limit the number of items to a maximum of 5. 
-//Please note that a menu item can not open another menu and there are no nested menus. If more options are needed, use a 'select input' instead. 
+//Context menus should be used carefully and only where relevant. In the cases where they are used, limit the number of actions displayed within to a maximum of 5. 
+//If more options are needed, use a 'select input' instead. 
+//Please note that a menu item can not open another menu and there are no nested menus.
 //
 //Markup:
 //<div class="dropdown" tabindex="0"> 
-//	<i class="mdi mdi-account"></i>
+//	<i class="mdi mdi-menu"></i>
 //	<div class="inner material-depth-2">
-//		<span>Option 1</span>
-//		<span>Option 2</span>
-//		<span>Option 3 is a long one, to show how they wrap</span>
+//		<i class="mdi mdi-account"> Sign in</i>
+//		<i class="mdi mdi-plus"> Add a new skill</i>
+//		<i class="mdi mdi-alert"> Drop agents table</i>
 //	</div> 
 //</div>
 //<div class="dropdown" tabindex="0"> 
-//	<i class="mdi mdi-account"></i>
+//	<i class="mdi mdi-menu"></i>
 //	<div class="inner right material-depth-2">
-//		<span>Option 1</span>
-//		<span>Option 2</span>
-//		<span>Option 3 is a long one, to show how they wrap</span>
+//		<i class="mdi mdi-account"> Sign out</i>
+//		<i class="mdi mdi-plus"> Add a new agent</i>
+//		<i class="mdi mdi-alert"> Drop agents table</i>
 //	</div> 
 //</div>
 //	
@@ -62,7 +63,7 @@
 	}
 }
 
-.inner span{
+.inner i{
 	display:block;
 	@extend .wfm-block;
 	border-bottom:1px solid $gray012;

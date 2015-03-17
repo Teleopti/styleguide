@@ -64,20 +64,22 @@
 .sub-header{
 	@extend .wfm-block;
 	background-color: $blue-300;
-	color: $white;
+	color: $gray087;
 }
 
 .bottom-header{
 	@extend .wfm-block;
 	background-color: $blue-100;
 	color: $gray087;
+	border-bottom:1px solid $gray012;
 }
 
 .sidenav-header{
 	width: 100%;
 	padding: 10px!important;
 	background-color: $blue-300;
-	color: $white;
+	color: $gray087;
+	border-bottom:1px solid $gray012;
 }
 
 .navbar {

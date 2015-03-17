@@ -6,45 +6,33 @@
 //Markup:
 //<div class="sidenav-toggle">
 //<div class="sidenav-wrapper left">
-//	<input type="checkbox" id="nav-right" />
 //	<label for="nav-right">
 //		<i class="mdi mdi-fast-forward"></i>
 //	</label>
 //</div>
 //</div>
 //<div class="sidenav-toggle">
-//<div class="sidenav-wrapper right">
-//	<input type="checkbox" id="nav-left" />
-//	<label for="nav-left">
+//	<div class="sidenav-wrapper right">
 //		<i class="mdi mdi-rewind"></i>
-//	</label>
-//</div>
+//	</div>
 //</div>
 //	
 //Styleguide 1.4.8
 //
 
 .sidenav-toggle {
-
-	input[type='checkbox'] {
-		display:none;
-	}
 	
 	label {
 		background-color: $white;
 		text-align: center;
 		cursor: pointer;
-		transition: all 0.5s ease-in-out;
+		transition: $transition-timing;
 		max-width: none;
 		margin: 0;
 	}
 	
 	label i {
 		margin: 5px;
-	}
-
-	input[type=checkbox]:checked ~ label {
-		transform: scale(-1, 1);
 	}
 }
 
@@ -69,8 +57,7 @@
 	top:0;
 	height: 1050px;
 	bottom:0;
-	  -webkit-transition: all 0.5s ease-in-out ;
-	transition: all 0.5s ease-in-out ;
+	transition: $transition-timing;
 }
 
 .sidenav.left.ng-hide {

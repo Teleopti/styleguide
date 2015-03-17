@@ -60,7 +60,7 @@
 	}
 
 	input[type=radio]:checked + .label {
-		color: $white;
+		font-weight: bold!important;
 		border-bottom: 3px solid $pink-500;
 		
 	}
@@ -70,6 +70,7 @@
 	}
 	
 	.label {
+		color: $gray087;
 		padding:$full-padding!important; 
 		position: relative;
 		cursor:pointer;
@@ -82,11 +83,12 @@
 		-webkit-flex-grow: 1;
 		-ms-flex-positive: 1;
 		flex-grow: 1;
+		font-weight: normal;/*overrides bootstrap*/
 		min-width: 100px!important;
 		border-bottom: 3px solid $blue-300;
 		background-color: $blue-300;
 		text-align: center;
-		transition: $trasnition-timing;
+		transition: $transition-timing;
 		border-radius: 0 !important; /*overrides bootstrap*/
 		margin-bottom: 0 !important; /*overrides bootstrap*/
 		font-size: 100% !important; /*overrides bootstrap*/

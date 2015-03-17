@@ -47,7 +47,6 @@
 	}
 
 	li{
-		margin: 0 5px;
 		border-top: 1px solid $gray012;
 	}
 }
@@ -68,7 +67,8 @@
 	@extend .wfm-block;
 	cursor: pointer;
 	font-weight: 500;
-	transition: $trasnition-timing;
+	transition: $transition-timing;
+	border-left: 3px solid transparent;
 	
 	&:hover {
 		background-color: $gray012;

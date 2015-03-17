@@ -68,8 +68,8 @@ $gray100: rgba(0,0,0,1);
 $white: #ffffff;
 
 $full-padding: 5px; /*sets wfm-block*/
-$half-padding: 3px; /*depricated, remove if used in code*/
-$trasnition-timing: all 0.5s ease-in-out;
+$half-padding: 3px; 
+$transition-timing: all .2s ease-in-out;
 
 // These classes are just for styleguide
 .swatch-list {

@@ -248,7 +248,7 @@ Elements floating above the main layout (such as context menus) should have the 
 
 
       <div class="kss-description">
-        <p>The trench works much like the depth, however since it gives the illusion</p>
+        <p>The trench works much like the depth, however since it gives the illusion of a layer behind the current pice of material it should not be used on large areas, this will create raised &quot;frames&quot; around the trench.</p>
 
       </div>
     </div>
@@ -259,13 +259,11 @@ Elements floating above the main layout (such as context menus) should have the 
         </div>
         <div class="kss-modifier__example">
           <div class="spacer material-trench-1"> Layer 1 </div>
-</div>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;spacer material-trench-1&quot;&gt; Layer 1 &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;spacer material-trench-1&quot;&gt; Layer 1 &lt;/div&gt;</code></pre>
       </div>
 
       </section>
@@ -634,15 +632,21 @@ If the list is long enough to extend outside of the main workarea it should be s
         <div class="kss-modifier__example">
           <form>
 	<div class="wfm-radio">
-       <input type="radio" id="radio1" name="radioName" value="Value1" />
+       <input type="radio" id="radio1" name="radioName" value="Value1" checked="true"/>
 		<label for="radio1">
-			<span>This</span>
+	This
 		</label>
 	</div>
 	<div class="wfm-radio">
        <input type="radio" id="radio2" name="radioName" value="Value2"/>
 		<label for="radio2">
-			<span>That</span>
+			That
+		</label>
+	</div>
+	<div class="wfm-radio">
+       <input type="radio" id="radio3" name="radioName" value="Value3"/>
+		<label for="radio3">
+			Those
 		</label>
 	</div>
 </form>
@@ -652,15 +656,21 @@ If the list is long enough to extend outside of the main workarea it should be s
       <div class="kss-markup kss-style">
         <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form&gt;
 	&lt;div class=&quot;wfm-radio&quot;&gt;
-       &lt;input type=&quot;radio&quot; id=&quot;radio1&quot; name=&quot;radioName&quot; value=&quot;Value1&quot; /&gt;
+       &lt;input type=&quot;radio&quot; id=&quot;radio1&quot; name=&quot;radioName&quot; value=&quot;Value1&quot; checked=&quot;true&quot;/&gt;
 		&lt;label for=&quot;radio1&quot;&gt;
-			&lt;span&gt;This&lt;/span&gt;
+	This
 		&lt;/label&gt;
 	&lt;/div&gt;
 	&lt;div class=&quot;wfm-radio&quot;&gt;
        &lt;input type=&quot;radio&quot; id=&quot;radio2&quot; name=&quot;radioName&quot; value=&quot;Value2&quot;/&gt;
 		&lt;label for=&quot;radio2&quot;&gt;
-			&lt;span&gt;That&lt;/span&gt;
+			That
+		&lt;/label&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;wfm-radio&quot;&gt;
+       &lt;input type=&quot;radio&quot; id=&quot;radio3&quot; name=&quot;radioName&quot; value=&quot;Value3&quot;/&gt;
+		&lt;label for=&quot;radio3&quot;&gt;
+			Those
 		&lt;/label&gt;
 	&lt;/div&gt;
 &lt;/form&gt;</code></pre>
@@ -730,34 +740,26 @@ If the list is long enough to extend outside of the main workarea it should be s
           Example
         </div>
         <div class="kss-modifier__example">
-          	<div class="wfm-checkbox">
-       <input type="checkbox" id="check1" />
-		<label for="check1">
-			<span>Check</span>
-		</label>
-	</div>
-	<div class="wfm-checkbox">
-       <input type="checkbox" id="check2" />
-		<label for="check2">
-			<span>Check</span>
-		</label>
-	</div>
+          <div class="wfm-checkbox">
+<input type="checkbox" id=check1 checked="true"/>
+<label for=check1> label </label>
+</div>
+<div class="wfm-checkbox">
+<input type="checkbox" id=check2 />
+<label for=check2> label </label>
+</div>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">	&lt;div class=&quot;wfm-checkbox&quot;&gt;
-       &lt;input type=&quot;checkbox&quot; id=&quot;check1&quot; /&gt;
-		&lt;label for=&quot;check1&quot;&gt;
-			&lt;span&gt;Check&lt;/span&gt;
-		&lt;/label&gt;
-	&lt;/div&gt;
-	&lt;div class=&quot;wfm-checkbox&quot;&gt;
-       &lt;input type=&quot;checkbox&quot; id=&quot;check2&quot; /&gt;
-		&lt;label for=&quot;check2&quot;&gt;
-			&lt;span&gt;Check&lt;/span&gt;
-		&lt;/label&gt;
-	&lt;/div&gt;</code></pre>
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;wfm-checkbox&quot;&gt;
+&lt;input type=&quot;checkbox&quot; id=check1 checked=&quot;true&quot;/&gt;
+&lt;label for=check1&gt; label &lt;/label&gt;
+&lt;/div&gt;
+&lt;div class=&quot;wfm-checkbox&quot;&gt;
+&lt;input type=&quot;checkbox&quot; id=check2 /&gt;
+&lt;label for=check2&gt; label &lt;/label&gt;
+&lt;/div&gt;</code></pre>
       </div>
 
       </section>
@@ -785,7 +787,6 @@ If the list is long enough to extend outside of the main workarea it should be s
         <div class="kss-modifier__example">
           <div class="sidenav-toggle">
 <div class="sidenav-wrapper left">
-<input type="checkbox" id="nav-right" />
 <label for="nav-right">
 	<i class="mdi mdi-fast-forward"></i>
 </label>
@@ -793,10 +794,7 @@ If the list is long enough to extend outside of the main workarea it should be s
 </div>
 <div class="sidenav-toggle">
 <div class="sidenav-wrapper right">
-<input type="checkbox" id="nav-left" />
-<label for="nav-left">
 	<i class="mdi mdi-rewind"></i>
-</label>
 </div>
 </div>
         </div>
@@ -805,7 +803,6 @@ If the list is long enough to extend outside of the main workarea it should be s
       <div class="kss-markup kss-style">
         <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;sidenav-toggle&quot;&gt;
 &lt;div class=&quot;sidenav-wrapper left&quot;&gt;
-&lt;input type=&quot;checkbox&quot; id=&quot;nav-right&quot; /&gt;
 &lt;label for=&quot;nav-right&quot;&gt;
 	&lt;i class=&quot;mdi mdi-fast-forward&quot;&gt;&lt;/i&gt;
 &lt;/label&gt;
@@ -813,10 +810,7 @@ If the list is long enough to extend outside of the main workarea it should be s
 &lt;/div&gt;
 &lt;div class=&quot;sidenav-toggle&quot;&gt;
 &lt;div class=&quot;sidenav-wrapper right&quot;&gt;
-&lt;input type=&quot;checkbox&quot; id=&quot;nav-left&quot; /&gt;
-&lt;label for=&quot;nav-left&quot;&gt;
 	&lt;i class=&quot;mdi mdi-rewind&quot;&gt;&lt;/i&gt;
-&lt;/label&gt;
 &lt;/div&gt;
 &lt;/div&gt;</code></pre>
       </div>
@@ -1006,14 +1000,13 @@ This helps the user understand what the action will do and what object it will e
       <h3 class="kss-title kss-title--level-3">
         <a class="kss-title__permalink">
           <span class="kss-title__ref">1.6.1</span
-          >Default buttons
+          >Flat buttons
         </a>
       </h3>
 
 
       <div class="kss-description">
-        <p>The default button is &#39;printed&#39; on the material and only show its area when hovered, it uses capital letters to differentiate it from a link.
-The Secondary buttons area is always visible and should mainly be used for functions.</p>
+        <p>The flat buttons are &#39;printed&#39; on the material and only show its area when hovered, it uses capital letters to differentiate it from a link.</p>
 
       </div>
     </div>
@@ -1025,7 +1018,38 @@ The Secondary buttons area is always visible and should mainly be used for funct
         <div class="kss-modifier__example">
           <button class="wfm-btn wfm-btn-invis-default">DEFAULT</button>
 <button class="wfm-btn wfm-btn-invis-primary">PRIMARY</button>
-<button class="wfm-btn wfm-btn-default material-depth-1">Default</button>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;DEFAULT&lt;/button&gt;
+&lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;PRIMARY&lt;/button&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-1.6.2" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink">
+          <span class="kss-title__ref">1.6.2</span
+          >Raised buttons
+        </a>
+      </h3>
+
+
+      <div class="kss-description">
+        <p>The raised buttons area is always visible.</p>
+
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          <button class="wfm-btn wfm-btn-default material-depth-1">Default</button>
 <button class="wfm-btn wfm-btn-primary material-depth-1">Primary</button>
 <button class="wfm-btn wfm-btn-invis-disabled">DISABLED</button>
 <button class="wfm-btn wfm-fab">+</button>
@@ -1033,9 +1057,7 @@ The Secondary buttons area is always visible and should mainly be used for funct
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;DEFAULT&lt;/button&gt;
-&lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;PRIMARY&lt;/button&gt;
-&lt;button class=&quot;wfm-btn wfm-btn-default material-depth-1&quot;&gt;Default&lt;/button&gt;
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;button class=&quot;wfm-btn wfm-btn-default material-depth-1&quot;&gt;Default&lt;/button&gt;
 &lt;button class=&quot;wfm-btn wfm-btn-primary material-depth-1&quot;&gt;Primary&lt;/button&gt;
 &lt;button class=&quot;wfm-btn wfm-btn-invis-disabled&quot;&gt;DISABLED&lt;/button&gt;
 &lt;button class=&quot;wfm-btn wfm-fab&quot;&gt;+&lt;/button&gt;</code></pre>
@@ -1172,8 +1194,8 @@ A table should be displayed in alphabetical order by default, unless there is an
         <div class="kss-modifier__example">
           <table class="wfm-table wfm-table-multi">
 <thead><tr><th></th><th>column header</th><th>column header</th></tr></thead>
-<tbody><tr><td>row header</td><td>1</td><td>2</td></tr>
-<tr><td>row header</td><td>1</td><td>2</td></tr>
+<tbody><tr><td>row header</td><td>item1</td><td>item2</td></tr>
+<tr><td>row header</td><td>item3</td><td>item4</td></tr>
 </tbody>
 </table>
         </div>
@@ -1182,8 +1204,8 @@ A table should be displayed in alphabetical order by default, unless there is an
       <div class="kss-markup kss-style">
         <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;table class=&quot;wfm-table wfm-table-multi&quot;&gt;
 &lt;thead&gt;&lt;tr&gt;&lt;th&gt;&lt;/th&gt;&lt;th&gt;column header&lt;/th&gt;&lt;th&gt;column header&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;row header&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;row header&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;/tr&gt;
+&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;row header&lt;/td&gt;&lt;td&gt;item1&lt;/td&gt;&lt;td&gt;item2&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;row header&lt;/td&gt;&lt;td&gt;item3&lt;/td&gt;&lt;td&gt;item4&lt;/td&gt;&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;</code></pre>
       </div>
@@ -1250,16 +1272,20 @@ There are several different markers to make the type of notice easy to spot:</p>
           Example
         </div>
         <div class="kss-modifier__example">
-          <div class="notice default">Hello, let me tell you about notice blocks.</div>
-<div class="notice detail">I was expanded to show details.</div>
+          <div class="notice-group">
+<div class="notice default">Hello, let me tell you about notice blocks.</div>
+<div class="notice detail">I was born to show details.</div>
+</div>
 <div class="notice warning">Make sure to read all of the styleguide.</div>
 <div class="notice error">Something triggered this error notice.</div>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;notice default&quot;&gt;Hello, let me tell you about notice blocks.&lt;/div&gt;
-&lt;div class=&quot;notice detail&quot;&gt;I was expanded to show details.&lt;/div&gt;
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;notice-group&quot;&gt;
+&lt;div class=&quot;notice default&quot;&gt;Hello, let me tell you about notice blocks.&lt;/div&gt;
+&lt;div class=&quot;notice detail&quot;&gt;I was born to show details.&lt;/div&gt;
+&lt;/div&gt;
 &lt;div class=&quot;notice warning&quot;&gt;Make sure to read all of the styleguide.&lt;/div&gt;
 &lt;div class=&quot;notice error&quot;&gt;Something triggered this error notice.&lt;/div&gt;</code></pre>
       </div>
@@ -1464,8 +1490,9 @@ There are several different markers to make the type of notice easy to spot:</p>
 
 
       <div class="kss-description">
-        <p>Context menus should be used carefully and only where relevant. In the cases where it is used, limit the number of items to a maximum of 5.
-Please note that a menu item can not open another menu and there are no nested menus. If more options are needed, use a &#39;select input&#39; instead.</p>
+        <p>Context menus should be used carefully and only where relevant. In the cases where they are used, limit the number of actions displayed within to a maximum of 5.
+If more options are needed, use a &#39;select input&#39; instead.
+Please note that a menu item can not open another menu and there are no nested menus.</p>
 
       </div>
     </div>
@@ -1476,19 +1503,19 @@ Please note that a menu item can not open another menu and there are no nested m
         </div>
         <div class="kss-modifier__example">
           <div class="dropdown" tabindex="0">
-<i class="mdi mdi-account"></i>
+<i class="mdi mdi-menu"></i>
 <div class="inner material-depth-2">
-	<span>Option 1</span>
-	<span>Option 2</span>
-	<span>Option 3 is a long one, to show how they wrap</span>
+	<i class="mdi mdi-account"> Sign in</i>
+	<i class="mdi mdi-plus"> Add a new skill</i>
+	<i class="mdi mdi-alert"> Drop agents table</i>
 </div>
 </div>
 <div class="dropdown" tabindex="0">
-<i class="mdi mdi-account"></i>
+<i class="mdi mdi-menu"></i>
 <div class="inner right material-depth-2">
-	<span>Option 1</span>
-	<span>Option 2</span>
-	<span>Option 3 is a long one, to show how they wrap</span>
+	<i class="mdi mdi-account"> Sign out</i>
+	<i class="mdi mdi-plus"> Add a new agent</i>
+	<i class="mdi mdi-alert"> Drop agents table</i>
 </div>
 </div>
         </div>
@@ -1496,19 +1523,19 @@ Please note that a menu item can not open another menu and there are no nested m
 
       <div class="kss-markup kss-style">
         <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;dropdown&quot; tabindex=&quot;0&quot;&gt;
-&lt;i class=&quot;mdi mdi-account&quot;&gt;&lt;/i&gt;
+&lt;i class=&quot;mdi mdi-menu&quot;&gt;&lt;/i&gt;
 &lt;div class=&quot;inner material-depth-2&quot;&gt;
-	&lt;span&gt;Option 1&lt;/span&gt;
-	&lt;span&gt;Option 2&lt;/span&gt;
-	&lt;span&gt;Option 3 is a long one, to show how they wrap&lt;/span&gt;
+	&lt;i class=&quot;mdi mdi-account&quot;&gt; Sign in&lt;/i&gt;
+	&lt;i class=&quot;mdi mdi-plus&quot;&gt; Add a new skill&lt;/i&gt;
+	&lt;i class=&quot;mdi mdi-alert&quot;&gt; Drop agents table&lt;/i&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;dropdown&quot; tabindex=&quot;0&quot;&gt;
-&lt;i class=&quot;mdi mdi-account&quot;&gt;&lt;/i&gt;
+&lt;i class=&quot;mdi mdi-menu&quot;&gt;&lt;/i&gt;
 &lt;div class=&quot;inner right material-depth-2&quot;&gt;
-	&lt;span&gt;Option 1&lt;/span&gt;
-	&lt;span&gt;Option 2&lt;/span&gt;
-	&lt;span&gt;Option 3 is a long one, to show how they wrap&lt;/span&gt;
+	&lt;i class=&quot;mdi mdi-account&quot;&gt; Sign out&lt;/i&gt;
+	&lt;i class=&quot;mdi mdi-plus&quot;&gt; Add a new agent&lt;/i&gt;
+	&lt;i class=&quot;mdi mdi-alert&quot;&gt; Drop agents table&lt;/i&gt;
 &lt;/div&gt;
 &lt;/div&gt;</code></pre>
       </div>
