@@ -1,48 +1,9 @@
 
-// Accordions *TODO*
+// Accordions 
 //
 // Accordions are expandable and collapseable areas that can hide a number of wfm-blocks, By default only one accordion item can be open at a time, however, when having nested accordions it is sometimes  better to allow the user to keep several open at once.
 //
 //Markup:
-//<form>
-//<section class="wfm-accordion">
-//	<div>
-//		<input id="ac-1" name="accordion-1" type="radio" checked="true">
-//		<label for="ac-1">Header 1</label>
-//			<article>
-//				<div>
-//					<input id="ac-1-1" name="accordion-1-1" type="radio">
-//					<label for="ac-1-1" class="sub-label">Header 1-1</label>
-//					<article>
-//						<div class="wfm-block">First things first</div>
-//						<div class="wfm-block">And let me tell you</div>
-//					</article>
-//				</div>
-//				<div>
-//					<input id="ac-1-2" name="accordion-1-2" type="radio">
-//					<label for="ac-1-2" class="sub-label">Header 1-2</label>
-//					<article>
-//						<div class="wfm-block">Something else</div>
-//					</article>
-//				</div>
-//			</article>
-//		</div>
-//	<div>
-//		<input id="ac-2" name="accordion-1" type="radio">
-//		<label for="ac-2">Header 2</label>
-//			<article>
-//				<div class="wfm-block">And let me tell you</div>
-//			</article>
-//	</div>
-//	<div>
-//		<input id="ac-3" name="accordion-1" type="radio">
-//		<label for="ac-3">Header 3</label>
-//			<article>
-//				<div class="wfm-block">Thats it</div>
-//			</article>
-//	</div>
-//</section>
-//</form>
 //
 //Styleguide 1.15
 //
@@ -51,11 +12,7 @@
 	width: 100%;
 }
 
-.wfm-accordionul{
+.wfm-accordion ul{
 	list-style: none;
-}
- .accordion-head:hover{
-	border-bottom: 1px solid $gray012;
 	cursor:pointer;
-	transition: $transition-timing;
- }
+}

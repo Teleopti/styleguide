@@ -120,12 +120,6 @@
               </a>
             </li>
             <li class="kss-nav__menu-item">
-              <a href="section-1.html#kssref-1.13">
-                <span class="kss-nav__ref">1.13</span
-                ><span class="kss-nav__name">Tooltips</span>
-              </a>
-            </li>
-            <li class="kss-nav__menu-item">
               <a href="section-1.html#kssref-1.14">
                 <span class="kss-nav__ref">1.14</span
                 ><span class="kss-nav__name">Menus</span>
@@ -134,7 +128,7 @@
             <li class="kss-nav__menu-item">
               <a href="section-1.html#kssref-1.15">
                 <span class="kss-nav__ref">1.15</span
-                ><span class="kss-nav__name">Accordions *TODO*</span>
+                ><span class="kss-nav__name">Accordions</span>
               </a>
             </li>
             <li class="kss-nav__menu-item">
@@ -1404,61 +1398,24 @@ There are several different markers to make the type of notice easy to spot:</p>
         </div>
         <div class="kss-modifier__example">
           <span>
-	<a>Trigger</a>
-	<md-tooltip>
-		Here is your tip
-	</md-tooltip>
+<a>
+	<i class="mdi mdi-account"></i>
+</a>
+<md-tooltip>
+	My account
+</md-tooltip>
 </span>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
         <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;span&gt;
-	&lt;a&gt;Trigger&lt;/a&gt;
-	&lt;md-tooltip&gt;
-		Here is your tip
-	&lt;/md-tooltip&gt;
-&lt;/span&gt;</code></pre>
-      </div>
-
-      </section>
-      <section id="kssref-1.13" class="kss-section kss-section--depth-2">
-
-    <div class="kss-style">
-      <h2 class="kss-title kss-title--level-2">
-        <a class="kss-title__permalink">
-          <span class="kss-title__ref">1.13</span
-          >Tooltips
-        </a>
-      </h2>
-
-
-      <div class="kss-description">
-        <p>TODO</p>
-
-      </div>
-    </div>
-
-      <div class="kss-modifier__wrapper">
-        <div class="kss-modifier__heading kss-style">
-          Example
-        </div>
-        <div class="kss-modifier__example">
-          <span>
-	<a>Trigger</a>
-	<md-tooltip>
-		Here is your tip
-	</md-tooltip>
-</span>
-        </div>
-      </div>
-
-      <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;span&gt;
-	&lt;a&gt;Trigger&lt;/a&gt;
-	&lt;md-tooltip&gt;
-		Here is your tip
-	&lt;/md-tooltip&gt;
+&lt;a&gt;
+	&lt;i class=&quot;mdi mdi-account&quot;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;md-tooltip&gt;
+	My account
+&lt;/md-tooltip&gt;
 &lt;/span&gt;</code></pre>
       </div>
 
@@ -1547,7 +1504,7 @@ Please note that a menu item can not open another menu and there are no nested m
       <h2 class="kss-title kss-title--level-2">
         <a class="kss-title__permalink">
           <span class="kss-title__ref">1.15</span
-          >Accordions *TODO*
+          >Accordions
         </a>
       </h2>
 
@@ -1563,88 +1520,12 @@ Please note that a menu item can not open another menu and there are no nested m
           Example
         </div>
         <div class="kss-modifier__example">
-          <form>
-<section class="wfm-accordion">
-<div>
-	<input id="ac-1" name="accordion-1" type="radio" checked="true">
-	<label for="ac-1">Header 1</label>
-		<article>
-			<div>
-				<input id="ac-1-1" name="accordion-1-1" type="radio">
-				<label for="ac-1-1" class="sub-label">Header 1-1</label>
-				<article>
-					<div class="wfm-block">First things first</div>
-					<div class="wfm-block">And let me tell you</div>
-				</article>
-			</div>
-			<div>
-				<input id="ac-1-2" name="accordion-1-2" type="radio">
-				<label for="ac-1-2" class="sub-label">Header 1-2</label>
-				<article>
-					<div class="wfm-block">Something else</div>
-				</article>
-			</div>
-		</article>
-	</div>
-<div>
-	<input id="ac-2" name="accordion-1" type="radio">
-	<label for="ac-2">Header 2</label>
-		<article>
-			<div class="wfm-block">And let me tell you</div>
-		</article>
-</div>
-<div>
-	<input id="ac-3" name="accordion-1" type="radio">
-	<label for="ac-3">Header 3</label>
-		<article>
-			<div class="wfm-block">Thats it</div>
-		</article>
-</div>
-</section>
-</form>
+          Markup:
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form&gt;
-&lt;section class=&quot;wfm-accordion&quot;&gt;
-&lt;div&gt;
-	&lt;input id=&quot;ac-1&quot; name=&quot;accordion-1&quot; type=&quot;radio&quot; checked=&quot;true&quot;&gt;
-	&lt;label for=&quot;ac-1&quot;&gt;Header 1&lt;/label&gt;
-		&lt;article&gt;
-			&lt;div&gt;
-				&lt;input id=&quot;ac-1-1&quot; name=&quot;accordion-1-1&quot; type=&quot;radio&quot;&gt;
-				&lt;label for=&quot;ac-1-1&quot; class=&quot;sub-label&quot;&gt;Header 1-1&lt;/label&gt;
-				&lt;article&gt;
-					&lt;div class=&quot;wfm-block&quot;&gt;First things first&lt;/div&gt;
-					&lt;div class=&quot;wfm-block&quot;&gt;And let me tell you&lt;/div&gt;
-				&lt;/article&gt;
-			&lt;/div&gt;
-			&lt;div&gt;
-				&lt;input id=&quot;ac-1-2&quot; name=&quot;accordion-1-2&quot; type=&quot;radio&quot;&gt;
-				&lt;label for=&quot;ac-1-2&quot; class=&quot;sub-label&quot;&gt;Header 1-2&lt;/label&gt;
-				&lt;article&gt;
-					&lt;div class=&quot;wfm-block&quot;&gt;Something else&lt;/div&gt;
-				&lt;/article&gt;
-			&lt;/div&gt;
-		&lt;/article&gt;
-	&lt;/div&gt;
-&lt;div&gt;
-	&lt;input id=&quot;ac-2&quot; name=&quot;accordion-1&quot; type=&quot;radio&quot;&gt;
-	&lt;label for=&quot;ac-2&quot;&gt;Header 2&lt;/label&gt;
-		&lt;article&gt;
-			&lt;div class=&quot;wfm-block&quot;&gt;And let me tell you&lt;/div&gt;
-		&lt;/article&gt;
-&lt;/div&gt;
-&lt;div&gt;
-	&lt;input id=&quot;ac-3&quot; name=&quot;accordion-1&quot; type=&quot;radio&quot;&gt;
-	&lt;label for=&quot;ac-3&quot;&gt;Header 3&lt;/label&gt;
-		&lt;article&gt;
-			&lt;div class=&quot;wfm-block&quot;&gt;Thats it&lt;/div&gt;
-		&lt;/article&gt;
-&lt;/div&gt;
-&lt;/section&gt;
-&lt;/form&gt;</code></pre>
+        <pre class="prettyprint linenums lang-html"><code data-language="html">Markup:</code></pre>
       </div>
 
       </section>

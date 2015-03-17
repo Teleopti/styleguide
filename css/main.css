@@ -750,13 +750,9 @@ tr {
 .wfm-accordion {
   width: 100%; }
 
-.wfm-accordionul {
-  list-style: none; }
-
-.accordion-head:hover {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  cursor: pointer;
-  transition: all .2s ease-in-out; }
+.wfm-accordion ul {
+  list-style: none;
+  cursor: pointer; }
 
 .dropdown {
   width: 25px;
