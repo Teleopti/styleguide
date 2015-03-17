@@ -120,3 +120,33 @@
 .wfm-list li:hover > .wfm-leave-behind {
 	width: 110px;
 }
+
+
+//Lists
+//
+// This is a list with cards items
+//
+//Markup:
+//<ul class="wfm-list-cards ">
+//	<li>List Item 1</li>
+//	<li>List Item 2</li>
+//	<li>List Item 3</li>
+//</ul>
+//
+//Styleguide 1.2.2
+//
+
+.wfm-list-cards li{
+	@extend .material-depth-2;
+	background-color: $green-100;
+	width: 200px;
+	display: inline-block;
+	margin: 10px;
+	border: none;
+	text-align: center;
+	padding: 10px;
+	&:hover{
+		background-color: $green-400;
+		border: none;
+	}
+}
