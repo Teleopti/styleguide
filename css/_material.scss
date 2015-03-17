@@ -3,7 +3,7 @@ outline: -webkit-focus-ring-color auto 0;
 }
 
 body{
-	background-color: $gray012;
+	background-color: $gray-100;
 	font-size:16px;
 	font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif!important; 
 }
@@ -31,16 +31,6 @@ body{
     z-index: -1;
 }
 
-.material-block {
-    height: 100%;
-	padding: $full-padding;
-    background-color: $white;
-}
-
-.container-block {
-	background-color: $gray-100;
-}
-
 .wfm-block {
 	padding:$full-padding;
 	width:100%;
@@ -65,11 +55,13 @@ body{
 }
 
 .layout-container .content {
+	@extend .material-depth-1;
 	-webkit-flex: auto;
 	flex: auto;
 	padding: 10px;
 	flex-basis: 70%;
 	margin: 10px;
+	background-color: $white;
 }
 
 // Loading bar
