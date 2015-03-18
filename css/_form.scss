@@ -255,12 +255,16 @@ label {
 //
 //Markup:
 //<div class="wfm-checkbox">
-//	<input type="checkbox" id=check1 checked="true"/>
-//	<label for=check1> label </label>
+//	<input type="checkbox" id=check1 />
+//		<label for=check1>
+//			<span>label</span>
+//		</label>
 //</div>
 //<div class="wfm-checkbox">
 //	<input type="checkbox" id=check2 />
-//	<label for=check2> label </label>
+//		<label for=check2>
+//			<span>label</span>
+//		</label>
 //</div>
 //
 //Styleguide 1.4.7
