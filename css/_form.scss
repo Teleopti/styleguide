@@ -280,7 +280,6 @@ label {
 		height: 18px;
 		border-radius: 4px;
 		text-align: center;
-		margin-left: 23px;
 		white-space:nowrap;
 		transition: $transition-timing;
 	}
@@ -299,6 +298,10 @@ label {
 	input[type=checkbox]:checked ~ label:before {
 		background-color: $blue-300;
 		content: "✓";
+	}
+	
+	label span{
+		margin-left: 23px;
 	}
 }
 

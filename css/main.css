@@ -39,11 +39,11 @@ body {
   outline: -webkit-focus-ring-color auto 0; }
 
 body {
-  background-color: rgba(0, 0, 0, 0.06);
+  background-color: #f5f5f5;
   font-size: 16px;
   font-family: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif !important; }
 
-.material-depth-1, .wfm-btn-default, .wfm-btn-primary, .wfm-fab, .sidenav-toggle .sidenav-wrapper {
+.material-depth-1, .layout-container .content, .wfm-btn-default, .wfm-btn-primary, .wfm-fab, .sidenav-toggle .sidenav-wrapper {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); }
 
 .material-depth-2, .wfm-btn-default:hover, .wfm-btn-primary:hover, .wfm-fab:hover {
@@ -61,14 +61,6 @@ body {
   width: 100%;
   top: 0;
   z-index: -1; }
-
-.material-block {
-  height: 100%;
-  padding: 5px;
-  background-color: #ffffff; }
-
-.container-block {
-  background-color: #f5f5f5; }
 
 .wfm-block, .tile-footer, .angular-ui-tree-handle, .wfm-list li, select option, .wfm-radio, .wfm-checkbox, .sub-header, .bottom-header, .inner i, .tab-group .tab-container, .notice, .notification-list li {
   padding: 5px;
@@ -94,7 +86,8 @@ body {
   flex: auto;
   padding: 10px;
   flex-basis: 70%;
-  margin: 10px; }
+  margin: 10px;
+  background-color: #ffffff; }
 
 .wfm-progress-bar {
   background: #99d6ff;
@@ -496,7 +489,6 @@ input[type='text'], select {
     height: 18px;
     border-radius: 4px;
     text-align: center;
-    margin-left: 23px;
     white-space: nowrap;
     transition: all .2s ease-in-out; }
   .wfm-checkbox label:before {
@@ -511,6 +503,8 @@ input[type='text'], select {
   .wfm-checkbox input[type=checkbox]:checked ~ label:before {
     background-color: #66c2ff;
     content: "✓"; }
+  .wfm-checkbox label span {
+    margin-left: 23px; }
 
 .sub-header {
   background-color: #66c2ff;
