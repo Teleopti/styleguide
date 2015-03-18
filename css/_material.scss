@@ -6,6 +6,10 @@ body{
 	background-color: $gray-100;
 	font-size:16px;
 	font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif!important; 
+	
+	a:focus, a:hover{
+		text-decoration:none;
+	}
 }
 
 .material-depth-1 {

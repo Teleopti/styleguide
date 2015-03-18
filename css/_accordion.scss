@@ -12,7 +12,14 @@
 	width: 100%;
 }
 
-.wfm-accordion ul{
+.sidenav-header.accordion-head, .bottom-header.accordion-head {
 	list-style: none;
 	cursor:pointer;
+
+	/*dark hover*/
+	/*
+	&:hover, &:active{
+		background-color:#003466;
+		color:$white;
+	}*/
 }

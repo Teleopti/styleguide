@@ -202,6 +202,7 @@
         <p>Getting a deeper look into the styles of shadows and positioning. The first thing we need to understand is the concept of stacked material (see <a href="http://goo.gl/A2ZAOH">http://goo.gl/A2ZAOH</a> ).
 Keep the number of stacked layers to a minimum and the total number of layer below 3 (including the background). If a raised element lives inside of another raised element it should have a higher material-depth number (i.e a panel with a depth of 1 can have one panel with a depth of 2 above (inside) it.)
 Elements floating above the main layout (such as context menus) should have the highest material-depth number possible (2).</p>
+<p>Note: the &#39;spacer&#39; class is for styleguide demo purpose only.</p>
 
       </div>
     </div>
@@ -242,7 +243,8 @@ Elements floating above the main layout (such as context menus) should have the 
 
 
       <div class="kss-description">
-        <p>The trench works much like the depth, however since it gives the illusion of a layer behind the current pice of material it should not be used on large areas, this will create raised &quot;frames&quot; around the trench.</p>
+        <p>The trench works much like the depth, however since it gives the illusion of a layer behind the current pice of material it should not be used on larger areas, since this will create raised &quot;frames&quot; around the trench.</p>
+<p>Note: the &#39;spacer&#39; class is for styleguide demo purpose only.</p>
 
       </div>
     </div>
@@ -310,9 +312,7 @@ If the list is long enough to extend outside of the main workarea it should be s
 	List Item 3
 	<div class="wfm-leave-behind">
 		<span>
-			<p>
-				Right behind
-			</p>
+			<i class="mdi mdi-delete"></i>
 		</span>
 	</div>
 </li>
@@ -346,9 +346,7 @@ If the list is long enough to extend outside of the main workarea it should be s
 	List Item 3
 	&lt;div class=&quot;wfm-leave-behind&quot;&gt;
 		&lt;span&gt;
-			&lt;p&gt;
-				Right behind
-			&lt;/p&gt;
+			&lt;i class=&quot;mdi mdi-delete&quot;&gt;&lt;/i&gt;
 		&lt;/span&gt;
 	&lt;/div&gt;
 &lt;/li&gt;
@@ -769,7 +767,7 @@ If the list is long enough to extend outside of the main workarea it should be s
 
 
       <div class="kss-description">
-        <p>Sidenav toggles are a pair of checkboxes that controls the visibility of the sidenavs. The toggles are not part of the sidenav (if they were they would be hidden aswell and the user would be unable to show the sidenav without reloading the page). They instead trigger a Angular ng-hide on their respective sidenav.</p>
+        <p>Sidenav toggles are a pair of checkboxes that control the visibility of the sidenavs. The toggles are not part of the sidenav (if they were they would be hidden aswell and the user would be unable to show the sidenav without reloading the page). They instead trigger a Angular ng-hide on their respective sidenav.</p>
 
       </div>
     </div>
@@ -841,7 +839,7 @@ If the list is long enough to extend outside of the main workarea it should be s
 
 
       <div class="kss-description">
-        <p>The topbar is at top of the page, and contains the brand, some breadcrumbs, a global search and some actions. Since the topbar is always imported into the template it should remain as global as possible.</p>
+        <p>The topbar is, as you might have guessed at the top of the page, and contains the brand, the path to the current view, a global search and some actions. Since the same topbar is always imported into every view it should only contain global and unspescific tools and actions.</p>
 
       </div>
     </div>
@@ -1129,7 +1127,7 @@ This helps the user understand what the action will do and what object it will e
 
       <div class="kss-description">
         <p>Tables are used to give a overview of data, however, following the Main concepts of the styleguide, only relevant data should be displayed. In the cases where that is not possible, please use infinite scrolling or pagination to keep the page lightweight.
-If a table do take time to be loaded, a loading bar should be displayed during this time to indicate to the user that it will take some time and that the table is not broken.
+If a table does take time to be loaded, a loading bar should be displayed during this time to indicate to the user that it will take some time and that the table is not broken.
 A table should be displayed in alphabetical order by default, unless there is an obvious way the user would want the data sorted. Even so, the ability to sort and search within the table is most welcome.</p>
 
       </div>
@@ -1354,11 +1352,18 @@ There are several different markers to make the type of notice easy to spot:</p>
 <a href="#openModal1">Open</a>
 <div id="openModal1" class="modalbg">
 <div class="dialog">
-	<a href="#close1" title="Close1" class="dismiss">
-		<i class="mdi mdi-close-circle"></i>
-	</a>
- 	<h4>Hello</h4>
-	I am modal
+ 	<div class="modal-header">
+		Modal title
+	</div>
+	<div class="modal-content">
+		Ladies and gentlemen, allow me to introduce myself, I am the amazing modal window body!
+	</div>
+	<div class="modal-footer">
+		<aside>
+			<button class="wfm-btn wfm-btn-invis-primary">AGREE</button>
+			<a href="#close1" title="Close1" class="dismiss wfm-btn wfm-btn-invis-primary">DISMISS</a>
+		</aside>
+	</div>
 </div>
 </div>
 </div>
@@ -1370,11 +1375,18 @@ There are several different markers to make the type of notice easy to spot:</p>
 &lt;a href=&quot;#openModal1&quot;&gt;Open&lt;/a&gt;
 &lt;div id=&quot;openModal1&quot; class=&quot;modalbg&quot;&gt;
 &lt;div class=&quot;dialog&quot;&gt;
-	&lt;a href=&quot;#close1&quot; title=&quot;Close1&quot; class=&quot;dismiss&quot;&gt;
-		&lt;i class=&quot;mdi mdi-close-circle&quot;&gt;&lt;/i&gt;
-	&lt;/a&gt;
- 	&lt;h4&gt;Hello&lt;/h4&gt;
-	I am modal
+ 	&lt;div class=&quot;modal-header&quot;&gt;
+		Modal title
+	&lt;/div&gt;
+	&lt;div class=&quot;modal-content&quot;&gt;
+		Ladies and gentlemen, allow me to introduce myself, I am the amazing modal window body!
+	&lt;/div&gt;
+	&lt;div class=&quot;modal-footer&quot;&gt;
+		&lt;aside&gt;
+			&lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;AGREE&lt;/button&gt;
+			&lt;a href=&quot;#close1&quot; title=&quot;Close1&quot; class=&quot;dismiss wfm-btn wfm-btn-invis-primary&quot;&gt;DISMISS&lt;/a&gt;
+		&lt;/aside&gt;
+	&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;</code></pre>

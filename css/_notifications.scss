@@ -22,11 +22,11 @@
 //
 
 .notice {
-	@extend .wfm-block;
+	padding: $full-padding 0;
+	width:100%;
 	cursor:pointer;
 	margin:5px;
 	color:#111111;
-	display:inline-block;
 	
 	&.default{
 		background-color:$blue-100;
@@ -42,7 +42,7 @@
 
 	&.detail{
 		background: $gray012;
-		margin: -5px 5px 5px;
+		margin: -5px 5px 5px 5px;
 	}
 }
 

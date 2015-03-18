@@ -12,6 +12,8 @@
 //Keep the number of stacked layers to a minimum and the total number of layer below 3 (including the background). If a raised element lives inside of another raised element it should have a higher material-depth number (i.e a panel with a depth of 1 can have one panel with a depth of 2 above (inside) it.) 
 //Elements floating above the main layout (such as context menus) should have the highest material-depth number possible (2).
 //
+//Note: the 'spacer' class is for styleguide demo purpose only.
+//
 //Markup:
 //<div class="spacer"> Background </div>
 //<div class="spacer material-depth-1"> Layer 1 </div>
@@ -25,7 +27,9 @@
 
 //Trench
 //
-//The trench works much like the depth, however since it gives the illusion of a layer behind the current pice of material it should not be used on large areas, this will create raised "frames" around the trench.
+//The trench works much like the depth, however since it gives the illusion of a layer behind the current pice of material it should not be used on larger areas, since this will create raised "frames" around the trench.
+//
+//Note: the 'spacer' class is for styleguide demo purpose only.
 //
 //Markup:
 //<div class="spacer material-trench-1"> Layer 1 </div>

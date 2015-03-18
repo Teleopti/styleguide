@@ -7,11 +7,18 @@
 //<a href="#openModal1">Open</a>
 //<div id="openModal1" class="modalbg">
 //	<div class="dialog">
-//		<a href="#close1" title="Close1" class="dismiss">
-//			<i class="mdi mdi-close-circle"></i>
-//		</a>
-//  	<h4>Hello</h4>
-//		I am modal
+//  	<div class="modal-header">
+//			Modal title
+//		</div>
+//		<div class="modal-content">
+//			Ladies and gentlemen, allow me to introduce myself, I am the amazing modal window body!
+//		</div>
+//		<div class="modal-footer">
+//			<aside>
+//				<button class="wfm-btn wfm-btn-invis-primary">AGREE</button>
+//				<a href="#close1" title="Close1" class="dismiss wfm-btn wfm-btn-invis-primary">DISMISS</a>
+//			</aside>
+//		</div>
 //	</div>
 //</div>
 //</div>
@@ -35,33 +42,45 @@
 	
 	.modalbg .dialog {
 		@extend material-depth-2;
-		width: 400px;
+		width: 30%;
 		position: relative;
 		top: -1000px;
 		margin: 10% auto;
-		padding: 5px 20px 13px 20px;
 		background: $white;	
+	}
+	
+	.modal-header{
+		padding: $full-padding;
+		background-color: $blue-500;
+		color: $white;
+	}
+	
+	.modal-content{
+		padding: $full-padding;
+		background-color: $white;
+		color: $gray087;
+	}
+	
+	.modal-footer{
+		padding: $full-padding * 2 $full-padding;
+		border-top: 1px solid $gray012;
+		color: $gray087;
+	}
+	
+	aside{
+		text-align:right;
 	}
 
 	.modalbg:target {
 		display: block;
 		pointer-events: auto;
 		background: $gray026;
-transition: $transition-timing;
+		transition: $transition-timing;
 	}
 	
 	.modalbg:target .dialog {
 		top: -20px;
-transition: $transition-timing;
+		transition: $transition-timing;
 		-transition-delay: 0.4s;
-	}
-	
-	.dismiss{
-		float: right;
-		font-size: 18px;
-	}
-	
-	i {
-		color: $gray026;
 	}
 }

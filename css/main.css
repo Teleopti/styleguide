@@ -42,6 +42,8 @@ body {
   background-color: #f5f5f5;
   font-size: 16px;
   font-family: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif !important; }
+  body a:focus, body a:hover {
+    text-decoration: none; }
 
 .material-depth-1, .layout-container .content, .wfm-btn-default, .wfm-btn-primary, .wfm-fab, .sidenav-toggle .sidenav-wrapper {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); }
@@ -62,7 +64,7 @@ body {
   top: 0;
   z-index: -1; }
 
-.wfm-block, .tile-footer, .angular-ui-tree-handle, .wfm-list li, select option, .wfm-radio, .wfm-checkbox, .sub-header, .bottom-header, .inner i, .tab-group .tab-container, .notice, .notification-list li {
+.wfm-block, .tile-footer, .angular-ui-tree-handle, .wfm-list li, select option, .wfm-radio, .wfm-checkbox, .inner i, .tab-group .tab-container, .notification-list li {
   padding: 5px;
   width: 100%; }
 
@@ -135,7 +137,7 @@ body {
 .angular-ui-tree-handle {
   cursor: pointer;
   font-weight: 500;
-  transition: all .2s ease-in-out;
+  transition: all 0.5s ease-in-out;
   border-left: 3px solid transparent; }
   .angular-ui-tree-handle:hover {
     background-color: rgba(0, 0, 0, 0.06); }
@@ -191,7 +193,7 @@ body {
   margin-bottom: -12px;
   margin-right: -5px;
   background-color: rgba(0, 0, 0, 0.06);
-  transition: all .2s ease-in-out;
+  transition: all 0.5s ease-in-out;
   padding-top: 12px;
   padding-bottom: 5px; }
   .wfm-leave-behind span {
@@ -283,7 +285,7 @@ md-tooltip[md-direction="top"] {
   margin-bottom: 8px; }
 
 md-tooltip .md-background {
-  background: #9CCC65;
+  background: rgba(0, 0, 0, 0.87);
   position: absolute;
   left: 50%;
   width: 256px;
@@ -428,7 +430,7 @@ input[type='text'], select {
     text-align: center;
     margin-left: 23px;
     white-space: nowrap;
-    transition: all .2s ease-in-out; }
+    transition: all 0.5s ease-in-out; }
   .wfm-radio label:before {
     background-color: #E0E0E0;
     content: "";
@@ -490,7 +492,7 @@ input[type='text'], select {
     border-radius: 4px;
     text-align: center;
     white-space: nowrap;
-    transition: all .2s ease-in-out; }
+    transition: all 0.5s ease-in-out; }
   .wfm-checkbox label:before {
     background-color: #E0E0E0;
     content: "";
@@ -507,17 +509,18 @@ input[type='text'], select {
     margin-left: 23px; }
 
 .sub-header {
+  padding: 5px;
   background-color: #66c2ff;
   color: rgba(0, 0, 0, 0.87); }
 
 .bottom-header {
+  padding: 5px;
   background-color: #99d6ff;
   color: rgba(0, 0, 0, 0.87);
   border-bottom: 1px solid rgba(0, 0, 0, 0.06); }
 
 .sidenav-header {
-  width: 100%;
-  padding: 10px !important;
+  padding: 10px 5px;
   background-color: #66c2ff;
   color: rgba(0, 0, 0, 0.87);
   border-bottom: 1px solid rgba(0, 0, 0, 0.06); }
@@ -539,7 +542,7 @@ input[type='text'], select {
     padding: 15px;
     font-size: 18px;
     line-height: 20px;
-    width: 100%; }
+    width: 98%; }
   .navbar .wfm-container {
     padding-left: 5px; }
   .navbar .breadbin {
@@ -720,33 +723,47 @@ tr {
   display: block;
   pointer-events: none; }
 .modal-box .modalbg .dialog {
-  width: 400px;
+  width: 30%;
   position: relative;
   top: -1000px;
   margin: 10% auto;
-  padding: 5px 20px 13px 20px;
   background: #ffffff; }
+.modal-box .modal-header {
+  padding: 5px;
+  background-color: #0099FF;
+  color: #ffffff; }
+.modal-box .modal-content {
+  padding: 5px;
+  background-color: #ffffff;
+  color: rgba(0, 0, 0, 0.87); }
+.modal-box .modal-footer {
+  padding: 10px 5px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  color: rgba(0, 0, 0, 0.87); }
+.modal-box aside {
+  text-align: right; }
 .modal-box .modalbg:target {
   display: block;
   pointer-events: auto;
   background: rgba(0, 0, 0, 0.26);
-  transition: all .2s ease-in-out; }
+  transition: all 0.5s ease-in-out; }
 .modal-box .modalbg:target .dialog {
   top: -20px;
-  transition: all .2s ease-in-out;
+  transition: all 0.5s ease-in-out;
   -transition-delay: 0.4s; }
-.modal-box .dismiss {
-  float: right;
-  font-size: 18px; }
-.modal-box i {
-  color: rgba(0, 0, 0, 0.26); }
 
 .wfm-accordion {
   width: 100%; }
 
-.wfm-accordion ul {
+.sidenav-header.accordion-head, .bottom-header.accordion-head {
   list-style: none;
-  cursor: pointer; }
+  cursor: pointer;
+  /*dark hover*/
+  /*
+	&:hover, &:active{
+		background-color:#003466;
+		color:$white;
+	}*/ }
 
 .dropdown {
   width: 25px;
@@ -824,7 +841,7 @@ tr {
     border-bottom: 3px solid #66c2ff;
     background-color: #66c2ff;
     text-align: center;
-    transition: all .2s ease-in-out;
+    transition: all 0.5s ease-in-out;
     border-radius: 0 !important;
     /*overrides bootstrap*/
     margin-bottom: 0 !important;
@@ -839,10 +856,11 @@ tr {
     overflow: hidden; }
 
 .notice {
+  padding: 5px 0;
+  width: 100%;
   cursor: pointer;
   margin: 5px;
-  color: #111111;
-  display: inline-block; }
+  color: #111111; }
   .notice.default {
     background-color: #99d6ff; }
   .notice.warning {
@@ -851,7 +869,7 @@ tr {
     background-color: #ee8f7d; }
   .notice.detail {
     background: rgba(0, 0, 0, 0.06);
-    margin: -5px 5px 5px; }
+    margin: -5px 5px 5px 5px; }
 
 .notification-list {
   list-style: none;
@@ -872,7 +890,7 @@ tr {
   background-color: #ffffff;
   text-align: center;
   cursor: pointer;
-  transition: all .2s ease-in-out;
+  transition: all 0.5s ease-in-out;
   max-width: none;
   margin: 0; }
 .sidenav-toggle label i {
@@ -895,7 +913,7 @@ tr {
   top: 0;
   height: 1050px;
   bottom: 0;
-  transition: all .2s ease-in-out; }
+  transition: all 0.5s ease-in-out; }
 
 .sidenav.left.ng-hide {
   -webkit-transform: translate(-100%, 0%); }
