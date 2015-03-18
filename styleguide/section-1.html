@@ -781,12 +781,14 @@ If the list is long enough to extend outside of the main workarea it should be s
         <div class="kss-modifier__example">
           <div class="sidenav-toggle">
 <div class="sidenav-wrapper left">
+<input type="checkbox" id="nav-left" ng-model="toggleLeftSide" />
 <label for="nav-right">
 	<i class="mdi mdi-fast-forward"></i>
 </label>
 </div>
 </div>
 <div class="sidenav-toggle">
+<input type="checkbox" id="nav-right" ng-model="toggleRightSide" />
 <div class="sidenav-wrapper right">
 	<i class="mdi mdi-rewind"></i>
 </div>
@@ -797,12 +799,14 @@ If the list is long enough to extend outside of the main workarea it should be s
       <div class="kss-markup kss-style">
         <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;sidenav-toggle&quot;&gt;
 &lt;div class=&quot;sidenav-wrapper left&quot;&gt;
+&lt;input type=&quot;checkbox&quot; id=&quot;nav-left&quot; ng-model=&quot;toggleLeftSide&quot; /&gt;
 &lt;label for=&quot;nav-right&quot;&gt;
 	&lt;i class=&quot;mdi mdi-fast-forward&quot;&gt;&lt;/i&gt;
 &lt;/label&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sidenav-toggle&quot;&gt;
+&lt;input type=&quot;checkbox&quot; id=&quot;nav-right&quot; ng-model=&quot;toggleRightSide&quot; /&gt;
 &lt;div class=&quot;sidenav-wrapper right&quot;&gt;
 	&lt;i class=&quot;mdi mdi-rewind&quot;&gt;&lt;/i&gt;
 &lt;/div&gt;
@@ -848,44 +852,46 @@ If the list is long enough to extend outside of the main workarea it should be s
         </div>
         <div class="kss-modifier__example">
           <div class="material-depth-1 navbar navbar-default">
- <div class="wfm-container">
-	<div class="navbar-header">
-		<div class="content">
+	<div class="navbar-header content">
+		<div class="navbar-left">
 			<span class="brand">Teleopti WFM</span>
-			<span class="breadbin">
-				<a href="#" class="crumb">Settings ></a>
-				<a href="#" class="crumb">Options</a>
+			<span class="breadbin hidden-xs">
+				<a class="crumb">Bread ></a>
+				<a class="crumb">crumb</a>
 			</span>
-			<div class="right-actions">
-				<span><a><i class="mdi mdi-account"></i></a></span>
-				<span><a><i class="mdi mdi-settings"></i></a></span>
-				<span><a><i class="mdi mdi-logout"></i></a></span>
-			</div>
+		</div>
+		<div class="navbar-right">
+				<span>
+					<i class="mdi mdi-magnify"></i>
+					<input type="text" placeholder="Search ..." ng-model="keyword" ng-change="searchKeyword()" class="global-search" />
+				</span>
+				<span><a><i class="mdi mdi-account"></i></a>
+				</span>
 		</div>
 	</div>
-</div>
 </div>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
         <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;material-depth-1 navbar navbar-default&quot;&gt;
- &lt;div class=&quot;wfm-container&quot;&gt;
-	&lt;div class=&quot;navbar-header&quot;&gt;
-		&lt;div class=&quot;content&quot;&gt;
+	&lt;div class=&quot;navbar-header content&quot;&gt;
+		&lt;div class=&quot;navbar-left&quot;&gt;
 			&lt;span class=&quot;brand&quot;&gt;Teleopti WFM&lt;/span&gt;
-			&lt;span class=&quot;breadbin&quot;&gt;
-				&lt;a href=&quot;#&quot; class=&quot;crumb&quot;&gt;Settings &gt;&lt;/a&gt;
-				&lt;a href=&quot;#&quot; class=&quot;crumb&quot;&gt;Options&lt;/a&gt;
+			&lt;span class=&quot;breadbin hidden-xs&quot;&gt;
+				&lt;a class=&quot;crumb&quot;&gt;Bread &gt;&lt;/a&gt;
+				&lt;a class=&quot;crumb&quot;&gt;crumb&lt;/a&gt;
 			&lt;/span&gt;
-			&lt;div class=&quot;right-actions&quot;&gt;
-				&lt;span&gt;&lt;a&gt;&lt;i class=&quot;mdi mdi-account&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/span&gt;
-				&lt;span&gt;&lt;a&gt;&lt;i class=&quot;mdi mdi-settings&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/span&gt;
-				&lt;span&gt;&lt;a&gt;&lt;i class=&quot;mdi mdi-logout&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/span&gt;
-			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class=&quot;navbar-right&quot;&gt;
+				&lt;span&gt;
+					&lt;i class=&quot;mdi mdi-magnify&quot;&gt;&lt;/i&gt;
+					&lt;input type=&quot;text&quot; placeholder=&quot;Search ...&quot; ng-model=&quot;keyword&quot; ng-change=&quot;searchKeyword()&quot; class=&quot;global-search&quot; /&gt;
+				&lt;/span&gt;
+				&lt;span&gt;&lt;a&gt;&lt;i class=&quot;mdi mdi-account&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+				&lt;/span&gt;
 		&lt;/div&gt;
 	&lt;/div&gt;
-&lt;/div&gt;
 &lt;/div&gt;</code></pre>
       </div>
 

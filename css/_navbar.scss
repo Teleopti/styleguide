@@ -11,23 +11,24 @@
 // The topbar is at top of the page, and contains the brand, some breadcrumbs, a global search and some actions. Since the topbar is always imported into the template it should remain as global as possible.
 //
 //Markup:
-//<div class="material-depth-1 navbar navbar-default"> 
-//  <div class="wfm-container">
-//		<div class="navbar-header">
-//			<div class="content">
+//<div class="material-depth-1 navbar navbar-default">
+//		<div class="navbar-header content">
+//			<div class="navbar-left">
 //				<span class="brand">Teleopti WFM</span>
-//				<span class="breadbin">
-//					<a href="#" class="crumb">Settings ></a>
-//					<a href="#" class="crumb">Options</a>
+//				<span class="breadbin hidden-xs">
+//					<a class="crumb">Bread ></a>
+//					<a class="crumb">crumb</a>
 //				</span>
-//				<div class="right-actions">
-//					<span><a><i class="mdi mdi-account"></i></a></span>
-//					<span><a><i class="mdi mdi-settings"></i></a></span>
-//					<span><a><i class="mdi mdi-logout"></i></a></span>
-//				</div>
+//			</div>
+//			<div class="navbar-right">
+//					<span>
+//						<i class="mdi mdi-magnify"></i>
+//						<input type="text" placeholder="Search ..." ng-model="keyword" ng-change="searchKeyword()" class="global-search" />
+//					</span>
+//					<span><a><i class="mdi mdi-account"></i></a>
+//					</span>
 //			</div>
 //		</div>
-//	</div> 
 //</div>
 //
 //Styleguide 1.5.1
@@ -100,11 +101,11 @@
 	}
 	
 	.content {
-		height: 50px;
+		height: 22px;
 		padding: 15px;
 		font-size: 18px;
 		line-height: 20px;
-		margin-left: -15px;
+		width: 100%;
 	}
 	
 	.wfm-container{
@@ -115,19 +116,18 @@
 		margin-left:30px;
 		font-size: 75%;
 	}
-	
-	.right-actions{
-		position:absolute;
-		right:$full-padding;
-		top:30%;
-	}
-	 .right-actions span{
-		display:inline-block;
-	 }
 	 
-	 .right-actions i{
+	 i{
 		color: $white;
 	 }
+}
+
+.navbar-left {
+	float: left;
+}
+
+.navbar-right {
+	float: right;
 }
 
 /*search*/

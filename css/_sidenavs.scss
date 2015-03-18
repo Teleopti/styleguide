@@ -6,12 +6,14 @@
 //Markup:
 //<div class="sidenav-toggle">
 //<div class="sidenav-wrapper left">
+//	<input type="checkbox" id="nav-left" ng-model="toggleLeftSide" />
 //	<label for="nav-right">
 //		<i class="mdi mdi-fast-forward"></i>
 //	</label>
 //</div>
 //</div>
 //<div class="sidenav-toggle">
+//	<input type="checkbox" id="nav-right" ng-model="toggleRightSide" />
 //	<div class="sidenav-wrapper right">
 //		<i class="mdi mdi-rewind"></i>
 //	</div>
@@ -21,6 +23,10 @@
 //
 
 .sidenav-toggle {
+
+	input[type='checkbox']{
+		display: none;
+	}
 	
 	label {
 		background-color: $white;

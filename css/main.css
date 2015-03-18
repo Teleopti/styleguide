@@ -541,24 +541,24 @@ input[type='text'], select {
     color: #ffffff !important;
     font-weight: bold; }
   .navbar .content {
-    height: 50px;
+    height: 22px;
     padding: 15px;
     font-size: 18px;
     line-height: 20px;
-    margin-left: -15px; }
+    width: 100%; }
   .navbar .wfm-container {
     padding-left: 5px; }
   .navbar .breadbin {
     margin-left: 30px;
     font-size: 75%; }
-  .navbar .right-actions {
-    position: absolute;
-    right: 5px;
-    top: 30%; }
-  .navbar .right-actions span {
-    display: inline-block; }
-  .navbar .right-actions i {
+  .navbar i {
     color: #ffffff; }
+
+.navbar-left {
+  float: left; }
+
+.navbar-right {
+  float: right; }
 
 /*search*/
 .global-search {
@@ -872,6 +872,8 @@ tr {
 .mdi:before {
   font-size: 18px !important; }
 
+.sidenav-toggle input[type='checkbox'] {
+  display: none; }
 .sidenav-toggle label {
   background-color: #ffffff;
   text-align: center;
