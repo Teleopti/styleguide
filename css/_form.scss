@@ -26,20 +26,10 @@
 //Styleguide 1.4.2
 //
 
-// Input with append
-//
-//
-//Markup:
-//	<div class="input-append">
-//		<input type="text" placeholder="Filter ..." />
-//		<i class="mdi mdi-filter"></i>
-//	</div>
-//
-//Styleguide 1.4.3
-//
 
 input{
 	font-size:14px;
+	height: 24px;
 }
 
 input[type='text'], select{
@@ -50,7 +40,7 @@ input[type='text'], select{
 	&:focus {
 		border: none;
 		outline: none;
-		border-bottom: 2px solid $pink-500;
+		border-bottom: 1px solid $pink-500;
 	}
 }
 
@@ -58,28 +48,11 @@ input[type='text'], select{
   width: 100%;
   i {
     display: inline-block;
-    width: 5%;
+    width: 2%;
   }
   input[type='text'] {
     display: inline-block;
-    width: 92%;
-	margin: 5px 0;
-	padding: $full-padding $full-padding 2px;
-  }
-}
-
-.input-append {
-  width: 100%;
-  i {
-    display: inline-block;
-    font-weight:600;
-    width: 5%;
-  }
-  input[type='text'] {
-    display: inline-block;
-    width: 92%;
-	margin: 5px 0;
-	padding: $full-padding $full-padding 2px;
+    width: 97%;
   }
 }
 
@@ -97,6 +70,12 @@ input[type='text'], select{
 :-ms-input-placeholder { /* Internet Explorer 10+ */
   color: $gray026;
 }
+
+//REFACTOR ME
+.toolbar {
+	margin-bottom: $full-padding;
+}
+
 
 // Select
 //
@@ -129,24 +108,27 @@ select option{
 //
 //Markup:
 //	<form>
-//		<div class="wfm-radio">
-//        <input type="radio" id="radio1" name="radioName" value="Value1" checked="true"/>
-//			<label for="radio1">
-//		This
-//			</label>
-//		</div>
-//		<div class="wfm-radio">
-//        <input type="radio" id="radio2" name="radioName" value="Value2"/>
-//			<label for="radio2">
-//				That
-//			</label>
-//		</div>
-//		<div class="wfm-radio">
-//        <input type="radio" id="radio3" name="radioName" value="Value3"/>
-//			<label for="radio3">
-//				Those
-//			</label>
-//		</div>
+//	<div class="wfm-radio">
+//		<input type="radio" name="group1" id="radio1" />
+//		<label for="radio1">
+//			<span class="wfm-radio-label">This</span>
+//			<span class="wfm-radio-toggle"></span>
+//		</label>
+//	</div>
+//	<div class="wfm-radio">
+//		<input type="radio" name="group1" id="radio2" />
+//		<label for="radio2">
+//			<span class="wfm-radio-label">That</span>
+//			<span class="wfm-radio-toggle"></span>
+//		</label>
+//	</div>
+//	<div class="wfm-radio">
+//		<input type="radio" name="group1" id="radio3" />
+//		<label for="radio3">
+//			<span class="wfm-radio-label">These</span>
+//			<span class="wfm-radio-toggle"></span>
+//		</label>
+//	</div>
 //	</form>
 //
 //Styleguide 1.4.5
@@ -159,29 +141,83 @@ cursor: pointer;
 		display:none;
 	}
 
-label {
-		width: 18px;
-		height: 18px;
-		border-radius: 4px;
-		text-align: center;
-		margin-left: 23px;
-		white-space:nowrap;
-		transition: $transition-timing;
-	}
-	
-	label:before {
+.wfm-radio-toggle {
+		position: absolute;
 		background-color: $gray-300;
-		content: "";
-		border-radius: 50%;
-		display: block;
 		width: 20px;
 		height: 20px;
-		color: $white;
-		position: absolute;
+		border-radius: 40px;
+		-webkit-transition: background-color .2s ease-in-out;
+		transition: background-color .2s ease-in-out;
+		margin-left: 5px;
 	}
 	
-	input[type=radio]:checked ~ label:before {
+	input[type=radio]:checked ~ label .wfm-radio-toggle{
 		background-color: $blue-300;
+	}
+	
+	.wfm-radio-label{
+		white-space:nowrap;
+	}
+}
+
+// Radio buttons
+//
+// Radio buttons are a group of options that can only have one item selected at a time.  
+//
+//Markup:
+//	<form>
+//	<div class="wfm-checkbox">
+//		<input type="checkbox" id="check1" />
+//		<label for="check1">
+//			<span class="wfm-checkbox-label">Check this out</span>
+//			<span class="wfm-checkbox-toggle"></span>
+//		</label>
+//	<div class="wfm-checkbox">
+//		<input type="checkbox" id="check2" />
+//		<label for="check2">
+//			<span class="wfm-checkbox-label">Check this out</span>
+//			<span class="wfm-checkbox-toggle"></span>
+//		</label>
+//	<div class="wfm-checkbox">
+//		<input type="checkbox" id="check3" />
+//		<label for="check3">
+//			<span class="wfm-checkbox-label">Check this out</span>
+//			<span class="wfm-checkbox-toggle"></span>
+//		</label>
+//	</form>
+//
+//Styleguide 1.4.6
+//
+
+.wfm-checkbox {
+@extend .wfm-block;
+cursor: pointer;
+	input[type='checkbox'] {
+		display:none;
+	}
+
+.wfm-checkbox-toggle:after {
+		position: absolute;
+		background-color: $gray-300;
+		width: 20px;
+		height: 20px;
+		border-radius:2px;
+		content: " ";
+		-webkit-transition: background-color .2s ease-in-out;
+		transition: background-color .2s ease-in-out;
+		margin-left: 5px;
+	}
+	
+	input[type=checkbox]:checked ~ label .wfm-checkbox-toggle:after{
+		background-color: $blue-300;
+		content: " ✓";
+		text-align: center;
+		color:$white;
+	}
+	
+	.wfm-checkbox-label{
+		white-space:nowrap;
 	}
 }
 
@@ -198,11 +234,13 @@ label {
 //		</label>
 //	</div>
 //
-//Styleguide 1.4.6
+//Styleguide 1.4.7
 //
 
 .wfm-slider {
 	position: relative;
+	height: 24px;
+	padding-top: 2px;
 	
 	input[type='checkbox'] {
 		display: none;
@@ -212,17 +250,17 @@ label {
 		position: absolute;
 		background-color: $gray-300;
 		width: 48px;
-		height: 20px;
+		height: 18px;
 		border-radius: 40px;
 		-webkit-transition: background-color .2s ease-in-out;
 		transition: background-color .2s ease-in-out;
-		margin-left: 5px;
+		margin: 2px 5px;
 	}
 	.wfm-slider-toggle:after {
 		content: "";
 		display: block;
-		width: 14px;
-		height: 14px;
+		width: 12px;
+		height: 12px;
 		border-radius: 44px;
 		cursor: pointer;
 		position: absolute;
@@ -242,68 +280,7 @@ label {
 	}
 	
 	.wfm-slider-label{
-		/*Slider width + 5px*/
 		white-space:nowrap;
-	}
-}
-
-// Checkboxes
-//
-// Checkboxes work the same way as radio buttons, except that any number of items can be selected. When faced with a large group of checkboxes, consider having a 'toggle all' option for easy management.
-//
-//Markup:
-//<div class="wfm-checkbox">
-//	<input type="checkbox" id=check1 />
-//		<label for=check1>
-//			<span>label</span>
-//		</label>
-//</div>
-//<div class="wfm-checkbox">
-//	<input type="checkbox" id=check2 />
-//		<label for=check2>
-//			<span>label</span>
-//		</label>
-//</div>
-//
-//Styleguide 1.4.7
-//
-
-.wfm-checkbox {
-	margin-left: 5px; 
-	@extend .wfm-block;
-	cursor:pointer;
-	
-	input[type='checkbox'] {
-		display:none;
-	}
-	
-	label {
-		width: 18px;
-		height: 18px;
-		border-radius: 4px;
-		text-align: center;
-		white-space:nowrap;
-		transition: $transition-timing;
-	}
-	
-	label:before {
-		background-color: $gray-300;
-		content: "";
-		border-radius: 2px;
-		display: block;
-		width: 20px;
-		height: 20px;
-		color: $white;
-		position: absolute;
-	}
-	
-	input[type=checkbox]:checked ~ label:before {
-		background-color: $blue-300;
-		content: "✓";
-	}
-	
-	label span{
-		margin-left: 23px;
 	}
 }
 
