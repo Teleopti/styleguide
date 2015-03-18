@@ -826,16 +826,14 @@ If the list is long enough to extend outside of the main workarea it should be s
         <div class="kss-modifier__example">
           <div class="sidenav-toggle">
 <div class="sidenav-wrapper left">
-<input type="checkbox" id="nav-left" ng-model="toggleLeftSide" />
-<label for="nav-right">
-	<i class="mdi mdi-fast-forward"></i>
-</label>
+	<input type="checkbox" id="nav-left" ng-model="toggleLeftSide" />
+	<label for="nav-right"><i class="mdi mdi-fast-forward"></i></label>
 </div>
 </div>
 <div class="sidenav-toggle">
-<input type="checkbox" id="nav-right" ng-model="toggleRightSide" />
 <div class="sidenav-wrapper right">
-	<i class="mdi mdi-rewind"></i>
+	<input type="checkbox" id="nav-right" ng-model="toggleRightSide" />
+	<label class="nav-left"><i class="mdi mdi-rewind"></i></label>
 </div>
 </div>
         </div>
@@ -844,16 +842,14 @@ If the list is long enough to extend outside of the main workarea it should be s
       <div class="kss-markup kss-style">
         <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;sidenav-toggle&quot;&gt;
 &lt;div class=&quot;sidenav-wrapper left&quot;&gt;
-&lt;input type=&quot;checkbox&quot; id=&quot;nav-left&quot; ng-model=&quot;toggleLeftSide&quot; /&gt;
-&lt;label for=&quot;nav-right&quot;&gt;
-	&lt;i class=&quot;mdi mdi-fast-forward&quot;&gt;&lt;/i&gt;
-&lt;/label&gt;
+	&lt;input type=&quot;checkbox&quot; id=&quot;nav-left&quot; ng-model=&quot;toggleLeftSide&quot; /&gt;
+	&lt;label for=&quot;nav-right&quot;&gt;&lt;i class=&quot;mdi mdi-fast-forward&quot;&gt;&lt;/i&gt;&lt;/label&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sidenav-toggle&quot;&gt;
-&lt;input type=&quot;checkbox&quot; id=&quot;nav-right&quot; ng-model=&quot;toggleRightSide&quot; /&gt;
 &lt;div class=&quot;sidenav-wrapper right&quot;&gt;
-	&lt;i class=&quot;mdi mdi-rewind&quot;&gt;&lt;/i&gt;
+	&lt;input type=&quot;checkbox&quot; id=&quot;nav-right&quot; ng-model=&quot;toggleRightSide&quot; /&gt;
+	&lt;label class=&quot;nav-left&quot;&gt;&lt;i class=&quot;mdi mdi-rewind&quot;&gt;&lt;/i&gt;&lt;/label&gt;
 &lt;/div&gt;
 &lt;/div&gt;</code></pre>
       </div>
@@ -887,6 +883,7 @@ If the list is long enough to extend outside of the main workarea it should be s
 
       <div class="kss-description">
         <p>The topbar is, as you might have guessed at the top of the page, and contains the brand, the path to the current view, a global search and some actions. Since the same topbar is always imported into every view it should only contain global and unspescific tools and actions.</p>
+<p>Note: the &#39;path&#39; should show where the view is in relation to the root, not how the user got to it.</p>
 
       </div>
     </div>
@@ -901,8 +898,8 @@ If the list is long enough to extend outside of the main workarea it should be s
 		<div class="navbar-left">
 			<span class="brand">Teleopti WFM</span>
 			<span class="breadbin hidden-xs">
-				<a class="crumb">Bread ></a>
-				<a class="crumb">crumb</a>
+				<a class="crumb">Gotham</a>
+				<a class="crumb">Batcave</a>
 			</span>
 		</div>
 		<div class="navbar-right">
@@ -924,8 +921,8 @@ If the list is long enough to extend outside of the main workarea it should be s
 		&lt;div class=&quot;navbar-left&quot;&gt;
 			&lt;span class=&quot;brand&quot;&gt;Teleopti WFM&lt;/span&gt;
 			&lt;span class=&quot;breadbin hidden-xs&quot;&gt;
-				&lt;a class=&quot;crumb&quot;&gt;Bread &gt;&lt;/a&gt;
-				&lt;a class=&quot;crumb&quot;&gt;crumb&lt;/a&gt;
+				&lt;a class=&quot;crumb&quot;&gt;Gotham&lt;/a&gt;
+				&lt;a class=&quot;crumb&quot;&gt;Batcave&lt;/a&gt;
 			&lt;/span&gt;
 		&lt;/div&gt;
 		&lt;div class=&quot;navbar-right&quot;&gt;

@@ -155,6 +155,7 @@ body {
   padding-top: 4px; }
 
 .toggle-handle.open i {
+  transition: all 0.5s ease-in-out;
   transform: rotate(90deg); }
 
 .tree-toggle-group {
@@ -558,9 +559,13 @@ input[type='text'], select {
     width: 98%; }
   .navbar .wfm-container {
     padding-left: 5px; }
+  .navbar .crumb:after {
+    content: " > "; }
   .navbar .breadbin {
     margin-left: 30px;
     font-size: 75%; }
+    .navbar .breadbin a:last-child:after {
+      content: " "; }
   .navbar i {
     color: #ffffff; }
 

@@ -90,6 +90,7 @@
 }
 
 .toggle-handle.open i {
+	transition: $transition-timing;
 	transform: rotate(90deg);
 }
 
