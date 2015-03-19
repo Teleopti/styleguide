@@ -4,7 +4,7 @@
 //
 //Markup:
 //<div class="modal-box">
-//<a href="#openModal1">Open</a>
+//<a href="#openModal1" class="wfm-btn wfm-btn-invis-primary">Open</a>
 //<div id="openModal1" class="modalbg">
 //	<div class="dialog">
 //  	<div class="modal-header">
@@ -15,8 +15,8 @@
 //		</div>
 //		<div class="modal-footer">
 //			<aside>
-//				<button class="wfm-btn wfm-btn-invis-primary">AGREE</button>
 //				<a href="#close1" title="Close1" class="dismiss wfm-btn wfm-btn-invis-primary">DISMISS</a>
+//				<a href="#close2" title="Close2" class="dismiss wfm-btn wfm-btn-invis-primary">AGREE</a>
 //			</aside>
 //		</div>
 //	</div>

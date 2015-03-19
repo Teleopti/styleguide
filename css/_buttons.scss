@@ -32,33 +32,36 @@
 //
 
 .wfm-btn {
-	border:none;
-	padding:10px;
-	margin:5px;
-	border-radius:3px;
+	border: none;
+	padding: 10px;
+	margin: 5px;
+	cursor: pointer;
+	border-radius: 3px;
+	transition: all 0.2s ease-in-out;
+	text-decoration:none!important;
 }
 
 .wfm-btn-invis-default {
-	color:$gray100;
-	background-color:transparent;
+	color: $gray100;
+	background-color: transparent;
 	
 	&:hover{
-		background-color:#ececec;
+		background-color: #ececec;
 	}
 }
 
 .wfm-btn-invis-primary {
-	color:$blue-500;
-	background-color:transparent;
+	color: $blue-500;
+	background-color: transparent;
 	
 	&:hover{
-		background-color:#ececec;
+		background-color: #ececec;
 	}
 }
 
 .wfm-btn-invis-disabled {
-	color:$gray026;
-	background-color:transparent;
+	color: $gray026;
+	background-color: transparent;
 	
 	&:hover{
 		cursor: not-allowed;
@@ -77,7 +80,7 @@
 
 .wfm-btn-primary {
 	color: $white;
-	background-color:$blue-500;
+	background-color: $blue-500;
 	@extend .material-depth-1;
 	
 		&:hover{
@@ -86,12 +89,12 @@
 }
 
 .wfm-fab{
-	text-align:center;
-	width:50px;
-	height:50px;
-	border-radius:50%;
-	color:$white;
-	background-color:$orange-400;
+	text-align: center;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	color: $white;
+	background-color: $orange-400;
 	@extend .material-depth-1;
 	
 		&:hover{

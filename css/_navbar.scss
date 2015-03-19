@@ -25,7 +25,7 @@
 //			<div class="navbar-right">
 //					<span>
 //						<i class="mdi mdi-magnify"></i>
-//						<input type="text" placeholder="Search ..." ng-model="keyword" ng-change="searchKeyword()" class="global-search" />
+//						<input type="text" placeholder="Search ..." class="global-search" />
 //					</span>
 //					<span><a><i class="mdi mdi-account"></i></a>
 //					</span>
@@ -39,6 +39,7 @@
 // Headers
 //
 //The normal header is used to indicate a new area or panel, any headers within that panel will have the second header (however, try to keep the total number of headers within one panel as low as possible).
+//
 //A secondary header should not live within another secondary header, rather, make a new secondary header to make skimming through the panel simple.
 //
 //Markup:
@@ -82,6 +83,10 @@
 	background-color: $blue-300;
 	color: $gray087;
 	border-bottom:1px solid $gray012;
+}
+
+.toolbar {
+	margin-bottom: $full-padding;
 }
 
 .navbar {

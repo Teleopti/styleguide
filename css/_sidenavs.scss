@@ -1,7 +1,7 @@
 
 //Sidenav toggles
 //
-//Sidenav toggles are a pair of checkboxes that control the visibility of the sidenavs. The toggles are not part of the sidenav (if they were they would be hidden aswell and the user would be unable to show the sidenav without reloading the page). They instead trigger a Angular ng-hide on their respective sidenav.
+//Sidenav toggles are a pair of checkboxes that control the visibility of the sidenavs. The toggles are not part of the sidenav (if they were they would be hidden aswell and the user would be unable to show the sidenav without reloading the page). They instead trigger a <a href="http://goo.gl/M5U1oC">Angular ng-hide</a> on their respective sidenav.
 //
 //Markup:
 //<div class="sidenav-toggle">
@@ -27,7 +27,6 @@
 	}
 	
 	label {
-		background-color: $white;
 		text-align: center;
 		cursor: pointer;
 		transition: $transition-timing;

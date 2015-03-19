@@ -48,11 +48,11 @@ input[type='text'], select{
   width: 100%;
   i {
     display: inline-block;
-    width: 2%;
+    width: 5%;
   }
   input[type='text'] {
     display: inline-block;
-    width: 97%;
+    width: 92%;
   }
 }
 
@@ -69,11 +69,6 @@ input[type='text'], select{
 }
 :-ms-input-placeholder { /* Internet Explorer 10+ */
   color: $gray026;
-}
-
-//REFACTOR ME
-.toolbar {
-	margin-bottom: $full-padding;
 }
 
 
@@ -161,30 +156,33 @@ cursor: pointer;
 	}
 }
 
-// Radio buttons
+// Checkboxes
 //
-// Radio buttons are a group of options that can only have one item selected at a time.  
+//Todo
 //
 //Markup:
 //	<form>
 //	<div class="wfm-checkbox">
 //		<input type="checkbox" id="check1" />
 //		<label for="check1">
-//			<span class="wfm-checkbox-label">Check this out</span>
 //			<span class="wfm-checkbox-toggle"></span>
+//			<span class="wfm-checkbox-label">Check </span>
 //		</label>
+//	</div>
 //	<div class="wfm-checkbox">
 //		<input type="checkbox" id="check2" />
 //		<label for="check2">
-//			<span class="wfm-checkbox-label">Check this out</span>
 //			<span class="wfm-checkbox-toggle"></span>
+//			<span class="wfm-checkbox-label">Check </span>
 //		</label>
+//	</div>
 //	<div class="wfm-checkbox">
 //		<input type="checkbox" id="check3" />
 //		<label for="check3">
-//			<span class="wfm-checkbox-label">Check this out</span>
 //			<span class="wfm-checkbox-toggle"></span>
+//			<span class="wfm-checkbox-label">Got it</span>
 //		</label>
+//	</div>
 //	</form>
 //
 //Styleguide 1.4.6
@@ -193,6 +191,7 @@ cursor: pointer;
 .wfm-checkbox {
 @extend .wfm-block;
 cursor: pointer;
+
 	input[type='checkbox'] {
 		display:none;
 	}
@@ -202,11 +201,12 @@ cursor: pointer;
 		background-color: $gray-300;
 		width: 20px;
 		height: 20px;
+		float:right;
 		border-radius:2px;
 		content: " ";
 		-webkit-transition: background-color .2s ease-in-out;
 		transition: background-color .2s ease-in-out;
-		margin-left: 5px;
+		
 	}
 	
 	input[type=checkbox]:checked ~ label .wfm-checkbox-toggle:after{
@@ -217,13 +217,14 @@ cursor: pointer;
 	}
 	
 	.wfm-checkbox-label{
+		margin-left: 20px + $full-padding;
 		white-space:nowrap;
 	}
 }
 
 // Sliders
 //
-// The slider is used to toggle between two states (show/hide) and should have a ng-model to be able to use Angulars ng-show or ng-hide (http://goo.gl/M5U1oC)
+// The slider is used to toggle between two states (show/hide) and uses <a href="http://goo.gl/M5U1oC">Angulars ng-show or ng-hide</a> to toggle other elements.
 //
 //Markup:
 //	<div class="wfm-slider">

@@ -199,9 +199,9 @@
 
 
       <div class="kss-description">
-        <p>Getting a deeper look into the styles of shadows and positioning. The first thing we need to understand is the concept of stacked material (see <a href="http://goo.gl/A2ZAOH">http://goo.gl/A2ZAOH</a> ).
-Keep the number of stacked layers to a minimum and the total number of layer below 3 (including the background). If a raised element lives inside of another raised element it should have a higher material-depth number (i.e a panel with a depth of 1 can have one panel with a depth of 2 above (inside) it.)
-Elements floating above the main layout (such as context menus) should have the highest material-depth number possible (2).</p>
+        <p>Getting a deeper look into the styles of shadows and positioning. The first thing we need to understand is the concept of stacked material (see the <a href="http://goo.gl/A2ZAOH">Google guidelines</a> ).</p>
+<p>Keep the number of stacked layers to a minimum and the total number of layer below 3 (including the background). If a raised element lives inside of another raised element it should have a higher material-depth number (i.e a panel with a depth of 1 can have one panel with a depth of 2 above (inside) it.)</p>
+<p>Elements floating above the main layout (such as context menus) should have the highest material-depth number possible (2).</p>
 <p>Note: the &#39;spacer&#39; class is for styleguide demo purpose only.</p>
 
       </div>
@@ -243,7 +243,9 @@ Elements floating above the main layout (such as context menus) should have the 
 
 
       <div class="kss-description">
-        <p>The trench works much like the depth, however since it gives the illusion of a layer behind the current pice of material it should not be used on larger areas, since this will create raised &quot;frames&quot; around the trench.</p>
+        <div class="styleguide-break"><i class="mdi mdi-alert"></i><span>We only use it for user interaction on small details. </span></div>
+
+<p>The trench works much like the depth, however since it gives the illusion of a layer behind the current pice of material it should not be used on larger areas, since this will create raised &quot;frames&quot; around the trench.</p>
 <p>Note: the &#39;spacer&#39; class is for styleguide demo purpose only.</p>
 
       </div>
@@ -275,8 +277,8 @@ Elements floating above the main layout (such as context menus) should have the 
 
 
       <div class="kss-description">
-        <p>A list can have several options attached to it in a so called &#39;leave-behind&#39; (<a href="http://goo.gl/DMxAHS">http://goo.gl/DMxAHS</a>), however, options can only effect the list item they are a part of. Individual options can have a tooltip and an icon and they are displayed only if the item is hovered or clicked.
-If the list is long enough to extend outside of the main workarea it should be scrollable to avoid making the main view scroll.</p>
+        <p>A list can have several options attached to it in a so called  <a href="http://goo.gl/DMxAHS">leave-behind</a>, however, options can only effect the list item they are a part of. Individual options can have a tooltip and an icon and they are displayed only if the item is hovered or clicked.</p>
+<p>If the list is long enough to extend outside of the main workarea it should be scrollable to avoid making the main view scroll.</p>
 <p>If there are actions that affect the whole list (such as create new or delete all) they should be placed above or below the list.</p>
 
       </div>
@@ -405,7 +407,7 @@ If the list is long enough to extend outside of the main workarea it should be s
 
 
       <div class="kss-description">
-        <p>A tree structure is used to show relations between different items. Selected items are marked with a checkmark and a background along with the default border showing inheritance.</p>
+        <p>A tree structure is used to show relations between different items. Selected items are marked with a checkmark and a background along with a left side border.</p>
 
       </div>
     </div>
@@ -553,39 +555,6 @@ If the list is long enough to extend outside of the main workarea it should be s
       </div>
 
       </section>
-      <section id="kssref-1.4.3" class="kss-section kss-section--depth-3">
-
-    <div class="kss-style">
-      <h3 class="kss-title kss-title--level-3">
-        <a class="kss-title__permalink">
-          <span class="kss-title__ref">1.4.3</span
-          >Input with append
-        </a>
-      </h3>
-
-
-    </div>
-
-      <div class="kss-modifier__wrapper">
-        <div class="kss-modifier__heading kss-style">
-          Example
-        </div>
-        <div class="kss-modifier__example">
-          <div class="input-append">
-	<input type="text" placeholder="Filter ..." />
-	<i class="mdi mdi-filter"></i>
-</div>
-        </div>
-      </div>
-
-      <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;input-append&quot;&gt;
-	&lt;input type=&quot;text&quot; placeholder=&quot;Filter ...&quot; /&gt;
-	&lt;i class=&quot;mdi mdi-filter&quot;&gt;&lt;/i&gt;
-&lt;/div&gt;</code></pre>
-      </div>
-
-      </section>
       <section id="kssref-1.4.4" class="kss-section kss-section--depth-3">
 
     <div class="kss-style">
@@ -662,48 +631,54 @@ If the list is long enough to extend outside of the main workarea it should be s
         </div>
         <div class="kss-modifier__example">
           <form>
-	<div class="wfm-radio">
-       <input type="radio" id="radio1" name="radioName" value="Value1" checked="true"/>
-		<label for="radio1">
-	This
-		</label>
-	</div>
-	<div class="wfm-radio">
-       <input type="radio" id="radio2" name="radioName" value="Value2"/>
-		<label for="radio2">
-			That
-		</label>
-	</div>
-	<div class="wfm-radio">
-       <input type="radio" id="radio3" name="radioName" value="Value3"/>
-		<label for="radio3">
-			Those
-		</label>
-	</div>
+<div class="wfm-radio">
+	<input type="radio" name="group1" id="radio1" />
+	<label for="radio1">
+		<span class="wfm-radio-label">This</span>
+		<span class="wfm-radio-toggle"></span>
+	</label>
+</div>
+<div class="wfm-radio">
+	<input type="radio" name="group1" id="radio2" />
+	<label for="radio2">
+		<span class="wfm-radio-label">That</span>
+		<span class="wfm-radio-toggle"></span>
+	</label>
+</div>
+<div class="wfm-radio">
+	<input type="radio" name="group1" id="radio3" />
+	<label for="radio3">
+		<span class="wfm-radio-label">These</span>
+		<span class="wfm-radio-toggle"></span>
+	</label>
+</div>
 </form>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
         <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form&gt;
-	&lt;div class=&quot;wfm-radio&quot;&gt;
-       &lt;input type=&quot;radio&quot; id=&quot;radio1&quot; name=&quot;radioName&quot; value=&quot;Value1&quot; checked=&quot;true&quot;/&gt;
-		&lt;label for=&quot;radio1&quot;&gt;
-	This
-		&lt;/label&gt;
-	&lt;/div&gt;
-	&lt;div class=&quot;wfm-radio&quot;&gt;
-       &lt;input type=&quot;radio&quot; id=&quot;radio2&quot; name=&quot;radioName&quot; value=&quot;Value2&quot;/&gt;
-		&lt;label for=&quot;radio2&quot;&gt;
-			That
-		&lt;/label&gt;
-	&lt;/div&gt;
-	&lt;div class=&quot;wfm-radio&quot;&gt;
-       &lt;input type=&quot;radio&quot; id=&quot;radio3&quot; name=&quot;radioName&quot; value=&quot;Value3&quot;/&gt;
-		&lt;label for=&quot;radio3&quot;&gt;
-			Those
-		&lt;/label&gt;
-	&lt;/div&gt;
+&lt;div class=&quot;wfm-radio&quot;&gt;
+	&lt;input type=&quot;radio&quot; name=&quot;group1&quot; id=&quot;radio1&quot; /&gt;
+	&lt;label for=&quot;radio1&quot;&gt;
+		&lt;span class=&quot;wfm-radio-label&quot;&gt;This&lt;/span&gt;
+		&lt;span class=&quot;wfm-radio-toggle&quot;&gt;&lt;/span&gt;
+	&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class=&quot;wfm-radio&quot;&gt;
+	&lt;input type=&quot;radio&quot; name=&quot;group1&quot; id=&quot;radio2&quot; /&gt;
+	&lt;label for=&quot;radio2&quot;&gt;
+		&lt;span class=&quot;wfm-radio-label&quot;&gt;That&lt;/span&gt;
+		&lt;span class=&quot;wfm-radio-toggle&quot;&gt;&lt;/span&gt;
+	&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class=&quot;wfm-radio&quot;&gt;
+	&lt;input type=&quot;radio&quot; name=&quot;group1&quot; id=&quot;radio3&quot; /&gt;
+	&lt;label for=&quot;radio3&quot;&gt;
+		&lt;span class=&quot;wfm-radio-label&quot;&gt;These&lt;/span&gt;
+		&lt;span class=&quot;wfm-radio-toggle&quot;&gt;&lt;/span&gt;
+	&lt;/label&gt;
+&lt;/div&gt;
 &lt;/form&gt;</code></pre>
       </div>
 
@@ -714,13 +689,13 @@ If the list is long enough to extend outside of the main workarea it should be s
       <h3 class="kss-title kss-title--level-3">
         <a class="kss-title__permalink">
           <span class="kss-title__ref">1.4.6</span
-          >Sliders
+          >Checkboxes
         </a>
       </h3>
 
 
       <div class="kss-description">
-        <p>The slider is used to toggle between two states (show/hide) and should have a ng-model to be able to use Angulars ng-show or ng-hide (<a href="http://goo.gl/M5U1oC">http://goo.gl/M5U1oC</a>)</p>
+        <p>Todo</p>
 
       </div>
     </div>
@@ -730,22 +705,56 @@ If the list is long enough to extend outside of the main workarea it should be s
           Example
         </div>
         <div class="kss-modifier__example">
-               <div class="wfm-slider">
-       <input type="checkbox" id="slide1" />
-		<label for="slide1">
-			<span>stuff</span>
-		</label>
-     </div>
+          <form>
+<div class="wfm-checkbox">
+	<input type="checkbox" id="check1" />
+	<label for="check1">
+		<span class="wfm-checkbox-toggle"></span>
+		<span class="wfm-checkbox-label">Check </span>
+	</label>
+</div>
+<div class="wfm-checkbox">
+	<input type="checkbox" id="check2" />
+	<label for="check2">
+		<span class="wfm-checkbox-toggle"></span>
+		<span class="wfm-checkbox-label">Check </span>
+	</label>
+</div>
+<div class="wfm-checkbox">
+	<input type="checkbox" id="check3" />
+	<label for="check3">
+		<span class="wfm-checkbox-toggle"></span>
+		<span class="wfm-checkbox-label">Got it</span>
+	</label>
+</div>
+</form>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">     &lt;div class=&quot;wfm-slider&quot;&gt;
-       &lt;input type=&quot;checkbox&quot; id=&quot;slide1&quot; /&gt;
-		&lt;label for=&quot;slide1&quot;&gt;
-			&lt;span&gt;stuff&lt;/span&gt;
-		&lt;/label&gt;
-     &lt;/div&gt;</code></pre>
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form&gt;
+&lt;div class=&quot;wfm-checkbox&quot;&gt;
+	&lt;input type=&quot;checkbox&quot; id=&quot;check1&quot; /&gt;
+	&lt;label for=&quot;check1&quot;&gt;
+		&lt;span class=&quot;wfm-checkbox-toggle&quot;&gt;&lt;/span&gt;
+		&lt;span class=&quot;wfm-checkbox-label&quot;&gt;Check &lt;/span&gt;
+	&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class=&quot;wfm-checkbox&quot;&gt;
+	&lt;input type=&quot;checkbox&quot; id=&quot;check2&quot; /&gt;
+	&lt;label for=&quot;check2&quot;&gt;
+		&lt;span class=&quot;wfm-checkbox-toggle&quot;&gt;&lt;/span&gt;
+		&lt;span class=&quot;wfm-checkbox-label&quot;&gt;Check &lt;/span&gt;
+	&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class=&quot;wfm-checkbox&quot;&gt;
+	&lt;input type=&quot;checkbox&quot; id=&quot;check3&quot; /&gt;
+	&lt;label for=&quot;check3&quot;&gt;
+		&lt;span class=&quot;wfm-checkbox-toggle&quot;&gt;&lt;/span&gt;
+		&lt;span class=&quot;wfm-checkbox-label&quot;&gt;Got it&lt;/span&gt;
+	&lt;/label&gt;
+&lt;/div&gt;
+&lt;/form&gt;</code></pre>
       </div>
 
       </section>
@@ -755,13 +764,13 @@ If the list is long enough to extend outside of the main workarea it should be s
       <h3 class="kss-title kss-title--level-3">
         <a class="kss-title__permalink">
           <span class="kss-title__ref">1.4.7</span
-          >Checkboxes
+          >Sliders
         </a>
       </h3>
 
 
       <div class="kss-description">
-        <p>Checkboxes work the same way as radio buttons, except that any number of items can be selected. When faced with a large group of checkboxes, consider having a &#39;toggle all&#39; option for easy management.</p>
+        <p>The slider is used to toggle between two states (show/hide) and uses <a href="http://goo.gl/M5U1oC">Angulars ng-show or ng-hide</a> to toggle other elements.</p>
 
       </div>
     </div>
@@ -771,32 +780,22 @@ If the list is long enough to extend outside of the main workarea it should be s
           Example
         </div>
         <div class="kss-modifier__example">
-          <div class="wfm-checkbox">
-<input type="checkbox" id=check1 />
-	<label for=check1>
-		<span>label</span>
-	</label>
-</div>
-<div class="wfm-checkbox">
-<input type="checkbox" id=check2 />
-	<label for=check2>
-		<span>label</span>
+          <div class="wfm-slider">
+	<input type="checkbox" id="slide1" />
+	<label for="slide1">
+		<span class="wfm-slider-label">Show selected items</span>
+		<span class="wfm-slider-toggle"></span>
 	</label>
 </div>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;wfm-checkbox&quot;&gt;
-&lt;input type=&quot;checkbox&quot; id=check1 /&gt;
-	&lt;label for=check1&gt;
-		&lt;span&gt;label&lt;/span&gt;
-	&lt;/label&gt;
-&lt;/div&gt;
-&lt;div class=&quot;wfm-checkbox&quot;&gt;
-&lt;input type=&quot;checkbox&quot; id=check2 /&gt;
-	&lt;label for=check2&gt;
-		&lt;span&gt;label&lt;/span&gt;
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;wfm-slider&quot;&gt;
+	&lt;input type=&quot;checkbox&quot; id=&quot;slide1&quot; /&gt;
+	&lt;label for=&quot;slide1&quot;&gt;
+		&lt;span class=&quot;wfm-slider-label&quot;&gt;Show selected items&lt;/span&gt;
+		&lt;span class=&quot;wfm-slider-toggle&quot;&gt;&lt;/span&gt;
 	&lt;/label&gt;
 &lt;/div&gt;</code></pre>
       </div>
@@ -814,7 +813,7 @@ If the list is long enough to extend outside of the main workarea it should be s
 
 
       <div class="kss-description">
-        <p>Sidenav toggles are a pair of checkboxes that control the visibility of the sidenavs. The toggles are not part of the sidenav (if they were they would be hidden aswell and the user would be unable to show the sidenav without reloading the page). They instead trigger a Angular ng-hide on their respective sidenav.</p>
+        <p>Sidenav toggles are a pair of checkboxes that control the visibility of the sidenavs. The toggles are not part of the sidenav (if they were they would be hidden aswell and the user would be unable to show the sidenav without reloading the page). They instead trigger a <a href="http://goo.gl/M5U1oC">Angular ng-hide</a> on their respective sidenav.</p>
 
       </div>
     </div>
@@ -905,7 +904,7 @@ If the list is long enough to extend outside of the main workarea it should be s
 		<div class="navbar-right">
 				<span>
 					<i class="mdi mdi-magnify"></i>
-					<input type="text" placeholder="Search ..." ng-model="keyword" ng-change="searchKeyword()" class="global-search" />
+					<input type="text" placeholder="Search ..." class="global-search" />
 				</span>
 				<span><a><i class="mdi mdi-account"></i></a>
 				</span>
@@ -928,7 +927,7 @@ If the list is long enough to extend outside of the main workarea it should be s
 		&lt;div class=&quot;navbar-right&quot;&gt;
 				&lt;span&gt;
 					&lt;i class=&quot;mdi mdi-magnify&quot;&gt;&lt;/i&gt;
-					&lt;input type=&quot;text&quot; placeholder=&quot;Search ...&quot; ng-model=&quot;keyword&quot; ng-change=&quot;searchKeyword()&quot; class=&quot;global-search&quot; /&gt;
+					&lt;input type=&quot;text&quot; placeholder=&quot;Search ...&quot; class=&quot;global-search&quot; /&gt;
 				&lt;/span&gt;
 				&lt;span&gt;&lt;a&gt;&lt;i class=&quot;mdi mdi-account&quot;&gt;&lt;/i&gt;&lt;/a&gt;
 				&lt;/span&gt;
@@ -950,8 +949,8 @@ If the list is long enough to extend outside of the main workarea it should be s
 
 
       <div class="kss-description">
-        <p>The normal header is used to indicate a new area or panel, any headers within that panel will have the second header (however, try to keep the total number of headers within one panel as low as possible).
-A secondary header should not live within another secondary header, rather, make a new secondary header to make skimming through the panel simple.</p>
+        <p>The normal header is used to indicate a new area or panel, any headers within that panel will have the second header (however, try to keep the total number of headers within one panel as low as possible).</p>
+<p>A secondary header should not live within another secondary header, rather, make a new secondary header to make skimming through the panel simple.</p>
 
       </div>
     </div>
@@ -1170,9 +1169,10 @@ This helps the user understand what the action will do and what object it will e
 
 
       <div class="kss-description">
-        <p>Tables are used to give a overview of data, however, following the Main concepts of the styleguide, only relevant data should be displayed. In the cases where that is not possible, please use infinite scrolling or pagination to keep the page lightweight.
-If a table does take time to be loaded, a loading bar should be displayed during this time to indicate to the user that it will take some time and that the table is not broken.
-A table should be displayed in alphabetical order by default, unless there is an obvious way the user would want the data sorted. Even so, the ability to sort and search within the table is most welcome.</p>
+        <p>Tables are used to give a overview of data, however, following the <a href="index.html" >Main concepts</a> of the styleguide, only relevant data should be displayed. In the cases where that is not possible, please use infinite scrolling or pagination to keep the page lightweight.
+If a table does take time to be loaded, a loading bar should be displayed during this time to indicate to the user that it will take some time and that the table is not broken.</p>
+<p>A table should be displayed in alphabetical order by default, unless there is an obvious way the user would want the data sorted. Even so, the ability to sort and search within the table is most welcome.</p>
+<p>If the table can be sorted, it should have filled arrows in the header indicating the sorting direction (down for descending and up for ascending), clicking the header should change the sorting direction and the arrow direction.</p>
 
       </div>
     </div>
@@ -1198,7 +1198,7 @@ A table should be displayed in alphabetical order by default, unless there is an
         </div>
         <div class="kss-modifier__example">
           <table class="wfm-table">
-<thead><tr><th>texts</th><th>numbers</th></tr></thead>
+<thead><tr><th>texts</th><th>numbers <i class="mdi mdi-menu-up"></i></th></tr></thead>
 <tbody><tr><td>text1</td><td class="number-cell">2135847</td></tr>
 <tr><td>text1</td><td class="number-cell">2.3546</td></tr>
 </tbody>
@@ -1208,7 +1208,7 @@ A table should be displayed in alphabetical order by default, unless there is an
 
       <div class="kss-markup kss-style">
         <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;table class=&quot;wfm-table&quot;&gt;
-&lt;thead&gt;&lt;tr&gt;&lt;th&gt;texts&lt;/th&gt;&lt;th&gt;numbers&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+&lt;thead&gt;&lt;tr&gt;&lt;th&gt;texts&lt;/th&gt;&lt;th&gt;numbers &lt;i class=&quot;mdi mdi-menu-up&quot;&gt;&lt;/i&gt;&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
 &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;text1&lt;/td&gt;&lt;td class=&quot;number-cell&quot;&gt;2135847&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;text1&lt;/td&gt;&lt;td class=&quot;number-cell&quot;&gt;2.3546&lt;/td&gt;&lt;/tr&gt;
 &lt;/tbody&gt;
@@ -1393,7 +1393,7 @@ There are several different markers to make the type of notice easy to spot:</p>
         </div>
         <div class="kss-modifier__example">
           <div class="modal-box">
-<a href="#openModal1">Open</a>
+<a href="#openModal1" class="wfm-btn wfm-btn-invis-primary">Open</a>
 <div id="openModal1" class="modalbg">
 <div class="dialog">
  	<div class="modal-header">
@@ -1404,8 +1404,8 @@ There are several different markers to make the type of notice easy to spot:</p>
 	</div>
 	<div class="modal-footer">
 		<aside>
-			<button class="wfm-btn wfm-btn-invis-primary">AGREE</button>
 			<a href="#close1" title="Close1" class="dismiss wfm-btn wfm-btn-invis-primary">DISMISS</a>
+			<a href="#close2" title="Close2" class="dismiss wfm-btn wfm-btn-invis-primary">AGREE</a>
 		</aside>
 	</div>
 </div>
@@ -1416,7 +1416,7 @@ There are several different markers to make the type of notice easy to spot:</p>
 
       <div class="kss-markup kss-style">
         <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;modal-box&quot;&gt;
-&lt;a href=&quot;#openModal1&quot;&gt;Open&lt;/a&gt;
+&lt;a href=&quot;#openModal1&quot; class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Open&lt;/a&gt;
 &lt;div id=&quot;openModal1&quot; class=&quot;modalbg&quot;&gt;
 &lt;div class=&quot;dialog&quot;&gt;
  	&lt;div class=&quot;modal-header&quot;&gt;
@@ -1427,8 +1427,8 @@ There are several different markers to make the type of notice easy to spot:</p>
 	&lt;/div&gt;
 	&lt;div class=&quot;modal-footer&quot;&gt;
 		&lt;aside&gt;
-			&lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;AGREE&lt;/button&gt;
 			&lt;a href=&quot;#close1&quot; title=&quot;Close1&quot; class=&quot;dismiss wfm-btn wfm-btn-invis-primary&quot;&gt;DISMISS&lt;/a&gt;
+			&lt;a href=&quot;#close2&quot; title=&quot;Close2&quot; class=&quot;dismiss wfm-btn wfm-btn-invis-primary&quot;&gt;AGREE&lt;/a&gt;
 		&lt;/aside&gt;
 	&lt;/div&gt;
 &lt;/div&gt;

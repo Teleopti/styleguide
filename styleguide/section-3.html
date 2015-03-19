@@ -102,7 +102,7 @@
 
 
       <div class="kss-description">
-        <p>Here you can find some templates for your layout. These should be used in the template you want to render, so you wont have to worry about the sidenavs or the navbar.</p>
+        <p>Here you can find some templates for your layout. Normaly you will not have to worry about the sidenavs or the topbar since these are loaded around your view.</p>
 
       </div>
     </div>
@@ -115,49 +115,26 @@
       <h3 class="kss-title kss-title--level-3">
         <a class="kss-title__permalink">
           <span class="kss-title__ref">3.0.1</span
-          >Basic layout
+          >Basic block layout
         </a>
       </h3>
 
 
+      <div class="kss-description">
+        <p>This is the basic layout of the entire page,</p>
+<ul>
+<li>1 - Layout container</li>
+<li>2 - Topbar</li>
+<li>3 - Sidenav</li>
+<li>4 - Sidenav toggle</li>
+<li>5 - Ui view</li>
+<li>6 - Row</li>
+</ul>
+<p><img src="../img/001.png"/></p>
+
+      </div>
     </div>
 
-      <div class="kss-modifier__wrapper">
-        <div class="kss-modifier__heading kss-style">
-          Example
-        </div>
-        <div class="kss-modifier__example">
-          <div>
-<div class="row">
-	<div class="col-lg-12">
-		<h4>View title</h4>
-		<p>Keep the title consistent, even in navigation and links. Im the description by the way.</p>
-	</div>
-</div>
-<div class="row">
-	<div class="col-lg-12">
-		This is the content
-	</div>
-</div>
-</div>
-        </div>
-      </div>
-
-      <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div&gt;
-&lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-lg-12&quot;&gt;
-		&lt;h4&gt;View title&lt;/h4&gt;
-		&lt;p&gt;Keep the title consistent, even in navigation and links. Im the description by the way.&lt;/p&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-lg-12&quot;&gt;
-		This is the content
-	&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-      </div>
 
       </section>
       <section id="kssref-3.0.2" class="kss-section kss-section--depth-3">
@@ -166,13 +143,13 @@
       <h3 class="kss-title kss-title--level-3">
         <a class="kss-title__permalink">
           <span class="kss-title__ref">3.0.2</span
-          >Column layout
+          >View layout
         </a>
       </h3>
 
 
       <div class="kss-description">
-        <p>The column layout uses some custom bootstrap (<a href="http://goo.gl/yYXeSV">http://goo.gl/yYXeSV</a>) to stay responsive.</p>
+        <p>This is an example of a typical view layout. This is what you would use in the view that is then loaded into the basic layout.  This layout uses some custom <a  href="http://goo.gl/yYXeSV">Bootstrap</a> to stay responsive.</p>
 
       </div>
     </div>
@@ -191,10 +168,18 @@
 </div>
 <div class="row">
 	<div class="col-lg-4">
-		This is  some content
+		<div class="role-nav material-depth-2 container-block">
+			<div class="wfm-block sub-header">Roles</div>
+				This is  some content
+			</div>
+		</div>
 	</div>
-	<div class="col-lg-8">
-		This is  also content
+	<div class="col-lg-4">
+		<div class="role-nav material-depth-2 container-block">
+			<div class="wfm-block sub-header">Roles</div>
+				This is  some content
+			</div>
+		</div>
 	</div>
 </div>
 </div>
@@ -211,10 +196,18 @@
 &lt;/div&gt;
 &lt;div class=&quot;row&quot;&gt;
 	&lt;div class=&quot;col-lg-4&quot;&gt;
-		This is  some content
+		&lt;div class=&quot;role-nav material-depth-2 container-block&quot;&gt;
+			&lt;div class=&quot;wfm-block sub-header&quot;&gt;Roles&lt;/div&gt;
+				This is  some content
+			&lt;/div&gt;
+		&lt;/div&gt;
 	&lt;/div&gt;
-	&lt;div class=&quot;col-lg-8&quot;&gt;
-		This is  also content
+	&lt;div class=&quot;col-lg-4&quot;&gt;
+		&lt;div class=&quot;role-nav material-depth-2 container-block&quot;&gt;
+			&lt;div class=&quot;wfm-block sub-header&quot;&gt;Roles&lt;/div&gt;
+				This is  some content
+			&lt;/div&gt;
+		&lt;/div&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;</code></pre>

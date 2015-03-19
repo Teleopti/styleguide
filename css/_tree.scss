@@ -1,6 +1,6 @@
 ﻿//Trees
 //
-//A tree structure is used to show relations between different items. Selected items are marked with a checkmark and a background along with the default border showing inheritance.  
+//A tree structure is used to show relations between different items. Selected items are marked with a checkmark and a background along with a left side border.  
 //
 //Markup:
 //<div class="tree">
@@ -35,7 +35,6 @@
 
 
 .tree {
-	@extend .material-trench-1;
 	max-height: 800px;
 	overflow-y: auto;
 	background-color: #f5f5f5;
@@ -79,6 +78,15 @@
 	padding-left: 5px;
 	border-left: 3px solid $pink-500;
 	background-color: $green-100;
+}
+
+.angular-ui-tree-handle.selected.ng-hide {
+	display:block!important;
+	line-height:inherit;
+}
+
+.angular-ui-tree-handle.ng-hide {
+	line-height:0;	
 }
 
 .toggle-handle {

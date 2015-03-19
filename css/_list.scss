@@ -1,6 +1,7 @@
 ﻿//Lists
 //
-// A list can have several options attached to it in a so called 'leave-behind' (http://goo.gl/DMxAHS), however, options can only effect the list item they are a part of. Individual options can have a tooltip and an icon and they are displayed only if the item is hovered or clicked.
+// A list can have several options attached to it in a so called  <a href="http://goo.gl/DMxAHS">leave-behind</a>, however, options can only effect the list item they are a part of. Individual options can have a tooltip and an icon and they are displayed only if the item is hovered or clicked.
+//
 // If the list is long enough to extend outside of the main workarea it should be scrollable to avoid making the main view scroll.  
 //
 // If there are actions that affect the whole list (such as create new or delete all) they should be placed above or below the list.
@@ -43,6 +44,8 @@
 .wfm-list {
 	padding-left: 0px;
 	list-style: none;
+	max-height: 800px;
+	overflow-y: auto;
 	
 	.active{
 		border-left: 3px solid $pink-500;
@@ -51,7 +54,7 @@
 }
 
 .wfm-list li {
-	@extend .wfm-block;
+	padding: $full-padding;
 	cursor: pointer;
 	overflow: hidden;
 	background-color:$gray-100;

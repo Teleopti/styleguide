@@ -33,7 +33,7 @@
 	}
 
 	&.warning{
-		background-color:$orange-600;
+		background-color:$orange-400;
 	}
 
 	&.error{
@@ -67,6 +67,7 @@
 		@extend .wfm-block;	
 		background-color:$gray012;
 		cursor:pointer;
+		border-bottom: 1px solid $gray026;
 	}
 	
 	i{
