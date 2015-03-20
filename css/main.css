@@ -73,7 +73,7 @@ body {
 .material-depth-1, .layout-container .content, .wfm-btn-default, .wfm-btn-primary, .wfm-fab, .sidenav-toggle .sidenav-wrapper {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); }
 
-.material-depth-2, .wfm-list-cards li, .wfm-btn-default:hover, .wfm-btn-primary:hover, .wfm-fab:hover {
+.material-depth-2, .wfm-btn-default:hover, .wfm-btn-primary:hover, .wfm-fab:hover {
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2); }
 
 .material-trench-1, .wfm-leave-behind {
@@ -254,19 +254,6 @@ body {
 
 .wfm-list li:hover > .wfm-leave-behind {
   width: 110px; }
-
-.wfm-list-cards li {
-  background-color: #c2e085;
-  width: 200px;
-  display: inline-block;
-  margin: 10px;
-  border: none;
-  text-align: center;
-  padding: 10px; }
-
-.wfm-list-cards li:hover {
-  background-color: #9CCC65;
-  border: none; }
 
 @-webkit-keyframes tooltipBackgroundShow {
   0% {
