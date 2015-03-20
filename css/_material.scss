@@ -96,23 +96,3 @@ body{
     max-width: 100%;
 	border-radius:0!important;
 }
-
-.help-text {
-	background-color:$white;
-	text-align: center;
-	padding: $full-padding;
-}
-
-.help-widget {
-	position: absolute;
-	bottom: 0;
-}
-
-.tile-footer{
-	@extend .wfm-block;
-	background-color: $white;
-	border-top: 1px solid $gray012;
-	text-align: right;
-}
-
-

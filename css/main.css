@@ -89,7 +89,7 @@ body {
   top: 0;
   z-index: -1; }
 
-.wfm-block, .tile-footer, .angular-ui-tree-handle, select option, .wfm-radio, .wfm-checkbox, .inner i, .tab-group .tab-container {
+.wfm-block, .angular-ui-tree-handle, select option, .wfm-radio, .wfm-checkbox, .inner i, .tab-group .tab-container {
   padding: 5px;
   width: 100%; }
 
@@ -123,20 +123,6 @@ body {
   margin: 0;
   max-width: 100%;
   border-radius: 0 !important; }
-
-.help-text {
-  background-color: #ffffff;
-  text-align: center;
-  padding: 5px; }
-
-.help-widget {
-  position: absolute;
-  bottom: 0; }
-
-.tile-footer {
-  background-color: #ffffff;
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
-  text-align: right; }
 
 .tree {
   max-height: 800px;
@@ -944,6 +930,7 @@ tr {
     box-shadow: -2px 2px 5px 0 rgba(0, 0, 0, 0.26); }
 
 .layout-container .sidenav {
+  position: relative;
   background-color: #ffffff;
   -webkit-flex: auto;
   flex: auto;
@@ -966,5 +953,9 @@ tr {
   color: rgba(0, 0, 0, 0.87); }
 
 .help-widget {
+  width: 100%;
   position: absolute;
   bottom: 0; }
+
+.tile-footer {
+  text-align: right; }

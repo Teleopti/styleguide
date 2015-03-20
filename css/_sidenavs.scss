@@ -53,6 +53,7 @@
 }
 
 .layout-container .sidenav {
+	position:relative;
 	background-color: $white;
 	-webkit-flex: auto;
 	flex: auto;
@@ -79,6 +80,11 @@
 }
 
 .help-widget {
+	width:100%;
 	position: absolute;
 	bottom: 0;
+}
+
+.tile-footer{
+	text-align:right;
 }
