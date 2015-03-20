@@ -1,4 +1,4 @@
-Living Styleguide for Teleopti wfm
+Living Styleguide for Teleopti WFM
 =================
 
 These guidelines are strongly inspired by http://www.google.com/design/spec/material-design/introduction.html
