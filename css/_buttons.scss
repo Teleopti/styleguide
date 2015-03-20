@@ -3,6 +3,8 @@
 // When using buttons, avoid non specific actions as a label.
 //For example, "OK" and "GO" are not specific while "SAVE USER" and "GO ON DASHBOARD" are.
 //This helps the user understand what the action will do and what object it will effect. 
+//For more details take a look at the <a href="http://www.google.com/design/spec/components/buttons.html#buttons-usage">material design buttons</a>
+//There are different types of buttons, however try to use one type of button per container. Only mix button types when you have a good reason to do so.
 //
 //Styleguide 1.6
 //
@@ -12,8 +14,9 @@
 //The flat buttons are 'printed' on the material and only show its area when hovered, it uses capital letters to differentiate it from a link.
 //
 //Markup:
-//<button class="wfm-btn wfm-btn-invis-default">DEFAULT</button> 
-//<button class="wfm-btn wfm-btn-invis-primary">PRIMARY</button>
+//<button class="wfm-btn wfm-btn-invis-default">Default</button> 
+//<button class="wfm-btn wfm-btn-invis-primary">Primary</button>
+//<button class="wfm-btn wfm-btn-invis-disabled">Disabled</button>
 //
 //Styleguide 1.6.1
 //
@@ -25,10 +28,20 @@
 //Markup:
 //<button class="wfm-btn wfm-btn-default material-depth-1">Default</button>
 //<button class="wfm-btn wfm-btn-primary material-depth-1">Primary</button> 
-//<button class="wfm-btn wfm-btn-invis-disabled">DISABLED</button>
-//<button class="wfm-btn wfm-fab">+</button>
+//<button class="wfm-btn wfm-btn-primary-disabled material-depth-1">Disabled</button> 
 //
 //Styleguide 1.6.2
+//
+
+// Action buttons
+//
+//The action button should be used for the primary action in that view. By that logic there should normaly only be one floating action button per screen.
+//
+//Markup:
+//<button class="wfm-fab default">+</button>
+//<button class="wfm-fab mini">+</button>
+//
+//Styleguide 1.6.3
 //
 
 .wfm-btn {
@@ -39,6 +52,7 @@
 	border-radius: 3px;
 	transition: all 0.2s ease-in-out;
 	text-decoration:none!important;
+	text-transform: uppercase;
 }
 
 .wfm-btn-invis-default {
@@ -68,6 +82,15 @@
 	}
 }
 
+.wfm-btn-primary-disabled{
+	color: $gray026;
+	background-color: $red-600;
+	
+	&:hover{
+		cursor: not-allowed;
+	}
+}
+
 .wfm-btn-default {
 	color: $gray087;
 	background-color: $white;
@@ -88,16 +111,31 @@
 	}
 }
 
+
+
 .wfm-fab{
-	text-align: center;
-	width: 50px;
-	height: 50px;
-	border-radius: 50%;
-	color: $white;
-	background-color: $orange-400;
 	@extend .material-depth-1;
+	transition: all 0.2s ease-in-out;
+	cursor:pointer;
+	border: none;
+	font-size: 24px;
+	color: white;
+	background-color: $orange-400;
+	border-radius: 50%;
+
+	margin: $full-padding;
 	
-		&:hover{
+	&.default{
+		width: 56px;
+		height: 56px;
+	}
+	
+	&.mini{
+		width: 28px;
+		height: 28px;
+	}
+	
+	&:hover{
 		@extend .material-depth-2;
 	}
 }

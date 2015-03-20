@@ -417,61 +417,113 @@
           Example
         </div>
         <div class="kss-modifier__example">
-          <div class="tree">
-<div ui-tree>
-	<ol class="angular-ui-tree-nodes">
-		<li ui-tree-node>
-			<div>
-				Parent
-				<ol>
-					<li class="angular-ui-tree-handle"> child </li>
-					<ol>
-						<li class="angular-ui-tree-handle"> child </li>
-						<li class="angular-ui-tree-handle"> child </li>
-					</ol>
-				</ol>
+          <div class="angular-ui-tree">
+<ol id="tree-root" class="tree-line angular-ui-tree-nodes">
+	<li class="angular-ui-tree-node">
+		<div class="tree-toggle-group">
+			<div class="toggle-handle open"><i class="mdi mdi-chevron-right"></i></div>
+			<div class="angular-ui-tree-handle selected">
+				Super parent
 			</div>
-		</li>
-		<li ui-tree-node>
-			<div>
-				Parent
-				<ol>
-					<li class="angular-ui-tree-handle selected">child</li>
+		</div>
+		<ol class="angular-ui-tree-nodes">
+			<li class="angular-ui-tree-node">
+				<div class="tree-toggle-group">
+					<div class="toggle-handle open"><i class="mdi mdi-chevron-right"></i></div>
+					<div class="angular-ui-tree-handle">
+						Parent
+					</div>
+				</div>
+				<ol class="angular-ui-tree-nodes">
+					<li class="angular-ui-tree-node">
+						<div class="tree-toggle-group">
+							<div class="toggle-handle"></i></div>
+							<div class="angular-ui-tree-handle selected">
+								Child
+							</div>
+						</div>
+					</li>
 				</ol>
-			</div>
-		</li>
-	</ol>
-</div>
+			</li>
+		</ol>
+		<ol class="angular-ui-tree-nodes">
+			<li class="angular-ui-tree-node">
+				<div class="tree-toggle-group">
+					<div class="toggle-handle open"><i class="mdi mdi-chevron-right"></i></div>
+					<div class="angular-ui-tree-handle">
+						Parent
+					</div>
+				</div>
+				<ol class="angular-ui-tree-nodes">
+					<li class="angular-ui-tree-node">
+						<div class="tree-toggle-group">
+							<div class="toggle-handle"></i></div>
+							<div class="angular-ui-tree-handle">
+								Child
+							</div>
+						</div>
+					</li>
+				</ol>
+			</li>
+		</ol>
+	</li>
+</ol>
 </div>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;tree&quot;&gt;
-&lt;div ui-tree&gt;
-	&lt;ol class=&quot;angular-ui-tree-nodes&quot;&gt;
-		&lt;li ui-tree-node&gt;
-			&lt;div&gt;
-				Parent
-				&lt;ol&gt;
-					&lt;li class=&quot;angular-ui-tree-handle&quot;&gt; child &lt;/li&gt;
-					&lt;ol&gt;
-						&lt;li class=&quot;angular-ui-tree-handle&quot;&gt; child &lt;/li&gt;
-						&lt;li class=&quot;angular-ui-tree-handle&quot;&gt; child &lt;/li&gt;
-					&lt;/ol&gt;
-				&lt;/ol&gt;
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;angular-ui-tree&quot;&gt;
+&lt;ol id=&quot;tree-root&quot; class=&quot;tree-line angular-ui-tree-nodes&quot;&gt;
+	&lt;li class=&quot;angular-ui-tree-node&quot;&gt;
+		&lt;div class=&quot;tree-toggle-group&quot;&gt;
+			&lt;div class=&quot;toggle-handle open&quot;&gt;&lt;i class=&quot;mdi mdi-chevron-right&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+			&lt;div class=&quot;angular-ui-tree-handle selected&quot;&gt;
+				Super parent
 			&lt;/div&gt;
-		&lt;/li&gt;
-		&lt;li ui-tree-node&gt;
-			&lt;div&gt;
-				Parent
-				&lt;ol&gt;
-					&lt;li class=&quot;angular-ui-tree-handle selected&quot;&gt;child&lt;/li&gt;
+		&lt;/div&gt;
+		&lt;ol class=&quot;angular-ui-tree-nodes&quot;&gt;
+			&lt;li class=&quot;angular-ui-tree-node&quot;&gt;
+				&lt;div class=&quot;tree-toggle-group&quot;&gt;
+					&lt;div class=&quot;toggle-handle open&quot;&gt;&lt;i class=&quot;mdi mdi-chevron-right&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+					&lt;div class=&quot;angular-ui-tree-handle&quot;&gt;
+						Parent
+					&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;ol class=&quot;angular-ui-tree-nodes&quot;&gt;
+					&lt;li class=&quot;angular-ui-tree-node&quot;&gt;
+						&lt;div class=&quot;tree-toggle-group&quot;&gt;
+							&lt;div class=&quot;toggle-handle&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+							&lt;div class=&quot;angular-ui-tree-handle selected&quot;&gt;
+								Child
+							&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/li&gt;
 				&lt;/ol&gt;
-			&lt;/div&gt;
-		&lt;/li&gt;
-	&lt;/ol&gt;
-&lt;/div&gt;
+			&lt;/li&gt;
+		&lt;/ol&gt;
+		&lt;ol class=&quot;angular-ui-tree-nodes&quot;&gt;
+			&lt;li class=&quot;angular-ui-tree-node&quot;&gt;
+				&lt;div class=&quot;tree-toggle-group&quot;&gt;
+					&lt;div class=&quot;toggle-handle open&quot;&gt;&lt;i class=&quot;mdi mdi-chevron-right&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+					&lt;div class=&quot;angular-ui-tree-handle&quot;&gt;
+						Parent
+					&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;ol class=&quot;angular-ui-tree-nodes&quot;&gt;
+					&lt;li class=&quot;angular-ui-tree-node&quot;&gt;
+						&lt;div class=&quot;tree-toggle-group&quot;&gt;
+							&lt;div class=&quot;toggle-handle&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+							&lt;div class=&quot;angular-ui-tree-handle&quot;&gt;
+								Child
+							&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/li&gt;
+				&lt;/ol&gt;
+			&lt;/li&gt;
+		&lt;/ol&gt;
+	&lt;/li&gt;
+&lt;/ol&gt;
 &lt;/div&gt;</code></pre>
       </div>
 
@@ -541,16 +593,16 @@
         </div>
         <div class="kss-modifier__example">
           <div class="input-prepend">
-	<i class="mdi mdi-magnify"></i>
-	<input type="text" placeholder="Search ..." />
+<i class="mdi mdi-filter-outline"></i>
+<input type="text" name="filterRole" />
 </div>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
         <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;input-prepend&quot;&gt;
-	&lt;i class=&quot;mdi mdi-magnify&quot;&gt;&lt;/i&gt;
-	&lt;input type=&quot;text&quot; placeholder=&quot;Search ...&quot; /&gt;
+&lt;i class=&quot;mdi mdi-filter-outline&quot;&gt;&lt;/i&gt;
+&lt;input type=&quot;text&quot; name=&quot;filterRole&quot; /&gt;
 &lt;/div&gt;</code></pre>
       </div>
 
@@ -567,7 +619,7 @@
 
 
       <div class="kss-description">
-        <p>TODO</p>
+        <p>The select is used to provide many options to the user.</p>
 
       </div>
     </div>
@@ -581,13 +633,6 @@
 	<option>1</option>
 	<option>2</option>
 	<option>3</option>
-	<option>4</option>
-	<option>5</option>
-	<option>6</option>
-	<option>7</option>
-	<option>8</option>
-	<option>9</option>
-	<option>10</option>
 </select>
         </div>
       </div>
@@ -597,13 +642,6 @@
 	&lt;option&gt;1&lt;/option&gt;
 	&lt;option&gt;2&lt;/option&gt;
 	&lt;option&gt;3&lt;/option&gt;
-	&lt;option&gt;4&lt;/option&gt;
-	&lt;option&gt;5&lt;/option&gt;
-	&lt;option&gt;6&lt;/option&gt;
-	&lt;option&gt;7&lt;/option&gt;
-	&lt;option&gt;8&lt;/option&gt;
-	&lt;option&gt;9&lt;/option&gt;
-	&lt;option&gt;10&lt;/option&gt;
 &lt;/select&gt;</code></pre>
       </div>
 
@@ -632,24 +670,24 @@
         <div class="kss-modifier__example">
           <form>
 <div class="wfm-radio">
-	<input type="radio" name="group1" id="radio1" />
+	<input type="radio" name="group1" id="radio1" checked="true"/>
 	<label for="radio1">
-		<span class="wfm-radio-label">This</span>
 		<span class="wfm-radio-toggle"></span>
+		<span class="wfm-radio-label">This</span>
 	</label>
 </div>
 <div class="wfm-radio">
 	<input type="radio" name="group1" id="radio2" />
 	<label for="radio2">
-		<span class="wfm-radio-label">That</span>
 		<span class="wfm-radio-toggle"></span>
+		<span class="wfm-radio-label">That</span>
 	</label>
 </div>
 <div class="wfm-radio">
 	<input type="radio" name="group1" id="radio3" />
 	<label for="radio3">
-		<span class="wfm-radio-label">These</span>
 		<span class="wfm-radio-toggle"></span>
+		<span class="wfm-radio-label">These</span>
 	</label>
 </div>
 </form>
@@ -659,24 +697,24 @@
       <div class="kss-markup kss-style">
         <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form&gt;
 &lt;div class=&quot;wfm-radio&quot;&gt;
-	&lt;input type=&quot;radio&quot; name=&quot;group1&quot; id=&quot;radio1&quot; /&gt;
+	&lt;input type=&quot;radio&quot; name=&quot;group1&quot; id=&quot;radio1&quot; checked=&quot;true&quot;/&gt;
 	&lt;label for=&quot;radio1&quot;&gt;
-		&lt;span class=&quot;wfm-radio-label&quot;&gt;This&lt;/span&gt;
 		&lt;span class=&quot;wfm-radio-toggle&quot;&gt;&lt;/span&gt;
+		&lt;span class=&quot;wfm-radio-label&quot;&gt;This&lt;/span&gt;
 	&lt;/label&gt;
 &lt;/div&gt;
 &lt;div class=&quot;wfm-radio&quot;&gt;
 	&lt;input type=&quot;radio&quot; name=&quot;group1&quot; id=&quot;radio2&quot; /&gt;
 	&lt;label for=&quot;radio2&quot;&gt;
-		&lt;span class=&quot;wfm-radio-label&quot;&gt;That&lt;/span&gt;
 		&lt;span class=&quot;wfm-radio-toggle&quot;&gt;&lt;/span&gt;
+		&lt;span class=&quot;wfm-radio-label&quot;&gt;That&lt;/span&gt;
 	&lt;/label&gt;
 &lt;/div&gt;
 &lt;div class=&quot;wfm-radio&quot;&gt;
 	&lt;input type=&quot;radio&quot; name=&quot;group1&quot; id=&quot;radio3&quot; /&gt;
 	&lt;label for=&quot;radio3&quot;&gt;
-		&lt;span class=&quot;wfm-radio-label&quot;&gt;These&lt;/span&gt;
 		&lt;span class=&quot;wfm-radio-toggle&quot;&gt;&lt;/span&gt;
+		&lt;span class=&quot;wfm-radio-label&quot;&gt;These&lt;/span&gt;
 	&lt;/label&gt;
 &lt;/div&gt;
 &lt;/form&gt;</code></pre>
@@ -707,7 +745,7 @@
         <div class="kss-modifier__example">
           <form>
 <div class="wfm-checkbox">
-	<input type="checkbox" id="check1" />
+	<input type="checkbox" id="check1" checked="true"/>
 	<label for="check1">
 		<span class="wfm-checkbox-toggle"></span>
 		<span class="wfm-checkbox-label">Check </span>
@@ -734,7 +772,7 @@
       <div class="kss-markup kss-style">
         <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;form&gt;
 &lt;div class=&quot;wfm-checkbox&quot;&gt;
-	&lt;input type=&quot;checkbox&quot; id=&quot;check1&quot; /&gt;
+	&lt;input type=&quot;checkbox&quot; id=&quot;check1&quot; checked=&quot;true&quot;/&gt;
 	&lt;label for=&quot;check1&quot;&gt;
 		&lt;span class=&quot;wfm-checkbox-toggle&quot;&gt;&lt;/span&gt;
 		&lt;span class=&quot;wfm-checkbox-label&quot;&gt;Check &lt;/span&gt;
@@ -1028,7 +1066,9 @@ Place me in your sidenav!
       <div class="kss-description">
         <p>When using buttons, avoid non specific actions as a label.
 For example, &quot;OK&quot; and &quot;GO&quot; are not specific while &quot;SAVE USER&quot; and &quot;GO ON DASHBOARD&quot; are.
-This helps the user understand what the action will do and what object it will effect.</p>
+This helps the user understand what the action will do and what object it will effect.
+For more details take a look at the <a href="http://www.google.com/design/spec/components/buttons.html#buttons-usage">material design buttons</a>
+There are different types of buttons, however try to use one type of button per container. Only mix button types when you have a good reason to do so.</p>
 
       </div>
     </div>
@@ -1057,14 +1097,16 @@ This helps the user understand what the action will do and what object it will e
           Example
         </div>
         <div class="kss-modifier__example">
-          <button class="wfm-btn wfm-btn-invis-default">DEFAULT</button>
-<button class="wfm-btn wfm-btn-invis-primary">PRIMARY</button>
+          <button class="wfm-btn wfm-btn-invis-default">Default</button>
+<button class="wfm-btn wfm-btn-invis-primary">Primary</button>
+<button class="wfm-btn wfm-btn-invis-disabled">Disabled</button>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;DEFAULT&lt;/button&gt;
-&lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;PRIMARY&lt;/button&gt;</code></pre>
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Default&lt;/button&gt;
+&lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Primary&lt;/button&gt;
+&lt;button class=&quot;wfm-btn wfm-btn-invis-disabled&quot;&gt;Disabled&lt;/button&gt;</code></pre>
       </div>
 
       </section>
@@ -1092,16 +1134,47 @@ This helps the user understand what the action will do and what object it will e
         <div class="kss-modifier__example">
           <button class="wfm-btn wfm-btn-default material-depth-1">Default</button>
 <button class="wfm-btn wfm-btn-primary material-depth-1">Primary</button>
-<button class="wfm-btn wfm-btn-invis-disabled">DISABLED</button>
-<button class="wfm-btn wfm-fab">+</button>
+<button class="wfm-btn wfm-btn-primary-disabled material-depth-1">Disabled</button>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
         <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;button class=&quot;wfm-btn wfm-btn-default material-depth-1&quot;&gt;Default&lt;/button&gt;
 &lt;button class=&quot;wfm-btn wfm-btn-primary material-depth-1&quot;&gt;Primary&lt;/button&gt;
-&lt;button class=&quot;wfm-btn wfm-btn-invis-disabled&quot;&gt;DISABLED&lt;/button&gt;
-&lt;button class=&quot;wfm-btn wfm-fab&quot;&gt;+&lt;/button&gt;</code></pre>
+&lt;button class=&quot;wfm-btn wfm-btn-primary-disabled material-depth-1&quot;&gt;Disabled&lt;/button&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-1.6.3" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink">
+          <span class="kss-title__ref">1.6.3</span
+          >Action buttons
+        </a>
+      </h3>
+
+
+      <div class="kss-description">
+        <p>The action button should be used for the primary action in that view. By that logic there should normaly only be one floating action button per screen.</p>
+
+      </div>
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          <button class="wfm-fab default">+</button>
+<button class="wfm-fab mini">+</button>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;button class=&quot;wfm-fab default&quot;&gt;+&lt;/button&gt;
+&lt;button class=&quot;wfm-fab mini&quot;&gt;+&lt;/button&gt;</code></pre>
       </div>
 
       </section>

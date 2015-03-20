@@ -22,8 +22,7 @@
 //
 
 .notice {
-	padding: $full-padding 0;
-	width:100%;
+	padding: $full-padding;
 	cursor:pointer;
 	margin:5px;
 	color:#111111;
@@ -64,7 +63,7 @@
 	padding-left:0!important;
 	
 	li{
-		@extend .wfm-block;	
+		padding: $full-padding;
 		background-color:$gray012;
 		cursor:pointer;
 		border-bottom: 1px solid $gray026;

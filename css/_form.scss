@@ -18,10 +18,10 @@
 //
 //
 //Markup:
-//	<div class="input-prepend">
-//		<i class="mdi mdi-magnify"></i>
-//		<input type="text" placeholder="Search ..." />
-//	</div>
+//<div class="input-prepend">
+//	<i class="mdi mdi-filter-outline"></i>
+//	<input type="text" name="filterRole" />
+//</div>
 //
 //Styleguide 1.4.2
 //
@@ -74,20 +74,13 @@ input[type='text'], select{
 
 // Select
 //
-// TODO
+// The select is used to provide many options to the user.
 //
 //Markup:
 //	<select>
 //		<option>1</option>
 //		<option>2</option>
 //		<option>3</option>
-//		<option>4</option>
-//		<option>5</option>
-//		<option>6</option>
-//		<option>7</option>
-//		<option>8</option>
-//		<option>9</option>
-//		<option>10</option>
 //	</select>
 //
 //Styleguide 1.4.4
@@ -104,24 +97,24 @@ select option{
 //Markup:
 //	<form>
 //	<div class="wfm-radio">
-//		<input type="radio" name="group1" id="radio1" />
+//		<input type="radio" name="group1" id="radio1" checked="true"/>
 //		<label for="radio1">
-//			<span class="wfm-radio-label">This</span>
 //			<span class="wfm-radio-toggle"></span>
+//			<span class="wfm-radio-label">This</span>
 //		</label>
 //	</div>
 //	<div class="wfm-radio">
 //		<input type="radio" name="group1" id="radio2" />
 //		<label for="radio2">
-//			<span class="wfm-radio-label">That</span>
 //			<span class="wfm-radio-toggle"></span>
+//			<span class="wfm-radio-label">That</span>
 //		</label>
 //	</div>
 //	<div class="wfm-radio">
 //		<input type="radio" name="group1" id="radio3" />
 //		<label for="radio3">
-//			<span class="wfm-radio-label">These</span>
 //			<span class="wfm-radio-toggle"></span>
+//			<span class="wfm-radio-label">These</span>
 //		</label>
 //	</div>
 //	</form>
@@ -144,7 +137,6 @@ cursor: pointer;
 		border-radius: 40px;
 		-webkit-transition: background-color .2s ease-in-out;
 		transition: background-color .2s ease-in-out;
-		margin-left: 5px;
 	}
 	
 	input[type=radio]:checked ~ label .wfm-radio-toggle{
@@ -152,6 +144,7 @@ cursor: pointer;
 	}
 	
 	.wfm-radio-label{
+		margin-left: 20px + $full-padding;
 		white-space:nowrap;
 	}
 }
@@ -163,7 +156,7 @@ cursor: pointer;
 //Markup:
 //	<form>
 //	<div class="wfm-checkbox">
-//		<input type="checkbox" id="check1" />
+//		<input type="checkbox" id="check1" checked="true"/>
 //		<label for="check1">
 //			<span class="wfm-checkbox-toggle"></span>
 //			<span class="wfm-checkbox-label">Check </span>

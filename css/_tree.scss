@@ -3,31 +3,57 @@
 //A tree structure is used to show relations between different items. Selected items are marked with a checkmark and a background along with a left side border.  
 //
 //Markup:
-//<div class="tree">
-//	<div ui-tree>
-//		<ol class="angular-ui-tree-nodes">
-//			<li ui-tree-node>
-//				<div>
-//					Parent
-//					<ol>
-//						<li class="angular-ui-tree-handle"> child </li>
-//						<ol>
-//							<li class="angular-ui-tree-handle"> child </li>
-//							<li class="angular-ui-tree-handle"> child </li>
-//						</ol>
-//					</ol>
+//<div class="angular-ui-tree">
+//	<ol id="tree-root" class="tree-line angular-ui-tree-nodes">
+//		<li class="angular-ui-tree-node">
+//			<div class="tree-toggle-group">
+//				<div class="toggle-handle open"><i class="mdi mdi-chevron-right"></i></div>
+//				<div class="angular-ui-tree-handle selected">
+//					Super parent
 //				</div>
-//			</li>
-//			<li ui-tree-node>
-//				<div>
-//					Parent
-//					<ol>
-//						<li class="angular-ui-tree-handle selected">child</li>
+//			</div>
+//			<ol class="angular-ui-tree-nodes">
+//				<li class="angular-ui-tree-node">
+//					<div class="tree-toggle-group">
+//						<div class="toggle-handle open"><i class="mdi mdi-chevron-right"></i></div>
+//						<div class="angular-ui-tree-handle">
+//							Parent
+//						</div>
+//					</div>
+//					<ol class="angular-ui-tree-nodes">
+//						<li class="angular-ui-tree-node">
+//							<div class="tree-toggle-group">
+//								<div class="toggle-handle"></i></div>
+//								<div class="angular-ui-tree-handle selected">
+//									Child
+//								</div>
+//							</div>
+//						</li>
 //					</ol>
-//				</div>
-//			</li>
-//		</ol>
-//	</div>
+//				</li>
+//			</ol>
+//			<ol class="angular-ui-tree-nodes">
+//				<li class="angular-ui-tree-node">
+//					<div class="tree-toggle-group">
+//						<div class="toggle-handle open"><i class="mdi mdi-chevron-right"></i></div>
+//						<div class="angular-ui-tree-handle">
+//							Parent
+//						</div>
+//					</div>
+//					<ol class="angular-ui-tree-nodes">
+//						<li class="angular-ui-tree-node">
+//							<div class="tree-toggle-group">
+//								<div class="toggle-handle"></i></div>
+//								<div class="angular-ui-tree-handle">
+//									Child
+//								</div>
+//							</div>
+//						</li>
+//					</ol>
+//				</li>
+//			</ol>
+//		</li>
+//	</ol>
 //</div>
 //
 //Styleguide 1.3
