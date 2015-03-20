@@ -25,7 +25,7 @@
 	padding: $full-padding;
 	cursor:pointer;
 	margin:5px;
-	color:#111111;
+	color:$gray087;
 	
 	&.default{
 		background-color:$blue-100;
@@ -41,7 +41,7 @@
 
 	&.detail{
 		background: $gray012;
-		margin: -5px 5px 5px 5px;
+		margin: -$full-padding $full-padding $full-padding $full-padding;
 	}
 }
 
@@ -70,7 +70,7 @@
 	}
 	
 	i{
-		padding-right:5px;
+		padding-right: $full-padding;
 		color: $gray054;
 	}
 }

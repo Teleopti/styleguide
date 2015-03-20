@@ -141,7 +141,7 @@ body {
 .tree {
   max-height: 800px;
   overflow-y: auto;
-  background-color: #f5f5f5;
+  background-color: rgba(0, 0, 0, 0.06);
   vertical-align: middle; }
   .tree ol {
     list-style: none; }
@@ -897,7 +897,7 @@ tr {
   padding: 5px;
   cursor: pointer;
   margin: 5px;
-  color: #111111; }
+  color: rgba(0, 0, 0, 0.87); }
   .notice.default {
     background-color: #99d6ff; }
   .notice.warning {

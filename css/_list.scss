@@ -88,7 +88,7 @@
 	background-color: $gray012;
 	transition: $transition-timing;
 	padding-top: 12px;
-	padding-bottom:5px;
+	padding-bottom:$full-padding;
 	
 	span{
 		white-space:nowrap;
@@ -96,14 +96,14 @@
 	
 	i{	
 		position: justify;
-		padding-left: 5px;
+		padding-left: $full-padding;
 		padding-top: 2px;
 		font-size: 18px;
 		margin: 0 5px;
 	}
 	
 	p{
-		padding-left:5px;
+		padding-left:$full-padding;
 		margin:0 5px;
 	}
 	
@@ -114,7 +114,7 @@
 		height: 10px;
 		margin-left: -22px;
 		position: absolute;
-		padding: 0 5px;
+		padding: 0 $full-padding;
 	}
 }
 
