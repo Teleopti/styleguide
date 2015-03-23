@@ -1,6 +1,7 @@
 ﻿//Trees
 //
 //A tree structure is used to show relations between different items. Selected items are marked with a checkmark and a background along with a left side border.  
+//Each tree line has a right align span child that could show an icon if the line is selected.
 //
 //Markup:
 //<div class="tree">
@@ -83,17 +84,19 @@
 	}
 }
 
-.angular-ui-tree-handle span{
-	opacity:0;
-	float:right;
-	text-align: center;
-}
-
-.angular-ui-tree-handle.selected span{
+.angular-ui-tree-handle span {
 	opacity:1;
 	float:right;
 	text-align: center;
 	color: $gray087;
+	
+	i{
+		opacity:0;
+	}
+}
+
+.angular-ui-tree-handle.selected span i{
+	opacity:1;
 }
 
 .angular-ui-tree-handle {
