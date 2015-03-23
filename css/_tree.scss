@@ -11,6 +11,7 @@
 //				<div class="toggle-handle open"><i class="mdi mdi-chevron-right"></i></div>
 //				<div class="angular-ui-tree-handle selected">
 //					Super parent
+//					<span><i class="mdi mdi-check"></i></span>
 //				</div>
 //			</div>
 //			<ol class="angular-ui-tree-nodes">
@@ -19,6 +20,7 @@
 //						<div class="toggle-handle open"><i class="mdi mdi-chevron-right"></i></div>
 //						<div class="angular-ui-tree-handle">
 //							Parent
+//							<span><i class="mdi mdi-check"></i></span>
 //						</div>
 //					</div>
 //					<ol class="angular-ui-tree-nodes">
@@ -27,6 +29,7 @@
 //								<div class="toggle-handle"></i></div>
 //								<div class="angular-ui-tree-handle selected">
 //									Child
+//									<span><i class="mdi mdi-check"></i></span>
 //								</div>
 //							</div>
 //						</li>
@@ -39,6 +42,7 @@
 //						<div class="toggle-handle open"><i class="mdi mdi-chevron-right"></i></div>
 //						<div class="angular-ui-tree-handle">
 //							Parent
+//							<span><i class="mdi mdi-check"></i></span>
 //						</div>
 //					</div>
 //					<ol class="angular-ui-tree-nodes">
@@ -47,6 +51,7 @@
 //								<div class="toggle-handle"></i></div>
 //								<div class="angular-ui-tree-handle">
 //									Child
+//									<span><i class="mdi mdi-check"></i></span>
 //								</div>
 //							</div>
 //						</li>
@@ -78,16 +83,17 @@
 	}
 }
 
-.angular-ui-tree-handle.selected:after{
+.angular-ui-tree-handle span{
+	opacity:0;
 	float:right;
-	height: 25px;
-	width: 25px;
+	text-align: center;
+}
+
+.angular-ui-tree-handle.selected span{
+	opacity:1;
+	float:right;
 	text-align: center;
 	color: $gray087;
-	margin-top:-2px;
-	padding-top: 2px;
-	content:"✓";
-	transform: scale(1,1);
 }
 
 .angular-ui-tree-handle {

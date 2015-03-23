@@ -134,16 +134,16 @@ body {
   .tree li {
     border-top: 1px solid rgba(0, 0, 0, 0.06); }
 
-.angular-ui-tree-handle.selected:after {
+.angular-ui-tree-handle span {
+  opacity: 0;
   float: right;
-  height: 25px;
-  width: 25px;
+  text-align: center; }
+
+.angular-ui-tree-handle.selected span {
+  opacity: 1;
+  float: right;
   text-align: center;
-  color: rgba(0, 0, 0, 0.87);
-  margin-top: -2px;
-  padding-top: 2px;
-  content: "✓";
-  transform: scale(1, 1); }
+  color: rgba(0, 0, 0, 0.87); }
 
 .angular-ui-tree-handle {
   cursor: pointer;
