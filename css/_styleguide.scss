@@ -59,7 +59,7 @@
 
 //Basic block layout
 //
-//This is the basic layout of the entire page, 
+//This is the basic layout of the entire page. One of the main priciples here is that the content sould never make the layout-container scroll, but rather the content itself.
 // * 1 - Layout container
 // * 2 - Topbar
 // * 3 - Sidenav
@@ -87,14 +87,14 @@
 //	</div>
 //	<div class="row">
 //		<div class="col-lg-4">
-//			<div class="role-nav material-depth-2 container-block">
+//			<div class="material-depth-1 container-block">
 //				<div class="wfm-block sub-header">Roles</div>
 //					This is  some content		
 //				</div>
 //			</div>
 //		</div>
 //		<div class="col-lg-4">
-//			<div class="role-nav material-depth-2 container-block">
+//			<div class="material-depth-1 container-block">
 //				<div class="wfm-block sub-header">Roles</div>
 //					This is  some content		
 //				</div>

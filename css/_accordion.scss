@@ -1,9 +1,33 @@
 
 // Accordions 
 //
-// Accordions are expandable and collapseable areas that can hide a number of wfm-blocks, By default only one accordion item can be open at a time, however, when having nested accordions it is sometimes  better to allow the user to keep several open at once.
+// Accordions are expandable and collapseable areas that can hide a number of wfm-blocks.
 //
 //Markup:
+//<div>
+//	<div class="sidenav-header accordion-head" ng-click="accordionToggle1 = !accordionToggle1">Title</div>
+//	<div ng-show="accordionToggle1">
+//		<div>
+//			<div class="wfm-block"><a ="#">a</a></div>
+//		</div>
+//	</div>
+//</div>
+//<div>
+//	<div class="sidenav-header accordion-head" ng-click="accordionToggle2 = !accordionToggle2">Title</div>
+//	<div ng-show="accordionToggle2">
+//		<div>
+//			<div class="wfm-block"><a ="#">b</a></div>
+//		</div>
+//	</div>
+//</div>
+//<div>
+//	<div class="sidenav-header accordion-head" ng-click="accordionToggle3 = !accordionToggle3">Title</div>
+//	<div ng-show="accordionToggle3">
+//		<div>
+//			<div class="wfm-block"><a ="#">c</a></div>
+//		</div>
+//	</div>
+//</div>
 //
 //Styleguide 1.15
 //
