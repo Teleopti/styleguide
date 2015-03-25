@@ -1,6 +1,9 @@
 //Icons 
 //
-//By default we use material icons : http://materialdesignicons.com/
+//We only use <a href="http://materialdesignicons.com/">Material icons</a>. 
+//To use an icon, use the i-tag and apply the classes "mdi" and "mdi-icon-name" (replacing icon-name with the name form the icon index).
+//
+//In the cases where icons appear in the defined markup throughout this styleguide, they might have special style rules applied to them so be sure that the functionality is intact if you decide to remove them.  
 //
 //Styleguide 4
 // 
@@ -8,7 +11,7 @@
 
 // Quick symbol library
 //
-// Here you can find the icons we currently use
+// Here you can find the icons we currently use and their name:
 // *	<i class="mdi mdi-menu">"mdi-menu" - Trigger a contextual menu</i>
 // *	<i class="mdi mdi-menu-down">"mdi-menu-down" - Indicate sorting in tables</i>
 // *	<i class="mdi mdi-chevron-left">"mdi-chevron-left" - Indicate expandable row</i>
