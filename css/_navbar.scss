@@ -94,6 +94,7 @@
 	border: none;
 	margin-bottom:0;
 	
+	
 	a{
 		color: $white !important;
 		text-decoration:none;
@@ -111,6 +112,7 @@
 		font-size: 18px;
 		line-height: 20px;
 		width: 98%;
+		box-sizing: content-box!important;
 	}
 	
 	.wfm-container{
