@@ -106,16 +106,6 @@
 		padding-left:$full-padding;
 		margin:0 5px;
 	}
-	
-	&:before{
-		color: $blue-100;
-		content:"<";
-		width: 5px;
-		height: 10px;
-		margin-left: -22px;
-		position: absolute;
-		padding: 0 $full-padding;
-	}
 }
 
 .wfm-list li:hover > .wfm-leave-behind {
