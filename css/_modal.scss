@@ -3,25 +3,27 @@
 // A modal is launched above the main view and stays there until the user has taken action. Since this is such a obnoxious element it should only be used when you absolutely want the user to focus on a single task.
 //
 //Markup:
-//<div class="modal-box">
-//<a href="#openModal1" class="wfm-btn wfm-btn-primary">Open</a>
-//<div id="openModal1" class="modalbg">
-//	<div class="dialog">
-//  	<div class="modal-header">
-//			Modal title
-//		</div>
-//		<div class="modal-content">
-//			Ladies and gentlemen, allow me to introduce myself, I am the amazing modal window body!
-//		</div>
-//		<div class="modal-footer">
-//			<aside>
-//				<a href="#close1" title="Close1" class="dismiss wfm-btn wfm-btn-invis-primary">DISMISS</a>
-//				<a href="#close2" title="Close2" class="dismiss wfm-btn wfm-btn-invis-primary">AGREE</a>
-//			</aside>
+//	<div class="modal-box">
+//		<button ng-click="modalLaunch1 = !modalLaunch1" class="wfm-btn wfm-btn-primary">Open</button>
+//		<div ng-cloak ng-show="modalLaunch1">
+//			<div class="modalbg">
+//				<div class="dialog">
+//					<div class="modal-header">
+//						Modal title
+//					</div>
+//					<div class="modal-body">
+//						Ladies and gentlemen, allow me to introduce myself, I am the amazing modal window body!
+//					</div>
+//					<div class="modal-footer">
+//						<aside>
+//							<a ng-click="modalLaunch1 = !modalLaunch1" class="wfm-btn wfm-btn-invis-primary">DISMISS</a>
+//							<a class="wfm-btn wfm-btn-invis-primary">AGREE</a>
+//						</aside>
+//					</div>
+//				</div>
+//			</div>
 //		</div>
 //	</div>
-//</div>
-//</div>
 //
 //Styleguide 1.12
 //
@@ -33,18 +35,16 @@
 		right: 0;
 		bottom: 0;
 		left: 0;
-		background: rgba(0, 0, 0, 0);
-		z-index: 99999;
-		transition: all 0.1s ease-in-out;
-		display: block;
-		pointer-events: none;
+		z-index: 99998;
+		background: $gray026;
+		transition: $transition-timing;
 	}
 	
 	.modalbg .dialog {
-		@extend material-depth-2;
-		width: 30%;
+		width: 60%;
+		z-index: 99999;
 		position: relative;
-		top: -1000px;
+		top: -20px;
 		margin: 10% auto;
 		background: $white;	
 	}
@@ -55,8 +55,8 @@
 		color: $white;
 	}
 	
-	.modal-content{
-		padding: $full-padding;
+	.modal-body{
+		padding: $full-padding*2;
 		background-color: $white;
 		color: $gray087;
 	}
@@ -69,18 +69,5 @@
 	
 	aside{
 		text-align:right;
-	}
-
-	.modalbg:target {
-		display: block;
-		pointer-events: auto;
-		background: $gray026;
-		transition: $transition-timing;
-	}
-	
-	.modalbg:target .dialog {
-		top: -20px;
-		transition: $transition-timing;
-		-transition-delay: 0.4s;
 	}
 }
