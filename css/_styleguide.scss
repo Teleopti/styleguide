@@ -78,7 +78,6 @@
 //This is an example of a typical view layout. This is what you would use in the view that is then loaded into the basic layout.  This layout uses some custom <a  href="http://goo.gl/yYXeSV">Bootstrap</a> to stay responsive. 
 //
 //Markup:
-//<div>
 //	<div class="row">
 //		<div class="col-lg-12">
 //			<h4>View title</h4>
@@ -88,20 +87,19 @@
 //	<div class="row">
 //		<div class="col-lg-4">
 //			<div class="material-depth-1 container-block">
-//				<div class="wfm-block sub-header">Roles</div>
+//				<div class="wfm-block sub-header">Title</div>
 //					This is  some content		
 //				</div>
 //			</div>
 //		</div>
-//		<div class="col-lg-4">
+//		<div class="col-lg-8">
 //			<div class="material-depth-1 container-block">
-//				<div class="wfm-block sub-header">Roles</div>
+//				<div class="wfm-block sub-header">Title</div>
 //					This is  some content		
 //				</div>
 //			</div>
 //		</div>
 //	</div>
-//</div>
 //
 //Styleguide 3.0.2
 // 

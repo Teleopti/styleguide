@@ -12,63 +12,44 @@
 //
 //Markup:
 //<div class="dropdown" tabindex="0"> 
-//	<i class="mdi mdi-menu"></i>
-//	<div class="inner material-depth-2">
-//		<i class="mdi mdi-account"> Sign in</i>
-//		<i class="mdi mdi-plus"> Add a new skill</i>
-//		<i class="mdi mdi-alert"> Drop agents table</i>
-//	</div> 
-//</div>
-//<div class="dropdown" tabindex="0"> 
-//	<i class="mdi mdi-menu"></i>
-//	<div class="inner right material-depth-2">
-//		<i class="mdi mdi-account"> Sign out</i>
-//		<i class="mdi mdi-plus"> Add a new agent</i>
-//		<i class="mdi mdi-alert"> Drop agents table</i>
+//	<i class="context-trigger mdi mdi-menu" ng-click="accordionToggle3 = !accordionToggle3"></i>
+//	<div class="inner right material-depth-2" ng-cloak ng-show="accordionToggle3">
+//		<ul>
+//			<li><i class="mdi mdi-account"> Sign out</i></li>
+//			<li><i class="mdi mdi-plus"> Add a new agent</i></li>
+//			<li><i class="mdi mdi-alert"> Drop agents table</i></li>
+//		</ul>
 //	</div> 
 //</div>
 //	
 //Styleguide 1.14.1
 //
+
 .dropdown{
-	width: 25px;
-	content: " ";
-	position: relative;
-	cursor: pointer;
-	font-size:14px;
-}
-
-.dropdown:focus {
-	background-color:$white;
+	position:relative;
 	
-	.inner{
-		visibility: visible;
-		pointer-events: auto;
+	.inner ul{
+		@extend .material-depth-1;
+		padding-left:0;
+		width:25%;
+		list-style:none;
+		position:absolute;
+		background:$white;
 	}
 	
-	i{
-		color: $gray087!important;
-	}
-}
-.inner{
-	width:1200%;
-	position: absolute;
-	visibility: hidden;
-	transition: 0.5s visibility;
-	background:$white;
-	margin-top:5px;
-
-	&.right{
-		margin-left:-1100%;
+	.inner li{
+		@extend .wfm-block;
+		border-top:1px solid $gray012;
+		cursor:pointer;
+		
+		&:hover{
+			background:$blue-100;
+		}
 	}
 }
 
-.inner i{
-	display:block;
-	@extend .wfm-block;
-	border-bottom:1px solid $gray012;
-	
-	&:hover{
-		background-color:$gray012;
-	}
+.context-trigger {
+	cursor:pointer;
 }
+
+
