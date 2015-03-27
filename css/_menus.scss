@@ -12,8 +12,8 @@
 //
 //Markup:
 //<div class="dropdown" tabindex="0"> 
-//	<i class="context-trigger mdi mdi-menu" ng-click="accordionToggle3 = !accordionToggle3"></i>
-//	<div class="inner right material-depth-2" ng-cloak ng-show="accordionToggle3">
+//	<i class="context-trigger mdi mdi-menu" ng-click="contextTrigger1 = !contextTrigger1"></i>
+//	<div class="inner right material-depth-2" ng-cloak ng-show="contextTrigger1">
 //		<ul>
 //			<li><i class="mdi mdi-account"> Sign out</i></li>
 //			<li><i class="mdi mdi-plus"> Add a new agent</i></li>
