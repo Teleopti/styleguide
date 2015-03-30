@@ -5,38 +5,106 @@
 //
 //Blue
 //	<ul class="swatch-list">
-//		<li class="spacer material-depth-2 blue-100-swatch"></li>
-//		<li class="spacer material-depth-2 blue-300-swatch"></li>
-//		<li class="spacer material-depth-2 blue-500-swatch"></li>
-//		
+//		<li class="spacer material-depth-2 blue-100-swatch">
+//        <md-tooltip>
+//          $blue-100
+//        </md-tooltip>
+//		</li>
+//		<li class="spacer material-depth-2 blue-300-swatch">
+//        <md-tooltip>
+//        	$blue-300
+//        </md-tooltip>
+//		</li>
+//		<li class="spacer material-depth-2 blue-500-swatch">
+//        <md-tooltip>
+//          $blue-500
+//        </md-tooltip>
+//		</li>	
 //	</ul>
 //
 //Orange
 //	<ul class="swatch-list">
-//		<li class="spacer material-depth-2 orange-400-swatch"></li>
-//		<li class="spacer material-depth-2 red-600-swatch"></li>
+//		<li class="spacer material-depth-2 orange-400-swatch" aria-describedby="tooltip_004">
+//        <md-tooltip>
+//          $orange-400
+//        </md-tooltip>
+//		</li>
+//		<li class="spacer material-depth-2 orange-600-swatch">
+//        <md-tooltip>
+//          $orange-600
+//        </md-tooltip>
+//		</li>
 //	</ul>
+//
+//Red
+//<ul class="swatch-list">
+//		<li class="spacer material-depth-2 red-600-swatch">
+//        <md-tooltip>
+//          $red-600
+//        </md-tooltip>
+//		</li>
+//</ul>
 //
 //Green
 //	<ul class="swatch-list">
-//		<li class="spacer material-depth-2 green-100-swatch"></li>
-//		<li class="spacer material-depth-2 green-400-swatch"></li>
+//		<li class="spacer material-depth-2 green-100-swatch">
+//        <md-tooltip>
+//          $green-100
+//        </md-tooltip>
+//		</li>
+//		<li class="spacer material-depth-2 green-400-swatch">
+//        <md-tooltip>
+//          $green-400
+//        </md-tooltip>
+//		</li>
 //	</ul>
 //
 //Pink
 //	<ul class="swatch-list">
-//		<li class="spacer material-depth-2 pink-100-swatch"></li>
-//		<li class="spacer material-depth-2 pink-500-swatch"></li>
+//		<li class="spacer material-depth-2 pink-100-swatch">
+//        <md-tooltip>
+//          $pink-100
+//        </md-tooltip>
+//		</li>
+//		<li class="spacer material-depth-2 pink-500-swatch">
+//        <md-tooltip>
+//          $pink-500
+//        </md-tooltip>
+//		</li>
 //	</ul>
 //
 //Gray
 //	<ul class="swatch-list">
-//		<li class="spacer material-depth-2 gray-012-swatch"></li>
-//		<li class="spacer material-depth-2 gray-300-swatch"></li>
-//		<li class="spacer material-depth-2 gray-026-swatch"></li>
-//		<li class="spacer material-depth-2 gray-054-swatch"> </li>
-//		<li class="spacer material-depth-2 gray-087-swatch"></li>
-//		<li class="spacer material-depth-2 gray-100-swatch"></li>
+//		<li class="spacer material-depth-2 gray-012-swatch">
+//        <md-tooltip>
+//          $gray012
+//        </md-tooltip>
+//		</li>
+//		<li class="spacer material-depth-2 gray-300-swatch">
+//        <md-tooltip>
+//          $gray-300
+//        </md-tooltip>
+//		</li>
+//		<li class="spacer material-depth-2 gray-026-swatch">
+//        <md-tooltip>
+//          $gray026
+//        </md-tooltip>
+//		</li>
+//		<li class="spacer material-depth-2 gray-054-swatch">
+//        <md-tooltip>
+//          $gray054
+//        </md-tooltip>
+//		</li>
+//		<li class="spacer material-depth-2 gray-087-swatch">
+//        <md-tooltip>
+//          $gray087
+//        </md-tooltip>
+//		</li>
+//		<li class="spacer material-depth-2 gray-100-swatch">
+//        <md-tooltip>
+//          $gray100
+//        </md-tooltip>
+//		</li>
 //	</ul>
 //
 //Styleguide 2.1
@@ -54,7 +122,6 @@ $red-600: #ee8f7d;
 $pink-500: #ec38a3;
 $pink-100: #f488c8;
 
-$gray-100: #f5f5f5;
 $gray-300: #E0E0E0;
 $gray012: rgba(0,0,0,0.06);
 $gray026: rgba(0,0,0,0.26);
@@ -97,8 +164,14 @@ $transition-timing: all 0.5s ease-in-out;
 	.orange-400-swatch {
 			background:$orange-400!important;
 	}
+	
+	.orange-600-swatch {
+			background:$orange-600!important;
+	}
+	
 	.red-600-swatch {
 			background:$red-600!important;
+	
 	}
 	.gray-054-swatch {
 			background:$gray054!important;
@@ -117,5 +190,9 @@ $transition-timing: all 0.5s ease-in-out;
 	}
 	.gray-100-swatch {
 			background:$gray100!important;
+	}
+	
+	li{
+		cursor:pointer;
 	}
 }

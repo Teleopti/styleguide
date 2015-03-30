@@ -9,40 +9,53 @@
 // * The error notice should only be triggered when something goes wrong in the background. 
 //
 //Markup: 
+//<div class="alert-success">Make sure to read all of the styleguide.</div>
 //<div class="notice-group">
-//	<div class="notice default">Hello, let me tell you about notice blocks.</div>
-//	<div class="notice detail">I was born to show details.</div>
+//	<div class="alert-info">Hello, let me tell you about notice blocks.</div>
+//	<div class="alert-detail">I was born to show details.</div>
 //</div>
-//	<div class="notice warning">Make sure to read all of the styleguide.</div>
-//	<div class="notice error">Something triggered this error notice.</div>
+//	<div class="alert-warning">Make sure to read all of the styleguide.</div>
+//	<div class="alert-error">Something triggered this error notice.</div>
 //	
 // A notice should either self-destruct or be dismissable to free up space.
 //
 //Styleguide 1.10
 //
 
-.notice {
-	padding: $full-padding;
-	cursor:pointer;
-	margin:5px;
-	color:$gray087;
-	
-	&.default{
-		background-color:$blue-100;
-	}
+/*This is because of growl and bootstrap*/
+.alert-error {
+	color: $gray054!important;
+	background-color: #ee8f7d;
+	border: none;
+	border-radius: 0;
+}
 
-	&.warning{
-		background-color:$orange-400;
-	}
+.alert-success {
+	color: $gray054!important;
+	background-color: #c2e085;
+	border: none;
+	border-radius: 0;
+}
 
-	&.error{
-		background-color:$red-600;
-	}
+.alert-info {
+	color: $gray054!important;
+	background-color: #66c2ff;
+	border: none;
+	border-radius: 0;
+}
 
-	&.detail{
-		background: $gray012;
-		margin: -$full-padding $full-padding $full-padding $full-padding;
-	}
+.alert-warning {
+	color: $gray054!important;
+	background-color: $orange-400;
+	border: none;
+	border-radius: 0;
+}
+
+.alert-detail {
+	color: $gray054!important;
+	background-color: $gray012;
+	border: none;
+	border-radius: 0;
 }
 
 // Notifications
