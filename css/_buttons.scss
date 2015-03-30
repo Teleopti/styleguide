@@ -23,7 +23,7 @@
 
 // Raised buttons
 //
-//The raised buttons area is always visible. 
+//The raised buttons area is always visible. The primary button should be used for the primary action in that view. By that logic there should normaly only be one per screen.
 //
 //Markup:
 //<button class="wfm-btn wfm-btn-default">Default</button>
@@ -35,7 +35,6 @@
 
 // Action buttons
 //
-//The action button should be used for the primary action in that view. By that logic there should normaly only be one floating action button per screen.
 //
 //Markup:
 //<button class="wfm-fab default">+</button>

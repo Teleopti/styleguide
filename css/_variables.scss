@@ -75,6 +75,11 @@
 //
 //Gray
 //	<ul class="swatch-list">
+//		<li class="spacer material-depth-1 white-swatch">
+//        <md-tooltip>
+//          $white
+//        </md-tooltip>
+//		</li>
 //		<li class="spacer material-depth-1 gray-012-swatch">
 //        <md-tooltip>
 //          $gray012
@@ -190,6 +195,9 @@ $transition-timing: all 0.5s ease-in-out;
 	}
 	.gray-100-swatch {
 			background:$gray100!important;
+	}
+	.white-swatch {
+			background:$white!important;
 	}
 	
 	li{
