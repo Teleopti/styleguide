@@ -2,12 +2,14 @@
 // Notices
 //
 //Notices indicate to the user that an event or action has taken place or that something is stopping the current action. 
-// There are several different markers to make the type of notice easy to spot:
+// There are several different markers to make the type of notice easy to spot and we use both icons and colors to set them apart from each other:
 // * Success: Shown to indicate that an action has been done successfully. 
 // * Info: Should be used to give the user hints and information.
 // * Details: These are never shown alone, but rather beneath one of the other markers. 
 // * Warning: Should be used to alert the user that something have to be done before they can continue.
 // * Error: Should only be triggered when something goes wrong in the background. 
+//
+// A notice should either self-destruct or be dismissable to free up space, this is achieved using growl.
 //
 //Note: the 'notice-spacer' class is for styleguide demo purpose only.
 //
@@ -19,8 +21,6 @@
 //</div>
 //	<div class="alert-warning notice-spacer"><i class='mdi mdi-alert'></i> Warning: Press refresh as the data was updated by another user."</div>
 //	<div class="alert-error notice-spacer"><i class='mdi mdi-alert-octagon'></i> Error: Something exploded so fix it.</div>
-//	
-// A notice should either self-destruct or be dismissable to free up space.
 //
 //Styleguide 1.10
 //
