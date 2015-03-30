@@ -6,8 +6,9 @@
 // If a table does take time to be loaded, a loading bar should be displayed during this time to indicate to the user that it will take some time and that the table is not broken.
 //
 // A table should be displayed in alphabetical order by default, unless there is an obvious way the user would want the data sorted. Even so, the ability to sort and search within the table is most welcome. 
-//
 //If the table can be sorted, it should have filled arrows in the header indicating the sorting direction (down for descending and up for ascending), clicking the header should change the sorting direction and the arrow direction.
+//
+//Cells containing numbers are right aligned using the 'number-cell' class to differentiate them from text content.
 //
 //Styleguide 1.8
 //
@@ -31,7 +32,7 @@
 }
 
 .wfm-table td, th {
-  border: 1px solid $gray100;
+  border: 1px solid $gray012;
   color: $gray054;
   padding: $full-padding;
 }

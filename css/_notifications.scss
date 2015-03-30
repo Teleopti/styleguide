@@ -3,19 +3,22 @@
 //
 //Notices indicate to the user that an event or action has taken place or that something is stopping the current action. 
 // There are several different markers to make the type of notice easy to spot:
-// * The default one is used to provide general information to the user. 
-// * Details are never shown alone, but rather beneath one of the other markers. 
-// * The warning notice should be used to alert the user that something have to be done before they can continue.
-// * The error notice should only be triggered when something goes wrong in the background. 
+// * Success: Shown to indicate that an action has been done successfully. 
+// * Info: Should be used to give the user hints and information.
+// * Details: These are never shown alone, but rather beneath one of the other markers. 
+// * Warning: Should be used to alert the user that something have to be done before they can continue.
+// * Error: Should only be triggered when something goes wrong in the background. 
+//
+//Note: the 'notice-spacer' class is for styleguide demo purpose only.
 //
 //Markup: 
-//<div class="alert-success">Make sure to read all of the styleguide.</div>
+//<div class="alert-success notice-spacer"><i class='mdi mdi-thumb-up'></i> Success: User is updated successfully.</div>
 //<div class="notice-group">
-//	<div class="alert-info">Hello, let me tell you about notice blocks.</div>
-//	<div class="alert-detail">I was born to show details.</div>
+//	<div class="alert-info notice-spacer"><i class='mdi mdi-information'></i> Info: A user logged out.</div>
+//	<div class="alert-detail notice-spacer">I was born to show details.</div>
 //</div>
-//	<div class="alert-warning">Make sure to read all of the styleguide.</div>
-//	<div class="alert-error">Something triggered this error notice.</div>
+//	<div class="alert-warning notice-spacer"><i class='mdi mdi-alert'></i> Warning: Press refresh as the data was updated by another user."</div>
+//	<div class="alert-error notice-spacer"><i class='mdi mdi-alert-octagon'></i> Error: Something exploded so fix it.</div>
 //	
 // A notice should either self-destruct or be dismissable to free up space.
 //
@@ -56,6 +59,11 @@
 	background-color: $gray012;
 	border: none;
 	border-radius: 0;
+}
+
+.notice-spacer{
+	padding:10px 5px;
+	margin-bottom:5px;
 }
 
 // Notifications
