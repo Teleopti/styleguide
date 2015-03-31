@@ -11,8 +11,8 @@
 //					<div class="modal-header">
 //						Modal title
 //					</div>
-//					<div class="modal-body">
-//						Ladies and gentlemen, allow me to introduce myself, I am the amazing modal window body!
+//					<div class="modal-inner-content">
+//						<div class="wfm-block">Ladies and gentlemen, allow me to introduce myself, I am the amazing modal window body!</div>
 //					</div>
 //					<div class="modal-footer">
 //						<aside>
@@ -54,8 +54,7 @@
 		color: $white;
 	}
 	
-	.modal-body{
-		padding: $full-padding*2;
+	.modal-inner-content{
 		background-color: $white;
 		color: $gray087;
 	}
