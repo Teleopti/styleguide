@@ -88,6 +88,7 @@ input[type='text'], select{
 
 select{
 	@extend .wfm-block;
+	cursor: pointer;
 }
 
 // Radio buttons
@@ -124,7 +125,6 @@ select{
 
 .wfm-radio {
 @extend .wfm-block;
-cursor: pointer;
 	input[type='radio'] {
 		display:none;
 	}
@@ -137,6 +137,7 @@ cursor: pointer;
 		border-radius: 40px;
 		-webkit-transition: background-color .2s ease-in-out;
 		transition: background-color .2s ease-in-out;
+		cursor: pointer;
 	}
 	
 	input[type=radio]:checked ~ label .wfm-radio-toggle{
@@ -146,6 +147,7 @@ cursor: pointer;
 	.wfm-radio-label{
 		margin-left: 20px + $full-padding;
 		white-space:nowrap;
+		cursor: pointer;
 	}
 }
 
@@ -183,7 +185,6 @@ cursor: pointer;
 
 .wfm-checkbox {
 @extend .wfm-block;
-cursor: pointer;
 
 	input[type='checkbox'] {
 		display:none;
@@ -199,7 +200,7 @@ cursor: pointer;
 		content: " ";
 		-webkit-transition: background-color .2s ease-in-out;
 		transition: background-color .2s ease-in-out;
-		
+		cursor: pointer;
 	}
 	
 	input[type=checkbox]:checked ~ label .wfm-checkbox-toggle:after{
@@ -212,6 +213,7 @@ cursor: pointer;
 	.wfm-checkbox-label{
 		margin-left: 20px + $full-padding;
 		white-space:nowrap;
+		cursor: pointer;
 	}
 }
 
@@ -249,6 +251,7 @@ cursor: pointer;
 		-webkit-transition: background-color .2s ease-in-out;
 		transition: background-color .2s ease-in-out;
 		margin: 2px 5px;
+		cursor: pointer;
 	}
 	.wfm-slider-toggle:after {
 		content: "";
@@ -275,6 +278,7 @@ cursor: pointer;
 	
 	.wfm-slider-label{
 		white-space:nowrap;
+		cursor: pointer;
 	}
 }
 
