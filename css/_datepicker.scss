@@ -15,7 +15,7 @@
 //
 
 .wfm-datepicker-wrap {
-	margin: 5px;
+	margin: $full-padding;
 	display:inline-block; 
 	min-height:290px;
 }
@@ -30,7 +30,7 @@
 	}
 
 	.btn-info.active {
-		background-color: cornflowerblue !important;
+		background-color: $blue-300!important;
 		border: none;
 	}
 
@@ -51,7 +51,7 @@
 	}
 
 	.btn-info {
-	  color: black;
+	  color: $gray100;
 	  background-color: transparent;
 	  border-color: transparent;
 	}
