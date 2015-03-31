@@ -1,20 +1,21 @@
 
 // Datepicker
 //
-//The datepicker is based on bootstraps datepicker and all we do is apply some special classes and rules to make it more compatible with material design.
+//The datepicker is based on bootstraps datepicker and all we do is wrap it and apply some special classes  to make it more compatible with material design.
 //
 //Markup:
 //<div class="wfm-datepicker-wrap">
-//  <div class="sub-header">
-//    From/to Apr 1, 2015
-//  </div>
-//  <datepicker show-weeks="true" class="wfm-datepicker material-depth-1"></datepicker>
+//	<div class="sub-header">
+//		From/to Apr 1, 2015
+//	</div>
+//	<datepicker show-weeks="true" class="wfm-datepicker"></datepicker>
 //</div >
 //
 //Styleguide 1.17
 //
 
 .wfm-datepicker-wrap {
+	@extend .material-depth-1;
 	margin: $full-padding;
 	display:inline-block; 
 	min-height:290px;
@@ -32,6 +33,7 @@
 	.btn-info.active {
 		background-color: $blue-300!important;
 		border: none;
+		color: $white;
 	}
 
 	tbody > tr > td.text-center.h6 {
