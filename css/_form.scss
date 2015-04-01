@@ -282,3 +282,50 @@ select{
 	}
 }
 
+
+//Slider
+//
+//The slider is used to input a range or value on a scale.
+//
+//Markup:
+//Default
+//<md-slider flex min="0" max="100"></md-slider>
+//With label
+//<md-slider flex md-discrete min="0" max="100" aria-label="rating"></md-slider>
+//
+//Styleguide 1.4.8
+//
+
+md-slider{
+
+	 .md-focus-thumb, .md-focus-ring {
+		display:none!important;
+	}
+
+	.md-thumb {
+		cursor:pointer;
+	}
+	
+	canvas{display:none;}
+}
+
+/*slider theme*/
+
+md-slider.md-default-theme .md-thumb:after {
+  border-color: $blue-300;
+  background-color: $blue-300;
+}
+
+md-slider.md-default-theme .md-track.md-track-fill,
+md-slider.md-default-theme .md-sign {
+  background-color: $blue-300;
+}
+
+md-slider.md-default-theme .md-sign:after {
+  border-top-color: $blue-300;
+}
+
+md-slider.md-min .md-thumb:after {
+  background-color: $white!important;
+  transition: all 0.5s ease-in-out;
+}
