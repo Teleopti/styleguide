@@ -31,13 +31,13 @@
   text-align: left;
 }
 
-.wfm-table td, th {
+.wfm-table td, .wfm-table th {
   border: 1px solid $gray012;
   color: $gray054;
   padding: $full-padding;
 }
 
-.wfm-table th {
+.wfm-table th, .wfm-table-header {
   color: $gray087;
   background-color: $blue-100;
   text-align: center;
@@ -50,6 +50,42 @@
 .wfm-table .number-cell {
 	text-align: right;
 }
+
+/*for grid*/
+.ui-grid-header-cell {
+	@extend .wfm-table-header; 
+	 
+}
+
+.mdi-icon {
+display: inline-block;
+  font: normal normal normal 24px/1 MaterialDesignIcons;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+}
+
+[class^="ui-grid-icon"]:before, [class*=" ui-grid-icon"]:before{
+	@extend .mdi-icon; 
+}
+
+.ui-grid-icon-angle-down:before {
+	content: "\f361";
+}
+
+.ui-grid-icon-up-dir:before {
+	content:"\f326";
+}
+.ui-grid-icon-sort-alt-up:before{
+	content:"\f447";
+}
+.ui-grid-icon-sort-alt-down:before{
+	content:"\f448"
+}
+.ui-grid-icon-cancel:before{content:"\f1f4"}
+
 
 // Two dimensions table
 //
