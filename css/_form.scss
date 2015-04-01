@@ -217,23 +217,23 @@ select{
 	}
 }
 
-// Sliders
+//Switch
 //
-// The slider is used to toggle between two states (show/hide) and uses <a href="http://goo.gl/M5U1oC">Angulars ng-show or ng-hide</a> to toggle other elements.
+// The switch is used to toggle between two states (for example show/hide) and uses <a href="http://goo.gl/M5U1oC">Angulars ng-show or ng-hide</a> to toggle other elements.
 //
 //Markup:
-//	<div class="wfm-slider">
-//		<input type="checkbox" id="slide1" />
-//		<label for="slide1">
-//			<span class="wfm-slider-label">Show selected items</span>
-//			<span class="wfm-slider-toggle"></span>
+//	<div class="wfm-switch">
+//		<input type="checkbox" id="switch1" />
+//		<label for="switch1">
+//			<span class="wfm-switch-label">Show selected items</span>
+//			<span class="wfm-switch-toggle"></span>
 //		</label>
 //	</div>
 //
 //Styleguide 1.4.7
 //
 
-.wfm-slider {
+.wfm-switch {
 	position: relative;
 	height: 24px;
 	padding-top: 2px;
@@ -242,7 +242,7 @@ select{
 		display: none;
 	}
 	
-	.wfm-slider-toggle {
+	.wfm-switch-toggle {
 		position: absolute;
 		background-color: $gray-300;
 		width: 48px;
@@ -253,7 +253,7 @@ select{
 		margin: 2px 5px;
 		cursor: pointer;
 	}
-	.wfm-slider-toggle:after {
+	.wfm-switch-toggle:after {
 		content: "";
 		display: block;
 		width: 12px;
@@ -268,15 +268,15 @@ select{
 		-webkit-transition: left .2s ease-in-out;
 		transition: left .2s ease-in-out;
 	}
-	input[type=checkbox]:checked ~ label .wfm-slider-toggle{
+	input[type=checkbox]:checked ~ label .wfm-switch-toggle{
 		background-color: $blue-300;
 	}
 
-	input[type=checkbox]:checked ~ label .wfm-slider-toggle:after {
+	input[type=checkbox]:checked ~ label .wfm-switch-toggle:after {
 		left: 30px;
 	}
 	
-	.wfm-slider-label{
+	.wfm-switch-label{
 		white-space:nowrap;
 		cursor: pointer;
 	}
