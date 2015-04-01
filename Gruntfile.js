@@ -9,14 +9,14 @@
 			},
 			styleguide: {
 				files: {
-					'css/styleguide.css': 'css/_styleguide.scss'
+					'css/styleguide.css': 'css/styleguide.scss'
 				}
 			}
 		},
 		watch: {
 			styleguide: {
 				files: ['css/*.scss'],
-				tasks: ['sass:dist','sass:styleguide','shell']
+				tasks: ['sass:styleguide','sass:dist','shell']
 			}
 		},
 		shell: {
@@ -35,5 +35,5 @@
 
 	// Default task(s).
 	grunt.registerTask('default', ['watch:styleguide']); 
-	grunt.registerTask('dist', ['sass:dist','sass:styleguide', 'shell']); // this task is kind of package
+	grunt.registerTask('dist', ['sass:styleguide','sass:dist', 'shell']); // this task is kind of package
 };
