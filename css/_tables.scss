@@ -51,44 +51,6 @@
 	text-align: right;
 }
 
-/*for grid*/
-.ui-grid-header-cell {
-	@extend .wfm-table-header; 
-	 i{text-align:right; 
-	 float:none;} 
-}
-
-.mdi-icon {
-display: inline-block;
-  font: normal normal normal 24px/1 MaterialDesignIcons;
-  font-size: inherit;
-  text-rendering: auto; 
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transform: translate(0, 0); 
-}
-
-[class^="ui-grid-icon"]:before, [class*=" ui-grid-icon"]:before{
-	@extend .mdi-icon; 
-}
-
-.ui-grid-icon-angle-down:before {
-	content: "\f35d";
-}
-.ui-grid-icon-down-dir:before {
-	content:"\f35e";
-}
-.ui-grid-icon-up-dir:before {
-	content:"\f361";
-}
-.ui-grid-icon-sort-alt-up:before{
-	content:"\f447";
-}
-.ui-grid-icon-sort-alt-down:before{
-	content:"\f448"
-}
-.ui-grid-icon-cancel:before{content:"\f1f4"}
-
 
 // Two dimensions table
 //
@@ -110,38 +72,40 @@ display: inline-block;
 	  background-color: $blue-100;
 	}
 }
-/*
-// Table symbols
-//
-//Markup:
-//<table class="wfm-table">
-//<thead><tr><th>name</th><th>column header</th></tr></thead>
-//<tbody>
-//	<tr class="staffing-row"><td>staffing</td><td class="number-cell">
-//	1
-//</td></tr>
-//<tr class="notice-row"><td>notice</td><td class="number-cell">
-//	3
-//</td></tr>
-//<tr class="error-row"><td>error</td><td class="number-cell">
-//	3
-//</td></tr>
-// </tbody>
-//</table>
-//
-//Styleguide 1.8.3
-//
 
-tr {
-	&.notice-row {
-		background-color: $orange-600;
+/* Datagrid */
+.ui-grid-header-cell {
+	@extend .wfm-table-header; 
+	border: none;
+	border-bottom: 1px solid $gray-300;
+	 i{text-align:right; 
+	 float:none;} 
+
+	 &:hover{
+		 background-color: $blue-300;
+		 cursor: pointer;
+	 }
+}
+
+.ui-grid-row .ui-grid-cell {
+	border: none;
+	background-color: $white !important;
+	border-bottom: 1px solid $gray-300;
+}
+.ui-grid-header-cell .ui-grid-vertical-bar {
+	display: none;
+}
+
+.ui-grid-menu-items {
+	@extend .wfm-list;
+	box-shadow:none !important;
+	li:hover{
+		box-shadow:none;
 	}
-	
-	&.staffing-row {
-		background-color: $blue-500;
-	}
-	
-	&.error-row {
-		background-color: $red-600;
-	}
-}*/
+}
+.ui-grid-menu .ui-grid-menu-inner ul li:hover{
+		box-shadow:none;
+}
+.ui-grid-menu .ui-grid-menu-inner ul li{
+	padding: $full-padding;
+}

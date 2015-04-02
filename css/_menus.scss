@@ -13,11 +13,11 @@
 //Markup:
 //<div class="dropdown" tabindex="0"> 
 //	<i class="context-trigger mdi mdi-menu" ng-click="contextTrigger1 = !contextTrigger1"></i>
-//	<div class="inner right material-depth-2" ng-cloak ng-show="contextTrigger1">
-//		<ul>
-//			<li><i class="mdi mdi-account"> Sign out</i></li>
-//			<li><i class="mdi mdi-plus"> Add a new agent</i></li>
-//			<li><i class="mdi mdi-alert"> Drop agents table</i></li>
+//	<div class="material-depth-2" ng-cloak ng-show="contextTrigger1">
+//		<ul class="wfm-list">
+//			<li><i class="mdi mdi-account"></i>Sign out</li>
+//			<li><i class="mdi mdi-plus"></i>Add a new agent</li>
+//			<li><i class="mdi mdi-alert"></i>Drop agents table</li>
 //		</ul>
 //	</div> 
 //</div>
@@ -28,23 +28,11 @@
 .dropdown{
 	position:relative;
 	
-	.inner ul{
+	ul{
 		@extend .material-depth-1;
-		padding-left:0;
 		width:25%;
-		list-style:none;
 		position:absolute;
 		background:$white;
-	}
-	
-	.inner li{
-		@extend .wfm-block;
-		border-top:1px solid $gray012;
-		cursor:pointer;
-		
-		&:hover{
-			background:$blue-100;
-		}
 	}
 }
 

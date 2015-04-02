@@ -11,11 +11,7 @@
 //	<li>
 //		List Item 1
 //		<div class="wfm-leave-behind">
-//		<span>
-//			<p>
-//				Options
-//			</p>
-//		</span>
+//				<span>Options</span>
 //		</div>
 //	</li>
 //	<li class="active">
@@ -36,6 +32,12 @@
 //			</span>
 //		</div>
 //	</li>
+//	<li>
+//		List Item 4 without actions
+//	</li>
+//	<li>
+//		<i class="mdi mdi-alert"></i> List Item 5 with icon
+//	</li>
 //</ul>
 //
 //Styleguide 1.2 
@@ -46,35 +48,35 @@
 	list-style: none;
 	max-height: 800px;
 	overflow-y: auto;
-	
-	.active{
-		border-left: 3px solid $pink-500;
-		background-color: $white;
-	}
+	margin: 0;
 }
 
 .wfm-list li {
 	padding: $full-padding;
 	cursor: pointer;
 	overflow: hidden;
-	background-color:$gray012;
+	background-color:$gray-100;
 	border-left: 3px solid transparent;
 	border-top:1px solid $gray012;
 
-	/*
-	&:active, &:focus, &:active:hover, &:focus:hover {
-		background-color: $blue-500 !important;
-	}
-	*/
-
 	&:hover{
-		border-left: 3px solid $gray-300;
+		border-left: 3px solid $gray-500;
+		background-color:$gray-300;
 	}
-}
 
-.wfm-list-item-selected{
-	border-left: 3px solid $pink-500!important;
-	background-color: $white !important;
+	&.active{
+		border-left: 3px solid $pink-500;
+		background-color: $white;
+	}
+	&.active:hover{
+		border-left: 3px solid $pink-500;
+		background-color: $white;
+	}
+
+	i{
+		vertical-align: text-bottom;
+		margin-right: $full-padding;
+	}
 }
 
 .wfm-leave-behind {
@@ -91,12 +93,12 @@
 	padding-bottom:$full-padding;
 	
 	span{
+		padding-left: $full-padding;
 		white-space:nowrap;
 	}
 	
 	i{	
 		position: justify;
-		padding-left: $full-padding;
 		padding-top: 2px;
 		font-size: 18px;
 		margin: 0 5px;
