@@ -289,9 +289,9 @@ select{
 //
 //Markup:
 //Default
-//<md-slider flex min="0" max="100"></md-slider>
+//<md-slider flex min="0" max="100" aria-label="slider"></md-slider>
 //With label
-//<md-slider flex md-discrete min="0" max="100" aria-label="rating"></md-slider>
+//<md-slider flex md-discrete min="0" max="100" aria-label="slider"></md-slider>
 //
 //Styleguide 1.4.8
 //
