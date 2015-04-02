@@ -54,17 +54,18 @@
 /*for grid*/
 .ui-grid-header-cell {
 	@extend .wfm-table-header; 
-	 
+	 i{text-align:right; 
+	 float:none;} 
 }
 
 .mdi-icon {
 display: inline-block;
   font: normal normal normal 24px/1 MaterialDesignIcons;
   font-size: inherit;
-  text-rendering: auto;
+  text-rendering: auto; 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transform: translate(0, 0);
+  transform: translate(0, 0); 
 }
 
 [class^="ui-grid-icon"]:before, [class*=" ui-grid-icon"]:before{
@@ -72,11 +73,13 @@ display: inline-block;
 }
 
 .ui-grid-icon-angle-down:before {
-	content: "\f361";
+	content: "\f35d";
 }
-
+.ui-grid-icon-down-dir:before {
+	content:"\f35e";
+}
 .ui-grid-icon-up-dir:before {
-	content:"\f326";
+	content:"\f361";
 }
 .ui-grid-icon-sort-alt-up:before{
 	content:"\f447";
