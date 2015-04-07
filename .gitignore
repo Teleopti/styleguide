@@ -2,5 +2,7 @@
 node_modules
 styleguide
 css/main.css
+*.sln
+*.suo
 
 
