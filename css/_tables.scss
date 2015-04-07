@@ -77,7 +77,7 @@
 .ui-grid-header-cell {
 	@extend .wfm-table-header; 
 	border: none;
-	border-bottom: 1px solid $gray-300;
+
 	 i{text-align:right; 
 	 float:none;} 
 
@@ -85,6 +85,10 @@
 		 background-color: $blue-300;
 		 cursor: pointer;
 	 }
+}
+
+.ui-grid-header{
+	border: none;
 }
 
 .ui-grid-row .ui-grid-cell {
@@ -103,9 +107,22 @@
 		box-shadow:none;
 	}
 }
-.ui-grid-menu .ui-grid-menu-inner ul li:hover{
-		box-shadow:none;
+.ui-grid-menu .ui-grid-menu-inner ul li:hover, .ui-grid-menu .ui-grid-menu-inner ul li.ui-grid-menu-item-active{
+	box-shadow:none;
 }
 .ui-grid-menu .ui-grid-menu-inner ul li{
 	padding: $full-padding;
+}
+
+.ui-grid-selection-row-header-buttons{
+	opacity: 1; 
+	color: $gray-500;
+}
+
+.ui-grid-row-selected::before{
+		color: $green-400;
+}
+
+.ui-grid-row-selected > [ui-grid-row] > .ui-grid-cell{
+		background-color: $green-100 !important; 
 }
