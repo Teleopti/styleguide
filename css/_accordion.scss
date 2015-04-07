@@ -3,42 +3,17 @@
 //
 // Accordions are expandable and collapseable areas that can hide a number of wfm-blocks.
 //
-//Markup:
-//<div>
-//	<div class="accordion-head" ng-click="accordionToggle1 = !accordionToggle1">Title A<i class="mdi mdi-chevron-down"></i></div>
-//	<div class="acc-content" ng-cloak ng-show="accordionToggle1">
-//		<div>
-//			<div class="wfm-block"><a ="#">a</a></div>
-//		</div>
-//	</div>
-//</div>
-//<div>
-//<div class="accordion-head" ng-click="accordionToggle2 = !accordionToggle2">Title B<i class="mdi mdi-chevron-down"></i></div>
-//	<div class="acc-content" ng-cloak ng-show="accordionToggle2">
-//		<div>
-//			<div class="wfm-block"><a ="#">b</a></div>
-//		</div>
-//	</div>
-//</div>
-//<div>
-//<div class="accordion-head" ng-click="accordionToggle3 = !accordionToggle3">Title C<i class="mdi mdi-chevron-down"></i></div>
-//	<div class="acc-content" ng-cloak ng-show="accordionToggle3">
-//		<div class="wfm-block">Accordions can have headers inside them.</div>
-//		<div class="bottom-header">
-//			<a ="#">I am a header inside C</a>
-//		</div>
-//		<div class="wfm-block">This is my content</div>
-//		<div class="bottom-header">
-//			<a ="#">I am also inside C</a>
-//		</div>
-//		<div class="wfm-block">Check out my content</div>
-//	</div>
-//</div>
+//Markup: accordion.hbs
 //
 //Styleguide 1.15
 //
 
-.accordion-head{
+.wfm-accordion{
+	list-style:none;
+	padding: 0;
+}
+
+.wfm-accordion-head{
 	width: 100%;
 	padding: 5px;
 	background-color:$blue-300;
@@ -47,27 +22,28 @@
 	cursor:pointer;
 }
 
-.accordion-head i{
+.wfm-accordion-head i{
 	float:right;
+	transition:all 0.5s ease-in-out;
+}
+ 
+.wfm-accordion-content{
+	@extend .wfm-block;
 }
 
-.acc-content{
-	background:$white;
-}
-
-.wfm-accordion.ng-show.accordion-head i{
-	float:right;
-	background:red;
+.wfm-accordion-subheader{
+	@extend .wfm-block;
+	background-color: $blue-100;
+	color: $gray087;
 }
 
 .sidenav-header.accordion-head, .bottom-header.accordion-head {
 	list-style: none;
 	cursor:pointer;
-
-	/*dark hover*/
-	/*
-	&:hover, &:active{
-		background-color:#003466;
-		color:$white;
-	}*/
 }
+
+.toggle-icon-open{
+	transform:rotate(-90deg);
+	
+}
+
