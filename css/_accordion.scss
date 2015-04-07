@@ -6,7 +6,7 @@
 //Markup:
 //<div>
 //	<div class="accordion-head" ng-click="accordionToggle1 = !accordionToggle1">Title A<i class="mdi mdi-chevron-down"></i></div>
-//	<div ng-cloak ng-show="accordionToggle1">
+//	<div class="acc-content" ng-cloak ng-show="accordionToggle1">
 //		<div>
 //			<div class="wfm-block"><a ="#">a</a></div>
 //		</div>
@@ -14,7 +14,7 @@
 //</div>
 //<div>
 //<div class="accordion-head" ng-click="accordionToggle2 = !accordionToggle2">Title B<i class="mdi mdi-chevron-down"></i></div>
-//	<div ng-cloak ng-show="accordionToggle2">
+//	<div class="acc-content" ng-cloak ng-show="accordionToggle2">
 //		<div>
 //			<div class="wfm-block"><a ="#">b</a></div>
 //		</div>
@@ -22,7 +22,7 @@
 //</div>
 //<div>
 //<div class="accordion-head" ng-click="accordionToggle3 = !accordionToggle3">Title C<i class="mdi mdi-chevron-down"></i></div>
-//	<div ng-cloak ng-show="accordionToggle3">
+//	<div class="acc-content" ng-cloak ng-show="accordionToggle3">
 //		<div class="wfm-block">Accordions can have headers inside them.</div>
 //		<div class="bottom-header">
 //			<a ="#">I am a header inside C</a>
@@ -49,6 +49,10 @@
 
 .accordion-head i{
 	float:right;
+}
+
+.acc-content{
+	background:$white;
 }
 
 .wfm-accordion.ng-show.accordion-head i{
