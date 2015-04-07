@@ -20,7 +20,7 @@
 //
 
 md-progress-linear.md-default-theme .md-bar {
-	background-color:$blue-300!important;
+	background-color:$pink-500!important;
 }
 
 //Spinner
@@ -34,15 +34,15 @@ md-progress-linear.md-default-theme .md-bar {
 //
 
 md-progress-circular.md-default-theme .md-inner .md-left .md-half-circle {
-  border-left-color: $blue-300;
+  border-left-color: $pink-500;
 }
 
 md-progress-circular.md-default-theme .md-inner .md-left .md-half-circle, 
 md-progress-circular.md-default-theme .md-inner .md-right .md-half-circle,
 md-progress-circular .md-inner .md-gap {
-  border-top-color: $blue-300;
+  border-top-color: $pink-500;
 }
 
 md-progress-circular.md-default-theme .md-inner .md-right .md-half-circle {
-  border-right-color: $blue-300;
+  border-right-color: $pink-500;
 }
