@@ -38,7 +38,7 @@ For example when a list is displayed : actions icons can be displayed only when 
 Help
 ---
 
-Three levels of help must be always available through the whole application :
+Three levels of help must always be available through the whole application :
 1. Tooltips : Add useful tooltips on elements providing *more* information (3/4 words max => "create a user" for an icon "+" for example).
 2. Help panel : (currently bottom of the right panel) Display contextual informations(only 2 or 3 sentences) on the page or on a selected element and a link to the wiki.
 3. Wiki page.
@@ -47,5 +47,5 @@ Notifications
 ---
 
 At the top of the right panel, we provide notifications. It must be possible for the user to unsuscribe/resuscribe on each notification.
-If the notification is about something in backgound, it's good to give a way to stop notifications. Whenever there is a risk that several notifications are created at once, make sure they are aggregated into more manageable alerts.
+If the notification is about something in backgound, it's good to give a way to stop notifications. Whenever there is a risk that several notifications are created at once, make sure they are aggregated into a more manageable format.
 

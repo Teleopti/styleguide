@@ -38,8 +38,18 @@
 //TODO
 //
 //Markup:
-//<button class="wfm-fab default">+</button>
-//<button class="wfm-fab mini">+</button>
+//<button class="wfm-fab big info"><i class="mdi mdi-account"></i></button>
+//<md-tooltip>My account</md-tooltip>
+//<button class="wfm-fab big success"><i class="mdi mdi-plus"></i></button>
+//<md-tooltip>Add a thing</md-tooltip>
+//<button class="wfm-fab big warning"><i class="mdi mdi-account"></i></button>
+//<md-tooltip>Edit account</md-tooltip>
+//<button class="wfm-fab mini info"><i class="mdi mdi-account"></i></button>
+//<md-tooltip>My account</md-tooltip>
+//<button class="wfm-fab mini success"><i class="mdi mdi-plus"></i></button>
+//<md-tooltip>Add a thing</md-tooltip>
+//<button class="wfm-fab mini warning"><i class="mdi mdi-account"></i></button>
+//<md-tooltip>Edit account</md-tooltip>
 //
 //Styleguide 1.6.3
 //
@@ -111,28 +121,31 @@
 	}
 }
 
-
-
-.wfm-fab{
+.wfm-fab {
 	@extend .material-depth-1;
 	transition: all 0.2s ease-in-out;
 	cursor:pointer;
 	border: none;
 	font-size: 24px;
 	color: white;
-	background-color: $orange-400;
 	border-radius: 50%;
-
+	overflow:hidden;
 	margin: $full-padding;
 	
-	&.default{
+	&.big {
 		width: 56px;
 		height: 56px;
 	}
 	
 	&.mini{
-		width: 28px;
-		height: 28px;
+		width: 30px;
+		height: 30px;
+		padding-left:6px;
+		margin-bottom:10px;
+	}
+	
+	i{
+		margin-bottom:5px;
 	}
 	
 	&:hover{
@@ -140,5 +153,13 @@
 	}
 }
 
-
+.wfm-fab.success{
+	background-color: $green-100;
+}
+.wfm-fab.warning{
+	background-color: $orange-400;
+}
+.wfm-fab.info{
+	background-color: $blue-500;
+}
 
