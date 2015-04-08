@@ -44,3 +44,30 @@ h5{
 h6{
 	font-size: 12px;
 }
+
+// Helper classes for text
+//
+//Markup:
+//<p class="text-muted">Fusce dapibus, tellus ac cursus commodo</p>
+//<p class="text-success">Fusce dapibus, tellus ac cursus commodo</p>
+//<p class="text-warning">Fusce dapibus, tellus ac cursus commodo</p>
+//<p class="text-danger">Fusce dapibus, tellus ac cursus commodo</p>
+//
+//Styleguide 1.7.2
+//
+
+.text-muted {
+	color: $gray054;
+}
+
+.text-success {
+	color: $green-400;
+}
+
+.text-warning {
+	color: $orange-600;
+}
+
+.text-danger {
+	color: $red-600;
+}
