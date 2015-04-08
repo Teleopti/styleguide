@@ -3,7 +3,7 @@
 // A modal is launched above the main view and stays there until the user has taken action. Since this is such a obnoxious element it should only be used when you absolutely want the user to focus on a single task.
 //
 //Markup:
-//	<div class="modal-box">
+//	<div ng-cloak class="modal-box">
 //		<button ng-click="modalLaunch1 = !modalLaunch1" class="wfm-btn wfm-btn-default">Open</button>
 //		<div ng-cloak ng-show="modalLaunch1">
 //			<div class="modalbg">
