@@ -1,4 +1,4 @@
-var app = angular.module('styleguideApp', ['ngMaterial', 'ui.grid', 'ui.grid.autoResize', 'ui.grid.exporter', 'ui.grid.selection'])
+var app = angular.module('styleguideApp', ['ngMaterial', 'ui.grid', 'ui.grid.autoResize', 'ui.grid.exporter', 'ui.grid.selection', 'ui.bootstrap'])
 .controller('mainCtrl',function($scope){
 			var data = [];
 			for(var i=0; i<100;i++){
