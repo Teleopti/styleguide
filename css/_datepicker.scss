@@ -13,6 +13,20 @@
 //Styleguide 2.1
 //
 
+
+// Calendar with range highlighted
+//
+//  ON HOLD we're waiting for the new release of https://angular-ui.github.io/bootstrap/ which will implement custom-class on datepicker
+//
+//Markup:
+//<div class="wfm-calendar">
+//	<datepicker ng-model="startDate" show-weeks="true" class="wfm-datepicker" custom-class="dayInRange(date, mode)"></datepicker>
+//</div >
+//
+//Styleguide 2.2
+//
+
+
 /*Overrides bootstrap*/
 .wfm-datepicker-wrap {
 	@extend .material-depth-1;
