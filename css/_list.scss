@@ -26,7 +26,7 @@
 //	</li>
 //	<li>
 //		List Item 3
-//		<div class="wfm-leave-behind">
+//		<div class="wfm-leave-behind wfm-leave-behind-1">
 //			<span>
 //				<i class="mdi mdi-delete"></i>
 //			</span>
@@ -109,14 +109,20 @@
 		margin:0 5px;
 	}
 }
-
 .wfm-list li:hover > .wfm-leave-behind {
 	width: 110px;
-	.wfm-leave-behind-1 {
-	width: 40px;
+}
+.wfm-list li:hover > {
+	.wfm-leave-behind.wfm-leave-behind-1 {
+		width: 40px;
 	}
-	.wfm-leave-behind-2 {
-	width: 80px;
+	.wfm-leave-behind.wfm-leave-behind-2 {
+		width: 75px;
+	}
+	.wfm-leave-behind.wfm-leave-behind-3 {
+		width: 110px;
+	}
+	.wfm-leave-behind.wfm-leave-behind-4 {
+		width: 145px;
 	}
 }
-
