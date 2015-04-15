@@ -43,7 +43,7 @@
 		@extend .material-depth-1;
 		background-color: $white;
 		cursor: pointer;
-		margin-top: 10px;
+		margin-top: 62px;
 		&.left {
 			box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.26);
 		}
@@ -60,8 +60,10 @@
 	flex-basis: 15%;
 	top:0;
 	height: 1050px;
+	height: 100vh;
 	bottom:0;
 	transition: $transition-timing;
+	padding-top: 52px;
 }
 
 .sidenav.left.ng-hide {

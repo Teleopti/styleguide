@@ -89,8 +89,8 @@
 }
 
 .navbar {
-    background-color: $blue-500;
-    border-radius:0;
+  background-color: $blue-500;
+  border-radius:0;
 	border: none;
 	margin-bottom:0;
 	
@@ -172,39 +172,3 @@
 		background-color: lightgray;
 	}
 }
-
-/*
-.animate-repeat {
-	list-style:none;
-	box-sizing:border-box;
-}
-
- animte the search results
-
-.animate-repeat.ng-move,
-.animate-repeat.ng-enter,
-.animate-repeat.ng-leave {
-	-webkit-transition:all 0.3s ease-in;
-	transition:all 0.3s ease-in;
-}
-
-.animate-repeat.ng-leave.ng-leave-active,
-.animate-repeat.ng-move,
-.animate-repeat.ng-enter {
-	opacity: 0;
-}
-
-.animate-repeat.ng-leave,
-.animate-repeat.ng-move.ng-move-active,
-.animate-repeat.ng-enter.ng-enter-active {
-	opacity: 1;
-}
-
-.animate-repeat.ng-leave-stagger, .animate-repeat.ng-enter-stagger {
-	-webkit-transition-delay: 0.1s;
-	transition-delay: 0.1s;
-
-	-webkit-transition-duration: 0s;
-	transition-duration: 0s;
-} 
-*/
