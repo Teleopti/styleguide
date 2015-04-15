@@ -116,11 +116,11 @@
 
 .ui-grid-selection-row-header-buttons{
 	opacity: 1; 
-	color: $gray-500;
+	color: $gray087;
 }
 
 .ui-grid-row-selected::before{
-		color: $green-400;
+		color: $gray087;
 }
 
 .ui-grid-row-selected > [ui-grid-row] > .ui-grid-cell{
