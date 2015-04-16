@@ -51,7 +51,6 @@ body{
 }
 
 .layout-container {
-  padding-top: 52px;
   width:100%;
   display: -webkit-flex;
   display: flex; 
@@ -65,7 +64,7 @@ body{
 	flex: auto;
 	padding: 10px;
 	flex-basis: 70%;
-	margin: 62px;
+	margin: 62px 10px 0px 10px;
 	background-color: $white;
 }
 

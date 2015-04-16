@@ -53,10 +53,7 @@
 }
 
 .layout-container .sidenav {
-	position:relative;
 	background-color: $white;
-	-webkit-flex: auto;
-	flex: auto;
 	flex-basis: 15%;
 	top:0;
 	height: 1050px;
@@ -64,15 +61,18 @@
 	bottom:0;
 	transition: $transition-timing;
 	padding-top: 52px;
+
+	overflow:hidden;
+	text-overflow: hidden;
 }
 
-.sidenav.left.ng-hide {
-  -webkit-transform: translate(-100%,0%);
+.sidenav.is-hidden{
+	overflow:hidden;
+	text-overflow: hidden;
+	transition: $transition-timing;
+	flex-basis:0.00001%;
 }
 
-.sidenav.right.ng-hide { 
-  -webkit-transform: translate(100%,0%);
-}
 
 .help-text {
 	background-color:$white;
