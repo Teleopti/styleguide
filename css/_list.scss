@@ -10,12 +10,23 @@
 //<ul class="wfm-list">
 //	<li>
 //		List Item 1
-//		<div class="wfm-leave-behind">
-//				<span>Options</span>
+//		<div class="wfm-leave-behind wfm-leave-behind-1">
+//			<span>
+//				<i class="mdi mdi-delete"></i>
+//			</span>
+//		</div>
+//	</li>
+//	<li>
+//		List Item 2
+//		<div class="wfm-leave-behind wfm-leave-behind-2">
+//			<span>
+//				<i class="mdi mdi-pencil"></i>
+//				<i class="mdi mdi-delete"></i>
+//			</span>
 //		</div>
 //	</li>
 //	<li class="active">
-//		List Item 2
+//		List Item 3 active
 //		<div class="wfm-leave-behind">
 //			<span>
 //				<i class="mdi mdi-content-copy"></i>
@@ -25,18 +36,10 @@
 //		</div>
 //	</li>
 //	<li>
-//		List Item 3
-//		<div class="wfm-leave-behind wfm-leave-behind-1">
-//			<span>
-//				<i class="mdi mdi-delete"></i>
-//			</span>
-//		</div>
+//		List Item without actions
 //	</li>
 //	<li>
-//		List Item 4 without actions
-//	</li>
-//	<li>
-//		<i class="mdi mdi-alert"></i> List Item 5 with icon
+//		<i class="mdi mdi-alert"></i> List Item with icon
 //	</li>
 //</ul>
 //

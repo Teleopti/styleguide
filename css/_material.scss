@@ -13,20 +13,6 @@ body{
 	}
 }
 
-.styleguide-break{
-	background-color:$orange-400;
-	color:$gray087;
-	padding:$full-padding;
-	
-	span:before{
-		content:"This element does not exist in material design. ";
-	}
-}
-
-.angular-req span:before{
-	content:"This element require additional angular directives. "!important;
-}
-
 .material-depth-1 {
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 }

@@ -1,4 +1,5 @@
-﻿
+﻿@import './variables';
+
 //Style Rules
 //
 //Here are detailed all the style rules for the web application.
@@ -106,8 +107,6 @@
 .myGrid {
      width: 100%;
   }
-  
-
 
 
 //Resources
@@ -140,7 +139,6 @@
   background: white; 
   }
 
-
 /*template styles*/
 .kss-sidebar {
 	position:fixed!important;
@@ -160,3 +158,16 @@
 	border:none;
 }
  
+.styleguide-break{
+	background-color:$orange-400;
+	color:$gray087;
+	padding:$full-padding;
+	
+	span:before{
+		content:"This element does not exist in material design. ";
+	}
+}
+
+.angular-req span:before{
+	content:"This element require additional angular directives. "!important;
+}

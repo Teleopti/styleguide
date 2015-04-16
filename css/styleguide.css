@@ -1,3 +1,42 @@
+/*Teleopti blue*/
+/*sets wfm-block*/
+.swatch-list .blue-500-swatch {
+  background: #0099FF !important; }
+.swatch-list .blue-300-swatch {
+  background: #66c2ff !important; }
+.swatch-list .blue-100-swatch {
+  background: #99d6ff !important; }
+.swatch-list .green-400-swatch {
+  background: #9CCC65 !important; }
+.swatch-list .green-100-swatch {
+  background: #c2e085 !important; }
+.swatch-list .pink-500-swatch {
+  background: #ec38a3 !important; }
+.swatch-list .pink-100-swatch {
+  background: #f488c8 !important; }
+.swatch-list .orange-400-swatch {
+  background: #ffc285 !important; }
+.swatch-list .orange-600-swatch {
+  background: #FB8C00 !important; }
+.swatch-list .red-600-swatch {
+  background: #ee8f7d !important; }
+.swatch-list .gray-054-swatch {
+  background: rgba(0, 0, 0, 0.54) !important; }
+.swatch-list .gray-300-swatch {
+  background: #E0E0E0 !important; }
+.swatch-list .gray-012-swatch {
+  background: rgba(0, 0, 0, 0.06) !important; }
+.swatch-list .gray-026-swatch {
+  background: rgba(0, 0, 0, 0.26) !important; }
+.swatch-list .gray-087-swatch {
+  background: rgba(0, 0, 0, 0.87) !important; }
+.swatch-list .gray-100-swatch {
+  background: black !important; }
+.swatch-list .white-swatch {
+  background: #ffffff !important; }
+.swatch-list li {
+  cursor: pointer; }
+
 .myGrid {
   width: 100%; }
 
@@ -22,3 +61,13 @@
 
 #kss-node ol.linenums li {
   border: none; }
+
+.styleguide-break {
+  background-color: #ffc285;
+  color: rgba(0, 0, 0, 0.87);
+  padding: 5px; }
+  .styleguide-break span:before {
+    content: "This element does not exist in material design. "; }
+
+.angular-req span:before {
+  content: "This element require additional angular directives. " !important; }
