@@ -75,7 +75,7 @@
 
 /* Datagrid */
 .ui-grid-header-cell {
-	@extend .wfm-table-header; 
+	/*@extend .wfm-table-header; */
 	border: none;
 
 	 i{text-align:right; 
@@ -85,6 +85,11 @@
 		 background-color: $blue-300;
 		 cursor: pointer;
 	 }
+}
+
+.ui-grid{
+	border-left: none;
+	border-right:none;
 }
 
 .big-table-wrapper{
@@ -98,12 +103,13 @@
 	}
 }
 
-.ui-grid-render-container-body .ui-grid-viewport {
-	overflow:auto!important;
+.ui-grid-viewport.ng-isolate-scope {
+  overflow-x: auto!important;
 }
 
 .ui-grid-top-panel{
-	background:$blue-100;
+	background:$white;
+	color:$gray054;
 }
 
 .ui-grid-header{
@@ -139,7 +145,7 @@
 	color: $gray087;
 }
 
-.ui-grid-menu-button {
+.ui-grid-menu-button{
 	top: -38px;
 	background: transparent;
 	border:none;
@@ -149,15 +155,33 @@
 	color: $gray087;
 }
 
-.ui-grid-row-selected > [ui-grid-row] > .ui-grid-cell{
-	background-color: $green-100 !important; 
+/*zebra stripe
+.ui-grid-row:nth-child(odd) > [ui-grid-row] > .ui-grid-cell{
+	background-color: $gray012!important; 
+}*/
+
+.ui-grid-icon-ok::before {
+  content: "\f1d6"!important;
 }
 
-.ui-grid-pinned-container.ui-grid-pinned-container-left .ui-grid-cell:last-child {
-	border-color:#d4d4d4!important;
+.ui-grid-row-selected .ui-grid-icon-ok::before  {
+  content: "\f1da"!important;
+}
+
+.ui-grid-row-selected > [ui-grid-row] > .ui-grid-cell{
+	background-color: $green-100!important; 
+}
+
+
+.ui-grid-pinned-container.ui-grid-pinned-container-left .ui-grid-cell:last-child{
+	border-color:#E0E0E0!important;
 	border-right:none!important;
 }
 
 .big-table-footer-actions{
 	text-align:right;
+}
+
+.ui-grid-pinned-container.ui-grid-pinned-container-left .ui-grid-header-cell:last-child{
+	border-right: none;
 }
