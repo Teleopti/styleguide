@@ -146,7 +146,7 @@
 }
 
 .ui-grid-menu-button{
-	top: -38px;
+	top: -39px;
 	background: transparent;
 	border:none;
 }
@@ -162,20 +162,28 @@
 
 
 /*icons*/
-.ui-grid-icon-ok::before {
-  content: "\f1d6"!important;
+.ui-grid-icon-ok:before {
+	content: "\f1d6"!important;
 }
 
-.ui-grid-row-selected .ui-grid-icon-ok::before  {
-  content: "\f1da"!important;
+.ui-grid-row-selected .ui-grid-icon-ok:before  {
+	content: "\f1da"!important;
 }
 
-.ui-grid-menu-item .ui-grid-icon-ok::before {
-  content: "\f272"!important;
+.ui-grid-menu-item .ui-grid-icon-ok:before {
+	content: "\f272"!important;
 }
 
 .ui-grid-menu-item .ui-grid-icon-cancel:before {
-  content: "\f273"!important;
+	content: "\f273"!important;
+}
+
+.ui-grid-icon-down-dir:before {
+	content: "\f135"!important;
+}
+
+.ui-grid-icon-up-dir:before {
+  content: "\f145"!important;
 }
 
 .ui-grid-row-selected > [ui-grid-row] > .ui-grid-cell{

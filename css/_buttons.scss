@@ -126,7 +126,7 @@
 	margin:$full-padding;
 	cursor: pointer;
 	padding:15px;
-	line-height:18px!important;
+	line-height:16px!important;
 	background-color:$pink-500;
 	color:white;
 	text-align:center;
@@ -136,6 +136,7 @@
 	
 	&.mini{
 		padding: 8px!important;
+		/*max-height: 34px;*/
 	}
 	
 	&:hover{
