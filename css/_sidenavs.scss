@@ -1,25 +1,4 @@
 
-//Sidenav toggles
-//
-//Sidenav toggles are a pair of checkboxes that control the visibility of the sidenavs. The toggles are not part of the sidenav (if they were they would be hidden aswell and the user would be unable to show the sidenav without reloading the page). They instead trigger a <a href="http://goo.gl/M5U1oC">Angular ng-hide</a> on their respective sidenav.
-//
-//Markup:
-//<div class="sidenav-toggle">
-//	<div class="sidenav-wrapper left">
-//		<input type="checkbox" id="nav-left" ng-model="toggleLeftSide" />
-//		<label for="nav-right"><i class="mdi mdi-fast-forward"></i></label>
-//	</div>
-//</div>
-//<div class="sidenav-toggle">
-//	<div class="sidenav-wrapper right">
-//		<input type="checkbox" id="nav-right" ng-model="toggleRightSide" />
-//		<label class="nav-left"><i class="mdi mdi-rewind"></i></label>
-//	</div>
-//</div>
-//	
-//Styleguide 1.4.9
-//
-
 .sidenav-toggle {
 
 	input[type='checkbox']{
