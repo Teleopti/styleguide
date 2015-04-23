@@ -75,7 +75,7 @@
 
 /* Datagrid */
 .ui-grid-header-cell {
-	/*@extend .wfm-table-header; */
+	@extend .wfm-table-header;
 	border: none;
 
 	 i{text-align:right; 
@@ -101,6 +101,10 @@
 			cursor:pointer;
 		}
 	}
+}
+
+.ui-grid-header-canvas{
+	background-color:$blue-100;
 }
 
 .ui-grid-viewport.ng-isolate-scope {
