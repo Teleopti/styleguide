@@ -8,7 +8,8 @@
 // A table should be displayed in alphabetical order by default, unless there is an obvious way the user would want the data sorted. Even so, the ability to sort and search within the table is most welcome. 
 //If the table can be sorted, it should have filled arrows in the header indicating the sorting direction (down for descending and up for ascending), clicking the header should change the sorting direction and the arrow direction.
 //
-//Cells containing numbers are right aligned using the 'number-cell' class to differentiate them from text content.
+//Cells containing numbers are right aligned using the 'number-cell' class to differentiate them from text content.</br>
+//If you need to display bigger forms of data or need more complex actions such as importing/exporting, multi select or the ability to hide columns - take a look at the <a href="section-6.html#kssref-6.1">'Big table' in chapeter 6 - Scalability</a>.
 //
 //Styleguide 1.8
 //
@@ -17,7 +18,7 @@
 //
 //Markup:
 //<table class="wfm-table">
-//<thead><tr><th>texts</th><th>numbers <i class="mdi mdi-menu-up"></i></th></tr></thead>
+//<thead><tr><th>texts</th><th>numbers</th></tr></thead>
 //<tbody><tr><td>text1</td><td class="number-cell">2135847</td></tr>
 // <tr><td>text1</td><td class="number-cell">2.3546</td></tr>
 // </tbody>
@@ -42,9 +43,6 @@
   background-color: $blue-100;
   text-align: center;
   
-  i{
-	float:right;
-  }
 }
 
 .wfm-table .number-cell {

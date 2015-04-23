@@ -10,7 +10,7 @@
 //The loading bar is displayed at the top of the ui-view. If the process can be estimated or calculated we show the linear bar. Otherwise we use an indeterminite bar.
 //
 //Markup:
-//<md-progress-linear md-mode="buffer" value="45" md-buffer-value="100"></md-progress-linear>
+//<md-progress-linear md-mode="buffer" value="45" md-buffer-value="45"></md-progress-linear>
 //<div class="wfm-block material-depth-1"> 45%</div>
 //</br>
 //<md-progress-linear md-mode="indeterminate"></md-progress-linear>
@@ -21,6 +21,12 @@
 
 md-progress-linear.md-default-theme .md-bar {
 	background-color:$pink-500!important;
+}
+
+md-progress-linear[md-mode=buffer] .md-dashed:before {
+  background-color: rgb(197,202,233);
+  animation:none;
+  -webkit-animation:none;
 }
 
 //Spinner
