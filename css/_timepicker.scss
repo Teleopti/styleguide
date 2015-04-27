@@ -1,0 +1,44 @@
+// Timepicker
+//
+// Timepicker is based on bootstraps timepicker and all we do is wrap it and apply some special classes  to make it more compatible with material design.
+//
+//Markup:
+//<div class="wfm-timepicker">
+//	<timepicker ng-model="mytime" ng-change="changed()" hour-step="1" minute-step="15" show-meridian="timePickerUseMeridian"></timepicker>
+//</div >
+//
+//Styleguide 2.3
+//
+
+
+.wfm-timepicker{
+    width:187px;
+    .input-append {
+         div {
+            width: 33%;
+            button {
+                padding: 0;
+                height: 12px;                         
+            }
+        }
+        input{
+            width: 60% !important;
+            &.text-center {
+                text-align:center;
+            }
+        }
+    }
+   
+    .ui-grid-icon-down:before {	
+        content:"\25bc";
+        position: relative;
+        top:-7px;  
+        font-size: 12px !important;                             
+    }
+    .ui-grid-icon-up:before {
+        content:"\25b2"; 
+        position: relative;                             
+        top:-7px;
+        font-size: 12px !important;
+    }
+}

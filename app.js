@@ -27,4 +27,6 @@ var app = angular.module('styleguideApp', ['ngMaterial', 'ui.grid', 'ui.grid.aut
     console.log('inRange');
   };
 
+	$scope.timePickerUseMeridian = true;
+
 });
