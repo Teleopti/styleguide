@@ -1,9 +1,13 @@
 ﻿//Buttons
 //
 // When using buttons, avoid non specific actions as a label.
-//For example, "OK" and "GO" are not specific while "SAVE USER" and "GO ON DASHBOARD" are.
+//For example, "OK", "GO", "ACCEPT" are not specific while "SAVE USER" and "GO ON DASHBOARD" are.
 //This helps the user understand what the action will do and what object it will effect. 
 //For more details take a look at the <a href="http://www.google.com/design/spec/components/buttons.html#buttons-usage">material design buttons</a>
+//
+//The primary version of the button should be used for the primary action (i.e the one the user is most likely to take) in that view. 
+//By that logic there should normally only be one per screen.
+//
 //There are different types of buttons, however try to use one type of button per container. Only mix button types when you have a good reason to do so.
 //
 //Styleguide 1.6
@@ -23,7 +27,7 @@
 
 // Raised buttons
 //
-//The raised buttons area is always visible. The primary button should be used for the primary action in that view. By that logic there should normaly only be one per screen.
+//The raised buttons lives on a raised layer and its area is always visible. 
 //
 //Markup:
 //<button class="wfm-btn wfm-btn-default">Default</button>

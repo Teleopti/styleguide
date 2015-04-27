@@ -4,7 +4,7 @@
 //
 //Markup:
 //	<div ng-cloak class="modal-box">
-//		<button ng-click="modalLaunch1 = !modalLaunch1" class="wfm-btn wfm-btn-default">Open</button>
+//		<button ng-click="modalLaunch1 = !modalLaunch1" class="wfm-btn wfm-btn-default">Open modal</button>
 //		<div ng-cloak ng-show="modalLaunch1">
 //			<div class="modalbg">
 //				<div class="dialog">
@@ -16,8 +16,8 @@
 //					</div>
 //					<div class="modal-footer">
 //						<aside>
-//							<a ng-click="modalLaunch1 = !modalLaunch1" class="wfm-btn wfm-btn-invis-primary">DISMISS</a>
-//							<a class="wfm-btn wfm-btn-invis-primary">AGREE</a>
+//							<a ng-click="modalLaunch1 = !modalLaunch1" class="wfm-btn wfm-btn-invis-primary">dismiss</a>
+//							<a class="wfm-btn wfm-btn-invis-primary">agree</a>
 //						</aside>
 //					</div>
 //				</div>
