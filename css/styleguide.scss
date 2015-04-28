@@ -73,7 +73,7 @@
 // * 3 - Sidenav
 // * 4 - Sidenav toggle
 // * 5 - Ui view
-// * 6 - Row
+// * 6 - Panels
 //
 //<img src="../img/001.png"/>
 //
@@ -83,7 +83,15 @@
 
 //Panels
 //
-//TODO
+//The panels are the building blocks of the layout. It is a way to group elements together or provide a means of separation.
+//
+//Markup:
+//<div class="role-nav material-depth-2">
+//	<div class="wfm-block sub-header">Title</div>
+//	<div class="wfm-block">
+//		This is the content, it can contain whatever you want!
+//	</div>
+//</div>
 //
 //
 //Styleguide 4.2
