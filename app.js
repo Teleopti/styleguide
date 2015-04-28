@@ -28,5 +28,7 @@ var app = angular.module('styleguideApp', ['ngMaterial', 'ui.grid', 'ui.grid.aut
   };
 
 	$scope.timePickerUseMeridian = true;
+	$scope.timePickerHourStep = 1;
+	$scope.timePickerMinuteStep = 15;
 
 });
