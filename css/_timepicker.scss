@@ -18,7 +18,7 @@
             width: 33%;
             button {
                 padding: 0;
-                height: 12px;                         
+                height: 10px;                         
             }
         }
         input{
@@ -32,13 +32,27 @@
     .ui-grid-icon-down:before {	
         content:"\25bc";
         position: relative;
-        top:-7px;  
-        font-size: 12px !important;                             
+        top:-5px;  
+        font-size: 12px !important; 
     }
     .ui-grid-icon-up:before {
         content:"\25b2"; 
         position: relative;                             
-        top:-7px;
+        top:-4px;
         font-size: 12px !important;
+    }
+    .btn{
+          height: 20px !important;
+          padding: 0 10px !important;
+          vertical-align:top !important;
+    }
+    .ui-grid-icon-down,.ui-grid-icon-up{
+        height:10px;
+        background-color: #fff;
+        border: none;
+        
+        &:hover{
+		background-color: #ececec;
+	    }
     }
 }
