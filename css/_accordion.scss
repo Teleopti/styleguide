@@ -29,6 +29,7 @@
  
 .wfm-accordion-content{
 	@extend .wfm-block;
+	@extend .animate-show;
 }
 
 .wfm-accordion-subheader{

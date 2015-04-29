@@ -123,12 +123,15 @@
 	}
 	
 	.breadbin{
-		color: $white!important;
 		margin-left:30px;
 		font-size: 75%;
 		
 		a:last-child:after{
 		content:" ";
+		}
+		
+		a.crumb {
+			color: $white!important;
 		}
 	}
 	 

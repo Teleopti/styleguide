@@ -95,6 +95,7 @@
 	}
 	.tab-container {
 		@extend .wfm-block;
+		@extend .animate-show;
 	}
 	section {
 		  display: none;
