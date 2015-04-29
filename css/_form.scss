@@ -78,13 +78,22 @@ input[type='text'], select{
 //
 // The select is used to provide many options to the user.
 //
-//Markup:
+// The first example is a common select.
+//
+// The second one is an angular material select. It's broken right now. We wait this fix: https://github.com/angular/material/issues/2564
+//
+// Markup:
 //	<select>
 //		<option value="" disabled selected>Pick a number...</option>
 //		<option>1</option>
 //		<option>2</option>
 //		<option>3</option>
 //	</select>
+//		<md-select ng-model="model" placeholder="Pick an option">
+//			<md-option ng-value="1">Option 1</md-option>
+//			<md-option ng-value="2">Option 2</md-option>
+//			<md-option ng-value="3">Option 3</md-option>
+//		</md-select>
 //
 //Styleguide 1.4.4
 //
@@ -92,6 +101,33 @@ input[type='text'], select{
 select{
 	@extend .wfm-block;
 	cursor: pointer;
+}
+
+md-select.md-default-theme:not([disabled]):focus .md-select-label{
+	border-bottom: #ec38a3 1px solid;
+	padding: 0;
+}
+
+md-select-menu.md-default-theme md-option:hover {
+	background-color: #E0E0E0;
+}
+
+md-select-menu.md-default-theme md-option[selected], md-select-menu.md-default-theme md-option[selected]:focus{
+	background-color: #c2e085;
+}
+
+md-select {
+	margin-top: auto;
+	.md-select-label{
+		padding: 0;
+		height: 21px;
+		font-size: 15px;
+	}
+
+}
+
+md-option{
+	height: 30px;
 }
 
 // Radio buttons
