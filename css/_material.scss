@@ -68,11 +68,17 @@ body{
 	background-color: $white;
 }
 
-.wfm-progress-bar {
-    background: $blue-100;
-    height: 5px;
-    width: 0;
-	margin:0;
-    max-width: 100%;
-	border-radius:0!important;
+.animate-show {
+  opacity: 1;
+}
+
+.animate-show.ng-hide-add.ng-hide-add-active,
+.animate-show.ng-hide-remove.ng-hide-remove-active {
+  -webkit-transition: all linear 0.5s;
+  transition: all linear 0.5s;
+}
+
+.animate-show.ng-hide {
+  line-height: 0;
+  opacity: 0;
 }
