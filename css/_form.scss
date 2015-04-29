@@ -28,8 +28,12 @@
 
 
 input{
-	font-size:14px;
+	font-size:15px;
 	height: 24px;
+}
+
+input[type='text']{
+	height: 20px;
 }
 
 input[type='text'], select{
@@ -50,11 +54,15 @@ input[type='text'], select{
   
   i {
     display: inline-block;
-    width: 5%;
+    width: 18px;
+		color: rgba(0, 0, 0, 0.54);
+		&:before{
+			vertical-align: sub;
+		}
   }
   input[type='text'] {
     display: inline-block;
-    width: 92%;
+    width: auto;
   }
 }
 
