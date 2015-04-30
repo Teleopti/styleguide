@@ -12,7 +12,6 @@
 
 
 .wfm-timepicker{
-    width:187px;
     .glyphicon-chevron-up:before{
         content:"\25b2";
         font-size: 10px;
@@ -25,25 +24,28 @@
     }
     .ng-valid-time{
         position:relative;
+        height:34px;
+        width:156px;
+
     }
     .text-center:first-child td:first-child .btn-link{
         position:absolute;
-        top:22px;
+        top:0;
         left:30px;
     }
     .text-center:last-child td:first-child .btn-link{
         position:absolute;
-        top:30px;
+        top:-21px;
         left:30px;
     }
     .text-center:first-child td:nth-child(3) .btn-link{
         position:absolute;
-        top:22px;
+        top:0;
         left:90px;
     }
     .text-center:last-child td:nth-child(3) .btn-link{
         position:absolute;
-        top:30px;
+        top:-21px;
         left:90px;
     }
     .btn-link:hover .glyphicon-chevron-down:before{
@@ -61,47 +63,11 @@
     input{
         width:40px;
     }
-    /*width:187px;
-    .input-append {
-         div {
-            width: 33%;
-            button {
-                padding: 0;
-                height: 10px;                         
-            }
-        }
-        input{
-            width: 60% !important;
-            &.text-center {
-                text-align:center;
-            }
-        }
+    tr:first-child,tr:last-child{
+        height:0;
+        position:absolute; 
     }
-   
-    .ui-grid-icon-down:before {	
-        content:"\25bc";
-        position: relative;
-        top:-5px;  
-        font-size: 12px !important; 
+    .text-center{
+        text-align:left !important;
     }
-    .ui-grid-icon-up:before {
-        content:"\25b2"; 
-        position: relative;                             
-        top:-4px;
-        font-size: 12px !important;
-    }
-    .btn{
-          height: 20px !important;
-          padding: 0 10px !important;
-          vertical-align:top !important;
-    }
-    .ui-grid-icon-down,.ui-grid-icon-up{
-        height:10px;
-        background-color: #fff;
-        border: none;
-        
-        &:hover{
-		background-color: #ececec;
-	    }
-    }*/
 }
