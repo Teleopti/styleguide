@@ -16,7 +16,18 @@
 		watch: {
 			styleguide: {
 				files: ['css/*.scss', 'css/*.hbs'],
-				tasks: ['sass:styleguide','sass:dist','shell']
+				tasks: ['sass:styleguide','sass:dist','shell', 'cssmin']
+			}
+		},
+		cssmin: {
+			options: {
+				shorthandCompacting: false,
+				roundingPrecision: -1
+			},
+			target: {
+				files: {
+					'css/main.min.css': 'css/main.css'
+				}
 			}
 		},
 		shell: {
@@ -32,8 +43,9 @@
 	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-shell');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
 
 	// Default task(s).
 	grunt.registerTask('default', ['watch:styleguide']); 
-	grunt.registerTask('dist', ['sass:styleguide','sass:dist', 'shell']); // this task is kind of package
+	grunt.registerTask('dist', ['sass:styleguide','sass:dist', 'shell', 'cssmin']); // this task is kind of package
 };
