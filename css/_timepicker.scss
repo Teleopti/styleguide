@@ -1,0 +1,73 @@
+// Timepicker
+//
+// Timepicker is based on bootstraps timepicker and all we do is wrap it and apply some special classes  to make it more compatible with material design.
+//
+//Markup:
+//<div class="wfm-timepicker">
+//	<timepicker ng-model="mytime" ng-change="changed()" hour-step="timePickerHourStep" minute-step="timePickerMinuteStep" show-meridian="timePickerUseMeridian"></timepicker>
+//</div >
+//
+//Styleguide 2.3
+//
+
+
+.wfm-timepicker{
+    .glyphicon-chevron-up:before{
+        content:"\25b2";
+        font-size: 10px;
+        z-index:10;
+    }
+    .glyphicon-chevron-down:before{
+        content:"\25bc";
+        font-size: 10px;
+        z-index:10;
+    }
+    .ng-valid-time{
+        position:relative;
+        height:34px;
+        width:156px;
+
+    }
+    .text-center:first-child td:first-child .btn-link{
+        position:absolute;
+        top:0;
+        left:30px;
+    }
+    .text-center:last-child td:first-child .btn-link{
+        position:absolute;
+        top:-21px;
+        left:30px;
+    }
+    .text-center:first-child td:nth-child(3) .btn-link{
+        position:absolute;
+        top:0;
+        left:90px;
+    }
+    .text-center:last-child td:nth-child(3) .btn-link{
+        position:absolute;
+        top:-21px;
+        left:90px;
+    }
+    .btn-link:hover .glyphicon-chevron-down:before{
+        font-size:14px !important;
+        position:relative;
+        left:-1.5px;
+        bottom:-2px;
+    }
+    .btn-link:hover .glyphicon-chevron-up:before{
+        font-size:14px !important;
+        position:relative;
+        left:-1.5px;
+        top:-2px;
+    }
+    input{
+        width:40px;
+    }
+    tr:first-child,tr:last-child{
+        height:0;
+        position:absolute; 
+    }
+    .text-center{
+        text-align:left !important;
+    }
+}
