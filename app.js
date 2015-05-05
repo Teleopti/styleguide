@@ -27,4 +27,19 @@ var app = angular.module('styleguideApp', ['ngMaterial', 'ui.grid', 'ui.grid.aut
     console.log('inRange');
   };
 
+  /*Code for the chart*/
+var chart = c3.generate({
+    data: {
+        columns: [
+			['data1', 30, 200, 100, 400, 150, 250],
+            ['data2', 20, 180, 240, 100, 190,0]
+        ]
+    },
+    subchart: {
+        show: true
+    },
+	zoom: {
+        enabled: true
+    }
+});
 });
