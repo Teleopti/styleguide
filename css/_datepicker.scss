@@ -7,7 +7,7 @@
 //	<div class="sub-header">
 //		From/to Apr 1, 2015
 //	</div>
-//	<datepicker ng-model="startDate" show-weeks="true" class="wfm-datepicker"></datepicker>
+//	<datepicker show-weeks="true" class="wfm-datepicker"></datepicker>
 //</div >
 //
 //Styleguide 2.1
@@ -20,7 +20,7 @@
 //
 //Markup:
 //<div class="wfm-calendar">
-//	<datepicker ng-model="startDate" show-weeks="true" class="wfm-datepicker" custom-class="dayInRange(date, mode)"></datepicker>
+//	<datepicker show-weeks="true" class="wfm-datepicker" custom-class="dayInRange(date, mode)"></datepicker>
 //</div >
 //
 //Styleguide 2.2
