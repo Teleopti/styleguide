@@ -35,7 +35,15 @@
 .swatch-list .white-swatch {
   background: #ffffff !important; }
 .swatch-list li {
-  cursor: pointer; }
+  position: relative;
+  width: 100px;
+  height: 100px; }
+  .swatch-list li p {
+    background: #ffffff;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute; }
 
 .myGrid {
   width: 100%; }
