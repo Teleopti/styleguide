@@ -1,15 +1,70 @@
 ﻿//Lists
 //
-// A list can have several options attached to it in a so called  <a href="http://goo.gl/DMxAHS">leave-behind</a>, however, options can only effect the list item they are a part of. Individual options can have a tooltip and an icon and they are displayed only if the item is hovered or clicked.
+//The lists is used to display long colections of similar information. 
+//A long list should be contained so that it doesnt overflow the main view.
 //
-// If the list is long enough to extend outside of the main workarea it should be scrollable to avoid making the main view scroll.  
+//Styleguide 1.2.0
+
+//Simple list
 //
+//Note that clicking/selecting a list item is considered an action. In other words, if the user can do anything other than read the list, use a action list.
+//A list item can have a small, one sentence, description attached to it. If more information is needed about the items conceder using a modal or table.
+//
+//Markup:
+//<ul class="wfm-simple-list">
+//	<li>
+//		Tea
+//		<div class="subtext">Its hot</div>
+//	</li>
+//	<li>
+//		Beer
+//		<div class="subtext">Tasty but expensive</div>
+//	</li>
+//	<li>
+//		Coffe
+//	</li>
+//	<li class="active">
+//		Juice
+//	</li>
+//</ul>
+//
+//Styleguide 1.2.1
+//
+
+.wfm-simple-list {
+	padding-left: 0px;
+	list-style: none;
+	max-height: 800px;
+	overflow-y: auto;
+	margin: 0;
+	
+	.subtext{
+		color:$gray054;
+	}
+}
+
+.wfm-simple-list li {
+	padding: $full-padding;
+	margin-bottom:5px;
+	overflow: hidden;
+}
+
+/*.wfm-simple-list li:nth-child(even) {
+   background-color: $gray012;
+}*/
+
+
+//Action list
+//
+// Action lists are used for list where the user can perform actions. These can have several options attached to them in a so called  <a href="http://goo.gl/DMxAHS">leave-behind</a>, however, these options may only effect the list item they are a part of. Individual options can have a tooltip and an icon and they are displayed only if the item is hovered or clicked.
+//
+// If an item in the action list is not intractable in any way while others in the same list are 
 // If there are actions that affect the whole list (such as create new or delete all) they should be placed above or below the list.
 //
 //Markup:
 //<ul class="wfm-list">
 //	<li>
-//		List Item 1
+//		List Item 1 action 
 //		<div class="wfm-leave-behind wfm-leave-behind-1">
 //			<span>
 //				<i class="mdi mdi-delete"></i>
@@ -17,7 +72,7 @@
 //		</div>
 //	</li>
 //	<li>
-//		List Item 2
+//		List Item 2 actions
 //		<div class="wfm-leave-behind wfm-leave-behind-2">
 //			<span>
 //				<i class="mdi mdi-pencil"></i>
@@ -26,7 +81,7 @@
 //		</div>
 //	</li>
 //	<li class="active">
-//		List Item 3 active
+//		List Item 3 actions (active) 
 //		<div class="wfm-leave-behind">
 //			<span>
 //				<i class="mdi mdi-content-copy"></i>
@@ -36,15 +91,14 @@
 //		</div>
 //	</li>
 //	<li>
-//		List Item without actions
-//	</li>
-//	<li>
 //		<i class="mdi mdi-alert"></i> List Item with icon
 //	</li>
 //</ul>
 //
-//Styleguide 1.2 
+//Styleguide 1.2.2
 //
+
+
 
 .wfm-list {
 	padding-left: 0px;
