@@ -17,9 +17,8 @@
 //		<div class="navbar-header content">
 //			<div class="navbar-left">
 //				<span class="brand">Teleopti WFM</span>
-//				<span class="breadbin hidden-xs">
-//					<a class="crumb">Gotham</a>
-//					<a class="crumb">Batcave</a>
+//				<span class="breadbin">
+//					<a >Gotham > Batcave</a>
 //				</span>
 //			</div>
 //			<div class="navbar-right">
@@ -117,10 +116,6 @@
 	
 	.wfm-container{
 		padding-left:$full-padding;
-	}
-	
-	.crumb:after{
-		content:" > ";
 	}
 	
 	i{

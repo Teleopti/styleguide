@@ -6,8 +6,9 @@
 
 // Context menus
 //
-//Context menus should be used carefully and only where relevant. In the cases where they are used, limit the number of actions displayed within to a maximum of 5. 
-//If more options are needed, use a 'select input' instead. 
+//Context menus are used where more actions are needed. To keep them manageable, limit the number of actions displayed within to a maximum of 5.
+//If you have a lot of actions, try to group them under several menu triggers. 
+//If even more options are needed, use a 'select input' instead. 
 //Please note that a menu item can not open another menu and there are no nested menus.
 //
 //Markup:
