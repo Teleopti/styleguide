@@ -3,38 +3,59 @@
 //Tabs are used to change big content areas and are a great way to divide a single task into smaller pieces. One important thing to remember is to order the tabs in a way that makes sense to the workflow.  Also, avoid having nested tabs or several tab -groups close together to avoid confusion.  
 //
 //Markup:
-//<div class="tab-group">
-//	<input type="radio" name="tabs" id="tab-1" checked="checked" />
-//	<label class="label" for="tab-1">
-//		TAB 1
-// 	</label>
-//	<section >
-//    	<div class="tab-container">
-//			x
-//		</div>
-//	</section>
-//	<input type="radio" name="tabs" id="tab-2" />
-//	<label class="label" for="tab-2">
-//		TAB 2
-//	</label>
-//	<section >
-//		<div class="tab-container">
-//			y
-//		</div>
-//	</section>
-//	<input type="radio" name="tabs" id="tab-3" />
-//	<label class="label" for="tab-3">
-//		TAB 3
-//	</label>
-//	<section >
-//		<div class="tab-container">
-//			z
-//		</div>
-//	</section>
+//<div class="wfm-slide-tabs">
+//  <md-content class="md-padding">
+//    <md-tabs md-dynamic-height md-border-bottom>
+//      <md-tab label="one">
+//        <md-content class="md-padding">
+//          <h4 class="md-display-2">Tab One</h4>
+//          <p>Click a tab to watch me go!</p>
+//        </md-content>
+//      </md-tab>
+//      <md-tab label="two">
+//        <md-content class="md-padding">
+//          <h4 class="md-display-2">Tab Two</h4>
+//          <p>Slow down!</p>
+//        </md-content>
+//      </md-tab>
+//      <md-tab label="three">
+//        <md-content class="md-padding">
+//          <h4 class="md-display-2">Tab Three</h4>
+//          <p>Now listen here you little whippersnapper, back in the good old days you had to break words all by the sweat of your own brow. You youngsters have it easy! If you have a long text in here, I will like just wrap to a new line if it has to. </p>
+//        </md-content>
+//      </md-tab>
+//    </md-tabs>
+//  </md-content>
 //</div>
-// 
+//
 //Styleguide 1.16
 //
+
+.wfm-slide-tabs{
+
+	.md-ripple-container{
+		background-color:transparent!important;
+	}
+	
+	md-content{
+		padding:10px 0!important;
+	}
+	
+	md-tabs.md-default-theme md-tab.active{
+		color:$gray087!important;
+		background-color:$blue-500!important;
+	}
+	
+	md-tab md-tab-label{
+		  padding-bottom: 10px!important;
+	}
+	
+	.md-header{
+		  height: 30px!important;
+		  background-color:$blue-300!important;
+	}
+}
+
 
  .tab-group {
 	  width: 100%;
