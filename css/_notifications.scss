@@ -28,21 +28,21 @@
 /*This is because of growl and bootstrap*/
 .alert-error {
 	color: $gray054!important;
-	background-color: #ee8f7d;
+	background-color:$red-600;
 	border: none;
 	border-radius: 0;
 }
 
 .alert-success {
 	color: $gray054!important;
-	background-color: #c2e085;
+	background-color: $green-100;
 	border: none;
 	border-radius: 0;
 }
 
 .alert-info {
 	color: $gray054!important;
-	background-color: #66c2ff;
+	background-color: $blue-300;
 	border: none;
 	border-radius: 0;
 }
