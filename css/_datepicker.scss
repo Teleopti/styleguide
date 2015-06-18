@@ -5,9 +5,9 @@
 //Markup:
 //<div class="wfm-datepicker-wrap">
 //	<div class="sub-header">
-//		From/to Apr 1, 2015
+//		From/to: 
 //	</div>
-//	<datepicker show-weeks="true" class="wfm-datepicker"></datepicker>
+//	<datepicker show-weeks="true" ng-model="someDate" class="wfm-datepicker"></datepicker>
 //</div >
 //
 //Styleguide 2.1
@@ -16,12 +16,21 @@
 
 // Calendar with range highlighted
 //
-//  ON HOLD we're waiting for the new release of https://angular-ui.github.io/bootstrap/ which will implement custom-class on datepicker
+//Uses the 'custom class' with <a href="https://angular-ui.github.io/bootstrap/">ui bootstrap datepicker</a> to mark range.
 //
 //Markup:
-//<div class="wfm-calendar">
-//	<datepicker show-weeks="true" class="wfm-datepicker" custom-class="dayInRange(date, mode)"></datepicker>
-//</div >
+//<div class="wfm-datepicker-wrap">
+//	<div class="sub-header">
+//		From: 
+//	</div>
+//<datepicker ng-model="startDate" max-date="endDate" class="wfm-datepicker"></datepicker>
+//</div>
+//<div class="wfm-datepicker-wrap">
+//	<div class="sub-header">
+//		To: 
+//	</div>
+//<datepicker ng-model="endDate" min-date="startDate" custom-class="setRangeClass(date, mode)" class="wfm-datepicker"></datepicker>
+//</div>
 //
 //Styleguide 2.2
 //
@@ -76,4 +85,9 @@
 	.text-info {
 		color: inherit;
 	}
+	
+	.range button{
+		background-color:$green-100;
+		background-size:cover;
+    }
 }

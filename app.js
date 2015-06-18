@@ -42,4 +42,20 @@ var chart = c3.generate({
         enabled: true
     }
 });
+
+
+/*rangepicker*/
+  $scope.setRangeClass = function(date, mode) {
+    if (mode === 'day') {
+      var dayToCheck = new Date(date).setHours(12,0,0,0);
+      var startDay = new Date($scope.startDate).setHours(12,0,0,0);
+      var endDay = new Date($scope.endDate).setHours(12,0,0,0);
+      
+      if (dayToCheck >= startDay && dayToCheck < endDay) {
+        return 'range';
+      }
+    }
+    return '';
+  };
+
 });
