@@ -17,6 +17,19 @@
 // Calendar with range highlighted
 //
 //Uses the 'custom class' with <a href="https://angular-ui.github.io/bootstrap/">ui bootstrap datepicker</a> to mark range.
+//<h5>Javascript example</h5>
+//<code><pre>$scope.setRangeClass = function (date, mode) {
+//	if (mode === 'day') {
+//		var dayToCheck = new Date(date).setHours(12, 0, 0, 0);
+//		var startDay = new Date($scope.startDate).setHours(12, 0, 0, 0);
+//		var endDay = new Date($scope.endDate).setHours(12, 0, 0, 0);
+//		if (dayToCheck >= startDay && dayToCheck < endDay) {
+//			return 'range';
+//		}
+//	}
+//	return '';
+//	};
+//</pre></code>
 //
 //Markup:
 //<div class="wfm-datepicker-wrap">
@@ -56,7 +69,6 @@
 
 	.btn-info.active {
 		background-color: $blue-100!important;
-		border: none;
 		color: $white;
 	}
 
@@ -86,8 +98,7 @@
 		color: inherit;
 	}
 	
-	.range button{
+	.range > button{
 		background-color:$green-100;
-		background-size:cover;
     }
 }
