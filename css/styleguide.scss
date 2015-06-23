@@ -168,6 +168,12 @@
 	border:none;
 }
  
+#kss-node .kss-sidebar {
+  background: white;
+  top: 0;
+  z-index:9999;
+} 
+ 
 .styleguide-break{
 	background-color:$orange-400;
 	color:$gray087;

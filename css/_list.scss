@@ -65,7 +65,9 @@
 //Markup:
 //<ul class="wfm-list">
 //	<li>
-//		List Item 1 action 
+//		<span class="list-item-container">
+//			List Item with one action in leave-behind
+//		</span>
 //		<div class="wfm-leave-behind wfm-leave-behind-1">
 //			<span>
 //				<i class="mdi mdi-delete"></i>
@@ -73,7 +75,9 @@
 //		</div>
 //	</li>
 //	<li>
-//		List Item 2 actions
+//		<span class="list-item-container">
+//			List Item with two actions in leave-behind
+//		</span>
 //		<div class="wfm-leave-behind wfm-leave-behind-2">
 //			<span>
 //				<i class="mdi mdi-pencil"></i>
@@ -82,7 +86,9 @@
 //		</div>
 //	</li>
 //	<li class="active">
-//		List Item 3 actions (active) 
+//		<span class="list-item-container">
+//			List Item with three actions in leave-behind
+//		</span>
 //		<div class="wfm-leave-behind">
 //			<span>
 //				<i class="mdi mdi-content-copy"></i>
@@ -92,14 +98,38 @@
 //		</div>
 //	</li>
 //	<li>
-//		<i class="mdi mdi-alert"></i> List Item with icon
+//		<i class="mdi mdi-alert"></i> List Item with icon and no actions
 //	</li>
 //</ul>
 //
 //Styleguide 1.2.2
 //
 
+.list-item-container{
+text-overflow: ellipsis;
+white-space: nowrap;
+overflow: hidden;
+display:inline-block;
+}
 
+
+@media(min-width:600px){
+	.list-item-container{
+		max-width: 20em;
+	}
+}
+
+@media(max-width:599px){
+	.list-item-container{
+		max-width: 12em;
+	}
+}
+
+@media(max-width:450px){
+	.list-item-container{
+		max-width: 5em;
+	}
+}
 
 .wfm-list {
 	padding-left: 0px;
@@ -149,6 +179,7 @@
 	transition: $transition-timing;
 	padding-top: 12px;
 	padding-bottom:$full-padding;
+	border-bottom: 8px solid transparent;
 	
 	span{
 		padding-left: $full-padding;

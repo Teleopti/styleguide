@@ -70,6 +70,11 @@
 #kss-node ol.linenums li {
   border: none; }
 
+#kss-node .kss-sidebar {
+  background: white;
+  top: 0;
+  z-index: 9999; }
+
 .styleguide-break {
   background-color: #ffc285;
   color: rgba(0, 0, 0, 0.87);
