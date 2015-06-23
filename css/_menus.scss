@@ -39,7 +39,6 @@
 
 .context-menu { 
     position: relative;
-    //display: inline-block; // 
 
     [class*="context-menu-"] {
         transition: $transition-timing;
