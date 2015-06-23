@@ -20,15 +20,10 @@ var app = angular.module('styleguideApp', ['ngMaterial', 'ui.grid', 'ui.grid.aut
   };
   $scope.gridOptions.enableGridMenu = true;
 
-  /*
-  * Code for datepicker
-  */
-  $scope.dayInRange = function(date, mode) {
-    console.log('inRange');
-  };
 
   /*Code for the chart*/
 var chart = c3.generate({
+    bindto: '#myChart',
     data: {
         columns: [
 			['data1', 30, 200, 100, 400, 150, 250],

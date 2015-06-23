@@ -2,9 +2,27 @@
 // Line chart
 //
 //A chart is a great way to present complex data. We use <a href="http://c3js.org/gettingstarted.html">C3 charts</a> to get nice features like legends, zoom and period selection. 
+//<h5>Javascript example</h5>
+//<code><pre>
+//var chart = c3.generate({
+//	bindto: '#myChart',
+//	data: {
+//		columns: [
+//			['data1', 30, 200, 100, 400, 150, 250],
+//			['data2', 20, 180, 240, 100, 190,0]
+//		]
+//	},
+//	subchart: {
+//		show: true
+//	},
+//	zoom: {
+//		enabled: true
+//	}
+//});
+//</pre></code>
 //
 //Markup:
-//	<div id="chart"></div>
+//	<div id="myChart"></div>
 //
 //Styleguide 2.3
 //
