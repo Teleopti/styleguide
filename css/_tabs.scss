@@ -63,6 +63,45 @@
 }
 
 
+//project tabs style
+	.wfm-slide-tabs md-content {
+		padding: 10px 5px !important;
+	}
+
+	.wfm-slide-tabs md-tabs .md-tab.md-active {
+	  background-color: #09F!important;
+	  height: 79%;
+	}
+
+	.wfm-slide-tabs md-tabs .md-tab {
+		 margin-top: -8px;
+	}
+
+
+	.wfm-slide-tabs md-tabs-wrapper {
+		height: 30px !important;
+		background-color: #66c2ff !important;
+	}
+
+	.wfm-slide-tabs md-ink-bar{
+	  top: 28px;
+	}
+
+	//modal
+	@media(max-width:599px){
+		.modal-box .modalbg .dialog{
+			max-height:90%;
+			overflow-y:auto!important;	
+		}
+	}
+
+	@media(min-width:600px){
+		.modal-box .modalbg .dialog{
+			max-height:70%;
+			overflow-y:auto!important;	
+		}
+	}
+
  .tab-group {
 	  width: 100%;
 	  display: -webkit-box;
