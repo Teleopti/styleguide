@@ -146,6 +146,8 @@ display:inline-block;
 	background-color:$gray-100;
 	border-left: 3px solid transparent;
 	border-top:1px solid $gray012;
+	position:relative;
+	overflow-x:hidden;
 
 	&:hover{
 		border-left: 3px solid $gray-500;
@@ -168,18 +170,18 @@ display:inline-block;
 }
 
 .wfm-leave-behind {
-	@extend .material-trench-1;
-	width: 0;
-	float: right;
-	overflow: hidden;
-	margin-top: -12px;
-	margin-bottom: -12px;
-	margin-right: -5px;
-	background-color: $gray012;
-	transition: $transition-timing;
-	padding-top: 12px;
-	padding-bottom:$full-padding;
-	border-bottom: 8px solid transparent;
+  height: 37px;
+  width: 0;
+  display: inline!important;
+  position: absolute!important;
+  right: 0;
+  overflow: hidden;
+  margin-top: -5px;
+  transition: all .5s ease-in-out;
+  padding-top: 8px;
+  background-color: #cacaca;
+  z-index: 999;
+  border-bottom: 8px solid transparent;
 	
 	span{
 		padding-left: $full-padding;
