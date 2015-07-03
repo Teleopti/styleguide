@@ -32,7 +32,7 @@
 	<script src="../vendor/d3/d3.min.js"></script>
 	<script src="../vendor/c3/c3.min.js"></script>
 	<script src="../vendor/c3/c3-angular.min.js"></script>
-	
+	<script src="../vendor/cardlist/teleopticardlist.directive.js"></script>
 	
 	<script src="../app.js"></script>
   {{{styles}}}
@@ -161,6 +161,26 @@
   {{/eachSection}}
 {{/if}}
 </article>
+
+<!-- template for card list -->
+<script type="text/ng-template" id="teleopti_card.html" >
+	<md-card ng-class="vm.isSelected() ? 'teleopti-card-selected material-depth-2' : 'teleopti-card-unselected'">
+		<div ng-click=" vm.select()" class="teleopti-card-title" transclude-id='header'>
+		</div>
+			<div class="teleopti-card-content" ng-show="vm.isSelected()">
+				<div transclude-id='body'>
+			</div>
+		</div>
+	</md-card>
+</script>
+
+<script type="text/ng-template" id="teleopti_card_list.html">
+	<md-content class="teleopti-card-list-container">
+		<md-list class="teleopti-card-list">
+			<md-content ng-transclude></md-content>
+		</md-list>
+	</md-content>
+</script>
 
 <!-- SCRIPTS -->
 <script src="public/kss.js"></script>

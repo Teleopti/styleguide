@@ -1,4 +1,4 @@
-var app = angular.module('styleguideApp', ['ngMaterial', 'ui.grid', 'ui.grid.autoResize', 'ui.grid.exporter', 'ui.grid.selection', 'ui.bootstrap'])
+var app = angular.module('styleguideApp', ['ngMaterial', 'ui.grid', 'ui.grid.autoResize', 'ui.grid.exporter', 'ui.grid.selection', 'ui.bootstrap','teleopti.wfm.cardList'])
 .controller('mainCtrl', function ($scope) {
   /*
   * Code for Grid
@@ -52,5 +52,9 @@ var chart = c3.generate({
     }
     return '';
   };
+
+/*code for card list*/
+	$scope.items = [{ title: 'mdi-chart-bar' }, { title: 'mdi-chart-bar' }, { title: 'mdi-chart-bar' }, { title: 'mdi-chart-bar' }];
+
 
 });

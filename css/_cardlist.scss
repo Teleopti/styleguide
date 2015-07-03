@@ -1,0 +1,76 @@
+// Card List
+//
+//	The Teleopti Card List is based on the card list displayed in google inbox.  Each card can be clicked on within the list and will expand to show detail.</br>
+//  Only one card can be opened at a time.The header and content of each card is completely customizable and any html elements provided within the &lt;card-header&gt; and  &lt;card-body&gt; tags will be rendered appropriately.
+//
+//Markup:
+//<div id="myChart"></div>
+//<teleopti-card-list>
+//	<teleopti-card ng-repeat="item in items">
+//		<card-header>
+//			<span><i class="mdi" ng-class="item.title"></i></span>
+//			<span style="float: right;"><i class="mdi mdi-chevron-right"></i></span>
+//		</card-header>
+//		<card-body>
+//			<button class="wfm-fab info material-depth-1"><i class="mdi mdi-duck"><md-tooltip>Ducks</md-tooltip></i></button>
+//		</card-body>
+//	</teleopti-card>
+//</teleopti-card-list>
+//
+//Styleguide 2.4
+//
+
+
+/*Overrides bootstrap*/
+.teleopti-card-list {
+	width: 100%;
+}
+
+.teleopti-card-list-container {
+	max-height: 450px;
+}
+
+
+md-card {
+}
+
+.teleopti-card-unselected {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	cursor: pointer;
+	width: 90%;
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+.teleopti-card-selected {
+	margin-top: 25px;
+	margin-bottom: 25px;
+	cursor: pointer;
+	width: 95%;
+	margin-left: auto !important;
+	margin-right: auto !important;
+	transition-property: width, height;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-out;
+}
+
+.teleopti-card-title {
+	min-height: 35px;
+	line-height: 35px;
+	padding: 0 16px;
+	background-color: #99D6FF;
+}
+
+.teleopti-card-content {
+	padding: 10px 16px;
+	background-color: white;
+}
+
+teleopti-card:first-child .teleopti-card-selected {
+	margin-top: 10px;
+}
+
+teleopti-card:last-child .teleopti-card-selected {
+	margin-bottom: 10px;
+}
