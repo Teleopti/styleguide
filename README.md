@@ -2,6 +2,7 @@
 
 Take a look to the [styleguide here](http://teleopti.github.io/styleguide/styleguide)
 
+Current build status: [![Build Status](https://travis-ci.org/Teleopti/styleguide.svg?branch=master)](https://travis-ci.org/Teleopti/styleguide)
 
 ## How to contribute
 
