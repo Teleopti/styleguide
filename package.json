@@ -2,19 +2,16 @@
   "name": "teleopti-styleguide",
   "version": "0.0.1",
   "description": "",
-  "scripts": {
-    //"test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "Teleopti",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "3.3.4",
+    "bootstrap": "3.3.4"
+  },
+  "devDependencies": {
+    "grunt-contrib-cssmin": "^0.12.2",
     "grunt": "0.4.5",
     "grunt-contrib-watch": "0.6.1",
     "grunt-sass": "0.18.1",
     "grunt-shell": "1.1.2"
-  },
-  "devDependencies": {
-    "grunt-contrib-cssmin": "^0.12.2"
   }
 }
