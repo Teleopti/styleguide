@@ -3,6 +3,6 @@ node_js:
   - "0.10.36"
 before_install: 
   - npm install -g grunt-cli
-  - npm install -g kss-node
+  - npm install -g kss
 install: npm install
 before_script: grunt dist
