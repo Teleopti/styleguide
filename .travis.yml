@@ -6,7 +6,8 @@ before_install:
   - npm install -g kss
 install: npm install
 before_script: grunt dist
-script: bash ./deploy-ghpages.sh
+script: 
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then bash ./deploy-ghpages.sh; fi
 env:
   global:
     - GH_REF: github.com/Teleopti/styleguide.git
