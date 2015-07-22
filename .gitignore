@@ -8,3 +8,7 @@ css/main.min.css
 *.suo
 
 
+
+*.log
+
+*.tgz
