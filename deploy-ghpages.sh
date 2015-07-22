@@ -15,6 +15,6 @@
  if test -n "$(git status --porcelain)"; then
     # Uncommitted changes
  	git commit -m "Deployed to Github Pages"
- 	git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages > /dev/null 2>&1
+ 	git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" gh-pages > /dev/null 2>&1
  fi
 )
