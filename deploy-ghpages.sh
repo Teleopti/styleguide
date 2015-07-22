@@ -5,7 +5,7 @@ mkdir out;
  git config user.email "carl.rockman@teleopti.com"
  cp -R ../styleguide ./styleguide
  cp -R ../vendor ./vendor
- cp -R ../css ./styleguide/css
+ cp -R ../css ./css
  cp ../app.js ./app.js
  git add .
  git commit -m "Deployed to Github Pages"
