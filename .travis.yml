@@ -6,7 +6,7 @@ before_install:
   - npm install -g kss
 install: npm install
 before_script: grunt dist
-script: npm run-script deploy
+script: bash ./deploy-ghpages.sh
 env:
   global:
     - GH_REF: github.com/Teleopti/styleguide.git

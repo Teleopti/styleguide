@@ -5,9 +5,6 @@
     "type": "git",
     "url": "git://github.com/Teleopti/styleguide.git"
   },
-  "scripts": {
-     "deploy": "./deploy-ghpages.sh"
-  },
   "description": "Styleguide for Teleopti",
   "author": "Teleopti",
   "license": "ISC",
