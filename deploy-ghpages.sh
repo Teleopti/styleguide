@@ -1,5 +1,4 @@
 #!/bin/bash
-rm -rf out || exit 0;
 mkdir out; 
 ( cd out
  git init
