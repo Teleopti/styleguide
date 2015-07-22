@@ -1,4 +1,3 @@
-#!/bin/bash
 mkdir out; 
 ( cd out
  git init
