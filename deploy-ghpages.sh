@@ -29,7 +29,10 @@
 	
 	cd Release
 	if test -n "$(git status --porcelain)"; then
-    	# Uncommitted changes
+    	# Uncommitted changes		
+ 		git config user.name "Travis-CI"
+ 		git config user.email "carl.rockman@teleopti.com"
+ 
  		git commit -m "Deployed to Release archive"
  		git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" Release > /dev/null 2>&1
 	fi
