@@ -68,10 +68,12 @@
 		padding: 10px 5px !important;
 	}
 
-	.wfm-slide-tabs md-tabs .md-tab.md-active {
-	  background-color: #09F!important;
+	.wfm-slide-tabs md-tabs.md-default-theme md-tab.active {
+		color: rgba(0,0,0,.87)!important;
+		  background-color:$blue-500 !important;
 	  height: 79%;
 	}
+	
 
 	.wfm-slide-tabs md-tabs .md-tab {
 		 margin-top: -8px;
@@ -80,7 +82,7 @@
 
 	.wfm-slide-tabs md-tabs-wrapper {
 		height: 30px !important;
-		background-color: #66c2ff !important;
+		background-color: $blue-300 !important;
 	}
 
 	.wfm-slide-tabs md-ink-bar{

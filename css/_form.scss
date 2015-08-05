@@ -88,7 +88,7 @@ input[type='text'], select{
 //
 // The first example is a common select.
 //
-// The second one is an angular material select. It's broken right now. We wait this fix: https://github.com/angular/material/issues/2564
+// The second one is an angular material select. It's broken right now. We are waiting for this fix: https://github.com/angular/material/issues/2564
 //
 // Markup:
 //	<select>
@@ -112,16 +112,16 @@ select{
 }
 
 md-select.md-default-theme:not([disabled]):focus .md-select-label{
-	border-bottom: #ec38a3 1px solid;
+	border-bottom: $pink-500  1px solid;
 	padding: 0;
 }
 
 md-select-menu.md-default-theme md-option:hover {
-	background-color: #E0E0E0;
+	background-color: $gray-300 ;
 }
 
 md-select-menu.md-default-theme md-option[selected], md-select-menu.md-default-theme md-option[selected]:focus{
-	background-color: #c2e085;
+	background-color: $green-100;
 }
 
 md-select {
