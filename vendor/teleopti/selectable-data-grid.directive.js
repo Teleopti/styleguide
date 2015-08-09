@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('teleopti.wfm', [])
+    angular.module('teleopti.wfm')
     .directive('selectableDataGrid', [selectableDataGrid])
     .directive('selectableDataGridCell', ['$parse', selectableDataGridCell]);
 
@@ -109,11 +109,11 @@
 		        if (angular.isDefined(scope.$parent[a])) iscope[a] = scope.$parent[a];
 		    });
 		}
-
+                
 	        transcludeFn(iscope, function (clone) {
 	            returnElem = clone;
 	        });
-
+                
 	        return returnElem;
 	    };					
 	}

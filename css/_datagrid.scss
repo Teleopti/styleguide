@@ -1,16 +1,78 @@
 // Data Grid With Multi-selection
 //
-// Display data in grid and multi-select them.
+//Display list data in a square grid. User can do multiple-selection of data from the grid.
+//<ul>
+//<li>Specifications for selectable-data-grid:  
+//<table class="wfm-table">
+//<tr><th>Attribute Name</th><th>Usage</th><th>Required</th></tr>  
+//<tr><td>record-items</td><td>specify the list data to be bound to the grid.</td><td>true</td></tr>
+//<tr><td>items-per-row</td><td>specify the numer of items per row</td><td>true</td></tr>
+//<tr><td>grid-headers</td><td>specify the header labels for the grid</td><td>false</td></tr>
+//<tr><td>starting-offset</td><td>specify the offset of the first grid row. Used to align data with the headers.</td><td>false</td></tr>
+//<tr><td>inject</td><td>Inject properties of the current scope to the scope of every selectable-data-grid-cell.</td><td>false</td></tr>  
+//<tr><td>mute</td><td>disable interaction with the entire grid.</td><td>false</td></tr>  
+//</table>
+//The selected data items will have their <code>isSelected</code> attribute set to true, which can be used for further manipulation.
+//<p>The selectable-data-grid exposes the following cell-specific entities to the scope of each selectable-data-grid-cell:
+//<ul class="wfm-simple-list">
+//<li><code>$item</code>&nbsp;: the data object binding to the current cell.</li>
+//<li><code>$colIndex</code>&nbsp;: the column index of the current cell.</li>
+//<li><code>$rowIndex</code>&nbsp;: the row index of the current cell.</li>
+//</ul> 
+//</p>
+//</li>
 //
-// Markup:
-//
+//<li>
+//Specifications for selectable-data-grid-cell:
+//<table class="wfm-table">
+//<tr><th>Attribute Name</th><th>Usage</th><th>Required</th></tr>
+//<tr><td>unselectable</td><td>An expression telling whether the cell should be unselectable.</td><td>true</td></tr>  
+//</table>
+//</li>
+//The html specified in this element is used to render the content of each grid cell.
+//Each grid cell has an isolated scope populated with the injected properties and cell-specific entities from its parent. These can be used in both the html template and the attribute expression.  
+//</ul>
+//  
+//Markup:
 //<selectable-data-grid record-items="recordItems" starting-offset="2" items-per-row="4" grid-headers="gridHeaders">
-//    <selectable-data-grid-cell>
-//        <div ng-bind="$item.id"></div>
-//        <div ng-bind="$item.text"></div>
+//    <selectable-data-grid-cell unselectable=" $colIndex == 0">
+//        <div>ID: <span html-binder="$item.id"></span></div>
+//        <div>TEXT: <span html-binder="$item.text"></span></div>
 //    </selectable-data-grid-cell>
 //</selectable-data-grid>
 //
 //Styleguide 2.5
 //    
-   
+
+.selectable-data-grid {
+
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  .selectable-data-grid-cell {
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+
+  td {
+    &.selected {
+      background-color: aquamarine;
+    }
+        
+    width: 5%;
+    height: 42px;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .ng-unselectable {
+    background-color: lightgrey;   		    
+  }
+}

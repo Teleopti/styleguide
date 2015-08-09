@@ -5,7 +5,7 @@ var app = angular.module('styleguideApp', [
   'ui.grid.exporter',
   'ui.grid.selection',
   'ui.bootstrap',
-  'teleopti.wf'
+  'teleopti.wfm'
 ])
 .controller('mainCtrl', function ($scope) {
   /*
