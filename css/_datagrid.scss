@@ -1,0 +1,16 @@
+// Data Grid With Multi-selection
+//
+// Display data in grid and multi-select them.
+//
+// Markup:
+//
+//<selectable-data-grid record-items="recordItems" starting-offset="2" items-per-row="4" grid-headers="gridHeaders">
+//    <selectable-data-grid-cell>
+//        <div ng-bind="$item.id"></div>
+//        <div ng-bind="$item.text"></div>
+//    </selectable-data-grid-cell>
+//</selectable-data-grid>
+//
+//Styleguide 2.5
+//    
+   
