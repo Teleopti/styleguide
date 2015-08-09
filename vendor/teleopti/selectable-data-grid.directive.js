@@ -40,13 +40,32 @@
                 if (scope.$colIndex >= data.topLeftColIndex
                   && scope.$colIndex <= data.bottomRightColIndex
                   && scope.$rowIndex >= data.topLeftRowIndex
-                  && scope.$rowIndex <= data.bottomRightRowIndex)
-                  scope.$item.isSelected = true;
+                  && scope.$rowIndex <= data.bottomRightRowIndex) {
+                    console.log('cells selection change detected.', data);
+                    scope.$item.isSelected = true;
+                }                
             });
 
-            scope.$on('cells.selection.reset', function () {
+            scope.$on('cells.selection.flip', function(_scope, data) {
                 if (!angular.isDefined(scope.$colIndex) || !angular.isDefined(scope.$rowIndex) || !scope.$item) return;
-                scope.$item.isSelected = false;
+                if (unselectable) return;
+                
+                if (scope.$colIndex >= data.topLeftColIndex
+                  && scope.$colIndex <= data.bottomRightColIndex
+                  && scope.$rowIndex >= data.topLeftRowIndex
+                  && scope.$rowIndex <= data.bottomRightRowIndex) {
+                    console.log('cells selection flip detected.', data, scope.$item.isSelected );
+                    scope.$item.isSelected = !scope.$item.isSelected;
+                    console.log('after flip', data, scope.$item.isSelected );
+                }  
+                
+            });
+
+            scope.$on('cells.selection.reset', function (_scope, data) {
+                if (!angular.isDefined(scope.$colIndex) || !angular.isDefined(scope.$rowIndex) || !scope.$item) return;
+
+                if (scope.$colIndex != data.colIndex || scope.$rowIndex != data.rowIndex)
+                  scope.$item.isSelected = false;
             });            
         }
     }
@@ -82,10 +101,14 @@
 	    var partitions = gridCtrl.partitionRecordItems(scope.recordItems, parseInt(scope.itemsPerRow), scope.startingOffset ? parseInt(scope.startingOffset) : 0);
 	    elem.append(gridCtrl.renderGrid(partitions, cellFn, scope.gridHeaders));
 
-	    scope.$watch(defineRegion, function(newValue, oldValue) {
+	    scope.$watch(defineRegion, function(newValue, oldValue) {                
 	        if (newValue === oldValue) return;
-	        if (newValue) {	              
-	            scope.$broadcast('cells.selection.change', newValue);
+	        if (newValue) {
+	            if (newValue.topLeftColIndex == newValue.bottomRightColIndex
+                      && newValue.topLeftRowIndex == newValue.bottomRightRowIndex)
+                      scope.$broadcast('cells.selection.flip', newValue);
+                    else 
+	              scope.$broadcast('cells.selection.change', newValue);
 	        }
 	    }, true);           
 
@@ -95,7 +118,8 @@
 	            topLeftColIndex: Math.min(scope.startPos.colIndex, scope.endPos.colIndex),
 	            topLeftRowIndex: Math.min(scope.startPos.rowIndex, scope.endPos.rowIndex),	
 	            bottomRightColIndex: Math.max(scope.startPos.colIndex, scope.endPos.colIndex),
-	            bottomRightRowIndex: Math.max(scope.startPos.rowIndex, scope.endPos.rowIndex)
+	            bottomRightRowIndex: Math.max(scope.startPos.rowIndex, scope.endPos.rowIndex),
+                    togglePos: scope.togglePos
 	        };	            	    
             }
             
@@ -123,16 +147,20 @@
 
 	this.partitionRecordItems = partitionRecordItems;
 	this.renderGrid = renderGrid;
-
+        
 	$scope.isDragging = false;
 	$scope.startPos = null;
 	$scope.endPos = null;
-	
+        $scope.togglePos = false;
+        
 	$scope.mousedown = function (d, e) {	       
 	    if (angular.isDefined($scope.mute) && $scope.mute) return;
 	    if (e.altKey) return;
-	    if (!e.ctrlKey) $scope.$broadcast('cells.selection.reset');	     
-	    $scope.startPos = { colIndex: d.colIndex, rowIndex: d.rowIndex };
+	    if (!e.ctrlKey) $scope.$broadcast('cells.selection.reset', { colIndex: d.colIndex, rowIndex: d.rowIndex });
+
+            $scope.togglePos = !$scope.togglePos;
+            
+            $scope.startPos = { colIndex: d.colIndex, rowIndex: d.rowIndex };
 	    $scope.endPos = { colIndex: d.colIndex, rowIndex: d.rowIndex };
 	    $scope.isDragging = true;
 	}

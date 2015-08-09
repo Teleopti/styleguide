@@ -165,7 +165,6 @@
     -ms-user-select: none;
     user-select: none;
   }
-
     
   @for $i from 1 through 12 {
     .month-#{$i} {
