@@ -84,4 +84,33 @@ var chart = c3.generate({
     $scope.firstRowOffset = 2;
     $scope.gridHeaders = ['col-1', 'col-2', 'col-3', 'col-4'];
 
+    $scope.dateRecords = [
+   
+      {date: new Date('2015-08-16'), value: 3},
+      {date: new Date('2015-08-17'), value: 3},
+      {date: new Date('2015-08-18'), value: 3},
+      {date: new Date('2015-08-19'), value: 3},
+      {date: new Date('2015-08-20'), value: 3},
+      {date: new Date('2015-08-21'), value: 3},
+      {date: new Date('2015-08-22'), value: 3},
+      {date: new Date('2015-08-23'), value: 3},
+      {date: new Date('2015-08-24'), value: 3},
+      {date: new Date('2015-08-25'), value: 3},
+      {date: new Date('2015-08-26'), value: 3},
+      {date: new Date('2015-08-27'), value: 3},
+      {date: new Date('2015-08-28'), value: 3},
+      {date: new Date('2015-08-29'), value: 3},
+      {date: new Date('2015-08-30'), value: 3},
+      {date: new Date('2015-08-31'), value: 3},
+      {date: new Date('2015-09-01'), value: 3},
+      {date: new Date('2015-09-02'), value: 3},
+      {date: new Date('2015-09-03'), value: 3},
+      {date: new Date('2015-09-04'), value: 3},
+      {date: new Date('2015-09-05'), value: 3},
+      {date: new Date('2015-09-06'), value: 3},
+      {date: new Date('2015-09-07'), value: 3}
+   
+    ];
+
+
 });
