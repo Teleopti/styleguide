@@ -9,7 +9,7 @@
 //<tr><td>items-per-row</td><td>specify the numer of items per row</td><td>true</td></tr>
 //<tr><td>grid-headers</td><td>specify the header labels for the grid</td><td>false</td></tr>
 //<tr><td>starting-offset</td><td>specify the offset of the first grid row. Used to align data with the headers.</td><td>false</td></tr>
-//<tr><td>inject</td><td>Inject properties of the current scope to the scope of every selectable-data-grid-cell.</td><td>false</td></tr>  
+//<tr><td>inject</td><td>Inject properties of the current scope to the scope of selectable-data-grid-cell.</td><td>false</td></tr>  
 //<tr><td>mute</td><td>disable interaction with the entire grid.</td><td>false</td></tr>  
 //</table>
 //The selected data items will have their <code>isSelected</code> attribute set to true, which can be used for further manipulation.
@@ -26,7 +26,7 @@
 //Specifications for selectable-data-grid-cell:
 //<table class="wfm-table">
 //<tr><th>Attribute Name</th><th>Usage</th><th>Required</th></tr>
-//<tr><td>unselectable</td><td>An expression telling whether the cell should be unselectable.</td><td>true</td></tr>  
+//<tr><td>unselectable</td><td>An expression telling whether the cell should be unselectable.</td><td>false</td></tr>  
 //</table>
 //</li>
 //The html specified in this element is used to render the content of each grid cell.
