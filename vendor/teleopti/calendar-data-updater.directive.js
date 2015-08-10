@@ -3,8 +3,57 @@
     'use strict';
 
     angular.module('teleopti.wfm')
-    .directive('calendarDataUpdater', calendarDataUpdater);
+           .directive('inputFlipper', inputFlipper)
+           .directive('calendarDataUpdater', calendarDataUpdater);
 
+    function inputFlipper() {
+
+        return {
+            template: getTemplate(),
+            link: postlink,
+            scope: {
+                viewValue: '=',
+                inputValue: '=',
+                inputInit: '&',
+                inputDone: '&',
+                inputCancelled: '&'
+            },
+            restrict: 'E'
+        };
+
+        function postlink(scope, elem, attrs) {
+            scope.inputMode = false;
+            elem.addClass('input-flipper');
+
+            scope.switchInput = function(e) {
+                if (!e.altKey || scope.inputMode ) return;            	    
+                if (scope.inputInit({ value: scope.viewValue})) {
+                    scope.inputMode = true;
+                    elem.find('input').focus();
+                }
+                
+            }
+            
+            scope.inputKeyup = function(e) {
+                if (e.keyCode == 13) {
+	            e.preventDefault();	            
+	            scope.inputMode = false;
+                    scope.inputDone();
+	        } else if (e.keyCode == 27) {
+	            e.preventDefault();	            
+	            scope.inputMode = false;
+                    scope.inputCancelled();
+	        }
+            }            
+        }
+
+        function getTemplate() {
+            return '<div ng-show="!inputMode" ng-mouseup="switchInput($event)">{{viewValue}}</div>'
+                 + '<input type="text" ng-model="inputValue" ng-show="inputMode" ng-keyup="inputKeyup($event)" />';            
+        }
+
+    }
+    
     function calendarDataUpdater() {
         return {
             template: getTemplate(),
@@ -20,9 +69,11 @@
 
         function updaterCtrl($scope) {
             
-            $scope.weekdayNames = angular.isDefined($scope.weekdayNames)?$scope.weekdayNames:
-              ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-            $scope.startOfWeek = angular.isDefined($scope.startOfWeek)?parseInt($scope.startOfWeek):0;
+            $scope.weekdayNames = angular.isDefined($scope.weekdayNames)
+                                ?$scope.weekdayNames
+                                :['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            $scope.startOfWeek = angular.isDefined($scope.startOfWeek)
+                               ?parseInt($scope.startOfWeek):0;
             $scope.weekDays = getWeekdays($scope.weekdayNames, $scope.startOfWeek);
             
             $scope.updater = { value: null };
@@ -32,25 +83,34 @@
                 $scope.dateRecords[0].date.getDay(), $scope.startOfWeek);
 
             $scope.switchInput = function (item, e) {
-	        if (!e.altKey || $scope.muting) return;
-                if (item.inputMode) return;
-	        item.inputMode = true;
+	        if (!e.altKey || $scope.muting) return;            	    
 	        $scope.muting = true;
 	        $scope.updater.value = item.value;
+                $scope.$broadcast('input-flipper.input.mode');
 	    };
+            
+            $scope.finishInput = finishInput;
+            $scope.initInput = initInput;
 
-            $scope.finishInput = function (item, e) {	       
-	        if (e.keyCode == 13) {
-	            e.preventDefault();
-	            updateAllSelectedFromUpdater();
-	            item.inputMode = false;
-	            $scope.muting = false;	           
-	        } else if (e.keyCode == 27) {
-	            e.preventDefault();	            
-	            item.inputMode = false;
-	            $scope.muting = false;
-	        }	    
-	    };
+            function initInput(value) {
+                var debug;
+                if ($scope.muting) {
+                    debug = false;
+                }
+                else {
+                    $scope.muting = true;
+                    $scope.updater.value = value;
+                    debug = true;
+                }
+
+                console.log('init input debug', debug);
+                return debug;
+            }
+
+            function finishInput(isDone) {
+                $scope.muting = false;
+                if (isDone) updateAllSelectedFromUpdater();
+            }
 
             function updateAllSelectedFromUpdater() {
                 $scope.dateRecords.forEach(function(item) {
@@ -77,22 +137,27 @@
         function postlink(scope, elem, attr) {	   
             elem.addClass('calendar-data-updater');
         }
+
+        function getTemplate() {
+            return  '<selectable-data-grid record-items="dateRecords" items-per-row="{{weekDays.length}}" starting-offset="{{offset}}" grid-headers="weekDays" inject="updater, switchInput, finishInput, initInput" mute="muting">' 
+                 + '<selectable-data-grid-cell>'
+                 + '<div class="day-month-flipper">'
+                 + '<div class="day-icon month-{{$item.date | date: \'M\' }}">{{ $item.date | date: \'d\'  }}</div>'
+                 + '<div class="month-icon month-{{$item.date | date: \'M\' }}">{{ $item.date | date: \'MMM\' }}</div>'
+                 +  '</div>'
+                 + '<div class="placeholder"></div>'
+                 +  '<input-flipper '
+                 + ' view-value="$item.value"'
+                 + ' input-value="updater.value"'
+                 + ' input-init="initInput(value)"'
+                 + ' input-done="finishInput(true)"'
+                 + ' input-cancelled="finishInput(false)">'
+                 + '</input-flipper>'
+                 + '</selectable-data-grid-cell>'
+                 + '</selectable-data-grid>';
+        };
     }
 
-    function getTemplate() {
-        return  '<selectable-data-grid record-items="dateRecords" items-per-row="{{weekDays.length}}" starting-offset="{{offset}}" grid-headers="weekDays" inject="updater, switchInput, finishInput" mute="muting">' 
-             + '<selectable-data-grid-cell>'
-             + '<div class="day-month-flipper">'
-             + '<div class="day-icon month-{{$item.date | date: \'M\' }}">{{ $item.date | date: \'d\'  }}</div>'
-             + '<div class="month-icon month-{{$item.date | date: \'M\' }}">{{ $item.date | date: \'MMM\' }}</div>'
-             +  '</div>'
-             + '<div class="placeholder"></div>'
-             +  '<div class="input-flipper" ng-click="switchInput($item, $event)">'
-             +  '<div ng-show="!$item.inputMode">{{$item.value}}</div>'
-             + '<input type="text" ng-model="updater.value" ng-show="$item.inputMode" ng-keyup="finishInput($item, $event)" />'
-             + '</div>'
-             + '</selectable-data-grid-cell>'
-             + '</selectable-data-grid>';
-    };
+   
 
 })();
