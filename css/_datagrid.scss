@@ -1,6 +1,6 @@
 // Data Grid With Multi-selection
 //
-//Display list data in a square grid. User can do multiple-selection of data from the grid.
+//Display list data in a square grid. User can select multiple cells from the grid. This is done by dragging the mouse across the target cells, or by holding the <code>Ctrl</code> key to add other cells to the already selected cells. 
 //<ul>
 //<li>Specifications for selectable-data-grid:  
 //<table class="wfm-table">
@@ -46,7 +46,17 @@
 
 // Calendar data updater
 //
-//Update the data list from the calendar. Supports multi-selection and in-place update.
+//For a date-data-series of the form <code>{ date: .., value: .. }</code> with continuous dates, it can be displayed in a calendar through this directive.
+//The calendar supports multi-selection and in-place update. Use mouse and <code>Ctrl</code> key to specify multiple data, and use <code>Alt</code> to update their values. Use <code>Enter</code> and <code>Esc</code> to confirm or cancel the input.
+//<ul>
+//<li>Specifications for calendar-data-updater:
+//<table class="wfm-table">
+//<tr><th>Attribute Name</th><th>Usage</th><th>Required</th></tr>
+//<tr><td>date-records</td><td>specify the date-data-series to be bound to the calendar</td><td>true</td></tr>
+//<tr><td>start-of-week</td><td>specify the starting week day.</td><td>false</td></tr>
+//<tr><td>weekday-names</td><td>specify the array of week day names; start with Sunday</td><td>false</td></tr>
+//</table>    
+//</ul>    
 //
 //Markup:
 //<calendar-data-updater date-records="dateRecords" start-of-week="1"></calendar-data-updater>
@@ -129,8 +139,8 @@
   .day-month-flipper {
     transition: all 0.5s;
     
-    width: 28px;
-    height: 28px;		
+    width: 30px;
+    height: 30px;		
     border-radius: 50%;
     box-sizing: content-box;
     transform-style: preserve-3d;
