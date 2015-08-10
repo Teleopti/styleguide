@@ -2,21 +2,23 @@
     'use strict';
 
     angular.module('teleopti.wfm')
-    .directive('selectableDataGrid', [selectableDataGrid])
-    .directive('selectableDataGridCell', ['$parse', selectableDataGridCell]);
+           .directive('selectableDataGrid', [selectableDataGrid])
+           .directive('selectableDataGrid', [selectableDataGridUpdateTransclusion])
+           .directive('selectableDataGridCell', ['$parse', selectableDataGridCell]);
 
     function selectableDataGridCell($parse) {
         return {
             restrict: 'E',
             scope: {
                 '$item': '=cellContent',
-                '$colIndex': '@colIndex',
-                '$rowIndex': '@rowIndex'
+                '$colIndex': '=colIndex',
+                '$rowIndex': '=rowIndex'
             },
             link: postlink
         };
 
-        function postlink(scope, elem, attrs) {
+        function postlink(scope, elem, attrs) {      
+            
             elem.addClass('selectable-data-grid-cell');
             var unselectable = false;
             attrs.$observe('unselectable', function (fnCode) {              
@@ -41,7 +43,6 @@
                   && scope.$colIndex <= data.bottomRightColIndex
                   && scope.$rowIndex >= data.topLeftRowIndex
                   && scope.$rowIndex <= data.bottomRightRowIndex) {
-                    console.log('cells selection change detected.', data);
                     scope.$item.isSelected = true;
                 }                
             });
@@ -54,9 +55,7 @@
                   && scope.$colIndex <= data.bottomRightColIndex
                   && scope.$rowIndex >= data.topLeftRowIndex
                   && scope.$rowIndex <= data.bottomRightRowIndex) {
-                    console.log('cells selection flip detected.', data, scope.$item.isSelected );
                     scope.$item.isSelected = !scope.$item.isSelected;
-                    console.log('after flip', data, scope.$item.isSelected );
                 }  
                 
             });
@@ -67,6 +66,22 @@
                 if (scope.$colIndex != data.colIndex || scope.$rowIndex != data.rowIndex)
                   scope.$item.isSelected = false;
             });            
+        }        
+    }
+
+    function selectableDataGridUpdateTransclusion() {
+
+        return({
+            compile: compile,
+            priority: 1500.1,
+            restrict: 'E'
+        });
+
+        function compile( tElement, tAttributes ) {
+            var cellElement = tElement.find('selectable-data-grid-cell');
+            cellElement.attr('col-index', 'colIndex');
+            cellElement.attr('row-index', 'rowIndex');
+            cellElement.attr('cell-content', 'cellContent');
         }
     }
 
@@ -83,8 +98,8 @@
 	    require: ['selectableDataGrid'],
 	    controller: ['$scope', '$compile', selectableDataGridCtrl],	    
 	    transclude: true,
-	    link: postlink
-
+	    link: postlink,
+            priority: 1500
 	};
 
 	function postlink(scope, elem, attrs, ctrls, transcludeFn) {
@@ -123,17 +138,15 @@
 	        };	            	    
             }
             
-	    function cellFn(record) {
-	        var iscope = scope.$new();
-	        var returnElem;
-
+	    function cellFn(record, iscope) {
 	        iscope.$item = record;
 	        if (injectAttrs) {
 		    injectAttrs.forEach(function(a) {
 		        if (angular.isDefined(scope.$parent[a])) iscope[a] = scope.$parent[a];
 		    });
 		}
-                
+
+                var returnElem;
 	        transcludeFn(iscope, function (clone) {
 	            returnElem = clone;
 	        });
@@ -154,12 +167,10 @@
         $scope.togglePos = false;
         
 	$scope.mousedown = function (d, e) {	       
-	    if (angular.isDefined($scope.mute) && $scope.mute) return;
+            if (angular.isDefined($scope.mute) && $scope.mute) return;
 	    if (e.altKey) return;
 	    if (!e.ctrlKey) $scope.$broadcast('cells.selection.reset', { colIndex: d.colIndex, rowIndex: d.rowIndex });
-
-            $scope.togglePos = !$scope.togglePos;
-            
+            $scope.togglePos = !$scope.togglePos;            
             $scope.startPos = { colIndex: d.colIndex, rowIndex: d.rowIndex };
 	    $scope.endPos = { colIndex: d.colIndex, rowIndex: d.rowIndex };
 	    $scope.isDragging = true;
@@ -212,7 +223,8 @@
 	}
 
 	function renderGrid(partitions, cellFn, header) {		  
-	    var table = angular.element('<table class="wfm-table"></table>');
+
+            var table = angular.element('<table class="wfm-table"></table>');
 	    
 	    if (header) {
 		var hrow = angular.element('<tr></tr>');
@@ -231,27 +243,29 @@
 		    iscope.mousedown = $scope.mousedown;
 		    iscope.mouseup = $scope.mouseup;
 		    iscope.mouseenter = $scope.mouseenter;
-
+                    iscope.colIndex = cellData.colIndex;
+                    iscope.rowIndex = cellData.rowIndex;
+                
 		    var cellContainer = angular.element(
 		        '<td ' +
 		          'ng-mousedown="mousedown($data, $event)" ' +
 		          'ng-mouseup="mouseup($data, $event)"' +
 		          'ng-mouseenter="mouseenter($data, $event)"' +
 		          'ng-class="{\'selected\': $data.data && $data.data.isSelected}" >' +
-		          '</td>');
+		          '</td>');                    
 
+                    var cell = $compile(cellContainer)(iscope);
+                    
                     if (cellData.data !== null) {
-                        var _cellContent = cellFn(cellData.data);
+                        var _cellContent = cellFn(cellData.data, iscope);                
                         var wrapper = angular.element('<div></div>');
-                        wrapper.append(_cellContent);
+                       
+                        wrapper.append(_cellContent);                     
                         var cellContent = wrapper.find('selectable-data-grid-cell');
-                        cellContent.attr('col-index', cellData.colIndex);
-                        cellContent.attr('row-index', cellData.rowIndex);
-                        cellContent.attr('cell-content', 'cellContent');
-                        cellContainer.append(cellContent);
+                        cell.append(cellContent);
+                       
                     }
-		    
-		    var cell = $compile(cellContainer)(iscope); 		            
+                    
 		    row.append(cell);
 		});
 
