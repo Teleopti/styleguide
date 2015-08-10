@@ -166,9 +166,9 @@
 	$scope.endPos = null;
         $scope.togglePos = false;
         
-	$scope.mousedown = function (d, e) {	       
+	$scope.mousedown = function (d, e) {
             if (angular.isDefined($scope.mute) && $scope.mute) return;
-	    if (!e.ctrlKey && !e.altKey) $scope.$broadcast('cells.selection.reset', { colIndex: d.colIndex, rowIndex: d.rowIndex });
+	    if (!e.ctrlKey) $scope.$broadcast('cells.selection.reset', { colIndex: d.colIndex, rowIndex: d.rowIndex });
             $scope.togglePos = !$scope.togglePos;            
             $scope.startPos = { colIndex: d.colIndex, rowIndex: d.rowIndex };
 	    $scope.endPos = { colIndex: d.colIndex, rowIndex: d.rowIndex };

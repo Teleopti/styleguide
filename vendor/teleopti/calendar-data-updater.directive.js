@@ -3,10 +3,10 @@
     'use strict';
 
     angular.module('teleopti.wfm')
-           .directive('inputFlipper', inputFlipper)
-           .directive('calendarDataUpdater', calendarDataUpdater);
+    .directive('inputFlipper', ['$timeout', inputFlipper])
+    .directive('calendarDataUpdater', calendarDataUpdater);
 
-    function inputFlipper() {
+    function inputFlipper($timeout) {
 
         return {
             template: getTemplate(),
@@ -14,9 +14,7 @@
             scope: {
                 viewValue: '=',
                 inputValue: '=',
-                inputInit: '&',
-                inputDone: '&',
-                inputCancelled: '&'
+                inputInit: '&'               
             },
             restrict: 'E'
         };
@@ -25,31 +23,27 @@
             scope.inputMode = false;
             elem.addClass('input-flipper');
 
-            scope.switchInput = function(e) {
-                if (!e.altKey || scope.inputMode ) return;            	    
+            scope.switchInput = function(e) {                
+                if (!e.altKey || scope.inputMode ) return;
+                if (!scope.viewValue.isSelected) return;                
+                e.stopPropagation();
                 if (scope.inputInit({ value: scope.viewValue})) {
-                    scope.inputMode = true;
-                    elem.find('input').focus();
-                }
-                
+                    scope.inputMode = true;                    
+                    $timeout(function() {
+                        elem.find('input')[0].focus();
+                    }, 200);
+                }                
             }
-            
-            scope.inputKeyup = function(e) {
-                if (e.keyCode == 13) {
-	            e.preventDefault();	            
-	            scope.inputMode = false;
-                    scope.inputDone();
-	        } else if (e.keyCode == 27) {
-	            e.preventDefault();	            
-	            scope.inputMode = false;
-                    scope.inputCancelled();
-	        }
-            }            
+
+            scope.$on('input-flipper.view.mode', function() {
+                scope.inputMode = false;
+            });
+                       
         }
 
         function getTemplate() {
-            return '<div ng-show="!inputMode" ng-mouseup="switchInput($event)">{{viewValue}}</div>'
-                 + '<input type="text" ng-model="inputValue" ng-show="inputMode" ng-keyup="inputKeyup($event)" />';            
+            return '<div ng-show="!inputMode" ng-mousedown="switchInput($event)">{{viewValue.value}}</div>'
+                 + '<input type="text" ng-model="inputValue" ng-show="inputMode" />';            
         }
 
     }
@@ -57,7 +51,7 @@
     function calendarDataUpdater() {
         return {
             template: getTemplate(),
-
+            require: ['calendarDataUpdater'],
             link: postlink,
             scope: {
                 dateRecords: '=',
@@ -82,29 +76,20 @@
             $scope.offset = calculateGridFirstRowOffset(
                 $scope.dateRecords[0].date.getDay(), $scope.startOfWeek);
 
-            $scope.switchInput = function (item, e) {
-	        if (!e.altKey || $scope.muting) return;            	    
-	        $scope.muting = true;
-	        $scope.updater.value = item.value;
-                $scope.$broadcast('input-flipper.input.mode');
-	    };
-            
-            $scope.finishInput = finishInput;
             $scope.initInput = initInput;
-
-            function initInput(value) {
-                var debug;
+            
+            this.finishInput = finishInput;
+            
+            function initInput(item) {
+                
                 if ($scope.muting) {
-                    debug = false;
+                    return false;
                 }
                 else {
                     $scope.muting = true;
-                    $scope.updater.value = value;
-                    debug = true;
+                    $scope.updater.value = item.value;
+                    return  true;
                 }
-
-                console.log('init input debug', debug);
-                return debug;
             }
 
             function finishInput(isDone) {
@@ -112,7 +97,7 @@
                 if (isDone) updateAllSelectedFromUpdater();
             }
 
-            function updateAllSelectedFromUpdater() {
+             function updateAllSelectedFromUpdater() {
                 $scope.dateRecords.forEach(function(item) {
                     if (item.isSelected) item.value = $scope.updater.value;
                 });
@@ -134,12 +119,25 @@
             }
         }
 
-        function postlink(scope, elem, attr) {	   
+        function postlink(scope, elem, attr, ctrls) {
+	    var ctrl = ctrls[0];
             elem.addClass('calendar-data-updater');
+
+            scope.onKeyup = function(e) {
+                if (e.keyCode == 13) {
+	            e.preventDefault();
+                    scope.$broadcast('input-flipper.view.mode');
+                    ctrl.finishInput(true);
+	        } else if (e.keyCode == 27) {
+	            e.preventDefault();
+                    scope.$broadcast('input-flipper.view.mode');
+                    ctrl.finishInput(false);
+	        }
+            }            
         }
 
         function getTemplate() {
-            return  '<selectable-data-grid record-items="dateRecords" items-per-row="{{weekDays.length}}" starting-offset="{{offset}}" grid-headers="weekDays" inject="updater, switchInput, finishInput, initInput" mute="muting">' 
+            return  '<selectable-data-grid record-items="dateRecords" items-per-row="{{weekDays.length}}" starting-offset="{{offset}}" grid-headers="weekDays" inject="updater, switchInput, finishInput, initInput" mute="muting" ng-keyup="onKeyup($event)" tabindex="1">' 
                  + '<selectable-data-grid-cell>'
                  + '<div class="day-month-flipper">'
                  + '<div class="day-icon month-{{$item.date | date: \'M\' }}">{{ $item.date | date: \'d\'  }}</div>'
@@ -147,11 +145,9 @@
                  +  '</div>'
                  + '<div class="placeholder"></div>'
                  +  '<input-flipper '
-                 + ' view-value="$item.value"'
+                 + ' view-value="$item"'
                  + ' input-value="updater.value"'
-                 + ' input-init="initInput(value)"'
-                 + ' input-done="finishInput(true)"'
-                 + ' input-cancelled="finishInput(false)">'
+                 + ' input-init="initInput(value)">'
                  + '</input-flipper>'
                  + '</selectable-data-grid-cell>'
                  + '</selectable-data-grid>';

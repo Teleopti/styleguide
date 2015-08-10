@@ -104,19 +104,21 @@
     width: 50px;
     display: flex;
     justify-content: left;
-    align-items: center;
-    input {
-      width: 48px;
-    }
-
+    align-items: flex-end;
+   
     &:hover {
       @extend .material-depth-1;      
-    }  
+    }
+
+    input {
+      width: 50px;
+      height: 28px;
+      padding-left: 10px;
+    }
       
     div {
-      padding-left: 10px;
-      margin-top: 1px;	
-      margin-bottom: 1px;
+      width: 50px;
+      padding: 4px 5px;
     }
   }
     
@@ -141,9 +143,9 @@
   .calendar-icon {		
     position: absolute;
     backface-visibility: hidden;
-    padding: 3px;
-    width: 28px;
-    height: 28px;				
+    padding: 6px 3px;
+    width: 30px;
+    height: 30px;				
     border-radius: 50%;
   }
 
