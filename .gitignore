@@ -6,7 +6,7 @@ css/main.css.map
 css/main.min.css
 *.sln
 *.suo
-
+*.idea
 
 
 *.log
