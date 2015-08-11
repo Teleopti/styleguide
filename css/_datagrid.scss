@@ -48,6 +48,8 @@
 //
 //For a date-data-series of the form <code>{ date: .., value: .. }</code> with continuous dates, it can be displayed in a calendar through this directive.
 //The calendar supports multi-selection and in-place update. Use mouse and <code>Ctrl</code> key to specify multiple data, and use <code>Alt</code> to update their values. Use <code>Enter</code> and <code>Esc</code> to confirm or cancel the input.
+//
+//This directive uses selectable-data-grid at its core, and demonstrates its extensibility.  
 //<ul>
 //<li>Specifications for calendar-data-updater:
 //<table class="wfm-table">
@@ -86,7 +88,7 @@
 
   td {
     &.selected {
-      background-color: aquamarine;
+      background-color: $blue-100!important;
     }
         
     width: 5%;
@@ -96,12 +98,11 @@
   }
 
   .ng-unselectable {
-    background-color: lightgrey;   		    
+    background-color: $gray012;   		    
   }
 }
 
 .calendar-data-updater {
-
   .selectable-data-grid {
     .selectable-data-grid-cell {
       display: flex !important;
