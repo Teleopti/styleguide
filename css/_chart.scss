@@ -22,27 +22,32 @@
 //</pre></code>
 //
 //Markup:
-//	<div id="myChart"></div>
+//	<div class="wfm-chart" id="myChart"></div>
 //
 //Styleguide 2.3
 //
 
-.c3-tooltip td,.c3-tooltip th{
-  color:white;
-  background-color: rgba(0,0,0,0.54)!important;
+.wfm-chart{
+	background-color:$white;
+
+	.c3-tooltip td>span {
+	  margin-left: 10px;
+	  margin-top: 5px;
+	  border:1px solid white;
+	}
+	
+	.c3-tooltip td,.c3-tooltip th{
+		color:white;
+		background-color: $gray054!important;
+	}
+
+	.c3-brush .extent {
+		stroke: $blue-500!important;
+		fill: $blue-500!important;
+	}
+
+	g.tick line{
+		display:none;
+	}
 }
 
- .c3-tooltip td>span {
-  margin-left: 10px;
-  margin-top: 5px;
-  border:1px solid white;
-}
-
-.c3-brush .extent {
-	stroke: #0099FF!important;
-	fill: #0099FF!important;
-}
-
-g.tick line{
-	display:none;
-}

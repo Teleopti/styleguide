@@ -29,13 +29,14 @@
 
 .wfm-table {
 	width: 100%;
-  text-align: left;
+	text-align: left;
 }
 
 .wfm-table td, .wfm-table th {
   border: 1px solid $gray012;
   color: $gray054;
   padding: $full-padding;
+  background-color:$white;
 }
 
 .wfm-table th, .wfm-table-header {
@@ -155,6 +156,10 @@
 
 .ui-grid-row-selected::before{
 	color: $gray087;
+}
+
+.big-table-wrapper, .big-table-footer-actions{
+	background-color:$white;
 }
 
 /*zebra stripe

@@ -216,6 +216,7 @@ md-option{
 .wfm-radio-list{
 	@extend .material-depth-1;
 	display: table;
+	background-color:$white;
 	table-layout: fixed;
 	width: 100%;
 	border-collapse: collapse;

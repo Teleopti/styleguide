@@ -50,6 +50,10 @@ body{
     color: rgba(0,0,0,0.54);
 }
 
+big-table-wrapper, .big-table-footer-actions{
+	background-color:$white;
+}
+
 .layout-container {
   width:100%;
   display: -webkit-flex;
