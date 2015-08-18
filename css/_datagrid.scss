@@ -33,13 +33,7 @@
 //Each grid cell has an isolated scope populated with the injected properties and cell-specific entities from its parent. These can be used in both the html template and the attribute expression.  
 //</ul>
 //  
-//Markup:
-//<selectable-data-grid record-items="recordItems" starting-offset="2" items-per-row="4" grid-headers="gridHeaders">
-//    <selectable-data-grid-cell unselectable=" $colIndex == 0">
-//        <div>ID: <span html-binder="$item.id"></span></div>
-//        <div>TEXT: <span html-binder="$item.text"></span></div>
-//    </selectable-data-grid-cell>
-//</selectable-data-grid>
+//Markup: datagrid.hbs
 //
 //Styleguide 2.5
 //    
