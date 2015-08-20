@@ -37,6 +37,11 @@
 			target: {
 				command: 'kss-node css styleguide css\styleguide.md --template kss-template'
 			}
+		},
+		karma: {
+			styleguide: {
+				configFile: 'karma.conf.js'
+			}
 		}
 	});
 
@@ -44,8 +49,10 @@
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-shell');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-karma');
 
 	// Default task(s).
-	grunt.registerTask('default', ['watch:styleguide']); 
+	grunt.registerTask('default', ['watch:styleguide']);
+	grunt.registerTask('test', ['karma:styleguide']);
 	grunt.registerTask('dist', ['sass:styleguide','sass:dist', 'shell', 'cssmin']); // this task is kind of package
 };

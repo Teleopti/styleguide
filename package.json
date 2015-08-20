@@ -12,11 +12,18 @@
     "bootstrap": "3.3.4"
   },
   "devDependencies": {
-    "grunt-contrib-cssmin": "^0.12.2",
+    "angular-mocks": "^1.4.4",
     "grunt": "0.4.5",
+    "grunt-contrib-cssmin": "^0.12.2",
     "grunt-contrib-watch": "0.6.1",
+    "grunt-karma": "^0.12.0",
     "grunt-sass": "0.18.1",
     "grunt-shell": "1.1.2",
+    "jasmine-core": "^2.3.4",
+    "karma": "^0.13.9",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-cli": "^0.1.0",
+    "karma-jasmine": "^0.3.6",
     "kss": ""
   },
   "homepage": "http://teleopti.github.io/styleguide/styleguide"

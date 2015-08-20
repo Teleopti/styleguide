@@ -1,4 +1,12 @@
-var app = angular.module('styleguideApp', ['ngMaterial', 'ui.grid', 'ui.grid.autoResize', 'ui.grid.exporter', 'ui.grid.selection', 'ui.bootstrap'])
+var app = angular.module('styleguideApp', [
+  'ngMaterial',
+  'ui.grid',
+  'ui.grid.autoResize',
+  'ui.grid.exporter',
+  'ui.grid.selection',
+  'ui.bootstrap',
+  'teleopti.wfm'
+])
 .controller('mainCtrl', function ($scope) {
   /*
   * Code for Grid
@@ -52,5 +60,57 @@ var chart = c3.generate({
     }
     return '';
   };
+
+
+
+    // selectable data grid
+    $scope.recordItems = [
+      { id: 1, text: 'A'},
+      { id: 2, text: 'B'},      
+      { id: 3, text: 'C'},
+      { id: 4, text: 'D'},
+      { id: 5, text: 'E'},
+      { id: 6, text: 'F'},
+      { id: 7, text: 'G'},
+      { id: 8, text: 'H'},
+      { id: 9, text: 'I'},
+      { id: 10, text: 'J'},
+      { id: 11, text: 'K'},
+      { id: 12, text: 'L'},
+      { id: 13, text: 'M'},
+      { id: 14, text: 'N'}
+    ];
+
+    $scope.firstRowOffset = 2;
+    $scope.gridHeaders = ['col-1', 'col-2', 'col-3', 'col-4'];
+
+    $scope.dateRecords = [
+   
+      {date: new Date('2015-08-16'), value: 3},
+      {date: new Date('2015-08-17'), value: 3},
+      {date: new Date('2015-08-18'), value: 3},
+      {date: new Date('2015-08-19'), value: 3},
+      {date: new Date('2015-08-20'), value: 3},
+      {date: new Date('2015-08-21'), value: 3},
+      {date: new Date('2015-08-22'), value: 3},
+      {date: new Date('2015-08-23'), value: 3},
+      {date: new Date('2015-08-24'), value: 3},
+      {date: new Date('2015-08-25'), value: 3},
+      {date: new Date('2015-08-26'), value: 3},
+      {date: new Date('2015-08-27'), value: 3},
+      {date: new Date('2015-08-28'), value: 3},
+      {date: new Date('2015-08-29'), value: 3},
+      {date: new Date('2015-08-30'), value: 3},
+      {date: new Date('2015-08-31'), value: 3},
+      {date: new Date('2015-09-01'), value: 3},
+      {date: new Date('2015-09-02'), value: 3},
+      {date: new Date('2015-09-03'), value: 3},
+      {date: new Date('2015-09-04'), value: 3},
+      {date: new Date('2015-09-05'), value: 3},
+      {date: new Date('2015-09-06'), value: 3},
+      {date: new Date('2015-09-07'), value: 3}
+   
+    ];
+
 
 });
