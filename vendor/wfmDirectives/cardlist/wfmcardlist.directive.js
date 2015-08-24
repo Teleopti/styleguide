@@ -1,36 +1,40 @@
 ﻿'use strict';
 
-
-
 (function () {
-	angular.module('teleopti.wfm.cardList', []);
+	angular.module('wfm.cardList', []);
 })();
 
 (function () {
 
-	function teleoptiCardDirectiveController() {
-
+	function wfmCardDirectiveController() {
 		var vm = this;
-
 		vm.isSelected = function () {
 			return vm.parentVm.isSelectedCard(vm);
 		};
-
 		vm.select = function () {
 			vm.parentVm.selectCard(vm);
 		}
 	};
 
-	function teleoptiCardDirective() {
+	function getWfmCardTemplate() {
+		return  '<md-card ng-class="vm.isSelected() ? \'wfm-card-selected material-depth-2\' : \'wfm-card-unselected\' ">' +
+				'<div ng-click=" vm.select()" class="wfm-card-title" transclude-id="header"></div>' +
+				'<div class="wfm-card-content" ng-show="vm.isSelected()">' +
+				'<div transclude-id="body"></div>' +
+				'</div>' +
+				'</md-card>';
+	}
+
+	function wfmCardDirective() {
 
 		return {
-			controller: 'TeleoptiCardCtrl',
+			controller: 'wfmCardCtrl',
 			controllerAs: 'vm',
 			bindToController: true,
 			scope: {},
-			templateUrl: "teleopti_card.html",
+			template: getWfmCardTemplate(),
 			transclude: true,
-			require: ['teleoptiCard', '^teleoptiCardList'],
+			require: ['wfmCard', '^wfmCardList'],
 			link: function (scope, elem, attr, ctrl, transcludeFn) {
 
 				var vm = ctrl[0];
@@ -69,15 +73,15 @@
 		};
 	};
 
-	angular.module('teleopti.wfm.cardList').controller('TeleoptiCardCtrl', teleoptiCardDirectiveController);
+	angular.module('wfm.cardList').controller('wfmCardCtrl', wfmCardDirectiveController);
 
-	angular.module('teleopti.wfm.cardList').directive('teleoptiCard', teleoptiCardDirective);
+	angular.module('wfm.cardList').directive('wfmCard', wfmCardDirective);
 
 }());
 
 (function() {
-	angular.module('teleopti.wfm.cardList')
-		.controller('TeleoptiCardListCtrl', function() {
+	angular.module('wfm.cardList')
+		.controller('wfmCardListCtrl', function() {
 
 				var vm = this;
 				vm.selectedCard = null;
@@ -90,14 +94,23 @@
 			}
 		);
 
-	angular.module("teleopti.wfm.cardList")
-		.directive("teleoptiCardList", function() {
+	function getWfmCardListTemplate() {
+		return '<md-content class="wfm-card-list-container">' +
+				'<md-list class="wfm-card-list">' +
+				'<md-content ng-transclude>' +
+				'</md-content>' +
+				'</md-list>' +
+				'</md-content>';
+	}
+
+	angular.module("wfm.cardList")
+		.directive("wfmCardList", function() {
 			return {
-				controller: 'TeleoptiCardListCtrl',
+				controller: 'wfmCardListCtrl',
 				controllerAs: 'vm',
 				bindToController: true,
 				transclude: true,
-				templateUrl: "teleopti_card_list.html"
+				template: getWfmCardListTemplate()
 
 			};
 		});

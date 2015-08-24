@@ -4,37 +4,33 @@
 //  Only one card can be opened at a time.The header and content of each card is completely customizable and any html elements provided within the &lt;card-header&gt; and  &lt;card-body&gt; tags will be rendered appropriately.
 //
 //Markup:
-//<div id="myChart"></div>
-//<teleopti-card-list>
-//	<teleopti-card ng-repeat="item in items">
+//<wfm-card-list>
+//	<wfm-card ng-repeat="item in items">
 //		<card-header>
 //			<span><i class="mdi" ng-class="item.title"></i></span>
 //			<span style="float: right;"><i class="mdi mdi-chevron-right"></i></span>
 //		</card-header>
 //		<card-body>
-//			<button class="wfm-fab info material-depth-1"><i class="mdi mdi-duck"><md-tooltip>Ducks</md-tooltip></i></button>
+//			<button class="wfm-fab info material-depth-1"><i class="mdi mdi-duck"></i></button>
 //		</card-body>
-//	</teleopti-card>
-//</teleopti-card-list>
+//	</wfm-card>
+// <h1 ng-show="false">adsfasdf</h1>
+//</wfm-card-list>
 //
 //Styleguide 2.4
 //
 
 
 /*Overrides bootstrap*/
-.teleopti-card-list {
+.wfm-card-list {
 	width: 100%;
 }
 
-.teleopti-card-list-container {
+.wfm-card-list-container {
 	max-height: 450px;
 }
 
-
-md-card {
-}
-
-.teleopti-card-unselected {
+.wfm-card-unselected {
 	margin-top: 10px;
 	margin-bottom: 10px;
 	cursor: pointer;
@@ -43,7 +39,7 @@ md-card {
 	margin-right: auto !important;
 }
 
-.teleopti-card-selected {
+.wfm-card-selected {
 	margin-top: 25px;
 	margin-bottom: 25px;
 	cursor: pointer;
@@ -55,22 +51,22 @@ md-card {
 	transition-timing-function: ease-out;
 }
 
-.teleopti-card-title {
+.wfm-card-title {
 	min-height: 35px;
 	line-height: 35px;
 	padding: 0 16px;
-	background-color: #99D6FF;
+	background-color: $blue-100 ;
 }
 
-.teleopti-card-content {
+.wfm-card-content {
 	padding: 10px 16px;
-	background-color: white;
+	background-color: $white;
 }
 
-teleopti-card:first-child .teleopti-card-selected {
+wfm-card:first-child .wfm-card-selected {
 	margin-top: 10px;
 }
 
-teleopti-card:last-child .teleopti-card-selected {
+wfm-card:last-child .wfm-card-selected {
 	margin-bottom: 10px;
 }

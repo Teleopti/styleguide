@@ -1,4 +1,4 @@
-var app = angular.module('styleguideApp', ['ngMaterial', 'ui.grid', 'ui.grid.autoResize', 'ui.grid.exporter', 'ui.grid.selection', 'ui.bootstrap','teleopti.wfm.cardList'])
+var app = angular.module('styleguideApp', ['ngMaterial', 'ui.grid', 'ui.grid.autoResize', 'ui.grid.exporter', 'ui.grid.selection', 'ui.bootstrap','wfm.cardList'])
 .controller('mainCtrl', function ($scope) {
   /*
   * Code for Grid
