@@ -8,7 +8,7 @@
 //	<wfm-card ng-repeat="item in items">
 //		<card-header>
 //			<span><i class="mdi" ng-class="item.title"></i></span>
-//			<span style="float: right;"><i class="mdi mdi-chevron-right"></i></span>
+//			<span class="chevron"><i class="mdi mdi-chevron-right"></i></span>
 //		</card-header>
 //		<card-body>
 //			<button class="wfm-fab info material-depth-1"><i class="mdi mdi-duck"></i></button>
@@ -30,12 +30,44 @@
 }
 
 .wfm-card-unselected {
-	margin-top: 10px;
-	margin-bottom: 10px;
+	margin-top: $full-padding *2;
+	margin-bottom: $full-padding *2;
 	cursor: pointer;
 	width: 90%;
 	margin-left: auto !important;
 	margin-right: auto !important;
+
+	md-content{
+		background-color:transparent!important;
+	}
+}
+
+.wfm-card-selected {
+	margin-top: 25px;
+	margin-bottom: 25px;
+	cursor: pointer;
+	width: 95%;
+	margin-left: auto !important;
+	margin-right: auto !important;
+	transition-property: width, height;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-out;
+
+	.chevron{
+		transition:all 0.2s ease-in-out;
+		transform:rotate(90deg);
+	}
+}
+
+.wfm-card-title {
+	min-height: 35px;
+	line-height: 35px;
+	padding: 0 $full-padding *3;
+	background-color: $blue-100 ;
+
+	.chevron{
+		float: right;
+	}
 }
 
 .wfm-card-selected {
@@ -50,22 +82,15 @@
 	transition-timing-function: ease-out;
 }
 
-.wfm-card-title {
-	min-height: 35px;
-	line-height: 35px;
-	padding: 0 16px;
-	background-color: $blue-100 ;
-}
-
 .wfm-card-content {
-	padding: 10px 16px;
+	padding: $full-padding *2 16px;
 	background-color: $white;
 }
 
 wfm-card:first-child .wfm-card-selected {
-	margin-top: 10px;
+	margin-top: $full-padding *2;
 }
 
 wfm-card:last-child .wfm-card-selected {
-	margin-bottom: 10px;
+	margin-bottom: $full-padding *2;
 }
