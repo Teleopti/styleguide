@@ -36,10 +36,6 @@
 	width: 90%;
 	margin-left: auto !important;
 	margin-right: auto !important;
-
-	md-content{
-		background-color:transparent!important;
-	}
 }
 
 .wfm-card-selected {
@@ -68,18 +64,6 @@
 	.chevron{
 		float: right;
 	}
-}
-
-.wfm-card-selected {
-	margin-top: 25px;
-	margin-bottom: 25px;
-	cursor: pointer;
-	width: 95%;
-	margin-left: auto !important;
-	margin-right: auto !important;
-	transition-property: width, height;
-	transition-duration: 0.2s;
-	transition-timing-function: ease-out;
 }
 
 .wfm-card-content {
