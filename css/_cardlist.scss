@@ -4,11 +4,23 @@
 //  Only one card can be opened at a time.The header and content of each card is completely customizable and any html elements provided within the &lt;card-header&gt; and  &lt;card-body&gt; tags will be rendered appropriately.
 //
 //Markup:
-//<wfm-card-list>
+//<wfm-card-list multi-select>
 //	<wfm-card ng-repeat="item in items">
 //		<card-header>
 //			<span><i class="mdi" ng-class="item.title"></i></span>
-//			<span class="chevron"><i class="mdi mdi-chevron-right"></i></span>
+//			multi-select
+//			<span class="chevron"><i class="mdi mdi-chevron-down"></i></span>
+//		</card-header>
+//		<card-body>
+//			<button class="wfm-fab info material-depth-1"><i class="mdi mdi-duck"></i></button>
+//		</card-body>
+//	</wfm-card>
+//</wfm-card-list>
+//<wfm-card-list >
+//	<wfm-card ng-repeat="item in items">
+//		<card-header>
+//			<span><i class="mdi" ng-class="item.title"></i></span>
+//			<span class="chevron"><i class="mdi mdi-chevron-down"></i></span>
 //		</card-header>
 //		<card-body>
 //			<button class="wfm-fab info material-depth-1"><i class="mdi mdi-duck"></i></button>
@@ -25,37 +37,8 @@
 	width: 100%;
 }
 
-.wfm-card-list-container {
-	max-height: 450px;
-}
-
-.wfm-card-unselected {
-	margin-top: $full-padding *2;
-	margin-bottom: $full-padding *2;
-	cursor: pointer;
-	width: 90%;
-	margin-left: auto !important;
-	margin-right: auto !important;
-}
-
-.wfm-card-selected {
-	margin-top: 25px;
-	margin-bottom: 25px;
-	cursor: pointer;
-	width: 95%;
-	margin-left: auto !important;
-	margin-right: auto !important;
-	transition-property: width, height;
-	transition-duration: 0.2s;
-	transition-timing-function: ease-out;
-
-	.chevron{
-		transition:all 0.2s ease-in-out;
-		transform:rotate(90deg);
-	}
-}
-
 .wfm-card-title {
+	cursor: pointer;
 	min-height: 35px;
 	line-height: 35px;
 	padding: 0 $full-padding *3;
@@ -66,9 +49,32 @@
 	}
 }
 
-.wfm-card-content {
-	padding: $full-padding *2 16px;
-	background-color: $white;
+md-content {
+	padding-bottom: $full-padding *2;
+}
+
+.wfm-card-unselected{
+	width: 90%;
+	margin: $full-padding *2 auto;
+    transition: all .2s ease-out;
+}
+
+.wfm-card-unselected:hover{
+	background-color: $blue-100;
+	box-shadow: 0 8px 17px 0 rgba(0,0,0,.2);
+}
+
+.wfm-card-selected {
+	margin: 25px auto;
+	width: 95%;
+	transition-property: width, height;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-out;
+
+	.chevron{
+		transition:all 0.2s ease-in-out;
+		transform:rotate(180deg);
+	}
 }
 
 wfm-card:first-child .wfm-card-selected {
@@ -77,4 +83,15 @@ wfm-card:first-child .wfm-card-selected {
 
 wfm-card:last-child .wfm-card-selected {
 	margin-bottom: $full-padding *2;
+}
+
+.wfm-card-selected .wfm-card-title{
+	background-color: $blue-100;
+	transition: background-color 0.3s linear;
+	transition: box-shadow 0.3s linear;
+}
+
+.wfm-card-content {
+	padding: $full-padding *2 16px;
+	background-color: $white;
 }

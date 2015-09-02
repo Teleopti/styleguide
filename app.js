@@ -54,7 +54,7 @@ var chart = c3.generate({
   };
 
 /*code for card list*/
-	$scope.items = [{ title: 'mdi-chart-bar' }, { title: 'mdi-chart-bar' }, { title: 'mdi-chart-bar' }, { title: 'mdi-chart-bar' }];
+	$scope.items = [{ title: 'mdi-chart-bar' }, { title: 'mdi-chart-bar' }];
 
 
 });
