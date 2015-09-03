@@ -35,6 +35,7 @@ md-progress-linear[md-mode=buffer] .md-dashed:before {
 //
 //Markup:
 //<md-progress-circular md-mode="indeterminate"></md-progress-circular>
+//<md-progress-circular class="mini-spinner" md-mode="indeterminate"></md-progress-circular>
 //
 //Styleguide 1.9.2
 //
@@ -51,4 +52,8 @@ md-progress-circular .md-inner .md-gap {
 
 md-progress-circular.md-default-theme .md-inner .md-right .md-half-circle {
   border-right-color: $pink-500;
+}
+
+.mini-spinner {
+	    transform: scale(0.4)!important;
 }
