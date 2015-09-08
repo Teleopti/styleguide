@@ -1,0 +1,62 @@
+{
+  "name": "angular-moment",
+  "version": "0.8.2",
+  "main": "angular-moment.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/urish/angular-moment.git"
+  },
+  "dependencies": {
+    "moment": ">=2.0.0 <2.9.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "load-grunt-tasks": "0.6.0",
+    "grunt-contrib-uglify": "0.5.1",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-karma": "~0.8.2",
+    "karma": "~0.12.0",
+    "karma-coverage": "~0.2.0",
+    "karma-jasmine": "~0.2.1",
+    "karma-phantomjs-launcher": "~0.1.1",
+    "coveralls": "~2.11.0",
+    "grunt-ngdocs": "^0.2.1"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "gitHead": "62b9f6027ebcc9d95ab07626a6d80ede4b170c65",
+  "description": "angular-moment\r ==============",
+  "bugs": {
+    "url": "https://github.com/urish/angular-moment/issues"
+  },
+  "homepage": "https://github.com/urish/angular-moment",
+  "_id": "angular-moment@0.8.2",
+  "_shasum": "a9e87447d7385407e7f6c7a87610dd97184a6ddf",
+  "_from": "angular-moment@0.8.2",
+  "_npmVersion": "1.4.23",
+  "_npmUser": {
+    "name": "urish",
+    "email": "uri@urish.org"
+  },
+  "maintainers": [
+    {
+      "name": "urish",
+      "email": "uri@urish.org"
+    }
+  ],
+  "dist": {
+    "shasum": "a9e87447d7385407e7f6c7a87610dd97184a6ddf",
+    "size": 16070,
+    "noattachment": false,
+    "tarball": "http://registry.npm.taobao.org/angular-moment/download/angular-moment-0.8.2.tgz"
+  },
+  "directories": {},
+  "publish_time": 1410131957794,
+  "_cnpm_publish_time": 1410131957794,
+  "_resolved": "https://registry.npm.taobao.org/angular-moment/download/angular-moment-0.8.2.tgz",
+  "readme": "ERROR: No README data found!"
+}
