@@ -2,7 +2,7 @@
 
     'use strict';
 
-    angular.module('wfm.daterangepicker', []).directive('dateRangePicker', ['$filter', dateRangePicker]);
+    angular.module('wfm.daterangepicker', ['angularMoment']).directive('dateRangePicker', ['$filter', dateRangePicker]);
 
     function dateRangePicker($filter) {
         return {
@@ -19,7 +19,7 @@
         }
 
         function dateRangePickerCtrl($scope, $element) {
-
+            
             $element.addClass('wfm-date-range-picker-wrap');
             $scope.setRangeClass = setRangeClass;
             $scope.isInvalid = isInvalid;
