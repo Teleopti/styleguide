@@ -9,15 +9,21 @@
   "author": "Teleopti",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "3.3.4"
+    "angular": "^1.4.5",
+    "angular-animate": "^1.4.5",
+    "angular-aria": "^1.4.5",
+    "angular-material": "^0.11.0",
+    "angular-moment": "^0.10.3",
+    "angular-route": "^1.4.5",
+    "bootstrap": "3.3.4",
+    "moment": "^2.10.6"
   },
   "devDependencies": {
     "grunt-contrib-cssmin": "^0.12.2",
     "grunt": "0.4.5",
     "grunt-contrib-watch": "0.6.1",
     "grunt-sass": "0.18.1",
-    "grunt-shell": "1.1.2",
-    "kss": ""
+    "grunt-shell": "1.1.2"
   },
   "homepage": "http://teleopti.github.io/styleguide/styleguide"
 }
