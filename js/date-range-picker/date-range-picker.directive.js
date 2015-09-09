@@ -2,203 +2,127 @@
 
     'use strict';
 
-    angular.module('wfm.daterangepicker', []).directive('dateRangePicker', dateRangePicker);
+    angular.module('wfm.daterangepicker', []).directive('dateRangePicker', ['$filter', dateRangePicker]);
 
-    function dateRangePicker() {
+    function dateRangePicker($filter) {
+        return {
+            template: getHtmlTemplate(),
+            scope: {
+                startDate: '=',
+                endDate: '=',
+                disabled: '=?',
+                errors: '=?'
+            },
+            controller: ['$scope', '$element', dateRangePickerCtrl],
+            require: ["dateRangePicker"],
+            link: postlink
+        }
 
-	var startDateSymbol,
-	    endDateSymbol,
-	    customClassSymbol,
-	    disableSymbol,
-	    errorsSymbol,
-	    errorClassSymbol,
-	    validityCheckSymbol,
-	    hideMessageSymbol;
+        function dateRangePickerCtrl($scope, $element) {
 
-	return {
-	    template: getHtmlTemplate(),
-	    controller: ['$scope', '$attrs', dateRangePickerCtrl],
-	    compile: compileFn
-	};
+            $element.addClass('wfm-date-range-picker-wrap');
+            $scope.setRangeClass = setRangeClass;
+            $scope.isInvalid = isInvalid;
+        
+            if (!angular.isDefined($scope.errors)) $scope.errors = [];
 
-	function compileFn(tElement, tAttributes) {
-
-	    startDateSymbol = tAttributes.startDate;
-	    endDateSymbol = tAttributes.endDate;
-	    customClassSymbol = '$$setRangeClass';
-	    disableSymbol = tAttributes.ngDisabled;
-	    errorsSymbol = tAttributes.errors;
-	    errorClassSymbol = '$$dateRangePickerErrorClass';
-	    validityCheckSymbol = '$$dateRangePickerValid';
-	    hideMessageSymbol = '$$dateRangePickerHideMessage';
-
-	    tElement.addClass('wfm-date-range-picker-wrap');
-
-	    var datepickerElements = tElement.find('datepicker');
-	    datepickerElements.attr('custom-class', customClassSymbol + '(date, mode)');
-
-	    if (disableSymbol) {
-		datepickerElements.attr('ng-disabled', disableSymbol);
-	    }
-	    angular.forEach(datepickerElements, function (ce) {
-		var $ce = angular.element(ce);
-		if ($ce.hasClass('datepicker-start-date'))
-		  $ce.attr('ng-model', startDateSymbol);
-		if ($ce.hasClass('datepicker-end-date'))
-		  $ce.attr('ng-model', endDateSymbol);
-	    });
-
-	    var labelElements = tElement.find('strong');
-
-	    angular.forEach(labelElements, function (ce) {
-		var $ce = angular.element(ce);
-
-		if ($ce.hasClass('datepicker-start-date'))
-		  $ce.text('{{' + startDateSymbol + ' | amDateFormat: "LL" }}');
-		if ($ce.hasClass('datepicker-end-date'))
-		  $ce.text('{{' + endDateSymbol + ' | amDateFormat: "LL" }}');
-	    });
-
-	    var childrenElements = tElement.children('div');
-	    angular.forEach(childrenElements, function (ce) {
-		var $ce = angular.element(ce);
-		if ($ce.hasClass('date-range-pickers')) {
-		    $ce.attr('ng-class', '{ ' +
-			     '"ng-valid" : !' + validityCheckSymbol + '() ' +
-			     ', "ng-invalid" : ' + validityCheckSymbol + '() ' +
-			     ', "ng-invalid-order" : ' + errorClassSymbol + '("order") ' +
-			     ', "ng-invalid-empty" : ' + errorClassSymbol + '("empty") ' +
-			     '} ');
-		} else if ($ce.hasClass('date-range-picker-message')) {
-		    $ce.attr('ng-if', '!' + hideMessageSymbol);
-		}
-	    });
-
-	    return function link(scope, elem, attrs) {
-
-		scope.$watch(function () {
-		    var startDate = readSymbolValue(scope, startDateSymbol),
-			endDate = readSymbolValue(scope, endDateSymbol);
-		    return {
-			startDate: startDate ? moment(startDate).format('LL') : '',
-			endDate: endDate ? moment(endDate).format('LL') : ''
-		    }
-		}, function () {
-		    var startDate = readSymbolValue(scope, startDateSymbol),
-			endDate = readSymbolValue(scope, endDateSymbol);
-		    validityCheck(startDate, endDate);
-		    refreshDatepickers(startDate, endDate);
-		}, true);
-
-		function refreshDatepickers(startDate, endDate) {
-		    setSymbolValue(scope, startDateSymbol, angular.copy(startDate));
-		    setSymbolValue(scope, endDateSymbol, angular.copy(endDate));
-		}
-
-		function validityCheck(startDate, endDate) {
-		    var errors = [];
-		    if (!startDate || !endDate) {
-			errors.push('empty');
-		    } else if (startDate > endDate) {
-			errors.push('order');
-		    }
-		    setSymbolValue(scope, errorsSymbol, errors);
-		}
-	    };
-	}
-
-	function dateRangePickerCtrl($scope, $attrs) {
-	    $scope[customClassSymbol] = function setRangeClass(date, mode) {
-		if (mode === 'day') {
-		    var startDate = readSymbolValue($scope, startDateSymbol),
-			endDate = readSymbolValue($scope, endDateSymbol);
-
+            this.refreshDatepickers = refreshDatepickers;
+            this.checkValidity = checkValidity;
+            
+            function setRangeClass(date, mode) {
+	        if (mode === 'day') {
+		    var startDate = $scope.startDate,
+		        endDate = $scope.endDate;
+                    
 		    if (startDate && endDate && startDate <= endDate) {
-			var dayToCheck = new Date(date).setHours(12, 0, 0, 0);
-			var start = new Date(startDate).setHours(12, 0, 0, 0);
-			var end = new Date(endDate).setHours(12, 0, 0, 0);
-
-			if (dayToCheck >= start && dayToCheck <= end) {
+		        var dayToCheck = new Date(date).setHours(12, 0, 0, 0);
+		        var start = new Date(startDate).setHours(12, 0, 0, 0);
+		        var end = new Date(endDate).setHours(12, 0, 0, 0);
+                        
+		        if (dayToCheck >= start && dayToCheck <= end) {
 			    return 'in-date-range';
-			}
+		        }
 		    }
-		}
-		return '';
-	    };
-
-	    $scope[validityCheckSymbol] = function () {
-		var errors = readSymbolValue($scope, errorsSymbol);
-		return errors && errors.length > 0;
-	    };
-
-	    $scope[errorClassSymbol] = function (e) {
-		var errors = readSymbolValue($scope, errorsSymbol);
-		return errors && errors.indexOf(e) >= 0;
+	        }
+	        return '';
 	    }
 
-	    $scope[hideMessageSymbol] = angular.isDefined($attrs.hideMessage);
+            function isInvalid(symbol) {
+                if (symbol) {
+                    return $scope.errors.indexOf(symbol) >= 0;
+                } else {
+                    return $scope.errors.length > 0;
+                }                
+            }
 
-	}
-
-	function readSymbolValue(obj, symbol) {
-	    var pieces = symbol.split('.'),
-		curObj = obj;
-
-	    for (var i = 0; i < pieces.length; i++) {
-		if (angular.isDefined(curObj[pieces[i]])) {
-		    curObj = curObj[pieces[i]];
-		} else {
-		    return undefined;
+            function checkValidity() {
+                var errors = [];
+		if (!$scope.startDate || !$scope.endDate) {
+		    errors.push('empty');
+		} else if ($scope.startDate > $scope.endDate) {
+		    errors.push('order');
 		}
-	    }
 
-	    return curObj;
-	}
+                if (errors.length != $scope.errors.length || !(function compareArray(a1, a2 ){
+                    for (var i = 0; i < a1.length; i++) {
+                        if (a1[i] !== a2[i]) return false;
+                    }
+                    return true;
+                } )(errors, $scope.errors)) {
+                    $scope.errors = errors;
+                }
+                
+            }
 
-	function setSymbolValue(obj, symbol, value) {
-	    var pieces = symbol.split('.'),
-		curObj = obj;
-
-	    for (var i = 0; i < pieces.length - 1; i++) {
-		if (angular.isDefined(curObj[pieces[i]])) {
-		    curObj = curObj[pieces[i]];
-		} else {
-		    return undefined;
+            function refreshDatepickers(startDate, endDate) {
+		$scope.startDate = angular.copy($scope.startDate);
+		$scope.endDate = angular.copy($scope.endDate);
+	    }                        
+        }
+        
+        function postlink(scope, elem, attrs, ctrls) {
+            var ctrl = ctrls[0];            
+            scope.$watch(function () {
+		return {
+		    startDate: scope.startDate ? $filter('date')(scope.startDate, 'yyyy-mm-dd'): '',
+		    endDate: scope.endDate ? $filter('date')(scope.endDate, 'yyyy-mm-dd'): ''
 		}
-	    }
+	    }, function (newValue) {
 
-	    curObj[pieces[pieces.length - 1]] = value;
-	    return value;
-	}
+                ctrl.checkValidity();
+                ctrl.refreshDatepickers();
+	    }, true);
 
+            scope.showMessage = !angular.isDefined(attrs.hideMessage); 
+        }
     }
 
     function getHtmlTemplate() {
 
-        return "<div class=\"wfm-block clearfix date-range-pickers\">" +
+        return "<div class=\"wfm-block clearfix\" ng-class=\"{ 'ng-valid': !isInvalid(), 'ng-invalid': isInvalid(), 'ng-invalid-order': isInvalid('order'), 'ng-invalid-empty': isInvalid('empty')}\">" +
           "    <div class=\"wfm-datepicker-wrap no-boxshadow\">" +
           "      <div class=\"sub-header\">" +
-          "	<span translate>From</span> <strong class=\"datepicker-start-date\"></strong>" +
-          "	<div class=\"icon-set  form-validation-sign datepickerfix\">" +
+          "	<span translate>From</span> <strong>{{ startDate | amDateFormat: \"LL\" }}</strong>" +
+          "	<div class=\"icon-set form-validation-sign datepickerfix\">" +
           "	  <i class=\"mdi mdi-check success right-sign \"></i>" +
           "	  <i class=\"mdi mdi-close danger wrong-sign\"></i>" +
           "	</div>" +
           "      </div>" +
-          "      <datepicker show-weeks=\"true\" class=\"wfm-datepicker datepicker-start-date\"></datepicker>" +
+          "      <datepicker name=\"startDatePicker\" show-weeks=\"true\" class=\"wfm-datepicker datepicker-start-date\" ng-model=\"startDate\" ng-disabled=\"disabled\" custom-class=\"setRangeClass(date, mode)\"></datepicker>" +
           "    </div>" +
           "    <div class=\"wfm-datepicker-wrap no-boxshadow\">" +
           "      <div class=\"sub-header\">" +
-          "	<span translate>To</span> <strong class=\"datepicker-end-date\"></strong>" +
-          "	<div class=\"icon-set  form-validation-sign datepickerfix\">" +
+          "	<span translate>To</span> <strong>{{ endDate | amDateFormat: \"LL\" }}</strong>" +
+          "	<div class=\"icon-set form-validation-sign datepickerfix\">" +
           "	  <i class=\"mdi mdi-check success right-sign \"></i>" +
           "	  <i class=\"mdi mdi-close danger wrong-sign\"></i>" +
           "	</div>" +
           "      </div>" +
-          "      <datepicker show-weeks=\"true\" class=\"wfm-datepicker datepicker-end-date\"></datepicker>" +
+          "      <datepicker show-weeks=\"true\" class=\"wfm-datepicker datepicker-end-date\" ng-model=\"endDate\" ng-disabled=\"disabled\" custom-class=\"setRangeClass(date, mode)\"></datepicker>" +
           "    </div>" +
           "  </div>" +
-          "<div class=\"error-msg-container ng-invalid-order alert-error notice-spacer date-range-picker-message\"><i class='mdi mdi-alert-octagon'></i> <span translate>StartDateMustBeEqualToOrEarlierThanEndDate</span></div>" +
-          "<div class=\"error-msg-container ng-invalid-empty alert-error notice-spacer date-range-picker-message\"><i class='mdi mdi-alert-octagon'></i> <span translate>StartDateAndEndDateMustBeSet</span></div>" ;
+          "<div class=\"error-msg-container ng-invalid-order alert-error notice-spacer\" ng-if=\"showMessage\"><i class='mdi mdi-alert-octagon'></i> <span translate>StartDateMustBeEqualToOrEarlierThanEndDate</span></div>" +
+          "<div class=\"error-msg-container ng-invalid-empty alert-error notice-spacer\" ng-if=\"showMessage\"><i class='mdi mdi-alert-octagon'></i> <span translate>StartDateAndEndDateMustBeSet</span></div>" ;
 
     }
 
