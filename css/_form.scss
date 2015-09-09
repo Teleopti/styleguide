@@ -145,7 +145,7 @@ md-option{
 // Radio buttons are a group of options that can only have one item selected at a time.  
 //
 //Markup:
-//	<form>
+//<form>
 //	<div class="wfm-radio">
 //		<input type="radio" name="group1" id="radio1" checked="true"/>
 //		<label for="radio1">
@@ -160,14 +160,19 @@ md-option{
 //			<span class="wfm-radio-label">That</span>
 //		</label>
 //	</div>
-//	<div class="wfm-radio">
-//		<input type="radio" name="group1" id="radio3" />
-//		<label for="radio3">
-//			<span class="wfm-radio-toggle"></span>
-//			<span class="wfm-radio-label">These</span>
-//		</label>
+//</form>
+//<h6>Using ng-repeat:</h6>
+//<form>
+//	<div ng-repeat="item in demos">
+//		<div class="wfm-radio">
+//			<label>
+//				<input type="radio" name="radio" value="value">
+//				<span class="wfm-radio-toggle"></span>
+//				<span class="wfm-radio-label">Im looped out!</span>
+//			</label>
+//		</div>
 //	</div>
-//	</form>
+//</form>
 //
 //Styleguide 1.4.5
 //
@@ -189,7 +194,8 @@ md-option{
 		cursor: pointer;
 	}
 	
-	input[type=radio]:checked ~ label .wfm-radio-toggle{
+	input[type=radio]:checked ~ label .wfm-radio-toggle, 
+	input[type=radio]:checked ~ .wfm-radio-toggle{
 		background-color: $blue-300;
 	}
 	
@@ -242,7 +248,7 @@ md-option{
 //Checkboxes are used for selecting multiple input options.
 //
 //Markup:
-//	<form>
+//<form>
 //	<div class="wfm-checkbox">
 //		<input type="checkbox" id="check1" checked="true"/>
 //		<label for="check1">
@@ -257,14 +263,19 @@ md-option{
 //			<span class="wfm-checkbox-label">Check </span>
 //		</label>
 //	</div>
-//	<div class="wfm-checkbox">
-//		<input type="checkbox" id="check3" />
-//		<label for="check3">
-//			<span class="wfm-checkbox-toggle"></span>
-//			<span class="wfm-checkbox-label">Got it</span>
-//		</label>
+//</form>
+//<h6>Using ng-repeat:</h6>
+//<form>
+//	<div ng-repeat="item in demos">
+//		<div class="wfm-checkbox">
+//			<label>
+//				<input type="checkbox" name="checkbox" value="value">
+//				<span class="wfm-checkbox-toggle"></span>
+//				<span class="wfm-checkbox-label">Im looped out!</span>
+//			</label>
+//		</div>
 //	</div>
-//	</form>
+//</form>
 //
 //Styleguide 1.4.7
 //
@@ -289,7 +300,8 @@ md-option{
 		cursor: pointer;
 	}
 	
-	input[type=checkbox]:checked ~ label .wfm-checkbox-toggle:after{
+	input[type=checkbox]:checked ~ label .wfm-checkbox-toggle:after,
+	input[type=checkbox]:checked ~ .wfm-checkbox-toggle:after{
 		background-color: $blue-300;
 		content: " ✓";
 		text-align: center;

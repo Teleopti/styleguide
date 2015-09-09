@@ -1,5 +1,7 @@
 var app = angular.module('styleguideApp', ['ngMaterial', 'ui.grid', 'ui.grid.autoResize', 'ui.grid.exporter', 'ui.grid.selection', 'ui.bootstrap','wfm.cardList'])
 .controller('mainCtrl', function ($scope) {
+  /* Dummy data*/
+    $scope.demos = [ {"id": "50d5ad" } , {"id": "678ffr" },{"id": "50d5ad" } , {"id": "678ffr" } ];
   /*
   * Code for Grid
   */
