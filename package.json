@@ -23,7 +23,15 @@
     "grunt": "0.4.5",
     "grunt-contrib-watch": "0.6.1",
     "grunt-sass": "0.18.1",
-    "grunt-shell": "1.1.2"
+    "grunt-shell": "1.1.2",
+    "grunt-karma": "^0.12.0",
+    "jasmine-core": "^2.3.4",
+    "karma": "^0.13.9",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-cli": "^0.1.0",
+    "karma-jasmine": "^0.3.6",
+    "angular-mocks": "^1.4.4",
+    "kss": ""
   },
   "homepage": "http://teleopti.github.io/styleguide/styleguide"
 }
