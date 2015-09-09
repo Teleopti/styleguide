@@ -21,14 +21,14 @@
 //<tr><th>Attribute Name</th><th>Usage</th><th>Required</th></tr>  
 //<tr><td>start-date</td><td>Bind to period start date</td><td>true</td></tr>
 //<tr><td>end-date</td><td>Bind to period end date</td><td>true</td></tr>
-//<tr><td>errors</td><td>Bind to errors. Its value will be set by the picker to an array of error-keys. The pre-defined error keys are 'order' and 'empty'</td><td>true</td></tr>
+//<tr><td>errors</td><td>Bind to errors. Its value will be set by the picker to an array of error-keys. The pre-defined error keys are 'order' and 'empty'</td><td>false</td></tr>
 //<tr><td>hide-message</td><td>mute the error message</td><td>false</td></tr>
 //</table>
 //
 //
 //  
 //Markup:
-//<date-range-picker start-date="startDate" end-date="endDate" errors="errors"></date-range-picker>
+//<date-range-picker start-date="startDate" end-date="endDate"></date-range-picker>
 //
 //Styleguide 2.2
 //
