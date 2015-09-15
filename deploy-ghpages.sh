@@ -8,8 +8,8 @@
  cp -R ../styleguide ./styleguide
  cp -R ../vendor ./vendor
  cp -R ../css ./css
+ cp -R ../node_modules ./node_modules
  cp ../app.js ./app.js
- npm install
 
  git add .
 
