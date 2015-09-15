@@ -8,6 +8,7 @@
  cp -R ../styleguide ./styleguide
  cp -R ../vendor ./vendor
  cp -R ../css ./css
+ cp -R ../js ./js
 
  cp -R ../node_modules ./node_modules; find ./node_modules -type l -exec rm -f {} \;
  rm -rf ./node_modules/bootstrap/docs
