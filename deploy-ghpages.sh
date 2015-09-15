@@ -22,6 +22,8 @@
 	cp ../.npmignore ./.npmignore
 	cp ../package.json ./package.json
 	
+	rm -rf ./node_modules
+
 	npm pack
 	
 	cd ..
