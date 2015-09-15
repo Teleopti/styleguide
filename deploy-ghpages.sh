@@ -9,7 +9,8 @@
  cp -R ../vendor ./vendor
  cp -R ../css ./css
  cp ../app.js ./app.js
- 
+ npm install
+
  git add .
 
  if test -n "$(git status --porcelain)"; then
