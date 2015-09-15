@@ -91,7 +91,7 @@
 }
 
 .wfm-btn-invis-default {
-	color: $gray100;
+	color: $gray100!important;
 	background-color: transparent;
 	
 	&:hover{
@@ -100,7 +100,7 @@
 }
 
 .wfm-btn-invis-primary {
-	color: $blue-500;
+	color: $blue-500!important;
 	background-color: transparent;
 	
 	&:hover{
@@ -109,7 +109,7 @@
 }
 
 .wfm-btn-invis-disabled {
-	color: $gray026;
+	color: $gray026!important;
 	background-color: transparent;
 	
 	&:hover{
@@ -118,7 +118,7 @@
 }
 
 .wfm-btn-primary-disabled{
-	color: $gray026;
+	color: $gray026!important;
 	background-color: $gray012;
 	
 	&:hover{
@@ -127,7 +127,7 @@
 }
 
 .wfm-btn-default {
-	color: $gray087;
+	color: $gray087!important;
 	background-color: $white;
 	@extend .material-depth-1;
 	
