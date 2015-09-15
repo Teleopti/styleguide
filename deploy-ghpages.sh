@@ -12,7 +12,7 @@
  cp -R ../node_modules ./node_modules; find ./node_modules -type l -exec rm -f {} \;
  cp ../app.js ./app.js
 
- git add .
+ git add . -A
 
  if test -n "$(git status --porcelain)"; then
     # Uncommitted changes
