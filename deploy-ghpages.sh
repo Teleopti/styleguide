@@ -8,7 +8,8 @@
  cp -R ../styleguide ./styleguide
  cp -R ../vendor ./vendor
  cp -R ../css ./css
- cp -R ../node_modules ./node_modules
+
+ cp -R ../node_modules ./node_modules; find ./node_modules -type l -exec rm -f {} \;
  cp ../app.js ./app.js
 
  git add .
@@ -21,7 +22,7 @@
 	# Create version package and publish to Release
 	cp ../.npmignore ./.npmignore
 	cp ../package.json ./package.json
-	
+
 	rm -rf ./node_modules
 
 	npm pack
