@@ -7,7 +7,7 @@ css/main.min.css
 *.sln
 *.suo
 *.idea
-
+*~
 
 *.log
 

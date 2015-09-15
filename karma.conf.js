@@ -15,11 +15,13 @@ module.exports = function(config) {
 
         // list of files / patterns to load in the browser
         files: [
-
-            'https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.js',
-            'node_modules/angular-mocks/angular-mocks.js',
-            'vendor/teleopti/teleopti.module.js',
-            'vendor/teleopti/*.js'
+          'node_modules/moment/moment.js',
+          'node_modules/angular/angular.min.js',
+          'node_modules/angular-moment/angular-moment.min.js',
+          'node_modules/angular-mocks/angular-mocks.js',
+          'vendor/teleopti/teleopti.module.js',
+          'vendor/teleopti/*.js',
+          'js/*/*.js'
         ],
 
 
