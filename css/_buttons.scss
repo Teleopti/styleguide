@@ -42,18 +42,24 @@
 //The floating action button functions much like the primary raised button in that there should preferably only be one per view, indicating the primary positive action. More about when to use it can be found in the <a href="http://www.google.com/design/spec/components/buttons.html#buttons-floating-action-button">google material guidelines.</a>
 //
 //Markup:
-//<button class="wfm-fab"><i class="mdi mdi-account"></i></button>
-//<md-tooltip>My account</md-tooltip>
-//<button class="wfm-fab info"><i class="mdi mdi-arrow-right"></i></button>
-//<md-tooltip>Carry on</md-tooltip>
-//<button class="wfm-fab success"><i class="mdi mdi-plus"></i></button>
-//<md-tooltip>Add a thing</md-tooltip>
-//<button class="wfm-fab mini"><i class="mdi mdi-account"></i></button>
-//<md-tooltip>My account</md-tooltip>
-//<button class="wfm-fab mini info"><i class="mdi mdi-arrow-right"></i></button>
-//<md-tooltip>Carry on</md-tooltip>
-//<button class="wfm-fab mini success"><i class="mdi mdi-plus"></i></button>
-//<md-tooltip>Add a thing</md-tooltip>
+//<button class="wfm-fab"><i class="mdi mdi-account"></i>
+//	<md-tooltip>My account</md-tooltip>
+//</button>
+//<button class="wfm-fab info"><i class="mdi mdi-arrow-right"></i>
+//	<md-tooltip>Carry on</md-tooltip>
+//</button>
+//<button class="wfm-fab success"><i class="mdi mdi-plus"></i>
+//	<md-tooltip>Add a thing</md-tooltip>
+//</button>
+//<button class="wfm-fab mini"><i class="mdi mdi-account"></i>
+//	<md-tooltip>My account</md-tooltip>
+//</button>
+//<button class="wfm-fab mini info"><i class="mdi mdi-arrow-right"></i>
+//	<md-tooltip>Carry on</md-tooltip>
+//</button>
+//<button class="wfm-fab mini success"><i class="mdi mdi-plus"></i>
+//	<md-tooltip>Add a thing</md-tooltip>
+//</button>
 //
 //Styleguide 1.6.3
 //

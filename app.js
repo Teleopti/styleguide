@@ -22,6 +22,14 @@ var app = angular.module('styleguideApp', ['ngMaterial', 'ui.grid', 'ui.grid.aut
   };
   $scope.gridOptions.enableGridMenu = true;
 
+  /*code for select*/
+  $scope.sizes = [
+    "small (12-inch)",
+    "medium (14-inch)",
+    "large (16-inch)",
+    "insane (42-inch)"
+  ];
+
 
   /*Code for the chart*/
 var chart = c3.generate({
