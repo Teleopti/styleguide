@@ -12,6 +12,8 @@
 //	<input type="text" placeholder="Name..."  />
 // <br/>
 //	<input type="password" placeholder="Password..." />
+// <br/>
+//	<input type="number" placeholder="Numbers..." />
 //
 //Styleguide 1.4.1
 //
@@ -38,7 +40,7 @@ input[type='text'], input[type='password']{
 	height: 20px;
 }
 
-input[type='text'], input[type='password'], select{
+input[type='text'],[type='number'], input[type='password'], select{
 	border: none;
 	color: $gray087;
 	border-bottom: 1px solid $gray-300;
