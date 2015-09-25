@@ -30,6 +30,7 @@
             if (angular.isDefined($scope.errors)) $scope.errors = errors;            
 
             if (!$scope.startTime) $scope.startTime = moment({ hour: 8}).toDate();
+            
             if (!$scope.endTime) $scope.endTime = moment({hour: 17}).toDate();
             
             $scope.nextDay = isOnDifferentDays();
@@ -54,8 +55,12 @@
                 }
             }
 
-            function isOnDifferentDays() {
-                return moment($scope.endTime).diff(moment($scope.startTime), 'days') > 0;
+            function isOnDifferentDays() {              
+                var startTimeMoment = moment($scope.startTime),
+                    endTimeMoment = moment($scope.endTime);
+
+                return !startTimeMoment.isSame(endTimeMoment, 'day') && startTimeMoment.isBefore(endTimeMoment);
+              
             }
 
             function isInvalid(symbol) {
@@ -164,7 +169,7 @@
 	var timeFormat = moment.localeData()._longDateFormat.LT;
 	var info = {};
 
-	if (/h/.test(timeFormat)) {
+	if (/h:/.test(timeFormat)) {
 	    info.showMeridian = true;
 	    info.am = moment.localeData().meridiem(9, 0);
 	    info.pm = moment.localeData().meridiem(15, 0);
