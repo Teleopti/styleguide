@@ -10,11 +10,39 @@
 
 .wfm-time-range-picker-wrap {
 
-    .wfm-switch-label {
-        transform: translateY(-12px) scale(0.6);
-        transform-origin: top;
-        position: absolute;    
-    }
+  td {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;	    
+  }
+  .wfm-switch-label {
+    transform: translateY(-12px) scale(0.7);
+    transform-origin: top;
+    position: absolute;
+    font-size: 16px;
+  }
+      
+  display: inline-block;
+  position: relative;
+  bottom: -7px;
 
-
+  .has-error > input {
+    border-bottom:2px solid #F44336;
+  }
+  input{
+    width:50px;
+    text-align:center;
+    padding-left: 0 !important;
+  }
+  .md-button{
+    margin:0;
+    padding:0;
+    height:25px;
+    line-height:25px;
+    min-width:50px;
+    min-height:25px;
+  }
 }
