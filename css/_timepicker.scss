@@ -1,48 +1,75 @@
 //Time Range Picker
 //
-//Time range picker.
+//A directive for specifying a timespan. It is built from the bootstrap-ui's timepicker with added validation. In WFM, the error messages will be translated automatically. 
+//The <code>start-time</code> and <code>end-time</code> should be bound to javascript Date objects.
+//Their time parts (hour & minute) represent the timespan. When the <code>next day</code> switch    
+// is off, the values of their date parts will equal; otherwise they will differ.
+// In WFM, the timepicker is self-adjusted to the user's time-format setting, i.e. meridian will be used for 12h's format and disabled for 24h's format, and the AM/PM texts are translated automatically.     
+//<table class="wfm-table">
+//<tr><th>Attribute Name</th><th>Usage</th><th>Required</th></tr>  
+//<tr><td>start-time</td><td>Bind to start time</td><td>true</td></tr>
+//<tr><td>end-time</td><td>Bind to end time</td><td>true</td></tr>
+//<tr><td>errors</td><td>Bind to errors. Its value will be set by the picker to an array of error-keys. The pre-defined error keys are 'order' and 'empty'</td><td>false</td></tr>
+//<tr><td>hide-message</td><td>mute the error message</td><td>false</td></tr>
+//</table>    
 //
 //Markup:
 //<time-range-picker start-time="startTime" end-time="endTime"></time-range-picker>
 //
-//Styleguide 2.6
+//Styleguide 2.5
 //    
 
 .wfm-time-range-picker-wrap {
 
-  td {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;	    
-  }
-  .wfm-switch-label {
-    transform: translateY(-12px) scale(0.7);
-    transform-origin: top;
-    position: absolute;
-    font-size: 16px;
-  }
-      
-  display: inline-block;
-  position: relative;
-  bottom: -7px;
-
-  .has-error > input {
-    border-bottom:2px solid #F44336;
-  }
-  input{
-    width:50px;
-    text-align:center;
-    padding-left: 0 !important;
-  }
-  .md-button{
-    margin:0;
-    padding:0;
-    height:25px;
-    line-height:25px;
-    min-width:50px;
-    min-height:25px;
-  }
+    td {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;	    
+    }
+    .wfm-switch-label {
+        transform: translateY(-12px) scale(0.7);
+        transform-origin: top;
+        position: absolute;
+        font-size: 16px;
+    }
+    .wfm-timepicker-wrap {
+        td {
+            padding: 0;            
+        }
+        .md-button {
+            min-width: 48px;
+            width: 48px;
+            margin: 0;
+            padding: 0;
+            height: 25px;
+            line-height: 25px;
+            min-height: 25px;
+        }
+        input{
+            width:50px;
+            text-align:center;
+            margin-left: 2px;
+            margin-right: 2px;
+        }    
+    }        
+    .has-error > input {
+        border-bottom:2px solid #F44336;
+    }
+                
+    .error-msg-container {
+        display: none;
+        margin-top: 10px;
+    }
+        
+    .ng-invalid {
+        &.ng-invalid-order ~ .error-msg-container.ng-invalid-order {
+            display: block;
+        }
+        &.ng-invalid-empty ~ .error-msg-container.ng-invalid-empty {
+            display: block;
+        }
+    }	
 }
