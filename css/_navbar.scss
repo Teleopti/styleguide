@@ -32,7 +32,7 @@
 //</div>
 //
 //Styleguide 1.5.1
-// 
+//
 
 // Headers
 //
@@ -41,27 +41,27 @@
 //A secondary header should not live within another secondary header, rather, make a new secondary header to make skimming through the panel simple.
 //
 //Markup:
-//<div class="sub-header"> 
+//<div class="sub-header">
 //	First header title
 //</div>
-//<div class="bottom-header"> 
+//<div class="bottom-header">
 //	Second header title
 //</div>
 //
 //Styleguide 1.5.2
-// 
+//
 
 // Sidenav headers
 //
-//These headers are twice as thick as the normal headers. They are only used in the sidenavs and should not be part of the normal layout. 
+//These headers are twice as thick as the normal headers. They are only used in the sidenavs and should not be part of the normal layout.
 //
 //Markup:
-//<div class="sidenav-header"> 
+//<div class="sidenav-header">
 //	Place me in your sidenav!
 //</div>
 //
 //Styleguide 1.5.3
-// 
+//
 
 .sub-header{
 	padding: $full-padding;
@@ -92,19 +92,19 @@
   border-radius:0;
 	border: none;
 	margin-bottom:0;
-	
-	
+
+
 	a{
 		text-decoration:none;
 		display:inline-block;
 	}
-	
+
 	.brand{
 		color: $white !important;
 		font-weight: bold;
 		cursor:pointer;
 	}
-	
+
 	.content {
 		height: 22px;
 		padding: 15px;
@@ -113,14 +113,21 @@
 		width: 98%;
 		box-sizing: content-box!important;
 	}
-	
+
 	.wfm-container{
 		padding-left:$full-padding;
 	}
-	
+
 	i{
 		color: $white;
+		vertical-align: middle;
 	}
+}
+
+.result-icon i{
+	color:white!important;
+	padding:0px!important;
+	margin:0px!important;
 }
 
 .breadbin{
@@ -131,7 +138,7 @@
 }
 
 .breadbin a{
-	color:white!important; 
+	color:white!important;
 }
 
 .breadcrumb>.active {
@@ -160,19 +167,19 @@
 	padding-left: 5px;
 	width: 13rem;
 	transition:$transition-timing;
-	
+
 	&:focus{
 		width: 27rem;
 	}
 }
- 
+
 .search-results {
 	position: fixed;
 	width: 270px;
 	font-size: 14px;
 	display: block;
 	max-height: 75%;
-	overflow-y: auto; 
+	overflow-y: auto;
 	margin: 5px 23px;
 	 background: $white;
 	-webkit-transition:0.5s all 0.5s ease-in;
@@ -190,6 +197,6 @@
 	-ms-transition:all 0s;
 	-o-transition:all 0s;
 	transition:all 0s;
-	
+
 	opacity:0;
 }

@@ -30,6 +30,9 @@
 //Styleguide 1.4.2
 //
 
+label {
+	display: inline !important;
+}
 
 input{
 	font-size:15px;
@@ -44,7 +47,7 @@ input[type='text'],[type='number'], input[type='password'], select{
 	border: none;
 	color: $gray087;
 	border-bottom: 1px solid $gray-300;
-	
+
 	&:focus {
 		border: none;
 		outline: none;
@@ -55,7 +58,7 @@ input[type='text'],[type='number'], input[type='password'], select{
 .input-prepend {
   width: 100%;
   margin: 1px;
-  
+
   i {
     display: inline-block;
     width: 18px;
@@ -144,7 +147,7 @@ md-option{
 
 // Radio buttons
 //
-// Radio buttons are a group of options that can only have one item selected at a time.  
+// Radio buttons are a group of options that can only have one item selected at a time.
 //
 //Markup:
 //<form>
@@ -195,12 +198,12 @@ md-option{
 		transition: background-color .2s ease-in-out;
 		cursor: pointer;
 	}
-	
-	input[type=radio]:checked ~ label .wfm-radio-toggle, 
+
+	input[type=radio]:checked ~ label .wfm-radio-toggle,
 	input[type=radio]:checked ~ .wfm-radio-toggle{
 		background-color: $blue-300;
 	}
-	
+
 	.wfm-radio-label{
 		margin-left: 20px + $full-padding;
 		white-space:nowrap;
@@ -209,7 +212,7 @@ md-option{
 }
 
 
-// List radio buttons 
+// List radio buttons
 //
 // Same as radio but with an inline display
 //
@@ -230,7 +233,7 @@ md-option{
 	table-layout: fixed;
 	width: 100%;
 	border-collapse: collapse;
-	
+
 }
 
 .wfm-radio-list-item{
@@ -301,7 +304,7 @@ md-option{
 		transition: background-color .2s ease-in-out;
 		cursor: pointer;
 	}
-	
+
 	input[type=checkbox]:checked ~ label .wfm-checkbox-toggle:after,
 	input[type=checkbox]:checked ~ .wfm-checkbox-toggle:after{
 		background-color: $blue-300;
@@ -309,7 +312,7 @@ md-option{
 		text-align: center;
 		color:$white;
 	}
-	
+
 	.wfm-checkbox-label{
 		margin-left: 20px + $full-padding;
 		white-space:nowrap;
@@ -337,11 +340,11 @@ md-option{
 	position: relative;
 	height: 24px;
 	padding-top: 2px;
-	
+
 	input[type='checkbox'] {
 		display: none;
 	}
-	
+
 	.wfm-switch-toggle {
 		position: absolute;
 		background-color: $gray-300;
@@ -375,7 +378,7 @@ md-option{
 	input[type=checkbox]:checked ~ label .wfm-switch-toggle:after {
 		left: 30px;
 	}
-	
+
 	.wfm-switch-label{
 		white-space:nowrap;
 		cursor: pointer;
@@ -406,7 +409,7 @@ md-slider{
 	.md-thumb {
 		cursor:pointer;
 	}
-	
+
 	canvas{display:none;}
 }
 
