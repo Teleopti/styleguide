@@ -11,10 +11,11 @@
 //<tr><td>end-time</td><td>Bind to end time</td><td>true</td></tr>
 //<tr><td>errors</td><td>Bind to errors. Its value will be set by the picker to an array of error-keys. The pre-defined error keys are 'order' and 'empty'</td><td>false</td></tr>
 //<tr><td>hide-message</td><td>mute the error message</td><td>false</td></tr>
+//<tr><td>disable-next-day</td><td>Disable next-day switch</td><td>false</td></tr>
 //</table>    
 //
 //Markup:
-//<time-range-picker start-time="startTime" end-time="endTime"></time-range-picker>
+//<time-range-picker start-time="startTime" end-time="endTime" disable-next-day="disableNextDay"></time-range-picker>
 //
 //Styleguide 2.5
 //    

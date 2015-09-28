@@ -13,11 +13,13 @@
             scope: {
                 startTime: '=',
                 endTime: '=',
+                disableNextDay: '=?',
                 errors: '=?',
                 hideMessage: '=?'
             },
             controller: ['$scope', '$element', timeRangePickerCtrl],
             require: ['timeRangePicker'],
+            transclude: true,
             link: postlink
         };
 
@@ -144,11 +146,12 @@
         return "<div ng-class=\"{'ng-valid': !isInvalid(), 'ng-invalid': isInvalid(), 'ng-invalid-order': isInvalid('order'), 'ng-invalid-empty': isInvalid('empty')}\">" +
           " <table> " +
           "   <tr> " +
+          "     <td><ng-transclude></ng-transclude></td> " +
           "     <td><timepicker-wrap ng-model=\"startTime\"></timepicker></td> " +
           "     <td> <i class=\"mdi mdi-minus\"> </i> </td> " +
           "     <td><timepicker-wrap ng-model=\"endTime\"></timepicker></td> " +
           "     <td> " +
-          "       <div class=\"wfm-switch\"> " +
+          "       <div class=\"wfm-switch\"  ng-hide=\"disableNextDay\" >" +
           " 	<input type=\"checkbox\" id=\"NextDaySwitch\" ng-model=\"nextDay\"/> " +
           " 	<label for=\"NextDaySwitch\"> " +
           " 	  <span class=\"wfm-switch-label\">Next Day</span> " +

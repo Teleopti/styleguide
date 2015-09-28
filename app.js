@@ -58,4 +58,6 @@ var chart = c3.generate({
 	$scope.items = [{ title: 'mdi-chart-bar' }, { title: 'mdi-chart-bar' }];
 
 
+    $scope.disableNextDay = false;
+    
 });
