@@ -2,10 +2,10 @@
 //
 // When using buttons, avoid non specific actions as a label.
 //For example, "OK", "GO", "ACCEPT" are not specific while "SAVE USER" and "GO ON DASHBOARD" are.
-//This helps the user understand what the action will do and what object it will effect. 
+//This helps the user understand what the action will do and what object it will effect.
 //For more details take a look at the <a href="http://www.google.com/design/spec/components/buttons.html#buttons-usage">material design buttons</a>
 //
-//The primary version of the button should be used for the primary action (i.e the one the user is most likely to take) in that view. 
+//The primary version of the button should be used for the primary action (i.e the one the user is most likely to take) in that view.
 //By that logic there should normally only be one per screen.
 //
 //There are different types of buttons, however try to use one type of button per container. Only mix button types when you have a good reason to do so.
@@ -18,7 +18,7 @@
 //The flat buttons are 'printed' on the material and only show its area when hovered, it uses capital letters to differentiate it from a link.
 //
 //Markup:
-//<button class="wfm-btn wfm-btn-invis-default">Default</button> 
+//<button class="wfm-btn wfm-btn-invis-default">Default</button>
 //<button class="wfm-btn wfm-btn-invis-primary">Primary</button>
 //<button class="wfm-btn wfm-btn-invis-disabled">Disabled</button>
 //
@@ -27,12 +27,12 @@
 
 // Raised buttons
 //
-//The raised buttons lives on a raised layer and its area is always visible. 
+//The raised buttons lives on a raised layer and its area is always visible.
 //
 //Markup:
 //<button class="wfm-btn wfm-btn-default">Default</button>
-//<button class="wfm-btn wfm-btn-primary">Primary</button> 
-//<button class="wfm-btn wfm-btn-primary-disabled">Disabled</button> 
+//<button class="wfm-btn wfm-btn-primary">Primary</button>
+//<button class="wfm-btn wfm-btn-primary-disabled">Disabled</button>
 //
 //Styleguide 1.6.2
 //
@@ -85,6 +85,27 @@
 //Styleguide 1.6.4
 //
 
+//Animated action button
+//
+//The action button can not be disabled, rather it should simply not be displayed if unavailable.
+//It is possible to trigger the animations using ng-click and/or ng-class.
+//
+//These animations should only be applied to action buttons.
+//
+//Markup:
+//<button class="wfm-fab grow-out info"><i class="mdi mdi-plus" ></i>
+//	<md-tooltip>I appear when needed</md-tooltip>
+//</button>
+//<button class="wfm-fab info" ng-class="{'shrink-in':animateIn === 'trigger1'}" ng-click="animateIn = 'trigger1'">
+//<i class="mdi mdi-close"></i>
+//	<md-tooltip>Click me and im gone</md-tooltip>
+//</button>
+//
+//Styleguide 1.6.5
+//
+
+
+
 .wfm-btn {
 	border: none;
 	padding: 10px;
@@ -99,7 +120,7 @@
 .wfm-btn-invis-default {
 	color: $gray100!important;
 	background-color: transparent;
-	
+
 	&:hover{
 		background-color: #ececec;
 	}
@@ -108,7 +129,7 @@
 .wfm-btn-invis-primary {
 	color: $blue-500!important;
 	background-color: transparent;
-	
+
 	&:hover{
 		background-color: #ececec;
 	}
@@ -117,7 +138,7 @@
 .wfm-btn-invis-disabled {
 	color: $gray026!important;
 	background-color: transparent;
-	
+
 	&:hover{
 		cursor: not-allowed;
 	}
@@ -126,7 +147,7 @@
 .wfm-btn-primary-disabled{
 	color: $gray026!important;
 	background-color: $gray012;
-	
+
 	&:hover{
 		cursor: not-allowed;
 	}
@@ -136,7 +157,7 @@
 	color: $gray087!important;
 	background-color: $white;
 	@extend .material-depth-1;
-	
+
 		&:hover{
 		@extend .material-depth-2;
 	}
@@ -146,7 +167,7 @@
 	color: $white;
 	background-color: $blue-500;
 	@extend .material-depth-1;
-	
+
 		&:hover{
 		@extend .material-depth-2;
 	}
@@ -164,12 +185,12 @@
 	border-radius: 50%;
 	transition: all 0.2s ease-in-out;
 	text-decoration:none!important;
-	
+
 	&.mini{
 		padding: 8px!important;
 		/*max-height: 34px;*/
 	}
-	
+
 	&:hover{
 		@extend .material-depth-2;
 	}
@@ -183,3 +204,44 @@
 	background-color: $blue-500;
 }
 
+.grow-out {
+    animation:grow 0.2s;
+    animation-timing-function:ease-in-out;
+    animation-play-state:running;
+    -webkit-animation:grow 0.2s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-timing-function:ease-in-out;
+    -webkit-animation-play-state:running;
+}
+
+.shrink-in {
+    animation:shrink 0.2s;
+    animation-timing-function:ease-in-out;
+    animation-play-state:running;
+    -webkit-animation:shrink 0.2s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-timing-function:ease-in-out;
+    -webkit-animation-play-state:running;
+}
+
+@keyframes grow {
+    from {
+        transform: scale(0,0);
+    }
+    to {
+        transform: scale(1,1);
+    }
+}
+
+@keyframes shrink {
+    from {
+			  transform: scale(1,1);
+    }
+    to {
+				transform: scale(0,0);
+				display: none!important;
+				visibility: hidden!important;
+    }
+}
