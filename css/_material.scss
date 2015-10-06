@@ -6,8 +6,8 @@ body{
 	background-color: $gray012;
 	font-size:15px;
 	overflow-x: hidden;
-	font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif!important; 
-	
+	font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif!important;
+
 	a:focus, a:hover{
 		text-decoration:none;
 	}
@@ -39,7 +39,7 @@ body{
 .wfm-block {
 	padding:$full-padding;
 	width:100%;
-} 
+}
 
 .material-block-content {
     padding: $full-padding;
@@ -50,14 +50,10 @@ body{
     color: rgba(0,0,0,0.54);
 }
 
-big-table-wrapper, .big-table-footer-actions{
-	background-color:$white;
-}
-
 .layout-container {
   width:100%;
   display: -webkit-flex;
-  display: flex; 
+  display: flex;
   -webkit-flex-direction: row;
   flex-direction: row;
 }
