@@ -4,7 +4,9 @@
 //The <code>start-time</code> and <code>end-time</code> should be bound to javascript Date objects.
 //Their time parts (hour & minute) represent the timespan. When the <code>next day</code> switch    
 // is off, the values of their date parts will equal; otherwise they will differ.
-// In WFM, the timepicker is self-adjusted to the user's time-format setting, i.e. meridian will be used for 12h's format and disabled for 24h's format, and the AM/PM texts are translated automatically.     
+// In WFM, the timepicker is self-adjusted to the user's time-format setting, i.e. meridian will be used for 12h's format and disabled for 24h's format, and the AM/PM texts are translated automatically.
+//
+//Additionally for consistency with the old WFM client, we have added a special case: when <code>disable-next-day</code> is on, setting the end time to 00:00 will mean the midnight time of the next day, and the user will see "+ 1" displayed beside the end time to avoid ambiguity even though he or she cannot mannual toggle the next-day switch.    
 //<table class="wfm-table">
 //<tr><th>Attribute Name</th><th>Usage</th><th>Required</th></tr>  
 //<tr><td>start-time</td><td>Bind to start time</td><td>true</td></tr>
@@ -21,7 +23,6 @@
 //    
 
 .wfm-time-range-picker-wrap {
-
     td {
         -webkit-touch-callout: none;
         -webkit-user-select: none;
@@ -55,9 +56,15 @@
             margin-left: 2px;
             margin-right: 2px;
         }    
-    }        
+    }
+    .next-day-toggle .wfm-btn {
+        margin: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+    }
+    
     .has-error > input {
-        border-bottom:2px solid #F44336;
+        border:2px solid #F44336;
     }
                 
     .error-msg-container {

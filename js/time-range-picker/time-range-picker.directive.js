@@ -37,9 +37,27 @@
             
             $scope.nextDay = isOnDifferentDays();
             $scope.isInvalid = isInvalid;
+            $scope.toggleNextDay = toggleNextDay;
+    	    $scope.nextDayToggleText = '+ 0';
+
             
             this.setDateValue = setDateValue;
             this.checkValidity = checkValidity;
+            this.setNextDayToggleText = setNextDayToggleText;
+
+            function toggleNextDay() {
+		if (!$scope.disableNextDay) {
+		    $scope.nextDay = ! $scope.nextDay;
+		}
+	    }
+            
+	    function setNextDayToggleText(nextDay) {
+		if (nextDay) {
+		    $scope.nextDayToggleText = '+ 1';
+		} else {
+		    $scope.nextDayToggleText = '+ 0';
+		}
+	    }
             
             function setDateValue(nextDay) {               
                 if (!nextDay) {                 
@@ -91,6 +109,7 @@
                      
             scope.$watch('nextDay', function(newValue, oldValue) {
                 ctrl.setDateValue(newValue);
+                ctrl.setNextDayToggleText(newValue);
             });
 
             scope.$watch(function() {
@@ -99,7 +118,16 @@
                     s: scope.startTime?$filter('date')(scope.startTime, 'HH:mm'): '',
                     e: scope.endTime?$filter('date')(scope.endTime, 'HH:mm'): ''
                 }
-            }, function(newValue, oldValue) {                
+            }, function(newValue, oldValue) {
+                if (scope.disableNextDay) {
+		    if (newValue.e == '00:00' ) {
+			scope.$evalAsync(function() { scope.nextDay = true; });
+			
+		    } else if (scope.nextDay) {
+			scope.nextDay = false;
+		    }					
+		}
+                
                 ctrl.checkValidity();                
             }, true);
 
@@ -151,12 +179,8 @@
           "     <td> <i class=\"mdi mdi-minus\"> </i> </td> " +
           "     <td><timepicker-wrap ng-model=\"endTime\"></timepicker></td> " +
           "     <td> " +
-          "       <div class=\"wfm-switch\"  ng-hide=\"disableNextDay\" >" +
-          " 	<input type=\"checkbox\" id=\"NextDaySwitch\" ng-model=\"nextDay\"/> " +
-          " 	<label for=\"NextDaySwitch\"> " +
-          " 	  <span class=\"wfm-switch-label\">Next Day</span> " +
-          " 	  <span class=\"wfm-switch-toggle\"></span> " +
-          " 	</label> " +
+          "       <div class=\"next-day-toggle\"  ng-show=\"!disableNextDay || nextDay\" >" +
+          " 	      <button class=\"wfm-btn wfm-btn-invis-default\" ng-class=\"{'wfm-btn-invis-disabled': disableNextDay }\" ng-click=\"toggleNextDay()\">{{nextDayToggleText}}</button> " +
           "       </div>       " +
           "     </td> " +
           "   </tr> " +
