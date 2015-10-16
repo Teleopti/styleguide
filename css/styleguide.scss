@@ -99,7 +99,7 @@
 
 //Form layout
 //
-//Forms are made up of individual inputs that can be validated on interaction and/or on a submit. 
+//Forms are made up of individual inputs that can be validated on interaction and/or on a submit.
 //
 //Markup:
 //<dl>
@@ -122,6 +122,7 @@
 //      <label for="secretId">Password: <input type="password" ng-model="form.secret" name="Secret" required="" id="secretId"/></label>
 //      <div ng-cloak class="animate-input-message" ng-show="form.$submitted || form.Secret.$touched">
 //      <div class="form-input-message" ng-class="{formInvalidInput:form.Secret.$error.required}">Enter password</div>
+//      <div class="form-input-message" ng-class="{formInvalidInput:form.Secret < 8}">Password must be 8 characters or more</div>
 //      </div>
 //    </div>
 //    <div class="form-input-wrap">

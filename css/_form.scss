@@ -100,10 +100,14 @@ input[type='text'],[type='number'], input[type='password'], select{
 	}
 }
 
-input{
-	width:100%;
+input, select{
+	width:auto;
+	max-width:100%;
+	margin-right:100%;
 }
-
+input > .ng-invalid{
+	border-bottom: 5px solid red!important;
+}
 .form-input-message{
 	opacity: 0;
 	height: 0;
