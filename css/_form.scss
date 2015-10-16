@@ -8,6 +8,8 @@
 
 // Standard inputs
 //
+//Standard inputs can be used as is and on their own. If you want to build a form, please look at the <a href=file:///C:/Users/carlr/Repos/styleguide/styleguide/styleguide/section-4.html>form layout</a>.
+//
 //Markup:
 //	<input type="text" placeholder="Name..."  />
 // <br/>
@@ -51,7 +53,7 @@ input[type='text'],[type='number'], input[type='password'], select{
 	&:focus {
 		border: none;
 		outline: none;
-		border-bottom: 1px solid $pink-500;
+		border-bottom: 1px solid $blue-100;
 	}
 }
 
@@ -86,6 +88,47 @@ input[type='text'],[type='number'], input[type='password'], select{
 }
 :-ms-input-placeholder { /* Internet Explorer 10+ */
   color: $gray026;
+}
+
+
+/*Form validation*/
+.styleguide-form{
+	width:50%;
+
+	label{
+		cursor:pointer!important;
+	}
+}
+
+input{
+	width:100%;
+}
+
+.form-input-message{
+	opacity: 0;
+	height: 0;
+  transition: $transition-timing;
+}
+.formInvalidInput{
+	opacity: 1;
+	height:auto;
+	color:red!important;
+}
+.form-input-wrap{
+	padding:10px 0;
+}
+.animate-input-message {
+  line-height: 20px;
+	height:auto;
+  opacity: 1;
+}
+.animate-input-message.ng-hide-add, .animate-input-message.ng-hide-remove {
+  transition: $transition-timing;
+}
+.animate-input-message.ng-hide {
+  line-height: 0;
+	height: 0;
+  opacity: 0;
 }
 
 

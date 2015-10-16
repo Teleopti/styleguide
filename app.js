@@ -1,7 +1,7 @@
 var app = angular.module('styleguideApp', ['ngMaterial', 'ui.grid', 'ui.grid.autoResize', 'ui.grid.exporter', 'ui.grid.selection', 'ui.bootstrap', 'angularMoment',  'wfm.cardList', 'wfm.daterangepicker'])
 .controller('mainCtrl', function ($scope) {
   /* Dummy data*/
-    $scope.demos = [ {"id": "50d5ad" } , {"id": "678ffr" },{"id": "50d5ad" } , {"id": "678ffr" } ];
+    $scope.demos = [ {"id": "50d5ad" } , {"id": "678ffr" },{"id": "515ad" } , {"id": "673ffr" } ];
   /*
   * Code for Grid
   */
@@ -50,6 +50,20 @@ var chart = c3.generate({
         enabled: true
     }
 });
+
+/*Code for forms*/
+$scope.formData = {};
+ $scope.update = function(form) {
+   $scope.formData = angular.copy(form);
+ };
+
+ $scope.reset = function(form) {
+   if (form) {
+     form.$setPristine();
+     form.$setUntouched();
+   }
+ };
+
 
 
 
