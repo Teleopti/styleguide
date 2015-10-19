@@ -52,11 +52,6 @@ var chart = c3.generate({
 });
 
 /*Code for forms*/
-$scope.formData = {};
- $scope.update = function(form) {
-   $scope.formData = angular.copy(form);
- };
-
  $scope.reset = function(form) {
    if (form) {
      form.$setPristine();

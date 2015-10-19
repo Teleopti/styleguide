@@ -101,6 +101,16 @@
 //
 //Forms are made up of individual inputs that can be validated on interaction and/or on a submit.
 //
+//<code><pre>
+//Reset validation errors:
+//$scope.reset = function(form) {
+//   if (form) {
+//     form.$setPristine();
+//     form.$setUntouched();
+//   }
+// };
+//</pre></code>
+//
 //Markup:
 //<dl>
 //  <h4>My form</h4>
