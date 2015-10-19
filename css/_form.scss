@@ -98,7 +98,7 @@ input[type='text'],[type='number'], input[type='password'], select{
 	label{
 		cursor:pointer!important;
 	}
-}
+
 
 input, select{
 	width:auto;
@@ -135,7 +135,7 @@ input > .ng-invalid{
   opacity: 0;
 }
 
-
+}
 // Select
 //
 // The select is used to provide many options to the user.
