@@ -97,7 +97,8 @@ input[type='text'],[type='number'], input[type='password'], select{
 	label{
 		cursor:pointer!important;
 		font-weight: normal!important;
-		color:#616161;
+		color:$gray054;
+		font-size: 13px;
 	}
 
 input, select{
@@ -108,6 +109,14 @@ input, select{
 input > .ng-invalid{
 	border-bottom: 5px solid red!important;
 }
+
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="email"]{
+	padding-left: 7px;
+}
+
 .form-input-message{
 	opacity: 0;
 	height: 0;

@@ -10,7 +10,17 @@ body{
 
 	a:focus, a:hover{
 		text-decoration:none;
+		outline: none!important;
+		outline: 0px auto -webkit-focus-ring-color!important;
+		outline-offset: 0px;
 	}
+}
+
+button, input, select{	font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif!important;
+}
+
+dd {
+	margin-left: 40px!important;
 }
 
 .material-depth-1 {
