@@ -69,9 +69,6 @@ md-content.md-default-theme {
 }
 
 //project tabs style
-	.wfm-slide-tabs md-content {
-		padding: 10px 5px !important;
-	}
 
 	.wfm-slide-tabs md-tabs.md-default-theme md-tab.active {
 		color: rgba(0,0,0,.87)!important;
@@ -108,7 +105,7 @@ md-content.md-default-theme {
 			overflow-y:auto!important;
 		}
 	}
-	
+
  .label:hover, .tab-group input[type=radio]:checked + .label{
 	background-color:$blue-500;
 }

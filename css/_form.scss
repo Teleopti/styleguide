@@ -96,8 +96,9 @@ input[type='text'],[type='number'], input[type='password'], select{
 
 	label{
 		cursor:pointer!important;
+		font-weight: normal!important;
+		color:#616161;
 	}
-
 
 input, select{
 	width:auto;
@@ -110,6 +111,7 @@ input > .ng-invalid{
 .form-input-message{
 	opacity: 0;
 	height: 0;
+	font-size: 13px;
   transition: $transition-timing;
 }
 .formInvalidInput{
