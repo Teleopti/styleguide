@@ -1,0 +1,52 @@
+//Pagination
+//
+//Pagination is an object which displays a list of availale pages and provides a set of functions to navigate to first page, previous page, next page and last page.
+//
+//Markup:
+// <ul class="wfm-pagination">
+//   <li ng-class="{disabled: currentPage === 1 || pageCount === 0}">
+//     <a ng-click="firstPage()">
+//       <i class="mdi mdi-skip-previous"></i>
+//     </a>
+//   </li>
+//   <li ng-class="{disabled: currentPage === 1 || pageCount === 0}">
+//     <a ng-click="previousPage()">
+//       <i class="mdi mdi-chevron-left"></i>
+//     </a>
+//   </li>
+//   <li ng-repeat="page in getVisiblePages(pageCount)"
+//     ng-class="{active: page === currentPage}"
+//     ng-click="seekPage(page)">
+//     <a ng-bind="page"></a>
+//   </li>
+//   <li ng-class="{disabled: currentPage === pageCount || pageCount === 0}">
+//     <a ng-click="nextPage()">
+//       <i class="mdi mdi-chevron-right"></i>
+//     </a>
+//   </li>
+//   <li ng-class="{disabled: currentPage === pageCount || pageCount === 0}">
+//     <a ng-click="lastPage()">
+//       <i class="mdi mdi-skip-next"></i>
+//     </a>
+//   </li>
+// </ul>
+//
+//Styleguide 1.17
+//
+
+.wfm-pagination li {
+  display: inline-block;  
+  padding: 10px;
+  cursor: pointer;
+  background-color: white;
+  &.disabled {
+    cursor: not-allowed;
+    a {
+      pointer-events: none;
+      color: rgba(0, 0, 0, 0.26);
+    }
+  }
+  &.active {
+    background-color: rgba(0, 0, 0, 0.06);
+  }
+}

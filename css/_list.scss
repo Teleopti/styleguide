@@ -1,6 +1,6 @@
 ﻿//Lists
 //
-//The lists is used to display long colections of similar information. 
+//The lists is used to display long colections of similar information.
 //A long list should be contained so that it doesnt overflow the main view.
 //
 //Styleguide 1.2.0
@@ -38,7 +38,7 @@
 	max-height: 800px;
 	overflow-y: auto;
 	margin: 0;
-	
+
 	.subtext{
 		color:$gray054;
 	}
@@ -59,7 +59,7 @@
 //
 // Action lists are used for list where the user can perform actions. These can have several options attached to them in a so called  <a href="http://goo.gl/DMxAHS">leave-behind</a>, however, these options may only effect the list item they are a part of. Individual options can have a tooltip and an icon and they are displayed only if the item is hovered or clicked.
 //
-// If an item in the action list is not intractable in any way while others in the same list are 
+// If an item in the action list is not intractable in any way while others in the same list are
 // If there are actions that affect the whole list (such as create new or delete all) they should be placed above or below the list.
 //
 //Markup:
@@ -94,16 +94,22 @@
 //				<i class="mdi mdi-content-copy"></i>
 //				<i class="mdi mdi-pencil"></i>
 //				<i class="mdi mdi-delete"></i>
-//			</span>	
+//			</span>
 //		</div>
 //	</li>
 //	<li>
-//		<i class="mdi mdi-alert"></i> List Item with icon and no actions
+//		<i class="mdi mdi-alert"></i> List Item with icon and no leave-behind
 //	</li>
 //</ul>
 //
 //Styleguide 1.2.2
 //
+
+ul {
+	margin-bottom:0!important;
+	list-style: none;
+	padding-left: 0;
+}
 
 .list-item-container{
 text-overflow: ellipsis;
@@ -166,6 +172,8 @@ display:inline-block;
 	i{
 		vertical-align: text-bottom;
 		margin-right: $full-padding;
+		color: #555555;
+		padding-bottom: 5px;
 	}
 }
 
@@ -182,19 +190,19 @@ display:inline-block;
   background-color: #cacaca;
   z-index: 999;
   border-bottom: 8px solid transparent;
-	
+
 	span{
 		padding-left: $full-padding;
 		white-space:nowrap;
 	}
-	
-	i{	
+
+	i{
 		position: justify;
 		padding-top: 2px;
 		font-size: 18px;
 		margin: 0 5px;
 	}
-	
+
 	p{
 		padding-left:$full-padding;
 		margin:0 5px;

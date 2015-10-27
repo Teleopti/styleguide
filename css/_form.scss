@@ -8,6 +8,8 @@
 
 // Standard inputs
 //
+//Standard inputs can be used as is and on their own. If you want to build a form, please look at the <a href=file:///C:/Users/carlr/Repos/styleguide/styleguide/styleguide/section-4.html>form layout</a>.
+//
 //Markup:
 //	<input type="text" placeholder="Name..."  />
 // <br/>
@@ -30,6 +32,9 @@
 //Styleguide 1.4.2
 //
 
+label {
+	display: inline !important;
+}
 
 input{
 	font-size:15px;
@@ -44,18 +49,18 @@ input[type='text'],[type='number'], input[type='password'], select{
 	border: none;
 	color: $gray087;
 	border-bottom: 1px solid $gray-300;
-	
+
 	&:focus {
 		border: none;
 		outline: none;
-		border-bottom: 1px solid $pink-500;
+		border-bottom: 1px solid $blue-100;
 	}
 }
 
 .input-prepend {
   width: 100%;
   margin: 1px;
-  
+
   i {
     display: inline-block;
     width: 18px;
@@ -86,6 +91,61 @@ input[type='text'],[type='number'], input[type='password'], select{
 }
 
 
+/*Form validation*/
+.wfm-form{
+
+	label{
+		cursor:pointer!important;
+		font-weight: normal!important;
+		color:$gray054;
+		font-size: 13px;
+	}
+
+input, select{
+	width:auto;
+	max-width:100%;
+	margin-right:100%;
+}
+input > .ng-invalid{
+	border-bottom: 5px solid red!important;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="email"]{
+	padding-left: 7px;
+}
+
+.form-input-message{
+	opacity: 0;
+	height: 0;
+	font-size: 13px;
+  transition: $transition-timing;
+}
+.formInvalidInput{
+	opacity: 1;
+	height:auto;
+	color:red!important;
+}
+.form-input-wrap{
+	padding:10px 0;
+}
+.animate-input-message {
+  line-height: 20px;
+	height:auto;
+  opacity: 1;
+}
+.animate-input-message.ng-hide-add, .animate-input-message.ng-hide-remove {
+  transition: $transition-timing;
+}
+.animate-input-message.ng-hide {
+  line-height: 0;
+	height: 0;
+  opacity: 0;
+}
+
+}
 // Select
 //
 // The select is used to provide many options to the user.
@@ -144,7 +204,7 @@ md-option{
 
 // Radio buttons
 //
-// Radio buttons are a group of options that can only have one item selected at a time.  
+// Radio buttons are a group of options that can only have one item selected at a time.
 //
 //Markup:
 //<form>
@@ -195,12 +255,12 @@ md-option{
 		transition: background-color .2s ease-in-out;
 		cursor: pointer;
 	}
-	
-	input[type=radio]:checked ~ label .wfm-radio-toggle, 
+
+	input[type=radio]:checked ~ label .wfm-radio-toggle,
 	input[type=radio]:checked ~ .wfm-radio-toggle{
 		background-color: $blue-300;
 	}
-	
+
 	.wfm-radio-label{
 		margin-left: 20px + $full-padding;
 		white-space:nowrap;
@@ -209,7 +269,7 @@ md-option{
 }
 
 
-// List radio buttons 
+// List radio buttons
 //
 // Same as radio but with an inline display
 //
@@ -230,7 +290,7 @@ md-option{
 	table-layout: fixed;
 	width: 100%;
 	border-collapse: collapse;
-	
+
 }
 
 .wfm-radio-list-item{
@@ -301,7 +361,7 @@ md-option{
 		transition: background-color .2s ease-in-out;
 		cursor: pointer;
 	}
-	
+
 	input[type=checkbox]:checked ~ label .wfm-checkbox-toggle:after,
 	input[type=checkbox]:checked ~ .wfm-checkbox-toggle:after{
 		background-color: $blue-300;
@@ -309,7 +369,7 @@ md-option{
 		text-align: center;
 		color:$white;
 	}
-	
+
 	.wfm-checkbox-label{
 		margin-left: 20px + $full-padding;
 		white-space:nowrap;
@@ -337,11 +397,11 @@ md-option{
 	position: relative;
 	height: 24px;
 	padding-top: 2px;
-	
+
 	input[type='checkbox'] {
 		display: none;
 	}
-	
+
 	.wfm-switch-toggle {
 		position: absolute;
 		background-color: $gray-300;
@@ -375,7 +435,7 @@ md-option{
 	input[type=checkbox]:checked ~ label .wfm-switch-toggle:after {
 		left: 30px;
 	}
-	
+
 	.wfm-switch-label{
 		white-space:nowrap;
 		cursor: pointer;
@@ -406,7 +466,7 @@ md-slider{
 	.md-thumb {
 		cursor:pointer;
 	}
-	
+
 	canvas{display:none;}
 }
 

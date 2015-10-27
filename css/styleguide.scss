@@ -12,7 +12,7 @@
 //
 //Getting a deeper look into the styles of shadows and positioning. The first thing we need to understand is the concept of stacked material (see the <a href="http://www.google.com/design/spec/what-is-material/elevation-shadows.html#elevation-shadows-shadows">Google guidelines</a> ).
 //
-//Keep the number of stacked layers to a minimum and the total number of layer below 3 (including the background). If a raised element lives inside of another raised element it should have a higher material-depth number (i.e a panel with a depth of 1 can have one panel with a depth of 2 above (inside) it.) 
+//Keep the number of stacked layers to a minimum and the total number of layer below 3 (including the background). If a raised element lives inside of another raised element it should have a higher material-depth number (i.e a panel with a depth of 1 can have one panel with a depth of 2 above (inside) it.)
 //
 //Elements floating above the main layout (such as context menus) should have the highest material-depth number possible (2).
 //
@@ -22,11 +22,11 @@
 //<div class="spacer"> Background </div>
 //<div class="spacer material-depth-1"> Layer 1 </div>
 //<div class="spacer material-depth-2"> Layer 2 </div>
-//<div class="spacer material-depth-1"> 
+//<div class="spacer material-depth-1">
 //	<p class="spacer material-depth-1"> Stacked </p>
 //</div>
 //
-//Styleguide 1.1.0 
+//Styleguide 1.1.0
 //
 
 //Trench
@@ -55,14 +55,14 @@
 // We would like to provide alternative themes but it's a WIP
 //
 //Styleguide 3
-// 
+//
 
 //Layouts
 //
 //Here you can find some templates for your layout. Normaly you will not have to worry about the sidenavs or the topbar since these are loaded around your view.
 //
 //Styleguide 4
-// 
+//
 //
 
 //Basic block layout
@@ -78,7 +78,7 @@
 //<img src="../img/001.png"/>
 //
 //Styleguide 4.1
-// 
+//
 //
 
 //Panels
@@ -95,24 +95,113 @@
 //
 //
 //Styleguide 4.2
-// 
+
+
+//Form layout
 //
+//Forms are made up of individual inputs that can be validated on interaction and/or on a submit.
+//
+//<code><pre>
+//Reset validation errors:
+//$scope.reset = function(form) {
+//   if (form) {
+//     form.$setPristine();
+//     form.$setUntouched();
+//   }
+// };
+//</pre></code>
+//
+//Markup:
+//<dl>
+//  <h4>My form</h4>
+//  <dd>
+//   <form name="form" class="wfm-form" novalidate>
+//    <div class="form-input-wrap">
+//      <label for="nameId">Name: <input type="text" ng-model="form.name" name="Name" required="" id="nameId"/></label>
+//      <div ng-cloak class="animate-input-message" ng-show ="form.$submitted || form.Name.$touched">
+//      <div class="form-input-message" ng-class="{formInvalidInput:form.Name.$error.required}">Tell me your name</div>
+//      </div>
+//    </div>
+//    <div class="form-input-wrap">
+//      <label for="ageId">Age: <input type="number" ng-model="form.age" name="Age" required="" id="ageId" min="1"/></label>
+//      <div ng-cloak class="animate-input-message" ng-show="form.$submitted || form.Age.$touched">
+//      <div class="form-input-message" ng-class="{formInvalidInput:form.Age.$error.required}">You need to be born</div>
+//      </div>
+//    </div>
+//    <div class="form-input-wrap">
+//      <label for="secretId">Password: <input type="password" ng-model="form.secret" name="Secret" required="" id="secretId"/></label>
+//      <div ng-cloak class="animate-input-message" ng-show="form.$submitted || form.Secret.$touched">
+//      <div class="form-input-message" ng-class="{formInvalidInput:form.Secret.$error.required}">Enter password</div>
+//      <div class="form-input-message" ng-class="{formInvalidInput:form.Secret < 8}">Password must be 8 characters or more</div>
+//      </div>
+//    </div>
+//    <div class="form-input-wrap">
+//      <label for="drop">How many:</label>
+//     <select ng-model="form.drop" name="Drop" id="drop" required="">
+//	     <option>1</option>
+//	     <option>2</option>
+//	     <option>3</option>
+//     </select>
+//      <div ng-cloak class="animate-input-message" ng-show="form.$submitted || form.Drop.$error.required.$touched">
+//        <div class="form-input-message" ng-class="{formInvalidInput:form.Drop.$error.required}">Pick at least one</div>
+//      </div>
+//    </div>
+//    <div class="form-input-wrap">
+//      <label>Group:</label>
+//      <div class="wfm-checkbox">
+//        <input type="checkbox" ng-model="form.box1" name="Box1" id="box1" required=""/>
+//        <label for="box1">
+//          <span class="wfm-checkbox-toggle"></span>
+//		      <span class="wfm-checkbox-label">Group A</span>
+//        </label>
+//      </div>
+//      <div class="wfm-checkbox">
+//        <input type="checkbox" ng-model="form.box2" name="Box2" id="box2" required=""/>
+//        <label for="box2">
+//          <span class="wfm-checkbox-toggle"></span>
+//		      <span class="wfm-checkbox-label">Group B</span>
+//        </label>
+//      </div>
+//      <div ng-cloak class="animate-input-message" ng-show="form.$submitted || form.Box.$error.required.$touched">
+//        <div class="form-input-message" ng-class="{formInvalidInput:form.Box1.$error.required && form.Box2.$error.required}">Pick at least one</div>
+//      </div>
+//    </div>
+//    <div class="form-input-wrap">
+//     <label>I selected #2 for you:</label>
+//     <div ng-repeat="item in demos">
+//       <div class="wfm-radio">
+//        <label>
+//			    <input type="radio" name="item" data-ng-model="radio" data-ng-value="item" ng-init="$index==1?(radio=item):''">
+//			    <span class="wfm-radio-toggle"></span>
+//			    <span class="wfm-radio-label">123</span>
+//		    </label>
+//	     </div>
+//     </div>
+//    <div class="form-input-wrap">
+//      <button class="wfm-btn wfm-btn-default" type="button" ng-click="reset(form)"><md-tooltip>Hide all errors</md-tooltip>Clear</button>
+//      <button class="wfm-btn wfm-btn-primary" type="submit" ng-click="update()"><md-tooltip>Save input if valid</md-tooltip>Apply</button>
+//    </div>
+//  </form>
+//  </dd>
+//</dl>
+//
+//
+//Styleguide 4.3
 
 //Scalability
 //
 //How to adapt our elements to big databases
 //
 //Styleguide 6
-// 
-//
+
 
 //Big tables
 //
 //The big table is used to give data more space and actions. Check out the <a href="http://ui-grid.info/docs/#/tutorial">documentation</a> to see all available functions.
 //
-//  Markup: bigtables.hbs 
+//  Markup: bigtables.hbs
 //
-//Styleguide 6.1 
+//Styleguide 6.1
 
 .myGrid {
      width: 100%;
@@ -124,7 +213,7 @@
 //Here you can find some links to go further in CSS best practices
 //
 //Styleguide 7
-// 
+//
 //
 
 //Urls
@@ -139,14 +228,14 @@
 //
 // http://axbom.com/slaying-5-ux-myths-good-mankind/
 //
-//Styleguide 7.1 
+//Styleguide 7.1
 
 .spacer {
   margin: 25px;
   padding: 15px;
   text-align:center;
   display: inline-block;
-  background: white; 
+  background: white;
   }
 
 /*template styles*/
@@ -167,18 +256,18 @@
 #kss-node ol.linenums li {
 	border:none;
 }
- 
+
 #kss-node .kss-sidebar {
   background: white;
   top: 0;
   z-index:9;
-} 
- 
+}
+
 .styleguide-break{
 	background-color:$orange-400;
 	color:$gray087;
 	padding:$full-padding;
-	
+
 	span:before{
 		content:"This element does not exist in material design. ";
 	}

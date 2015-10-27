@@ -2,7 +2,7 @@
 //
 //<div class="styleguide-break angular-req"><i class="mdi mdi-alert-circle"></i><span>For example dynamic data. </span></div>
 //
-//A tree structure is used to show relations between different items. Selected items are marked with a checkmark and a background along with a left side border.  
+//A tree structure is used to show relations between different items. Selected items are marked with a checkmark and a background along with a left side border.
 //Each tree line has a right align span child that could show an icon if the line is selected.
 //
 //Markup:
@@ -77,7 +77,7 @@
 	vertical-align: middle;
 
 
-	ol { 
+	ol {
 		list-style: none;
 	}
 
@@ -91,7 +91,7 @@
 	float:right;
 	text-align: center;
 	color: $gray087;
-	
+
 	i{
 		opacity:0;
 	}
@@ -107,7 +107,7 @@
 	font-weight: 500;
 	transition: $transition-timing;
 	border-left: 3px solid transparent;
-	
+
 	&:hover {
 		background-color: $gray012;
 	}
@@ -125,13 +125,14 @@
 }
 
 .angular-ui-tree-handle.ng-hide {
-	line-height:0;	
+	line-height:0;
 }
 
 .toggle-handle {
 	display: inline-block;
 	width: 25px;
 	height: 25px;
+	cursor: pointer;
 	margin-right: 5px;
 	padding-top: 4px;
 }

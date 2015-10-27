@@ -33,12 +33,13 @@
 //		</ul>
 //	</span>
 //</button>
-//	
+//
 //Styleguide 1.14
 //
 
-.context-menu { 
+.context-menu {
     position: relative;
+    cursor:pointer;
 
     [class*="context-menu-"] {
         transition: $transition-timing;
@@ -61,7 +62,7 @@
 		color:$gray087;
 		text-align:left!important;
 	}
-	
+
     .context-menu-right {
         top: 100%;
         left: 100%;

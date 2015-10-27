@@ -6,11 +6,21 @@ body{
 	background-color: $gray012;
 	font-size:15px;
 	overflow-x: hidden;
-	font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif!important; 
-	
+	font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif!important;
+
 	a:focus, a:hover{
 		text-decoration:none;
+		outline: none!important;
+		outline: 0px auto -webkit-focus-ring-color!important;
+		outline-offset: 0px;
 	}
+}
+
+button, input, select{	font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif!important;
+}
+
+dd {
+	margin-left: 40px!important;
 }
 
 .material-depth-1 {
@@ -39,7 +49,7 @@ body{
 .wfm-block {
 	padding:$full-padding;
 	width:100%;
-} 
+}
 
 .material-block-content {
     padding: $full-padding;
@@ -50,14 +60,10 @@ body{
     color: rgba(0,0,0,0.54);
 }
 
-big-table-wrapper, .big-table-footer-actions{
-	background-color:$white;
-}
-
 .layout-container {
   width:100%;
   display: -webkit-flex;
-  display: flex; 
+  display: flex;
   -webkit-flex-direction: row;
   flex-direction: row;
 }

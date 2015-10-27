@@ -1,6 +1,6 @@
 //Tabs
 //
-//Tabs are used to change big content areas and are a great way to divide a single task into smaller pieces. They are typicaly located at the top of the page or a big panel instead of a header. One important thing to remember is to order the tabs in a way that makes sense to the workflow.  Also, avoid having nested tabs or several tab -groups close together to avoid confusion.  
+//Tabs are used to change big content areas and are a great way to divide a single task into smaller pieces. They are typicaly located at the top of the page or a big panel instead of a header. One important thing to remember is to order the tabs in a way that makes sense to the workflow.  Also, avoid having nested tabs or several tab -groups close together to avoid confusion.
 //
 //Markup:
 //<div class="wfm-slide-tabs">
@@ -42,21 +42,21 @@
 	.md-ripple-container{
 		background-color:transparent!important;
 	}
-	
+
 	md-content{
 		padding:10px 5px!important;
 		color:$gray087;
 	}
-	
+
 	md-tabs.md-default-theme md-tab.active{
 		color:$gray087!important;
 		background-color:$blue-500!important;
 	}
-	
+
 	md-tab md-tab-label{
 		  padding-bottom: 10px!important;
 	}
-	
+
 	.md-header{
 		  height: 30px!important;
 		  background-color:$blue-300!important;
@@ -69,16 +69,13 @@ md-content.md-default-theme {
 }
 
 //project tabs style
-	.wfm-slide-tabs md-content {
-		padding: 10px 5px !important;
-	}
 
 	.wfm-slide-tabs md-tabs.md-default-theme md-tab.active {
 		color: rgba(0,0,0,.87)!important;
 		  background-color:$blue-500 !important;
 	  height: 79%;
 	}
-	
+
 
 	.wfm-slide-tabs md-tabs .md-tab {
 		 margin-top: -8px;
@@ -98,87 +95,17 @@ md-content.md-default-theme {
 	@media(max-width:599px){
 		.modal-box .modalbg .dialog{
 			max-height:90%;
-			overflow-y:auto!important;	
+			overflow-y:auto!important;
 		}
 	}
 
 	@media(min-width:600px){
 		.modal-box .modalbg .dialog{
 			max-height:70%;
-			overflow-y:auto!important;	
+			overflow-y:auto!important;
 		}
 	}
 
- .tab-group {
-	  width: 100%;
-	  display: -webkit-box;
-	  display: -webkit-flex;
-	  display: -ms-flexbox;
-	  display: flex;
-	  -webkit-flex-wrap: wrap;
-		  -ms-flex-wrap: wrap;
-			  flex-wrap: wrap;
-	  -webkit-box-align: center;
-	  -webkit-align-items: center;
-		  -ms-flex-align: center;
-			  align-items: center;
-	  -webkit-box-pack: center;
-	  -webkit-justify-content: center;
-		  -ms-flex-pack: center;
-			  justify-content: center;
-	  overflow: hidden;
-  
-	input[type=radio] {
-		display:none;
-	}
-
-	input[type=radio]:checked + .label {
-		font-weight: bold!important;
-		border-bottom: 3px solid $pink-500;
-		
-	}
-	
-	input[type=radio]:checked + .label + section {
-		display: block;
-	}
-	
-	.label {
-		color: $gray087;
-		padding:$full-padding!important; 
-		position: relative;
-		cursor:pointer;
-		z-index: 2;
-		-webkit-box-ordinal-group: 0;
-		-webkit-order: -1;
-		-ms-flex-order: -1;
-		order: -1;
-		-webkit-box-flex: 1;
-		-webkit-flex-grow: 1;
-		-ms-flex-positive: 1;
-		flex-grow: 1;
-		font-weight: normal;/*overrides bootstrap*/
-		min-width: 100px!important;
-		border-bottom: 3px solid $blue-300;
-		background-color: $blue-300;
-		text-align: center;
-		transition: $transition-timing;
-		border-radius: 0 !important; /*overrides bootstrap*/
-		margin-bottom: 0 !important; /*overrides bootstrap*/
-		font-size: 100% !important; /*overrides bootstrap*/
-	}
-	.tab-container {
-		@extend .wfm-block;
-		@extend .animate-show;
-	}
-	section {
-		  display: none;
-		  position: relative;
-		  z-index: 1;
-		  width: 100%;
-		  overflow: hidden;
-	}
-}
-
  .label:hover, .tab-group input[type=radio]:checked + .label{
-	background-color:$blue-500; 
+	background-color:$blue-500;
 }
