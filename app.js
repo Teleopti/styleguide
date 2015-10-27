@@ -1,7 +1,9 @@
-var app = angular.module('styleguideApp', ['ngMaterial', 'ui.grid', 'ui.grid.autoResize', 'ui.grid.exporter', 'ui.grid.selection', 'ui.bootstrap', 'angularMoment',  'wfm.cardList', 'wfm.daterangepicker'])
+var app = angular.module('styleguideApp', ['ngMaterial', 'ui.grid', 'ui.grid.autoResize', 'ui.grid.exporter', 'ui.grid.selection', 'ui.bootstrap', 'angularMoment',  'wfm.cardList', 'wfm.daterangepicker', 'wfm.timerangepicker'])
 .controller('mainCtrl', function ($scope) {
+
   /* Dummy data*/
     $scope.demos = [ {"id": "50d5ad" } , {"id": "678ffr" },{"id": "515ad" } , {"id": "673ffr" } ];
+
   /*
   * Code for Grid
   */
@@ -83,7 +85,9 @@ var chart = c3.generate({
   $scope.lastPage = function(){
     $scope.seekPage($scope.pageCount);
   }
-  
+
+  $scope.disableNextDay = false;
+    
   $scope.getVisiblePages = function (start, end) {
 		var displayPageCount = 5;
 		var ret = [];
@@ -117,3 +121,4 @@ var chart = c3.generate({
 	};
 
 });
+

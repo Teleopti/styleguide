@@ -22,9 +22,7 @@
             
             $element.addClass('wfm-date-range-picker-wrap');
             $scope.setRangeClass = setRangeClass;
-            $scope.isInvalid = isInvalid;
-        
-            if (!angular.isDefined($scope.errors)) $scope.errors = [];
+            $scope.isInvalid = isInvalid;       
 
             this.refreshDatepickers = refreshDatepickers;
             this.checkValidity = checkValidity;
@@ -48,6 +46,7 @@
 	    }
 
             function isInvalid(symbol) {
+                if (!$scope.errors) $scope.errors = [];
                 if (symbol) {
                     return $scope.errors.indexOf(symbol) >= 0;
                 } else {
@@ -57,6 +56,7 @@
 
             function checkValidity() {
                 var errors = [];
+                if (!$scope.errors) $scope.errors = [];                
 		if (!$scope.startDate || !$scope.endDate) {
 		    errors.push('empty');
 		} else if ($scope.startDate > $scope.endDate) {

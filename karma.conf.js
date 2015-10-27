@@ -15,7 +15,7 @@ module.exports = function(config) {
 
         // list of files / patterns to load in the browser
         files: [
-          'node_modules/moment/moment.js',
+          'node_modules/moment/min/moment-with-locales.min.js',
           'node_modules/angular/angular.min.js',
           'node_modules/angular-moment/angular-moment.min.js',
           'node_modules/angular-mocks/angular-mocks.js',
