@@ -1,42 +1,53 @@
-//Icons 
+//Icons
 //
-//We only use <a href="http://materialdesignicons.com/">Material icons</a>. 
+//We only use <a href="http://materialdesignicons.com/">Material icons</a>.
 //To use an icon, use the i-tag and apply the classes "mdi" and "mdi-icon-name" (replacing icon-name with the name form the icon index).
 //
-//In the cases where icons appear in the defined markup throughout this styleguide, they might have special style rules applied to them so be sure that the functionality is intact if you decide to remove them.  
+//In the cases where icons appear in the defined markup throughout this styleguide, they might have special style rules applied to them so be sure that the functionality is intact if you decide to remove them.
 //
 //Styleguide 5
-// 
+//
 //
 
 // Quick symbol library
 //
 // Here you can find the icons we currently use and their name:
-// *	<i class="mdi mdi-menu"></i> "mdi-menu" - Trigger a contextual menu
-// *	<i class="mdi mdi-dots-vertical"></i> "mdi-dots-vertical" - Another way to trigger a contextual menu
-// *	<i class="mdi mdi-menu-down"></i> "mdi-menu-down" - Indicate sorting in tables
-// *	<i class="mdi mdi-chevron-left"></i> "mdi-chevron-left" - Indicate expandable row
-// *	<i class="mdi mdi-chevron-right"></i> "mdi-chevron-right" - Indicate expandable row
-// *	<i class="mdi mdi-alert"></i> "mdi-alert" - Used for notices
-// *	<i class='mdi mdi-thumb-up'></i> "mdi-thumb-up"- Positive feedback
-// * 	<i class="mdi mdi-alert-circle"></i> "mdi-alert-circle" - Used for general notifications
-// *	<i class="mdi mdi-alert-octagon"></i> "mdi-alert-octagon" - Used for errors
-// * 	<i class="mdi mdi-plus"></i> "mdi-plus" - Add new item
-// *	<i class="mdi mdi-content-copy"></i> "mdi-content-copy" - Duplicate the item
-// * 	<i class="mdi mdi-pencil"></i> "mdi-pencil" - Edit the item
-// * 	<i class="mdi mdi-delete"></i> "mdi-delete" - Remove the item
-// * 	<i class="mdi mdi-fast-forward"></i> "mdi-fast-forward" - Sidenav toggle right
-// * 	<i class="mdi mdi-rewind"></i> "mdi-rewind" - Sidenav toggle left
-// * 	<i class="mdi mdi-magnify"></i> "mdi-magnify" - Indicate a search
-// * 	<i class="mdi mdi-filter-outline"></i> "mdi-filter-outline" - Indicate a filter
-// * 	<i class="mdi mdi-account"></i> "mdi-account" - User and account related actions
-// * 	<i class="mdi mdi-arrow-right"></i> "mdi-arrow-right" - go, run, proceed 
-// * 	<i class="mdi mdi-sort-ascending"></i> "mdi-sort-ascending" - Ascending sorting
-// * 	<i class="mdi mdi-sort-descending"></i> "mdi-sort-descending" - Descending sorting
-// * 	<i class="mdi mdi-close"></i> "mdi-close" - Close 
-// * 	<i class="mdi mdi-check"></i> "mdi-check" - Check
-// * 	<i class="mdi mdi-chart-bar"></i> "mdi-chart-bar" - Show chart
-// * 	<i class="mdi mdi-help-circle"></i> "mdi-help-circle" - indicate help tools
+//<table class="wfm-table">
+//<thead><tr><th>Icon</th><th>Class name</th><th>Definition</th></tr></thead>
+//<tbody>
+//  <tr><td><i class="mdi mdi-menu"></i></td><td>mdi mdi-menu</td><td>Trigger a major menu</td></tr>
+//  <tr><td><i class="mdi mdi-dots-vertical"></i></td><td>mdi mdi-dots-vertical</td><td>Trigger a minor menu</td></tr>
+//  <tr><td><i class="mdi mdi-menu-down"></i></td><td>mdi mdi-menu-down</td><td>Indicates a dropdown menu</td></tr>
+//  <tr><td><i class="mdi mdi-chevron-left"></i> </td><td>mdi mdi-chevron-left</td><td>Indicate expandable row </td></tr>
+//  <tr><td><i class="mdi mdi-chevron-right"></i> </td><td>mdi mdi-chevron-right</td><td>Indicate expandable row </td></tr>
+//  <tr><td><i class="mdi mdi-alert"></i> </td><td>mdi mdi-alert</td><td>Used for warnings </td></tr>
+//  <tr><td><i class='mdi mdi-thumb-up'></i> </td><td>mdi mdi-thumb-up</td><td>Used for positive feedback </td></tr>
+//  <tr><td><i class="mdi mdi-alert-circle"></i> </td><td>mdi mdi-alert-circle</td><td>Used for general notifications </td></tr>
+//  <tr><td><i class="mdi mdi-alert-octagon"></i> </td><td>mdi mdi-alert-octagon</td><td>Used for errors </td></tr>
+//  <tr><td><i class="mdi mdi-plus"></i> </td><td>mdi mdi-plus</td><td>Add new item </td></tr>
+//  <tr><td><i class="mdi mdi-content-copy"></i> </td><td>mdi mdi-content-copy</td><td>Duplicate the item </td></tr>
+//  <tr><td><i class="mdi mdi-pencil"></i> </td><td>mdi mdi-pencil</td><td>Edit the item </td></tr>
+//  <tr><td><i class="mdi mdi-delete"></i> </td><td>mdi mdi-delete</td><td>Remove the item </td></tr>
+//  <tr><td><i class="mdi mdi-magnify"></i> </td><td>mdi mdi-magnify</td><td>Indicate a search </td></tr>
+//  <tr><td><i class="mdi mdi-filter-outline"></i> </td><td>mdi mdi-filter-outline</td><td>Indicate a filter </td></tr>
+//  <tr><td><i class="mdi mdi-account"></i> </td><td>mdi mdi-account</td><td>User and account related actions </td></tr>
+//  <tr><td><i class="mdi mdi-arrow-right"></i> </td><td>mdi mdi-arrow-right</td><td>Go, run, proceed </td></tr>
+//  <tr><td><i class="mdi mdi-sort-ascending"></i> </td><td>mdi mdi-sort-ascending</td><td>Ascending sorting </td></tr>
+//  <tr><td><i class="mdi mdi-sort-descending"></i> </td><td>mdi mdi-sort-descending</td><td>Descending sorting </td></tr>
+//  <tr><td><i class="mdi mdi-arrow-up"></i> </td><td>mdi mdi-arrow-up</td><td>Currently sorting ascending</td></tr>
+//  <tr><td><i class="mdi mdi-arrow-down"></i> </td><td>mdi mdi-arrow-down</td><td>Currently sorting descending</td></tr>
+//  <tr><td><i class="mdi mdi-skip-previous"></i> </td><td>mdi mdi-skip-previous</td><td>Go to first </td></tr>
+//  <tr><td><i class="mdi mdi-skip-next"></i> </td><td>mdi mdi-skip-next</td><td>Go to last</td></tr>
+//  <tr><td><i class="mdi mdi-close"></i> </td><td>mdi mdi-close</td><td>Close </td></tr>
+//  <tr><td><i class="mdi mdi-check"></i> </td><td>mdi mdi-check</td><td>Selected</td></tr>
+//  <tr><td><i class="mdi mdi-chart-bar"></i> </td><td>mdi mdi-chart-bar</td><td>Show a bar chart </td></tr>
+//  <tr><td><i class="mdi mdi-chart-line"></i> </td><td>mdi mdi-chart-line</td><td>Show a line chart </td></tr>
+//  <tr><td><i class="mdi mdi-help-circle"></i> </td><td>mdi mdi-help-circle</td><td>Indicate help tools </td></tr>
+//  <tr><td><i class="mdi mdi-block-helper"></i> </td><td>mdi mdi-block-helper</td><td>Clear selections </td></tr>
+//  <tr><td><i class="mdi mdi-food-apple"></i> </td><td>mdi mdi-food-apple</td><td>Knowledge center </td></tr>
+//  <tr><td><i class="mdi mdi-school"></i> </td><td>mdi mdi-school</td><td>Training </td></tr>
+//</tbody>
+//</table>
 //
 //Styleguide 5.1
 //
@@ -49,14 +60,14 @@ font-size: 18px!important;
 display: inline-block;
   font: normal normal normal 24px/1 MaterialDesignIcons;
   font-size: inherit;
-  text-rendering: auto; 
+  text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transform: translate(0, 0); 
+  transform: translate(0, 0);
 }
 
 [class^="ui-grid-icon"]:before, [class*=" ui-grid-icon"]:before{
-	@extend .mdi-icon; 
+	@extend .mdi-icon;
 }
 
 .ui-grid-icon-angle-down:before {	content: "\f35d";}
