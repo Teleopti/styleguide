@@ -43,6 +43,7 @@
 
     [class*="context-menu-"] {
         transition: $transition-timing;
+        @extend .material-depth-2;
         position: absolute;
         opacity: 0;
         visibility: hidden;
@@ -58,7 +59,6 @@
     }
 
 	ul{
-		@extend .material-depth-2;
 		color:$gray087;
 		text-align:left!important;
 	}
@@ -67,7 +67,7 @@
         top: 100%;
         left: 100%;
         margin: -40px 0 0 $full-padding*2;
-		text-transform: lowercase;
+		    text-transform: lowercase;
 
         &:before {
             right: 100%;
