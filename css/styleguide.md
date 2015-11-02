@@ -34,6 +34,7 @@ For example when a list is displayed : actions icons can be displayed only when 
 7. If possible, provide undo/redo feature.
 8. Keyboard shortcuts must be available.
 9. Use nice material design animation to move from a state to another one or to display actions: http://www.google.com/design/spec/animation/meaningful-transitions.html
+10. SignalR depends on JQuery, but do not use JQuery for other purposes. (We want to phase it out eventually)
 
 Help
 ---
