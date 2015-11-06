@@ -1,13 +1,4 @@
 
-// Accordions 
-//
-// Accordions are expandable and collapseable areas that can hide a number of wfm-blocks.
-//
-//Markup: accordion.hbs
-//
-//Styleguide 1.15
-//
-
 .wfm-accordion{
 	list-style:none;
 	padding: 0;
@@ -26,7 +17,7 @@
 	float:right;
 	transition:$transition-timing;
 }
- 
+
 .wfm-accordion-content{
 	@extend .wfm-block;
 	@extend .animate-show;
