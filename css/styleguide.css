@@ -101,36 +101,3 @@
 
 .angular-req span:before {
   content: "This element require additional angular directives. " !important; }
-
-.kss-markup {
-  margin: -1px 0 24px 0;
-  border: 1px solid #999;
-  max-height: 0px;
-  position: absolute;
-  width: 61.8%;
-  z-index: 99;
-  overflow-y: hidden;
-  transition: 1s all ease-in;
-  padding-top: 30px;
-  background: #eee; }
-
-.kss-markup:hover {
-  max-height: 1000px;
-  z-index: 9999;
-  overflow-y: auto; }
-
-.kss-markup:hover:before {
-  content: "Copy markup"; }
-
-.kss-markup:before {
-  content: "View markup";
-  background: #eee;
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-weight: bold;
-  padding-left: 15px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  cursor: pointer;
-  right: 0; }
