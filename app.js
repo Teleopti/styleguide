@@ -62,7 +62,4 @@ var chart = c3.generate({
 /*code for card list*/
 	$scope.items = [{ title: 'mdi-chart-bar' }, { title: 'mdi-chart-bar' }];
 
-
-  var theDiv = document.getElementById("kss-node");
-  theDiv.innerHTML += "<h1>12313213</h1>";
 });

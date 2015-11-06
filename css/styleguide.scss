@@ -26,21 +26,7 @@
 //	<p class="spacer material-depth-1"> Stacked </p>
 //</div>
 //
-//Styleguide 1.1.0
-//
-
-//Trench
-//
-//<div class="styleguide-break"><i class="mdi mdi-alert"></i><span>We only use it for user interaction on small details. </span></div>
-//
-//The trench works much like the depth, however since it gives the illusion of a layer behind the current piece of material it should not be used on larger areas, as this will create raised "frames" around the trench.
-//
-//Note: the 'spacer' class is for styleguide demo purpose only.
-//
-//Markup:
-//<div class="spacer material-trench-1"> Layer 1 </div>
-//
-//Styleguide 1.1 .1
+//Styleguide 1.1
 //
 
 //Components
@@ -57,27 +43,11 @@
 //Styleguide 3
 //
 
-//Layouts
+//Containers
 //
 //Here you can find some templates for your layout. Normaly you will not have to worry about the sidenavs or the topbar since these are loaded around your view.
 //
 //Styleguide 4
-//
-//
-
-//Basic block layout
-//
-//This is the basic layout of the entire page. One of the main priciples here is that the content sould never make the layout-container scroll, but rather the content itself.
-// * 1 - Layout container
-// * 2 - Topbar
-// * 3 - Sidenav
-// * 4 - Sidenav toggle
-// * 5 - Ui view
-// * 6 - Panels
-//
-//<img src="../img/001.png"/>
-//
-//Styleguide 4.1
 //
 //
 
@@ -94,7 +64,7 @@
 //</div>
 //
 //
-//Styleguide 4.2
+//Styleguide 4.1
 
 
 //Form layout
@@ -186,7 +156,7 @@
 //</dl>
 //
 //
-//Styleguide 4.3
+//Styleguide 4.2
 
 //Scalability
 //
@@ -276,40 +246,3 @@
 .angular-req span:before{
 	content:"This element require additional angular directives. "!important;
 }
-
-.kss-markup {
-    margin: -1px 0 24px 0;
-    border: 1px solid #999;
-    max-height: 0px;
-    position: absolute;
-    width:61.8%;
-    z-index: 99;
-    overflow-y: hidden;
-    transition: 1s all ease-in;
-    padding-top:30px;
-    background:#eee;
-  }
-
-  .kss-markup:hover {
-    max-height:1000px;
-    z-index: 9999;
-    overflow-y: auto;
-  }
-
-  .kss-markup:hover:before{
-    content: "Copy markup";
-  }
-
-  .kss-markup:before{
-    content: "View markup";
-    background: #eee;
-    position: absolute;
-    left: 0;
-    top:0;
-    font-weight: bold;
-    padding-left: 15px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    cursor: pointer;
-    right: 0;
-  }

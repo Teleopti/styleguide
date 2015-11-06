@@ -268,43 +268,6 @@ md-option{
 	}
 }
 
-
-// List radio buttons
-//
-// Same as radio but with an inline display
-//
-//Markup:
-// <div class="wfm-radio-list">
-//		<div class="wfm-radio-list-item ">Option 1</div>
-//		<div class="wfm-radio-list-item ">Option 2</div>
-//		<div class="wfm-radio-list-item selected">Option 3</div>
-//	</div>
-//
-//Styleguide 1.4.6
-//
-
-.wfm-radio-list{
-	@extend .material-depth-1;
-	display: table;
-	background-color:$white;
-	table-layout: fixed;
-	width: 100%;
-	border-collapse: collapse;
-
-}
-
-.wfm-radio-list-item{
-	display: table-cell;
-	text-align: center;
-	padding: $full-padding;
-	border-left: 1px solid rgba(0,0,0,0.1);
-	&.selected, &:hover{
-		@extend .material-trench-1;
-		font-weight: bold;
-	}
-}
-
-
 //Checkboxes
 //
 //Checkboxes are used for selecting multiple input options.
