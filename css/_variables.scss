@@ -13,13 +13,16 @@
 //		</li>
 //		<li class="spacer material-depth-1 blue-500-swatch">
 //          <p>$blue-500 #0099FF</p>
-//		</li>	
+//		</li>
 //	</ul>
 //
 //Orange
 //	<ul class="swatch-list">
 //		<li class="spacer material-depth-1 orange-400-swatch">
 //          <p>$orange-400 #FFC285</p>
+//		</li>
+//		<li class="spacer material-depth-1 orange-500-swatch">
+//          <p>$orange-500 #FB8C00</p>
 //		</li>
 //		<li class="spacer material-depth-1 orange-600-swatch">
 //          <p>$orange-600 #FB8C00</p>
@@ -31,6 +34,12 @@
 //		<li class="spacer material-depth-1 red-600-swatch">
 //          <p>$red-600 #EE8F7D</p>
 //		</li>
+//		<li class="spacer material-depth-1 red-700-swatch">
+//          <p>$red-700 #EE8F7D</p>
+//		</li>
+//		<li class="spacer material-depth-1 red-800-swatch">
+//          <p>$red-800 #EE8F7D</p>
+//		</li>
 //</ul>
 //
 //Green
@@ -38,8 +47,11 @@
 //		<li class="spacer material-depth-1 green-100-swatch">
 //          <p>$green-100 #C2E085</p>
 //		</li>
-//		<li class="spacer material-depth-1 green-400-swatch">
-//         <p>$green-400 #9CCC65</p> 
+//		<li class="spacer material-depth-1 green-300-swatch">
+//         <p>$green-300 #9CCC65</p>
+//		</li>
+//		<li class="spacer material-depth-1 green-500-swatch">
+//         <p>$green-500 #9CCC65</p>
 //		</li>
 //	</ul>
 //
@@ -48,8 +60,50 @@
 //		<li class="spacer material-depth-1 pink-100-swatch">
 //          <p>$pink-100 #F488C8</p>
 //		</li>
+//		<li class="spacer material-depth-1 pink-300-swatch">
+//          <p>$pink-300 #EC38A3</p>
+//		</li>
 //		<li class="spacer material-depth-1 pink-500-swatch">
 //          <p>$pink-500 #EC38A3</p>
+//		</li>
+//	</ul>
+//
+//Purple
+//	<ul class="swatch-list">
+//		<li class="spacer material-depth-1 purple-100-swatch">
+//          <p>$purple-100 #F488C8</p>
+//		</li>
+//		<li class="spacer material-depth-1 purple-300-swatch">
+//          <p>$purple-300 #EC38A3</p>
+//		</li>
+//		<li class="spacer material-depth-1 purple-500-swatch">
+//          <p>$purple-500 #EC38A3</p>
+//		</li>
+//	</ul>
+//
+//Teal
+//	<ul class="swatch-list">
+//		<li class="spacer material-depth-1 teal-100-swatch">
+//          <p>$teal-100 #F488C8</p>
+//		</li>
+//		<li class="spacer material-depth-1 teal-300-swatch">
+//          <p>$teal-300 #EC38A3</p>
+//		</li>
+//		<li class="spacer material-depth-1 teal-500-swatch">
+//          <p>$teal-500 #EC38A3</p>
+//		</li>
+//	</ul>
+//
+//Brown
+//	<ul class="swatch-list">
+//		<li class="spacer material-depth-1 brown-100-swatch">
+//          <p>$brown-100 #F488C8</p>
+//		</li>
+//		<li class="spacer material-depth-1 brown-300-swatch">
+//          <p>$brown-300 #EC38A3</p>
+//		</li>
+//		<li class="spacer material-depth-1 brown-500-swatch">
+//          <p>$brown-500 #EC38A3</p>
 //		</li>
 //	</ul>
 //
@@ -65,7 +119,7 @@
 //          <p>$gray-300 #E0E0E0</p>
 //		</li>
 //		<li class="spacer material-depth-1 gray-026-swatch">
-//         <p>$gray026</p> 
+//         <p>$gray026</p>
 //		</li>
 //		<li class="spacer material-depth-1 gray-054-swatch">
 //          <p>$gray054</p>
@@ -85,13 +139,32 @@ $blue-300: #66c2ff; //#64b5f6;
 $blue-100: #99d6ff; //#BBDEFB;
 
 $orange-400: #ffc285;
+$orange-500: #FFA726;
 $orange-600: #FB8C00;
-$green-400: #9CCC65;
+
+$green-500: #8BC34A;
+$green-300: #9CCC65;
 $green-100: #c2e085;
+
+$red-800: #D32F2F;
+$red-700: #EF5350;
 $red-600: #ee8f7d;
 
-$pink-500: #ec38a3;
-$pink-100: #f488c8;
+$purple-100:#E1BEE7;
+$purple-300:#BA68C8;
+$purple-500:#9C27B0;
+
+$brown-100:#D7CCC8;
+$brown-300:#A1887F;
+$brown-500:#795548;
+
+$pink-500: #E91E63;
+$pink-300: #F06292;
+$pink-100: #F8BBD0;
+
+$teal-500: #009688;
+$teal-300: #4DB6AC;
+$teal-100: #B2DFDB;
 
 $gray-500: #9E9E9E;
 $gray-300: #E0E0E0;
@@ -104,7 +177,7 @@ $gray100: rgba(0,0,0,1);
 $white: #ffffff;
 
 $full-padding: 5px; /*sets wfm-block*/
-$half-padding: 3px; 
+$half-padding: 3px;
 $transition-timing: all 0.5s ease-in-out;
 
 // These classes are just for styleguide
@@ -119,32 +192,74 @@ $transition-timing: all 0.5s ease-in-out;
 	.blue-100-swatch {
 			background:$blue-100!important;
 	}
-	
-	.green-400-swatch {
-		background:$green-400!important;
+
+	.green-500-swatch {
+		background:$green-500!important;
+	}
+	.green-300-swatch {
+		background:$green-300!important;
 	}
 	.green-100-swatch {
 		background:$green-100!important;
 	}
-	
+
+	.purple-100-swatch {
+		background:$purple-100!important;
+	}
+	.purple-300-swatch {
+		background:$purple-300!important;
+	}
+	.purple-500-swatch {
+		background:$purple-500!important;
+	}
+
+	.brown-100-swatch {
+		background:$brown-100!important;
+	}
+	.brown-300-swatch {
+		background:$brown-300!important;
+	}
+	.brown-500-swatch {
+		background:$brown-500!important;
+	}
+
+	.teal-100-swatch {
+		background:$teal-100!important;
+	}
+	.teal-300-swatch {
+		background:$teal-300!important;
+	}
+	.teal-500-swatch {
+		background:$teal-500!important;
+	}
+
 	.pink-500-swatch {
 		background:$pink-500!important;
+	}
+	.pink-300-swatch {
+		background:$pink-300!important;
 	}
 	.pink-100-swatch {
 		background:$pink-100!important;
 	}
-	
+
 	.orange-400-swatch {
 			background:$orange-400!important;
 	}
-	
+	.orange-500-swatch {
+			background:$orange-500!important;
+	}
 	.orange-600-swatch {
 			background:$orange-600!important;
 	}
-	
+	.red-800-swatch {
+			background:$red-800!important;
+	}
+	.red-700-swatch {
+			background:$red-700!important;
+	}
 	.red-600-swatch {
 			background:$red-600!important;
-	
 	}
 	.gray-054-swatch {
 			background:$gray054!important;
@@ -167,12 +282,12 @@ $transition-timing: all 0.5s ease-in-out;
 	.white-swatch {
 			background:$white!important;
 	}
-	
+
 	li{
 		position:relative;
 		width: 100px;
 		height: 100px;
-		
+
 		p{
 			background:$white;
 			left:0;
