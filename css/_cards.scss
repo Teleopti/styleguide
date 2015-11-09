@@ -6,13 +6,13 @@
 //Markup:
 //<div class="card-group">
 //	<div class="wfm-card" tabindex="0">
-//				123
+//				Title
 //		</div>
 //	<div class="wfm-card" tabindex="0">
-//				123
+//				Title
 //		</div>
 //	<div class="wfm-card" tabindex="0">
-//			123
+//			Title
 //		</div>
 //	</div>
 //
@@ -37,7 +37,7 @@
 	 padding: 10px;
 	 transition:0.2s all ease-in-out;
 
-	 &:hover{
+	 &:hover,&:focus{
 	 	box-shadow: 0 8px 17px 0 rgba(0,0,0,.2)!important;
 	 }
  }
