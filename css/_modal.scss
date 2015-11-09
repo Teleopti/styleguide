@@ -25,13 +25,13 @@
 //		</div>
 //	</div>
 //
-//Styleguide 1.12
+//Styleguide 1.18
 //
 
 //Tabbed modal
 //
 //<div class="styleguide-break"><i class="mdi mdi-alert"></i><span>Use with care, creates complexity. </span></div>
-//When needing to display more information than the normal modal allows or present a string of actions to the user a tabbed modal can be used. 
+//When needing to display more information than the normal modal allows or present a string of actions to the user a tabbed modal can be used.
 //
 //Markup:
 //<div ng-cloak class="modal-box">
@@ -79,7 +79,7 @@
 //	</div>
 //</div>
 //
-//Styleguide 1.12.1
+//Styleguide 1.18.1
 //
 
 .modal-box {
@@ -92,14 +92,14 @@
 		z-index: 99998;
 		background: $gray026;
 	}
-	
+
 	.modalbg .dialog {
 		width: 60%;
 		z-index: 99999;
 		position: relative;
 		top: -20px;
 		margin: 10% auto;
-		background: $white;	
+		background: $white;
 	}
 
 	@media only screen and (max-width:1200px){
@@ -107,27 +107,27 @@
 	  width:90%;
 	 }
 	}
-	
+
 	@media(max-width:599px){
 		.modal-box .modalbg .dialog{
 			max-height:90%;
-			overflow-y:auto!important;	
+			overflow-y:auto!important;
 		}
 	}
 
 	@media(min-width:600px){
 		.modal-box .modalbg .dialog{
 			max-height:70%;
-			overflow-y:auto!important;	
+			overflow-y:auto!important;
 		}
 	}
-	
+
 	.modal-header{
 		padding: $full-padding;
 		background-color: $blue-500;
 		color: $white;
 	}
-	
+
 	.modal-inner-content{
 		background-color: $white;
 		color: $gray087;
@@ -135,13 +135,13 @@
 		padding:5px;
 		overflow-y: auto;
 	}
-	
+
 	.modal-footer{
 		padding: $full-padding * 2 $full-padding;
 		border-top: 1px solid $gray012;
 		color: $gray087;
 	}
-	
+
 	aside{
 		text-align:right;
 	}

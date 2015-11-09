@@ -10,7 +10,7 @@
 //
 //There are different types of buttons, however try to use one type of button per container. Only mix button types when you have a good reason to do so.
 //
-//Styleguide 1.6
+//Styleguide 1.7
 //
 
 // Flat buttons
@@ -22,7 +22,7 @@
 //<button class="wfm-btn wfm-btn-invis-primary">Primary</button>
 //<button class="wfm-btn wfm-btn-invis-disabled">Disabled</button>
 //
-//Styleguide 1.6.1
+//Styleguide 1.7.1
 //
 
 // Raised buttons
@@ -34,7 +34,7 @@
 //<button class="wfm-btn wfm-btn-primary">Primary</button>
 //<button class="wfm-btn wfm-btn-primary-disabled">Disabled</button>
 //
-//Styleguide 1.6.2
+//Styleguide 1.7.2
 //
 
 // Action buttons
@@ -42,26 +42,26 @@
 //The floating action button functions much like the primary raised button in that there should preferably only be one per view, indicating the primary positive action. More about when to use it can be found in the <a href="http://www.google.com/design/spec/components/buttons.html#buttons-floating-action-button">google material guidelines.</a>
 //
 //Markup:
-//<button class="wfm-fab"><i class="mdi mdi-account"></i>
+//<button class="wfm-fab  material-depth-1"><i class="mdi mdi-account"></i>
 //	<md-tooltip>My account</md-tooltip>
 //</button>
-//<button class="wfm-fab info"><i class="mdi mdi-arrow-right"></i>
+//<button class="wfm-fab  material-depth-1 info"><i class="mdi mdi-arrow-right"></i>
 //	<md-tooltip>Carry on</md-tooltip>
 //</button>
-//<button class="wfm-fab success"><i class="mdi mdi-plus"></i>
+//<button class="wfm-fab  material-depth-1 success"><i class="mdi mdi-plus"></i>
 //	<md-tooltip>Add a thing</md-tooltip>
 //</button>
-//<button class="wfm-fab mini"><i class="mdi mdi-account"></i>
+//<button class="wfm-fab  material-depth-1 mini"><i class="mdi mdi-account"></i>
 //	<md-tooltip>My account</md-tooltip>
 //</button>
-//<button class="wfm-fab mini info"><i class="mdi mdi-arrow-right"></i>
+//<button class="wfm-fab  material-depth-1 mini info"><i class="mdi mdi-arrow-right"></i>
 //	<md-tooltip>Carry on</md-tooltip>
 //</button>
-//<button class="wfm-fab mini success"><i class="mdi mdi-plus"></i>
+//<button class="wfm-fab  material-depth-1 mini success"><i class="mdi mdi-plus"></i>
 //	<md-tooltip>Add a thing</md-tooltip>
 //</button>
 //
-//Styleguide 1.6.3
+//Styleguide 1.7.3
 //
 
 
@@ -73,15 +73,15 @@
 //These animations should only be applied to action buttons.
 //
 //Markup:
-//<button class="wfm-fab grow-out info"><i class="mdi mdi-plus" ></i>
+//<button class="wfm-fab grow-out  material-depth-1 info"><i class="mdi mdi-plus" ></i>
 //	<md-tooltip>I appear when needed</md-tooltip>
 //</button>
-//<button class="wfm-fab info" ng-class="{'shrink-in':animateIn === 'trigger1'}" ng-click="animateIn = 'trigger1'">
+//<button class="wfm-fab info  material-depth-1" ng-class="{'shrink-in':animateIn === 'trigger1'}" ng-click="animateIn = 'trigger1'">
 //<i class="mdi mdi-close"></i>
 //	<md-tooltip>Click me and im gone</md-tooltip>
 //</button>
 //
-//Styleguide 1.6.4
+//Styleguide 1.7.4
 //
 
 
