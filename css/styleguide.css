@@ -6,18 +6,46 @@
   background: #66c2ff !important; }
 .swatch-list .blue-100-swatch {
   background: #99d6ff !important; }
-.swatch-list .green-400-swatch {
+.swatch-list .green-500-swatch {
+  background: #8BC34A !important; }
+.swatch-list .green-300-swatch {
   background: #9CCC65 !important; }
 .swatch-list .green-100-swatch {
   background: #c2e085 !important; }
+.swatch-list .purple-100-swatch {
+  background: #E1BEE7 !important; }
+.swatch-list .purple-300-swatch {
+  background: #BA68C8 !important; }
+.swatch-list .purple-500-swatch {
+  background: #9C27B0 !important; }
+.swatch-list .brown-100-swatch {
+  background: #D7CCC8 !important; }
+.swatch-list .brown-300-swatch {
+  background: #A1887F !important; }
+.swatch-list .brown-500-swatch {
+  background: #795548 !important; }
+.swatch-list .teal-100-swatch {
+  background: #B2DFDB !important; }
+.swatch-list .teal-300-swatch {
+  background: #4DB6AC !important; }
+.swatch-list .teal-500-swatch {
+  background: #009688 !important; }
 .swatch-list .pink-500-swatch {
-  background: #ec38a3 !important; }
+  background: #E91E63 !important; }
+.swatch-list .pink-300-swatch {
+  background: #F06292 !important; }
 .swatch-list .pink-100-swatch {
-  background: #f488c8 !important; }
+  background: #F8BBD0 !important; }
 .swatch-list .orange-400-swatch {
   background: #ffc285 !important; }
+.swatch-list .orange-500-swatch {
+  background: #FFA726 !important; }
 .swatch-list .orange-600-swatch {
   background: #FB8C00 !important; }
+.swatch-list .red-800-swatch {
+  background: #D32F2F !important; }
+.swatch-list .red-700-swatch {
+  background: #EF5350 !important; }
 .swatch-list .red-600-swatch {
   background: #ee8f7d !important; }
 .swatch-list .gray-054-swatch {
