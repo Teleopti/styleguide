@@ -72,6 +72,19 @@
 	}
 }
 
+
+//Big tables
+//
+//The big table is used to give data more space and actions. Check out the <a href="http://ui-grid.info/docs/#/tutorial">documentation</a> to see all available functions.
+//
+//  Markup: bigtables.hbs
+//
+//Styleguide 1.17.3
+
+.myGrid {
+     width: 100%;
+  }
+	
 /* Datagrid */
 .ui-grid-header-cell {
 	@extend .wfm-table-header;
