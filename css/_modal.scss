@@ -1,4 +1,4 @@
-﻿// Modals
+﻿// Modal
 //
 // A modal is launched above the main view and stays there until the user has taken action. Since this is such a obnoxious element it should only be used when you absolutely want the user to focus on a single task.
 //
@@ -27,6 +27,37 @@
 //
 //Styleguide 1.18
 //
+
+//Mini modal
+//
+// The mini modal can be used when the regular modal is to big for its content or as a confirmation dialog. Just remember that it still takes the focus away from what the use was doing untill it has been dismissed.
+//
+//Markup:
+//	<div ng-cloak class="modal-box">
+//		<button ng-click="modalLaunch3 = !modalLaunch3" class="wfm-btn wfm-btn-default">Open modal</button>
+//		<div ng-cloak ng-show="modalLaunch3">
+//			<div class="modalbg">
+//				<div class="dialog-mini">
+//					<div class="modal-header">
+//						Modal title
+//					</div>
+//					<div class="modal-inner-content">
+//						Are you sure you want to do the thing?
+//					</div>
+//					<div class="modal-footer">
+//						<aside>
+//							<a ng-click="modalLaunch3 = !modalLaunch3" class="wfm-btn wfm-btn-invis-default">no thanks</a>
+//							<a ng-click="modalLaunch3 = !modalLaunch3"  class="wfm-btn wfm-btn-invis-primary">yes please</a>
+//						</aside>
+//					</div>
+//				</div>
+//			</div>
+//		</div>
+//	</div>
+//
+//Styleguide 1.18.1
+//
+
 
 //Tabbed modal
 //
@@ -79,7 +110,7 @@
 //	</div>
 //</div>
 //
-//Styleguide 1.18.1
+//Styleguide 1.18.2
 //
 
 .modal-box {
@@ -93,7 +124,7 @@
 		background: $gray026;
 	}
 
-	.modalbg .dialog {
+	.modalbg .dialog, .modalbg .dialog-mini {
 		width: 60%;
 		z-index: 99999;
 		position: relative;
@@ -102,6 +133,12 @@
 		background: $white;
 	}
 
+	.modalbg .dialog-mini {
+		width: 25%;
+	}
+
+
+	/*Dialog*/
 	@media only screen and (max-width:1200px){
 	.modalbg .dialog {
 	  width:90%;
@@ -117,10 +154,32 @@
 
 	@media(min-width:600px){
 		.modal-box .modalbg .dialog{
-			max-height:70%;
+			max-height:25%!important;
 			overflow-y:auto!important;
 		}
 	}
+
+/*Mini dialog*/
+	@media only screen and (max-width:1200px){
+		.modalbg .dialog-mini {
+			width:90%;
+		 }
+		}
+
+		@media(max-width:599px){
+			.modal-box .modalbg .dialog-mini{
+				max-height:90%;
+				overflow-y:auto!important;
+			}
+		}
+
+		@media(min-width:600px){
+			.modal-box .modalbg .dialog-mini{
+				max-height:70%;
+				overflow-y:auto!important;
+			}
+		}
+
 
 	.modal-header{
 		padding: $full-padding;
