@@ -2,7 +2,7 @@
 //
 // When operations take time we display a loading bar or loader to indicate to the user that we are still running.
 //
-//Styleguide 1.9
+//Styleguide 1.19
 //
 
 //Progress bar
@@ -16,7 +16,7 @@
 //<md-progress-linear md-mode="indeterminate"></md-progress-linear>
 //<div class="wfm-block material-depth-1"> Loading...</div>
 //
-//Styleguide 1.9.1
+//Styleguide 1.19.1
 //
 
 md-progress-linear.md-default-theme .md-bar {
@@ -31,20 +31,20 @@ md-progress-linear[md-mode=buffer] .md-dashed:before {
 
 //Spinner
 //
-//The spinner is used to indicate automatic loading in tables, lists and views. It should be centered witin the containing element. 
+//The spinner is used to indicate automatic loading in tables, lists and views. It should be centered witin the containing element.
 //
 //Markup:
 //<md-progress-circular md-mode="indeterminate"></md-progress-circular>
 //<md-progress-circular class="mini-spinner" md-mode="indeterminate"></md-progress-circular>
 //
-//Styleguide 1.9.2
+//Styleguide 1.19.2
 //
 
 md-progress-circular.md-default-theme .md-inner .md-left .md-half-circle {
   border-left-color: $pink-500;
 }
 
-md-progress-circular.md-default-theme .md-inner .md-left .md-half-circle, 
+md-progress-circular.md-default-theme .md-inner .md-left .md-half-circle,
 md-progress-circular.md-default-theme .md-inner .md-right .md-half-circle,
 md-progress-circular .md-inner .md-gap {
   border-top-color: $pink-500;
