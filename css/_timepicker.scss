@@ -1,31 +1,31 @@
 //Time Range Picker
 //
-//A directive for specifying a timespan. It is built from the bootstrap-ui's timepicker with added validation. In WFM, the error messages will be translated automatically. 
+//A directive for specifying a timespan. It is built from the bootstrap-ui's timepicker with added validation. In WFM, the error messages will be translated automatically.
 //The <code>start-time</code> and <code>end-time</code> should be bound to javascript Date objects.
-//Their time parts (hour & minute) represent the timespan. When the <code>next day</code> switch    
+//Their time parts (hour & minute) represent the timespan. When the <code>next day</code> switch
 // is off, the values of their date parts will equal; otherwise they will differ.
 // In WFM, the timepicker is self-adjusted to the user's time-format setting, i.e. meridian will be used for 12h's format and disabled for 24h's format, and the AM/PM texts are translated automatically.
 //
-//Additionally for consistency with the old WFM client, we have added a special case: when <code>disable-next-day</code> is on, setting the end time to 00:00 will mean the midnight time of the next day, and the user will see "+ 1" displayed beside the end time to avoid ambiguity even though he or she cannot mannual toggle the next-day switch.    
+//Additionally for consistency with the old WFM client, we have added a special case: when <code>disable-next-day</code> is on, setting the end time to 00:00 will mean the midnight time of the next day, and the user will see "+ 1" displayed beside the end time to avoid ambiguity even though he or she cannot mannual toggle the next-day switch.
 //<table class="wfm-table">
-//<tr><th>Attribute Name</th><th>Usage</th><th>Required</th></tr>  
+//<tr><th>Attribute Name</th><th>Usage</th><th>Required</th></tr>
 //<tr><td>start-time</td><td>Bind to start time</td><td>true</td></tr>
 //<tr><td>end-time</td><td>Bind to end time</td><td>true</td></tr>
 //<tr><td>errors</td><td>Bind to errors. Its value will be set by the picker to an array of error-keys. The pre-defined error keys are 'order' and 'empty'</td><td>false</td></tr>
 //<tr><td>hide-message</td><td>mute the error message</td><td>false</td></tr>
 //<tr><td>disable-next-day</td><td>Disable next-day switch</td><td>false</td></tr>
-//</table>    
+//</table>
 //
 //Markup:
 //<time-range-picker start-time="startTime" end-time="endTime" disable-next-day="disableNextDay"></time-range-picker>
 //
-//Styleguide 2.5
-//    
+//Styleguide 2.4
+//
 
 .wfm-time-range-picker-wrap {
 
     button, input {
-      font-size: 15px !important;    
+      font-size: 15px !important;
     }
 
     td {
@@ -34,11 +34,11 @@
         -khtml-user-select: none;
         -moz-user-select: none;
         -ms-user-select: none;
-        user-select: none;	    
-    }  
+        user-select: none;
+    }
     .wfm-timepicker-wrap {
         td {
-            padding: 0;            
+            padding: 0;
         }
         .md-button {
             min-width: 48px;
@@ -54,24 +54,24 @@
             text-align:center;
             margin-left: 2px;
             margin-right: 2px;
-        }    
+        }
     }
-    
+
     .next-day-toggle .wfm-btn {
         margin: 0;
 	padding-top: 0;
 	padding-bottom: 0;
     }
-    
+
     .has-error > input {
         border:2px solid #F44336;
     }
-                
+
     .error-msg-container {
         display: none;
         margin-top: 10px;
     }
-        
+
     .ng-invalid {
         &.ng-invalid-order ~ .error-msg-container.ng-invalid-order {
             display: block;
@@ -79,5 +79,5 @@
         &.ng-invalid-empty ~ .error-msg-container.ng-invalid-empty {
             display: block;
         }
-    }	
+    }
 }
