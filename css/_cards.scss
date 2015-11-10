@@ -1,20 +1,18 @@
 
 //Cards
 //
-//test
+//Cards are used to show a number of similar content.
 //
 //Markup:
 //<div class="card-group">
-//	<div class="wfm-card" tabindex="0">
-//				Title
-//		</div>
-//	<div class="wfm-card" tabindex="0">
-//				Title
-//		</div>
-//	<div class="wfm-card" tabindex="0">
-//			Title
-//		</div>
-//	</div>
+//	<div class="wfm-card" tabindex="0">Title</div>
+//	<div class="wfm-card wfm-card-disabled" tabindex="0">Title</div>
+//	<div class="wfm-card" tabindex="0">Title</div>
+//	<div class="wfm-card" tabindex="0">Title</div>
+//	<div class="wfm-card" tabindex="0">Title</div>
+//	<div class="wfm-card" tabindex="0">Title</div>
+//	<div class="wfm-card" tabindex="0">Title</div>
+//</div>
 //
 //Styleguide 1.21
 //
@@ -43,7 +41,7 @@
  }
 
  .wfm-card-disabled {
-	 background-color:gray;
+	 background-color:$gray026;
 
 	 &:hover{
 	 	box-shadow: 0 8px 17px 0 rgba(0,0,0,.2)!important;

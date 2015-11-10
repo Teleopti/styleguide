@@ -10,8 +10,6 @@
 //
 // The topbar is, as you might have guessed at the top of the page, and contains the brand, a global search and some actions. Since the same topbar is always imported into every view it should only contain global and unspescific tools and actions.
 //
-//Note: the 'path' should show where the view is in relation to the root, not how the user got to it.
-//
 //Markup:
 //<div class="material-depth-1 navbar navbar-default">
 //		<div class="navbar-header content">
@@ -32,38 +30,74 @@
 //Styleguide 1.16.1
 //
 
-// Headers
+//View headers
 //
-//The normal header is used to indicate a new area or panel, any headers within that panel will have the second header (however, try to keep the total number of headers within one panel as low as possible).
-//
-//A secondary header should not live within another secondary header, rather, make a new secondary header to make skimming through the panel simple.
+//A view header should be the first thing in your view. It is used to help orientate the user and can contain global view actions such as action buttons. It is not part of a panel or any other element.
 //
 //Markup:
-//<div class="sub-header">
-//	First header title
-//</div>
-//<div class="bottom-header">
-//	Second header title
+//<div class="view-header">
+//	<h4 class="view-title"> <i class="mdi mdi-account"></i> First header title</h4>
+//	<div class="fab-wrapper">
+//		<button class="wfm-fab  material-depth-1 info"><i class="mdi mdi-plus"></i>
+//			<md-tooltip>Add something</md-tooltip>
+//		</button>
+//	</div>
 //</div>
 //
 //Styleguide 1.16.2
 //
 
-// Sidenav headers
+.view-header{
+	width:100%;
+	display: inline-flex;
+}
+.view-title{
+	width:90%;
+}
+
+.fab-wrapper{
+	width:10%;
+	z-index: 99;
+	position:absolute;
+
+	.wfm-fab{
+		margin-top:-1px;
+		position: relative;
+	}
+}
+
+//Headers
 //
-//These headers are twice as thick as the normal headers. They are only used in the sidenavs and should not be part of the normal layout.
+//The normal header is used to indicate a new panel/area. It can have some actions inside it relating to its content or that panel/area itself. Loo
+//Avoid secondary headers, rather, make a new panel/area if possible to make skimming through the page simple.
 //
 //Markup:
-//<div class="sidenav-header">
-//	Place me in your sidenav!
+//<div class="sub-header">
+//	First header title
+//	<div class="head-actions">
+//<button class="context-menu card-context">
+//	<i class="mdi mdi-dots-vertical"></i>
+//	<span class="context-menu-left">
+//		<ul class="wfm-list">
+//			<li><i class="mdi mdi-account"></i>Sign out</li>
+//			<li><i class="mdi mdi-plus"></i>Add a new agent</li>
+//			<li><i class="mdi mdi-alert"></i>Drop agents table</li>
+//		</ul>
+//	</span>
+//</button>
+//</div>
 //</div>
 //
 //Styleguide 1.16.3
 //
 
+.head-actions{
+	float:right;
+	margin-top:-10px;
+}
+
 .sub-header{
 	padding: $full-padding;
-	background-color: $blue-300;
 	color: $gray087;
 }
 
