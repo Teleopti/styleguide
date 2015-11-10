@@ -1,8 +1,8 @@
 // Context menus
 //
 //Context menus are used where more actions are needed.
-//To keep them manageable, limit the number of actions displayed within to a maximum of 5. Additionally a menu can not trigger a child menu
-//Dont place context menus on elements that can
+//To keep them manageable, limit the number of actions displayed within to a maximum of 5.
+//Additionally a menu can not trigger a child menu from within itself.  
 //
 //Markup:
 //<button class="context-menu wfm-btn wfm-btn-default">
@@ -35,6 +35,7 @@
 //		</ul>
 //	</span>
 //</button>
+//<br/>
 //<button class="context-menu card-context">
 //	<i class="mdi mdi-dots-vertical"></i>
 //	<span class="context-menu-left">

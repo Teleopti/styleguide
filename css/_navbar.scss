@@ -32,7 +32,8 @@
 
 //View headers
 //
-//A view header should be the first thing in your view. It is used to help orientate the user and can contain global view actions such as action buttons. It is not part of a panel or any other element.
+//A view header should be the first thing in your view.
+//It is used to help orientate the user and can contain global view actions such as action buttons. It is not part of a panel or any other element.
 //
 //Markup:
 //<div class="view-header">
@@ -61,15 +62,17 @@
 	position:absolute;
 
 	.wfm-fab{
-		margin-top:-1px;
+		margin-top:-3px;
 		position: relative;
 	}
 }
 
 //Headers
 //
-//The normal header is used to indicate a new panel/area. It can have some actions inside it relating to its content or that panel/area itself. Loo
-//Avoid secondary headers, rather, make a new panel/area if possible to make skimming through the page simple.
+//The normal header is used to indicate a new panel/area.
+//It can have some actions inside it relating to its content or that panel/area itself. Too
+//Avoid secondary headers, rather,
+//make a new panel/area if possible to make skimming through the page simple.
 //
 //Markup:
 //<div class="sub-header">
