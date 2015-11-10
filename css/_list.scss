@@ -66,7 +66,7 @@
 //<ul class="wfm-list">
 //	<li>
 //		<span class="list-item-container">
-//			List Item with one action in leave-behind
+//			List item with one action in leave-behind
 //		</span>
 //		<div class="wfm-leave-behind wfm-leave-behind-1">
 //			<span>
@@ -76,7 +76,7 @@
 //	</li>
 //	<li>
 //		<span class="list-item-container">
-//			List Item with two actions in leave-behind
+//			List item with two actions in leave-behind
 //		</span>
 //		<div class="wfm-leave-behind wfm-leave-behind-2">
 //			<span>
@@ -87,7 +87,7 @@
 //	</li>
 //	<li class="active">
 //		<span class="list-item-container">
-//			List Item with three actions in leave-behind
+//			Active list item with three actions in leave-behind
 //		</span>
 //		<div class="wfm-leave-behind">
 //			<span>
@@ -98,7 +98,7 @@
 //		</div>
 //	</li>
 //	<li>
-//		<i class="mdi mdi-alert"></i> List Item with icon and no leave-behind
+//		<i class="mdi mdi-alert"></i> List item with icon and no leave-behind
 //	</li>
 //</ul>
 //
@@ -162,11 +162,11 @@ display:inline-block;
 
 	&.active{
 		border-left: 3px solid $pink-500;
-		background-color: $white;
+		background-color: $green-100;
 	}
 	&.active:hover{
 		border-left: 3px solid $pink-500;
-		background-color: $white;
+		background-color: $green-100;
 	}
 
 	i{

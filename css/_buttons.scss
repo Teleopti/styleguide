@@ -8,14 +8,13 @@
 //The primary version of the button should be used for the primary action (i.e the one the user is most likely to take) in that view.
 //By that logic there should normally only be one per screen.
 //
-//There are different types of buttons, however try to use one type of button per container. Only mix button types when you have a good reason to do so.
-//
 //Styleguide 1.7
 //
 
 // Flat buttons
 //
 //The flat buttons are 'printed' on the material and only show its area when hovered, it uses capital letters to differentiate it from a link.
+//Use the flat buttons when there is a panel/area behind (around) the button.
 //
 //Markup:
 //<button class="wfm-btn wfm-btn-invis-default">Default</button>
@@ -27,7 +26,7 @@
 
 // Raised buttons
 //
-//The raised buttons lives on a raised layer and its area is always visible.
+//The raised buttons lives on a raised layer and its area is always visible. Use raised buttons when there is no panel/area behind (around) the button.
 //
 //Markup:
 //<button class="wfm-btn wfm-btn-default">Default</button>
