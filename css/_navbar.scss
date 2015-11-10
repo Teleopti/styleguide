@@ -22,7 +22,10 @@
 //
 //Markup:
 //<div class="view-header">
-//	<h4 class="view-title"> <i class="mdi mdi-account"></i> First header title</h4>
+//<div class="view-title">
+//		<h4><i class="mdi mdi-account"></i> First header title</h4>
+//		<p>Optional description of the view goes here.</p>
+//</div>
 //	<div class="fab-wrapper">
 //		<button class="wfm-fab  material-depth-1 info"><i class="mdi mdi-plus"></i>
 //			<md-tooltip>Add something</md-tooltip>
@@ -61,18 +64,18 @@
 //
 //Markup:
 //<div class="sub-header">
-//	First header title
-//	<div class="head-actions">
-//<button class="context-menu card-context">
-//	<i class="mdi mdi-dots-vertical"></i>
-//	<span class="context-menu-left">
-//		<ul class="wfm-list">
-//			<li><i class="mdi mdi-account"></i>Sign out</li>
-//			<li><i class="mdi mdi-plus"></i>Add a new agent</li>
-//			<li><i class="mdi mdi-alert"></i>Drop agents table</li>
-//		</ul>
-//	</span>
-//</button>
+//		First header title
+//		<div class="head-actions">
+//			<button class="context-menu card-context">
+//			<i class="mdi mdi-dots-vertical"></i>
+//			<span class="context-menu-left">
+//				<ul class="wfm-list">
+//					<li><i class="mdi mdi-account"></i>Sign out</li>
+//					<li><i class="mdi mdi-plus"></i>Add a new agent</li>
+//					<li><i class="mdi mdi-alert"></i>Drop agents table</li>
+//				</ul>
+//			</span>
+//	</button>
 //</div>
 //</div>
 //
