@@ -51,6 +51,14 @@ var chart = c3.generate({
     }
 });
 
+/*Code for tabs*/
+$scope.selectedIndex = 0;
+$scope.nextTab = function() {
+   var index = ($scope.selectedIndex == 50) ? 0 : $scope.selectedIndex + 1;
+   $scope.selectedIndex = index;
+
+ };
+
 /*Code for forms*/
  $scope.reset = function(form) {
    if (form) {
