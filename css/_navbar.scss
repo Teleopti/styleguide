@@ -17,8 +17,8 @@
 
 //View headers
 //
-//A view header should be the first thing in your view.
-//It is used to help orientate the user and can contain global view actions such as action buttons. It is not part of a panel or any other element.
+//A view header should be the first visible element in your view. It is used to help orientate the user. If needed you can add a global floating action button to it. If you do, it counts towards the limit of action buttons in you view (i.e one).
+//The view header is also a uniqe element in the view and therefore not part of any panel or element.
 //
 //Markup:
 //<div class="view-header">
@@ -57,8 +57,8 @@
 
 //Headers
 //
-//The normal header is used to indicate a new panel/area.
-//It can have some actions inside it relating to its content or that panel/area itself. Too
+//The normal header is used to indicate a new panel/area. Much like the view header it can have some actions tied to it, for example a context menu. If this is the case the actions only effect the content of that panel/area.
+//
 //Avoid secondary headers, rather,
 //make a new panel/area if possible to make skimming through the page simple.
 //
@@ -70,9 +70,9 @@
 //			<i class="mdi mdi-dots-vertical"></i>
 //			<span class="context-menu-left">
 //				<ul class="wfm-list">
-//					<li><i class="mdi mdi-account"></i>Sign out</li>
-//					<li><i class="mdi mdi-plus"></i>Add a new agent</li>
-//					<li><i class="mdi mdi-alert"></i>Drop agents table</li>
+//					<li>Add more item</li>
+//					<li>Remove some item</li>
+//					<li>Rename all items</li>
 //				</ul>
 //			</span>
 //	</button>

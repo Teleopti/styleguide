@@ -8,9 +8,9 @@
 //		<div ng-cloak ng-show="modalLaunch1">
 //			<div class="modalbg">
 //				<div class="dialog">
-//					<div class="modal-header">
+//					<h4 class="modal-header">
 //						Modal title
-//					</div>
+//					</h4>
 //					<div class="modal-inner-content">
 //						Ladies and gentlemen, allow me to introduce myself, I am the amazing modal window body!
 //					</div>
@@ -30,7 +30,10 @@
 
 //Mini modal
 //
-// The mini modal can be used when the regular modal is to big for its content or as a confirmation dialog. Just remember that it still takes the focus away from what the use was doing untill it has been dismissed.
+// The mini modal can be used when the regular modal is to big for its content or as a confirmation dialog.
+// To make the most of the smaller space the mini modal does not have a header. 
+//
+//Remember that it still takes the focus away from what the use was doing untill it has been dismissed.
 //
 //Markup:
 //	<div ng-cloak class="modal-box">
@@ -38,9 +41,6 @@
 //		<div ng-cloak ng-show="modalLaunch3">
 //			<div class="modalbg">
 //				<div class="dialog-mini">
-//					<div class="modal-header">
-//						Modal title
-//					</div>
 //					<div class="modal-inner-content">
 //						Are you sure you want to do the thing?
 //					</div>
@@ -182,22 +182,19 @@
 
 
 	.modal-header{
-		padding: $full-padding;
-		background-color: $blue-500;
-		color: $white;
+		padding-left:10px!important;
 	}
 
 	.modal-inner-content{
 		background-color: $white;
 		color: $gray087;
 		max-height: 70vh;
-		padding:5px;
+		padding:10px;
 		overflow-y: auto;
 	}
 
 	.modal-footer{
 		padding: $full-padding * 2 $full-padding;
-		border-top: 1px solid $gray012;
 		color: $gray087;
 	}
 
