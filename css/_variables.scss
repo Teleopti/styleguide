@@ -3,7 +3,7 @@
 //
 // If you are in a sass environment you can use sass variables for these
 //
-//Blue
+//Blue - Primary color
 //	<ul class="swatch-list">
 //		<li class="spacer material-depth-1 blue-100-swatch">
 //          <p>$blue-100 #99D6FF</p>
@@ -12,11 +12,11 @@
 //        	<p>$blue-300 #66C2FF</p>
 //		</li>
 //		<li class="spacer material-depth-1 blue-500-swatch">
-//          <p>$blue-500 #0099FF</p>
+//          <p class="white-color-text">$blue-500 #0099FF</p>
 //		</li>
 //	</ul>
 //
-//Orange
+//Orange - Reserved for warnings
 //	<ul class="swatch-list">
 //		<li class="spacer material-depth-1 orange-400-swatch">
 //          <p>$orange-400 #FFC285</p>
@@ -29,20 +29,20 @@
 //		</li>
 //	</ul>
 //
-//Red
+//Red - Reserved for errors
 //<ul class="swatch-list">
 //		<li class="spacer material-depth-1 red-600-swatch">
 //          <p>$red-600 #EE8F7D</p>
 //		</li>
 //		<li class="spacer material-depth-1 red-700-swatch">
-//          <p>$red-700 #EE8F7D</p>
+//          <p class="white-color-text">$red-700 #EE8F7D</p>
 //		</li>
 //		<li class="spacer material-depth-1 red-800-swatch">
-//          <p>$red-800 #EE8F7D</p>
+//          <p class="white-color-text">$red-800 #EE8F7D</p>
 //		</li>
 //</ul>
 //
-//Green
+//Green - Reserved for selection/success
 //	<ul class="swatch-list">
 //		<li class="spacer material-depth-1 green-100-swatch">
 //          <p>$green-100 #C2E085</p>
@@ -55,16 +55,17 @@
 //		</li>
 //	</ul>
 //
+//<div class="md-col6">
 //Pink
 //	<ul class="swatch-list">
 //		<li class="spacer material-depth-1 pink-100-swatch">
 //          <p>$pink-100 #F488C8</p>
 //		</li>
 //		<li class="spacer material-depth-1 pink-300-swatch">
-//          <p>$pink-300 #EC38A3</p>
+//          <p class="white-color-text">$pink-300 #EC38A3</p>
 //		</li>
 //		<li class="spacer material-depth-1 pink-500-swatch">
-//          <p>$pink-500 #EC38A3</p>
+//          <p class="white-color-text">$pink-500 #EC38A3</p>
 //		</li>
 //	</ul>
 //
@@ -74,10 +75,10 @@
 //          <p>$purple-100 #F488C8</p>
 //		</li>
 //		<li class="spacer material-depth-1 purple-300-swatch">
-//          <p>$purple-300 #EC38A3</p>
+//          <p class="white-color-text">$purple-300 #EC38A3</p>
 //		</li>
 //		<li class="spacer material-depth-1 purple-500-swatch">
-//          <p>$purple-500 #EC38A3</p>
+//          <p class="white-color-text">$purple-500 #EC38A3</p>
 //		</li>
 //	</ul>
 //
@@ -90,7 +91,7 @@
 //          <p>$teal-300 #EC38A3</p>
 //		</li>
 //		<li class="spacer material-depth-1 teal-500-swatch">
-//          <p>$teal-500 #EC38A3</p>
+//          <p class="white-color-text">$teal-500 #EC38A3</p>
 //		</li>
 //	</ul>
 //
@@ -100,10 +101,10 @@
 //          <p>$brown-100 #F488C8</p>
 //		</li>
 //		<li class="spacer material-depth-1 brown-300-swatch">
-//          <p>$brown-300 #EC38A3</p>
+//          <p class="white-color-text">$brown-300 #EC38A3</p>
 //		</li>
 //		<li class="spacer material-depth-1 brown-500-swatch">
-//          <p>$brown-500 #EC38A3</p>
+//          <p class="white-color-text">$brown-500 #EC38A3</p>
 //		</li>
 //	</ul>
 //
@@ -288,8 +289,11 @@ $transition-timing: all 0.5s ease-in-out;
 		width: 100px;
 		height: 100px;
 
+		.white-color-text{
+			color:$white;
+		}
+
 		p{
-			background:$white;
 			left:0;
 			right:0;
 			bottom:0;
