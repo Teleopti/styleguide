@@ -66,8 +66,9 @@
   position: relative;
   width: 100px;
   height: 100px; }
+  .swatch-list li .white-color-text {
+    color: #ffffff; }
   .swatch-list li p {
-    background: #ffffff;
     left: 0;
     right: 0;
     bottom: 0;
