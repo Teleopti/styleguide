@@ -12,24 +12,7 @@
 //
 //Note: the 'path' should show where the view is in relation to the root, not how the user got to it.
 //
-//Markup:
-//<div class="material-depth-1 navbar navbar-default">
-//		<div class="navbar-header content">
-//			<div class="navbar-left">
-//				<span class="brand">Teleopti WFM</span>
-//				<span class="breadbin">
-//					<a >Gotham > Batcave</a>
-//				</span>
-//			</div>
-//			<div class="navbar-right">
-//				<span>
-//					<i class="mdi mdi-magnify"></i>
-//					<input type="text" placeholder="Search ..." class="global-search" />
-//				</span>
-//				<span><a><i class="mdi mdi-account"></i></a></span>
-//			</div>
-//		</div>
-//</div>
+//Markup: topbar.hbs
 //
 //Styleguide 1.5.1
 //
@@ -221,7 +204,6 @@
     }
 
     &:focus {
-      @extend .material-depth-2;
         [class*="context-menu-"] {
             visibility: visible;
             opacity: 1;
