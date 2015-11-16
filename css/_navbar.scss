@@ -10,30 +10,15 @@
 //
 // The topbar is, as you might have guessed at the top of the page, and contains the brand, a global search and some actions. Since the same topbar is always imported into every view it should only contain global and unspescific tools and actions.
 //
-//Markup:
-//<div class="material-depth-1 navbar navbar-default">
-//		<div class="navbar-header content">
-//			<div class="navbar-left">
-//				<span class="brand">Teleopti WFM</span>
-//				<span class="breadbin"></span>
-//			</div>
-//			<div class="navbar-right">
-//				<span>
-//					<i class="mdi mdi-magnify"></i>
-//					<input type="text" placeholder="Search ..." class="global-search" />
-//				</span>
-//				<span><a><i class="mdi mdi-account"></i></a></span>
-//			</div>
-//		</div>
-//</div>
+//Markup: topbar.hbs
 //
 //Styleguide 1.16.1
 //
 
 //View headers
 //
-//A view header should be the first thing in your view.
-//It is used to help orientate the user and can contain global view actions such as action buttons. It is not part of a panel or any other element.
+//A view header should be the first visible element in your view. It is used to help orientate the user. If needed you can add a global floating action button to it. If you do, it counts towards the limit of action buttons in you view (i.e one).
+//The view header is also a uniqe element in the view and therefore not part of any panel or element.
 //
 //Markup:
 //<div class="view-header">
@@ -72,8 +57,8 @@
 
 //Headers
 //
-//The normal header is used to indicate a new panel/area.
-//It can have some actions inside it relating to its content or that panel/area itself. Too
+//The normal header is used to indicate a new panel/area. Much like the view header it can have some actions tied to it, for example a context menu. If this is the case the actions only effect the content of that panel/area.
+//
 //Avoid secondary headers, rather,
 //make a new panel/area if possible to make skimming through the page simple.
 //
@@ -85,9 +70,9 @@
 //			<i class="mdi mdi-dots-vertical"></i>
 //			<span class="context-menu-left">
 //				<ul class="wfm-list">
-//					<li><i class="mdi mdi-account"></i>Sign out</li>
-//					<li><i class="mdi mdi-plus"></i>Add a new agent</li>
-//					<li><i class="mdi mdi-alert"></i>Drop agents table</li>
+//					<li>Add more item</li>
+//					<li>Remove some item</li>
+//					<li>Rename all items</li>
 //				</ul>
 //			</span>
 //	</button>
@@ -140,13 +125,13 @@
 	.brand{
 		color: $white !important;
 		font-weight: bold;
+		font-size: 18px;
 		cursor:pointer;
 	}
 
 	.content {
 		height: 22px;
 		padding: 15px;
-		font-size: 18px;
 		line-height: 20px;
 		width: 98%;
 		box-sizing: content-box!important;
@@ -195,6 +180,10 @@
 .navbar-right {
 	float: right;
 	margin-right: 0;
+
+	button{
+		padding:0 0 !important;
+	}
 }
 
 /*search*/
@@ -237,4 +226,89 @@
 	transition:all 0s;
 
 	opacity:0;
+}
+
+
+.nav-context-menu {
+    position: relative;
+    cursor:pointer;
+    background:transparent;
+    border:none;
+
+    [class*="context-menu-"] {
+        transition: $transition-timing;
+        @extend .material-depth-2;
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        min-width: 200px;
+    }
+
+    &:focus {
+        [class*="context-menu-"] {
+            visibility: visible;
+            opacity: 1;
+            z-index: 10;
+        }
+
+				i{
+					color:$gray054!important;
+				}
+    }
+
+	.context-content{
+		color:$gray087;
+		padding: $full-padding;
+		text-align:left!important;
+		background:$white;
+		min-width: 300px;
+		box-shadow: 0 8px 17px 0 rgba(0,0,0,.2)!important;
+		text-transform: initial;
+
+		p,li{
+			font-size: 14px!important;
+		}
+
+		.description{
+			padding-left:5px;
+		}
+
+		footer{
+			text-align:right;
+		}
+	}
+
+	.arrow-up {
+	width: 0;
+	height: 0;
+	float:right;
+	margin-top:-10px;
+	border-left: 12px solid transparent;
+	border-right: 12px solid transparent;
+
+	border-bottom: 15px solid white;
+	}
+
+    .nav-context-menu-left {
+        top: 100%;
+        right: 100%;
+        margin: 20px -22px 0 0;
+		text-transform: lowercase;
+
+        &:before {
+            left: 100%;
+            margin-top: $full-padding*2;
+        }
+    }
+}
+
+.notification-ticker{
+    color:white;
+    font-size: 50%;
+    background: orange;
+    border-radius: 5px;
+		margin-top: -40px;
+		padding:-1px 1px 0 0 ;
+    z-index: 99999;
+    text-align: center;
 }
