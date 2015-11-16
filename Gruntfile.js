@@ -35,7 +35,7 @@
 				stderr: false
 			},
 			target: {
-				command: 'kss-node css styleguide css\styleguide.md --template kss-template'
+				command: 'kss-node css styleguide css/styleguide.md --template kss-template'
 			}
 		},
 		karma: {

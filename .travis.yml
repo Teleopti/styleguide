@@ -16,7 +16,7 @@ before_install:
   - npm install -g grunt-cli
   - npm install -g kss
 install: npm install
-before_script: grunt dist
+before_script: grunt dist --verbose
 script:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then bash ./deploy-ghpages.sh; fi
 env:
