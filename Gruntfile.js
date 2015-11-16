@@ -15,7 +15,7 @@
 		},
 		watch: {
 			styleguide: {
-				files: ['css/*.scss', 'css/*.hbs'],
+				files: ['css/*.scss', 'css/*.hbs', 'css/*.md'],
 				tasks: ['sass:styleguide','sass:dist','shell', 'cssmin']
 			}
 		},
