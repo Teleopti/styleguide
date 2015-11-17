@@ -73,7 +73,10 @@
 //    </div>
 //  </div>
 //  <hr>
-//  <div class="panel-content"></div>
+//  <div class="panel-content">
+//    <div>1</div>
+//    <div>2</div>
+//  </div>
 //</div>
 //
 //
@@ -81,12 +84,13 @@
 
 .panel-content{
   padding: $full-padding;
+}
+
 
   hr{
     width: 100%;
     border-color: $gray012;
   }
-}
 
 
 
