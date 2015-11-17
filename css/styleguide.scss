@@ -51,20 +51,43 @@
 //
 //
 
-//Panels
+//Panel layout
 //
 //The panels are the building blocks of the layout. It is a way to group elements together or provide a means of separation.
 //
 //Markup:
-//<div class=" material-depth-1">
-//	<div class="sub-header">Title</div>
-//	<div class="wfm-block">
-//		This is the content, it can contain whatever you want!
-//	</div>
+//<div class="panel-content material-depth-1">
+//  <div class="sub-header">
+//    First header title
+//    <div class="head-actions">
+//      <button class="context-menu card-context">
+//        <i class="mdi mdi-dots-vertical"></i>
+//        <span class="context-menu-left">
+//          <ul class="wfm-list">
+//            <li>Add more item</li>
+//            <li>Remove some item</li>
+//            <li>Rename all items</li>
+//          </ul>
+//        </span>
+//      </button>
+//    </div>
+//  </div>
+//  <hr>
+//  <div class="panel-content"></div>
 //</div>
 //
 //
 //Styleguide 4.1
+
+.panel-content{
+  padding: $full-padding;
+
+  hr{
+    width: 100%;
+    border-color: $gray012;
+  }
+}
+
 
 
 //Form layout
