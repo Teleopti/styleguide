@@ -1,5 +1,8 @@
-var app = angular.module('styleguideApp', ['ngMaterial', 'ui.tree', 'ui.grid', 'ui.grid.autoResize', 'ui.grid.exporter', 'ui.grid.selection', 'ui.bootstrap', 'angularMoment',  'wfm.cardList', 'wfm.timerangepicker', 'wfm.daterangepicker'])
-.controller('mainCtrl', function ($scope) {
+var app = angular.module('styleguideApp', ['ngMaterial', 'ui.tree', 'ui.grid',
+  'ui.grid.autoResize', 'ui.grid.exporter', 'ui.grid.selection', 'ui.bootstrap',
+  'angularMoment',  'wfm.cardList', 'wfm.timerangepicker', 'wfm.daterangepicker',
+  'angular-growl', 'ngAnimate'])
+.controller('mainCtrl', ['$scope', 'growl',function ($scope, growl) {
   /* Dummy data*/
     $scope.demos = [ {"id": "50d5ad" } , {"id": "678ffr" },{"id": "515ad" } , {"id": "673ffr" } ];
     $scope.treeDemos =   [
@@ -81,3 +84,29 @@ $scope.nextTab = function() {
 
 
 });
+  /*code for notices*/
+  $scope.displaySuccess = function(){
+    growl.success("<i class='mdi mdi-thumb-up'></i> Success: User is saved successfully.", {
+  							ttl: 0,
+  							disableCountDown: true
+  	});
+  };
+  $scope.displayInfo = function(){
+    growl.info("<i class='mdi mdi-information'></i> Info: A user logged out.", {
+  							ttl: 5000,
+  							disableCountDown: true
+  	});
+  };
+  $scope.displayWarning = function(){
+    growl.warning("<i class='mdi mdi-alert'></i> Warning: Press refresh as the data was changed by another user.", {
+  							ttl: 5000,
+  							disableCountDown: true
+  	});
+  };
+  $scope.displayError = function(){
+    growl.error("<i class='mdi mdi-alert-octagon'></i> Error: Something exploded so fix it.", {
+  							ttl: 5000,
+  							disableCountDown: true
+  	});
+  };
+}]);

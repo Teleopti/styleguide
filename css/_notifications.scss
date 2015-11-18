@@ -11,14 +11,7 @@
 //
 //Note: the 'notice-spacer' class is for styleguide demo purpose only.
 //
-//Markup:
-//<div class="alert-success notice-spacer"><i class='mdi mdi-thumb-up'></i> Success: User is saved successfully.</div>
-//<div class="notice-group">
-//	<div class="alert-info notice-spacer"><i class='mdi mdi-information'></i> Info: A user logged out.</div>
-//	<div class="alert-detail notice-spacer">I was born to show details.</div>
-//</div>
-//	<div class="alert-warning notice-spacer"><i class='mdi mdi-alert'></i> Warning: Press refresh as the data was changed by another user.</div>
-//	<div class="alert-error notice-spacer"><i class='mdi mdi-alert-octagon'></i> Error: Something exploded so fix it.</div>
+// Markup: notices.hbs
 //
 // A notice should either self-destruct or be dismissable to free up space.
 //
@@ -64,6 +57,56 @@
 .notice-spacer{
 	padding:10px 5px;
 	margin-bottom:5px;
+}
+
+
+
+.growl-container > .growl-item {
+	padding: $full-padding;
+	margin-bottom: 0px;
+	cursor: pointer;
+	vertical-align: middle;
+	box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+  .mdi{
+    vertical-align: middle;
+  }
+}
+
+.growl-item .close {
+	text-shadow: none;
+	opacity: 1;
+  position: relative;
+  float: right;
+  background: 0 0;
+  border: 0;
+  color: $gray087;
+  padding: 0;
+
+}
+
+.growl-container > button {
+	border: none;
+	outline:none;
+}
+.growl-container > .growl-item.ng-enter,
+.growl-container > .growl-item.ng-leave {
+	-webkit-transition:0.5s all ease-in-out;
+	-moz-transition:0.5s all ease-in-out;
+	-o-transition:0.5s all ease-in-out;
+	transition:0.5s all ease-in-out;
+}
+
+.growl-container > .growl-item.ng-enter,
+.growl-container > .growl-item.ng-leave.ng-leave-active {
+	opacity:0;
+}
+.growl-container > .growl-item.ng-leave,
+.growl-container > .growl-item.ng-enter.ng-enter-active {
+	opacity:1;
+}
+
+.growl-container > div.growl-item {
+	background-repeat: no-repeat;
 }
 
 // Notifications
