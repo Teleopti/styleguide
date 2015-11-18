@@ -6,7 +6,6 @@ var app = angular.module('styleguideApp', ['ngMaterial', 'ui.tree', 'ui.grid', '
       {"categories": [{"name": "item 1"},{"name": "item 2"},{"name": "item 3"},{"name": "item 2"}],
         "name": "First Group"},
       {"categories": [{"name": "item 1"},{"name": "item 3"}],"name": "Second Group"},{"categories": [],"name":'Third Group'}];
-      console.log('un bel arbre', $scope.treeDemos);
 
   /* Code for Grid */
   var data = [];
