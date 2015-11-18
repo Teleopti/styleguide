@@ -2,9 +2,13 @@ var app = angular.module('styleguideApp', ['ngMaterial', 'ui.tree', 'ui.grid', '
 .controller('mainCtrl', function ($scope) {
   /* Dummy data*/
     $scope.demos = [ {"id": "50d5ad" } , {"id": "678ffr" },{"id": "515ad" } , {"id": "673ffr" } ];
-  /*
-  * Code for Grid
-  */
+    $scope.treeDemos =   [
+      {"categories": [{"name": "item 1"},{"name": "item 2"},{"name": "item 3"},{"name": "item 2"}],
+        "name": "First Group"},
+      {"categories": [{"name": "item 1"},{"name": "item 3"}],"name": "Second Group"},{"categories": [],"name":'Third Group'}];
+      console.log('un bel arbre', $scope.treeDemos);
+
+  /* Code for Grid */
   var data = [];
   for(var i=0; i<100;i++){
     data[i]={}
