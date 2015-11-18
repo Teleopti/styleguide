@@ -1,59 +1,29 @@
-<div class="tree">
-<div class="angular-ui-tree">
-	<ol id="tree-root" class="tree-line angular-ui-tree-nodes">
-		<li class="angular-ui-tree-node">
-			<div class="tree-toggle-group">
-				<div class="toggle-handle open"><i class="mdi mdi-chevron-right"></i></div>
-				<div class="angular-ui-tree-handle selected">
-					Super parent
-					<span><i class="mdi mdi-check"></i></span>
-				</div>
+<div>
+	<div class="input-prepend">
+		<i class="mdi mdi-filter-outline"></i>
+		<input type="text" name="filterLocations" ng-model="searchLocations" placeholder="filter" />
+	</div>
+
+	<div class="tree">
+		<div ui-tree data-drag-enabled="false">
+			<ol ui-tree-nodes="" ng-model="vm.locations" id="tree-root-locations" class="tree-line" toggle-focus>
+				<li ng-repeat="node in demos | filter:searchLocations" ui-tree-node ng-include=" 'locations_renderer.html' "></li>
+			</ol>
+		</div>
+	</div>
+
+	<script type="text/ng-template" id="locations_renderer.html">
+		<div class="tree-toggle-group">
+			<div class="toggle-handle" ng-class="{open: node.show}" ng-click="node.show = !node.show"><i ng-show="node.Children.length > 0" class="mdi mdi-chevron-right"></i></div>
+			<div ui-tree-handle ng-class="{selected: node.selected}" ng-click="vm.toggleLocationSelection(node)" ng-hide="checked">
+				test
+				<span><i class="mdi mdi-check"></i></span>
 			</div>
-			<ol class="angular-ui-tree-nodes">
-				<li class="angular-ui-tree-node">
-					<div class="tree-toggle-group">
-						<div class="toggle-handle open"><i class="mdi mdi-chevron-right"></i></div>
-						<div class="angular-ui-tree-handle">
-							Parent
-							<span><i class="mdi mdi-check"></i></span>
-						</div>
-					</div>
-					<ol class="angular-ui-tree-nodes">
-						<li class="angular-ui-tree-node">
-							<div class="tree-toggle-group">
-								<div class="toggle-handle"></i></div>
-								<div class="angular-ui-tree-handle selected">
-									Child
-									<span><i class="mdi mdi-check"></i></span>
-								</div>
-							</div>
-						</li>
-					</ol>
-				</li>
-			</ol>
-			<ol class="angular-ui-tree-nodes">
-				<li class="angular-ui-tree-node">
-					<div class="tree-toggle-group">
-						<div class="toggle-handle open"><i class="mdi mdi-chevron-right"></i></div>
-						<div class="angular-ui-tree-handle">
-							Parent
-							<span><i class="mdi mdi-check"></i></span>
-						</div>
-					</div>
-					<ol class="angular-ui-tree-nodes">
-						<li class="angular-ui-tree-node">
-							<div class="tree-toggle-group">
-								<div class="toggle-handle"></i></div>
-								<div class="angular-ui-tree-handle">
-									Child
-									<span>90%</span>
-								</div>
-							</div>
-						</li>
-					</ol>
-				</li>
-			</ol>
-		</li>
-	</ol>
-</div>
+		</div>
+
+		<ol ui-tree-nodes="" ng-model="node.Children" ng-show="node.show">
+			<li ng-repeat="node in node.Children | filter:searchLocations" ui-tree-node ng-include="'locations_renderer.html'">
+			</li>
+		</ol>
+	</script>
 </div>

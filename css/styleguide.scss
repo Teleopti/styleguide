@@ -51,9 +51,16 @@
 //
 //
 
-//Panel layout
+//Panels
 //
 //The panels are the building blocks of the layout. It is a way to group elements together or provide a means of separation.
+//
+//Styleguide 4.1
+
+
+//Single panel
+//
+//Single panels are panels have a single column and elements generally takes up the full width. Here is an example:
 //
 //Markup:
 //<div class="panel-content material-depth-1">
@@ -74,24 +81,60 @@
 //  </div>
 //  <hr>
 //  <div class="panel-content">
-//    <div>1</div>
-//    <div>2</div>
 //  </div>
+//  <div class="panel-content">
+//    <label for="inputId" class="input-prepend">
+//      <i class="mdi mdi-filter-outline">
+//        <md-tooltip>Filter the table</md-tooltip>
+//      </i>
+//      <input type="text" id="inputId" />
+//    </label>
+//  </div>
+//  <div class="panel-content">
+//    <ul class="wfm-simple-list">
+//      <li>
+//        Item one
+//        <div class="subtext">This item is the first</div>
+//      </li>
+//      <li>
+//        Item two
+//        <div class="subtext">This item is the second</div>
+//      </li>
+//      <li>
+//        Item three
+//        <div class="subtext">This item is the third</div>
+//      </li>
+//      <li>
+//        Item four
+//        <div class="subtext">This item is the last</div>
+//      </li>
+//    </ul>
+//  </div>
+//<div class="panel-footer">
+//	<a class="wfm-btn wfm-btn-invis-default">Advanced</a>
+//  <a class="wfm-btn wfm-btn-invis-primary">Apply</a>
+//</div>
 //</div>
 //
 //
-//Styleguide 4.1
+//Styleguide 4.1.1
 
 .panel-content{
   padding: $full-padding;
+  background:$white;
 }
 
+hr{
+  width: 100%;
+  border:1px solid ;
+  border-color:rgba(0,0,0,.06);
+}
 
-  hr{
-    width: 100%;
-    border-color: $gray012;
-  }
-
+.panel-footer {
+    text-align: right;
+    padding: 10px 5px;
+    color: rgba(0,0,0,.87);
+}
 
 
 //Form layout
