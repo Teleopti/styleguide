@@ -80,36 +80,44 @@
 //    </div>
 //  </div>
 //  <hr>
+//  <div class="panel-content-group">
 //  <div class="panel-content">
+//    100%
+//  </div>
+//</div>
+//  <div class="panel-content-group">
+//  <div class="panel-content">
+//    50%
 //  </div>
 //  <div class="panel-content">
-//    <label for="inputId" class="input-prepend">
-//      <i class="mdi mdi-filter-outline">
-//        <md-tooltip>Filter the table</md-tooltip>
-//      </i>
-//      <input type="text" id="inputId" />
-//    </label>
+//    50%
+//  </div>
+//</div>
+//  <div class="panel-content-group">
+//  <div class="panel-content">
+//    33%
 //  </div>
 //  <div class="panel-content">
-//    <ul class="wfm-simple-list">
-//      <li>
-//        Item one
-//        <div class="subtext">This item is the first</div>
-//      </li>
-//      <li>
-//        Item two
-//        <div class="subtext">This item is the second</div>
-//      </li>
-//      <li>
-//        Item three
-//        <div class="subtext">This item is the third</div>
-//      </li>
-//      <li>
-//        Item four
-//        <div class="subtext">This item is the last</div>
-//      </li>
-//    </ul>
+//    33%
 //  </div>
+//  <div class="panel-content">
+//    33%
+//  </div>
+//</div>
+//  <div class="panel-content-group">
+//  <div class="panel-content">
+//     25%
+//  </div>
+//  <div class="panel-content">
+//     25%
+//  </div>
+//  <div class="panel-content">
+//     25%
+//  </div>
+//  <div class="panel-content">
+//    25%
+//  </div>
+//</div>
 //<div class="panel-footer">
 //	<a class="wfm-btn wfm-btn-invis-default">Advanced</a>
 //  <a class="wfm-btn wfm-btn-invis-primary">Apply</a>
@@ -120,8 +128,29 @@
 //Styleguide 4.1.1
 
 .panel-content{
-  padding: $full-padding;
-  background:$white;
+  flex-basis: 100%;
+  padding:$full-padding;
+}
+
+.demo-outline > .panel-content{
+  outline:1px dashed $gray012;
+}
+
+@media screen and (min-width: 768px) {
+  .panel-content-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  .panel-content {
+    flex: 1;
+  }
+  ._25 {
+    flex: 2.5;
+  }
+  ._5 {
+    flex: 5;
+  }
 }
 
 hr{
