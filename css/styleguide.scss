@@ -45,22 +45,31 @@
 
 //Containers
 //
-//Here you can find some templates for your layout.
+//Containers are responsible for shaping the layout and creates structure to the views.
+//Almost everything described in the elements chapter should be housed inside a container.
+//There are different kinds of containers that all have different applications, what they do however have in common is the ability to house flex grids and/or elements.
+//When building a new view, start by picking one or several containers and a flex layout that fits with your views content.
+//Try to avoid nesting containers whenever possible.
+//
 //
 //Styleguide 4
 //
 //
 
-//Panels
+//Layout
 //
-//The panels are the building blocks of the layout. It is a way to group elements together or provide a means of separation.
+//The layout consists of the flex grid. Since the grid is adapting to the number of items inside it, be careful not to use too many in one row. The recomended max number of con-flex items in one row is 4, if more are needed, concider using a tabbed container or spreading them out over sveral rows.
 //
 //Styleguide 4.1
-
-
-//Single panel
 //
-//Single panels are panels have a single column and elements generally takes up the full width. Here is an example:
+//
+
+//Panel
+//
+//The panel is the main container and the most versitile. It can house most elements and can be configured in a number of layouts.
+//
+//
+//Note: the ´demo-outline´ class is for styleguide demo purpose only.
 //
 //Markup:
 //<div class="panel-content material-depth-1">
@@ -71,53 +80,73 @@
 //        <i class="mdi mdi-dots-vertical"></i>
 //        <span class="context-menu-left">
 //          <ul class="wfm-list">
-//            <li>Add more item</li>
-//            <li>Remove some item</li>
-//            <li>Rename all items</li>
+//            <li>Menu item 1</li>
+//            <li>Menu item 2</li>
+//            <li>Menu item 3</li>
 //          </ul>
 //        </span>
 //      </button>
 //    </div>
 //  </div>
 //  <hr>
-//  <div class="panel-content-group">
-//  <div class="panel-content">
+//  <div class="con-row demo-outline">
+//  <div class="con-flex">
 //    100%
 //  </div>
 //</div>
-//  <div class="panel-content-group">
-//  <div class="panel-content">
+//  <div class="con-row demo-outline">
+//  <div class="con-flex">
 //    50%
 //  </div>
-//  <div class="panel-content">
+//  <div class="con-flex">
 //    50%
 //  </div>
 //</div>
-//  <div class="panel-content-group">
-//  <div class="panel-content">
+//  <div class="con-row demo-outline">
+//  <div class="con-flex">
 //    33%
 //  </div>
-//  <div class="panel-content">
+//  <div class="con-flex">
 //    33%
 //  </div>
-//  <div class="panel-content">
+//  <div class="con-flex">
 //    33%
 //  </div>
 //</div>
-//  <div class="panel-content-group">
-//  <div class="panel-content">
+//  <div class="con-row demo-outline">
+//  <div class="con-flex">
 //     25%
 //  </div>
-//  <div class="panel-content">
+//  <div class="con-flex">
 //     25%
 //  </div>
-//  <div class="panel-content">
+//  <div class="con-flex">
 //     25%
 //  </div>
-//  <div class="panel-content">
+//  <div class="con-flex">
 //    25%
 //  </div>
 //</div>
+//  <div class="con-row demo-outline">
+//  <div class="con-flex split-3-1">
+//     75%
+//  </div>
+//  <div class="con-flex">
+//     25%
+//  </div>
+//</div>
+//  <div class="con-row demo-outline">
+//  <div class="con-flex split-1-2">
+//     50%
+//  </div>
+//  <div class="con-flex">
+//     25%
+//  </div>
+//  <div class="con-flex">
+//     25%
+//  </div>
+//</div>
+//<hr/>
 //<div class="panel-footer">
 //	<a class="wfm-btn wfm-btn-invis-default">Advanced</a>
 //  <a class="wfm-btn wfm-btn-invis-primary">Apply</a>
@@ -125,24 +154,33 @@
 //</div>
 //
 //
-//Styleguide 4.1.1
+//Styleguide 4.2
 
-.panel-content{
+.con-flex{
   flex-basis: 100%;
   padding:$full-padding;
 }
 
-.demo-outline > .panel-content{
+
+.demo-outline > .con-flex{
   outline:1px dashed $gray012;
 }
 
+.split-3-1{
+  flex-basis: 50%!important;
+}
+
+.split-1-2{
+  flex-basis: 25%!important;
+}
+
 @media screen and (min-width: 768px) {
-  .panel-content-group {
+  .con-row {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
   }
-  .panel-content {
+  .con-flex {
     flex: 1;
   }
   ._25 {
@@ -255,7 +293,7 @@ hr{
 //</dl>
 //
 //
-//Styleguide 4.2
+//Styleguide 4.3
 
 //Resources
 //
