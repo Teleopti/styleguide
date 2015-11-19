@@ -87,7 +87,7 @@ $scope.nextTab = function() {
   /*code for notices*/
   $scope.displaySuccess = function(){
     growl.success("<i class='mdi mdi-thumb-up'></i> Success: User is saved successfully.", {
-  							ttl: 0,
+  							ttl: 5000,
   							disableCountDown: true
   	});
   };
