@@ -67,14 +67,14 @@
 //Panel
 //
 //The panel is the main container and the most versitile. It can house most elements and can be configured in a number of layouts.
-//
+//Since a panel is a raised pice of material, avoid using other raised elements on top of it, unless they are floating (like a action button or context menu)
 //
 //Note: the ´demo-outline´ class is for styleguide demo purpose only.
 //
 //Markup:
-//<div class="panel-content material-depth-1">
+//<div class="panel material-depth-1">
 //  <div class="sub-header">
-//    First header title
+//    Panel title
 //    <div class="head-actions">
 //      <button class="context-menu card-context">
 //        <i class="mdi mdi-dots-vertical"></i>
@@ -147,20 +147,24 @@
 //  </div>
 //</div>
 //<hr/>
-//<div class="panel-footer">
-//	<a class="wfm-btn wfm-btn-invis-default">Advanced</a>
-//  <a class="wfm-btn wfm-btn-invis-primary">Apply</a>
-//</div>
+//  <div class="panel-footer">
+//	 <a class="wfm-btn wfm-btn-invis-default">Advanced</a>
+//    <a class="wfm-btn wfm-btn-invis-primary">Apply</a>
+//  </div>
 //</div>
 //
 //
 //Styleguide 4.2
 
+.panel{
+  margin-bottom: $full-padding*2;
+  background:$white;
+}
+
 .con-flex{
   flex-basis: 100%;
   padding:$full-padding;
 }
-
 
 .demo-outline > .con-flex{
   outline:1px dashed $gray012;
@@ -293,7 +297,7 @@ hr{
 //</dl>
 //
 //
-//Styleguide 4.3
+//Styleguide 4.4
 
 //Resources
 //
