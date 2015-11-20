@@ -94,13 +94,16 @@
 		color:$gray087;
 	}
 
+	md-tabs.md-default-theme md-tab.active{
+		color:$gray087!important;
+	}
+
 	md-tab md-tab-label{
 		  padding-bottom: 10px!important;
 	}
 
 	.md-header{
 		  height: 30px!important;
-		  background-color:$blue-300!important;
 	}
 }
 
@@ -110,13 +113,16 @@ md-content{
 }
 
 //project tabs style
+/*
+md-tabs .md-tab.md-active, md-tabs .md-tab.md-focused {
+    color:red!important;
+}*/
 
 	.wfm-slide-tabs md-tabs md-tab-item.md-active {
 		color: rgb(63,81,181)!important;
 		background-color:$blue-300 !important;
 	  	height: 79%;
 	}
-
 
 	.wfm-slide-tabs md-tabs .md-tab {
 		 color:$gray054;
@@ -126,7 +132,6 @@ md-content{
 
 	.wfm-slide-tabs md-tabs-wrapper {
 		height: 30px !important;
-		background-color: $blue-300 !important;
 	}
 
 	.wfm-slide-tabs md-ink-bar{
