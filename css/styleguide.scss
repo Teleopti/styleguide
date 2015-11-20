@@ -75,7 +75,7 @@
 //<div class="panel material-depth-1">
 //  <div class="sub-header">
 //    Panel title
-//    <div class="head-actions">
+//    <div class="head-actions panel-menu">
 //      <button class="context-menu card-context">
 //        <i class="mdi mdi-dots-vertical"></i>
 //        <span class="context-menu-left">
@@ -129,54 +129,61 @@
 .panel{
   margin-bottom: $full-padding*2;
   background:$white;
-}
+  position: relative;
 
-.con-flex{
-  flex-basis: 100%;
-  padding:$full-padding;
-}
-
-.demo-outline > .con-flex{
-  outline:1px dashed $gray012;
-}
-
-.split-3-1{
-  flex-basis: 50%!important;
-}
-
-.split-1-2{
-  flex-basis: 25%!important;
-}
-
-@media screen and (min-width: 768px) {
-  .con-row {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+  .con-flex{
+    flex-basis: 100%;
+    padding:$full-padding;
   }
-  .con-flex {
-    flex: 1;
+
+  .panel-menu{
+    position: absolute;
+    top:8px;
+    right:8px;
+    z-index:10;
   }
-  ._25 {
-    flex: 2.5;
+
+  .demo-outline > .con-flex{
+    outline:1px dashed $gray012;
   }
-  ._5 {
-    flex: 5;
+
+  .split-3-1{
+    flex-basis: 50%!important;
+  }
+
+  .split-1-2{
+    flex-basis: 25%!important;
+  }
+
+  @media screen and (min-width: 768px) {
+    .con-row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+    }
+    .con-flex {
+      flex: 1;
+    }
+    ._25 {
+      flex: 2.5;
+    }
+    ._5 {
+      flex: 5;
+    }
+  }
+
+  hr{
+    width: 100%;
+    border:1px solid ;
+    border-color:rgba(0,0,0,.06);
+  }
+
+  .panel-footer {
+      text-align: right;
+      padding: 10px 5px;
+      color: rgba(0,0,0,.87);
   }
 }
-
-hr{
-  width: 100%;
-  border:1px solid ;
-  border-color:rgba(0,0,0,.06);
-}
-
-.panel-footer {
-    text-align: right;
-    padding: 10px 5px;
-    color: rgba(0,0,0,.87);
-}
-
 //Tabbed panel
 //
 //When using tabbed panels, one important thing to remember is to order the tabs in a way that makes sense to the workflow.
@@ -186,42 +193,28 @@ hr{
 //
 //Markup:
 //<div class="panel material-depth-1">
-//  <div class="tabbed-panel-header">
-//    <div class="head-actions">
-//      <button class="context-menu card-context">
-//        <i class="mdi mdi-dots-vertical"></i>
-//        <span class="context-menu-left">
-//          <ul class="wfm-list">
-//            <li>Menu item 1</li>
-//            <li>Menu item 2</li>
-//            <li>Menu item 3</li>
-//          </ul>
-//        </span>
-//      </button>
-//    </div>
-//  </div>
 //<div class="wfm-slide-tabs tabbed-panel">
 //  <md-content class="md-padding">
 //    <md-tabs md-dynamic-height md-border-bottom>
-//      <md-tab label="first tab">
+//      <md-tab label="Tab title1">
 //        <md-content class="md-padding">
 //          <h4>Tab One</h4>
 //          <p>Click a tab to watch me go!</p>
 //        </md-content>
 //      </md-tab>
-//      <md-tab label="second tab">
+//      <md-tab label="Tab title2">
 //        <md-content class="md-padding">
 //          <h4>Tab Two</h4>
 //          <p>wheeeee</p>
 //        </md-content>
 //      </md-tab>
-//      <md-tab label="third tab">
+//      <md-tab label="Tab title3">
 //        <md-content class="md-padding">
 //          <h4>Tab Three</h4>
 //          <p>Slow down!</p>
 //        </md-content>
 //      </md-tab>
-//      <md-tab label="fourth tab">
+//      <md-tab label="Tab title4">
 //        <md-content class="md-padding">
 //          <h4>Tab Four</h4>
 //          <p>Now listen here you little whippersnapper, back in the good old days you had to break words all by the sweat of your own brow. You youngsters have it easy! If you have a long text in here, I will like just wrap to a new line if it has to. </p>
