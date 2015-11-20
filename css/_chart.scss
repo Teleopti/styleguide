@@ -1,7 +1,7 @@
 
 // Line chart
 //
-//A chart is a great way to present complex data. We use <a href="http://c3js.org/gettingstarted.html">C3 charts</a> to get nice features like legends, zoom and period selection. 
+//A chart used to present complex data. We use <a href="http://c3js.org/gettingstarted.html">C3 charts</a> to get nice features like legends, zoom and period selection. 
 //<h5>Javascript example</h5>
 //<code><pre>
 //var chart = c3.generate({
@@ -38,7 +38,7 @@
 	  margin-top: 5px;
 	  border:1px solid white;
 	}
-	
+
 	.c3-tooltip td,.c3-tooltip th{
 		color:white;
 		background-color: $gray054!important;
@@ -53,4 +53,3 @@
 		display:none;
 	}
 }
-

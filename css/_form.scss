@@ -359,6 +359,10 @@ md-option{
 	height: 24px;
 	padding-top: 2px;
 
+	label{
+		vertical-align: middle;
+	}
+
 	input[type='checkbox'] {
 		display: none;
 	}
@@ -406,8 +410,7 @@ md-option{
 
 //Slider
 //
-// The slider is used to input a range or value on a scale.
-// Right now, only numeric values are supported. Check https://github.com/angular/material/issues/200 to know when non-numeric values will be available.
+//The slider is used to input a range or value on a scale.
 //
 //Markup:
 //Default

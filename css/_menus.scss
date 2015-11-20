@@ -6,8 +6,8 @@
 //
 //Markup:
 //<button class="context-menu wfm-btn wfm-btn-default">
-//	Place me on the right
-//	<span class="context-menu-left">
+//	Place me on the left
+//	<span class="context-menu-right">
 //		<ul class="wfm-list">
 //			<li><i class="mdi mdi-account"></i>Sign out</li>
 //			<li><i class="mdi mdi-plus"></i>Add a new agent</li>
@@ -26,8 +26,8 @@
 //	</span>
 //</button>
 //<button class="context-menu wfm-btn wfm-btn-default">
-//	Place me on the left
-//	<span class="context-menu-right">
+//	Place me on the right
+//	<span class="context-menu-left">
 //		<ul class="wfm-list">
 //			<li><i class="mdi mdi-account"></i>Sign out</li>
 //			<li><i class="mdi mdi-plus"></i>Add a new agent</li>
@@ -38,7 +38,7 @@
 //<br/>
 //<button class="context-menu card-context">
 //	<i class="mdi mdi-dots-vertical"></i>
-//	<span class="context-menu-left">
+//	<span class="context-menu-right">
 //		<ul class="wfm-list">
 //			<li><i class="mdi mdi-account"></i>Sign out</li>
 //			<li><i class="mdi mdi-plus"></i>Add a new agent</li>
@@ -58,7 +58,7 @@
 //</button>
 //<button class="context-menu card-context">
 //	<i class="mdi mdi-dots-vertical"></i>
-//	<span class="context-menu-right">
+//	<span class="context-menu-left">
 //		<ul class="wfm-list">
 //			<li><i class="mdi mdi-account"></i>Sign out</li>
 //			<li><i class="mdi mdi-plus"></i>Add a new agent</li>

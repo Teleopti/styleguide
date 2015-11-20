@@ -60,35 +60,9 @@
 //
 //The layout consists of the flex grid. Since the grid is adapting to the number of items inside it, be careful not to use too many in one row. The recomended max number of con-flex items in one row is 4, if more are needed, concider using a tabbed container or spreading them out over sveral rows.
 //
-//Styleguide 4.1
-//
-//
-
-//Panel
-//
-//The panel is the main container and the most versitile. It can house most elements and can be configured in a number of layouts.
-//Since a panel is a raised pice of material, avoid using other raised elements on top of it, unless they are floating (like a action button or context menu)
-//
 //Note: the ´demo-outline´ class is for styleguide demo purpose only.
 //
 //Markup:
-//<div class="panel material-depth-1">
-//  <div class="sub-header">
-//    Panel title
-//    <div class="head-actions panel-menu">
-//      <button class="context-menu card-context">
-//        <i class="mdi mdi-dots-vertical"></i>
-//        <span class="context-menu-left">
-//          <ul class="wfm-list">
-//            <li>Menu item 1</li>
-//            <li>Menu item 2</li>
-//            <li>Menu item 3</li>
-//          </ul>
-//        </span>
-//      </button>
-//    </div>
-//  </div>
-//  <hr>
 // <div class="con-row demo-outline">
 //    <div class="con-flex">100%</div>
 // </div>
@@ -116,6 +90,39 @@
 //    <div class="con-flex">25%</div>
 //    <div class="con-flex">25%</div>
 // </div>
+//
+//Styleguide 4.1
+//
+//
+
+//Panel
+//
+//The panel is the main container and the most versitile. It can house most elements and can be configured in a number of layouts.
+//If needed it can have a context menu or a footer for more actions. Since a panel is a raised pice of material, avoid using other raised elements on top of it, unless they are floating (like a action button or context menu)
+//
+//Note: the ´demo-outline´ class is for styleguide demo purpose only.
+//
+//Markup:
+//<div class="panel material-depth-1">
+//  <div class="sub-header">
+//    Panel title
+//    <div class="head-actions panel-menu">
+//      <button class="context-menu card-context">
+//        <i class="mdi mdi-dots-vertical"></i>
+//        <span class="context-menu-left">
+//          <ul class="wfm-list">
+//            <li>Menu item 1</li>
+//            <li>Menu item 2</li>
+//            <li>Menu item 3</li>
+//          </ul>
+//        </span>
+//      </button>
+//    </div>
+//  </div>
+//  <hr>
+// <div class="con-row demo-outline">
+//    <div class="con-flex">Content</div>
+// </div>
 //<hr/>
 //  <div class="panel-footer">
 //	 <a class="wfm-btn wfm-btn-invis-default">Advanced</a>
@@ -131,45 +138,11 @@
   background:$white;
   position: relative;
 
-  .con-flex{
-    flex-basis: 100%;
-    padding:$full-padding;
-  }
-
   .panel-menu{
     position: absolute;
     top:8px;
     right:8px;
     z-index:10;
-  }
-
-  .demo-outline > .con-flex{
-    outline:1px dashed $gray012;
-  }
-
-  .split-3-1{
-    flex-basis: 50%!important;
-  }
-
-  .split-1-2{
-    flex-basis: 25%!important;
-  }
-
-  @media screen and (min-width: 768px) {
-    .con-row {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-    }
-    .con-flex {
-      flex: 1;
-    }
-    ._25 {
-      flex: 2.5;
-    }
-    ._5 {
-      flex: 5;
-    }
   }
 
   hr{
@@ -182,6 +155,40 @@
       text-align: right;
       padding: 10px 5px;
       color: rgba(0,0,0,.87);
+  }
+}
+
+.con-flex{
+  flex-basis: 100%;
+  padding:$full-padding;
+}
+
+.demo-outline > .con-flex{
+  outline:1px dashed $gray012;
+}
+
+.split-3-1{
+  flex-basis: 50%!important;
+}
+
+.split-1-2{
+  flex-basis: 25%!important;
+}
+
+@media screen and (min-width: 768px) {
+  .con-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  .con-flex {
+    flex: 1;
+  }
+  ._25 {
+    flex: 2.5;
+  }
+  ._5 {
+    flex: 5;
   }
 }
 //Tabbed panel
@@ -351,7 +358,7 @@
 //
 //Here you can find some links to go further in CSS best practices
 //
-//Styleguide 6
+//Styleguide 7
 //
 //
 
@@ -367,7 +374,7 @@
 //
 // http://axbom.com/slaying-5-ux-myths-good-mankind/
 //
-//Styleguide 6.1
+//Styleguide 7.1
 
 .spacer {
   margin: 25px;

@@ -5,18 +5,26 @@
 
 //Typography
 //
-//Our standard font-family is  15px Calibri ('Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif).
+//Our standard font-family is 14px Calibri ('Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif). Avoid introducing other font types or sizes as this may lead to issues with layout or translation.
+//We use h4 as our default header (see the navbar chapter). Bold text can be used as a secondary header.
 //
 //Markup:
+//<h1>View header</h1>
+//<h2>Panel header</h2>
+//<h3>Sub header</h3>
 //<p>Simple text</p>
-//<b>Bold text</b>
-//<h3>Heading 3</h3>
-//<h4>Heading 4</h4>
 //
 //Styleguide 1.11.1
 //
 
 //Language
+//
+//test text
+//
+//Styleguide 5
+//
+
+//Usage
 //
 //We would like to keep a common naming for normal actions throughout the application.
 //
@@ -38,41 +46,31 @@
 // </tbody>
 //</table>
 //
-//Styleguide 1.11.2
+//Styleguide 5.1
 //
 
 h1,h2,h3,h4,h5,h6{
 	margin-top:10px!important;
 	margin-bottom:10px!important;
-    font-family: inherit;
-    font-weight: 500;
-    line-height: 1.1;
-    color: inherit;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
 }
 
 h1{
-	font-size: 36px;
-}
-
-h2{
-	font-size: 30px;
-}
-
-h3{
-	font-size: 24px;
-}
-
-h4{
 	font-size: 18px;
 }
 
-h5{
-	font-size: 14px;
+h2{
+	font-size: 16px;
 }
 
-h6{
-	font-size: 12px;
+h3{
+	font-size: 14px;
+	font-weight: bold;
 }
+
 
 // Helper classes for text
 //
