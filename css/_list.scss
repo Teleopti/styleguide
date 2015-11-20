@@ -8,7 +8,9 @@
 //Simple list
 //
 //For when you just want to display some data in a simple list without any actions.
-//Note that clicking/selecting a list item is considered an action. In other words, if the user can do anything other than read the list, use a action list.
+//
+//If you need actions (click or select), go to "Actions list".
+//
 //Optionally a list item can have a small, one sentence description attached to it. If more information is needed about the items conceder using a modal or table.
 //
 //Markup:
@@ -59,8 +61,7 @@
 //
 // Action lists are used for list where the user can perform actions. These can have several options attached to them in a so called  <a href="http://goo.gl/DMxAHS">leave-behind</a>, however, these options may only effect the list item they are a part of. Individual options can have a tooltip and an icon and they are displayed only if the item is hovered or clicked.
 //
-// If an item in the action list is not intractable in any way while others in the same list are
-// If there are actions that affect the whole list (such as create new or delete all) they should be placed above or below the list.
+// Global actions on the list (such as create new or delete all) should be placed above the list.
 //
 //Markup:
 //<ul class="wfm-list">

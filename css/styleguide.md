@@ -29,7 +29,6 @@
 <div class="subtext">For example when a list is displayed : actions icons can be displayed only when an item is selected. See list section for an example.</div></li>
 <li>If an action takes time (ajax request...) => display a loading bar (or a spinner). See loading bar section.</li>
 <li>Tables, lists... etc should be sorted according to context (alphabetical order for example).</li>
-<li>Giving visual identity to objects (by icons and colors for example).</li>
 <li>In general, providing ways to filter, sort and export to excel on tables, lists, grid is good.</li>
 <li><b>SignalR depends on JQuery, but do not use JQuery for other purposes. </b>(We want to phase it out eventually)</li>
 </ul>
@@ -38,9 +37,9 @@
 Three levels of help must always be available through the whole application :
 <ul class="wfm-simple-list">
 <li>1. Tooltips : Add useful tooltips on elements providing *more* information (3/4 words max => "create a user" for an icon "+" for example).</li>
-<li>2. Help panel : (currently bottom of the right panel) Display contextual informations(only 2 or 3 sentences) on the page or on a selected element and a link to the wiki.</li>
+<li>2. Help panel : Display contextual informations(only 2 or 3 sentences) on the page or on a selected element and a link to the wiki.</li>
 <li>3. Wiki page.</li>
 
 <h4>Notifications</h4>
-At the top of the right panel, we provide notifications. It must be possible for the user to unsuscribe/resuscribe on each notification.
+We provide notifications (cf notifications section). It must be possible for the user to unsuscribe/resuscribe on each notification.
 If the notification is about something in backgound, it's good to give a way to stop notifications. Whenever there is a risk that several notifications are created at once, make sure they are aggregated into a more manageable format.
