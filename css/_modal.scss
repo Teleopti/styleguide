@@ -16,8 +16,8 @@
 //					</div>
 //					<div class="modal-footer">
 //						<aside>
-//							<a ng-click="modalLaunch1 = !modalLaunch1" class="wfm-btn wfm-btn-invis-default">dismiss</a>
-//							<a ng-click="modalLaunch1 = !modalLaunch1"  class="wfm-btn wfm-btn-invis-primary">Sounds good</a>
+//							<button ng-click="modalLaunch1 = !modalLaunch1" class="wfm-btn wfm-btn-invis-default">dismiss</button>
+//							<button ng-click="modalLaunch1 = !modalLaunch1"  class="wfm-btn wfm-btn-invis-primary">Sounds good</button>
 //						</aside>
 //					</div>
 //				</div>
@@ -30,7 +30,7 @@
 
 //Mini modal
 //
-// The mini modal can be used when the regular modal is to big for its content or as a confirmation dialog. 
+// The mini modal can be used when the regular modal is to big for its content or as a confirmation dialog.
 //
 //Remember that it still takes the focus away from what the use was doing untill it has been dismissed.
 //
@@ -45,8 +45,8 @@
 //					</div>
 //					<div class="modal-footer">
 //						<aside>
-//							<a ng-click="modalLaunch3 = !modalLaunch3" class="wfm-btn wfm-btn-invis-default">no thanks</a>
-//							<a ng-click="modalLaunch3 = !modalLaunch3"  class="wfm-btn wfm-btn-invis-primary">yes please</a>
+//							<button ng-click="modalLaunch3 = !modalLaunch3" class="wfm-btn wfm-btn-invis-default">no thanks</button>
+//							<button ng-click="modalLaunch3 = !modalLaunch3"  class="wfm-btn wfm-btn-invis-primary">yes please</button>
 //						</aside>
 //					</div>
 //				</div>
@@ -101,7 +101,7 @@
 //					</div>
 //				<div class="modal-footer">
 //					<aside>
-//						<a ng-click="modalLaunch2 = !modalLaunch2" class="wfm-btn wfm-btn-invis-primary">dismiss</a>
+//						<button ng-click="modalLaunch2 = !modalLaunch2" class="wfm-btn wfm-btn-invis-primary">dismiss</button>
 //					</aside>
 //				</div>
 //			</div>
@@ -193,7 +193,6 @@
 	}
 
 	.modal-footer{
-		padding: $full-padding * 2 $full-padding;
 		color: $gray087;
 	}
 

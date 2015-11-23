@@ -17,7 +17,7 @@ var app = angular.module('styleguideApp', ['ngMaterial', 'ui.tree', 'ui.grid',
     for(var j=0;j<10;j++){
 	    data[i]["j"+j]=j;
     }
-  }
+  } 
   $scope.gridOptions = {
     exporterCsvFilename: 'myFile.csv',
     exporterMenuPdf: false,
