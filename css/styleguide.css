@@ -74,6 +74,10 @@
 .kss-sidebar {
   position: fixed !important; }
 
+#kss-node .kss-title__permalink {
+  font-size: 30px;
+  font-weight: normal; }
+
 #kss-node .kss-section {
   max-width: 80%; }
 
