@@ -200,6 +200,18 @@
 //Markup:
 //<div class="panel material-depth-1">
 //<div class="wfm-slide-tabs tabbed-panel">
+//    <div class="head-actions panel-menu">
+//      <button class="context-menu card-context">
+//        <i class="mdi mdi-dots-vertical"></i>
+//        <span class="context-menu-left">
+//          <ul class="wfm-list">
+//            <li>Menu item 1</li>
+//            <li>Menu item 2</li>
+//            <li>Menu item 3</li>
+//          </ul>
+//        </span>
+//      </button>
+//    </div>
 //  <md-content class="md-padding">
 //    <md-tabs md-dynamic-height md-border-bottom>
 //      <md-tab label="Tab title1">
@@ -245,7 +257,10 @@
   }
 
   md-tabs-wrapper{
-    padding-top: 5px;
+    margin-top: 5px;
+    background:$blue-300;
+    border-width: 0 !important;
+    border-style: none!important;
   }
   .md-padding{
     margin: 0 5px;

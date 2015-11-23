@@ -69,11 +69,10 @@
 }
 
 .wfm-slide-tabs md-ink-bar {
-    top: -3px!important;
+    top: 0!important;
 		height: 33px;
 		z-index: -1;
-		color:$blue-100;
-		background: $blue-100;
+		background: $white;
 }
 
 md-tabs .md-tab.md-active, md-tabs .md-tab.md-focused {
