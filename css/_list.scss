@@ -150,7 +150,6 @@ display:inline-block;
 	padding: $full-padding;
 	cursor: pointer;
 	overflow: hidden;
-	background-color:$gray-100;
 	border-left: 3px solid transparent;
 	border-top:1px solid $gray012;
 	position:relative;
@@ -171,7 +170,7 @@ display:inline-block;
 	}
 
 	i{
-		vertical-align: text-bottom;
+		vertical-align: baseline;
 		margin-right: $full-padding;
 		color: #555555;
 		padding-bottom: 5px;
@@ -185,7 +184,7 @@ display:inline-block;
   position: absolute!important;
   right: 0;
   overflow: hidden;
-  margin-top: -5px;
+  margin-top: -8px;
   transition: all .5s ease-in-out;
   padding-top: 8px;
   background-color: #cacaca;
