@@ -62,7 +62,7 @@
 
 // Single
 //
-// The single select card list only allows for one card open at any given time, this is good when the content needs more focused attention.
+// The single select card list only allows for one card open at any given time, this is useful when the content needs more focused attention.
 //
 //Markup:
 //<wfm-card-list >
@@ -72,8 +72,15 @@
 //				Single card title
 //			<span class="chevron"><i class="mdi mdi-chevron-right"></i></span>
 //		</card-header>
-//		<card-body>
-//			card body
+//		<card-body class="panel">
+// 			<div class="con-row demo-outline">
+//    		<div class="con-flex">Content</div>
+// 			</div>
+//			<hr/>
+//  		<div class="panel-footer">
+//	 			<button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+//    		<button class="wfm-btn wfm-btn-invis-primary">Options</button>
+//  		</div>
 //		</card-body>
 //	</wfm-card>
 //</wfm-card-list>
@@ -93,8 +100,15 @@
 //			Multi card title
 //			<span class="chevron"><i class="mdi mdi-chevron-right"></i></span>
 //		</card-header>
-//		<card-body>
-//			card body
+//		<card-body class="panel">
+// 			<div class="con-row demo-outline">
+//    		<div class="con-flex">Content</div>
+// 			</div>
+//			<hr/>
+//  		<div class="panel-footer">
+//	 			<button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+//    		<button class="wfm-btn wfm-btn-invis-primary">Options</button>
+//  		</div>
 //		</card-body>
 //	</wfm-card>
 //</wfm-card-list>
@@ -113,7 +127,6 @@
 	min-height: 35px;
 	line-height: 35px;
 	padding: 0 $full-padding *3;
-	background-color: $blue-100 ;
 
 	.chevron{
 		float: right;
@@ -131,7 +144,7 @@ md-content {
 }
 
 .wfm-card-unselected:hover{
-	background-color: $blue-100;
+	background-color: $gray012;
 	box-shadow: 0 8px 17px 0 rgba(0,0,0,.2);
 }
 
@@ -163,6 +176,5 @@ wfm-card:last-child .wfm-card-selected {
 }
 
 .wfm-card-content {
-	padding: $full-padding *2 16px;
 	background-color: $white;
 }
