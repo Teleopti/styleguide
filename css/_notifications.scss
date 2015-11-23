@@ -117,27 +117,10 @@
 // Notifications are more global and general compared to notices. They can function more like a actions archive. All notifications are shown in the right sidenav.
 //
 //Markup:
-//<ul class="notification-list">
+//<ul class="wfm-list">
 //	<li><i class="mdi mdi-alert-circle"></i>Notifications are great!</li>
 //	<li><i class="mdi mdi-alert-circle"></i>Have another one.</li>
 //</ul>
 //
 //Styleguide 1.12
 //
-
-.notification-list{
-	list-style:none;
-	padding-left:0!important;
-
-	li{
-		padding: $full-padding;
-		background-color:$gray012;
-		cursor:pointer;
-		border-bottom: 1px solid $gray026;
-	}
-
-	i{
-		padding-right: $full-padding;
-		color: $gray054;
-	}
-}
