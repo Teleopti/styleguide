@@ -87,18 +87,14 @@
              </label>
             </div>
            </div>
-          <div class="form-input-wrap">
-            <button class="wfm-btn wfm-btn-default" type="button" ng-click="reset(form)"><md-tooltip>Hide all errors</md-tooltip>Clear</button>
-            <button class="wfm-btn wfm-btn-primary" type="submit" ng-click="update()"><md-tooltip>Save input if valid</md-tooltip>Apply</button>
-          </div>
         </dd>
       </dl>
     </div>
  </div>
 <hr/>
   <div class="panel-footer">
-  <button class="wfm-btn wfm-btn-invis-default">Advanced</button>
-    <button class="wfm-btn wfm-btn-invis-primary">Options</button>
+    <button class="wfm-btn wfm-btn-invis-default" type="button" ng-click="reset(form)"><md-tooltip>Hide all errors</md-tooltip>Clear</button>
+    <button class="wfm-btn wfm-btn-invis-primary" type="submit" ng-click="update()"><md-tooltip>Save input if valid</md-tooltip>Submit</button>
   </div>
 </div>
 </form>

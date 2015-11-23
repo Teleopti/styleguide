@@ -369,7 +369,7 @@
 
 //Form layout
 //
-//Forms are made up of individual inputs that can be validated on interaction and/or on a submit.
+//Forms are made up of individual inputs that can be validated on interaction and/or on a submit. A form can be created in many different configurations and the layout should help the user complete the form without confusion. Take some time to consider your form layout in relation to the layout of your view and strive to not waste space.
 //
 //<code><pre>
 //Reset validation errors:
@@ -386,6 +386,10 @@
 //
 //Styleguide 4.4
 
+.wfm-form label {
+    display: inline-block!important;
+}
+
 //Resources
 //
 //Here you can find some links to go further in CSS best practices
@@ -393,10 +397,6 @@
 //Styleguide 7
 //
 //
-
-.wfm-form label {
-    display: inline-block!important;
-}
 
 //Urls
 //
