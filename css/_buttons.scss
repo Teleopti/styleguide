@@ -71,10 +71,10 @@
 //These animations should only be applied to action buttons.
 //
 //Markup:
-//<button class="wfm-fab grow-out  material-depth-1 info"><i class="mdi mdi-plus" ></i>
+//<button class="wfm-fab grow-out  material-depth-1"><i class="mdi mdi-plus" ></i>
 //	<md-tooltip>I appear when needed</md-tooltip>
 //</button>
-//<button class="wfm-fab info  material-depth-1" ng-class="{'shrink-in':animateIn === 'trigger1'}" ng-click="animateIn = 'trigger1'">
+//<button class="wfm-fab  material-depth-1" ng-class="{'shrink-in':animateIn === 'trigger1'}" ng-click="animateIn = 'trigger1'">
 //<i class="mdi mdi-close"></i>
 //	<md-tooltip>Click me and im gone</md-tooltip>
 //</button>
@@ -157,7 +157,7 @@
 	cursor: pointer;
 	padding:15px;
 	line-height:16px!important;
-	background-color:$purple-500;
+	background-color:$blue-500;
 	color:white;
 	text-align:center;
 	border-radius: 50%;
@@ -179,7 +179,8 @@
 	color:$gray087;
 }
 .wfm-fab.info{
-	background-color: $blue-500;
+	background-color: $purple-500;
+	color:$white;
 }
 
 .grow-out {
