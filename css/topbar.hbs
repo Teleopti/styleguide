@@ -5,25 +5,11 @@
 		</div>
 		<div class="navbar-right" >
 			<span>
-				<i class="mdi mdi-magnify"></i>
-				<input type="text" placeholder="search..." class="global-search" />
-				<div class="search-results material-depth-2">
-					<ul class="wfm-list">
-						<div>
-							<li class="wfm-search-li">
-								<button ng-if="gp == 'Permission' " class="wfm-fab mini result-icon"><i class="mdi mdi-account-check"></i></button>
-								<button ng-if="gp == 'Planning Period' " class="wfm-fab mini info result-icon"><i class="mdi mdi-calendar"></i></button>
-								Tile
-							</li>
-							<li class="animate-repeat">
-								<div>
-									item
-								</div>
-							</li>
-							<li class="animate-repeat"></li>
-						</div>
-					</ul>
-				</div>
+				<label for="searchBar" class="input-prepend">
+				<i class="mdi mdi-magnify">
+				<md-tooltip>Filter something</md-tooltip></i>
+				<input type="text" id="searchBar" placeholder="Search" class="global-search"/>
+				</label>
 			</span>
 			<button class="nav-context-menu">
 				<i class="mdi mdi-bell"><md-tooltip>Notifications</md-tooltip></i>
