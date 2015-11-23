@@ -16,7 +16,7 @@
 //		</div>
 //	</div>
 //
-//Styleguide 1.17
+//Styleguide 1.19
 //
 .card-group {
 	display: inline-block;
@@ -51,28 +51,46 @@
 	 }
  }
 
-// Card List
+ // Card List
+ //
+ //	The Teleopti Card List is used to show a list of expanding content. Each card can be clicked to expanded while the compact form shows information at a glance.
+ //
+ // The header and content of each card is completely customizable and any html elements provided within the &lt;card-header&gt; and  &lt;card-body&gt; tags will be rendered accordingly.
+ //
+ //Styleguide 4.6
+ //
+
+// Single
 //
-//	The Teleopti Card List is based on the card list displayed in google inbox.  Each card can be clicked on within the list and will expand to show detail.</br>
-//  Only one card can be opened at a time.The header and content of each card is completely customizable and any html elements provided within the &lt;card-header&gt; and  &lt;card-body&gt; tags will be rendered appropriately.
+// The single select card list only allows for one card open at any given time, this is good when the content needs more focused attention.
+//
+//Markup:
+//<wfm-card-list >
+//	<wfm-card ng-repeat="item in items">
+//		<card-header>
+//			<span><i class="mdi" ng-class="item.title"></i></span>
+//				Single card title
+//			<span class="chevron"><i class="mdi mdi-chevron-right"></i></span>
+//		</card-header>
+//		<card-body>
+//			card body
+//		</card-body>
+//	</wfm-card>
+//</wfm-card-list>
+//
+//Styleguide 4.6.1
+//
+
+// Multiple
+//
+// The multi select card list can have any number of cards open to allow for easy comparison of content.
 //
 //Markup:
 //<wfm-card-list multi-select>
 //	<wfm-card ng-repeat="item in items">
 //		<card-header>
 //			<span><i class="mdi" ng-class="item.title"></i></span>
-//			multi-select
-//			<span class="chevron"><i class="mdi mdi-chevron-right"></i></span>
-//		</card-header>
-//		<card-body>
-//			card body
-//		</card-body>
-//	</wfm-card>
-//</wfm-card-list>
-//<wfm-card-list >
-//	<wfm-card ng-repeat="item in items">
-//		<card-header>
-//			<span><i class="mdi" ng-class="item.title"></i></span>
+//			Multi card title
 //			<span class="chevron"><i class="mdi mdi-chevron-right"></i></span>
 //		</card-header>
 //		<card-body>
@@ -81,7 +99,7 @@
 //	</wfm-card>
 //</wfm-card-list>
 //
-//Styleguide 4.6
+//Styleguide 4.6.2
 //
 
 
