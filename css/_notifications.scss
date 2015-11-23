@@ -27,35 +27,31 @@
 
 /*This is because of growl and bootstrap*/
 .alert-error {
-	color: $gray054!important;
 	background-color:$red-600;
 	border: none;
 	border-radius: 0;
 }
 
 .alert-success {
-	color: $gray054!important;
 	background-color: $green-100;
 	border: none;
 	border-radius: 0;
 }
 
 .alert-info {
-	color: $gray054!important;
 	background-color: $blue-300;
 	border: none;
 	border-radius: 0;
 }
 
 .alert-warning {
-	color: $gray054!important;
 	background-color: $orange-400;
 	border: none;
 	border-radius: 0;
 }
 
 .alert-detail {
-	color: $gray054!important;
+
 	background-color: $gray012;
 	border: none;
 	border-radius: 0;
@@ -67,7 +63,6 @@
 }
 
 
-
 .growl-container > .growl-item {
 	padding: $full-padding;
 	margin-bottom: 0px;
@@ -76,6 +71,7 @@
 	box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
   .mdi{
     vertical-align: middle;
+		color:$gray054;
   }
 }
 
