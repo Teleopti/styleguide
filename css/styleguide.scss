@@ -159,6 +159,10 @@
 .con-flex{
   flex-basis: 100%;
   padding:$full-padding;
+
+  input, select{
+    width:100vw;
+  }
 }
 
 .demo-outline > .con-flex{
@@ -228,6 +232,7 @@
 //        <md-content class="md-padding">
 //          <h4>Tab Two</h4>
 //          <p>wheeeee</p>
+//          <hr/>
 //          <div class="panel-footer">
 //            <button class="wfm-btn wfm-btn-invis-default">Advanced</button>
 //            <button class="wfm-btn wfm-btn-invis-primary">Options</button>
@@ -238,6 +243,7 @@
 //        <md-content class="md-padding">
 //          <h4>Tab Three</h4>
 //          <p>Slow down!</p>
+//          <hr/>
 //          <div class="panel-footer">
 //            <button class="wfm-btn wfm-btn-invis-default">Advanced</button>
 //            <button class="wfm-btn wfm-btn-invis-primary">Options</button>
@@ -248,6 +254,7 @@
 //        <md-content class="md-padding">
 //          <h4>Tab Four</h4>
 //          <p>Now listen here you little whippersnapper, back in the good old days you had to break words all by the sweat of your own brow. You youngsters have it easy! If you have a long text in here, I will like just wrap to a new line if it has to. </p>
+//          <hr/>
 //          <div class="panel-footer">
 //            <button class="wfm-btn wfm-btn-invis-default">Advanced</button>
 //            <button class="wfm-btn wfm-btn-invis-primary">Options</button>
@@ -300,6 +307,7 @@
 //        <md-content class="md-padding">
 //          <h4>Tab Two</h4>
 //          <p>wheeeee</p>
+//          <hr/>
 //          <div class="panel-footer">
 //            <button class="wizard-step wfm-btn wfm-btn-invis-primary" ng-click="nextTab()">Next</button>
 //          </div>
@@ -309,6 +317,7 @@
 //        <md-content class="md-padding">
 //          <h4>Tab Three</h4>
 //          <p>Slow down!</p>
+//          <hr/>
 //          <div class="panel-footer">
 //            <button class="wizard-step wfm-btn wfm-btn-invis-primary" ng-click="nextTab()">Next</button>
 //          </div>
@@ -318,6 +327,7 @@
 //        <md-content class="md-padding">
 //          <h4>Tab Four</h4>
 //          <p>Now listen here you little whippersnapper, back in the good old days you had to break words all by the sweat of your own brow. You youngsters have it easy! If you have a long text in here, I will like just wrap to a new line if it has to. </p>
+//          <hr/>
 //          <div class="panel-footer">
 //            <button class="wfm-btn wfm-btn-invis-primary">Done</button>
 //          </div>
@@ -371,79 +381,7 @@
 // };
 //</pre></code>
 //
-//Markup:
-//<dl>
-//  <h4>My form</h4>
-//  <dd>
-//   <form name="form" class="wfm-form" novalidate>
-//    <div class="form-input-wrap">
-//      <label for="nameId">Name: <input type="text" ng-model="form.name" name="Name" required="" id="nameId"/></label>
-//      <div ng-cloak class="animate-input-message" ng-show ="form.$submitted || form.Name.$touched">
-//      <div class="form-input-message" ng-class="{formInvalidInput:form.Name.$error.required}">Tell me your name</div>
-//      </div>
-//    </div>
-//    <div class="form-input-wrap">
-//      <label for="ageId">Age: <input type="number" ng-model="form.age" name="Age" required="" id="ageId" min="1"/></label>
-//      <div ng-cloak class="animate-input-message" ng-show="form.$submitted || form.Age.$touched">
-//      <div class="form-input-message" ng-class="{formInvalidInput:form.Age.$error.required}">You need to be born</div>
-//      </div>
-//    </div>
-//    <div class="form-input-wrap">
-//      <label for="secretId">Password: <input type="password" ng-model="form.secret" name="Secret" required="" id="secretId"/></label>
-//      <div ng-cloak class="animate-input-message" ng-show="form.$submitted || form.Secret.$touched">
-//      <div class="form-input-message" ng-class="{formInvalidInput:form.Secret.$error.required}">Enter password</div>
-//      <div class="form-input-message" ng-class="{formInvalidInput:form.Secret < 8}">Password must be 8 characters or more</div>
-//      </div>
-//    </div>
-//    <div class="form-input-wrap">
-//      <label for="drop">How many:</label>
-//     <select ng-model="form.drop" name="Drop" id="drop" required="">
-//	     <option>1</option>
-//	     <option>2</option>
-//	     <option>3</option>
-//     </select>
-//      <div ng-cloak class="animate-input-message" ng-show="form.$submitted || form.Drop.$error.required.$touched">
-//        <div class="form-input-message" ng-class="{formInvalidInput:form.Drop.$error.required}">Pick at least one</div>
-//      </div>
-//    </div>
-//    <div class="form-input-wrap">
-//      <label>Group:</label>
-//      <div class="wfm-checkbox">
-//        <input type="checkbox" ng-model="form.box1" name="Box1" id="box1" required=""/>
-//        <label for="box1">
-//          <span class="wfm-checkbox-toggle"></span>
-//		      <span class="wfm-checkbox-label">Group A</span>
-//        </label>
-//      </div>
-//      <div class="wfm-checkbox">
-//        <input type="checkbox" ng-model="form.box2" name="Box2" id="box2" required=""/>
-//        <label for="box2">
-//          <span class="wfm-checkbox-toggle"></span>
-//		      <span class="wfm-checkbox-label">Group B</span>
-//        </label>
-//      </div>
-//      <div ng-cloak class="animate-input-message" ng-show="form.$submitted || form.Box.$error.required.$touched">
-//        <div class="form-input-message" ng-class="{formInvalidInput:form.Box1.$error.required && form.Box2.$error.required}">Pick at least one</div>
-//      </div>
-//    </div>
-//    <div class="form-input-wrap">
-//     <label>I selected #2 for you:</label>
-//     <div ng-repeat="item in demos">
-//       <div class="wfm-radio">
-//        <label>
-//			    <input type="radio" name="item" data-ng-model="radio" data-ng-value="item" ng-init="$index==1?(radio=item):''">
-//			    <span class="wfm-radio-toggle"></span>
-//			    <span class="wfm-radio-label">123</span>
-//		    </label>
-//	     </div>
-//     </div>
-//    <div class="form-input-wrap">
-//      <button class="wfm-btn wfm-btn-default" type="button" ng-click="reset(form)"><md-tooltip>Hide all errors</md-tooltip>Clear</button>
-//      <button class="wfm-btn wfm-btn-primary" type="submit" ng-click="update()"><md-tooltip>Save input if valid</md-tooltip>Apply</button>
-//    </div>
-//  </form>
-//  </dd>
-//</dl>
+//Markup: form_panel.hbs
 //
 //
 //Styleguide 4.4
@@ -455,6 +393,10 @@
 //Styleguide 7
 //
 //
+
+.wfm-form label {
+    display: inline-block!important;
+}
 
 //Urls
 //
