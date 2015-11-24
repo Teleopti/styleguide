@@ -19,6 +19,7 @@ before_install:
 install: npm install
 before_script: grunt dist --verbose
 script:
+  - 'test': './node_modules/.bin/karma start --single-run --browsers PhantomJS'
   - if [ "$TRAVIS_BRANCH" == "master" ]; then bash ./deploy-ghpages.sh; fi
 env:
   global:
