@@ -65,20 +65,22 @@
 //
 //Markup:
 //<ul class="wfm-list">
-//	<li>
+//	<li ng-click="listSelected1 = !listSelected1">
 //		<span class="list-item-container">
 //			List item with one action in leave-behind
 //		</span>
+//		<span ng-cloak ng-show="listSelected1" class="list-dot grow-out"><b class="mdi mdi-check list-mark"></b></span>
 //		<div class="wfm-leave-behind wfm-leave-behind-1">
 //			<span>
 //				<i class="mdi mdi-delete"></i>
 //			</span>
 //		</div>
 //	</li>
-//	<li>
+//	<li ng-click="listSelected2 = !listSelected2">
 //		<span class="list-item-container">
 //			List item with two actions in leave-behind
 //		</span>
+//		<span ng-cloak ng-show="listSelected2" class="list-dot grow-out"><b class="mdi mdi-check list-mark"></b></span>
 //		<div class="wfm-leave-behind wfm-leave-behind-2">
 //			<span>
 //				<i class="mdi mdi-pencil"></i>
@@ -86,10 +88,11 @@
 //			</span>
 //		</div>
 //	</li>
-//	<li class="active">
+//	<li ng-click="listSelected3 = !listSelected3">
 //		<span class="list-item-container">
 //			Active list item with three actions in leave-behind
 //		</span>
+//		<span ng-cloak ng-show="listSelected3" class="list-dot grow-out"><b class="mdi mdi-check list-mark"></b></span>
 //		<div class="wfm-leave-behind">
 //			<span>
 //				<i class="mdi mdi-content-copy"></i>
@@ -106,6 +109,16 @@
 //Styleguide 1.2.2
 //
 
+.list-dot{
+  float:left!important;
+	border-radius: 50%;
+	position: absolute;
+	left:$full-padding;
+	background:$green-100;
+	box-shadow: 0 0 0 3px $green-100;
+}
+
+
 ul {
 	margin-bottom:0!important;
 	list-style: none;
@@ -117,12 +130,13 @@ text-overflow: ellipsis;
 white-space: nowrap;
 overflow: hidden;
 display:inline-block;
+margin-left: 30px;
 }
 
 
 @media(min-width:600px){
 	.list-item-container{
-		max-width: 20em;
+		max-width: 100%;
 	}
 }
 
@@ -165,6 +179,7 @@ display:inline-block;
 		border-left: 3px solid $pink-500;
 		background-color: $green-100;
 	}
+
 	&.active:hover{
 		border-left: 3px solid $pink-500;
 		background-color: $green-100;
