@@ -219,7 +219,7 @@ md-option{
 //		</label>
 //	</div>
 //</form>
-//<h6>Using ng-repeat:</h6>
+//<h3>Using ng-repeat:</h3>
 //<form>
 //	<div ng-repeat="item in demos">
 //		<div class="wfm-radio">
@@ -285,7 +285,7 @@ md-option{
 //		</label>
 //	</div>
 //</form>
-//<h6>Using ng-repeat:</h6>
+//<h3>Using ng-repeat:</h3>
 //<form>
 //	<div ng-repeat="item in demos">
 //		<div class="wfm-checkbox">
@@ -338,7 +338,7 @@ md-option{
 
 //Switch
 //
-// The switch is used to toggle between two states (for example show/hide) and uses <a href="http://goo.gl/M5U1oC">Angulars ng-show or ng-hide</a> to toggle other elements.
+// The switch is used to toggle between two states (for example show/hide, using <a href="http://goo.gl/M5U1oC">Angulars ng-show or ng-hide</a> to toggle other elements).
 //
 //Markup:
 //	<div class="wfm-switch">
@@ -408,7 +408,7 @@ md-option{
 
 //Slider
 //
-//The slider is used to input a range or value on a scale.
+//The slider is used to input a range or value on a scale. It can be controlled with left and right arrow keys for greater accuracy if focused.
 //
 //Markup:
 //Default

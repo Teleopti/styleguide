@@ -21,7 +21,7 @@
   Never provide an empty form but suggest things or display placeholders.</div>
 </li>
 <li><h2>Performance</h2>
-<div class="subtext">no big bunch of data which doesn't fit in the screen. Consider aggregating data as an entry point. If it's not possible, then use pagination</div></li>
+<div class="subtext">No big bunches of data which doesn't fit on the screen. Consider aggregating data as an entry point. If it's not possible, then use pagination</div></li>
 <li><h2>Responsiveness </h2></li>
 </ul>
 
@@ -43,5 +43,5 @@ Three levels of help must always be available through the whole application :
 <li>3. Wiki page.</li>
 
 <h1>Notifications</h1>
-We provide notifications (cf notifications section). It must be possible for the user to unsuscribe/resuscribe on each notification.
+We provide notifications (see notifications section). It must be possible for the user to unsuscribe/resuscribe on each notification.
 If the notification is about something in backgound, it's good to give a way to stop notifications. Whenever there is a risk that several notifications are created at once, make sure they are aggregated into a more manageable format.

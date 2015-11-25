@@ -90,7 +90,7 @@
 //	</li>
 //	<li ng-click="listSelected3 = !listSelected3">
 //		<span class="list-item-container">
-//			Active list item with three actions in leave-behind
+//			List item with three actions in leave-behind
 //		</span>
 //		<span ng-cloak ng-show="listSelected3" class="list-dot grow-out"><b class="mdi mdi-check list-mark"></b></span>
 //		<div class="wfm-leave-behind">
@@ -102,7 +102,10 @@
 //		</div>
 //	</li>
 //	<li>
-//		<i class="mdi mdi-alert"></i> List item with icon and no leave-behind
+//		<span class="list-item-container">
+//			Disabled list item
+//		</span>
+//		<span ng-cloak class="list-dot grow-out"><b class="mdi mdi-close list-mark disabled"></b></span>
 //	</li>
 //</ul>
 //
@@ -118,6 +121,11 @@
 	box-shadow: 0 0 0 3px $green-100;
 }
 
+.list-dot .disabled{
+	background: $red-100 !important;
+		border-radius: 50%;
+		box-shadow: 0 0 0 3px $red-100 !important;
+}
 
 ul {
 	margin-bottom:0!important;

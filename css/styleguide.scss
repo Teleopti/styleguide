@@ -2,7 +2,7 @@
 
 //Elements
 //
-//Here are detailed all the style rules for the web application.
+//Elements are the individual parts that make up the application. Elements can be stand alone but more often they are part of a container. By arranging elements in containers using layout, we can get a structured and consistent style.
 //
 //Styleguide 1
 //
@@ -12,9 +12,10 @@
 //
 //Getting a deeper look into the styles of shadows and positioning. The first thing we need to understand is the concept of stacked material (see the <a href="http://www.google.com/design/spec/what-is-material/elevation-shadows.html#elevation-shadows-shadows">Google guidelines</a> ).
 //
-//Keep the number of stacked layers to a minimum and the total number of layer below 3 (including the background). If a raised element lives inside of another raised element it should have a higher material-depth number (i.e a panel with a depth of 1 can have one panel with a depth of 2 above (inside) it.)
+//Keep the number of stacked layers to a minimum and the total number of layer below 3 (including the background). If a raised element lives inside of another raised element it should still have a material-depth number of one, unless it is floating.
+//Floating elements live above the main layout (such as context menus) and should have the highest material-depth number possible (2).
 //
-//Elements floating above the main layout (such as context menus) should have the highest material-depth number possible (2).
+//If the element does not have a raised wrapper and is placed freely on the background it should have a depth value of 1.
 //
 //Note: the 'spacer' class is for styleguide demo purpose only.
 //
@@ -219,8 +220,9 @@
 //    <md-tabs md-dynamic-height md-border-bottom >
 //      <md-tab label="Tab title1">
 //        <md-content class="md-padding">
-//          <h2>Step one - lets get started</h2>
-//          <p>Click a tab to watch me go!</p>
+//            <div class="con-row demo-outline">
+//              <div class="con-flex">Content</div>
+//            </div>
 //          <hr/>
 //          <div class="panel-footer">
 //            <button class="wfm-btn wfm-btn-invis-default">Advanced</button>
@@ -230,8 +232,9 @@
 //      </md-tab>
 //      <md-tab label="Tab title2">
 //        <md-content class="md-padding">
-//          <h4>Tab Two</h4>
-//          <p>wheeeee</p>
+//            <div class="con-row demo-outline">
+//              <div class="con-flex">Content</div>
+//            </div>
 //          <hr/>
 //          <div class="panel-footer">
 //            <button class="wfm-btn wfm-btn-invis-default">Advanced</button>
@@ -241,8 +244,9 @@
 //      </md-tab>
 //      <md-tab label="Tab title3">
 //        <md-content class="md-padding">
-//          <h4>Tab Three</h4>
-//          <p>Slow down!</p>
+//            <div class="con-row demo-outline">
+//              <div class="con-flex">Content</div>
+//            </div>
 //          <hr/>
 //          <div class="panel-footer">
 //            <button class="wfm-btn wfm-btn-invis-default">Advanced</button>
@@ -252,8 +256,15 @@
 //      </md-tab>
 //      <md-tab label="Tab title4">
 //        <md-content class="md-padding">
-//          <h4>Tab Four</h4>
-//          <p>Now listen here you little whippersnapper, back in the good old days you had to break words all by the sweat of your own brow. You youngsters have it easy! If you have a long text in here, I will like just wrap to a new line if it has to. </p>
+//            <div class="con-row demo-outline">
+//              <div class="con-flex">Content</div>
+//            </div>
+//            <div class="con-row demo-outline">
+//              <div class="con-flex">Things</div>
+//              <div class="con-flex">Things</div>
+//              <div class="con-flex">Things</div>
+//              <div class="con-flex">Things</div>
+//            </div>
 //          <hr/>
 //          <div class="panel-footer">
 //            <button class="wfm-btn wfm-btn-invis-default">Advanced</button>
@@ -295,8 +306,9 @@
 //    <md-tabs md-dynamic-height md-border-bottom md-selected="selectedIndex">
 //      <md-tab label="Tab title1">
 //        <md-content class="md-padding">
-//          <h2>Step one - lets get started</h2>
-//          <p>Click a tab to watch me go!</p>
+//            <div class="con-row demo-outline">
+//              <div class="con-flex">Content</div>
+//            </div>
 //          <hr/>
 //          <div class="panel-footer">
 //            <button class="wizard-step wfm-btn wfm-btn-invis-primary" ng-click="nextTab()">Next</button>
@@ -305,8 +317,9 @@
 //      </md-tab>
 //      <md-tab label="Tab title2">
 //        <md-content class="md-padding">
-//          <h4>Tab Two</h4>
-//          <p>wheeeee</p>
+//            <div class="con-row demo-outline">
+//              <div class="con-flex">Content</div>
+//            </div>
 //          <hr/>
 //          <div class="panel-footer">
 //            <button class="wizard-step wfm-btn wfm-btn-invis-primary" ng-click="nextTab()">Next</button>
@@ -315,8 +328,9 @@
 //      </md-tab>
 //      <md-tab label="Tab title3">
 //        <md-content class="md-padding">
-//          <h4>Tab Three</h4>
-//          <p>Slow down!</p>
+//            <div class="con-row demo-outline">
+//              <div class="con-flex">Content</div>
+//            </div>
 //          <hr/>
 //          <div class="panel-footer">
 //            <button class="wizard-step wfm-btn wfm-btn-invis-primary" ng-click="nextTab()">Next</button>
@@ -325,8 +339,9 @@
 //      </md-tab>
 //      <md-tab label="Tab title4">
 //        <md-content class="md-padding">
-//          <h4>Tab Four</h4>
-//          <p>Now listen here you little whippersnapper, back in the good old days you had to break words all by the sweat of your own brow. You youngsters have it easy! If you have a long text in here, I will like just wrap to a new line if it has to. </p>
+//            <div class="con-row demo-outline">
+//              <div class="con-flex">Content</div>
+//            </div>
 //          <hr/>
 //          <div class="panel-footer">
 //            <button class="wfm-btn wfm-btn-invis-primary">Done</button>
