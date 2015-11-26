@@ -1,7 +1,7 @@
 var app = angular.module('styleguideApp', ['ngMaterial', 'ui.tree', 'ui.grid',
   'ui.grid.autoResize', 'ui.grid.exporter', 'ui.grid.selection', 'ui.bootstrap',
   'angularMoment',  'wfm.cardList', 'wfm.timerangepicker', 'wfm.daterangepicker',
-  'angular-growl', 'ngAnimate'])
+  'angular-growl', 'ngAnimate', 'wfm.pagination'])
 .controller('mainCtrl', ['$scope', 'growl',function ($scope, growl) {
   /* Dummy data*/
     $scope.demos = [ {"id": "50d5ad" } , {"id": "678ffr" },{"id": "515ad" } , {"id": "673ffr" } ];
@@ -72,7 +72,13 @@ $scope.nextTab = function() {
      form.$setUntouched();
    }
  };
- 
+
+ /*code for pagination*/
+ 	$scope.paginationOptions = {pageNumber:1,totalPages:7};
+ 	$scope.getPageData = function(pageIndex){
+ 		//retrieve the data for given page
+ 	}
+
 /*code for card list*/
 	$scope.items = [{ title: 'mdi-chart-bar' }, { title: 'mdi-chart-bar' }];
 

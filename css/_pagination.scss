@@ -2,10 +2,10 @@
 //
 //Pagination is a directive which displays a list of availale pages and provides the properties for outer scope to set the pagination options and get data for the given page number.
 //<table class="wfm-table">
-//<tr><th>Attribute Name</th><th>Description</th><th>Required</th></tr>  
+//<tr><th>Attribute Name</th><th>Description</th><th>Required</th></tr>
 //<tr><td>pagination-options</td><td>configurations about the pagination, it contains two properties. "pageNumber" is the current page number; "totalPages" is hwo many pages it sets.</td><td>true</td></tr>
 //<tr><td>get-data-for-page-callback</td><td>this is the function which is used by the directive to call to get the data for a given page number.</td><td>true</td></tr>
-//</table> 
+//</table>
 //
 //Markup:
 //<wfm-pagination pagination-options="paginationOptions" get-data-for-page-callback="getPageData"></wfm-pagination>
@@ -14,7 +14,7 @@
 //
 
 .pagination li {
-  display: inline-block;  
+  display: inline-block;
   padding: 10px;
   cursor: pointer;
   background-color: white;
