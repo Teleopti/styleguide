@@ -10,9 +10,9 @@
 //		<div ng-cloak ng-show="modalLaunch1">
 //			<div class="modalbg">
 //				<div class="dialog">
-//					<h4 class="modal-header">
+//					<h1 class="modal-header">
 //						Modal title
-//					</h4>
+//					</h1>
 //					<div class="modal-inner-content">
 //						Ladies and gentlemen, allow me to introduce myself, I am the amazing modal window body!
 //					</div>
@@ -33,7 +33,7 @@
 //Mini modal
 //
 // The mini modal can be used when the regular modal is to big for its content or as a confirmation dialog.
-//
+// it does not have a header or any other elements inside it aprt from plain text and footer buttons.
 //Remember that it still takes the focus away from what the use was doing untill it has been dismissed.
 //
 //Markup:
@@ -71,36 +71,40 @@
 //	<div ng-cloak ng-show="modalLaunch2">
 //		<div class="modalbg">
 //			<div class="dialog">
-//					<div class="wfm-slide-tabs">
-//						<md-content style="padding:0!important;">
-//							<md-tabs md-dynamic-height md-border-bottom>
-//								<md-tab label="first tab">
-//									<md-content class="md-padding">
-//										<h4>Tab One</h4>
-//										<p>Click a tab to watch me go!</p>
-//									</md-content>
-//								</md-tab>
-//								<md-tab label="second tab">
-//									<md-content class="md-padding">
-//										<h4>Tab Two</h4>
-//										<p>wheeeee</p>
-//									</md-content>
-//								</md-tab>
-//								<md-tab label="third tab">
-//									<md-content class="md-padding">
-//										<h4>Tab Three</h4>
-//										<p>Slow down!</p>
-//									</md-content>
-//								</md-tab>
-//								<md-tab label="fourth tab">
-//									<md-content class="md-padding">
-//										<h4>Tab Four</h4>
-//										<p>Now listen here you little whippersnapper. </p>
-//									</md-content>
-//								</md-tab>
-//							</md-tabs>
-//						</md-content>
-//					</div>
+//				<div class="wfm-slide-tabs tabbed-panel">
+//  				<md-content class="md-padding">
+//    				<md-tabs md-dynamic-height md-border-bottom >
+//      				<md-tab label="Tab title1">
+//        				<md-content class="md-padding">
+//            			<div class="con-row">
+//              			<div class="con-flex">Content</div>
+//            			</div>
+//        				</md-content>
+//      				</md-tab>
+//      				<md-tab label="Tab title2">
+//        				<md-content class="md-padding">
+//            			<div class="con-row">
+//              			<div class="con-flex">Content</div>
+//            			</div>
+//        				</md-content>
+//      				</md-tab>
+//      			<md-tab label="Tab title3">
+//        			<md-content class="md-padding">
+//            		<div class="con-row demo-outline">
+//              		<div class="con-flex">Content</div>
+//            		</div>
+//        			</md-content>
+//      			</md-tab>
+//      			<md-tab label="Tab title4">
+//        			<md-content class="md-padding">
+//            		<div class="con-row">
+//              		<div class="con-flex">Content</div>
+//            		</div>
+//        			</md-content>
+//      			</md-tab>
+//    			</md-tabs>
+//  			</md-content>
+//			</div>
 //				<div class="modal-footer">
 //					<aside>
 //						<button ng-click="modalLaunch2 = !modalLaunch2" class="wfm-btn wfm-btn-invis-primary">dismiss</button>
