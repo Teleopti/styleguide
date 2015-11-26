@@ -9,6 +9,11 @@
 //			Refresh
 //		</md-tooltip>
 //	</button>
+//	<i class="action-icon mdi mdi-duck ">
+//		<md-tooltip>
+//			Refresh
+//		</md-tooltip>
+//	</i>
 //
 //Styleguide 1.18
 //
@@ -17,4 +22,8 @@ md-tooltip {
   font-size: 12px;
   font-weight: lighter;
     z-index:999999;
+}
+
+.action-icon{
+  cursor:pointer;
 }
