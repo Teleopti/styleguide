@@ -44,7 +44,16 @@
 			}
 		},
     jshint: {
+      options:{
+        jshintrc: 'config/.jshintrc' //http://jshint.com/docs/options/
+      },
       all: ['Gruntfile.js', 'js/**/*.js', 'app.js']
+    },
+    jscs: {
+        src: ['Gruntfile.js', 'js/**/*.js', 'app.js'],
+        options: {
+            preset: 'airbnb'
+        }
     }
 	});
 
@@ -54,10 +63,11 @@
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks("grunt-jscs");
 
   // Default task(s).
 	grunt.registerTask('default', ['watch:styleguide']);
 	grunt.registerTask('test', ['karma:styleguide']);
 	grunt.registerTask('dist', ['sass:styleguide','sass:dist', 'shell', 'cssmin']); // this task is kind of package
-  grunt.registerTask('style', ['jshint']);
+  grunt.registerTask('check', ['jshint', 'jscs']);
 };
