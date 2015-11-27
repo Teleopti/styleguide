@@ -132,6 +132,11 @@
 		float: right;
 	}
 }
+wfm-card-list{
+	md-content.md-default-theme{
+		background:transparent!important;
+	}
+}
 
 md-content {
 	padding-bottom: $full-padding *2;
@@ -144,8 +149,7 @@ md-content {
 }
 
 .wfm-card-unselected:hover{
-	background-color: $gray012;
-	box-shadow: 0 8px 17px 0 rgba(0,0,0,.2);
+	@extend .material-depth-2;
 }
 
 .wfm-card-selected {
