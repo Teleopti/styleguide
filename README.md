@@ -27,5 +27,14 @@ Then, run a local instance (via visual studio for example). The local styleguide
 * commit
 
 * create a pull request from this branch to master.
- 
 
+
+## Atom packages for this project
+
+If you use Atom you can install those packages to help you following the guidelines
+
+* jscs-fixer
+
+* jshint
+
+* linter-jscs
