@@ -48,6 +48,7 @@ input[type='text'], input[type='password']{
 input[type='text'],[type='number'], input[type='password'], select{
 	border: none;
 	color: $gray087;
+	line-height: 1;
 	border-bottom: 1px solid $gray-300;
 
 	&:focus {
