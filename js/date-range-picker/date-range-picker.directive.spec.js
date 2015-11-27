@@ -4,23 +4,23 @@ describe('date-range-picker directive', function() {
 
     beforeEach(module('wfm.daterangepicker'));
 
-    beforeEach(inject(function($compile, $rootScope, $httpBackend) {
+    beforeEach(inject(function($compile, $rootScope) {
         scope = $rootScope.$new();
         scope.startDate = new Date('2015-09-01');
         scope.endDate = new Date('2015-09-05');
-	elementCompile = $compile('<date-range-picker start-date="startDate" end-date="endDate"></date-range-picker>');        
+        elementCompile = $compile('<date-range-picker start-date="startDate" end-date="endDate"></date-range-picker>');
     }));
 
     it('Directive compilation should work', function() {
         var element = elementCompile(scope);
-        scope.$apply();        
+        scope.$apply();
         expect(element).toBeDefined();
     });
 
     it('Should show datepickers for start-date and end-date', function() {
         var element = elementCompile(scope);
         var datepickers = element.find('datepicker');
-        expect(datepickers.length).toEqual(2);        
+        expect(datepickers.length).toEqual(2);
     });
 
     it('Should show error when start-date is greater than end-date', function() {
@@ -29,10 +29,10 @@ describe('date-range-picker directive', function() {
 
         var element = elementCompile(scope);
         scope.$apply();
-        
+
         var divs = element.children(),
-            validityDiv = angular.element( divs[0]);
-               
+            validityDiv = angular.element(divs[0]);
+
         expect(validityDiv.hasClass('ng-invalid-order')).toBeTruthy();
     });
 
@@ -43,10 +43,10 @@ describe('date-range-picker directive', function() {
         scope.$apply();
 
         var divs = element.children(),
-            validityDiv = angular.element( divs[0]);
-               
+            validityDiv = angular.element(divs[0]);
+
         expect(validityDiv.hasClass('ng-invalid-empty')).toBeTruthy();
 
     });
-    
+
 });
