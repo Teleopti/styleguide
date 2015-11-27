@@ -42,7 +42,10 @@
 			styleguide: {
 				configFile: 'karma.conf.js'
 			}
-		}
+		},
+    jshint: {
+      all: ['Gruntfile.js', 'js/**/*.js', 'app.js']
+    }
 	});
 
 	grunt.loadNpmTasks('grunt-sass');
@@ -50,9 +53,11 @@
 	grunt.loadNpmTasks('grunt-shell');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-karma');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
 
-	// Default task(s).
+  // Default task(s).
 	grunt.registerTask('default', ['watch:styleguide']);
 	grunt.registerTask('test', ['karma:styleguide']);
 	grunt.registerTask('dist', ['sass:styleguide','sass:dist', 'shell', 'cssmin']); // this task is kind of package
+  grunt.registerTask('style', ['jshint']);
 };
