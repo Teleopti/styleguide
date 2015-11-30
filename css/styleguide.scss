@@ -125,7 +125,7 @@
 //    <div class="con-flex">Content</div>
 // </div>
 //<hr/>
-//  <div class="panel-footer">
+//  <div class="con-footer">
 //	 <button class="wfm-btn wfm-btn-invis-default">Advanced</button>
 //    <button class="wfm-btn wfm-btn-invis-primary">Options</button>
 //  </div>
@@ -134,66 +134,6 @@
 //
 //Styleguide 4.2
 
-.panel{
-  margin-bottom: $full-padding*2;
-  background:$white;
-  position: relative;
-
-  .panel-menu{
-    position: absolute;
-    top:8px;
-    right:8px;
-    z-index:10;
-  }
-
-  hr{
-    border:1px solid ;
-    border-color:rgba(0,0,0,.06);
-  }
-
-  .panel-footer {
-      text-align: right;
-      color: rgba(0,0,0,.87);
-  }
-}
-
-.con-flex{
-  flex-basis: 100%;
-  padding:$full-padding;
-
-  input, select{
-    width:100%;
-  }
-}
-
-.demo-outline > .con-flex{
-  outline:1px dashed $gray012;
-}
-
-.split-3-1{
-  flex-basis: 50%!important;
-}
-
-.split-1-2{
-  flex-basis: 25%!important;
-}
-
-@media screen and (min-width: 768px) {
-  .con-row {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-  }
-  .con-flex {
-    flex: 1;
-  }
-  ._25 {
-    flex: 2.5;
-  }
-  ._5 {
-    flex: 5;
-  }
-}
 //Tabbed panel
 //
 //When using tabbed panels, one important thing to remember is to order the tabs in a way that makes sense to the workflow.
@@ -224,7 +164,7 @@
 //              <div class="con-flex">Content</div>
 //            </div>
 //          <hr/>
-//          <div class="panel-footer">
+//          <div class="con-footer">
 //            <button class="wfm-btn wfm-btn-invis-default">Advanced</button>
 //            <button class="wfm-btn wfm-btn-invis-primary">Options</button>
 //          </div>
@@ -236,7 +176,7 @@
 //              <div class="con-flex">Content</div>
 //            </div>
 //          <hr/>
-//          <div class="panel-footer">
+//          <div class="con-footer">
 //            <button class="wfm-btn wfm-btn-invis-default">Advanced</button>
 //            <button class="wfm-btn wfm-btn-invis-primary">Options</button>
 //          </div>
@@ -248,7 +188,7 @@
 //              <div class="con-flex">Content</div>
 //            </div>
 //          <hr/>
-//          <div class="panel-footer">
+//          <div class="con-footer">
 //            <button class="wfm-btn wfm-btn-invis-default">Advanced</button>
 //            <button class="wfm-btn wfm-btn-invis-primary">Options</button>
 //          </div>
@@ -266,7 +206,7 @@
 //              <div class="con-flex">Things</div>
 //            </div>
 //          <hr/>
-//          <div class="panel-footer">
+//          <div class="con-footer">
 //            <button class="wfm-btn wfm-btn-invis-default">Advanced</button>
 //            <button class="wfm-btn wfm-btn-invis-primary">Options</button>
 //          </div>
@@ -309,7 +249,7 @@
 //              <div class="con-flex">Content</div>
 //            </div>
 //          <hr/>
-//          <div class="panel-footer">
+//          <div class="con-footer">
 //            <button class="wizard-step wfm-btn wfm-btn-invis-primary" ng-click="nextTab()">Next</button>
 //          </div>
 //        </md-content>
@@ -320,7 +260,7 @@
 //              <div class="con-flex">Content</div>
 //            </div>
 //          <hr/>
-//          <div class="panel-footer">
+//          <div class="con-footer">
 //            <button class="wizard-step wfm-btn wfm-btn-invis-primary" ng-click="nextTab()">Next</button>
 //          </div>
 //        </md-content>
@@ -331,7 +271,7 @@
 //              <div class="con-flex">Content</div>
 //            </div>
 //          <hr/>
-//          <div class="panel-footer">
+//          <div class="con-footer">
 //            <button class="wizard-step wfm-btn wfm-btn-invis-primary" ng-click="nextTab()">Next</button>
 //          </div>
 //        </md-content>
@@ -342,7 +282,7 @@
 //              <div class="con-flex">Content</div>
 //            </div>
 //          <hr/>
-//          <div class="panel-footer">
+//          <div class="con-footer">
 //            <button class="wfm-btn wfm-btn-invis-primary">Done</button>
 //          </div>
 //        </md-content>
@@ -354,32 +294,6 @@
 //
 //
 //Styleguide 4.3.1
-
-.tabbed-panel{
-  md-content{
-    padding:0;
-  }
-
-  md-tabs-wrapper{
-    margin-top: 5px;
-    background:$blue-300;
-    border-width: 0 !important;
-    border-style: none!important;
-  }
-  .md-padding{
-    margin: 0 5px;
-  }
-
-  .head-actions{
-    margin-top:-8px;
-  }
-}
-
-.tabbed-panel-header{
-  .card-context{
-    margin-top: 15px;
-  }
-}
 
 //Form layout
 //
@@ -399,10 +313,6 @@
 //
 //
 //Styleguide 4.4
-
-.wfm-form label {
-    display: inline-block!important;
-}
 
 //Resources
 //
@@ -432,6 +342,10 @@
   text-align:center;
   display: inline-block;
   background: white;
+  }
+
+  .demo-outline > .con-flex{
+    outline:1px dashed $gray012;
   }
 
 /*template styles*/

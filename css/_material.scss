@@ -102,3 +102,61 @@ dd {
 .md-ripple-container{
 	visibility: hidden;
 }
+
+
+.panel{
+  margin-bottom: $full-padding*2;
+  background:$white;
+  position: relative;
+
+  .panel-menu{
+    position: absolute;
+    top:8px;
+    right:8px;
+    z-index:10;
+  }
+
+  hr{
+    border:1px solid ;
+    border-color:rgba(0,0,0,.06);
+  }
+
+  .cont-footer {
+      text-align: right;
+      color: rgba(0,0,0,.87);
+  }
+}
+
+.con-flex{
+  flex-basis: 100%;
+  padding:$full-padding;
+
+  input, select{
+    width:100%;
+  }
+}
+
+.split-3-1{
+  flex-basis: 50%!important;
+}
+
+.split-1-2{
+  flex-basis: 25%!important;
+}
+
+@media screen and (min-width: 768px) {
+  .con-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  .con-flex {
+    flex: 1;
+  }
+  ._25 {
+    flex: 2.5;
+  }
+  ._5 {
+    flex: 5;
+  }
+}

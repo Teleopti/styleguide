@@ -81,3 +81,29 @@ md-content.md-default-theme {
  .label:hover, .tab-group input[type=radio]:checked + .label{
 	background-color:$blue-500;
 }
+
+.tabbed-panel{
+  md-content{
+    padding:0;
+  }
+
+  md-tabs-wrapper{
+    margin-top: 5px;
+    background:$blue-300;
+    border-width: 0 !important;
+    border-style: none!important;
+  }
+  .md-padding{
+    margin: 0 5px;
+  }
+
+  .head-actions{
+    margin-top:-8px;
+  }
+}
+
+.tabbed-panel-header{
+  .card-context{
+    margin-top: 15px;
+  }
+}

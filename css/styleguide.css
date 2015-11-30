@@ -70,6 +70,9 @@
   display: inline-block;
   background: white; }
 
+.demo-outline > .con-flex {
+  outline: 1px dashed rgba(0, 0, 0, 0.06); }
+
 /*template styles*/
 .kss-sidebar {
   position: fixed !important; }
