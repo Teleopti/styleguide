@@ -50,7 +50,8 @@
 //Almost everything described in the elements chapter should be housed inside a container.
 //There are different kinds of containers that all have different applications, what they do however have in common is the ability to house flex grids and/or elements.
 //When building a new view, start by picking one or several containers and a flex layout that fits with your views content.
-//Try to avoid nesting containers whenever possible.
+//
+//Note: Never nest a container within another container.
 //
 //
 //Styleguide 4
