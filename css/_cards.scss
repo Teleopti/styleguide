@@ -51,9 +51,9 @@
 
  // Card List
  //
- //	The Teleopti Card List is used to show a list of expanding content. Each card can be clicked to expanded while the compact form shows information at a glance.
+ //	The Teleopti Card List is used to show a list of expanding content. Each card can be clicked to expanded while the compact version shows information at a glance.
  //
- // The header and content of each card is completely customizable and any html elements provided within the &lt;card-header&gt; and  &lt;card-body&gt; tags will be rendered accordingly.
+ //It is encouraged to add as much relevant information as possible to the header of the card (while avoiding text wrapping). Any html elements provided within the &lt;card-header&gt; and/or &lt;card-body&gt; tags will be rendered accordingly.
  //
  //Styleguide 4.6
  //

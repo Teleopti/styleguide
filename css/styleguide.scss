@@ -2,7 +2,7 @@
 
 //Elements
 //
-//Elements are the individual parts that make up the application. Elements can be stand alone but more often they are part of a container. By arranging elements in containers using layout, we can get a structured and consistent style.
+//Elements are the individual parts that make up the application. Some (such as buttons and text) can be stand alone but genrally all elements are part of a container. By arranging elements in containers using layout, we can get a structured and consistent style.
 //
 //Styleguide 1
 //
@@ -15,7 +15,7 @@
 //Keep the number of stacked layers to a minimum and the total number of layer below 3 (including the background). If a raised element lives inside of another raised element it should still have a material-depth number of one, unless it is floating.
 //Floating elements live above the main layout (such as context menus) and should have the highest material-depth number possible (2).
 //
-//If the element does not have a raised wrapper and is placed freely on the background it should have a depth value of 1.
+//If the element does not have a raised wrapper (i.e panel) and is placed freely on the background it should have a depth value of 1.
 //
 //Note: the 'spacer' class is for styleguide demo purpose only.
 //
@@ -53,6 +53,7 @@
 //
 //Note: Never nest a container within another container.
 //
+// Note: In all modals and panels the footer links should be buttons, not  &lt;a/&gt; tags.
 //
 //Styleguide 4
 //
@@ -99,8 +100,9 @@
 
 //Panel
 //
-//The panel is the main container and the most versitile. It can house most elements and can be configured in a number of layouts.
-//If needed it can have a context menu or a footer for more actions. Since a panel is a raised pice of material, avoid using other raised elements on top of it, unless they are floating (like a action button or context menu)
+//The panel is the main container and the most versatile. It can house most elements and can be configured in a number of layouts.
+//If needed it can have a context menu or a footer for more actions. Since a panel is a raised piece of material, avoid using other raised elements on top of it, unless they are floating (like a action button or context menu)
+//The panel can have a footer with a number of actions, try to keep this number as small as possible. The most important action should be to the far right and if it is the primary action it should have a wfm-btn-invis-primary class.
 //
 //Note: the ´demo-outline´ class is for styleguide demo purpose only.
 //
@@ -136,7 +138,7 @@
 //Tabbed panel
 //
 //When using tabbed panels, one important thing to remember is to order the tabs in a way that makes sense to the workflow.
-//Also, several tab groups close together to avoid confusion.
+//Also, avoid several tab panels close together to avoid confusion and maintain focus.
 //
 //Note: the ´demo-outline´ class is for styleguide demo purpose only.
 //
@@ -201,10 +203,10 @@
 //              <div class="con-flex">Things</div>
 //              <div class="con-flex">Things</div>
 //            </div>
-//          <div class="con-footer">
-//            <button class="wfm-btn wfm-btn-invis-default">Advanced</button>
-//            <button class="wfm-btn wfm-btn-invis-primary">Options</button>
-//          </div>
+//            <div class="con-footer">
+//	           <button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+//             <button class="wfm-btn wfm-btn-invis-primary">Options</button>
+//            </div>
 //        </md-content>
 //      </md-tab>
 //    </md-tabs>
