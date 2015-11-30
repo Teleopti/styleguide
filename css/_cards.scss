@@ -1,20 +1,18 @@
 
 //Cards
 //
-//Cards can be used to display similar content in a grid.
+//Cards are used to show a large number of same size content.
 //
 //Markup:
 //<div class="card-group">
-//	<div class="wfm-card" tabindex="0">
-//				Title
-//		</div>
-//	<div class="wfm-card wfm-card-disabled" tabindex="0">
-//				Title
-//		</div>
-//	<div class="wfm-card" tabindex="0">
-//			Title
-//		</div>
-//	</div>
+//	<div class="wfm-card" tabindex="0"><h2>Title</h2></div>
+//	<div class="wfm-card wfm-card-disabled" tabindex="0"><h2>Title</h2></div>
+//	<div class="wfm-card" tabindex="0"><h2>Title</h2></div>
+//	<div class="wfm-card" tabindex="0"><h2>Title</h2></div>
+//	<div class="wfm-card" tabindex="0"><h2>Title</h2></div>
+//	<div class="wfm-card" tabindex="0"><h2>Title</h2></div>
+//	<div class="wfm-card" tabindex="0"><h2>Title</h2></div>
+//</div>
 //
 //Styleguide 1.19
 //
@@ -29,7 +27,7 @@
 	 width: auto;
 	 background:$white;
 	 float: left;
-	 min-width: 10rem;
+	 min-width: 11%;
 	 min-height: 150px;
 	 @extend .material-depth-1;
 	 margin: 5px;
