@@ -26,7 +26,7 @@
 
 //Usage
 //
-//By keeping common terms the same everywhere, we not only help the user but also save translation resources. 
+//By keeping common terms the same everywhere, we not only help the user but also save translation resources.
 //
 //Markup:
 //<table class="wfm-table">
@@ -71,6 +71,9 @@ h3{
 	font-weight: bold;
 }
 
+.caps{
+	text-transform: capitalize;
+}
 
 // Helper classes for text
 //

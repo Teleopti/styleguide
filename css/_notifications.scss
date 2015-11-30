@@ -124,3 +124,22 @@
 //
 //Styleguide 1.12
 //
+
+.notification-list{
+
+	li{
+		background: transparent;
+		border:none;
+		border-top: 1px solid $gray012;
+	}
+
+	i{
+		padding-right: 0;
+		margin-right: 5px;
+	}
+
+	.subtext{
+		margin-left: 26px;
+	}
+
+}

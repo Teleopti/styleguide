@@ -17,12 +17,24 @@
 					<div class="arrow-up"></div>
 					<div class="context-content" >
 						<div class="notification-list">
-								<h4>Notifications</h4>
+								<h4>Notifications
+							<div class="wfm-switch pull-right">
+									<input type="checkbox" ng-model="activeNotification" ng-init="activeNotification=true" id="notificationToggle"/>
+									<label for="notificationToggle">
+										<span class="wfm-switch-toggle"></span>
+									</label>
+									<md-tooltip ng-if="activeNotification==true">Turn off</md-tooltip>
+									<md-tooltip ng-if="activeNotification==false">Turn on</md-tooltip>
+								</div>
+								</h4>
 								<div>
-									<ul class="wfm-list">
-										<li><i class="mdi mdi-alert-circle"></i>1 forecast finished at 14:22</li>
-                    <li><i class="mdi mdi-alert-circle"></i>1 forecast finished at 13:22</li>
-                    <li><i class="mdi mdi-alert-circle"></i>1 forecast finished at 12:22</li>
+									<ul ng-if="activeNotification==true" class="notification-list wfm-simple-list">
+											<li ng-repeat="alarm in notificationResult" ng-if="alarm.length > 0">
+														<i class="mdi mdi-alert-circle"></i>
+														<b>Notification</b>
+														<span class="pull-right">13:37</span>
+														<div class="subtext">Done without errors</div>
+											</li>
 									</ul>
 								</div>
 						</div>

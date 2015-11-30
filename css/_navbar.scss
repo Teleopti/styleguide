@@ -91,7 +91,6 @@
 	border: none;
 	margin-bottom:0;
 
-
 	a{
 		text-decoration:none;
 		display:inline-block;
@@ -102,6 +101,7 @@
 		font-weight: bold;
 		font-size: 18px;
 		cursor:pointer;
+		margin-left:35px;
 	}
 
 	.content {
@@ -153,8 +153,11 @@
 }
 
 .navbar-right {
+	font-size: 14px!important;
 	float: right;
 	margin-right: 0;
+
+	input[type=text]{line-height: initial!important;}
 
 	button{
 		padding:0 0 !important;
@@ -219,6 +222,8 @@
     }
 
     &:focus {
+				box-shadow: none!important;
+
         [class*="context-menu-"] {
             visibility: visible;
             opacity: 1;
@@ -256,10 +261,9 @@
 	width: 0;
 	height: 0;
 	float:right;
-	margin-top:-10px;
+	margin-top: -15px!important;
 	border-left: 12px solid transparent;
 	border-right: 12px solid transparent;
-
 	border-bottom: 15px solid white;
 	}
 
