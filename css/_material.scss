@@ -77,13 +77,11 @@ dd {
 }
 
 .layout-container .content {
-	@extend .material-depth-1;
 	-webkit-flex: auto;
 	flex: auto;
 	padding: 10px;
 	flex-basis: 70%;
 	margin: 62px 10px 0px 10px;
-	background-color: $white;
 }
 
 .animate-show {
