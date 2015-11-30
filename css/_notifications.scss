@@ -117,9 +117,25 @@
 // Notifications are more global and general compared to notices. They can function more like a actions archive. For more about notifications see the <a href="file:///C:/Users/carlr/Repos/styleguide/styleguide/styleguide/section-1.html#/kssref-1-14" >navbar chapter</a>.
 //
 //Markup:
-//<ul class="wfm-list">
-//	<li><i class="mdi mdi-alert-circle"></i>Notifications are great!</li>
-//	<li><i class="mdi mdi-alert-circle"></i>Have another one.</li>
+//<ul class="notification-list wfm-simple-list">
+//		<li>
+//					<i class="mdi mdi-alert-circle"></i>
+//					<b>Forecast</b>
+//					<span class="pull-right">16:18</span>
+//					<div class="subtext">Done without errors</div>
+//		</li>
+//		<li>
+//					<i class="mdi mdi-alert-circle"></i>
+//					<b>Forecast</b>
+//					<span class="pull-right">13:37</span>
+//					<div class="subtext">Done without errors</div>
+//		</li>
+//		<li>
+//					<i class="mdi mdi-alert-circle"></i>
+//					<b>Forecast</b>
+//					<span class="pull-right">11:11</span>
+//					<div class="subtext">Done without errors</div>
+//		</li>
 //</ul>
 //
 //Styleguide 1.12

@@ -18,7 +18,7 @@
 					<div class="context-content" >
 						<div class="notification-list">
 								<h4>Notifications
-							<div class="wfm-switch pull-right">
+							<div class="wfm-switch">
 									<input type="checkbox" ng-model="activeNotification" ng-init="activeNotification=true" id="notificationToggle"/>
 									<label for="notificationToggle">
 										<span class="wfm-switch-toggle"></span>
@@ -29,9 +29,9 @@
 								</h4>
 								<div>
 									<ul ng-if="activeNotification==true" class="notification-list wfm-simple-list">
-											<li ng-repeat="alarm in notificationResult" ng-if="alarm.length > 0">
+											<li ng-repeat="item in demos">
 														<i class="mdi mdi-alert-circle"></i>
-														<b>Notification</b>
+														<b>Forecast</b>
 														<span class="pull-right">13:37</span>
 														<div class="subtext">Done without errors</div>
 											</li>
