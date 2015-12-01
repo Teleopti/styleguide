@@ -4,7 +4,7 @@ angular.module('styleguideApp', ['ngMaterial', 'ui.tree', 'ui.grid',
   'angular-growl', 'ngAnimate', 'wfm.pagination'])
 .controller('mainCtrl', ['$scope', 'growl', function($scope, growl) {
     /* Dummy data*/
-    $scope.demos = [{id: '50d5ad'}, {id: '678ffr'}, {id: '515ad'}, {id: '673ffr'}];
+    $scope.demos = [{id: '1'}, {id: '2'}, {id: '3'}, {id: '4'}];
     $scope.treeDemos =   [
       {categories: [{name: 'item 1'}, {name: 'item 2'}, {name: 'item 3'}, {name: 'item 2'}],
         name: 'First Group',},

@@ -73,6 +73,18 @@
 .demo-outline > .con-flex {
   outline: 1px dashed rgba(0, 0, 0, 0.06); }
 
+.jsprewrap {
+  width: 98%;
+  margin: 0 auto;
+  cursor: pointer; }
+
+.ksscopy {
+  margin: -10px -10px 10px -10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #eee;
+  font-weight: bold; }
+
 /*template styles*/
 .kss-sidebar {
   position: fixed !important; }

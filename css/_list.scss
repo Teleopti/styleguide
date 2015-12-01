@@ -101,11 +101,18 @@
 //			</span>
 //		</div>
 //	</li>
-//	<li>
+//	<li ng-click="listSelected4 = !listSelected4" class="disabled">
 //		<span class="list-item-container">
-//			Disabled list item
+//			List item with three actions in leave-behind
 //		</span>
-//		<span ng-cloak class="list-dot grow-out"><b class="mdi mdi-close list-mark disabled"></b></span>
+//		<span ng-cloak ng-show="listSelected4" class="list-dot grow-out"><b class="mdi mdi-check list-mark"></b></span>
+//		<div class="wfm-leave-behind">
+//			<span>
+//				<i class="mdi mdi-content-copy"></i>
+//				<i class="mdi mdi-pencil"></i>
+//				<i class="mdi mdi-delete"></i>
+//			</span>
+//		</div>
 //	</li>
 //</ul>
 //
@@ -119,12 +126,6 @@
 	left:$full-padding;
 	background:$green-100;
 	box-shadow: 0 0 0 3px $green-100;
-}
-
-.list-dot .disabled{
-	background: $red-600 !important;
-	border-radius: 50%;
-	box-shadow: 0 0 0 3px $red-600!important;
 }
 
 ul {
@@ -198,6 +199,12 @@ margin-left: 30px;
 		margin-right: $full-padding;
 		color: #555555;
 		padding-bottom: 5px;
+	}
+
+	&.disabled{
+		background: $gray012!important;
+		cursor: not-allowed;
+		pointer-events: none;
 	}
 }
 

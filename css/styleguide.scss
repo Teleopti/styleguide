@@ -109,7 +109,7 @@
 //Markup:
 //<div class="panel material-depth-1">
 //  <div class="sub-header">
-//    Panel title
+//    <h2>Panel title</h2>
 //    <div class="head-actions panel-menu">
 //      <button class="context-menu card-context">
 //        <i class="mdi mdi-dots-vertical"></i>
@@ -223,6 +223,19 @@
 //
 //Note: the ´demo-outline´ class is for styleguide demo purpose only.
 //
+//<div class="jsprewrap">
+//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
+//	<div ng-show="showjs">
+//		<code><pre>
+//$scope.selectedIndex = 0;
+//$scope.nextTab = function() {
+//  var index = ($scope.selectedIndex === 50) ? 0 : $scope.selectedIndex + 1;
+//  $scope.selectedIndex = index;
+//};
+//		</pre></code>
+//	</div>
+//</div>
+//
 //Markup:
 //<div class="panel material-depth-1">
 //<div class="wfm-slide-tabs tabbed-panel">
@@ -292,15 +305,19 @@
 //
 //Forms are made up of individual inputs that can be validated on interaction and/or on a submit. A form can be created in many different configurations and the layout should help the user complete the form without confusion. Take some time to consider your form layout in relation to the layout of your view and strive to not waste space.
 //
-//<code><pre>
-//Reset validation errors:
+//<div class="jsprewrap">
+//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
+//	<div ng-show="showjs">
+//		<code><pre>
 //$scope.reset = function(form) {
-//   if (form) {
-//     form.$setPristine();
-//     form.$setUntouched();
-//   }
-// };
-//</pre></code>
+//  if (form) {
+//    form.$setPristine();
+//    form.$setUntouched();
+//  }
+//};
+//		</pre></code>
+//	</div>
+//</div>
 //
 //Markup: form_panel.hbs
 //
@@ -340,6 +357,20 @@
   .demo-outline > .con-flex{
     outline:1px dashed $gray012;
   }
+
+.jsprewrap{
+  width: 98%;
+  margin: 0 auto;
+  cursor:pointer;
+}
+
+.ksscopy{
+  margin: -10px -10px 10px -10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #eee;
+  font-weight: bold;
+}
 
 /*template styles*/
 .kss-sidebar {

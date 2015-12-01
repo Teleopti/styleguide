@@ -206,6 +206,15 @@ md-option{
 //
 // Radio buttons are a group of options that can only have one item selected at a time.
 //
+//<div class="jsprewrap">
+//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
+//	<div ng-show="showjs">
+//		<code><pre>
+//	  $scope.demos = [{id: '1'}, {id: '2'}, {id: '3'}, {id: '4'}];
+//		</pre></code>
+//	</div>
+//</div>
+//
 //Markup:
 //<form>
 //	<div class="wfm-radio">
@@ -271,6 +280,15 @@ md-option{
 //Checkboxes
 //
 //Checkboxes are used for selecting multiple input options.
+//
+//<div class="jsprewrap">
+//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
+//	<div ng-show="showjs">
+//		<code><pre>
+//	  $scope.demos = [{id: '1'}, {id: '2'}, {id: '3'}, {id: '4'}];
+//		</pre></code>
+//	</div>
+//</div>
 //
 //Markup:
 //<form>
