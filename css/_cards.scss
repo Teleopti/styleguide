@@ -128,14 +128,10 @@
 		float: right;
 	}
 }
-wfm-card-list{
-	md-content.md-default-theme{
-		background:transparent!important;
-	}
-}
 
 md-content {
 	padding-bottom: $full-padding *2;
+	background-color: transparent!important;
 }
 
 .wfm-card-unselected{
