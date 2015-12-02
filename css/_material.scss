@@ -108,6 +108,8 @@ dd {
   margin-bottom: $full-padding*2;
   background:$white;
   position: relative;
+	border-radius: 0;
+	border:0px solid transparent;
 
   .panel-menu{
     position: absolute;
