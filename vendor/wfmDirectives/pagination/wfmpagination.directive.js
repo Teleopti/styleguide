@@ -5,7 +5,7 @@
 	wfmPagination.run([
 		'$templateCache', function($templateCache) {
 			$templateCache.put('wfm-pagination-default.tpl.html',
-				'<div class="pagination pull-right" ng-if="vm.paginationOptions.totalPages > 0">' +
+				'<div class="pagination" ng-if="vm.paginationOptions.totalPages > 0">' +
 				'	<ul>' +
 				'		<li class=" pagination-item" ng-class="{disabled: vm.paginationOptions.pageNumber == 1 || vm.paginationOptions.totalPages == 0}">'+
 				'			<a href="" ng-click="vm.gotoPage(1)">'+
