@@ -31,8 +31,8 @@ md-progress-linear[md-mode=buffer] .md-dashed:before {
 
 //Spinner
 //
-//The spinner is used to indicate automatic loading in tables, lists and views. While it is visible it should be centeted within its container.
-//The mini spinner can be shown along side any element or headerto to indicate loading.
+//The spinner is used to indicate automatic loading in big elements such as tables, lists and views. While it is visible it should be centeted within its container.
+//The mini spinner can be shown along side any element or in a header to indicate loading.
 //
 //Markup:
 //<md-progress-circular md-mode="indeterminate"></md-progress-circular>
