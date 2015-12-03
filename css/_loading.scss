@@ -19,7 +19,7 @@
 //Styleguide 1.9.1
 //
 
-md-progress-linear.md-default-theme .md-bar {
+md-progress-linear .md-bar {
 	background-color:$pink-500!important;
 }
 
@@ -40,20 +40,20 @@ md-progress-linear[md-mode=buffer] .md-dashed:before {
 //Styleguide 1.9.2
 //
 
-md-progress-circular.md-default-theme .md-inner .md-left .md-half-circle {
+md-progress-circular .md-inner .md-left .md-half-circle {
   border-left-color: $pink-500;
 }
 
-md-progress-circular.md-default-theme .md-inner .md-left .md-half-circle, 
-md-progress-circular.md-default-theme .md-inner .md-right .md-half-circle,
+md-progress-circular .md-inner .md-left .md-half-circle, 
+md-progress-circular .md-inner .md-right .md-half-circle,
 md-progress-circular .md-inner .md-gap {
   border-top-color: $pink-500;
 }
 
-md-progress-circular.md-default-theme .md-inner .md-right .md-half-circle {
+md-progress-circular .md-inner .md-right .md-half-circle {
   border-right-color: $pink-500;
 }
 
 .mini-spinner {
-	    transform: scale(0.4)!important;
+	    transform: scale(0.2)!important;
 }
