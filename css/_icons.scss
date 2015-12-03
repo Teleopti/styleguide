@@ -3,9 +3,9 @@
 //We only use <a href="http://materialdesignicons.com/">Material icons</a>.
 //To use an icon, use the i-tag and apply the classes "mdi" and "mdi-icon-name" (replacing icon-name with the name form the icon index).
 //
-//Icons can be used as links without any other classes, however, if used in this way, make sure you provide a pointer cursor and a tooltip to highlight that it is infant a link.
+//Single icons can be used as links. if used in this way, make sure you provide a pointer cursor and a tooltip to highlight that it is infact a link.
 //
-//In the cases where icons appear in the defined markup throughout this styleguide, they might have special style rules applied to them so be sure that the functionality is intact if you decide to remove them.
+//In the cases where icons appear in the defined markup throughout this styleguide, they might have special style rules applied to them so be sure that the functionality is intact if you opt to remove them.
 //
 //Styleguide 6
 //
@@ -13,7 +13,7 @@
 
 // Quick symbol library
 //
-// Here you can find the icons we currently use and their name:
+//These icons are used in the project and have a definition of when they should be used. 
 //<table class="wfm-table">
 //<thead><tr><th>Icon</th><th>Class name</th><th>Definition</th></tr></thead>
 //<tbody>
