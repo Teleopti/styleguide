@@ -139,13 +139,6 @@
 	}
 }
 
- .big-table-footer-actions{
-		padding: $full-padding * 2 $full-padding;
-		border-top: 1px solid $gray012;
-		color: $gray087;
-	}
-
-
 .ui-grid-header-canvas{
 	background-color:$blue-100;
 }
@@ -190,7 +183,6 @@
 }
 
 .ui-grid-menu-button{
-	top: -39px;
 	background: transparent;
 	border:none;
 }
