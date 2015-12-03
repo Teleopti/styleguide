@@ -10,7 +10,7 @@
 //		<div ng-cloak ng-show="modalLaunch1">
 //			<div class="modalbg">
 //				<div class="dialog">
-//					<h1 class="modal-header">
+//					<h1 class="modal-title">
 //						Modal title
 //					</h1>
 //					<div class="modal-inner-content">
@@ -186,7 +186,7 @@
 		}
 
 
-	.modal-header{
+	.modal-title{
 		padding-left:10px!important;
 		text-align: left;
 	}
