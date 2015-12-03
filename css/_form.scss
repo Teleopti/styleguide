@@ -176,16 +176,16 @@ select{
 	cursor: pointer;
 }
 
-md-select.md-default-theme:not([disabled]):focus .md-select-label{
+md-select:not([disabled]):focus .md-select-label{
 	border-bottom: $pink-500  1px solid;
 	padding: 0;
 }
 
-md-select-menu.md-default-theme md-option:hover {
+md-select-menu md-option:hover {
 	background-color: $gray-300 ;
 }
 
-md-select-menu.md-default-theme md-option[selected], md-select-menu.md-default-theme md-option[selected]:focus{
+md-select-menu md-option[selected], md-select-menu md-option[selected]:focus{
 	background-color: $green-100;
 }
 
@@ -473,17 +473,17 @@ md-slider{
 
 /*slider theme*/
 
-md-slider.md-default-theme .md-thumb:after {
+md-slider .md-thumb:after {
   border-color: $blue-300;
   background-color: $blue-300;
 }
 
-md-slider.md-default-theme .md-track.md-track-fill,
-md-slider.md-default-theme .md-sign {
+md-slider .md-track.md-track-fill,
+md-slider .md-sign {
   background-color: $blue-300;
 }
 
-md-slider.md-default-theme .md-sign:after {
+md-slider .md-sign:after {
   border-top-color: $blue-300;
 }
 
