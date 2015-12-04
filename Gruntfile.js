@@ -55,6 +55,12 @@
                 config: '.jscsrc',
             },
         },
+				sasslint: {
+        options: {
+            configFile: 'config/.sass-lint.yml',
+        },
+        target: ['location/*.scss']
+    }
     });
 
     grunt.loadNpmTasks('grunt-sass');
