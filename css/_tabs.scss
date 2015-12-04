@@ -89,8 +89,8 @@ md-content.md-default-theme {
 }
 
 .tabbed-panel{
-  md-content{
-    padding:0;
+  md-content, md-padding{
+    padding:0!important;
   }
 
 	.card-context{
