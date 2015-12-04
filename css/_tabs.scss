@@ -2,7 +2,7 @@
 
 	md-next-button{
 		padding-right: 18%;
-		background: $blue-300;
+		background: $blue-100;
 	}
 
 	.md-ripple-container{
@@ -35,6 +35,7 @@
 		height: 36px;
 		z-index: -1;
 		background: $white;
+		@extend .material-depth-1;
 }
 
 md-tabs .md-tab.md-active, md-tabs .md-tab.md-focused {
@@ -93,13 +94,13 @@ md-content.md-default-theme {
   }
 
   md-tabs-wrapper{
-    margin-top: 5px;
-    background:$blue-300;
+    padding-top: 1px;
+    background:$blue-100;
     border-width: 0 !important;
     border-style: none!important;
   }
   .md-padding{
-    margin: 0 5px;
+    padding: 0 5px;
   }
 
   .head-actions{
