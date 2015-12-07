@@ -165,6 +165,10 @@ wfm-card:last-child .wfm-card-selected {
 	margin-bottom: $full-padding *2;
 }
 
+md-card{
+	border-radius: 0;
+}
+
 .wfm-card-selected .wfm-card-title{
 	background-color: $blue-100;
 	transition: background-color 0.3s linear;
