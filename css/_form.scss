@@ -148,11 +148,11 @@ input[type="email"]{
 }
 // Select
 //
-// The select is used to provide many options to the user.
+// The select is used to provide many options to the user and make complex selections simpler.
 //
 // The first example is a common select.
 //
-// The second one is an angular material select. It's broken right now. We are waiting for this fix: https://github.com/angular/material/issues/2564
+// The md-select doesnt render correctly in the styleguide but works fine in the project.
 //
 // Markup:
 //	<select>
