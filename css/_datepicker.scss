@@ -5,7 +5,7 @@
 //Markup:
 //<div class="wfm-datepicker-wrap">
 //	<div class="sub-header">
-//		From/to: 
+//		From/to:
 //	</div>
 //	<datepicker show-weeks="true" ng-model="someDate" class="wfm-datepicker"></datepicker>
 //</div >
@@ -18,7 +18,7 @@
 //
 //A directive for specifying a date-only period. It is composed from datepicker with added validation messages. In WFM, the error messages will be translated automatically.
 //<table class="wfm-table">
-//<tr><th>Attribute Name</th><th>Usage</th><th>Required</th></tr>  
+//<tr><th>Attribute Name</th><th>Usage</th><th>Required</th></tr>
 //<tr><td>start-date</td><td>Bind to period start date</td><td>true</td></tr>
 //<tr><td>end-date</td><td>Bind to period end date</td><td>true</td></tr>
 //<tr><td>errors</td><td>Bind to errors. Its value will be set by the picker to an array of error-keys. The pre-defined error keys are 'order' and 'empty'</td><td>false</td></tr>
@@ -26,7 +26,7 @@
 //</table>
 //
 //
-//  
+//
 //Markup:
 //<date-range-picker start-date="startDate" end-date="endDate"></date-range-picker>
 //
@@ -38,9 +38,33 @@
 .wfm-datepicker-wrap {
 	@extend .material-depth-1;
 	margin: $full-padding;
-	display:inline-block; 
+	display:inline-block;
 	background-color:$white;
 	min-height:290px;
+}
+
+.glyphicon{
+	display: inline-block;
+	font: normal normal normal 24px/1 MaterialDesignIcons;
+	font-size: 16px;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	transform: translate(0, 0);
+}
+
+.glyphicon:hover:before{
+	box-shadow: 0px 0px 0px 5px $gray012;
+	background:$gray012;
+	border-radius: 1px;
+}
+
+.glyphicon-chevron-right:before {
+    content: "\f1e5"!important;
+}
+
+.glyphicon-chevron-left:before {
+    content: "\f1e4"!important;
 }
 
 .wfm-datepicker{
@@ -83,7 +107,7 @@
 	.text-info {
 		color: inherit;
 	}
-	
+
 	.range > button{
 		background-color:$green-100;
     }
@@ -91,7 +115,7 @@
 
 .wfm-date-range-picker-wrap {
   .wrong-sign {
-    display: none; 
+    display: none;
     color: #ee8f7d ;
   }
   .right-sign {
@@ -102,9 +126,9 @@
     display: none;
     margin-top: 10px;
   }
-  .ng-valid {		
+  .ng-valid {
     .right-sign {
-      display: block; 
+      display: block;
     }
   }
   .ng-invalid {
@@ -115,9 +139,9 @@
       display: block;
     }
     .wrong-sign {
-      display: block; 
-    }		
-  }	
+      display: block;
+    }
+  }
   .wfm-datepicker-wrap td.in-date-range button {
     background-color: #c2e085;
   }
@@ -135,6 +159,6 @@
     width:18px;
   }
   .sub-header {
-    position: relative;    
+    position: relative;
   }
-}  
+}
