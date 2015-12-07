@@ -17,6 +17,10 @@
 		color:$gray087;
 	}
 
+	md-tabs{
+		border-radius: 0;
+	}
+
 	md-tabs.md-default-theme md-tab.active{
 		color:$gray087!important;
 	}
