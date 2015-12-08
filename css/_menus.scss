@@ -5,7 +5,7 @@
 //Additionally a menu can not trigger a child menu from within itself.
 //
 //Markup:
-//<button class="context-menu wfm-btn wfm-btn-default">
+//<div tabindex=0 class="context-menu wfm-btn wfm-btn-default">
 //	Place me on the left
 //	<span class="context-menu-right">
 //		<ul class="wfm-list">
@@ -14,8 +14,8 @@
 //			<li><i class="mdi mdi-alert"></i>Drop agents table</li>
 //		</ul>
 //	</span>
-//</button>
-//<button class="context-menu wfm-btn wfm-btn-default">
+//</div>
+//<div tabindex=0 class="context-menu wfm-btn wfm-btn-default">
 //	place me in the middle
 //	<span class="context-menu-bottom">
 //		<ul class="wfm-list">
@@ -24,8 +24,8 @@
 //			<li><i class="mdi mdi-alert"></i>Drop agents table</li>
 //		</ul>
 //	</span>
-//</button>
-//<button class="context-menu wfm-btn wfm-btn-default">
+//</div>
+//<div tabindex=0 class="context-menu wfm-btn wfm-btn-default">
 //	Place me on the right
 //	<span class="context-menu-left">
 //		<ul class="wfm-list">
@@ -34,9 +34,9 @@
 //			<li><i class="mdi mdi-alert"></i>Drop agents table</li>
 //		</ul>
 //	</span>
-//</button>
+//</div>
 //<br/>
-//<button class="context-menu card-context">
+//<div tabindex=0 class="context-menu card-context">
 //	<i class="mdi mdi-dots-vertical"></i>
 //	<span class="context-menu-right">
 //		<ul class="wfm-list">
@@ -45,8 +45,8 @@
 //			<li><i class="mdi mdi-alert"></i>Drop agents table</li>
 //		</ul>
 //	</span>
-//</button>
-//<button class="context-menu card-context">
+//</div>
+//<div tabindex=0 class="context-menu card-context">
 //	<i class="mdi mdi-dots-vertical"></i>
 //	<span class="context-menu-bottom">
 //		<ul class="wfm-list">
@@ -55,8 +55,8 @@
 //			<li><i class="mdi mdi-alert"></i>Drop agents table</li>
 //		</ul>
 //	</span>
-//</button>
-//<button class="context-menu card-context">
+//</div>
+//<div tabindex=0 class="context-menu card-context">
 //	<i class="mdi mdi-dots-vertical"></i>
 //	<span class="context-menu-left">
 //		<ul class="wfm-list">
@@ -65,7 +65,7 @@
 //			<li><i class="mdi mdi-alert"></i>Drop agents table</li>
 //		</ul>
 //	</span>
-//</button>
+//</div>
 //
 //Styleguide 1.13
 //
@@ -95,6 +95,7 @@
     cursor:pointer;
     background:transparent;
     border:none;
+    display: inline-block;
 
     [class*="context-menu-"] {
         transition: $transition-timing;

@@ -113,7 +113,7 @@
 //  <div class="sub-header">
 //    <h2>Panel title</h2>
 //    <div class="head-actions panel-menu">
-//      <button class="context-menu card-context">
+//      <div tabindex=0 class="context-menu card-context">
 //        <i class="mdi mdi-dots-vertical"></i>
 //        <span class="context-menu-left">
 //          <ul class="wfm-list">
@@ -122,7 +122,7 @@
 //            <li>Menu item 3</li>
 //          </ul>
 //        </span>
-//      </button>
+//      </div>
 //    </div>
 //  </div>
 // <div class="con-row demo-outline">
@@ -148,7 +148,7 @@
 //<div class="panel material-depth-1">
 //<div class="wfm-slide-tabs tabbed-panel">
 //    <div class="head-actions panel-menu">
-//      <button class="context-menu card-context">
+//      <div tabindex=0 class="context-menu card-context">
 //        <i class="mdi mdi-dots-vertical"></i>
 //        <span class="context-menu-left">
 //          <ul class="wfm-list">
@@ -157,7 +157,7 @@
 //            <li>Menu item 3</li>
 //          </ul>
 //        </span>
-//      </button>
+//      </div>
 //    </div>
 //  <md-content class="md-padding">
 //    <md-tabs md-dynamic-height md-border-bottom >
@@ -242,7 +242,7 @@
 //<div class="panel material-depth-1">
 //<div class="wfm-slide-tabs tabbed-panel">
 //    <div class="head-actions panel-menu">
-//      <button class="context-menu card-context">
+//      <div tabindex=0 class="context-menu card-context">
 //        <i class="mdi mdi-dots-vertical"></i>
 //        <span class="context-menu-left">
 //          <ul class="wfm-list">
@@ -251,7 +251,7 @@
 //            <li>Menu item 3</li>
 //          </ul>
 //        </span>
-//      </button>
+//      </div>
 //    </div>
 //  <md-content class="md-padding">
 //    <md-tabs md-dynamic-height md-border-bottom md-selected="selectedIndex">
