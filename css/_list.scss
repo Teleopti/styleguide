@@ -60,7 +60,7 @@
 //
 // Action lists are used for list where the user can perform actions. These can have several options attached to them in a so called  <a href="http://goo.gl/DMxAHS">leave-behind</a>, however, these options may only effect the list item they are a part of. Individual options can have a tooltip and an icon and they are displayed only if the item is hovered or clicked.
 //
-// Global actions on the list (such as create new or delete all) should be placed above the list.
+// Broad actions on the list (such as creating a new item or removing all) should be placed in the panel actions (see <a href="section-4.html">containers</a>, chapter).
 //
 //Markup:
 //<ul class="wfm-list">
