@@ -13,22 +13,22 @@
 //Optionally a list item can have a small, one sentence description attached to it. If more information is needed about the items conceder using a modal or table.
 //
 //Markup:
-//<ul class="wfm-simple-list">
-//	<li>
-//		Tea
-//		<div class="subtext">Its hot</div>
-//	</li>
-//	<li>
-//		Beer
-//		<div class="subtext">Tasty but expensive</div>
-//	</li>
-//	<li>
-//		Coffe
-//	</li>
-//	<li class="active">
-//		Juice
-//	</li>
-//</ul>
+//	<ul class="wfm-simple-list">
+//		<li>
+//			Tea
+//			<div class="subtext">Its hot</div>
+//		</li>
+//		<li>
+//			Beer
+//			<div class="subtext">Tasty but expensive</div>
+//		</li>
+//		<li>
+//			Coffe
+//		</li>
+//		<li class="active">
+//			Juice
+//		</li>
+//	</ul>
 //
 //Styleguide 1.2.1
 //
@@ -63,57 +63,57 @@
 // Broad actions on the list (such as creating a new item or removing all) should be placed in the panel actions (see <a href="section-4.html">containers</a>, chapter).
 //
 //Markup:
-//<ul class="wfm-list">
-//	<li ng-click="listSelected1 = !listSelected1">
-//		<span class="list-item-container">
-//			List item with one action in leave-behind
-//		</span>
-//		<span ng-cloak ng-show="listSelected1" class="list-dot grow-out"><b class="mdi mdi-check list-mark"></b></span>
-//		<div class="wfm-leave-behind wfm-leave-behind-1">
-//			<span>
-//				<i class="mdi mdi-delete"></i>
+//	<ul class="wfm-list">
+//		<li ng-click="listSelected1 = !listSelected1">
+//			<span class="list-item-container">
+//				List item with one action in leave-behind
 //			</span>
-//		</div>
-//	</li>
-//	<li ng-click="listSelected2 = !listSelected2">
-//		<span class="list-item-container">
-//			List item with two actions in leave-behind
-//		</span>
-//		<span ng-cloak ng-show="listSelected2" class="list-dot grow-out"><b class="mdi mdi-check list-mark"></b></span>
-//		<div class="wfm-leave-behind wfm-leave-behind-2">
-//			<span>
-//				<i class="mdi mdi-pencil"></i>
-//				<i class="mdi mdi-delete"></i>
+//			<span ng-cloak ng-show="listSelected1" class="list-dot grow-out"><b class="mdi mdi-check list-mark"></b></span>
+//			<div class="wfm-leave-behind wfm-leave-behind-1">
+//				<span>
+//					<i class="mdi mdi-delete"></i>
+//				</span>
+//			</div>
+//		</li>
+//		<li ng-click="listSelected2 = !listSelected2">
+//			<span class="list-item-container">
+//				List item with two actions in leave-behind
 //			</span>
-//		</div>
-//	</li>
-//	<li ng-click="listSelected3 = !listSelected3">
-//		<span class="list-item-container">
-//			List item with three actions in leave-behind
-//		</span>
-//		<span ng-cloak ng-show="listSelected3" class="list-dot grow-out"><b class="mdi mdi-check list-mark"></b></span>
-//		<div class="wfm-leave-behind">
-//			<span>
-//				<i class="mdi mdi-content-copy"></i>
-//				<i class="mdi mdi-pencil"></i>
-//				<i class="mdi mdi-delete"></i>
+//			<span ng-cloak ng-show="listSelected2" class="list-dot grow-out"><b class="mdi mdi-check list-mark"></b></span>
+//			<div class="wfm-leave-behind wfm-leave-behind-2">
+//				<span>
+//					<i class="mdi mdi-pencil"></i>
+//					<i class="mdi mdi-delete"></i>
+//				</span>
+//			</div>
+//		</li>
+//		<li ng-click="listSelected3 = !listSelected3">
+//			<span class="list-item-container">
+//				List item with three actions in leave-behind
 //			</span>
-//		</div>
-//	</li>
-//	<li ng-click="listSelected4 = !listSelected4" class="disabled">
-//		<span class="list-item-container">
-//			List item with three actions in leave-behind
-//		</span>
-//		<span ng-cloak ng-show="listSelected4" class="list-dot grow-out"><b class="mdi mdi-check list-mark"></b></span>
-//		<div class="wfm-leave-behind">
-//			<span>
-//				<i class="mdi mdi-content-copy"></i>
-//				<i class="mdi mdi-pencil"></i>
-//				<i class="mdi mdi-delete"></i>
+//			<span ng-cloak ng-show="listSelected3" class="list-dot grow-out"><b class="mdi mdi-check list-mark"></b></span>
+//			<div class="wfm-leave-behind">
+//				<span>
+//					<i class="mdi mdi-content-copy"></i>
+//					<i class="mdi mdi-pencil"></i>
+//					<i class="mdi mdi-delete"></i>
+//				</span>
+//			</div>
+//		</li>
+//		<li ng-click="listSelected4 = !listSelected4" class="disabled">
+//			<span class="list-item-container">
+//				List item with three actions in leave-behind
 //			</span>
-//		</div>
-//	</li>
-//</ul>
+//			<span ng-cloak ng-show="listSelected4" class="list-dot grow-out"><b class="mdi mdi-check list-mark"></b></span>
+//			<div class="wfm-leave-behind">
+//				<span>
+//					<i class="mdi mdi-content-copy"></i>
+//					<i class="mdi mdi-pencil"></i>
+//					<i class="mdi mdi-delete"></i>
+//				</span>
+//			</div>
+//		</li>
+//	</ul>
 //
 //Styleguide 1.2.2
 //

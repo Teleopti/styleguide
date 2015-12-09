@@ -38,24 +38,24 @@
 //The floating action button functions similarly to the raised buttons except that they float above the entire layout (even though its located inside the view header). They are also similar in that they are unique in each view, indicating the primary positive action. More about when to use it can be found in the <a href="http://www.google.com/design/spec/components/buttons.html#buttons-floating-action-button">google material guidelines.</a>
 //
 //Markup:
-//<button class="wfm-fab  material-depth-1"><i class="mdi mdi-account"></i>
-//	<md-tooltip>My account</md-tooltip>
-//</button>
-//<button class="wfm-fab  material-depth-1 info"><i class="mdi mdi-arrow-right"></i>
-//	<md-tooltip>Carry on</md-tooltip>
-//</button>
-//<button class="wfm-fab  material-depth-1 success"><i class="mdi mdi-plus"></i>
-//	<md-tooltip>Add a thing</md-tooltip>
-//</button>
-//<button class="wfm-fab  material-depth-1 mini"><i class="mdi mdi-account"></i>
-//	<md-tooltip>My account</md-tooltip>
-//</button>
-//<button class="wfm-fab  material-depth-1 mini info"><i class="mdi mdi-arrow-right"></i>
-//	<md-tooltip>Carry on</md-tooltip>
-//</button>
-//<button class="wfm-fab  material-depth-1 mini success"><i class="mdi mdi-plus"></i>
-//	<md-tooltip>Add a thing</md-tooltip>
-//</button>
+//	<button class="wfm-fab  material-depth-1"><i class="mdi mdi-account"></i>
+//		<md-tooltip>My account</md-tooltip>
+//	</button>
+//	<button class="wfm-fab  material-depth-1 info"><i class="mdi mdi-arrow-right"></i>
+//		<md-tooltip>Carry on</md-tooltip>
+//	</button>
+//	<button class="wfm-fab  material-depth-1 success"><i class="mdi mdi-plus"></i>
+//		<md-tooltip>Add a thing</md-tooltip>
+//	</button>
+//	<button class="wfm-fab  material-depth-1 mini"><i class="mdi mdi-account"></i>
+//		<md-tooltip>My account</md-tooltip>
+//	</button>
+//	<button class="wfm-fab  material-depth-1 mini info"><i class="mdi mdi-arrow-right"></i>
+//		<md-tooltip>Carry on</md-tooltip>
+//	</button>
+//	<button class="wfm-fab  material-depth-1 mini success"><i class="mdi mdi-plus"></i>
+//		<md-tooltip>Add a thing</md-tooltip>
+//	</button>
 //
 //Styleguide 1.9.3
 //
@@ -69,13 +69,13 @@
 //These animations should only be applied to action buttons.
 //
 //Markup:
-//<button class="wfm-fab grow-out  material-depth-1"><i class="mdi mdi-plus" ></i>
-//	<md-tooltip>I appear when needed</md-tooltip>
-//</button>
-//<button class="wfm-fab  material-depth-1" ng-class="{'shrink-in':animateIn === 'trigger1'}" ng-click="animateIn = 'trigger1'">
-//<i class="mdi mdi-close"></i>
-//	<md-tooltip>Click me and im gone</md-tooltip>
-//</button>
+//	<button class="wfm-fab grow-out  material-depth-1"><i class="mdi mdi-plus" ></i>
+//		<md-tooltip>I appear when needed</md-tooltip>
+//	</button>
+//	<button class="wfm-fab  material-depth-1" ng-class="{'shrink-in':animateIn === 'trigger1'}" ng-click="animateIn = 'trigger1'">
+//		<i class="mdi mdi-close"></i>
+//		<md-tooltip>Click me and im gone</md-tooltip>
+//	</button>
 //
 //Styleguide 1.9.4
 //

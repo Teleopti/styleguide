@@ -30,17 +30,17 @@
 //The view header is also a uniqe element in the view and not part of any other panel or element.
 //
 //Markup:
-//<div class="view-header">
-//<div class="view-title">
-//		<h1><i class="mdi mdi-account"></i> First header title</h1>
-//		<p>Optional description of the view goes here.</p>
-//</div>
-//	<div class="fab-wrapper">
-//		<button class="wfm-fab  material-depth-1"><i class="mdi mdi-plus"></i>
-//			<md-tooltip>Add something</md-tooltip>
-//		</button>
+//	<div class="view-header">
+//		<div class="view-title">
+//			<h1><i class="mdi mdi-account"></i> First header title</h1>
+//			<p>Optional description of the view goes here.</p>
+//		</div>
+//		<div class="fab-wrapper">
+//			<button class="wfm-fab  material-depth-1"><i class="mdi mdi-plus"></i>
+//				<md-tooltip>Add something</md-tooltip>
+//			</button>
+//		</div>
 //	</div>
-//</div>
 //
 //Styleguide 1.14.2
 //

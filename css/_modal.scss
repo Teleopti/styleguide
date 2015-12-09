@@ -66,54 +66,54 @@
 //When needing to display more information than the normal modal allows or present a string of actions to the user a tabbed modal can be used.
 //
 //Markup:
-//<div ng-cloak class="modal-box">
-//	<button ng-click="modalLaunch2 = !modalLaunch2" class="wfm-btn wfm-btn-default">Open tab modal</button>
-//	<div ng-cloak ng-show="modalLaunch2">
-//		<div class="modalbg">
-//			<div class="dialog">
-//				<div class="wfm-slide-tabs tabbed-panel">
-//  				<md-content class="md-padding">
-//    				<md-tabs md-dynamic-height md-border-bottom >
-//      				<md-tab label="Tab title1">
-//        				<md-content class="md-padding">
-//            			<div class="con-row">
-//              			<div class="con-flex">Content</div>
-//            			</div>
-//        				</md-content>
-//      				</md-tab>
-//      				<md-tab label="Tab title2">
-//        				<md-content class="md-padding">
-//            			<div class="con-row">
-//              			<div class="con-flex">Content</div>
-//            			</div>
-//        				</md-content>
-//      				</md-tab>
-//      			<md-tab label="Tab title3">
-//        			<md-content class="md-padding">
-//            		<div class="con-row demo-outline">
-//              		<div class="con-flex">Content</div>
-//            		</div>
-//        			</md-content>
-//      			</md-tab>
-//      			<md-tab label="Tab title4">
-//        			<md-content class="md-padding">
-//            		<div class="con-row">
-//              		<div class="con-flex">Content</div>
-//            		</div>
-//        			</md-content>
-//      			</md-tab>
-//    			</md-tabs>
-//  			</md-content>
-//			</div>
-//				<div class="modal-actions">
-//					<aside>
-//						<button ng-click="modalLaunch2 = !modalLaunch2" class="wfm-btn wfm-btn-invis-primary">dismiss</button>
-//					</aside>
+//	<div ng-cloak class="modal-box">
+//		<button ng-click="modalLaunch2 = !modalLaunch2" class="wfm-btn wfm-btn-default">Open tab modal</button>
+//		<div ng-cloak ng-show="modalLaunch2">
+//			<div class="modalbg">
+//				<div class="dialog">
+//					<div class="wfm-slide-tabs tabbed-panel">
+//						<md-content class="md-padding">
+//							<md-tabs md-dynamic-height md-border-bottom >
+//								<md-tab label="Tab title1">
+//									<md-content class="md-padding">
+//										<div class="con-row">
+//											<div class="con-flex">Content</div>
+//										</div>
+//									</md-content>
+//								</md-tab>
+//								<md-tab label="Tab title2">
+//									<md-content class="md-padding">
+//										<div class="con-row">
+//											<div class="con-flex">Content</div>
+//										</div>
+//									</md-content>
+//								</md-tab>
+//								<md-tab label="Tab title3">
+//									<md-content class="md-padding">
+//										<div class="con-row demo-outline">
+//											<div class="con-flex">Content</div>
+//										</div>
+//									</md-content>
+//								</md-tab>
+//								<md-tab label="Tab title4">
+//									<md-content class="md-padding">
+//										<div class="con-row">
+//											<div class="con-flex">Content</div>
+//										</div>
+//									</md-content>
+//								</md-tab>
+//							</md-tabs>
+//						</md-content>
+//					</div>
+//					<div class="modal-actions">
+//						<aside>
+//							<button ng-click="modalLaunch2 = !modalLaunch2" class="wfm-btn wfm-btn-invis-primary">dismiss</button>
+//						</aside>
+//					</div>
 //				</div>
 //			</div>
 //		</div>
 //	</div>
-//</div>
 //
 //Styleguide 1.16.2
 //

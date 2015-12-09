@@ -23,11 +23,11 @@
 //However, don't mix standard inputs and prepend ones. These inputs should have a placeholder and maybe a tooltip for explanation, since the icon is used in place of a label.
 //
 //Markup:
-//<label for="inputId" class="input-prepend">
-//	<i class="mdi mdi-filter-outline">
-//	<md-tooltip>Filter something</md-tooltip></i>
-//	<input type="text" id="inputId" placeholder="Filter something"/>
-//</label>
+//	<label for="inputId" class="input-prepend">
+//		<i class="mdi mdi-filter-outline">
+//		<md-tooltip>Filter something</md-tooltip></i>
+//		<input type="text" id="inputId" placeholder="Filter something"/>
+//	</label>
 //
 //Styleguide 1.4.1
 //
@@ -218,34 +218,34 @@ md-option{
 //</div>
 //
 //Markup:
-//<form>
-//	<div class="wfm-radio">
-//		<input type="radio" name="group1" id="radio1" checked="true"/>
-//		<label for="radio1">
-//			<span class="wfm-radio-toggle"></span>
-//			<span class="wfm-radio-label">This</span>
-//		</label>
-//	</div>
-//	<div class="wfm-radio">
-//		<input type="radio" name="group1" id="radio2" />
-//		<label for="radio2">
-//			<span class="wfm-radio-toggle"></span>
-//			<span class="wfm-radio-label">That</span>
-//		</label>
-//	</div>
-//</form>
-//<h3>Using ng-repeat:</h3>
-//<form>
-//	<div ng-repeat="item in demos">
+//	<form>
 //		<div class="wfm-radio">
-//			<label>
-//				<input type="radio" name="radio" value="value">
+//			<input type="radio" name="group1" id="radio1" checked="true"/>
+//			<label for="radio1">
 //				<span class="wfm-radio-toggle"></span>
-//				<span class="wfm-radio-label">Im looped out!</span>
+//				<span class="wfm-radio-label">This</span>
 //			</label>
 //		</div>
-//	</div>
-//</form>
+//		<div class="wfm-radio">
+//			<input type="radio" name="group1" id="radio2" />
+//			<label for="radio2">
+//				<span class="wfm-radio-toggle"></span>
+//				<span class="wfm-radio-label">That</span>
+//			</label>
+//		</div>
+//	</form>
+//	<h3>Using ng-repeat:</h3>
+//	<form>
+//		<div ng-repeat="item in demos">
+//			<div class="wfm-radio">
+//				<label>
+//					<input type="radio" name="radio" value="value">
+//					<span class="wfm-radio-toggle"></span>
+//					<span class="wfm-radio-label">Im looped out!</span>
+//				</label>
+//			</div>
+//		</div>
+//	</form>
 //
 //Styleguide 1.6
 //
@@ -293,34 +293,34 @@ md-option{
 //</div>
 //
 //Markup:
-//<form>
-//	<div class="wfm-checkbox">
-//		<input type="checkbox" id="check1" checked="true"/>
-//		<label for="check1">
-//			<span class="wfm-checkbox-toggle"></span>
-//			<span class="wfm-checkbox-label">Check </span>
-//		</label>
-//	</div>
-//	<div class="wfm-checkbox">
-//		<input type="checkbox" id="check2" />
-//		<label for="check2">
-//			<span class="wfm-checkbox-toggle"></span>
-//			<span class="wfm-checkbox-label">Check </span>
-//		</label>
-//	</div>
-//</form>
-//<h3>Using ng-repeat:</h3>
-//<form>
-//	<div ng-repeat="item in demos">
+//	<form>
 //		<div class="wfm-checkbox">
-//			<label>
-//				<input type="checkbox" name="checkbox" value="value">
+//			<input type="checkbox" id="check1" checked="true"/>
+//			<label for="check1">
 //				<span class="wfm-checkbox-toggle"></span>
-//				<span class="wfm-checkbox-label">Im looped out!</span>
+//				<span class="wfm-checkbox-label">Check </span>
 //			</label>
 //		</div>
-//	</div>
-//</form>
+//		<div class="wfm-checkbox">
+//			<input type="checkbox" id="check2" />
+//			<label for="check2">
+//				<span class="wfm-checkbox-toggle"></span>
+//				<span class="wfm-checkbox-label">Check </span>
+//			</label>
+//		</div>
+//	</form>
+//	<h3>Using ng-repeat:</h3>
+//	<form>
+//		<div ng-repeat="item in demos">
+//			<div class="wfm-checkbox">
+//				<label>
+//					<input type="checkbox" name="checkbox" value="value">
+//					<span class="wfm-checkbox-toggle"></span>
+//					<span class="wfm-checkbox-label">Im looped out!</span>
+//				</label>
+//			</div>
+//		</div>
+//	</form>
 //
 //Styleguide 1.7
 //
