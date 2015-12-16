@@ -51,26 +51,13 @@ md-content.md-default-theme {
 }
 
 
-	.wfm-slide-tabs md-tabs md-tab-item.md-active {
-		color: rgb(63,81,181)!important;
-		background-color:$blue-300 !important;
-	  	height: 79%;
-	}
-
 	.wfm-slide-tabs md-tabs .md-tab {
-		 color:$gray054;
 		 margin-top: -8px;
 	}
 
 
 	.wfm-slide-tabs md-tabs-wrapper {
 		height: 36px!important;
-	}
-
-	.wfm-slide-tabs md-ink-bar{
-      color:$pink-500;
-      background:$pink-500;
-	  top: 28px;
 	}
 
 	//modal
