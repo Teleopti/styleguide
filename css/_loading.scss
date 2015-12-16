@@ -29,6 +29,7 @@ md-progress-linear[md-mode=buffer] .md-dashed:before {
   -webkit-animation:none;
 }
 
+
 //Spinner
 //
 //The spinner is used to indicate automatic loading in big elements such as tables, lists and views. While it is visible it should be centeted within its container.
@@ -53,6 +54,7 @@ md-progress-circular .md-inner .md-gap {
 
 md-progress-circular .md-inner .md-right .md-half-circle {
   border-right-color: $pink-500;
+	border-top-color: #E91E63!important;
 }
 
 .mini-spinner {
