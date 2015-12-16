@@ -1,5 +1,15 @@
 .wfm-slide-tabs{
 
+	.md-active {
+	    color:$gray087!important;
+	}
+	md-ink-bar {
+	    box-shadow: 0 -4px 5px 0 rgba(0,0,0,.26)!important;
+	}
+	md-tab-item:not([disabled]) {
+	  color:$gray087!important;
+	}
+
 	md-next-button{
 		padding-right: 18%;
 		background: $blue-100;
