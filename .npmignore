@@ -6,5 +6,5 @@ styleguide.*
 *.sln
 *.suo
 *.scss
+!css/_variables.scss
 *.hbs
-
