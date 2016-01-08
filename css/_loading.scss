@@ -2,7 +2,7 @@
 //
 // When operations take time we display a loading bar or loader to indicate to the user that we are still running.
 //
-//Styleguide 1.17
+//Styleguide 1.16
 //
 
 //Progress bar
@@ -16,7 +16,7 @@
 //<md-progress-linear md-mode="indeterminate"></md-progress-linear>
 //<div class="wfm-block material-depth-1"> Loading...</div>
 //
-//Styleguide 1.17.1
+//Styleguide 1.16.1
 //
 
 md-progress-linear .md-bar {
@@ -39,7 +39,7 @@ md-progress-linear[md-mode=buffer] .md-dashed:before {
 //<md-progress-circular md-mode="indeterminate"></md-progress-circular>
 //<md-progress-circular class="mini-spinner" md-mode="indeterminate"></md-progress-circular>
 //
-//Styleguide 1.17.2
+//Styleguide 1.16.2
 //
 md-progress-circular .md-inner .md-half-circle {
   border-left-color: $pink-500!important;
