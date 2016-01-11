@@ -27,6 +27,7 @@ env:
     - secure: d9ejf1F4Q+kIhKVfaReYlW3itLeMmQzcuJH4vM/LffzJb/PusyI+mMBmo4Bc4h3GmkJEjCb78nrxjzRFZeG3C7C4jOgg2NGGIwQzpHoKcziwmfpX8BgFTnBU6VlmLUBnNxOINppLV6glMR0kHK6o/KLrKC56xKzHX4/yYrXcPdQ=
 deploy:
   provider: npm
+  username: 'teleopti_travis'
   email: $email
   api_key: $token
   on:
