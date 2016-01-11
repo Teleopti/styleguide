@@ -20,13 +20,14 @@ install: npm install
 before_script: grunt dist --verbose
 script:
   - ./node_modules/.bin/karma start --single-run --browsers PhantomJS
-  - bash ./deploy-package.sh
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then bash ./deploy-ghpages.sh; fi
 env:
   global:
     - GH_REF: github.com/Teleopti/styleguide.git
     - secure: d9ejf1F4Q+kIhKVfaReYlW3itLeMmQzcuJH4vM/LffzJb/PusyI+mMBmo4Bc4h3GmkJEjCb78nrxjzRFZeG3C7C4jOgg2NGGIwQzpHoKcziwmfpX8BgFTnBU6VlmLUBnNxOINppLV6glMR0kHK6o/KLrKC56xKzHX4/yYrXcPdQ=
-after_success:
-    deploy:
-      provider: npm
-      email: $email
-      api_key: $token
+deploy:
+  provider: npm
+  email: $email
+  api_key: $token
+  on:
+      tags: true
