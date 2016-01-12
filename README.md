@@ -38,3 +38,13 @@ If you use Atom you can install those packages to help you following the guideli
 * jshint
 
 * linter-jscs
+
+## How to release
+
+* Upgrade the version number in package.json
+
+* Commit
+
+* Tag
+
+* Push
