@@ -25,6 +25,8 @@ env:
   global:
     - GH_REF: github.com/Teleopti/styleguide.git
     - secure: d9ejf1F4Q+kIhKVfaReYlW3itLeMmQzcuJH4vM/LffzJb/PusyI+mMBmo4Bc4h3GmkJEjCb78nrxjzRFZeG3C7C4jOgg2NGGIwQzpHoKcziwmfpX8BgFTnBU6VlmLUBnNxOINppLV6glMR0kHK6o/KLrKC56xKzHX4/yYrXcPdQ=
+notifications:
+  slack: teleopti:mStgbDoxN1zPMMc27nL6kNRw
 deploy:
   provider: npm
   username: 'teleopti_travis'
