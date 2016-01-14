@@ -73,6 +73,11 @@ angular.module('styleguideApp', ['ngMaterial', 'ui.tree', 'ui.grid',
         }
     };
 
+    /*file upload*/
+    document.getElementById("uploadBtnId").onchange = function () {
+      document.getElementById("uploadFile").value = document.getElementById("uploadBtnId").files[0].name;
+    }
+
     /*code for pagination*/
     $scope.paginationOptions = {pageNumber: 1, totalPages: 7};
     $scope.getPageData = function(pageIndex) {
