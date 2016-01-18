@@ -34,21 +34,14 @@
 
 // File upload
 //
-//<div class="jsprewrap">
-//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
-//	<div ng-show="showjs">
-//		<code><pre>
-//	document.getElementById("uploadBtnId").onchange = function () {
-//		document.getElementById("uploadFile").value = document.getElementById("uploadBtnId").files[0].name;
-//	}
-//		</pre></code>
-//	</div>
-//</div>
+//Letting users import data from files cuts down on a lot of maual entry. Make there is enough feedback on what file has been selected.
 //
 //Markup:
 //<label class="fileUpload">
-//    <input id="uploadBtnId" type="file" class="upload" />
-//    <i class="mdi mdi-file-outline uploadBtn"></i>
+//    <input id="uploadBtnId" type="file" class="upload" value="" onchange="javascript:document.getElementById('uploadFile').value = this.files[0].name;" />
+//    <i class="mdi mdi-file-outline uploadBtn">
+//		<md-tooltip>Import a file</md-tooltip>
+//		</i>
 //</label>
 //<input id="uploadFile" class="disableInputField" disabled="disabled" value="No file selected" />
 //
