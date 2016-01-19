@@ -230,8 +230,12 @@ select{
 	cursor: pointer;
 }
 
-.md-select-menu-container.md-active {
-	z-index: 1010;
+.md-select-menu-container{
+	background:$white!important;
+
+  .md-active {
+  	z-index: 1010;
+  }
 }
 
 md-select.md-default-theme:not([disabled]):focus .md-select-label{
@@ -246,6 +250,8 @@ md-select-menu md-option:hover {
 md-select-menu md-option[selected], md-select-menu md-option[selected]:focus{
 	background-color: $green-100;
 }
+
+
 
 md-select {
 	margin-top: auto;

@@ -118,11 +118,6 @@ dd {
     z-index:10;
   }
 
-  hr{
-    border:1px solid ;
-    border-color:rgba(0,0,0,.06);
-  }
-
   .con-footer {
       text-align: right;
       color: rgba(0,0,0,.87);
@@ -154,11 +149,5 @@ dd {
   }
   .con-flex {
     flex: 1;
-  }
-  ._25 {
-    flex: 2.5;
-  }
-  ._5 {
-    flex: 5;
   }
 }

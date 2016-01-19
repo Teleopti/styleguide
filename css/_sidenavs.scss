@@ -4,7 +4,7 @@
 	input[type='checkbox']{
 		display: none;
 	}
-	
+
 	label {
 		text-align: center;
 		cursor: pointer;
@@ -12,38 +12,59 @@
 		max-width: none;
 		margin: 0;
 	}
-	
+
 	label i {
 		margin: 5px;
 	}
 }
 
+.sidenav-tooltip{
+	margin-left: 64px;
+	margin-top: -27px;
+}
+
 .sidenav-toggle .sidenav-wrapper {
-		@extend .material-depth-1;
-		background-color: $white;
-		cursor: pointer;
-		margin-top: 62px;
+	@extend .material-depth-1;
+	background-color: $white;
+	cursor: pointer;
+	margin-top: 62px;
 }
 
 .layout-container .sidenav {
 	background-color: $white;
-	flex-basis: 15%;
+	flex-basis: 240px;
 	top:0;
 	height: 1050px;
 	height: 100vh;
 	bottom:0;
 	transition: $transition-timing;
 	padding-top: 52px;
-
 	overflow:hidden;
 	text-overflow: hidden;
+
+	i{
+		margin-right: 10px;
+		margin-left: 10px;
+	}
+
+	span{
+		display:inline;
+		opacity: 1;
+		white-space:nowrap;
+		padding-left: 20px;
+		text-overflow: ellipsis;
+	}
 }
 
 .sidenav.is-hidden{
 	overflow:hidden;
 	text-overflow: hidden;
 	transition: $transition-timing;
-	flex-basis:0.00001%;
+	flex-basis:50px;
+
+	span{
+		width:0;
+	}
 }
 
 .tile-footer{

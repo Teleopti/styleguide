@@ -142,6 +142,7 @@ md-content {
 
 .wfm-card-unselected:hover{
 	@extend .material-depth-2;
+	background-color: $white!important;
 }
 
 .wfm-card-selected {

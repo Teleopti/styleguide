@@ -1,0 +1,57 @@
+.animate-enter,
+.animate-leave
+{
+    -webkit-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -moz-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -ms-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -o-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+}
+
+.animate-enter {
+    left: 100%;
+}
+.animate-enter.animate-enter-active {
+    left: 0;
+}
+
+.animate-leave {
+    left: 0;
+}
+
+.bubble-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: $white;
+    overflow: hidden;
+
+    @media screen and (min-width:0\0) {
+      background: $blue-300;
+    }
+  }
+
+.bubble {
+  height: 60px;
+  width: 60px;
+  background-color: #66C2FF;
+  top: 15vh;
+  right: 50%;
+  position: absolute;
+  border-radius: 50%;
+  -moz-transform: scale(80);
+  -webkit-transform: scale(80);
+  -moz-transform: bg-in 5s cubic-bezier(0.2, 0.3, 0, 1);
+  -webkit-animation: bg-in 5s cubic-bezier(0.2, 0.3, 0, 1);
+  animation: bg-in 5s cubic-bezier(0.2, 0.3, 0, 1);
+}
+
+@-webkit-keyframes bg-in {
+  from {
+    -moz-transform: scale(0);
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+}
