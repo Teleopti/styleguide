@@ -4,7 +4,7 @@ outline: -webkit-focus-ring-color auto 0;
 
 body{
 	background-color: $gray012;
-	font-size:14px;
+  font-size: $standard-font-size!important;
 	overflow-x: hidden;
 	font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif!important;
 

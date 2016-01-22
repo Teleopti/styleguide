@@ -1,17 +1,17 @@
 label {
 	display: inline !important;
+  font-weight: normal;
 }
 
 input[type='text'],[type='number'], input[type='password'], select{
 	border: none;
 	color: $gray087;
-  -webkit-appearance: none;
+  -webkit-appearance:none;
   -moz-appearance:none;
-  background: none;
+  background:none;
 	line-height: 1;
   cursor: pointer;
   height: 20px;
-  font-size:14px;
 	border-bottom: 1px solid $gray-300;
 
 	&:focus {
@@ -20,6 +20,17 @@ input[type='text'],[type='number'], input[type='password'], select{
 		border-bottom: 1px solid $blue-100;
 	}
 }
+
+select:after {
+        width: 0;
+        height: 0;
+        padding: 0;
+        content: '';
+        border-left: .25em solid transparent;
+        border-right: .25em solid transparent;
+        border-top: .375em solid red;
+        pointer-events: none;
+    }
 
 // Inputs
 //
@@ -118,7 +129,6 @@ input[type='text'],[type='number'], input[type='password'], select{
 	width: 0;
 	margin: 0;
 	padding: 0;
-	font-size: 14px;
 	opacity: 0;
 	filter: alpha(opacity=0);
 }
@@ -145,7 +155,6 @@ input[type='text'],[type='number'], input[type='password'], select{
   	cursor:pointer!important;
   	color:$gray054;
     display: inline-block!important;
-  	font-size: 14px!important;
   }
 
   input, select{
@@ -171,7 +180,6 @@ input[type='text'],[type='number'], input[type='password'], select{
   .form-input-message{
   	opacity: 0;
   	height: 0;
-  	font-size: 14px;
     transition: $transition-timing;
   }
 
@@ -249,7 +257,6 @@ md-select {
 	.md-select-label{
 		padding: 0;
 		height: 21px;
-		font-size: 14px;
 	}
 }
 
