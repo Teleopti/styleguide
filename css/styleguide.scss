@@ -65,7 +65,7 @@
 //
 //The layout consists of the flex grid. Since the grid is adapting to the number of items inside it, be careful not to use too many in one row. The recomended max number of con-flex items in one row is 4, if more are needed, concider using a tabbed container or spreading them out over sveral rows.
 //
-//Note: the ´demo-outline´ class is for styleguide demo purpose only.
+//Note: the ´demo-outline´ class is for styleguide demo purpose only and should be removed before use of the layout.
 //
 //Markup:
 // <div class="con-row demo-outline">
@@ -305,7 +305,11 @@
 
 //Form layout
 //
-//Forms are made up of individual inputs that can be validated on interaction and/or on a submit. A form can be created in many different configurations and the layout should help the user complete the form without confusion. Take some time to consider your form layout in relation to the layout of your view and strive to not waste space.
+//Forms are made up of individual inputs that can be validated on interaction and/or on a submit.
+//
+//A form can be created in many different configurations and the layout should help the user complete the form without confusion. If it makes more sense the form could be devided into several more defined sections by putting &lt;h2&gt; headers directly after the &lt;dl&gt; tags.
+//
+//Take some time to consider your form layout in relation to the layout of your view and strive to use as much available space as possible.
 //
 //<div class="jsprewrap">
 //	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
