@@ -1,22 +1,16 @@
-.animate-enter,
-.animate-leave
-{
-    -webkit-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-    -moz-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-    -ms-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-    -o-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-    transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+.animate-show {
+  opacity: 1;
 }
 
-.animate-enter {
-    left: 100%;
-}
-.animate-enter.animate-enter-active {
-    left: 0;
+.animate-show.ng-hide-add.ng-hide-add-active,
+.animate-show.ng-hide-remove.ng-hide-remove-active {
+  -webkit-transition: all linear 0.5s;
+  transition: all linear 0.5s;
 }
 
-.animate-leave {
-    left: 0;
+.animate-show.ng-hide {
+  line-height: 0;
+  opacity: 0;
 }
 
 .bubble-wrap {
@@ -54,4 +48,44 @@
     -webkit-transform: scale(0);
     transform: scale(0);
   }
+}
+
+.reveal-material {
+    animation:grow 0.5s;
+    animation-timing-function:ease-out;
+    animation-play-state:running;
+    -webkit-animation:grow 1s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-timing-function:ease-out;
+    -webkit-animation-play-state:running;
+}
+
+.hide-material {
+    animation:shrink 0.5s;
+    animation-timing-function:ease-out;
+    animation-play-state:running;
+    -webkit-animation:shrink 0.5s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-timing-function:ease-out;
+    -webkit-animation-play-state:running;
+}
+
+@keyframes grow {
+    from {
+        transform: scale(0,0);
+    }
+    to {
+        transform: scale(1,1);
+    }
+}
+
+@keyframes shrink {
+    from {
+			  transform: scale(1,1);
+    }
+    to {
+				transform: scale(0,0);display: none!important;visibility: hidden!important;
+    }
 }

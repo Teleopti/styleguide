@@ -137,7 +137,8 @@ md-content {
 .wfm-card-unselected{
 	width: 90%;
 	margin: $full-padding *2 auto;
-    transition: all .2s ease-out;
+  transition: all .2s ease-out;
+	background: $white;
 }
 
 .wfm-card-unselected:hover{
