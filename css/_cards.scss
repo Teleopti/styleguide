@@ -137,7 +137,10 @@ md-content {
 .wfm-card-unselected{
 	width: 90%;
 	margin: $full-padding *2 auto;
-  transition: all .2s ease-out;
+
+	transition-property: box-shadow, background-color;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-out;
 	background: $white;
 }
 
@@ -178,5 +181,6 @@ md-card{
 }
 
 .wfm-card-content {
+	padding: 10px 16px;
 	background-color: $white;
 }
