@@ -54,13 +54,22 @@
             options: {
                 config: '.jscsrc',
             },
-        },
-				sasslint: {
-        options: {
-            configFile: 'config/.sass-lint.yml',
-        },
-        target: ['location/*.scss']
-    }
+        },               
+	ngtemplates: {
+	    'styleguide.templates': {
+		src: ['js/**/*.html', 'js/**/html/*.html'],
+		dest: 'kss-template/public/templates.js',
+		options: {
+		    standalone: true
+		}
+	    }
+	},
+	sasslint: {
+            options: {
+                configFile: 'config/.sass-lint.yml',
+            },
+            target: ['location/*.scss']
+        }
     });
 
     grunt.loadNpmTasks('grunt-sass');
@@ -70,9 +79,11 @@
     grunt.loadNpmTasks('grunt-karma');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-jscs');
+    grunt.loadNpmTasks('grunt-angular-templates');
+    grunt.loadNpmTasks('grunt-processhtml');
 
     // Default task(s).
-    grunt.registerTask('default', ['watch:styleguide']);
+    grunt.registerTask('default', ['ngtemplates', 'watch:styleguide']);
     grunt.registerTask('test', ['karma:styleguide']);
     grunt.registerTask('dist', ['sass:styleguide', 'sass:dist', 'shell', 'cssmin']); // this task is kind of package
     grunt.registerTask('check', ['jshint', 'jscs']);
