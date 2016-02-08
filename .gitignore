@@ -3,6 +3,7 @@ node_modules
 styleguide
 css/main.css
 css/main.css.map
+css/styleguide.css
 css/main.min.css
 *.sln
 *.suo

@@ -1,3 +1,36 @@
+label {
+	display: inline !important;
+  font-weight: normal;
+}
+
+input[type='text'],[type='number'], input[type='password'], select{
+	border: none;
+	color: $gray087;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  background:none;
+	line-height: 1;
+  cursor: pointer;
+  height: 20px;
+	border-bottom: 1px solid $gray-300;
+
+	&:focus {
+		border: none;
+		outline: none;
+		border-bottom: 1px solid $blue-100;
+	}
+}
+
+select:after {
+        width: 0;
+        height: 0;
+        padding: 0;
+        content: '';
+        border-left: .25em solid transparent;
+        border-right: .25em solid transparent;
+        border-top: .375em solid red;
+        pointer-events: none;
+    }
 
 // Inputs
 //
@@ -32,35 +65,8 @@
 //Styleguide 1.3.1
 //
 
-label {
-	display: inline !important;
-}
-
-input{
-	font-size:15px;
-	height: 24px;
-}
-
-input[type='text'], input[type='password']{
-	height: 20px;
-}
-
-input[type='text'],[type='number'], input[type='password'], select{
-	border: none;
-	color: $gray087;
-	line-height: 1;
-	border-bottom: 1px solid $gray-300;
-
-	&:focus {
-		border: none;
-		outline: none;
-		border-bottom: 1px solid $blue-100;
-	}
-}
-
 .input-prepend {
   width: 100%;
-
   i {
     display: inline-block;
     width: 18px;
@@ -74,6 +80,57 @@ input[type='text'],[type='number'], input[type='password'], select{
     display: inline-block;
     width: auto;
   }
+}
+
+// File upload
+//
+//Letting users import data from files cuts down on a lot of maual entry. Make there is enough feedback on what file has been selected.
+//
+//Markup:
+//<label class="fileUpload">
+//    <input id="uploadBtnId" type="file" class="upload" value="" onchange="javascript:document.getElementById('uploadFile').value = this.files[0].name;" />
+//    <i class="mdi mdi-file-outline uploadBtn">
+//		<md-tooltip>Import a file</md-tooltip>
+//		</i>
+//</label>
+//<input id="uploadFile" class="disableInputField" disabled="disabled" value="No file selected" />
+//
+//Styleguide 1.3.2
+//
+
+.disableInputField{
+  display:inline-block;
+	background: none;
+	border: none;
+	outline: none;
+	width: 50%;
+  margin: 0;
+	text-overflow: ellipsis;
+}
+
+.fileUpload {
+	position: relative;
+	overflow: hidden;
+  display:inline-block;
+  vertical-align:top;
+}
+
+.uploadBtn{
+  display:inline-block;
+  line-height:22px;
+	cursor: pointer;
+	margin: 5px;
+}
+
+.fileUpload input.upload{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 0;
+	margin: 0;
+	padding: 0;
+	opacity: 0;
+	filter: alpha(opacity=0);
 }
 
 ::-webkit-input-placeholder { /* WebKit browsers */
@@ -94,57 +151,63 @@ input[type='text'],[type='number'], input[type='password'], select{
 
 /*Form validation*/
 .wfm-form{
+  label{
+  	cursor:pointer!important;
+  	color:$gray054;
+    display: inline-block!important;
+  }
 
-	label{
-		cursor:pointer!important;
-		font-weight: normal!important;
-		color:$gray054;
-		font-size: 13px;
-	}
+  input, select{
+  	max-width:100%;
+  	margin-right:100%;
+  }
 
-input, select{
-	max-width:100%;
-	margin-right:100%;
-}
-input > .ng-invalid{
-	border-bottom: 5px solid red!important;
-}
+  input > .ng-invalid{
+  	border-bottom: 5px solid red!important;
+  }
 
-input[type="text"],
-input[type="number"],
-input[type="password"],
-input[type="email"]{
-	padding-left: 7px;
-}
+  input[type="text"],
+  input[type="number"],
+  input[type="password"],
+  input[type="email"]{
+  	padding:0 0 0 4px!important;
 
-.form-input-message{
-	opacity: 0;
-	height: 0;
-	font-size: 13px;
-  transition: $transition-timing;
-}
-.formInvalidInput{
-	opacity: 1;
-	height:auto;
-	color:red!important;
-}
-.form-input-wrap{
-	padding:10px 0;
-}
-.animate-input-message {
-  line-height: 20px;
-	height:auto;
-  opacity: 1;
-}
-.animate-input-message.ng-hide-add, .animate-input-message.ng-hide-remove {
-  transition: $transition-timing;
-}
-.animate-input-message.ng-hide {
-  line-height: 0;
-	height: 0;
-  opacity: 0;
-}
+  }
+  select{
+  	padding: 0 0 0 0;
+  }
 
+  .form-input-message{
+  	opacity: 0;
+  	height: 0;
+    transition: $transition-timing;
+  }
+
+  .formInvalidInput{
+  	opacity: 1;
+  	height:auto;
+  	color:red!important;
+  }
+
+  .form-input-wrap{
+  	padding:10px 0;
+  }
+
+  .animate-input-message {
+    line-height: 20px;
+  	height:auto;
+    opacity: 1;
+  }
+
+  .animate-input-message.ng-hide-add, .animate-input-message.ng-hide-remove {
+    transition: $transition-timing;
+  }
+
+  .animate-input-message.ng-hide {
+    line-height: 0;
+  	height: 0;
+    opacity: 0;
+  }
 }
 // Select
 //
@@ -168,13 +231,12 @@ input[type="email"]{
 //Styleguide 1.4
 //
 
-select{
-	@extend .wfm-block;
-	cursor: pointer;
-}
+.md-select-menu-container{
+	background:$white!important;
 
-.md-select-menu-container.md-active {
-	z-index: 1010;
+  .md-active {
+  	z-index: 1010;
+  }
 }
 
 md-select.md-default-theme:not([disabled]):focus .md-select-label{
@@ -195,9 +257,7 @@ md-select {
 	.md-select-label{
 		padding: 0;
 		height: 21px;
-		font-size: 15px;
 	}
-
 }
 
 md-option{
@@ -475,8 +535,4 @@ md-slider .md-sign:after {
 md-slider.md-min .md-thumb:after {
   background-color: $white!important;
   transition: all 0.5s ease-in-out;
-}
-
-.wfm-form label {
-    display: inline-block!important;
 }

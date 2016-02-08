@@ -1,0 +1,46 @@
+//Helper classes
+//
+//Styleguide 8
+//
+//
+
+// Quick float
+//
+//Markup:
+//<div class="pull-right">.pull-right</div>
+//<div class="pull-left">.pull-left</div>
+//
+//Styleguide 8.1
+//
+
+// Cursor types
+//
+//Markup:
+//<div class="cursor-pointer">hover me</div>
+//
+//Styleguide 8.2
+//
+
+.cursor-pointer{
+  cursor: pointer;
+}
+
+
+// Showing and hiding content
+//
+//Markup:
+//<div class="show">displayed</div>
+//<div class="hidden">hidden</div>
+//<div class="invisible">invisible</div>
+//
+//Styleguide 8.3
+//
+.show {
+  display: block !important;
+}
+.hidden {
+  display: none !important;
+}
+.invisible {
+  visibility: hidden;
+}

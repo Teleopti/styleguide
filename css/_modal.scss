@@ -1,4 +1,4 @@
-﻿// Modal
+// Modal
 //
 // A modal is launched above the main view and stays there until the user has taken action. Since this is such a obnoxious element it should only be used when you absolutely want the user to focus on a single task.
 //
@@ -34,14 +34,14 @@
 //
 // The mini modal can be used when the regular modal is to big for its content or as a confirmation dialog.
 // it does not have a header or any other elements inside it aprt from plain text and footer buttons.
-//Remember that it still takes the focus away from what the use was doing untill it has been dismissed.
+// Remember that it still takes the focus away from what the use was doing untill it has been dismissed.
 //
 //Markup:
 //	<div ng-cloak class="modal-box">
 //		<button ng-click="modalLaunch3 = !modalLaunch3" class="wfm-btn wfm-btn-default">Open modal</button>
 //		<div ng-cloak ng-show="modalLaunch3">
-//			<div class="modalbg">
-//				<div class="dialog-mini">
+//			<div class="modalbg" ng-click="modalLaunch3 = !modalLaunch3">
+//				<div class="dialog-mini" ng-click="$event.stopPropagation()">
 //					<div class="modal-inner-content">
 //						Are you sure you want to do the thing?
 //					</div>
@@ -58,7 +58,6 @@
 //
 //Styleguide 1.14.1
 //
-
 
 //Tabbed modal
 //
@@ -129,7 +128,7 @@
 		background: $gray026;
 	}
 
-	.modalbg .dialog, .modalbg .dialog-mini {
+	.dialog, .dialog-mini {
 		width: 60%;
 		z-index: 99999;
 		position: relative;
@@ -138,7 +137,7 @@
 		background: $white;
 	}
 
-	.modalbg .dialog-mini {
+	.dialog-mini {
 		width: 25%;
 	}
 
@@ -147,46 +146,18 @@
 	}
 
 	/*Dialog*/
-	@media only screen and (max-width:1200px){
-	.modalbg .dialog {
-	  width:90%;
-	 }
-	}
-
-	@media(max-width:599px){
-		.modal-box .modalbg .dialog{
-			max-height:90%;
-			overflow-y:auto!important;
-		}
-	}
-
-	@media(min-width:600px){
-		.modal-box .modalbg .dialog{
-			max-height:25%!important;
-			overflow-y:auto!important;
-		}
-	}
-
-/*Mini dialog*/
-	@media only screen and (max-width:1200px){
-		.modalbg .dialog-mini {
+	@media only screen and (max-width:769px){
+		.dialog {
 			width:90%;
-		 }
 		}
+	}
 
-		@media(max-width:599px){
-			.modal-box .modalbg .dialog-mini{
-				max-height:90%;
-				overflow-y:auto!important;
-			}
+	/*Mini dialog*/
+	@media only screen and (max-width:1200px){
+		.dialog-mini {
+			width:90%!important;
 		}
-
-		@media(min-width:600px){
-			.modal-box .modalbg .dialog-mini{
-				max-height:70%;
-				overflow-y:auto!important;
-			}
-		}
+	}
 
 
 	.modal-title{
@@ -209,5 +180,50 @@
 
 	aside{
 		text-align:right;
+	}
+}
+
+
+//Click outside modal
+//
+//The click outside modal directive provide additional ways of dismissing the modal (clicking outside the dialog, the regular close button or a close icon).
+//
+//<div class="jsprewrap">
+//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
+//	<div ng-show="showjs">
+//		<code><pre>
+//    	$scope.modalShown = false;
+//    	$scope.toggleModal = function() {
+//      	$scope.modalShown = !$scope.modalShown;
+//    	};
+//		</pre></code>
+//	</div>
+//</div>
+//
+//Markup:
+//	<button ng-click='toggleModal()' class="wfm-btn wfm-btn-default">Open modal</button>
+//	<modal-dialog show='modalShown' ng-cloak>
+//		<h1 class="modal-title">Modal title</h1>
+//		<div class="modal-inner-content">
+//			Ladies and gentlemen, allow me to introduce myself, I am the amazing modal window body!
+//		</div>
+//		<div class="modal-actions">
+//			<aside>
+//				<button ng-click='toggleModal()'  class="wfm-btn wfm-btn-invis-primary">dismiss</button>
+//			</aside>
+//		</div>
+//	</modal-dialog>
+//
+//Styleguide 1.14.3
+//
+
+.click-modal{
+
+	.head-actions {
+    margin-top: 0;
+	}
+
+	.dialog{
+		position: fixed;
 	}
 }

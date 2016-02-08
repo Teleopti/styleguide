@@ -69,7 +69,9 @@
 
 .growl-container > .growl-item {
 	padding: $full-padding;
-	margin-bottom: 0px;
+	margin-bottom: 0;
+	padding: 10px;
+	padding-right: 35px;
 	cursor: pointer;
 	vertical-align: middle;
 	box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);

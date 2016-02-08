@@ -72,7 +72,7 @@
     grunt.loadNpmTasks('grunt-jscs');
 
     // Default task(s).
-    grunt.registerTask('default', ['watch:styleguide']);
+    grunt.registerTask('default', ['dist', 'watch:styleguide']);
     grunt.registerTask('test', ['karma:styleguide']);
     grunt.registerTask('dist', ['sass:styleguide', 'sass:dist', 'shell', 'cssmin']); // this task is kind of package
     grunt.registerTask('check', ['jshint', 'jscs']);
