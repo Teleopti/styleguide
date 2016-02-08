@@ -1,30 +1,4 @@
-﻿
-// Navbars
-//
-//
-//
-//Styleguide 1.13
-//
-
-// Topbar
-//
-// The topbar is, as you might have guessed at the top of the page, and contains the brand, a global search and some actions. Since the same topbar is always imported into every view it should only contain global and unspescific tools and actions.
-//
-//<div class="jsprewrap">
-//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
-//	<div ng-show="showjs">
-//		<code><pre>
-//	  $scope.demos = [{id: '1'}, {id: '2'}, {id: '3'}, {id: '4'}];
-//		</pre></code>
-//	</div>
-//</div>
-//
-//Markup: topbar.hbs
-//
-//Styleguide 1.13.1
-//
-
-//View headers
+﻿//View headers
 //
 //A view header should be the first visible element in your view. It is used to help orientate the user. If needed you can add a global floating action button to it. If you do, it counts towards the limit of action buttons in you view (i.e one).
 //The view header is also a uniqe element in the view and not part of any other panel or element.
@@ -42,7 +16,7 @@
 //		</div>
 //	</div>
 //
-//Styleguide 1.13.2
+//Styleguide 1.2.0
 //
 
 .view-header{

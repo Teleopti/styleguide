@@ -34,7 +34,8 @@
         scope: {
           show: '=',
           dialogTitle: '@',
-          onClose: '&?'
+          onClose: '&?',
+          infos: '='
         },
         replace: true,
         transclude: true,
