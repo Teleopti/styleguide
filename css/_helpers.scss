@@ -9,9 +9,21 @@
 //Markup:
 //<div class="pull-right">.pull-right</div>
 //<div class="pull-left">.pull-left</div>
+//<div class="line-right">.line-right</div>
+//<div class="line-center">.line-center</div>
+//No style
 //
 //Styleguide 8.1
 //
+
+
+.line-right{
+	text-align:right;
+}
+
+.line-center{
+  text-align: center;
+}
 
 // Cursor types
 //

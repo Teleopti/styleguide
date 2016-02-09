@@ -63,10 +63,6 @@ h3{
 	font-weight: bold;
 }
 
-.caps{
-	text-transform: capitalize;
-}
-
 // Colors for text
 //
 //Helper classes can be used if text needs to have a color association. Remember that this can cause problems for people who are color-blind so use with care.
@@ -99,11 +95,20 @@ h3{
 // Other text helpers
 //
 //Markup:
-//<p class="caps">first letters are uppercased</p>
+//<p class="caps">First letter is capitalized</p>
 //<p class="sm-font-size">small text</p>
+//<p class="full-padding">Padded</p>
 //
 //Styleguide 8.5
 //
 .sm-font-size {
 	font-size: $sm-font-size !important;
+}
+
+.full-padding {
+    padding: $full-padding;
+}
+
+.caps:first-letter {
+    text-transform: uppercase;
 }
