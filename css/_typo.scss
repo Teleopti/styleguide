@@ -72,6 +72,7 @@ h3{
 //<p class="text-success">Fusce dapibus, tellus ac cursus commodo</p>
 //<p class="text-warning">Fusce dapibus, tellus ac cursus commodo</p>
 //<p class="text-danger">Fusce dapibus, tellus ac cursus commodo</p>
+//<p class="text-white">Fusce dapibus, tellus ac cursus commodo</p>
 //
 //Styleguide 8.4
 //
@@ -92,12 +93,17 @@ h3{
 	color: $red-600;
 }
 
+.text-white{
+	color:$white;
+}
+
 // Other text helpers
 //
 //Markup:
 //<p class="caps">First letter is capitalized</p>
 //<p class="sm-font-size">small text</p>
 //<p class="full-padding">Padded</p>
+//<p class="padding-reset">remove padding</p>
 //
 //Styleguide 8.5
 //
@@ -107,6 +113,10 @@ h3{
 
 .full-padding {
     padding: $full-padding;
+}
+
+.padding-reset{
+	padding:0!important;
 }
 
 .caps:first-letter {
