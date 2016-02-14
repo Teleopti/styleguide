@@ -1,11 +1,56 @@
-<div class="wfm-datepicker-wrap">
-  <span uib-datepicker ng-model="startDate" show-weeks="true" custom-class="setRangeClass(date, mode)" class="wfm-datepicker"></span>  
+<div ng-show="!displayPopup()">
+  <div class="wfm-datepicker-wrap">
+    <div class="sub-header">
+      <span>From</span>: <strong>{{ startDate | date: dateFormat }}</strong>
+    </div>
+    <span uib-datepicker ng-model="startDate" show-weeks="true" custom-class="setRangeClass(date, mode)" class="wfm-datepicker"></span>  
+  </div>
+  <div class="wfm-datepicker-wrap">
+    <div class="sub-header">
+      <span>To</span>: <strong>{{ endDate | date: dateFormat }}</strong>
+    </div>
+    <span uib-datepicker ng-model="endDate" show-weeks="true" custom-class="setRangeClass(date, mode)" class="wfm-datepicker"></span>  
+  </div>
 </div>
-<div class="wfm-datepicker-wrap">
-  <span uib-datepicker ng-model="endDate" show-weeks="true" custom-class="setRangeClass(date, mode)" class="wfm-datepicker"></span>  
+
+<div ng-show="displayPopup()">
+  <span translate class="hor-m-5">From</span>
+  <div class="inline-datepicker-wrap">
+    <input class="pointer start-date-input"
+	    type="text"
+	    ng-click="onClickStartDateInput()"
+	    ng-model="startDate"
+	    uib-datepicker-popup="{{dateFormat}}"
+	    on-open-focus="false"
+	    custom-class="setRangeClass(date, mode)"
+	    show-weeks="true"
+	    is-open="dropDownState.showStartDatePicker"
+	    ng-required="true"
+	    show-button-bar="false" 
+	    close-on-date-selection="false" />
+  </div>
+  <span translate class="hor-m-5">To</span>
+  <div class="inline-datepicker-wrap">
+    <input class="pointer end-date-input"
+	    type="text"
+	    ng-click="onClickEndDateInput()"
+	    ng-model="endDate"
+	    uib-datepicker-popup="{{dateFormat}}"
+	    on-open-focus="false"
+	    show-weeks="true"
+	    custom-class="setRangeClass(date, mode)"
+	    is-open="dropDownState.showEndDatePicker"
+	    ng-required="true"
+	    show-button-bar="false"
+	    close-on-date-selection="false" />
+  </div>
+  <span class='popup-control'
+	  ng-mouseenter="hoverShow=true"
+	  ng-mouseleave="hoverShow=false"
+	  ng-click="onClickShowAllDates()"
+	  ng-class='{"pin-down" : dropDownState.showAllDatePickers}'>
+    <i class="mdi mdi-calendar middle"></i>
+  </span>  
 </div>
-
-
-
 
 

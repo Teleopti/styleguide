@@ -92,7 +92,10 @@ angular.module('styleguideApp', [
     $scope.dateRange = {
         startDate: new Date(),
         endDate: new Date()
-    }; 
+    };
+    $scope.dateRangeTemplateType = "inline";
+    $scope.dateRangeTemplateTypes = ['popup', 'inline'];
+    
 
     /*code for pagination*/
     $scope.paginationOptions = {pageNumber: 1, totalPages: 7};

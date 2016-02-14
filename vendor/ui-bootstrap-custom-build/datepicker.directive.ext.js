@@ -38,8 +38,6 @@
 	}]);
     })
 	   .run(['$templateCache', function ($templateCache) {
-
-               console.log('change date picker template');
 	       // Apply customized style to datepicker popup
 		$templateCache.put("template/datepicker/popup.html",
 			           "<ul class=\"dropdown-menu\" ng-if=\"isOpen\" style=\"display: block\" ng-style=\"{top: position.top+'px', left: position.left+'px'}\" ng-keydown=\"keydown($event)\" ng-click=\"$event.stopPropagation()\">\n" +

@@ -28,7 +28,9 @@
 //
 //
 //Markup:
-//<date-range-picker ng-model="dateRange"></date-range-picker>
+//<select ng-model="dateRangeTemplateType"
+//        ng-options="option for option in dateRangeTemplateTypes"></select>
+//<date-range-picker ng-model="dateRange" template-type="dateRangeTemplateType"></date-range-picker>
 //
 //Styleguide 2.2
 //
@@ -114,6 +116,52 @@
 }
 
 .wfm-date-range-picker-wrap {
+  .inline-datepicker-wrap {
+    display: inline-block;
+    position: relative;
+    .dropdown-menu {
+      position:absolute;
+      top:5px;
+      box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+      background-color:#fff;
+      z-index:100;
+    }
+    .start-date-input + .dropdown-menu {
+      margin-left:-60px;
+    }
+    .end-date-input + .dropdown-menu {
+      margin-right: -60px;      
+    }             
+  }
+    
+  .pin-down {
+    box-shadow: inset 0 2px 5px 0 rgba(0,0,0,.26);
+    background-color: #ececec;
+  }  
+
+  .popup-control {
+    height:22px;
+    width:22px;
+    display:inline-block;
+    text-align:center;
+    padding-top:1px;
+    cursor:pointer;
+  }
+    
+  input {
+    text-align:center;
+    width:200px;
+  }
+    
+  .in-date-range button {
+    background-color: #c2e085;
+  }
+  .hor-m-5{
+    margin-left:5px;
+    margin-right:5px;
+  }
+
+  
   .wrong-sign {
     display: none;
     color: #ee8f7d ;
@@ -142,9 +190,7 @@
       display: block;
     }
   }
-  .wfm-datepicker-wrap td.in-date-range button {
-    background-color: #c2e085;
-  }
+  
   .error-msg-container {
     display: none;
   }
