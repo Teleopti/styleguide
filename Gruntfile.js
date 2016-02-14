@@ -85,6 +85,6 @@
     // Default task(s).
     grunt.registerTask('default', ['ngtemplates', 'watch:styleguide']);
     grunt.registerTask('test', ['karma:styleguide']);
-    grunt.registerTask('dist', ['sass:styleguide', 'sass:dist', 'shell', 'cssmin']); // this task is kind of package
+    grunt.registerTask('dist', ['ngtemplates', 'sass:styleguide', 'sass:dist', 'shell', 'cssmin']); // this task is kind of package
     grunt.registerTask('check', ['jshint', 'jscs']);
 };

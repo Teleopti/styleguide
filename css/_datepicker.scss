@@ -7,7 +7,7 @@
 //		<div class="sub-header">
 //			From/to:
 //		</div>
-//		<datepicker show-weeks="true" ng-model="someDate" class="wfm-datepicker"></datepicker>
+//		<uib-datepicker show-weeks="true" ng-model="someDate" class="wfm-datepicker"></datepicker>
 //	</div >
 //
 //Styleguide 2.1
@@ -28,7 +28,7 @@
 //
 //
 //Markup:
-//<date-range-picker start-date="startDate" end-date="endDate"></date-range-picker>
+//<date-range-picker ng-model="dateRange"></date-range-picker>
 //
 //Styleguide 2.2
 //

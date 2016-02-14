@@ -1,25 +1,11 @@
-<div ng-class="{ 'ng-valid': isValid(), 'ng-invalid': isInvalid(), 'ng-invalid-order': isInvalid('order'), 'ng-invalid-empty': isInvalid('empty')}">
-  <div class="wfm-datepicker-wrap no-boxshadow">
-    <div class="sub-header">
-      <span translate>From</span> <strong>{{ startDate | date: "shortDate" }}</strong>
-      <div class="icon-set form-validation-sign datepickerfix">
-	<i class="mdi mdi-check right-sign "></i>
-	<i class="mdi mdi-close wrong-sign"></i>
-      </div>
-    </div>
-    <datepicker name="startDatePicker" show-weeks="true" class="wfm-datepicker datepicker-start-date" ng-model="startDate" ng-disabled="disabled"
-	    custom-class="setRangeClass(date, mode)"></datepicker>
-		</div>
-		<div class="wfm-datepicker-wrap no-boxshadow">
-		  <div class="sub-header">
-		    <span translate>To</span> <strong>{{ endDate | date: "shortDate" }}</strong>
-		    <div class="icon-set form-validation-sign datepickerfix">
-		      <i class="mdi mdi-check right-sign"></i>
-		      <i class="mdi mdi-close wrong-sign"></i>
-		    </div>
-		  </div>
-		  <datepicker show-weeks="true" class="wfm-datepicker datepicker-end-date" ng-model="endDate" ng-disabled="disabled" custom-class="setRangeClass(date, mode)"></datepicker>
-		</div>
-		<div class="error-msg-container ng-invalid-order alert-error notice-spacer" ng-if="showMessage"><i class='mdi mdi-alert-octagon'></i> <span translate>StartDateMustBeEqualToOrEarlierThanEndDate</span></div>
-		<div class="error-msg-container ng-invalid-empty alert-error notice-spacer" ng-if="showMessage"><i class='mdi mdi-alert-octagon'></i> <span translate>StartDateAndEndDateMustBeSet</span></div>
+<div class="wfm-datepicker-wrap">
+  <span uib-datepicker ng-model="startDate" show-weeks="true" custom-class="setRangeClass(date, mode)" class="wfm-datepicker"></span>  
 </div>
+<div class="wfm-datepicker-wrap">
+  <span uib-datepicker ng-model="endDate" show-weeks="true" custom-class="setRangeClass(date, mode)" class="wfm-datepicker"></span>  
+</div>
+
+
+
+
+

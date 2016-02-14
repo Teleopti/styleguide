@@ -4,105 +4,94 @@
 
     angular.module('wfm.daterangepicker', ['styleguide.templates', 'angularMoment']).directive('dateRangePicker', ['$filter', dateRangePicker]);
 
+    
     function dateRangePicker($filter) {
-        return {
+        return {           
             templateUrl: 'js/date-range-picker/date-range-picker.tpl.html',
-            scope: {
-                startDate: '=',
-                endDate: '=',
-                disabled: '=?',
-                errors: '=?',
-            },
-            controller: ['$scope', '$element', dateRangePickerCtrl],
-            require: ['dateRangePicker'],
-            link: postlink,
+            scope: {},
+            controller: ['$element', dateRangePickerCtrl],
+            require: ['ngModel', 'dateRangePicker'],
+            link: postlink
         };
 
-        function dateRangePickerCtrl($scope, $element) {
-            /* jshint validthis: true */
-            var vm = this;
+        function dateRangePickerCtrl($element) {
+
+            var ctrl = this;
             $element.addClass('wfm-date-range-picker-wrap');
-            $scope.setRangeClass = setRangeClass;
-            $scope.isInvalid = isInvalid;
 
-            vm.refreshDatepickers = refreshDatepickers;
-            vm.checkValidity = checkValidity;
+            ctrl.makeRangeClassSetter = makeRangeClassSetter;
+           
 
-            function setRangeClass(date, mode) {
-                if (mode === 'day') {
-                    var startDate = $scope.startDate,
-                    endDate = $scope.endDate;
 
-                    if (startDate && endDate && startDate <= endDate) {
-                        var dayToCheck = new Date(date).setHours(12, 0, 0, 0);
-                        var start = new Date(startDate).setHours(12, 0, 0, 0);
-                        var end = new Date(endDate).setHours(12, 0, 0, 0);
-
-                        if (dayToCheck >= start && dayToCheck <= end) {
-                            return 'in-date-range';
-                        }
+            function makeRangeClassSetter(startDate, endDate) {
+                if (!startDate || !endDate || moment(startDate).isAfter(endDate, 'day'))
+                  return function() { return '';};
+                
+                return function setRangeClass(date, mode) {                   
+                    if (mode === 'day') {                                 
+                        if (! moment(date).isBefore(startDate, 'day') && ! moment(date).isAfter(endDate, 'day'))
+                          return 'in-date-range';
                     }
-                }
-
-                return '';
+                    return '';
+                };
             }
-
-            function isInvalid(symbol) {
-                if (!$scope.errors) {
-                    $scope.errors = [];
-                }
-
-                if (symbol) {
-                    return $scope.errors.indexOf(symbol) >= 0;
-                } else {
-                    return $scope.errors.length > 0;
-                }
-            }
-
-            function checkValidity() {
-                var errors = [];
-                if (!$scope.errors) {
-                    $scope.errors = [];
-                }
-
-                if (!$scope.startDate || !$scope.endDate) {
-                    errors.push('empty');
-                } else if ($scope.startDate > $scope.endDate) {
-                    errors.push('order');
-                }
-
-                if (errors.length !== $scope.errors.length || !(function compareArray(a1, a2) {
-                    for (var i = 0; i < a1.length; i++) {
-                        if (a1[i] !== a2[i]) { return false; }
-                    }
-
-                    return true;
-                })(errors, $scope.errors)) {
-                    $scope.errors = errors;
-                }
-
-            }
-
-            function refreshDatepickers(startDate, endDate) {
-                $scope.startDate = angular.copy($scope.startDate);
-                $scope.endDate = angular.copy($scope.endDate);
-            }
+          
         }
 
         function postlink(scope, elem, attrs, ctrls) {
-            var ctrl = ctrls[0];
-            scope.$watch(function() {
-                return {
-                    startDate: scope.startDate ? $filter('date')(scope.startDate, 'yyyy-mm-dd') : '',
-                    endDate: scope.endDate ? $filter('date')(scope.endDate, 'yyyy-mm-dd') : '',
-                };
-            }, function(newValue) {
+            var ngModelCtrl = ctrls[0],
+                dateRangeCtrl = ctrls[1];
 
-                ctrl.checkValidity();
-                ctrl.refreshDatepickers();
-            }, true);
 
-            scope.showMessage = !angular.isDefined(attrs.hideMessage);
+            ngModelCtrl.$validators.empty = validateByValidDates;
+            ngModelCtrl.$validators.order = validateByValidOrder;
+
+            scope.$watchCollection(function() {
+                if (!scope.startDate || !scope.endDate) return [null, null];
+                return [
+                  $filter('date')(scope.startDate, 'yyyy-MM-dd'),
+                  $filter('date')(scope.endDate, 'yyyy-MM-dd')
+                ];
+            }, function(nvalue) {
+                updateViewModelFromUi();                         
+                scope.setRangeClass = dateRangeCtrl.makeRangeClassSetter.apply(null, nvalue);
+                refreshDatepickers();
+            });
+            
+
+            function validateByValidDates(modelValue, viewValue) {
+                if (modelValue && angular.isDate(modelValue.startDate) && angular.isDate(modelValue.endDate)) {
+                    return true;
+                }
+                return false;
+            }
+
+            function validateByValidOrder(modelValue, viewValue) {
+                if (validateByValidDates(modelValue, viewValue)) 
+                  return modelValue.startDate <= modelValue.endDate;
+                return true;
+            }
+
+            function render() {
+                scope.startDate = ngModelCtrl.$viewValue.startDate;
+                scope.endDate = ngModelCtrl.$viewValue.endDate;
+            }
+
+            function updateViewModelFromUi() {
+                ngModelCtrl.$setViewValue({
+                    startDate: scope.startDate,
+                    endDate: scope.endDate
+                });                
+            }
+
+            
+            function refreshDatepickers() {
+                scope.startDate = angular.copy(scope.startDate);
+                scope.endDate = angular.copy(scope.endDate);
+            }
+
+           
+                     
         }
     }
 
