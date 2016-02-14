@@ -31,7 +31,7 @@
 //<select ng-model="dateRangeTemplateType"
 //        ng-options="option for option in dateRangeTemplateTypes"></select>
 //<date-range-picker ng-model="dateRange" template-type="dateRangeTemplateType"></date-range-picker>
-//
+//  
 //Styleguide 2.2
 //
 
@@ -121,10 +121,10 @@
     position: relative;
     .dropdown-menu {
       position:absolute;
-      top:5px;
       box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
-      background-color:#fff;
+      background-color: $gray-100;
       z-index:100;
+      margin-top: 0px;
     }
     .start-date-input + .dropdown-menu {
       margin-left:-60px;
@@ -136,7 +136,7 @@
     
   .pin-down {
     box-shadow: inset 0 2px 5px 0 rgba(0,0,0,.26);
-    background-color: #ececec;
+    background-color: $gray-300;
   }  
 
   .popup-control {
@@ -147,64 +147,42 @@
     padding-top:1px;
     cursor:pointer;
   }
-    
+
+  &.ng-invalid .popup-control .mdi-calendar{
+    color: $red-800;
+  }    
+  
   input {
     text-align:center;
     width:200px;
   }
-    
+  input.ng-invalid {
+    border-bottom: 2px solid $red-800;     
+  }    
   .in-date-range button {
-    background-color: #c2e085;
+    background-color: $green-100;
   }
   .hor-m-5{
     margin-left:5px;
     margin-right:5px;
-  }
+  }  
+}
 
-  
-  .wrong-sign {
-    display: none;
-    color: #ee8f7d ;
-  }
-  .right-sign {
-    display: none;
-    color: #c2e085;
-  }
-  .error-msg-container {
-    display: none;
-    margin-top: 10px;
-  }
-  .ng-valid {
-    .right-sign {
-      display: block;
-    }
-  }
-  .ng-invalid {
-    &.ng-invalid-order ~ .error-msg-container.ng-invalid-order {
-      display: block;
-    }
-    &.ng-invalid-empty ~ .error-msg-container.ng-invalid-empty {
-      display: block;
-    }
-    .wrong-sign {
-      display: block;
-    }
-  }
-  
-  .error-msg-container {
-    display: none;
-  }
-  .wfm-date-picker-wrap {
-    display: inline-block;
-  }
-  .datepickerfix{
-    position:absolute;
-    top:8px;
-    right:10px;
-    height:18px;
-    width:18px;
-  }
-  .sub-header {
-    position: relative;
-  }
+.error-msg-container {
+  display: none;
+  margin-top: 5px;
+}
+
+.error-msg-container.error-msg-popup-container {
+  position: absolute;
+  width: 490px;
+}
+
+
+.ng-invalid.ng-invalid-empty .error-msg-container.ng-invalid-empty {
+  display: block !important;
+}  
+
+.ng-invalid.ng-invalid-order .error-msg-container.ng-invalid-order {
+  display: block !important;
 }

@@ -28,6 +28,18 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
     "\n" +
     "  </div>\r" +
     "\n" +
+    "  <div class=\"error-msg-container ng-invalid-order alert-error notice-spacer\">\r" +
+    "\n" +
+    "    <i class='mdi mdi-alert-octagon'></i> <span>StartDateMustBeEqualToOrEarlierThanEndDate</span>\r" +
+    "\n" +
+    "  </div>\r" +
+    "\n" +
+    "  <div class=\"error-msg-container ng-invalid-empty alert-error notice-spacer\">\r" +
+    "\n" +
+    "    <i class='mdi mdi-alert-octagon'></i> <span>StartDateAndEndDateMustBeSet</span>\r" +
+    "\n" +
+    "  </div>  \r" +
+    "\n" +
     "</div>\r" +
     "\n" +
     "\r" +
@@ -106,7 +118,23 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
     "\n" +
     "    <i class=\"mdi mdi-calendar middle\"></i>\r" +
     "\n" +
-    "  </span>  \r" +
+    "  </span>\r" +
+    "\n" +
+    "  \r" +
+    "\n" +
+    "  <div class=\"error-msg-container error-msg-popup-container ng-invalid-order alert-error notice-spacer\">\r" +
+    "\n" +
+    "    <i class='mdi mdi-alert-octagon'></i> <span>StartDateMustBeEqualToOrEarlierThanEndDate</span>\r" +
+    "\n" +
+    "  </div>\r" +
+    "\n" +
+    "  <div class=\"error-msg-container error-msg-popup-container ng-invalid-empty alert-error notice-spacer\" ng-if=\"hoverShow\">\r" +
+    "\n" +
+    "    <i class='mdi mdi-alert-octagon'></i> <span>StartDateAndEndDateMustBeSet</span>\r" +
+    "\n" +
+    "  </div>  \r" +
+    "\n" +
+    " \r" +
     "\n" +
     "</div>\r" +
     "\n" +
