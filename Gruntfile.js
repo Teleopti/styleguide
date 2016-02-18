@@ -60,7 +60,10 @@
             configFile: 'config/.sass-lint.yml',
         },
         target: ['location/*.scss']
-    }
+    },
+    uglify: {
+				'dist/wfmdirectives.min.js': ['directives/**/*.js', '!directives/**/*.spec.js']
+      }
     });
 
     grunt.loadNpmTasks('grunt-sass');
@@ -70,10 +73,11 @@
     grunt.loadNpmTasks('grunt-karma');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-jscs');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 
     // Default task(s).
     grunt.registerTask('default', ['dist', 'watch:styleguide']);
     grunt.registerTask('test', ['karma:styleguide']);
-    grunt.registerTask('dist', ['sass:styleguide', 'sass:dist', 'shell', 'cssmin']); // this task is kind of package
+    grunt.registerTask('dist', ['sass:styleguide', 'sass:dist', 'shell', 'cssmin', 'uglify']); // this task is kind of package
     grunt.registerTask('check', ['jshint', 'jscs']);
 };
