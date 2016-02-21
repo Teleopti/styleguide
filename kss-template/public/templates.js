@@ -12,7 +12,7 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
     "\n" +
     "    </div>\r" +
     "\n" +
-    "    <span uib-datepicker ng-model=\"startDate\" show-weeks=\"true\" custom-class=\"setRangeClass(date, mode)\" class=\"wfm-datepicker\"></span>  \r" +
+    "    <uib-datepicker ng-model=\"startDate\" show-weeks=\"true\" custom-class=\"setRangeClass(date, mode)\" class=\"wfm-datepicker\"></uib-datepicker>  \r" +
     "\n" +
     "  </div>\r" +
     "\n" +
@@ -24,7 +24,7 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
     "\n" +
     "    </div>\r" +
     "\n" +
-    "    <span uib-datepicker ng-model=\"endDate\" show-weeks=\"true\" custom-class=\"setRangeClass(date, mode)\" class=\"wfm-datepicker\"></span>  \r" +
+    "    <uib-datepicker ng-model=\"endDate\" show-weeks=\"true\" custom-class=\"setRangeClass(date, mode)\" class=\"wfm-datepicker\"></uib-datepicker>  \r" +
     "\n" +
     "  </div>\r" +
     "\n" +
@@ -46,7 +46,7 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
     "\n" +
     "<div ng-show=\"displayPopup()\">\r" +
     "\n" +
-    "  <span translate class=\"hor-m-5\">From</span>\r" +
+    "  <label translate class=\"hor-m-5 inline-vertical-fix\">From</label>\r" +
     "\n" +
     "  <div class=\"inline-datepicker-wrap\">\r" +
     "\n" +
@@ -76,7 +76,7 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
     "\n" +
     "  </div>\r" +
     "\n" +
-    "  <span translate class=\"hor-m-5\">To</span>\r" +
+    "  <label translate class=\"hor-m-5 inline-vertical-fix\">To</label>\r" +
     "\n" +
     "  <div class=\"inline-datepicker-wrap\">\r" +
     "\n" +
@@ -116,7 +116,7 @@ angular.module('styleguide.templates', []).run(['$templateCache', function($temp
     "\n" +
     "\t  ng-class='{\"pin-down\" : dropDownState.showAllDatePickers}'>\r" +
     "\n" +
-    "    <i class=\"mdi mdi-calendar middle\"></i>\r" +
+    "    <i class=\"mdi mdi-calendar middle inline-vertical-fix\"></i>\r" +
     "\n" +
     "  </span>\r" +
     "\n" +

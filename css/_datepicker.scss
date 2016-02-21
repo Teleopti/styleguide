@@ -146,6 +146,11 @@
     cursor:pointer;
   }
 
+  .inline-vertical-fix {
+    position: relative;
+    top: 4px;
+  }
+    
   &.ng-invalid .popup-control .mdi-calendar{
     color: $red-800;
   }    

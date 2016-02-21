@@ -3,13 +3,13 @@
     <div class="sub-header">
       <span>From</span>: <strong>{{ startDate | date: dateFormat }}</strong>
     </div>
-    <span uib-datepicker ng-model="startDate" show-weeks="true" custom-class="setRangeClass(date, mode)" class="wfm-datepicker"></span>  
+    <uib-datepicker ng-model="startDate" show-weeks="true" custom-class="setRangeClass(date, mode)" class="wfm-datepicker"></uib-datepicker>  
   </div>
   <div class="wfm-datepicker-wrap">
     <div class="sub-header">
       <span>To</span>: <strong>{{ endDate | date: dateFormat }}</strong>
     </div>
-    <span uib-datepicker ng-model="endDate" show-weeks="true" custom-class="setRangeClass(date, mode)" class="wfm-datepicker"></span>  
+    <uib-datepicker ng-model="endDate" show-weeks="true" custom-class="setRangeClass(date, mode)" class="wfm-datepicker"></uib-datepicker>  
   </div>
   <div class="error-msg-container ng-invalid-order alert-error notice-spacer">
     <i class='mdi mdi-alert-octagon'></i> <span>StartDateMustBeEqualToOrEarlierThanEndDate</span>
@@ -20,7 +20,7 @@
 </div>
 
 <div ng-show="displayPopup()">
-  <span translate class="hor-m-5">From</span>
+  <label translate class="hor-m-5 inline-vertical-fix">From</label>
   <div class="inline-datepicker-wrap">
     <input class="pointer start-date-input"
 	    type="text"
@@ -35,7 +35,7 @@
 	    show-button-bar="false" 
 	    close-on-date-selection="false" />
   </div>
-  <span translate class="hor-m-5">To</span>
+  <label translate class="hor-m-5 inline-vertical-fix">To</label>
   <div class="inline-datepicker-wrap">
     <input class="pointer end-date-input"
 	    type="text"
@@ -55,7 +55,7 @@
 	  ng-mouseleave="hoverShow=false"
 	  ng-click="onClickShowAllDates()"
 	  ng-class='{"pin-down" : dropDownState.showAllDatePickers}'>
-    <i class="mdi mdi-calendar middle"></i>
+    <i class="mdi mdi-calendar middle inline-vertical-fix"></i>
   </span>
   
   <div class="error-msg-container error-msg-popup-container ng-invalid-order alert-error notice-spacer">

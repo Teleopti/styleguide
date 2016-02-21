@@ -2,14 +2,15 @@
 
     'use strict';
 
-    angular.module('wfm.daterangepicker', ['styleguide.templates', 'angularMoment']).directive('dateRangePicker', ['$filter', '$timeout', dateRangePicker]);
+    angular.module('wfm.daterangepicker', ['styleguide.templates']).directive('dateRangePicker', ['$filter', '$timeout', dateRangePicker]);
 
     
     function dateRangePicker($filter, $timeout) {
         return {           
             templateUrl: 'directives/date-range-picker/date-range-picker.tpl.html',
             scope: {
-                'templateType': '=?'
+                'templateType': '=?',
+                'testStopUi': '@?'
             },
             controller: ['$element', dateRangePickerCtrl],
             require: ['ngModel', 'dateRangePicker'],
@@ -47,12 +48,14 @@
                   $filter('date')(scope.startDate, 'yyyy-MM-dd'),
                   $filter('date')(scope.endDate, 'yyyy-MM-dd')
                 ];
-            }, function() {               
+            }, function(v) {
+                if (scope.testStopUi) return;
                 updateViewModelFromUi();                                         
                 refreshDatepickers();               
             });
                        
             function validateByValidDates(modelValue, viewValue) {
+                
                 if (modelValue && angular.isDate(modelValue.startDate) && angular.isDate(modelValue.endDate)) {
                     return true;
                 }
