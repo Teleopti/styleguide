@@ -57,7 +57,7 @@
         },               
 	ngtemplates: {
 	    'styleguide.templates': {
-		src: ['js/**/*.html', 'js/**/html/*.html'],
+		src: ['directives/**/*.tpl.html'],
 		dest: 'kss-template/public/templates.js',
 		options: {
 		    standalone: true
@@ -69,6 +69,9 @@
                 configFile: 'config/.sass-lint.yml',
             },
             target: ['location/*.scss']
+        },
+        uglify: {
+            'dist/wfmdirectives.min.js': ['directives/**/*.js', '!directives/**/*.spec.js']
         }
     });
 
@@ -79,12 +82,16 @@
     grunt.loadNpmTasks('grunt-karma');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-jscs');
+
+    grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-angular-templates');
     grunt.loadNpmTasks('grunt-processhtml');
 
+    
     // Default task(s).
-    grunt.registerTask('default', ['ngtemplates', 'watch:styleguide']);
+    grunt.registerTask('default', ['dist', 'watch:styleguide']);
     grunt.registerTask('test', ['karma:styleguide']);
-    grunt.registerTask('dist', ['ngtemplates', 'sass:styleguide', 'sass:dist', 'shell', 'cssmin']); // this task is kind of package
+    grunt.registerTask('dist', ['ngtemplates', 'sass:styleguide', 'sass:dist', 'shell', 'cssmin', 'uglify']); // this task is kind of package
+
     grunt.registerTask('check', ['jshint', 'jscs']);
 };

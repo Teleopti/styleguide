@@ -1,7 +1,7 @@
 angular.module('styleguide.templates', []).run(['$templateCache', function($templateCache) {
   'use strict';
 
-  $templateCache.put('js/date-range-picker/date-range-picker.tpl.html',
+  $templateCache.put('directives/date-range-picker/date-range-picker.tpl.html',
     "<div ng-show=\"!displayPopup()\">\r" +
     "\n" +
     "  <div class=\"wfm-datepicker-wrap\">\r" +

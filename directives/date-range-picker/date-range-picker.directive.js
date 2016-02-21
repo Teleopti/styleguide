@@ -7,7 +7,7 @@
     
     function dateRangePicker($filter, $timeout) {
         return {           
-            templateUrl: 'js/date-range-picker/date-range-picker.tpl.html',
+            templateUrl: 'directives/date-range-picker/date-range-picker.tpl.html',
             scope: {
                 'templateType': '=?'
             },

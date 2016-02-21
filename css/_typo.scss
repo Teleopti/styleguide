@@ -63,21 +63,18 @@ h3{
 	font-weight: bold;
 }
 
-.caps{
-	text-transform: capitalize;
-}
-
-// Helper classes for text
+// Colors for text
 //
-//Helper classes can be used if text needs to have a color association. Please remember that this can cause problems for people who are color-blind so use with care.
+//Helper classes can be used if text needs to have a color association. Remember that this can cause problems for people who are color-blind so use with care.
 //
 //Markup:
 //<p class="text-muted">Fusce dapibus, tellus ac cursus commodo</p>
 //<p class="text-success">Fusce dapibus, tellus ac cursus commodo</p>
 //<p class="text-warning">Fusce dapibus, tellus ac cursus commodo</p>
 //<p class="text-danger">Fusce dapibus, tellus ac cursus commodo</p>
+//<p class="text-white">Fusce dapibus, tellus ac cursus commodo</p>
 //
-//Styleguide 1.11.1
+//Styleguide 8.4
 //
 
 .text-muted {
@@ -94,4 +91,34 @@ h3{
 
 .text-danger {
 	color: $red-600;
+}
+
+.text-white{
+	color:$white;
+}
+
+// Other text helpers
+//
+//Markup:
+//<p class="caps">First letter is capitalized</p>
+//<p class="sm-font-size">small text</p>
+//<p class="full-padding">Padded</p>
+//<p class="padding-reset">remove padding</p>
+//
+//Styleguide 8.5
+//
+.sm-font-size {
+	font-size: $sm-font-size !important;
+}
+
+.full-padding {
+    padding: $full-padding;
+}
+
+.padding-reset{
+	padding:0!important;
+}
+
+.caps:first-letter {
+    text-transform: uppercase;
 }

@@ -21,7 +21,7 @@ module.exports = function(config) {
           'node_modules/angular-mocks/angular-mocks.js',
           'vendor/teleopti/teleopti.module.js',
           'vendor/teleopti/*.js',
-          'js/*/*.js'
+          'directives/*/*.js'
         ],
 
 
