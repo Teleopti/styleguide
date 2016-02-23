@@ -47,10 +47,10 @@
             options: {
                 jshintrc: '.jshintrc' //http://jshint.com/docs/options/
             },
-            all: ['Gruntfile.js', 'js/**/*.js', 'app.js'],
+            all: ['Gruntfile.js', 'directives/**/*.js', 'app.js'],
         },
         jscs: {
-            src: ['Gruntfile.js', 'js/**/*.js', 'app.js'],
+            src: ['Gruntfile.js', 'directives/**/*.js', 'app.js'],
             options: {
                 config: '.jscsrc',
             },
@@ -58,7 +58,7 @@
 	ngtemplates: {
 	    'styleguide.templates': {
 		src: ['directives/**/*.tpl.html'],
-		dest: 'kss-template/public/templates.js',
+		dest: 'dist/templates.js',
 		options: {
 		    standalone: true
 		}
@@ -85,8 +85,6 @@
 
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-angular-templates');
-    grunt.loadNpmTasks('grunt-processhtml');
-
     
     // Default task(s).
     grunt.registerTask('default', ['dist', 'watch:styleguide']);

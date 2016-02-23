@@ -42,6 +42,7 @@
             ngModelCtrl.$validators.empty = validateByValidDates;
             ngModelCtrl.$validators.order = validateByValidOrder;
 
+            
             scope.$watchCollection(function() {
                 if (!scope.startDate || !scope.endDate) return [null, null];
                 return [
@@ -50,8 +51,19 @@
                 ];
             }, function(v) {
                 if (scope.testStopUi) return;
-                updateViewModelFromUi();                                         
-                refreshDatepickers();               
+                updateViewModelFromUi();
+                hidePopup();
+                $timeout(refreshDatepickers, 50);
+            });
+
+            scope.$watch(function() {
+                if (scope.dropDownState) {                    
+		    return scope.dropDownState.showStartDatePicker
+                        && scope.dropDownState.showEndDatePicker;
+		}
+                return null;
+            }, function(v) {
+                if (v !== null) scope.dropDownState.showAllDatePickers = v; 
             });
                        
             function validateByValidDates(modelValue, viewValue) {
@@ -79,23 +91,24 @@
                     endDate: scope.endDate
                 });                
             }
-            
-            function refreshDatepickers() {
-                if (!scope.startDate || !scope.endDate) return;
-                
-                $timeout(function() {
-                    var activeSelections = elem[0].querySelectorAll('button.active');
-                    angular.forEach(activeSelections, function(selection) {
-                        angular.element(selection).triggerHandler('click');
-                    });                    
-                }, 50);
 
+            function hidePopup() {
                 if (scope.dropDownState) {
 		    if (!scope.dropDownState.showAllDatePickers) {
 			scope.dropDownState.showStartDatePicker = false;
 			scope.dropDownState.showEndDatePicker = false;
 		    }
-		}                
+		}    
+            }
+            
+            function refreshDatepickers() {
+                if (!scope.startDate || !scope.endDate) return;
+
+                var alreadyRegistered = false;               
+                var activeSelections = elem[0].querySelectorAll('button.active');
+                angular.forEach(activeSelections, function(selection) {
+                    angular.element(selection).triggerHandler('click');
+                });                                                               
             }
                           
             function setRangeClass(date, mode) {
@@ -120,30 +133,11 @@
 	    };
 
 	    scope.onClickShowAllDates = function () {
-		$timeout(function() {
-		    if (!scope.dropDownState.showAllDatePickers) {
-			scope.dropDownState.showStartDatePicker = scope.dropDownState.showEndDatePicker = scope.dropDownState.showAllDatePickers = true;
-		    } else {
-			scope.dropDownState.showStartDatePicker = scope.dropDownState.showEndDatePicker = scope.dropDownState.showAllDatePickers = false;
-		    }
-		}, 100);				
+                if (!scope.dropDownState.showAllDatePickers) {
+                     scope.dropDownState.showStartDatePicker = scope.dropDownState.showEndDatePicker = scope.dropDownState.showAllDatePickers = true;
+                }
 	    }
-
-	    scope.onClickStartDateInput = function () {
-		scope.dropDownState.showStartDatePicker = !scope.dropDownState.showStartDatePicker;
-		$timeout(function() {
-		    scope.dropDownState.showAllDatePickers = (scope.dropDownState.showStartDatePicker === true) && (scope.dropDownState.showEndDatePicker === true);
-		}, 100);
-	    }
-
-	    scope.onClickEndDateInput = function() {
-		scope.dropDownState.showEndDatePicker = !scope.dropDownState.showEndDatePicker;
-		$timeout(function() {
-		    scope.dropDownState.showAllDatePickers = (scope.dropDownState.showStartDatePicker === true) && (scope.dropDownState.showEndDatePicker === true);
-		}, 100);
-	    }		
-
         }
-}
+    }
 
 })();

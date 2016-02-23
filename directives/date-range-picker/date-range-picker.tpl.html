@@ -24,7 +24,7 @@
   <div class="inline-datepicker-wrap">
     <input class="pointer start-date-input"
 	    type="text"
-	    ng-click="onClickStartDateInput()"
+	    ng-click="dropDownState.showStartDatePicker = !dropDownState.showStartDatePicker"
 	    ng-model="startDate"
 	    uib-datepicker-popup="{{dateFormat}}"
 	    on-open-focus="false"
@@ -39,7 +39,7 @@
   <div class="inline-datepicker-wrap">
     <input class="pointer end-date-input"
 	    type="text"
-	    ng-click="onClickEndDateInput()"
+	    ng-click="dropDownState.showEndDatePicker = !dropDownState.showEndDatePicker"
 	    ng-model="endDate"
 	    uib-datepicker-popup="{{dateFormat}}"
 	    on-open-focus="false"

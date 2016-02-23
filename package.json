@@ -40,7 +40,6 @@
     "karma-phantomjs-launcher": "0.2.1",
     "kss": "",
     "grunt-angular-templates": "0.5.7",
-    "grunt-processhtml": "0.3.8",
     "phantomjs": "1.9.18"
   },
   "homepage": "http://teleopti.github.io/styleguide/styleguide"
