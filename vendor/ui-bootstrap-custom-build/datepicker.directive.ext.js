@@ -5,7 +5,7 @@
 	$provide.decorator('datepickerDirective', ['$delegate', '$timeout', function ($delegate, $timeout) {
 	    var directive = $delegate[0];
 	    var link = directive.link;
-            
+
 	    directive.$$isolateBindings['onChangeOfMonth'] = {
 		attrName: 'onChangeOfMonth',
 		mode: '&',
@@ -14,15 +14,15 @@
 
 	    directive.compile = function () {
 		return function (scope, element, attrs, ctrl) {
-                    
+
 		    // set start of week based on locale.
 		    ctrl[0].startingDay = moment.localeData()._week.dow;
 		    link.apply(this, arguments);
-                    
+
 		    scope.$watch(function () {
 			return ctrl[0].activeDate.getTime();
 		    }, function (newVal, oldVal) {
-                        
+
 			if (scope.onChangeOfMonth != undefined) {
 			    if (moment(oldVal).month() !== moment(newVal).month()) {
 				$timeout(function () {
@@ -33,7 +33,7 @@
 		    });
 		}
 	    };
-            
+
 	    return $delegate;
 	}]);
     })
@@ -41,7 +41,7 @@
 	       // Apply customized style to datepicker popup
 		$templateCache.put("template/datepicker/popup.html",
 			           "<ul class=\"dropdown-menu\" ng-if=\"isOpen\" style=\"display: block\" ng-style=\"{top: position.top+'px', left: position.left+'px'}\" ng-keydown=\"keydown($event)\" ng-click=\"$event.stopPropagation()\">\n" +
-			           "	<li class=\"wfm-datepicker\" ng-transclude></li>\n" +
+			           "	<li class=\"wfm-datepicker-wrap\" ng-transclude></li>\n" +
 			           "	<li ng-if=\"showButtonBar\" style=\"padding:10px 9px 2px\">\n" +
 			           "		<span class=\"btn-group pull-left\">\n" +
 			           "			<button type=\"button\" class=\"btn btn-sm btn-info\" ng-click=\"select('today')\">{{ getText('current') }}</button>\n" +
@@ -51,9 +51,9 @@
 			"	</li>\n" +
 			           "</ul>\n" +
 			           "");
-               
+
 	       $templateCache.put("template/datepicker/day.html",
-			          "<table role=\"grid\" aria-labelledby=\"{{::uniqueId}}-title\" aria-activedescendant=\"{{activeDateId}}\">\n" +
+			          "<table role=\"grid\" class=\"wfm-datepicker\" aria-labelledby=\"{{::uniqueId}}-title\" aria-activedescendant=\"{{activeDateId}}\">\n" +
 			          "  <thead>\n" +
 			          "    <tr>\n" +
 			          "      <th><button type=\"button\" class=\"btn btn-default btn-sm pull-left\" ng-click=\"move(-1)\" tabindex=\"-1\"><i class=\"glyphicon glyphicon-chevron-left\"></i></button></th>\n" +
@@ -76,5 +76,5 @@
 			          "</table>\n" +
 			          "");
 	   }]);
-    
+
 })();

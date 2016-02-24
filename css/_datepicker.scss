@@ -29,7 +29,7 @@
 //<label>Template type:</label> <select ng-model="dateRangeTemplateType"
 //        ng-options="option for option in dateRangeTemplateTypes"></select>
 //<date-range-picker ng-model="dateRange" template-type="dateRangeTemplateType"></date-range-picker>
-//  
+//
 //Styleguide 2.2
 //
 
@@ -119,61 +119,67 @@
     position: relative;
     .dropdown-menu {
       position:absolute;
-      box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
-      background-color: $gray-100;
       z-index:100;
-      margin-top: 0px;
+      margin-top: $full-padding;
     }
     .start-date-input + .dropdown-menu {
       margin-left:-60px;
     }
     .end-date-input + .dropdown-menu {
-      margin-right: -60px;      
-    }             
+      margin-right: -60px;
+    }
   }
-    
+
   .pin-down {
-    box-shadow: inset 0 2px 5px 0 rgba(0,0,0,.26);
-    background-color: $gray-300;
-  }  
+    background-color: $gray012;
+		@extend .material-depth-1;
+  }
 
   .popup-control {
-    height:22px;
-    width:22px;
+    height:24px;
+    width:24px;
     display:inline-block;
     text-align:center;
-    padding-top:1px;
+		padding:5px;
     cursor:pointer;
+		border-radius: 50%;
+		transition: 0.5s all ease;
+		cursor:pointer;
   }
+
+	.popup-control:hover{
+		background-color: $gray012;
+	}
 
   .inline-vertical-fix {
     position: relative;
     top: 4px;
   }
-    
+
   &.ng-invalid .popup-control .mdi-calendar{
     color: $red-800;
-  }    
-  
+  }
+
   input {
     text-align:center;
     width:200px;
   }
   input.ng-invalid {
-    border-bottom: 2px solid $red-800;     
-  }    
+    border-bottom: 2px solid $red-800;
+  }
   .in-date-range button {
     background-color: $green-100;
   }
   .hor-m-5{
     margin-left:5px;
     margin-right:5px;
-  }  
+  }
 }
 
 .error-msg-container {
   display: none;
   margin-top: 5px;
+	@extend .material-depth-1;
 }
 
 .error-msg-container.error-msg-popup-container {
@@ -181,10 +187,9 @@
   width: 490px;
 }
 
-
 .ng-invalid.ng-invalid-empty .error-msg-container.ng-invalid-empty {
   display: block !important;
-}  
+}
 
 .ng-invalid.ng-invalid-order .error-msg-container.ng-invalid-order {
   display: block !important;
