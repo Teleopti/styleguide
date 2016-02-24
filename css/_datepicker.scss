@@ -7,7 +7,7 @@
 //		<div class="sub-header">
 //			From/to:
 //		</div>
-//		<datepicker show-weeks="true" ng-model="someDate" class="wfm-datepicker"></datepicker>
+//		<uib-datepicker show-weeks="true" ng-model="someDate" class="wfm-datepicker"></datepicker>
 //	</div >
 //
 //Styleguide 2.1
@@ -19,17 +19,17 @@
 //A directive for specifying a date-only period. It is composed from datepicker with added validation messages. In WFM, the error messages will be translated automatically.
 //<table class="wfm-table">
 //<tr><th>Attribute Name</th><th>Usage</th><th>Required</th></tr>
-//<tr><td>start-date</td><td>Bind to period start date</td><td>true</td></tr>
-//<tr><td>end-date</td><td>Bind to period end date</td><td>true</td></tr>
-//<tr><td>errors</td><td>Bind to errors. Its value will be set by the picker to an array of error-keys. The pre-defined error keys are 'order' and 'empty'</td><td>false</td></tr>
-//<tr><td>hide-message</td><td>mute the error message</td><td>false</td></tr>
+//<tr><td>ng-model</td><td>Bind to a js-object representing the date range. The object is composed by <code>startDate</code> and <code>endDate</code> key-value pairs</td><td>true</td></tr>
+//<tr><td>template-type</td><td>Declares whether to use <b>inline</b> or <b>popup</b> mode</td><td>false</td></tr>
 //</table>
 //
 //
 //
 //Markup:
-//<date-range-picker start-date="startDate" end-date="endDate"></date-range-picker>
-//
+//<label>Template type:</label> <select ng-model="dateRangeTemplateType"
+//        ng-options="option for option in dateRangeTemplateTypes"></select>
+//<date-range-picker ng-model="dateRange" template-type="dateRangeTemplateType"></date-range-picker>
+//  
 //Styleguide 2.2
 //
 
@@ -114,51 +114,78 @@
 }
 
 .wfm-date-range-picker-wrap {
-  .wrong-sign {
-    display: none;
-    color: #ee8f7d ;
-  }
-  .right-sign {
-    display: none;
-    color: #c2e085;
-  }
-  .error-msg-container {
-    display: none;
-    margin-top: 10px;
-  }
-  .ng-valid {
-    .right-sign {
-      display: block;
-    }
-  }
-  .ng-invalid {
-    &.ng-invalid-order ~ .error-msg-container.ng-invalid-order {
-      display: block;
-    }
-    &.ng-invalid-empty ~ .error-msg-container.ng-invalid-empty {
-      display: block;
-    }
-    .wrong-sign {
-      display: block;
-    }
-  }
-  .wfm-datepicker-wrap td.in-date-range button {
-    background-color: #c2e085;
-  }
-  .error-msg-container {
-    display: none;
-  }
-  .wfm-date-picker-wrap {
+  .inline-datepicker-wrap {
     display: inline-block;
-  }
-  .datepickerfix{
-    position:absolute;
-    top:8px;
-    right:10px;
-    height:18px;
-    width:18px;
-  }
-  .sub-header {
     position: relative;
+    .dropdown-menu {
+      position:absolute;
+      box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+      background-color: $gray-100;
+      z-index:100;
+      margin-top: 0px;
+    }
+    .start-date-input + .dropdown-menu {
+      margin-left:-60px;
+    }
+    .end-date-input + .dropdown-menu {
+      margin-right: -60px;      
+    }             
   }
+    
+  .pin-down {
+    box-shadow: inset 0 2px 5px 0 rgba(0,0,0,.26);
+    background-color: $gray-300;
+  }  
+
+  .popup-control {
+    height:22px;
+    width:22px;
+    display:inline-block;
+    text-align:center;
+    padding-top:1px;
+    cursor:pointer;
+  }
+
+  .inline-vertical-fix {
+    position: relative;
+    top: 4px;
+  }
+    
+  &.ng-invalid .popup-control .mdi-calendar{
+    color: $red-800;
+  }    
+  
+  input {
+    text-align:center;
+    width:200px;
+  }
+  input.ng-invalid {
+    border-bottom: 2px solid $red-800;     
+  }    
+  .in-date-range button {
+    background-color: $green-100;
+  }
+  .hor-m-5{
+    margin-left:5px;
+    margin-right:5px;
+  }  
+}
+
+.error-msg-container {
+  display: none;
+  margin-top: 5px;
+}
+
+.error-msg-container.error-msg-popup-container {
+  position: absolute;
+  width: 490px;
+}
+
+
+.ng-invalid.ng-invalid-empty .error-msg-container.ng-invalid-empty {
+  display: block !important;
+}  
+
+.ng-invalid.ng-invalid-order .error-msg-container.ng-invalid-order {
+  display: block !important;
 }

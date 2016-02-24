@@ -9,7 +9,6 @@ css/main.min.css
 *.suo
 *.idea
 *~
-
 *.log
-
 *.tgz
+dist/

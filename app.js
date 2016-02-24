@@ -1,7 +1,21 @@
-angular.module('styleguideApp', ['ngMaterial', 'ui.tree', 'ui.grid',
-'ui.grid.autoResize', 'ui.grid.exporter', 'ui.grid.selection', 'ui.bootstrap',
-'angularMoment',  'wfm.cardList', 'wfm.timerangepicker', 'wfm.daterangepicker',
-'angular-growl', 'ngAnimate', 'wfm.pagination', "wfm.modal"])
+angular.module('styleguideApp', [
+  'ngMaterial',
+  'ui.tree',
+  'ui.grid',
+  'ui.grid.autoResize',
+  'ui.grid.exporter',
+  'ui.grid.selection',
+  'ui.bootstrap',
+  'ui.bootstrap.tpls',
+  'angularMoment',
+  'wfm.cardList',
+  'wfm.timerangepicker',
+  'wfm.daterangepicker',
+  'angular-growl',
+  'ngAnimate',
+  'wfm.pagination',
+  'wfm.modal'
+])
 .controller('mainCtrl', ['$scope', 'growl', function($scope, growl) {
   /* Dummy data*/
   $scope.demos = [{id: '1'}, {id: '2'}, {id: '3'}, {id: '4'}];
@@ -72,11 +86,23 @@ angular.module('styleguideApp', ['ngMaterial', 'ui.tree', 'ui.grid',
       }
     };
 
+
+
+    /*Code for date range picker*/
+    $scope.dateRange = {
+        startDate: new Date(),
+        endDate: new Date()
+    };
+    $scope.dateRangeTemplateType = "inline";
+    $scope.dateRangeTemplateTypes = ['popup', 'inline'];
+    
+
     /*Code for modal*/
     $scope.modalShown = false;
     $scope.toggleModal = function() {
       $scope.modalShown = !$scope.modalShown;
     };
+
 
     /*code for pagination*/
     $scope.paginationOptions = {pageNumber: 1, totalPages: 7};
@@ -116,4 +142,4 @@ angular.module('styleguideApp', ['ngMaterial', 'ui.tree', 'ui.grid',
         disableCountDown: true,
       });
     };
-  },]);
+  }]);
