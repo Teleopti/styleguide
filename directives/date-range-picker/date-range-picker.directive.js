@@ -2,10 +2,9 @@
 
     'use strict';
 
-    angular.module('wfm.daterangepicker', ['styleguide.templates']).directive('dateRangePicker', ['$filter', '$timeout', dateRangePicker]);
-
+    angular.module('wfm.daterangepicker', ['styleguide.templates']).directive('dateRangePicker', ['$filter', dateRangePicker]);
     
-    function dateRangePicker($filter, $timeout) {
+    function dateRangePicker($filter) {
         return {           
             templateUrl: 'directives/date-range-picker/date-range-picker.tpl.html',
             scope: {
@@ -26,6 +25,7 @@
             var ngModelCtrl = ctrls[0],
                 dateRangeCtrl = ctrls[1];
 
+            scope.dummyMinDate = new Date('1970-01-01');
             scope.displayPopup = function() {
                 return scope.templateType === 'popup';
             };
@@ -53,7 +53,7 @@
                 if (scope.testStopUi) return;
                 updateViewModelFromUi();
                 hidePopup();
-                $timeout(refreshDatepickers, 50);
+                refreshDatepickers();
             });
 
             scope.$watch(function() {
@@ -103,12 +103,7 @@
             
             function refreshDatepickers() {
                 if (!scope.startDate || !scope.endDate) return;
-
-                var alreadyRegistered = false;               
-                var activeSelections = elem[0].querySelectorAll('button.active');
-                angular.forEach(activeSelections, function(selection) {
-                    angular.element(selection).triggerHandler('click');
-                });                                                               
+                scope.dummyMinDate = new Date('1970-01-01');                
             }
                           
             function setRangeClass(date, mode) {
