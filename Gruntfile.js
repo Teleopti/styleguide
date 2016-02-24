@@ -47,10 +47,10 @@
             options: {
                 jshintrc: '.jshintrc' //http://jshint.com/docs/options/
             },
-            all: ['Gruntfile.js', 'directives/**/*.js', 'app.js'],
+            all: ['Gruntfile.js', 'js/**/*.js', 'app.js'],
         },
         jscs: {
-            src: ['Gruntfile.js', 'directives/**/*.js', 'app.js'],
+            src: ['Gruntfile.js', 'js/**/*.js', 'app.js'],
             options: {
                 config: '.jscsrc',
             },
@@ -82,7 +82,6 @@
     grunt.loadNpmTasks('grunt-karma');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-jscs');
-
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-angular-templates');
     

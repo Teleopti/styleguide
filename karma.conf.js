@@ -23,7 +23,7 @@ module.exports = function(config) {
           'dist/templates.js',
           'vendor/teleopti/teleopti.module.js',
           'vendor/teleopti/*.js',
-          'directives/*/*.js'
+          'directives/**/*.js'
         ],
 
 
