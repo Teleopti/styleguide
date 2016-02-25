@@ -41,7 +41,8 @@
             
             ngModelCtrl.$validators.empty = validateByValidDates;
             ngModelCtrl.$validators.order = validateByValidOrder;
-
+            ngModelCtrl.$render = render;
+            
             
             scope.$watchCollection(function() {
                 if (!scope.startDate || !scope.endDate) return [null, null];

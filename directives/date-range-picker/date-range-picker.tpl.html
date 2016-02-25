@@ -1,5 +1,5 @@
 <div ng-show="!displayPopup()">
-  <div class="wfm-datepicker-wrap">
+  <div class="wfm-datepicker-wrap date-range-start-date">
     <div class="sub-header">
       <span>From</span>: <strong>{{ startDate | date: dateFormat }}</strong>
     </div>
@@ -10,7 +10,7 @@
 	    min-date="dummyMinDate"
 	    class="wfm-datepicker"></uib-datepicker>  
   </div>
-  <div class="wfm-datepicker-wrap">
+  <div class="wfm-datepicker-wrap date-range-end-date">
     <div class="sub-header">
       <span>To</span>: <strong>{{ endDate | date: dateFormat }}</strong>
     </div>
@@ -31,7 +31,7 @@
 
 <div ng-show="displayPopup()">
   <label translate class="hor-m-5 inline-vertical-fix">From</label>
-  <div class="inline-datepicker-wrap">
+  <div class="inline-datepicker-wrap date-range-start-date">
     <input class="pointer start-date-input"
 	    type="text"
 	    ng-click="dropDownState.showStartDatePicker = !dropDownState.showStartDatePicker"
@@ -47,7 +47,7 @@
 	    close-on-date-selection="false" />
   </div>
   <label translate class="hor-m-5 inline-vertical-fix">To</label>
-  <div class="inline-datepicker-wrap">
+  <div class="inline-datepicker-wrap date-range-end-date">
     <input class="pointer end-date-input"
 	    type="text"
 	    ng-click="dropDownState.showEndDatePicker = !dropDownState.showEndDatePicker"
