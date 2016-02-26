@@ -29,7 +29,7 @@
 		        scope: {
 		            workingHours: '='
 		        },
-		        templateUrl: 'js/global/workinghourspicker/working-hours-picker.tpl.html',
+		        templateUrl: 'directives/workinghourspicker/working-hours-picker.tpl.html',
 		        link: postLink
 
 		    };
@@ -58,7 +58,7 @@
 		            scope.weekDays = weekDays;
 		        });
 
-		        function toggleAllChecks(index) {			    
+		        function toggleAllChecks(index) {
 
 			        var isToggleOff = scope.workingHours[index].WeekDaySelections.every(function(x) { return x.Checked; });
 
@@ -71,14 +71,14 @@
 							d.Checked = true;
 							enforceRadioBehavior(index, d.WeekDay);
 						});
-					}		        	
+					}
 		        }
 
 		        function enforceRadioBehavior(refIndex, weekDay) {
 		            clearConflictWorkingHourSelection(scope.workingHours, refIndex, weekDay);
 		        }
 
-		        function addEmptyWorkingPeriod(startTime, endTime) {			      
+		        function addEmptyWorkingPeriod(startTime, endTime) {
 		        	scope.workingHours.push(workingHoursPickerService.createEmptyWorkingPeriod(angular.copy(startTime), angular.copy(endTime)));
 		        }
 
@@ -100,10 +100,10 @@
 				        endTimeMoment = moment(endTime);
 			        if (startTimeMoment.isSame(endTimeMoment, 'day')) {
 				        return $filter('date')(startTime, $locale.DATETIME_FORMATS.shortTime) + ' - ' +
-					        $filter('date')(endTime, $locale.DATETIME_FORMATS.shortTime);				       
+					        $filter('date')(endTime, $locale.DATETIME_FORMATS.shortTime);
 			        } else {
 			        	return $filter('date')(startTime, $locale.DATETIME_FORMATS.shortTime) + ' - ' +
-						   $filter('date')(endTime, $locale.DATETIME_FORMATS.shortTime) + ' +1';			        	
+						   $filter('date')(endTime, $locale.DATETIME_FORMATS.shortTime) + ' +1';
 			        }
 				}
 		    }
