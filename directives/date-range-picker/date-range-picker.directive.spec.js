@@ -2,13 +2,21 @@ describe('date-range-picker directive', function() {
     var elementCompile,
         scope;
 
-    beforeEach(module('wfm.daterangepicker'));
+    beforeEach(
+      function(){
+      module('wfm.directives.templates');
+      module('wfm.daterangepicker');
+      }
+    );
 
     beforeEach(inject(function($compile, $rootScope) {
         scope = $rootScope.$new();
-        scope.startDate = new Date('2015-09-01');
-        scope.endDate = new Date('2015-09-05');
-        elementCompile = $compile('<date-range-picker start-date="startDate" end-date="endDate"></date-range-picker>');
+
+        scope.dateRange = {
+            startDate: new Date('2015-09-01'),
+            endDate: new Date('2015-09-05')
+        };
+        elementCompile = $compile('<date-range-picker ng-model="dateRange" test-stop-ui="true"></date-range-picker>');
     }));
 
     it('Directive compilation should work', function() {
@@ -19,33 +27,28 @@ describe('date-range-picker directive', function() {
 
     it('Should show datepickers for start-date and end-date', function() {
         var element = elementCompile(scope);
-        var datepickers = element.find('datepicker');
+        scope.$digest();
+        var datepickers = element.find('uib-datepicker');
         expect(datepickers.length).toEqual(2);
     });
 
     it('Should show error when start-date is greater than end-date', function() {
-        scope.startDate = new Date('2015-09-30');
-        scope.endDate = new Date('2015-09-01');
+        scope.dateRange.startDate = new Date('2015-09-30');
+        scope.dateRange.endDate = new Date('2015-09-01');
 
         var element = elementCompile(scope);
         scope.$apply();
 
-        var divs = element.children(),
-            validityDiv = angular.element(divs[0]);
-
-        expect(validityDiv.hasClass('ng-invalid-order')).toBeTruthy();
+        expect(element.hasClass('ng-invalid-order')).toBeTruthy();
     });
 
     it('Should show error when start-date or end-date is not set', function() {
-        scope.startDate = null;
+        scope.dateRange.startDate = null;
 
         var element = elementCompile(scope);
         scope.$apply();
 
-        var divs = element.children(),
-            validityDiv = angular.element(divs[0]);
-
-        expect(validityDiv.hasClass('ng-invalid-empty')).toBeTruthy();
+        expect(element.hasClass('ng-invalid-empty')).toBeTruthy();
 
     });
 

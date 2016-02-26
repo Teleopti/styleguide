@@ -19,9 +19,11 @@ module.exports = function(config) {
           'node_modules/angular/angular.min.js',
           'node_modules/angular-moment/angular-moment.min.js',
           'node_modules/angular-mocks/angular-mocks.js',
+          'node_modules/angular-ui-bootstrap/ui-bootstrap.min.js',
+          'dist/templates.js',
           'vendor/teleopti/teleopti.module.js',
           'vendor/teleopti/*.js',
-          'js/*/*.js'
+          'directives/**/*.js'
         ],
 
 
@@ -66,6 +68,6 @@ module.exports = function(config) {
 
         // Continuous Integration mode
         // if true, Karma captures browsers, runs the tests and exits
-        singleRun: false
+        singleRun: true
     })
 }
