@@ -1,8 +1,6 @@
 ﻿(function() {
 	'use strict';
 
-	angular.module('wfm.workinghourspicker', ['wfm.timerangepicker']);
-
 	angular.module('wfm.workinghourspicker').service('workingHoursService', ['$locale',
 		function ($locale) {
 			this.createEmptyWorkingPeriod = function(startTime, endTime) {

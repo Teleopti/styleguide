@@ -1,4 +1,5 @@
 angular.module('styleguideApp', [
+  'pascalprecht.translate',
   'ngMaterial',
   'ui.tree',
   'ui.grid',
@@ -11,12 +12,28 @@ angular.module('styleguideApp', [
   'wfm.cardList',
   'wfm.timerangepicker',
   'wfm.daterangepicker',
+  'wfm.workinghourspicker',
   'angular-growl',
   'ngAnimate',
   'wfm.pagination',
   'wfm.modal'
-])
-.controller('mainCtrl', ['$scope', 'growl', function($scope, growl) {
+]).config(['$translateProvider', function($translateProvider) {
+
+  $translateProvider
+  .translations('en-us', {
+    'Sun': 'Sun',
+    'Mon': 'Mon',
+    'Tue': 'Tue',
+    'Wed': 'Wed',
+    'Thu': 'Thu',
+    'Fri': 'Fri',
+    'Sat': 'Sat'
+  });
+  $translateProvider.preferredLanguage('en-us');
+
+}])
+.controller('mainCtrl', ['$scope', 'growl', '$translate', function($scope, growl, $translate) {
+  $translate.use('en-us');
   /* Dummy data*/
   $scope.demos = [{id: '1'}, {id: '2'}, {id: '3'}, {id: '4'}];
   $scope.treeDemos =   [
@@ -142,4 +159,7 @@ angular.module('styleguideApp', [
         disableCountDown: true,
       });
     };
+
+    /*code for working hours picker*/
+    $scope.workingHours = [];
   }]);
