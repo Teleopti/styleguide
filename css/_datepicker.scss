@@ -39,7 +39,7 @@
 	margin: $full-padding;
 	display:inline-block;
 	background-color:$white;
-	min-height:290px;
+	min-height:270px;
 }
 
 .glyphicon{
@@ -67,6 +67,8 @@
 }
 
 .wfm-datepicker{
+	padding:5px;
+
 	table th {
 		border-color: transparent;
 	}
