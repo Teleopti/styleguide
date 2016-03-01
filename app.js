@@ -20,14 +20,20 @@ angular.module('styleguideApp', [
 ]).config(['$translateProvider', function($translateProvider) {
 
   $translateProvider
-  .translations('en', {
+  .translations('en-us', {
     'Sun': 'Sun',
-    'Mon': 'Mon'
+    'Mon': 'Mon',
+    'Tue': 'Tue',
+    'Wed': 'Wed',
+    'Thu': 'Thu',
+    'Fri': 'Fri',
+    'Sat': 'Sat'
+  });
+  $translateProvider.preferredLanguage('en-us');
 
-  })
-  .preferredLanguage('en');
 }])
-.controller('mainCtrl', ['$scope', 'growl', function($scope, growl) {
+.controller('mainCtrl', ['$scope', 'growl', '$translate', function($scope, growl, $translate) {
+  $translate.use('en-us');
   /* Dummy data*/
   $scope.demos = [{id: '1'}, {id: '2'}, {id: '3'}, {id: '4'}];
   $scope.treeDemos =   [
