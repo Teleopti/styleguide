@@ -105,28 +105,35 @@
 //		</li>
 //	</ul>
 //
-//Gray
+//Transparent Gray
 //	<ul class="swatch-list">
 //		<li class="spacer material-depth-1 white-swatch">
-//          <p>$white</p>
+//          <p>$white #ffffff</p>
 //		</li>
 //		<li class="spacer material-depth-1 gray-012-swatch">
-//          <p>$gray012</p>
+//          <p>$gray012 rgba(0,0,0,0.06)</p>
 //		</li>
+//		<li class="spacer material-depth-1 gray-026-swatch">
+//         <p>$gray026 rgba(0,0,0,0.26)</p>
+//		</li>
+//		<li class="spacer material-depth-1 gray-054-swatch">
+//          <p class="white-color-text">$gray054 rgba(0,0,0,0.54)</p>
+//		</li>
+//		<li class="spacer material-depth-1 gray-087-swatch">
+//          <p class="white-color-text">$gray087 rgba(0,0,0,0.87)</p>
+//		</li>
+//	</ul>
+//
+//Solid gray
+//	<ul class="swatch-list">
 //		<li class="spacer material-depth-1 gray-300-swatch">
 //          <p>$gray-300 #E0E0E0</p>
 //		</li>
-//		<li class="spacer material-depth-1 gray-026-swatch">
-//         <p>$gray026</p>
-//		</li>
-//		<li class="spacer material-depth-1 gray-054-swatch">
-//          <p class="white-color-text">$gray054</p>
-//		</li>
-//		<li class="spacer material-depth-1 gray-087-swatch">
-//          <p class="white-color-text">$gray087</p>
+//		<li class="spacer material-depth-1 gray-500-swatch">
+//          <p  class="white-color-text">$gray-500 #9E9E9E</p>
 //		</li>
 //		<li class="spacer material-depth-1 gray-100-swatch">
-//          <p class="white-color-text">$gray100</p>
+//          <p class="white-color-text">$gray100 rgba(0,0,0,1)</p>
 //		</li>
 //	</ul>
 //

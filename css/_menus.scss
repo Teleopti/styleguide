@@ -5,6 +5,7 @@
 //Additionally a menu can not trigger a child menu from within itself.
 //
 //Markup:
+//  <h3>Button menu trigger:</h3>
 //  <div tabindex=0 class="context-menu wfm-btn wfm-btn-default">
 //  	Place me on the left
 //  	<span class="context-menu-right">
@@ -35,7 +36,7 @@
 //  		</ul>
 //  	</span>
 //  </div>
-//  <br/>
+//  <h3>Icon menu trigger:</h3>
 //  <div tabindex=0 class="context-menu card-context">
 //  	<i class="mdi mdi-dots-vertical"></i>
 //  	<span class="context-menu-right">
@@ -63,6 +64,26 @@
 //  			<li><i class="mdi mdi-account"></i>Sign out</li>
 //  			<li><i class="mdi mdi-plus"></i>Add a new agent</li>
 //  			<li><i class="mdi mdi-alert"></i>Drop agents table</li>
+//  		</ul>
+//  	</span>
+//  </div>
+//  <h3>Menu with keyboard shortcuts:</h3>
+//  <div tabindex=0 class="context-menu card-context">
+//  	<i class="mdi mdi-dots-vertical"></i>
+//  	<span class="context-menu-right">
+//  		<ul class="wfm-list">
+//  			<li>
+//          <span class="pull-left">Select all</span>
+//          <span class="pull-right">Alt+A</span>
+//        </li>
+//  			<li>
+//          <span class="pull-left">Duplicate</span>
+//          <span class="pull-right">Ctrl+C</span>
+//        </li>
+//  			<li>
+//          <span class="pull-left">Navigate</span>
+//          <span class="pull-right">Shift+Down Arrow</span>
+//        </li>
 //  		</ul>
 //  	</span>
 //  </div>

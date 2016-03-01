@@ -55,9 +55,11 @@
 //There are different kinds of containers that all have different applications, what they do however have in common is the ability to house flex grids and/or elements.
 //When building a new view, start by picking one or several containers and a flex layout that fits with your views content.
 //
-//Note: Never nest a container within another container.
+//  Note: Con-flex elements are marked by a dashed outline in the styleguide for structure and layout clarification, these should <b>not</b> be visible in the project.
 //
-// Note: In all modals and panels the footer links should be buttons, not  &lt;a/&gt; tags.
+//  Note: Never nest a container within another container.
+//
+//  Note: In all modals and panels the footer links should be buttons, not  &lt;a/&gt; tags.
 //
 //Styleguide 4
 //
@@ -67,32 +69,30 @@
 //
 //The layout consists of the flex grid. Since the grid is adapting to the number of items inside it, be careful not to use too many in one row. The recomended max number of con-flex items in one row is 4, if more are needed, concider using a tabbed container or spreading them out over sveral rows.
 //
-//Note: the ´demo-outline´ class is for styleguide demo purpose only and should be removed before use of the layout.
-//
 //Markup:
-// <div class="con-row demo-outline">
+// <div class="con-row">
 //    <div class="con-flex">100%</div>
 // </div>
-// <div class="con-row demo-outline">
+// <div class="con-row">
 //    <div class="con-flex">50%</div>
 //    <div class="con-flex">50%</div>
 // </div>
-// <div class="con-row demo-outline">
+// <div class="con-row">
 //    <div class="con-flex">33%</div>
 //    <div class="con-flex">33%</div>
 //    <div class="con-flex">33%</div>
 // </div>
-// <div class="con-row demo-outline">
+// <div class="con-row">
 //    <div class="con-flex">25%</div>
 //    <div class="con-flex">25%</div>
 //    <div class="con-flex">25%</div>
 //    <div class="con-flex">25%</div>
 // </div>
-// <div class="con-row demo-outline">
+// <div class="con-row">
 //    <div class="con-flex split-3-1">75%</div>
 //    <div class="con-flex">25%</div>
 // </div>
-//  <div class="con-row demo-outline">
+//  <div class="con-row">
 //    <div class="con-flex split-1-2">50%</div>
 //    <div class="con-flex">25%</div>
 //    <div class="con-flex">25%</div>
@@ -107,8 +107,6 @@
 //The panel is the main container and the most versatile. It can house most elements and can be configured in a number of layouts.
 //If needed it can have a context menu or a footer for more actions. Since a panel is a raised piece of material, avoid using other raised elements on top of it, unless they are floating (like a action button or context menu)
 //The panel can have a footer with a number of actions, try to keep this number as small as possible. The most important action should be to the far right and if it is the primary action it should have a wfm-btn-invis-primary class.
-//
-//Note: the ´demo-outline´ class is for styleguide demo purpose only.
 //
 //Markup:
 //  <div class="panel material-depth-1">
@@ -127,7 +125,7 @@
 //       </div>
 //     </div>
 //   </div>
-//  <div class="con-row demo-outline">
+//  <div class="con-row">
 //     <div class="con-flex">Content</div>
 //  </div>
 //   <div class="con-footer">
@@ -143,8 +141,6 @@
 //
 //When using tabbed panels, one important thing to remember is to order the tabs in a way that makes sense to the workflow.
 //Also, avoid several tab panels close together to avoid confusion and maintain focus. For the same reason, modals can not be launched from within tabs.
-//
-//Note: the ´demo-outline´ class is for styleguide demo purpose only.
 //
 //Markup:
 //  <div class="panel material-depth-1">
@@ -165,7 +161,7 @@
 //        <md-tabs md-dynamic-height md-border-bottom >
 //          <md-tab label="Tab title1">
 //            <md-content class="md-padding">
-//              <div class="con-row demo-outline">
+//              <div class="con-row">
 //                <div class="con-flex">Content</div>
 //              </div>
 //              <div class="con-footer">
@@ -176,7 +172,7 @@
 //          </md-tab>
 //          <md-tab label="Tab title2">
 //            <md-content class="md-padding">
-//              <div class="con-row demo-outline">
+//              <div class="con-row">
 //            <div class="con-flex">Content</div>
 //          </div>
 //          <div class="con-footer">
@@ -187,7 +183,7 @@
 //      </md-tab>
 //      <md-tab label="Tab title3">
 //        <md-content class="md-padding">
-//          <div class="con-row demo-outline">
+//          <div class="con-row">
 //            <div class="con-flex">Content</div>
 //          </div>
 //          <div class="con-footer">
@@ -198,10 +194,10 @@
 //      </md-tab>
 //      <md-tab label="Tab title4">
 //        <md-content class="md-padding">
-//          <div class="con-row demo-outline">
+//          <div class="con-row">
 //            <div class="con-flex">Content</div>
 //          </div>
-//          <div class="con-row demo-outline">
+//          <div class="con-row">
 //            <div class="con-flex">Things</div>
 //            <div class="con-flex">Things</div>
 //            <div class="con-flex">Things</div>
@@ -225,7 +221,6 @@
 //
 //In case you want to guide the user through a series of steps you can use a wizard panel.
 //
-//Note: the ´demo-outline´ class is for styleguide demo purpose only.
 //
 //<div class="jsprewrap">
 //	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
@@ -259,7 +254,7 @@
 //    <md-tabs md-dynamic-height md-border-bottom md-selected="selectedIndex">
 //      <md-tab label="Tab title1">
 //        <md-content class="md-padding">
-//            <div class="con-row demo-outline">
+//            <div class="con-row">
 //              <div class="con-flex">Content</div>
 //            </div>
 //          <div class="con-footer">
@@ -269,7 +264,7 @@
 //      </md-tab>
 //      <md-tab label="Tab title2">
 //        <md-content class="md-padding">
-//            <div class="con-row demo-outline">
+//            <div class="con-row">
 //              <div class="con-flex">Content</div>
 //            </div>
 //          <div class="con-footer">
@@ -279,7 +274,7 @@
 //      </md-tab>
 //      <md-tab label="Tab title3">
 //        <md-content class="md-padding">
-//            <div class="con-row demo-outline">
+//            <div class="con-row">
 //              <div class="con-flex">Content</div>
 //            </div>
 //          <div class="con-footer">
@@ -289,7 +284,7 @@
 //      </md-tab>
 //      <md-tab label="Tab title4">
 //        <md-content class="md-padding">
-//            <div class="con-row demo-outline">
+//            <div class="con-row">
 //              <div class="con-flex">Content</div>
 //            </div>
 //          <div class="con-footer">
@@ -362,14 +357,14 @@
   background: white;
   }
 
-  .demo-outline > .con-flex{
-    outline:1px dashed $gray012;
-  }
-
 .jsprewrap{
   width: 98%;
   margin: 0 auto;
   cursor:pointer;
+}
+
+.con-flex,.form-input-wrap{
+  border:1px dashed $gray026;
 }
 
 .ksscopy{
@@ -524,6 +519,9 @@
 	.gray-100-swatch {
 			background:$gray100!important;
 	}
+  .gray-500-swatch {
+      background:$gray-500!important;
+  }
 	.white-swatch {
 			background:$white!important;
 	}
