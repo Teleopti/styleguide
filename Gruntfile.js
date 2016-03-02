@@ -47,32 +47,32 @@
             options: {
                 jshintrc: '.jshintrc' //http://jshint.com/docs/options/
             },
-            all: ['Gruntfile.js', 'js/**/*.js', 'app.js'],
+            all: ['Gruntfile.js', 'directives/**/*.js', 'app.js'],
         },
         jscs: {
-            src: ['Gruntfile.js', 'js/**/*.js', 'app.js'],
+            src: ['Gruntfile.js', 'directives/**/*.js', 'app.js'],
             options: {
                 config: '.jscsrc',
             },
-        },               
-	ngtemplates: {
-	    'styleguide.templates': {
-		src: ['directives/**/*.tpl.html'],
-		dest: 'dist/templates.js',
-		options: {
-		    standalone: true
-		}
-	    }
-	},
-	sasslint: {
-            options: {
-                configFile: 'config/.sass-lint.yml',
-            },
-            target: ['location/*.scss']
         },
+        ngtemplates: {
+            'styleguide.templates': {
+                src: ['directives/**/*.tpl.html'],
+                dest: 'dist/templates.js',
+                options: {
+                    standalone: true
+                }
+            }
+        },
+        sasslint: {
+                  options: {
+                      configFile: 'config/.sass-lint.yml',
+                  },
+                  target: ['location/*.scss']
+              },
         uglify: {
-            'dist/wfmdirectives.min.js': ['directives/**/*.js', '!directives/**/*.spec.js']
-        }
+                  'dist/wfmdirectives.min.js': ['directives/**/*.js', '!directives/**/*.spec.js']
+              }
     });
 
     grunt.loadNpmTasks('grunt-sass');
@@ -84,11 +84,11 @@
     grunt.loadNpmTasks('grunt-jscs');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-angular-templates');
-    
+
     // Default task(s).
     grunt.registerTask('default', ['dist', 'watch:styleguide']);
     grunt.registerTask('test', ['karma:styleguide']);
     grunt.registerTask('dist', ['ngtemplates', 'sass:styleguide', 'sass:dist', 'shell', 'cssmin', 'uglify']); // this task is kind of package
 
-    grunt.registerTask('check', ['jshint', 'jscs']);
+    grunt.registerTask('checkCodingStyle', ['jshint', 'jscs']);
 };
