@@ -56,6 +56,12 @@
 
     "globals": {
         "angular": false,
-        "$": false
+        "$": false,
+        "moment": false,
+        "describe": false,
+        "it": false,
+        "beforeEach": false,
+        "inject": false,
+        "expect": false
     }
 }

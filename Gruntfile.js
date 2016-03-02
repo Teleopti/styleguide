@@ -50,7 +50,7 @@
             all: ['Gruntfile.js', 'directives/**/*.js', 'app.js'],
         },
         jscs: {
-            src: ['Gruntfile.js', 'directives/**/*.js', 'app.js'],
+            src: ['Gruntfile.js', 'directives/**/*.js', 'app.js', '!directives/wfm-directives-templates.js'],
             options: {
                 config: '.jscsrc',
             },
@@ -88,7 +88,7 @@
     // Default task(s).
     grunt.registerTask('default', ['dist', 'watch:styleguide']);
     grunt.registerTask('test', ['karma:styleguide']);
-    grunt.registerTask('dist', ['ngtemplates', 'sass:styleguide', 'sass:dist', 'shell', 'cssmin', 'uglify']); // this task is kind of package
+    grunt.registerTask('dist', ['jscs', 'ngtemplates', 'sass:styleguide', 'sass:dist', 'shell', 'cssmin', 'uglify']); // this task is kind of package
 
     grunt.registerTask('checkCodingStyle', ['jshint', 'jscs']);
 };

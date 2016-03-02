@@ -3,9 +3,9 @@
     'use strict';
 
     angular.module('wfm.daterangepicker', ['styleguide.templates']).directive('dateRangePicker', ['$filter', dateRangePicker]);
-    
+
     function dateRangePicker($filter) {
-        return {           
+        return {
             templateUrl: 'directives/date-range-picker/date-range-picker.tpl.html',
             scope: {
                 'templateType': '=?',
@@ -17,8 +17,9 @@
         };
 
         function dateRangePickerCtrl($element) {
+            /* jshint validthis: true */
             var ctrl = this;
-            $element.addClass('wfm-date-range-picker-wrap');           
+            $element.addClass('wfm-date-range-picker-wrap');
         }
 
         function postlink(scope, elem, attrs, ctrls) {
@@ -29,46 +30,46 @@
             scope.displayPopup = function() {
                 return scope.templateType === 'popup';
             };
-            
+
             popupSetup(scope);
-                      
+
             scope.dateFormat = 'shortDate';
-            attrs.$observe('dateFormat', function(v) {                
+            attrs.$observe('dateFormat', function(v) {
                 scope.dateFormat = v;
             });
 
             scope.setRangeClass = setRangeClass;
-            
+
             ngModelCtrl.$validators.empty = validateByValidDates;
             ngModelCtrl.$validators.order = validateByValidOrder;
             ngModelCtrl.$render = render;
-            
-            
+
             scope.$watchCollection(function() {
-                if (!scope.startDate || !scope.endDate) return [null, null];
+                if (!scope.startDate || !scope.endDate)  {
+                    return [null, null];
+                }
                 return [
                   $filter('date')(scope.startDate, 'yyyy-MM-dd'),
                   $filter('date')(scope.endDate, 'yyyy-MM-dd')
                 ];
             }, function(v) {
-                if (scope.testStopUi) return;
+                if (scope.testStopUi) {return;}
                 updateViewModelFromUi();
                 hidePopup();
                 refreshDatepickers();
             });
 
             scope.$watch(function() {
-                if (scope.dropDownState) {                    
-		    return scope.dropDownState.showStartDatePicker
-                        && scope.dropDownState.showEndDatePicker;
-		}
+                if (scope.dropDownState) {
+                    return scope.dropDownState.showStartDatePicker && scope.dropDownState.showEndDatePicker;
+                }
                 return null;
             }, function(v) {
-                if (v !== null) scope.dropDownState.showAllDatePickers = v; 
+                if (v !== null) {scope.dropDownState.showAllDatePickers = v;}
             });
-                       
+
             function validateByValidDates(modelValue, viewValue) {
-                
+
                 if (modelValue && angular.isDate(modelValue.startDate) && angular.isDate(modelValue.endDate)) {
                     return true;
                 }
@@ -76,8 +77,9 @@
             }
 
             function validateByValidOrder(modelValue, viewValue) {
-                if (validateByValidDates(modelValue, viewValue)) 
-                  return modelValue.startDate <= modelValue.endDate;
+                if (validateByValidDates(modelValue, viewValue)) {
+                    return modelValue.startDate <= modelValue.endDate;
+                }
                 return true;
             }
 
@@ -90,49 +92,49 @@
                 ngModelCtrl.$setViewValue({
                     startDate: scope.startDate,
                     endDate: scope.endDate
-                });                
+                });
             }
 
             function hidePopup() {
                 if (scope.dropDownState) {
-		    if (!scope.dropDownState.showAllDatePickers) {
-			scope.dropDownState.showStartDatePicker = false;
-			scope.dropDownState.showEndDatePicker = false;
-		    }
-		}    
+                    if (!scope.dropDownState.showAllDatePickers) {
+                        scope.dropDownState.showStartDatePicker = false;
+                        scope.dropDownState.showEndDatePicker = false;
+                    }
+                }
             }
-            
+
             function refreshDatepickers() {
-                if (!scope.startDate || !scope.endDate) return;
-                scope.dummyMinDate = new Date('1970-01-01');                
+                if (!scope.startDate || !scope.endDate) {return;}
+                scope.dummyMinDate = new Date('1970-01-01');
             }
-                          
+
             function setRangeClass(date, mode) {
-                if (!scope.startDate || !scope.endDate || moment(scope.startDate).isAfter(scope.endDate, 'day'))
-                  return '';
-                
+                if (!scope.startDate || !scope.endDate || moment(scope.startDate).isAfter(scope.endDate, 'day')) {
+                    return '';
+                }
                 if (mode === 'day') {
-                    if (! moment(date).isBefore(scope.startDate, 'day') && ! moment(date).isAfter(scope.endDate, 'day'))
-                      return 'in-date-range';
+                    if (!moment(date).isBefore(scope.startDate, 'day') && !moment(date).isAfter(scope.endDate, 'day')) {
+                        return 'in-date-range';
+                    }
                 }
                 return '';
-            }                      
+            }
         }
 
-
         function popupSetup(scope) {
-                      
-            scope.dropDownState = {
-		showAllDatePickers : false,
-		showStartDatePicker: false,
-		showEndDatePicker: false
-	    };
 
-	    scope.onClickShowAllDates = function () {
+            scope.dropDownState = {
+                showAllDatePickers : false,
+                showStartDatePicker: false,
+                showEndDatePicker: false
+            };
+
+            scope.onClickShowAllDates = function () {
                 if (!scope.dropDownState.showAllDatePickers) {
-                     scope.dropDownState.showStartDatePicker = scope.dropDownState.showEndDatePicker = scope.dropDownState.showAllDatePickers = true;
+                    scope.dropDownState.showStartDatePicker = scope.dropDownState.showEndDatePicker = scope.dropDownState.showAllDatePickers = true;
                 }
-	    }
+            };
         }
     }
 

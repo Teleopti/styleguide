@@ -3,9 +3,9 @@ describe('date-range-picker directive', function() {
         scope;
 
     beforeEach(
-      function(){
-      module('wfm.directives.templates');
-      module('wfm.daterangepicker');
+      function() {
+          module('wfm.directives.templates');
+          module('wfm.daterangepicker');
       }
     );
 

@@ -1,9 +1,9 @@
 (function () {
-  'use strict';
+    'use strict';
     angular.module('wfm.cardList', []);
 
     function wfmCardDirectiveController() {
-      /* jshint validthis: true */
+        /* jshint validthis: true */
         var vm = this;
 
         vm.isSelected = function () {

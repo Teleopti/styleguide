@@ -19,27 +19,27 @@ angular.module('styleguideApp', [
   'wfm.modal'
 ]).config(['$translateProvider', function($translateProvider) {
 
-  $translateProvider
+    $translateProvider
   .translations('en-us', {
-    'Sun': 'Sun',
-    'Mon': 'Mon',
-    'Tue': 'Tue',
-    'Wed': 'Wed',
-    'Thu': 'Thu',
-    'Fri': 'Fri',
-    'Sat': 'Sat'
+      'Sun': 'Sun',
+      'Mon': 'Mon',
+      'Tue': 'Tue',
+      'Wed': 'Wed',
+      'Thu': 'Thu',
+      'Fri': 'Fri',
+      'Sat': 'Sat'
   });
-  $translateProvider.preferredLanguage('en-us');
+    $translateProvider.preferredLanguage('en-us');
 
 }])
 .controller('mainCtrl', ['$scope', 'growl', '$translate', function($scope, growl, $translate) {
-  $translate.use('en-us');
-  /* Dummy data*/
-  $scope.demos = [{id: '1'}, {id: '2'}, {id: '3'}, {id: '4'}];
-  $scope.treeDemos =   [
-    {categories: [{name: 'item 1'}, {name: 'item 2'}, {name: 'item 3'}, {name: 'item 2'}],
-    name: 'First Group',},
-    {categories: [{name: 'item 1'}, {name: 'item 3'}], name: 'Second Group'}, {categories: [], name: 'Third Group'}];
+    $translate.use('en-us');
+    /* Dummy data*/
+    $scope.demos = [{id: '1'}, {id: '2'}, {id: '3'}, {id: '4'}];
+    $scope.treeDemos =   [
+      {categories: [{name: 'item 1'}, {name: 'item 2'}, {name: 'item 3'}, {name: 'item 2'}],
+      name: 'First Group',},
+      {categories: [{name: 'item 1'}, {name: 'item 3'}], name: 'Second Group'}, {categories: [], name: 'Third Group'}];
 
     /* Code for Grid */
     var data = [];
@@ -158,4 +158,4 @@ angular.module('styleguideApp', [
 
     /*code for working hours picker*/
     $scope.workingHours = [];
-  }]);
+}]);
