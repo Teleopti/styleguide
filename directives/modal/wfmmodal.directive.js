@@ -16,12 +16,15 @@
                 if (typeof keyOrHash === 'object') {
                     _results = [];
                     for (k in keyOrHash) {
-                        v = keyOrHash[k];
-                        _results.push(this.options[k] = v);
+                        if (keyOrHash.hasOwnProperty(k)) {
+                            v = keyOrHash[k];
+                            _results.push(this.options[k] = v);
+                        }
                     }
                     return _results;
                 } else {
-                    return this.options[keyOrHash] = value;
+                    this.options[keyOrHash] = value;
+                    return this.options[keyOrHash];
                 }
             }
         };
@@ -42,10 +45,12 @@
             link: function(scope, element, attrs) {
                 var setupCloseButton, setupStyle;
                 setupCloseButton = function() {
-                    return scope.closeButtonHtml = $sce.trustAsHtml(ngModalDefaults.closeButtonHtml);
+                    scope.closeButtonHtml = $sce.trustAsHtml(ngModalDefaults.closeButtonHtml);
+                    return scope.closeButtonHtml;
                 };
                 scope.hideModal = function() {
-                    return scope.show = false;
+                    scope.show = false;
+                    return scope.show;
                 };
                 scope.$watch('show', function(newVal, oldVal) {
 
