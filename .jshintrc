@@ -60,6 +60,8 @@
         "moment": false,
         "describe": false,
         "it": false,
+        "fit": false,
+        "xit": false,
         "beforeEach": false,
         "inject": false,
         "expect": false

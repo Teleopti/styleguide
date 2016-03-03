@@ -40,8 +40,12 @@
         },
         karma: {
             styleguide: {
-                configFile: 'karma.conf.js',
+                configFile: 'karma.conf.js'
             },
+            continuous: {
+                configFile: 'karma.conf.js',
+                singleRun: false
+            }
         },
         jshint: {
             options: {
