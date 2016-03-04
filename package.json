@@ -39,10 +39,10 @@
     "karma-chrome-launcher": "0.2.0",
     "karma-cli": "0.1.0",
     "karma-jasmine": "0.3.6",
-    "karma-phantomjs-launcher": "0.2.1",
+    "karma-phantomjs-launcher": "1.0.0",
     "kss": "",
     "grunt-angular-templates": "0.5.7",
-    "phantomjs": "1.9.18"
+    "phantomjs2": "2.2.0"
   },
   "homepage": "http://teleopti.github.io/styleguide/styleguide"
 }
