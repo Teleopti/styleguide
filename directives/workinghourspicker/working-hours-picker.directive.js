@@ -1,4 +1,4 @@
-﻿(function() {
+(function() {
     'use strict';
 
     angular.module('wfm.workinghourspicker').service('workingHoursService', ['$locale',
@@ -86,12 +86,12 @@
 
         function clearConflictWorkingHourSelection(workingHours, refIndex, weekDay) {
             angular.forEach(workingHours, function (workingHour, i) {
-                if (i == refIndex) {return;}
+                if (i === refIndex) {return;}
                 angular.forEach(workingHour.WeekDaySelections, function (d) {
-                    if (weekDay == d.WeekDay) { d.Checked = false;}
+                    if (weekDay === d.WeekDay) { d.Checked = false;}
                 });
             });
-        };
+        }
 
         function getTimerangeDisplay(startTime, endTime) {
             var startTimeMoment = moment(startTime),

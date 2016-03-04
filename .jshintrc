@@ -64,6 +64,7 @@
         "xit": false,
         "beforeEach": false,
         "inject": false,
-        "expect": false
+        "expect": false,
+        "c3": false
     }
 }
