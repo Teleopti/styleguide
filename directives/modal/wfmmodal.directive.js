@@ -47,14 +47,11 @@
                 var setupCloseButton, setupStyle;
                 setupCloseButton = function() {
                     scope.closeButtonHtml = $sce.trustAsHtml(ngModalDefaults.closeButtonHtml);
-                    return scope.closeButtonHtml;
                 };
                 scope.hideModal = function() {
                     scope.show = false;
-                    return scope.show;
                 };
                 scope.$watch('show', function(newVal, oldVal) {
-
                     if ((!newVal && oldVal) && (scope.onClose != null)) {
                         return scope.onClose();
                     }
