@@ -1,0 +1,16 @@
+// Numeric value
+//
+//A directive for making an input[text] behave like an input[number].
+//Locale-aware number strings (e.g. 1.234,01 in Swedish) entered directly into the input field are accepted as text and parsed manually with the correct ng-locale (using the correct group separator and decimal separator). 
+//The directive accepts the "float-number" tag attribute. Without it the input will only accept integer values.
+//
+//Markup:
+//  <form name="form">
+//      <input type="text" ng-model="form.example" name="Example" placeholder="0 ~ 1000000" numeric-value min="0" max="1000000"/>
+//      <div ng-cloak class="animate-input-message" ng-show ="form.Example.$touched">
+//          <div class="form-input-message" ng-class="{formInvalidInput:form.Example.$error.number}">Invalid number</div>
+//      </div>
+//  </form>
+//
+//Styleguide 2.8
+//
