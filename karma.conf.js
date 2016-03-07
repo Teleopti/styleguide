@@ -21,8 +21,6 @@ module.exports = function(config) {
           'node_modules/angular-mocks/angular-mocks.js',
           'node_modules/angular-ui-bootstrap/ui-bootstrap.min.js',
           'dist/templates.js',
-          'vendor/teleopti/teleopti.module.js',
-          'vendor/teleopti/*.js',
           'directives/**/*.js'
         ],
 
