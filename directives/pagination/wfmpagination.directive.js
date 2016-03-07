@@ -76,8 +76,8 @@
                     leftBoundary = end - displayPageCount + 1;
                     rightBoundary = end;
                 } else {
-                    leftBoundary = index - Math.floor(displayPageCount / 2) > 1 ? index - Math.floor(displayPageCount / 2) : 1;
-                    rightBoundary = index + Math.floor(displayPageCount / 2) > end ? end : index + Math.floor(displayPageCount / 2);
+                    leftBoundary = getLeftBoundary(index, displayPageCount);
+                    rightBoundary = getRightBoundary(index, displayPageCount, end);
                 }
             }
 
@@ -87,7 +87,15 @@
 
             return ret;
         };
-    }
+
+        function getLeftBoundary(index, displayPageCount) {
+            return index - Math.floor(displayPageCount / 2) > 1 ? index - Math.floor(displayPageCount / 2) : 1;
+        }
+
+        function getRightBoundary(index, displayPageCount, end) {
+            return index + Math.floor(displayPageCount / 2) > end ? end : index + Math.floor(displayPageCount / 2);
+        }
+    };
     var directive = function () {
         return {
             controller: 'WfmPaginationCtrl',
@@ -107,5 +115,5 @@
 
     function linkFunction(scope, elem, attrs, vm) {
 
-    };
+    }
 }());
