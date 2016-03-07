@@ -4,7 +4,6 @@ describe('date-range-picker directive', function() {
 
     beforeEach(
       function() {
-          module('styleguide.templates');
           module('wfm.daterangepicker');
       }
     );
