@@ -16,8 +16,8 @@
             link: postlink
         };
 
-        function numericValueCtrl($locale) {
-            this.parseNumberString = function(s, integerOnly) {
+        function numericValueCtrl($locale, userInput) {
+            userInput.parseNumberString = function(s, integerOnly) {
                 var gSize = $locale.NUMBER_FORMATS.PATTERNS[0].gSize;
                 var pieces = ('' + s).split($locale.NUMBER_FORMATS.DECIMAL_SEP),
                     whole = pieces[0],
@@ -75,13 +75,13 @@
 
             function validateByNumberRange(modelValue, viewValue) {
                 if (modelValue === null) {
-                    return true
-                };
+                    return true;
+                }
                 if (angular.isDefined(scope.min)) {
                     var min = parseInt(scope.min);
                     if (modelValue < min) {
-                        return false
-                    };
+                        return false;
+                    }
                 }
 
                 if (angular.isDefined(scope.max)) {
@@ -100,6 +100,6 @@
             }
 
         }
-    };
+    }
 
 })();

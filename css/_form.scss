@@ -1,36 +1,36 @@
 label {
-	display: inline !important;
-  font-weight: normal;
+    display: inline !important;
+    font-weight: normal;
 }
 
-input[type='text'],[type='number'], input[type='password'], select{
-	border: none;
-	color: $gray087;
-  -webkit-appearance:none;
-  -moz-appearance:none;
-  background:none;
-	line-height: 1;
-  cursor: pointer;
-  height: 20px;
-	border-bottom: 1px solid $gray-300;
+input[type='text'], [type='number'], input[type='password'], select {
+    border: none;
+    color: $gray087;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: none;
+    line-height: 1;
+    cursor: pointer;
+    height: 20px;
+    border-bottom: 1px solid $gray-300;
 
-	&:focus {
-		border: none;
-		outline: none;
-		border-bottom: 1px solid $blue-100;
-	}
+    &:focus {
+        border: none;
+        outline: none;
+        border-bottom: 1px solid $blue-100;
+    }
 }
 
 select:after {
-        width: 0;
-        height: 0;
-        padding: 0;
-        content: '';
-        border-left: .25em solid transparent;
-        border-right: .25em solid transparent;
-        border-top: .375em solid red;
-        pointer-events: none;
-    }
+    width: 0;
+    height: 0;
+    padding: 0;
+    content: '';
+    border-left: .25em solid transparent;
+    border-right: .25em solid transparent;
+    border-top: .375em solid red;
+    pointer-events: none;
+}
 
 // Inputs
 //
@@ -66,20 +66,23 @@ select:after {
 //
 
 .input-prepend {
-  width: 100%;
-  i {
-    display: inline-block;
-    width: 18px;
-		cursor: pointer;
-		color: rgba(0, 0, 0, 0.54);
-		&:before{
-			vertical-align: sub;
-		}
-  }
-  input[type='text'] {
-    display: inline-block;
-    width: auto;
-  }
+    width: 100%;
+
+    i {
+        display: inline-block;
+        width: 18px;
+        cursor: pointer;
+        color: rgba(0, 0, 0, 0.54);
+
+        &:before {
+            vertical-align: sub;
+        }
+    }
+
+    input[type='text'] {
+        display: inline-block;
+        width: auto;
+    }
 }
 
 // File upload
@@ -98,117 +101,124 @@ select:after {
 //Styleguide 1.3.2
 //
 
-.disableInputField{
-  display:inline-block;
-	background: none;
-	border: none;
-	outline: none;
-	width: 50%;
-  margin: 0;
-	text-overflow: ellipsis;
+.disableInputField {
+    display: inline-block;
+    background: none;
+    border: none;
+    outline: none;
+    width: 50%;
+    margin: 0;
+    text-overflow: ellipsis;
 }
 
 .fileUpload {
-	position: relative;
-	overflow: hidden;
-  display:inline-block;
-  vertical-align:top;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: top;
 }
 
-.uploadBtn{
-  display:inline-block;
-  line-height:22px;
-	cursor: pointer;
-	margin: 5px;
+.uploadBtn {
+    display: inline-block;
+    line-height: 22px;
+    cursor: pointer;
+    margin: 5px;
 }
 
-.fileUpload input.upload{
-	position: absolute;
-	top: 0;
-	right: 0;
-	width: 0;
-	margin: 0;
-	padding: 0;
-	opacity: 0;
-	filter: alpha(opacity=0);
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    filter: alpha(opacity = 0);
 }
 
-::-webkit-input-placeholder { /* WebKit browsers */
-  color: $gray026;
-}
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-  color: $gray026;
-  opacity:  1;
-}
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-  color: $gray026;
-  opacity:  1;
-}
-:-ms-input-placeholder { /* Internet Explorer 10+ */
-  color: $gray026;
+::-webkit-input-placeholder {
+    /* WebKit browsers */
+    color: $gray026;
 }
 
+:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: $gray026;
+    opacity: 1;
+}
+
+::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: $gray026;
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    color: $gray026;
+}
 
 /*Form validation*/
-.wfm-form{
-  label{
-  	cursor:pointer!important;
-  	color:$gray054;
-    display: inline-block!important;
-  }
+.wfm-form {
+    label {
+        cursor: pointer !important;
+        color: $gray054;
+        display: inline-block !important;
+    }
 
-  input, select{
-  	max-width:100%;
-  	margin-right:100%;
-  }
+    input, select {
+        max-width: 100%;
+        margin-right: 100%;
+    }
 
-  input > .ng-invalid{
-  	border-bottom: 5px solid red!important;
-  }
+    input > .ng-invalid {
+        border-bottom: 5px solid red !important;
+    }
 
-  input[type="text"],
-  input[type="number"],
-  input[type="password"],
-  input[type="email"]{
-  	padding:0 0 0 4px!important;
+    input[type="text"],
+    input[type="number"],
+    input[type="password"],
+    input[type="email"] {
+        padding: 0 0 0 4px !important;
+    }
 
-  }
-  select{
-  	padding: 0 0 0 0;
-  }
+    select {
+        padding: 0 0 0 0;
+    }
 
-  .form-input-message{
-  	opacity: 0;
-  	height: 0;
-    transition: $transition-timing;
-  }
+    .form-input-message {
+        opacity: 0;
+        height: 0;
+        transition: $transition-timing;
+    }
 
-  .formInvalidInput{
-  	opacity: 1;
-  	height:auto;
-  	color:red!important;
-  }
+    .formInvalidInput {
+        opacity: 1;
+        height: auto;
+        color: red !important;
+    }
 
-  .form-input-wrap{
-  	padding:10px 0;
-  }
+    .form-input-wrap {
+        padding: 10px 0;
+    }
 
-  .animate-input-message {
-    line-height: 20px;
-  	height:auto;
-    opacity: 1;
-  }
+    .animate-input-message {
+        line-height: 20px;
+        height: auto;
+        opacity: 1;
+    }
 
-  .animate-input-message.ng-hide-add, .animate-input-message.ng-hide-remove {
-    transition: $transition-timing;
-  }
+    .animate-input-message.ng-hide-add, .animate-input-message.ng-hide-remove {
+        transition: $transition-timing;
+    }
 
-  .animate-input-message.ng-hide {
-    line-height: 0;
-  	height: 0;
-    opacity: 0;
-  }
+    .animate-input-message.ng-hide {
+        line-height: 0;
+        height: 0;
+        opacity: 0;
+    }
 }
+
 // Select
 //
 // The select is used to provide many options to the user and make complex selections simpler.
@@ -231,37 +241,38 @@ select:after {
 //Styleguide 1.4
 //
 
-.md-select-menu-container{
-	background:$white!important;
+.md-select-menu-container {
+    background: $white !important;
 
-  .md-active {
-  	z-index: 1010;
-  }
+    .md-active {
+        z-index: 1010;
+    }
 }
 
-md-select.md-default-theme:not([disabled]):focus .md-select-label{
-	border-bottom: $pink-500  1px solid;
-	padding: 0;
+md-select.md-default-theme:not([disabled]):focus .md-select-label {
+    border-bottom: $pink-500 1px solid;
+    padding: 0;
 }
 
 md-select-menu md-option:hover {
-	background-color: $gray-300 ;
+    background-color: $gray-300;
 }
 
-md-select-menu md-option[selected], md-select-menu md-option[selected]:focus{
-	background-color: $green-100;
+md-select-menu md-option[selected], md-select-menu md-option[selected]:focus {
+    background-color: $green-100;
 }
 
 md-select {
-	margin-top: auto;
-	.md-select-label{
-		padding: 0;
-		height: 21px;
-	}
+    margin-top: auto;
+
+    .md-select-label {
+        padding: 0;
+        height: 21px;
+    }
 }
 
-md-option{
-	height: 30px;
+md-option {
+    height: 30px;
 }
 
 // Radio buttons
@@ -311,32 +322,33 @@ md-option{
 //
 
 .wfm-radio {
-@extend .wfm-block;
-	input[type='radio'] {
-		display:none;
-	}
+    @extend .wfm-block;
 
-.wfm-radio-toggle {
-		position: absolute;
-		background-color: $gray026;
-		width: 20px;
-		height: 20px;
-		border-radius: 40px;
-		-webkit-transition: background-color .2s ease-in-out;
-		transition: background-color .2s ease-in-out;
-		cursor: pointer;
-	}
+    input[type='radio'] {
+        display: none;
+    }
 
-	input[type=radio]:checked ~ label .wfm-radio-toggle,
-	input[type=radio]:checked ~ .wfm-radio-toggle{
-		background-color: $blue-300;
-	}
+    .wfm-radio-toggle {
+        position: absolute;
+        background-color: $gray026;
+        width: 20px;
+        height: 20px;
+        border-radius: 40px;
+        -webkit-transition: background-color .2s ease-in-out;
+        transition: background-color .2s ease-in-out;
+        cursor: pointer;
+    }
 
-	.wfm-radio-label{
-		margin-left: 20px + $full-padding;
-		white-space:nowrap;
-		cursor: pointer;
-	}
+    input[type=radio]:checked ~ label .wfm-radio-toggle,
+    input[type=radio]:checked ~ .wfm-radio-toggle {
+        background-color: $blue-300;
+    }
+
+    .wfm-radio-label {
+        margin-left: 20px + $full-padding;
+        white-space: nowrap;
+        cursor: pointer;
+    }
 }
 
 //Checkboxes
@@ -386,38 +398,38 @@ md-option{
 //
 
 .wfm-checkbox {
-@extend .wfm-block;
+    @extend .wfm-block;
 
-	input[type='checkbox'] {
-		display:none;
-	}
+    input[type='checkbox'] {
+        display: none;
+    }
 
-.wfm-checkbox-toggle:after {
-		position: absolute;
-		background-color: $gray026;
-		width: 20px;
-		height: 20px;
-		float:right;
-		border-radius:2px;
-		content: " ";
-		-webkit-transition: background-color .2s ease-in-out;
-		transition: background-color .2s ease-in-out;
-		cursor: pointer;
-	}
+    .wfm-checkbox-toggle:after {
+        position: absolute;
+        background-color: $gray026;
+        width: 20px;
+        height: 20px;
+        float: right;
+        border-radius: 2px;
+        content: " ";
+        -webkit-transition: background-color .2s ease-in-out;
+        transition: background-color .2s ease-in-out;
+        cursor: pointer;
+    }
 
-	input[type=checkbox]:checked ~ label .wfm-checkbox-toggle:after,
-	input[type=checkbox]:checked ~ .wfm-checkbox-toggle:after{
-		background-color: $blue-300;
-		content: " ✓";
-		text-align: center;
-		color:$white;
-	}
+    input[type=checkbox]:checked ~ label .wfm-checkbox-toggle:after,
+    input[type=checkbox]:checked ~ .wfm-checkbox-toggle:after {
+        background-color: $blue-300;
+        content: " Ô£ô";
+        text-align: center;
+        color: $white;
+    }
 
-	.wfm-checkbox-label{
-		margin-left: 20px + $full-padding;
-		white-space:nowrap;
-		cursor: pointer;
-	}
+    .wfm-checkbox-label {
+        margin-left: 20px + $full-padding;
+        white-space: nowrap;
+        cursor: pointer;
+    }
 }
 
 //Switch
@@ -437,58 +449,59 @@ md-option{
 //
 
 .wfm-switch {
-	position: relative;
-	height: 24px;
-	padding-top: 2px;
+    position: relative;
+    height: 24px;
+    padding-top: 2px;
 
-	label{
-		vertical-align: middle;
-	}
+    label {
+        vertical-align: middle;
+    }
 
-	input[type='checkbox'] {
-		display: none;
-	}
+    input[type='checkbox'] {
+        display: none;
+    }
 
-	.wfm-switch-toggle {
-		position: absolute;
-		background-color: $gray-300;
-		width: 48px;
-		height: 18px;
-		border-radius: 40px;
-		-webkit-transition: background-color .2s ease-in-out;
-		transition: background-color .2s ease-in-out;
-		margin: 2px 5px;
-		cursor: pointer;
-	}
-	.wfm-switch-toggle:after {
-		content: "";
-		display: block;
-		width: 12px;
-		height: 12px;
-		border-radius: 44px;
-		cursor: pointer;
-		position: absolute;
-		top: 3px;
-		z-index: 1;
-		left: 5px;
-		background-color: $white;
-		-webkit-transition: left .2s ease-in-out;
-		transition: left .2s ease-in-out;
-	}
-	input[type=checkbox]:checked ~ label .wfm-switch-toggle{
-		background-color: $blue-300;
-	}
+    .wfm-switch-toggle {
+        position: absolute;
+        background-color: $gray-300;
+        width: 48px;
+        height: 18px;
+        border-radius: 40px;
+        -webkit-transition: background-color .2s ease-in-out;
+        transition: background-color .2s ease-in-out;
+        margin: 2px 5px;
+        cursor: pointer;
+    }
 
-	input[type=checkbox]:checked ~ label .wfm-switch-toggle:after {
-		left: 30px;
-	}
+    .wfm-switch-toggle:after {
+        content: "";
+        display: block;
+        width: 12px;
+        height: 12px;
+        border-radius: 44px;
+        cursor: pointer;
+        position: absolute;
+        top: 3px;
+        z-index: 1;
+        left: 5px;
+        background-color: $white;
+        -webkit-transition: left .2s ease-in-out;
+        transition: left .2s ease-in-out;
+    }
 
-	.wfm-switch-label{
-		white-space:nowrap;
-		cursor: pointer;
-	}
+    input[type=checkbox]:checked ~ label .wfm-switch-toggle {
+        background-color: $blue-300;
+    }
+
+    input[type=checkbox]:checked ~ label .wfm-switch-toggle:after {
+        left: 30px;
+    }
+
+    .wfm-switch-label {
+        white-space: nowrap;
+        cursor: pointer;
+    }
 }
-
 
 //Slider
 //
@@ -503,36 +516,37 @@ md-option{
 //Styleguide 1.9
 //
 
-md-slider{
+md-slider {
+    .md-focus-thumb, .md-focus-ring {
+        display: none !important;
+    }
 
-	 .md-focus-thumb, .md-focus-ring {
-		display:none!important;
-	}
+    .md-thumb {
+        cursor: pointer;
+    }
 
-	.md-thumb {
-		cursor:pointer;
-	}
-
-	canvas{display:none;}
+    canvas {
+        display: none;
+    }
 }
 
 /*slider theme*/
 
 md-slider .md-thumb:after {
-  border-color: $blue-300;
-  background-color: $blue-300;
+    border-color: $blue-300;
+    background-color: $blue-300;
 }
 
 md-slider .md-track.md-track-fill,
 md-slider .md-sign {
-  background-color: $blue-300;
+    background-color: $blue-300;
 }
 
 md-slider .md-sign:after {
-  border-top-color: $blue-300;
+    border-top-color: $blue-300;
 }
 
 md-slider.md-min .md-thumb:after {
-  background-color: $white!important;
-  transition: all 0.5s ease-in-out;
+    background-color: $white !important;
+    transition: all 0.5s ease-in-out;
 }

@@ -5,11 +5,11 @@
 //The directive accepts the "float-number" tag attribute. Without it the input will only accept integer values.
 //
 //Markup:
-//  <form name="form">
+//  <form name="form" class="wfm-form">
 //      <input type="text" ng-model="form.example" name="Example" placeholder="0 ~ 1000000" numeric-value min="0" max="1000000"/>
 //      <div ng-cloak class="animate-input-message" ng-show ="form.Example.$touched">
-//          <div class="form-input-message" ng-class="{formInvalidInput:form.Example.$error.number}">Invalid number</div>
-//      </div>
+//          <div class="form-input-message" ng-class="{formInvalidInput:form.Example.$error}">Invalid number</div>
+//      </div> 
 //  </form>
 //
 //Styleguide 2.8
