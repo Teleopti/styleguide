@@ -85,8 +85,10 @@
             }
 
             function render() {
-                scope.startDate = ngModelCtrl.$viewValue.startDate;
-                scope.endDate = ngModelCtrl.$viewValue.endDate;
+                if (ngModelCtrl.$viewValue) {
+                    scope.startDate = ngModelCtrl.$viewValue.startDate;
+                    scope.endDate = ngModelCtrl.$viewValue.endDate;
+                }
             }
 
             function updateViewModelFromUi() {
