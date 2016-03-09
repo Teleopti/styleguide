@@ -11,15 +11,16 @@
                 'templateType': '=?',
                 'testStopUi': '@?'
             },
-            controller: ['$element', dateRangePickerCtrl],
+            controller: ['$element', '$animate', dateRangePickerCtrl],
             require: ['ngModel', 'dateRangePicker'],
             link: postlink
         };
 
-        function dateRangePickerCtrl($element) {
+        function dateRangePickerCtrl($element, $animate) {
             /* jshint validthis: true */
             var ctrl = this;
             $element.addClass('wfm-date-range-picker-wrap');
+            $animate.enabled($element, false);
         }
 
         function postlink(scope, elem, attrs, ctrls) {
