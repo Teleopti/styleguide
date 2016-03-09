@@ -75,7 +75,7 @@
                   target: ['location/*.scss']
               },
         uglify: {
-                  'dist/wfmdirectives.min.js': ['directives/**/*.js']
+                  'dist/wfmdirectives.min.js': ['directives/**/*.js', '!directives/**/*.spec.js']
               }
     });
 
