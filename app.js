@@ -16,7 +16,8 @@ angular.module('styleguideApp', [
   'angular-growl',
   'ngAnimate',
   'wfm.pagination',
-  'wfm.modal'
+  'wfm.modal',
+  'wfm.numericValue'
 ]).config(['$translateProvider', function($translateProvider) {
 
     $translateProvider
@@ -158,4 +159,22 @@ angular.module('styleguideApp', [
 
     /*code for working hours picker*/
     $scope.workingHours = [];
+
+    /*code for numeric value directive*/
+    function isFloat(n) {
+        return Number(n) === n && n % 1 !== 0;
+    }
+
+    $scope.numericValueInput = '12,000';
+    $scope.numericValueInputResult = 12000;
+    $scope.$watch('numericValueInput', function() {
+        $scope.numericValueInputResult = Number.isInteger($scope.numericValueInput) ? $scope.numericValueInput :  $scope.numericValueInputResult;
+    });
+    $scope.numericValueFloatInput = '12,000.50';
+    $scope.numericValueFloatInputResult = 12000.50;
+    $scope.$watch('numericValueFloatInput', function() {
+        if (isFloat($scope.numericValueFloatInput) || Number.isInteger($scope.numericValueFloatInput)) {
+            $scope.numericValueFloatInputResult = $scope.numericValueFloatInput;
+        }
+    });
 }]);
