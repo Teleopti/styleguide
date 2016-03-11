@@ -16,8 +16,10 @@
             link: postlink
         };
 
-        function numericValueCtrl($locale, userInput) {
-            userInput.parseNumberString = function(s, integerOnly) {
+        function numericValueCtrl($locale) {
+            /* jshint validthis: true */
+            var ctrl = this;
+            ctrl.parseNumberString = function(s, integerOnly) {
                 var gSize = $locale.NUMBER_FORMATS.PATTERNS[0].gSize;
                 var pieces = ('' + s).split($locale.NUMBER_FORMATS.DECIMAL_SEP),
                     whole = pieces[0],

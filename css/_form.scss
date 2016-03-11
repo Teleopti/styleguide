@@ -420,7 +420,7 @@ md-option {
     input[type=checkbox]:checked ~ label .wfm-checkbox-toggle:after,
     input[type=checkbox]:checked ~ .wfm-checkbox-toggle:after {
         background-color: $blue-300;
-        content: " Ô£ô";
+        content: "✓";
         text-align: center;
         color: $white;
     }
@@ -550,3 +550,13 @@ md-slider.md-min .md-thumb:after {
     background-color: $white !important;
     transition: all 0.5s ease-in-out;
 }
+
+//Numeric value
+//
+//A directive for making an input[text] behave like an input[number].
+//Locale-aware number strings (e.g. 1.234,01 in Swedish) entered directly into the input field are accepted as text and parsed manually with the correct ng-locale (using the correct group separator and decimal separator). 
+//The directive accepts the "float-number" tag attribute. Without it the input will only accept integer values.
+//
+//Markup: numericvalue.hbs
+//
+//Styleguide 2.8
