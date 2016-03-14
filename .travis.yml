@@ -15,7 +15,8 @@ before_install:
   - 'if [ ! `which gcc-4.8` == "" ]; then export CXX=g++-4.8 && export CC=gcc-4.8; fi'
   - npm install -g grunt-cli
   #temp fix for https://github.com/kss-node/kss-node/issues/236
-  - npm install -g git://github.com/RobLoach/kss-node.git#xdemo
+  # we dont need kss as a global anymore.
+  #- npm install -g git://github.com/RobLoach/kss-node.git#xdemo
 install: npm install
 before_script: grunt dist --verbose
 script:
