@@ -9,7 +9,7 @@
         "test": "grunt test",
         "start": "grunt",
 		"dist": "grunt dist",
-        "kss": "./node_modules/.bin/kss-node"
+        "kss": "./node_modules/.bin/kss-node css styleguide css/styleguide.md --template kss-template --verbose"
     },
     "description": "Styleguide for Teleopti",
     "author": "Teleopti",
