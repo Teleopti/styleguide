@@ -5,6 +5,7 @@
             dist: {
                 files: {
                     'css/main.css': 'css/main.scss',
+                    'css/main_dark.css': 'css/main_dark.scss'
                 },
             },
             styleguide: {
@@ -27,6 +28,7 @@
             target: {
                 files: {
                     'css/main.min.css': 'css/main.css',
+                    'css/main_dark.min.css': 'css/main_dark.css'
                 },
             },
         },

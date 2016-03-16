@@ -12,3 +12,5 @@ css/main.min.css
 *.log
 *.tgz
 dist/
+css/main_dark.min.css
+css/main_dark.css
