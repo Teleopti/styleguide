@@ -20,6 +20,7 @@ module.exports = function(config) {
           'node_modules/angular-moment/angular-moment.min.js',
           'node_modules/angular-mocks/angular-mocks.js',
           'node_modules/angular-ui-bootstrap/ui-bootstrap.min.js',
+          'node_modules/angular-sanitize/angular-sanitize.min.js',
           'dist/templates.js',
           'directives/**/*.js'
         ],

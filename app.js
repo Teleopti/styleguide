@@ -1,6 +1,7 @@
 angular.module('styleguideApp', [
   'pascalprecht.translate',
   'ngMaterial',
+  'ngSanitize',
   'ui.tree',
   'ui.grid',
   'ui.grid.autoResize',
@@ -17,7 +18,8 @@ angular.module('styleguideApp', [
   'ngAnimate',
   'wfm.pagination',
   'wfm.modal',
-  'wfm.numericValue'
+  'wfm.numericValue',
+  'wfm.notice'
 ]).config(['$translateProvider', function($translateProvider) {
 
     $translateProvider
@@ -33,7 +35,7 @@ angular.module('styleguideApp', [
     $translateProvider.preferredLanguage('en-us');
 
 }])
-.controller('mainCtrl', ['$scope', 'growl', '$translate', function($scope, growl, $translate) {
+.controller('mainCtrl', ['$scope', 'growl', '$translate', 'NoticeService', function($scope, growl, $translate, NoticeService) {
     $translate.use('en-us');
     /* Dummy data*/
     $scope.demos = [{id: '1'}, {id: '2'}, {id: '3'}, {id: '4'}];
@@ -155,6 +157,23 @@ angular.module('styleguideApp', [
             ttl: 5000,
             disableCountDown: true,
         });
+    };
+
+    /*Code for new notices*/
+    $scope.displaySuccessNew = function() {
+        NoticeService.success('Success: User is saved successfully.', null, false);
+    };
+
+    $scope.displayInfoNew = function() {
+        NoticeService.info('Info: A user logged out.', 5000, true);
+    };
+
+    $scope.displayWarningNew = function() {
+        NoticeService.warning('Warning: Press refresh as the data was changed by another user.', 5000, true);
+    };
+
+    $scope.displayErrorNew = function() {
+        NoticeService.error('Error: Something exploded so fix it.', 5000, true);
     };
 
     /*code for working hours picker*/
