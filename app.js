@@ -1,25 +1,27 @@
-angular.module('styleguideApp', [
-  'pascalprecht.translate',
-  'ngMaterial',
-  'ngSanitize',
-  'ui.tree',
-  'ui.grid',
-  'ui.grid.autoResize',
-  'ui.grid.exporter',
-  'ui.grid.selection',
-  'ui.bootstrap',
-  'ui.bootstrap.tpls',
-  'angularMoment',
-  'wfm.cardList',
-  'wfm.timerangepicker',
-  'wfm.daterangepicker',
-  'wfm.workinghourspicker',
-  'angular-growl',
-  'ngAnimate',
-  'wfm.pagination',
-  'wfm.modal',
-  'wfm.numericValue',
-  'wfm.notice'
+(function() {
+    'use strict';
+    angular.module('styleguideApp', [
+      'pascalprecht.translate',
+      'ngMaterial',
+      'ngSanitize',
+      'ui.tree',
+      'ui.grid',
+      'ui.grid.autoResize',
+      'ui.grid.exporter',
+      'ui.grid.selection',
+      'ui.bootstrap',
+      'ui.bootstrap.tpls',
+      'angularMoment',
+      'wfm.cardList',
+      'wfm.timerangepicker',
+      'wfm.daterangepicker',
+      'wfm.workinghourspicker',
+      'angular-growl',
+      'ngAnimate',
+      'wfm.pagination',
+      'wfm.modal',
+      'wfm.numericValue',
+      'wfm.notice'
 ]).config(['$translateProvider', function($translateProvider) {
 
     $translateProvider
@@ -197,3 +199,5 @@ angular.module('styleguideApp', [
         }
     });
 }]);
+
+})();
