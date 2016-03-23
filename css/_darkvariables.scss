@@ -8,7 +8,7 @@ $orange-600: #FB8C00;
 
 $green-500: #8BC34A;
 $green-300: #9CCC65;
-$green-100: #c2e085;
+$green-100: #bedf7d;
 
 $red-800: #D32F2F;
 $red-700: #EF5350;
@@ -35,11 +35,12 @@ $gray-300: #555555;
 $gray-100: #c2e085;
 $gray012: #303030; //main Content
 $gray026: rgba(0,0,0,0.26);
-$gray054: rgba(0,0,0,0.54);
-$gray087: #9E9E9E; //sidebar text
+$gray054: rgba(107, 107, 107, 1);
+$gray087: #d1d1d1; //sidebar text
 $gray100: #9E9E9E;
 $white: #424242; //sidebar background
-
+$text-color-standard:#d1d1d1;
+$text-color-muted:#9E9E9E;
 
 $full-padding: 5px; /*sets wfm-block*/
 $half-padding: 3px;

@@ -45,7 +45,7 @@
 .sub-header{
 	padding: $full-padding;
 	padding-top: $full-padding*2;
-	color: $gray087;
+	color: $text-color-standard;
 	margin-bottom:$full-padding;
 
 	h2{
@@ -56,14 +56,14 @@
 .bottom-header{
 	padding: $full-padding;
 	background-color: $blue-100;
-	color: $gray087;
+	color: $text-color-standard;
 	border-bottom:1px solid $gray012;
 }
 
 .sidenav-header{
 	padding: $full-padding * 2 $full-padding!important;
 	background-color: $white;
-	color: $gray087;
+	color: $text-color-standard;
 	border-bottom:1px solid $gray012;
 	overflow: hidden;
 	position: relative;

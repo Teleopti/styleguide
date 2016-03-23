@@ -50,7 +50,7 @@
 }
 
 .wfm-table th, .wfm-table-header {
-  color: $gray087;
+  color: $text-color-standard;
   background-color: $blue-100;
   text-align: center;
 
@@ -91,7 +91,7 @@
 
 .wfm-table-multi{
 	th:first-child,td:first-child{
-	  color: $gray087;
+	  color: $text-color-standard;
 	  font-weight:600;
 	  background-color: $blue-100;
 	}
@@ -204,7 +204,7 @@
 
 .ui-grid-selection-row-header-buttons{
 	opacity: 1;
-	color: $gray087;
+	color: $text-color-standard;
 }
 
 .ui-grid-menu-button{
@@ -213,7 +213,7 @@
 }
 
 .ui-grid-row-selected::before{
-	color: $gray087;
+	color: $text-color-standard;
 }
 
 .big-table-wrapper{
