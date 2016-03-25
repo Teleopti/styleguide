@@ -94,7 +94,7 @@
 
                 scope.startTime = mStartTime.toDate();
                 scope.endTime = mEndTime.toDate();
-                scope.nextDay = mStartTime.isSame(mEndTime, 'day');
+                scope.nextDay = !mStartTime.isSame(mEndTime, 'day');
             }
 
             function validateCorrectOrder(modelValue, viewValue) {
@@ -114,9 +114,9 @@
                 timeRangeCtrl.mutateMoment(viewValue.endTime, endTime);
 
                 if (nextDay) {
-                    viewValue.endTime.add('day', 1);
+                    viewValue.endTime.add(1, 'day');
                 }
-
+             
                 return viewValue;
             }
 
