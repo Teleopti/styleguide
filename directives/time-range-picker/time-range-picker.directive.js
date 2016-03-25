@@ -8,11 +8,9 @@
 
     function timeRangePicker($filter) {
         return {
-            template: getHtmlTemplate(),
+            templateUrl: 'directives/time-range-picker/time-range-picker.tpl.html',
             scope: {
-                disableNextDay: '=?',
-                errors: '=?',
-                hideMessage: '=?'
+                disableNextDay: '=?'
             },
             controller: ['$scope', '$element', timeRangePickerCtrl],
             require: ['ngModel', 'timeRangePicker'],
@@ -28,9 +26,7 @@
             $element.addClass('wfm-time-range-picker-wrap');
 
             $scope.toggleNextDay = toggleNextDay;
-            $scope.startTime = moment();
-            $scope.endTime = moment();
-            vm.mutateDate = mutateDate;
+
             vm.mutateMoment = mutateMoment;
             vm.sameDate = sameDate;
 
@@ -47,13 +43,8 @@
                 mDate.set('hour', hour).set('minute', minute);
             }
 
-            function mutateDate(date, mDate) {
-                date.setTime(mDate.toDate().getTime());
-            }
-
             function sameDate(date1, date2) {
-                return true;
-//                return date1.toLocaleDateString() === date2.toLocaleDateString();
+                return date1.toLocaleDateString() === date2.toLocaleDateString();
             }
         }
 
@@ -61,7 +52,7 @@
             var ngModel = ctrls[0],
                 timeRangeCtrl = ctrls[1];
 
-            scope.$watch(watchUIChange, respondToUIChange);
+            scope.$watch(watchUIChange, respondToUIChange, true);
 
             ngModel.$parsers.push(parseView);
             ngModel.$formatters.push(formatModel);
@@ -73,26 +64,13 @@
                     return undefined;
                 }
 
-                var mStartTime = angular.isDefined(ngModel.$viewValue.startTime) ?
-                  ngModel.$viewValue.startTime : moment();
+                var nextDay =
+                    !timeRangeCtrl.sameDate(modelValue.startTime, modelValue.endTime);
 
-                var mEndTime = angular.isDefined(ngModel.$viewValue.endTime) ?
-                  ngModel.$viewValue.endTime : moment();
+                var viewModel = makeViewValue(
+                    modelValue.startTime, modelValue.endTime, nextDay);
 
-                timeRangeCtrl.mutateMoment(mStartTime, modelValue.startTime);
-                timeRangeCtrl.mutateMoment(mEndTime, modelValue.endTime);
-
-                var sameDay = timeRangeCtrl.sameDate(modelValue.startTime, modelValue.endTime);
-
-                if (sameDay && !mStartTime.isSame(mEndTime, 'day')) {
-                    mEndTime.add('day', -1);
-                }
-
-                if (!sameDay && mStartTime.isSame(mEndTime, 'day')) {
-                    mEndTime.add('day', 1);
-                }
-
-                return ngModel.$viewValue;
+                return viewModel;
             }
 
             function parseView(viewValue) {
@@ -100,22 +78,17 @@
                     return undefined;
                 }
 
-                var startTime = angular.isDefined(ngModel.$modelValue.startTime) ?
-                  ngModel.$modelValue.startTime : new Date();
-                var endTime = angular.isDefined(ngModel.$modelValue.endTime) ?
-                  ngModel.$modelValue.endTime : new Date();
-
-                timeRangeCtrl.mutateDate(startTime, viewValue.startTime);
-                timeRangeCtrl.mutateDate(endTime, viewValue.endTime);
-
-                return ngModel.$modelValue;
+                return {
+                    startTime: viewValue.startTime.toDate(),
+                    endTime: viewValue.endTime.toDate()
+                };
             }
 
             function render() {
                 if (!ngModel.$viewValue) {
                     return;
                 }
-                
+
                 var mStartTime = ngModel.$viewValue.startTime,
                     mEndTime = ngModel.$viewValue.endTime;
 
@@ -131,19 +104,34 @@
                 return modelValue.startTime <= modelValue.endTime;
             }
 
-            function respondToUIChange(change) {
+            function makeViewValue(startTime, endTime, nextDay) {
+                var viewValue = {
+                    startTime: moment(),
+                    endTime: moment()
+                };
+
+                timeRangeCtrl.mutateMoment(viewValue.startTime, startTime);
+                timeRangeCtrl.mutateMoment(viewValue.endTime, endTime);
+
+                if (nextDay) {
+                    viewValue.endTime.add('day', 1);
+                }
+
+                return viewValue;
+            }
+
+            function respondToUIChange(change, old) {
                 if (!scope.startTime || !scope.endTime) {
                     ngModel.$setViewValue(null);
+                    return;
                 }
 
                 if (scope.disableNextDay) {
                     scope.nextDay = change.strEndTime === '00:00';
                 }
 
-                ngModel.$setViewValue({
-                    startTime: moment(scope.startTime),
-                    endTime: moment(scope.endTime)
-                });
+                ngModel.$setViewValue(
+                    makeViewValue(scope.startTime, scope.endTime, scope.nextDay));
             }
 
             function watchUIChange() {
@@ -189,24 +177,6 @@
             }
         }
 
-    }
-
-    function getHtmlTemplate() {
-        return '<div>' +
-          ' <table> ' +
-          '   <tr> ' +
-          '     <td><ng-transclude></ng-transclude></td> ' +
-          '     <td><timepicker-wrap ng-model=\"startTime\"></timepicker></td> ' +
-          '     <td> <i class=\"mdi mdi-minus\"> </i> </td> ' +
-          '     <td><timepicker-wrap ng-model=\"endTime\"></timepicker></td> ' +
-          '     <td> ' +
-          '       <div class=\"next-day-toggle\"  ng-show=\"!disableNextDay || nextDay\" >' +
-          '         <button class=\"wfm-btn wfm-btn-invis-default\" ng-class=\"{\'wfm-btn-invis-disabled\': disableNextDay }\" ng-click=\"toggleNextDay()\">{{ nextDay ? "+ 1" : "+ 0"}}</button> ' +
-          '       </div>       ' +
-          '     </td> ' +
-          '   </tr> ' +
-          ' </table> ' +
-          '</div>';
     }
 
     function getMeridiemInfoFromMoment() {

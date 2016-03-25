@@ -1,0 +1,27 @@
+<div>
+    <table>
+	<tr>
+	    <td><ng-transclude></ng-transclude></td>
+	    <td><timepicker-wrap ng-model="startTime"></timepicker-wrap></td>
+	    <td><i class="mdi mdi-minus"> </i> </td>
+	    <td><timepicker-wrap ng-model="endTime"></timepicker-wrap></td>
+	    <td>
+		<div class="next-day-toggle"  ng-show="!disableNextDay || nextDay" >
+		    <button class="wfm-btn wfm-btn-invis-default"
+			    ng-class="{'wfm-btn-invis-disabled': disableNextDay }"
+			    ng-click="toggleNextDay()">
+			{{ nextDay ? "+ 1" : "+ 0"}}
+		    </button>
+		</div>
+	    </td>
+	</tr>
+    </table>
+</div>
+<div class="error-msg-container ng-invalid-order alert-error notice-spacer">
+    <i class="mdi mdi-alert-octagon"></i>
+    <span translate>EndTimeMustBeGreaterOrEqualToStartTime</span>
+</div> 		
+<div class="error-msg-container ng-invalid-parse alert-error notice-spacer">
+    <i class="mdi mdi-alert-octagon"></i>
+    <span translate>StartTimeAndEndTimeMustBeSet</span>
+</div>
