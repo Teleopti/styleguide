@@ -14,7 +14,7 @@ describe('time-range-picker directive', function() {
             startTime: startTime,
             endTime: endTime
         };
-        
+
         elementCompileFn = function() {
             return $compile('<time-range-picker ng-model="timeRange"></time-range-picker>');
         };
@@ -39,7 +39,7 @@ describe('time-range-picker directive', function() {
 
         var element = elementCompileFn()(scope);
         scope.$apply();
-        
+
         expect(element.hasClass('ng-invalid')).toBeTruthy();
         expect(element.hasClass('ng-invalid-order')).toBeTruthy();
     });
@@ -70,7 +70,7 @@ describe('time-range-picker directive', function() {
     it('Should not show meridian in Swedish time-format', function() {
         moment.locale('sv');
         var element = elementCompileFn()(scope);
-        scope.$apply();        
+        scope.$apply();
         var timepicker = angular.element(element.find('timepicker-wrap')[0]);
         expect(timepicker.scope().showMeridian).toBeFalsy();
 

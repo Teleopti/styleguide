@@ -116,7 +116,7 @@
                 if (nextDay) {
                     viewValue.endTime.add(1, 'day');
                 }
-             
+
                 return viewValue;
             }
 
