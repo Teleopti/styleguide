@@ -14,4 +14,4 @@ css/main.min.css
 dist/
 css/main_dark.min.css
 css/main_dark.css
-.html.js
+*.html.js
