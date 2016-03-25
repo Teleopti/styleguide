@@ -28,13 +28,32 @@
             $element.addClass('wfm-time-range-picker-wrap');
 
             $scope.toggleNextDay = toggleNextDay;
-            $scope.startTime = new Date('2015-01-01 08:00:00');
-            $scope.endTime = new Date('2015-01-01 17:00:00');
+            $scope.startTime = moment();
+            $scope.endTime = moment();
+            vm.mutateDate = mutateDate;
+            vm.mutateMoment = mutateMoment;
+            vm.sameDate = sameDate;
 
             function toggleNextDay() {
                 if (!$scope.disableNextDay) {
                     $scope.nextDay = !$scope.nextDay;
                 }
+            }
+
+            function mutateMoment(mDate, date) {
+                var hour = date.getHours(),
+                    minute = date.getMinutes();
+
+                mDate.set('hour', hour).set('minute', minute);
+            }
+
+            function mutateDate(date, mDate) {
+                date.setTime(mDate.toDate().getTime());
+            }
+
+            function sameDate(date1, date2) {
+                return true;
+//                return date1.toLocaleDateString() === date2.toLocaleDateString();
             }
         }
 
@@ -48,18 +67,32 @@
             ngModel.$formatters.push(formatModel);
             ngModel.$render = render;
             ngModel.$validators.order = validateCorrectOrder;
-            ngModel.$validators.empty = validateNonEmpty;
 
             function formatModel(modelValue) {
                 if (!modelValue) {
                     return undefined;
                 }
-                var endOnNextDay = moment(modelValue.startTime).isSame(modelValue.endTime, 'day');
-                return {
-                    startTime: modelValue.startTime,
-                    endTime: modelValue.endTime,
-                    endOnNextDay: endOnNextDay
-                };
+
+                var mStartTime = angular.isDefined(ngModel.$viewValue.startTime) ?
+                  ngModel.$viewValue.startTime : moment();
+
+                var mEndTime = angular.isDefined(ngModel.$viewValue.endTime) ?
+                  ngModel.$viewValue.endTime : moment();
+
+                timeRangeCtrl.mutateMoment(mStartTime, modelValue.startTime);
+                timeRangeCtrl.mutateMoment(mEndTime, modelValue.endTime);
+
+                var sameDay = timeRangeCtrl.sameDate(modelValue.startTime, modelValue.endTime);
+
+                if (sameDay && !mStartTime.isSame(mEndTime, 'day')) {
+                    mEndTime.add('day', -1);
+                }
+
+                if (!sameDay && mStartTime.isSame(mEndTime, 'day')) {
+                    mEndTime.add('day', 1);
+                }
+
+                return ngModel.$viewValue;
             }
 
             function parseView(viewValue) {
@@ -67,48 +100,49 @@
                     return undefined;
                 }
 
-                var mEndTime = moment(viewValue.endTime);
-                var mNormalizedEndTime = viewValue.endOnNextDay ?
-                  moment(viewValue.startTime).add(1, 'day') : moment(viewValue.startTime);
+                var startTime = angular.isDefined(ngModel.$modelValue.startTime) ?
+                  ngModel.$modelValue.startTime : new Date();
+                var endTime = angular.isDefined(ngModel.$modelValue.endTime) ?
+                  ngModel.$modelValue.endTime : new Date();
 
-                mNormalizedEndTime
-                  .set('hour', mEndTime.get('hour'))
-                  .set('minute', mEndTime.get('minute'));
+                timeRangeCtrl.mutateDate(startTime, viewValue.startTime);
+                timeRangeCtrl.mutateDate(endTime, viewValue.endTime);
 
-                return {
-                    startTime: viewValue.startTime,
-                    endTime: mNormalizedEndTime.toDate()
-                };
+                return ngModel.$modelValue;
             }
 
             function render() {
-                scope.startTime = ngModel.$viewValue.startTime;
-                scope.endTime = ngModel.$viewValue.endTime;
-                scope.nextDay = ngModel.$viewValue.endOnNextDay;
+                if (!ngModel.$viewValue) {
+                    return;
+                }
+                
+                var mStartTime = ngModel.$viewValue.startTime,
+                    mEndTime = ngModel.$viewValue.endTime;
+
+                scope.startTime = mStartTime.toDate();
+                scope.endTime = mEndTime.toDate();
+                scope.nextDay = mStartTime.isSame(mEndTime, 'day');
             }
 
             function validateCorrectOrder(modelValue, viewValue) {
                 if (modelValue === undefined) {
                     return true;
                 }
-                return !moment(modelValue.startTime).isAfter(modelValue.endTime);
-            }
-
-            function validateNonEmpty(modelValue, viewValue) {
-                if (viewValue === undefined) {
-                    return false;
-                }
-                return viewValue.startTime && viewValue.endTime;
+                return modelValue.startTime <= modelValue.endTime;
             }
 
             function respondToUIChange(change) {
+                if (!scope.startTime || !scope.endTime) {
+                    ngModel.$setViewValue(null);
+                }
+
                 if (scope.disableNextDay) {
                     scope.nextDay = change.strEndTime === '00:00';
                 }
+
                 ngModel.$setViewValue({
-                    startTime: scope.startTime,
-                    endTime: scope.endTime,
-                    endOnNextDay: scope.nextDay
+                    startTime: moment(scope.startTime),
+                    endTime: moment(scope.endTime)
                 });
             }
 
