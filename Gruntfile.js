@@ -78,7 +78,23 @@
               },
         uglify: {
                   'dist/wfmdirectives.min.js': ['directives/**/*.js', '!directives/**/*.spec.js']
-              }
+              },
+      html2js: {
+        dist: {
+          options: {
+            module: null,
+            base: '.',
+            rename: function(moduleName) {
+              return `${moduleName}`;
+            }
+          },
+          files: [{
+            expand: true,
+            src: ['directives/**/*.tpl.html'],
+            ext: '.html.js'
+          }]
+        }
+      }
     });
 
      grunt.loadNpmTasks('grunt-sass');
@@ -90,9 +106,11 @@
      grunt.loadNpmTasks('grunt-jscs');
      grunt.loadNpmTasks('grunt-contrib-uglify');
      grunt.loadNpmTasks('grunt-angular-templates');
+     grunt.loadNpmTasks('grunt-html2js');
 
      // Default task(s).
      grunt.registerTask('default', ['dist', 'watch:styleguide']);
-     grunt.registerTask('test', ['karma:styleguide']);
+     grunt.registerTask('before-test', ['html2js']);
+     grunt.registerTask('test', ['before-test', 'karma:styleguide']);
      grunt.registerTask('dist', ['jscs', 'jshint', 'ngtemplates', 'sass:styleguide', 'sass:dist', 'shell', 'cssmin', 'uglify']); // this task is kind of package
  };

@@ -1,14 +1,22 @@
 (function() {
 
     'use strict';
+    
+    var wfmTimeRangePickerConfig = {
+        showMeridian: true,
+        templateUrl: 'directives/time-range-picker/time-range-picker.tpl.html',
+    };
 
     angular.module('wfm.timerangepicker', [])
+           .constant('wfmTimeRangePickerConfig', wfmTimeRangePickerConfig)
            .directive('timepickerWrap', [timepickerWrap])
-           .directive('timeRangePicker', ['$filter', timeRangePicker]);
-
-    function timeRangePicker($filter) {
+           .directive('timeRangePicker', ['$filter', 'wfmTimeRangePickerConfig', timeRangePicker]);
+           
+    function timeRangePicker($filter, wfmTimeRangePickerConfig) {
         return {
-            template: getHtmlTemplate(),
+            templateUrl: function(element, attrs) {
+                return attrs.templateUrl || wfmTimeRangePickerConfig.templateUrl
+            },
             scope: {
                 startTime: '=',
                 endTime: '=',

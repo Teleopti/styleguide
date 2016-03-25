@@ -27,6 +27,8 @@ module.exports = function(config) {
 
         // list of files to exclude
         exclude: [
+            'directives/time-range-picker/uib-timepicker.ref.js',
+            'directives/time-range-picker/timepicker.ref.js'
         ],
 
 
