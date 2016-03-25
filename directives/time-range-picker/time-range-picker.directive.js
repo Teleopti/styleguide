@@ -1,7 +1,7 @@
 (function() {
 
     'use strict';
-    
+
     var wfmTimeRangePickerConfig = {
         showMeridian: true,
         templateUrl: 'directives/time-range-picker/time-range-picker.tpl.html',
@@ -11,11 +11,11 @@
            .constant('wfmTimeRangePickerConfig', wfmTimeRangePickerConfig)
            .directive('timepickerWrap', [timepickerWrap])
            .directive('timeRangePicker', ['$filter', 'wfmTimeRangePickerConfig', timeRangePicker]);
-           
+
     function timeRangePicker($filter, wfmTimeRangePickerConfig) {
         return {
             templateUrl: function(element, attrs) {
-                return attrs.templateUrl || wfmTimeRangePickerConfig.templateUrl
+                return attrs.templateUrl || wfmTimeRangePickerConfig.templateUrl;
             },
             scope: {
                 startTime: '=',

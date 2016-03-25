@@ -13,9 +13,9 @@ describe('time-range-picker directive', function() {
         $rootScope = _$rootScope_;
         $compile = _$compile_;
         $templateCache = _$templateCache_;
-        
+
         element = $compile('<time-range-picker></time-range-picker>')($rootScope);
-        
+
         scope = $rootScope.$new();
         scope.startTime = moment({hour: 8, minute: 30}).toDate();
         scope.endTime = moment({hour: 17, minute: 30}).toDate();
@@ -29,13 +29,13 @@ describe('time-range-picker directive', function() {
         scope.$apply();
         expect(element).toBeDefined();
     });
-    
+
     describe('custom template', function() {
         it('should allow custom templates', function() {
             $templateCache.put('foo/bar.html', '<div class="custom-template">baz</div>');
             element = $compile('<time-range-picker template-url="foo/bar.html"></time-range-picker>')($rootScope);
             $rootScope.$digest();
-            
+
             expect(element.children().hasClass('custom-template')).toBeTruthy();
             expect(element.children().html()).toBe('baz');
         });

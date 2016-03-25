@@ -21,7 +21,8 @@ module.exports = function(config) {
           'node_modules/angular-mocks/angular-mocks.js',
           'node_modules/angular-ui-bootstrap/ui-bootstrap.min.js',
           'dist/templates.js',
-          'directives/**/*.js'
+          'directives/**/*.js',
+          'templates/**/*.html.js'
         ],
 
 
