@@ -1,24 +1,17 @@
 //Time Range Picker
 //
-//A directive for specifying a timespan. It is built from the bootstrap-ui's timepicker with added validation. In WFM, the error messages will be translated automatically.
-//The <code>start-time</code> and <code>end-time</code> should be bound to javascript Date objects.
-//Their time parts (hour & minute) represent the timespan. When the <code>next day</code> switch
-// is off, the values of their date parts will equal; otherwise they will differ.
-// In WFM, the timepicker is self-adjusted to the user's time-format setting, i.e. meridian will be used for 12h's format and disabled for 24h's format, and the AM/PM texts are translated automatically.
+//A directive for managing time range. The time range is represented by any object that have <code>startTime</code> and <code>endTime</code> keys, each with a js Date object as value. The range can be overnight if <code>disable-next-day</code> is set to false. In that case, a <code>+ 1</code> sign will be shown to indicate the end time is at the second day. 
+//The pickers are self-adjusted to the user's time-format setting, i.e. meridian will be used for 12-h format and disabled for 24-h format with correct meridian texts.
 //
-//Additionally for consistency with the old WFM client, we have added a special case: when <code>disable-next-day</code> is on, setting the end time to 00:00 will mean the midnight time of the next day, and the user will see "+ 1" displayed beside the end time to avoid ambiguity even though he or she cannot mannual toggle the next-day switch.
 //<table class="wfm-table">
 //<tr><th>Attribute Name</th><th>Usage</th><th>Required</th></tr>
-//<tr><td>start-time</td><td>Bind to start time</td><td>true</td></tr>
-//<tr><td>end-time</td><td>Bind to end time</td><td>true</td></tr>
-//<tr><td>errors</td><td>Bind to errors. Its value will be set by the picker to an array of error-keys. The pre-defined error keys are 'order' and 'empty'</td><td>false</td></tr>
-//<tr><td>hide-message</td><td>mute the error message</td><td>false</td></tr>
+//<tr><td>ng-model</td><td>Bind to time range object</td><td>true</td></tr>
 //<tr><td>disable-next-day</td><td>Disable next-day switch</td><td>false</td></tr>
 //</table>
 //</br>
 //
 //Markup:
-//<time-range-picker start-time="startTime" end-time="endTime" disable-next-day="disableNextDay"></time-range-picker>
+//<time-range-picker ng-model="timeRange" disable-next-day="disableNextDay"></time-range-picker>
 //
 //Styleguide 2.4
 //
@@ -73,12 +66,12 @@
         margin-top: 10px;
     }
 
-    .ng-invalid {
-        &.ng-invalid-order ~ .error-msg-container.ng-invalid-order {
-            display: block;
+    &.ng-invalid {
+        &.ng-invalid-order .error-msg-container.ng-invalid-order {
+            display: block !important;
         }
-        &.ng-invalid-empty ~ .error-msg-container.ng-invalid-empty {
-            display: block;
+        &.ng-invalid-parse .error-msg-container.ng-invalid-parse {
+            display: block !important;
         }
     }
 }
