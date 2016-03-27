@@ -113,5 +113,5 @@ module.exports = function(grunt) {
     grunt.registerTask('default', ['dist', 'watch:styleguide']);
     grunt.registerTask('before-test', ['html2js']);
     grunt.registerTask('test', ['before-test', 'karma:styleguide']);
-    grunt.registerTask('dist', ['jscs', 'jshint', 'ngtemplates', 'sass:styleguide', 'sass:dist', 'shell', 'cssmin', 'uglify']); // this task is kind of package
+    grunt.registerTask('dist', ['jscs', 'jshint', 'ngtemplates', 'sass:styleguide', 'sass:dist', 'shell', 'cssmin', 'uglify', 'html2js']); // this task is kind of package
 };
