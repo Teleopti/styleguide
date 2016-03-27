@@ -1,6 +1,6 @@
- module.exports = function(grunt) {
+module.exports = function(grunt) {
 
-     grunt.initConfig({
+    grunt.initConfig({
         sass: {
             dist: {
                 files: {
@@ -71,28 +71,47 @@
             }
         },
         sasslint: {
-                  options: {
-                      configFile: 'config/.sass-lint.yml',
-                  },
-                  target: ['location/*.scss']
-              },
+            options: {
+                configFile: 'config/.sass-lint.yml',
+            },
+            target: ['location/*.scss']
+        },
         uglify: {
-                  'dist/wfmdirectives.min.js': ['directives/**/*.js', '!directives/**/*.spec.js']
-              }
+            'dist/wfmdirectives.min.js': ['directives/**/*.js', '!directives/**/*.spec.js']
+        },
+        html2js: {
+            dist: {
+                options: {
+                    module: null,
+                    base: '.',
+                    rename: function(moduleName) {
+                        return moduleName;
+                    }
+                },
+                files: [{
+                    expand: true,
+                    src: ['directives/**/*.tpl.html'],
+                    dest: 'templates/',
+                    ext: '.html.js'
+                }]
+            }
+        }
     });
 
-     grunt.loadNpmTasks('grunt-sass');
-     grunt.loadNpmTasks('grunt-contrib-watch');
-     grunt.loadNpmTasks('grunt-shell');
-     grunt.loadNpmTasks('grunt-contrib-cssmin');
-     grunt.loadNpmTasks('grunt-karma');
-     grunt.loadNpmTasks('grunt-contrib-jshint');
-     grunt.loadNpmTasks('grunt-jscs');
-     grunt.loadNpmTasks('grunt-contrib-uglify');
-     grunt.loadNpmTasks('grunt-angular-templates');
+    grunt.loadNpmTasks('grunt-sass');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-shell');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-karma');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-jscs');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-angular-templates');
+    grunt.loadNpmTasks('grunt-html2js');
 
-     // Default task(s).
-     grunt.registerTask('default', ['dist', 'watch:styleguide']);
-     grunt.registerTask('test', ['karma:styleguide']);
-     grunt.registerTask('dist', ['jscs', 'jshint', 'ngtemplates', 'sass:styleguide', 'sass:dist', 'shell', 'cssmin', 'uglify']); // this task is kind of package
- };
+    // Default task(s).
+    grunt.registerTask('default', ['dist', 'watch:styleguide']);
+    grunt.registerTask('before-test', ['html2js']);
+    grunt.registerTask('test', ['before-test', 'karma:styleguide']);
+    grunt.registerTask('dist', ['jscs', 'jshint', 'ngtemplates', 'sass:styleguide', 'sass:dist', 'shell', 'cssmin', 'html2js', 'uglify']); // this task is kind of package
+};
