@@ -1,12 +1,15 @@
+'use strict';
 describe('time-range-picker directive', function() {
-    var elementCompileFn,
+    var elementCompileFn, $templateCache, $compile, element,
         scope;
 
     beforeEach(module('styleguide.templates'));
     beforeEach(module('wfm.timerangepicker'));
 
-    beforeEach(inject(function($compile, $rootScope) {
-        scope = $rootScope.$new();
+    beforeEach(inject(function(_$compile_, _$rootScope_, _$templateCache_) {
+        $templateCache = _$templateCache_;
+        $compile = _$compile_;
+        scope = _$rootScope_.$new();
         var startTime = moment({hour: 8, minute: 30}).toDate();
         var endTime = moment({hour: 17, minute: 30}).toDate();
 
@@ -24,6 +27,16 @@ describe('time-range-picker directive', function() {
         var element = elementCompileFn()(scope);
         scope.$apply();
         expect(element).toBeDefined();
+    });
+
+    describe('custom template', function() {
+        it('should allow custom templates', function() {
+            $templateCache.put('foo/bar.html', '<div class="custom-template">baz</div>');
+            element = $compile('<time-range-picker ng-model="timeRange" template-url="foo/bar.html"></time-range-picker>')(scope);
+            scope.$apply();
+            expect(element.children().hasClass('custom-template')).toBeTruthy();
+            expect(element.children().html()).toBe('baz');
+        });
     });
 
     it('Should show timepickers for start-time and end-time', function() {

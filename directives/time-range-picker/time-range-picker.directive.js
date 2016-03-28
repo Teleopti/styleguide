@@ -6,9 +6,13 @@
            .directive('timepickerWrap', [timepickerWrap])
            .directive('timeRangePicker', ['$filter', timeRangePicker]);
 
+    var defaultTemplate = 'directives/time-range-picker/time-range-picker.tpl.html';
+
     function timeRangePicker($filter) {
         return {
-            templateUrl: 'directives/time-range-picker/time-range-picker.tpl.html',
+            templateUrl: function(element, attrs) {
+                return attrs.templateUrl || defaultTemplate;
+            },
             scope: {
                 disableNextDay: '=?'
             },

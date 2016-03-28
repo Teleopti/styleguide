@@ -1,12 +1,13 @@
 //Time Range Picker
 //
-//A directive for managing time range. The time range is represented by any object that have <code>startTime</code> and <code>endTime</code> keys, each with a js Date object as value. The range can be overnight if <code>disable-next-day</code> is set to false. In that case, a <code>+ 1</code> sign will be shown to indicate the end time is at the second day. 
+//A directive for managing time range. The time range is represented by any object that have <code>startTime</code> and <code>endTime</code> keys, each with a js Date object as value. The range can be overnight if <code>disable-next-day</code> is set to false. In that case, a <code>+ 1</code> sign will be shown to indicate the end time is at the second day.
 //The pickers are self-adjusted to the user's time-format setting, i.e. meridian will be used for 12-h format and disabled for 24-h format with correct meridian texts.
 //
 //<table class="wfm-table">
 //<tr><th>Attribute Name</th><th>Usage</th><th>Required</th></tr>
 //<tr><td>ng-model</td><td>Bind to time range object</td><td>true</td></tr>
 //<tr><td>disable-next-day</td><td>Disable next-day switch</td><td>false</td></tr>
+//<tr><td>template-url</td><td>Use a custom template</td><td>false</td></tr>
 //</table>
 //</br>
 //
