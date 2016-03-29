@@ -5,7 +5,7 @@ label {
 
 input[type='text'], [type='number'], input[type='password'], select {
     border: none;
-    color: $gray087;
+    color: $text-color-standard;
     -webkit-appearance: none;
     -moz-appearance: none;
     background: none;
@@ -142,24 +142,24 @@ select:after {
 
 ::-webkit-input-placeholder {
     /* WebKit browsers */
-    color: $gray026;
+    color: $text-color-muted;
 }
 
 :-moz-placeholder {
     /* Mozilla Firefox 4 to 18 */
-    color: $gray026;
+    color: $text-color-muted;
     opacity: 1;
 }
 
 ::-moz-placeholder {
     /* Mozilla Firefox 19+ */
-    color: $gray026;
+    color: $text-color-muted;
     opacity: 1;
 }
 
 :-ms-input-placeholder {
     /* Internet Explorer 10+ */
-    color: $gray026;
+    color: $text-color-muted;
 }
 
 /*Form validation*/
