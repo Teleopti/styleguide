@@ -40,6 +40,11 @@
         scope.getTimerangeDisplay = getTimerangeDisplay;
         scope.toggleAllChecks = toggleAllChecks;
 
+        scope.newWorkingPeriod = {
+            startTime: new Date('2015-01-01 08:00:00'),
+            endTime: new Date('2015-01-01 17:00:00')
+        };
+
         scope.disableNextDay = true;
 
         var weekDays = workingHoursPickerService.createEmptyWorkingPeriod().WeekDaySelections;
@@ -76,7 +81,9 @@
             clearConflictWorkingHourSelection(scope.workingHours, refIndex, weekDay);
         }
 
-        function addEmptyWorkingPeriod(startTime, endTime) {
+        function addEmptyWorkingPeriod() {
+            var startTime = scope.newWorkingPeriod.startTime,
+                endTime = scope.newWorkingPeriod.endTime;
             scope.workingHours.push(workingHoursPickerService.createEmptyWorkingPeriod(angular.copy(startTime), angular.copy(endTime)));
         }
 
