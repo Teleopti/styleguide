@@ -113,6 +113,15 @@
 		color: $white;
 		vertical-align: middle;
 	}
+
+	.navbar-search{
+		background: $white;
+		padding:10px;
+	}
+
+	.card-context{
+		margin:5px 0;
+	}
 }
 
 .result-icon i{
@@ -121,9 +130,11 @@
 	margin:0px!important;
 }
 
-.navbar-left {
-	float: left;
-	max-height: 35px;
+.navbar-left{
+		float: none!important;
+		margin-left: $full-padding;
+		line-height: 25px;
+		max-height: 35px;
 }
 
 .navbar-right {
@@ -151,8 +162,8 @@
 }
 
 .search-results {
-	position: fixed;
-	width: 270px;
+	position: relative;
+	width: auto;
   font-size: $standard-font-size;
 	display: block;
 	max-height: 75%;
