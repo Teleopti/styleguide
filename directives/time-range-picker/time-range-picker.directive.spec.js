@@ -4,6 +4,10 @@ describe('time-range-picker directive', function() {
         scope;
 
     beforeEach(module('styleguide.templates'));
+    beforeEach(module('tmh.dynamicLocale'));
+    beforeEach(module(function(tmhDynamicLocaleProvider) {
+        tmhDynamicLocaleProvider.localeLocationPattern('/base/node_modules/angular-i18n/angular-locale_{{locale}}.js');
+    }));
     beforeEach(module('wfm.timerangepicker'));
 
     beforeEach(inject(function(_$compile_, _$rootScope_, _$templateCache_) {
@@ -80,22 +84,45 @@ describe('time-range-picker directive', function() {
         expect(validityDiv.scope().nextDay).toBeTruthy();
     });
 
-    it('Should not show meridian in Swedish time-format', function() {
-        moment.locale('sv');
-        var element = elementCompileFn()(scope);
-        scope.$apply();
-        var timepicker = angular.element(element.find('timepicker-wrap')[0]);
-        expect(timepicker.scope().showMeridian).toBeFalsy();
+    describe('l10n', function() {
+        it('should be able to change locale', function(done) {
+            inject(['$locale', 'tmhDynamicLocale', function($locale, tmhDynamicLocale) {
+                tmhDynamicLocale.set('sv').then(function(locale) {
+                    expect($locale.id).toBe('sv');
+                    expect($locale['DATETIME_FORMATS']['shortTime']).toBe('HH:mm');
+                    done();
+                });
+            }]);
+        });
 
-    });
+        it('Should not show meridian in Swedish time-format', function(done) {
+            inject(['tmhDynamicLocale', function(tmhDynamicLocale) {
+                tmhDynamicLocale.set('sv').then(function(locale) {
+                    // use timeout to avoid crashing digest loop
+                    setTimeout(function() {
+                        var element = elementCompileFn()(scope);
+                        scope.$apply();
+                        var timepicker = angular.element(element.find('timepicker-wrap')[0]);
+                        expect(timepicker.scope().showMeridian).toBeFalsy();
+                        done();
+                    }, 200);
+                });
+            }]);
+        });
 
-    it('Should show meridian in US time-format', function() {
-        moment.locale('en-US');
-        var element = elementCompileFn()(scope);
-        scope.$apply();
-        var timepicker = angular.element(element.find('timepicker-wrap')[0]);
-        expect(timepicker.scope().showMeridian).toBeTruthy();
-
+        it('Should show meridian in US time-format', function(done) {
+            inject(['$locale', 'tmhDynamicLocale', function($locale, tmhDynamicLocale) {
+                tmhDynamicLocale.set('zh-cn').then(function(locale) {
+                    setTimeout(function() {
+                        var element = elementCompileFn()(scope);
+                        scope.$apply();
+                        var timepicker = angular.element(element.find('timepicker-wrap')[0]);
+                        expect(timepicker.scope().showMeridian).toBeTruthy();
+                        done();
+                    }, 200);
+                });
+            }]);
+        });
     });
 
     it('Setting next day to true will change the end-time to different date value', function() {
