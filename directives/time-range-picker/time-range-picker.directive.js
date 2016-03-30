@@ -3,7 +3,7 @@
     'use strict';
 
     angular.module('wfm.timerangepicker', [])
-           .directive('timepickerWrap', [timepickerWrap])
+           .directive('timepickerWrap', ['$locale', timepickerWrap])
            .directive('timeRangePicker', ['$filter', timeRangePicker]);
 
     var defaultTemplate = 'directives/time-range-picker/time-range-picker.tpl.html';
@@ -148,9 +148,8 @@
         }
     }
 
-    function timepickerWrap() {
-
-        var meridianInfo = getMeridiemInfoFromMoment();
+    function timepickerWrap($locale) {
+        var meridianInfo = getMeridiemInfoByLocale($locale);
 
         return {
             template: '<timepicker></timepicker>',
@@ -183,14 +182,14 @@
 
     }
 
-    function getMeridiemInfoFromMoment() {
-        var timeFormat = moment.localeData()._longDateFormat.LT;
+    function getMeridiemInfoByLocale($locale) {
+        var timeFormat = $locale.DATETIME_FORMATS.shortTime;
         var info = {};
 
         if (/h:/.test(timeFormat)) {
             info.showMeridian = true;
-            info.am = moment.localeData().meridiem(9, 0);
-            info.pm = moment.localeData().meridiem(15, 0);
+            info.am = $locale.DATETIME_FORMATS.AMPMS[0];
+            info.pm = $locale.DATETIME_FORMATS.AMPMS[1];
         } else {
             info.showMeridian = false;
         }
