@@ -77,8 +77,9 @@
                   target: ['location/*.scss']
               },
         uglify: {
-                  'dist/wfmdirectives.min.js': ['directives/**/*.js', '!directives/**/*.spec.js']
-              }
+            'dist/wfmdirectives.min.js':
+            ['directives/**/*.js', '!directives/**/*.spec.js']
+        }
     });
 
      grunt.loadNpmTasks('grunt-sass');
@@ -94,5 +95,5 @@
      // Default task(s).
      grunt.registerTask('default', ['dist', 'watch:styleguide']);
      grunt.registerTask('test', ['karma:styleguide']);
-     grunt.registerTask('dist', ['jscs', 'jshint', 'ngtemplates', 'sass:styleguide', 'sass:dist', 'shell', 'cssmin', 'uglify']); // this task is kind of package
+     grunt.registerTask('dist', ['jscs','jshint', 'ngtemplates', 'sass:styleguide', 'sass:dist', 'shell', 'cssmin', 'uglify']); // this task is kind of package
  };

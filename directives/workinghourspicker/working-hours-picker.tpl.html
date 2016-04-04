@@ -49,8 +49,8 @@
 		</ul>
 
 		<div class="wfm-block">
-			<time-range-picker start-time="newWorkingPeriodStartTime" end-time="newWorkingPeriodEndTime" disable-next-day="disableNextDay">
-				<button type="button" class="wfm-fab mini success" ng-click="addEmptyWorkingPeriod(newWorkingPeriodStartTime, newWorkingPeriodEndTime)">
+			<time-range-picker ng-model="newWorkingPeriod"  disable-next-day="disableNextDay">
+				<button type="button" class="wfm-fab mini success" ng-click="addEmptyWorkingPeriod()">
 					<i class="mdi mdi-plus"></i>
 					<md-tooltip>{{'AddEmptyPeriod' | translate}}</md-tooltip>
 				</button>

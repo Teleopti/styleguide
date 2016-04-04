@@ -198,8 +198,11 @@
 		box-shadow:none;
 	}
 }
-.ui-grid-menu .ui-grid-menu-inner ul li:hover, .ui-grid-menu .ui-grid-menu-inner ul li.ui-grid-menu-item-active{
+.ui-grid-menu .ui-grid-menu-inner ul li,
+.ui-grid-menu .ui-grid-menu-inner ul li:hover,
+.ui-grid-menu .ui-grid-menu-inner ul li.ui-grid-menu-item-active{
 	box-shadow:none;
+	border:none;
 }
 
 .ui-grid-selection-row-header-buttons{
@@ -210,6 +213,21 @@
 .ui-grid-menu-button{
 	background: transparent;
 	border:none;
+}
+
+.ui-grid-menu-button .ui-grid-menu .ui-grid-menu-mid{
+	overflow-x:auto;
+}
+
+.ui-grid-menu .ui-grid-menu-inner .ui-grid-menu-close-button{
+	display: none;
+}
+
+.ui-grid-menu .ui-grid-menu-inner ul li button,
+.ui-grid-menu .ui-grid-menu-inner ul li button:hover,
+.ui-grid-menu .ui-grid-menu-inner ul li button:focus,
+.ui-grid-menu .ui-grid-menu-inner ul li button.ui-grid-menu-item-active{
+	box-shadow: none!important;
 }
 
 .ui-grid-row-selected::before{

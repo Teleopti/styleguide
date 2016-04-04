@@ -1,6 +1,4 @@
 
-
-
 .modal-box {
 	.modalbg {
 		position: fixed;
@@ -32,7 +30,9 @@
 	/*Dialog*/
 	@media only screen and (max-width:769px){
 		.dialog {
+			left:5px!important;
 			width:90%;
+			right:1%;
 		}
 	}
 
@@ -100,6 +100,35 @@
 //	</modal-dialog>
 //
 //Styleguide 1.14.0
+//
+
+//Mini Confirmation modal
+//
+// The mini modal is used for confirmation. As opposed to the regular modal it cant be dissmissed without taking an action.
+//
+// Note: In all modals and panels the footer links should be buttons, not  &lt;a/&gt; tags.
+//
+//Markup:
+//	<button ng-click='confirmModal1=true' class="wfm-btn wfm-btn-default">Do something dangerous</button>
+//	<div ng-cloak class="modal-box">
+//		<div ng-cloak ng-show="confirmModal1">
+//			<div class="modalbg">
+//				<div class="dialog-mini">
+//					<div class="modal-inner-content">
+//						Are you sure you want to do the thing?
+//					</div>
+//					<div class="modal-actions">
+//						<aside>
+//							<button ng-click="confirmModal1=false" class="wfm-btn wfm-btn-invis-default">Cancel</button>
+//							<button ng-click="confirmModal1=false" class="wfm-btn wfm-btn-invis-primary">Apply</button>
+//						</aside>
+//					</div>
+//				</div>
+//			</div>
+//		</div>
+//	</div>
+//
+//Styleguide 1.14.1
 //
 
 .click-modal{
