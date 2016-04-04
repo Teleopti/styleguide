@@ -115,6 +115,13 @@
     $scope.dateRangeTemplateType = 'inline';
     $scope.dateRangeTemplateTypes = ['popup', 'inline'];
 
+    /*Code for time range picker*/
+    $scope.timeRange = {
+        startTime: new Date('2015-01-01 08:00:00'),
+        endTime: new Date('2015-01-01 17:00:00')
+    };
+    $scope.disableNextDay = false;
+
     /*Code for modal*/
     $scope.modalShown = false;
     $scope.toggleModal = function() {

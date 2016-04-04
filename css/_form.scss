@@ -5,7 +5,7 @@ label {
 
 input[type='text'], [type='number'], input[type='password'], select {
     border: none;
-    color: $gray087;
+    color: $text-color-standard;
     -webkit-appearance: none;
     -moz-appearance: none;
     background: none;
@@ -19,6 +19,10 @@ input[type='text'], [type='number'], input[type='password'], select {
         outline: none;
         border-bottom: 1px solid $blue-100;
     }
+}
+
+input::-ms-clear {
+	display: none;
 }
 
 select:after {
@@ -138,24 +142,24 @@ select:after {
 
 ::-webkit-input-placeholder {
     /* WebKit browsers */
-    color: $gray026;
+    color: $text-color-muted;
 }
 
 :-moz-placeholder {
     /* Mozilla Firefox 4 to 18 */
-    color: $gray026;
+    color: $text-color-muted;
     opacity: 1;
 }
 
 ::-moz-placeholder {
     /* Mozilla Firefox 19+ */
-    color: $gray026;
+    color: $text-color-muted;
     opacity: 1;
 }
 
 :-ms-input-placeholder {
     /* Internet Explorer 10+ */
-    color: $gray026;
+    color: $text-color-muted;
 }
 
 /*Form validation*/
@@ -275,6 +279,62 @@ md-option {
     height: 30px;
 }
 
+.ui-select{
+	width: 100%;
+	position: relative;
+
+	.bu-caret{
+			position: absolute;
+			right: -8px;
+	    top: 4px;
+			pointer-events: none;
+	}
+
+	/* This is to remove the arrow of select element in IE*/
+	select::-ms-expand {	display: none; }
+	select{
+    -webkit-appearance: none;
+    appearance: none;
+	}
+	@-moz-document url-prefix(){
+		.ui-select{
+			border: 1px solid #CCC;
+			border-radius: 4px;
+			box-sizing: border-box;
+			position: relative;
+			overflow: hidden;
+		}
+  	.ui-select select {
+			width: 110%;
+			background-position: right 30px center !important;
+			border: none !important;
+		}
+	}
+}
+
+md-autocomplete{
+	color: $gray087;
+	background:transparent;
+	height: 30px;
+	border-bottom: 1px solid $gray-300;
+
+	input:not(.md-input){
+	padding: 0;
+	}
+
+	button:after{
+	display: none;
+	}
+
+  button md-icon {
+    transform: translate3d(-50%,-50%,0) scale(0.7);
+  }
+
+	.md-whiteframe-1dp, .md-whiteframe-z1{
+	box-shadow: none;
+	}
+}
+
 // Radio buttons
 //
 // Radio buttons are a group of options that can only have one item selected at a time.
@@ -318,7 +378,7 @@ md-option {
 //		</div>
 //	</form>
 //
-//Styleguide 1.5
+//Styleguide 1.6
 //
 
 .wfm-radio {
@@ -394,7 +454,7 @@ md-option {
 //		</div>
 //	</form>
 //
-//Styleguide 1.6
+//Styleguide 1.7
 //
 
 .wfm-checkbox {
@@ -445,7 +505,7 @@ md-option {
 //		</label>
 //	</div>
 //
-//Styleguide 1.7
+//Styleguide 1.8
 //
 
 .wfm-switch {
@@ -525,6 +585,10 @@ md-slider {
         cursor: pointer;
     }
 
+    .md-min .md-thumb:after{
+	     background-color: $white!important;
+     }
+
     canvas {
         display: none;
     }
@@ -554,7 +618,7 @@ md-slider.md-min .md-thumb:after {
 //Numeric value
 //
 //A directive for making an input[text] behave like an input[number].
-//Locale-aware number strings (e.g. 1.234,01 in Swedish) entered directly into the input field are accepted as text and parsed manually with the correct ng-locale (using the correct group separator and decimal separator). 
+//Locale-aware number strings (e.g. 1.234,01 in Swedish) entered directly into the input field are accepted as text and parsed manually with the correct ng-locale (using the correct group separator and decimal separator).
 //The directive accepts the "float-number" tag attribute. Without it the input will only accept integer values.
 //
 //Markup: numericvalue.hbs

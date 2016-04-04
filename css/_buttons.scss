@@ -112,7 +112,7 @@
 }
 
 .wfm-btn-invis-disabled {
-	color: $gray026!important;
+	color: $text-color-muted!important;
 	background-color: transparent;
 
 	&:hover{
@@ -121,7 +121,7 @@
 }
 
 .wfm-btn-primary-disabled{
-	color: $gray026!important;
+	color: $text-color-muted!important;
 	background-color: $gray012;
 
 	&:hover{
@@ -130,7 +130,7 @@
 }
 
 .wfm-btn-default {
-	color: $gray087!important;
+	color: $text-color-standard!important;
 	background-color: $white;
 	@extend .material-depth-1;
 

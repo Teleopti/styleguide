@@ -60,7 +60,7 @@
 	overflow:hidden;
 	text-overflow: hidden;
 	transition: $transition-timing;
-	flex-basis:50px;
+	flex-basis:40px;
 
 	span{
 		width:0;
@@ -79,4 +79,34 @@
 	.sidenav-header{
 		background:$green-100;
 	}
+}
+
+#leftsidenav > div > section{
+	margin-top: -2px;
+}
+
+@media screen and (max-width: 960px) {
+	.sidenav{
+	    text-overflow: hidden;
+	    flex-basis: 40px!important;
+	}
+	#lefttoogle{
+		display: none;
+	}
+	.brand{
+		margin-left: 0!important;
+	}
+	.navbar-right {
+    margin-right: 10px;
+	}
+}
+
+.layout-container .sidenav i {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.sidenav-icon {
+    margin-right: 10px!important;
+    margin-left: 5px!important;
 }

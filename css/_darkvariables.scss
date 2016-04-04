@@ -1,14 +1,14 @@
-$blue-500: #009688; /*Teal-500*/
-$blue-300: #66c2ff; //#64b5f6;
-$blue-100: #303030; //#BBDEFB;
+$blue-500: #0a84d6; /*light to dark in dark theme*/
+$blue-300: #136fac;
+$blue-100: #1d5a83;
 
 $orange-400: #ffc285;
 $orange-500: #FFA726;
 $orange-600: #FB8C00;
 
-$green-500: #8BC34A;
-$green-300: #9CCC65;
-$green-100: #c2e085;
+$green-500: #84ad32;
+$green-300: #6f8e32;
+$green-100: #627b32;
 
 $red-800: #D32F2F;
 $red-700: #EF5350;
@@ -31,15 +31,16 @@ $teal-300: #4DB6AC;
 $teal-100: #B2DFDB;
 
 $gray-500: #9E9E9E;
-$gray-300: #E0E0E0;
+$gray-300: #555555;
 $gray-100: #c2e085;
 $gray012: #303030; //main Content
 $gray026: rgba(0,0,0,0.26);
-$gray054: rgba(0,0,0,0.54);
-$gray087: #9E9E9E; //sidebar text
+$gray054: rgba(107, 107, 107, 1);
+$gray087: #d1d1d1; //sidebar text
 $gray100: #9E9E9E;
 $white: #424242; //sidebar background
-
+$text-color-standard:#d1d1d1;
+$text-color-muted:#676767;
 
 $full-padding: 5px; /*sets wfm-block*/
 $half-padding: 3px;

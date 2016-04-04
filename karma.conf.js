@@ -7,7 +7,6 @@ module.exports = function(config) {
         // base path that will be used to resolve all patterns (eg. files, exclude)
         basePath: '',
 
-
         // frameworks to use
         // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
         frameworks: ['jasmine'],
@@ -21,15 +20,20 @@ module.exports = function(config) {
           'node_modules/angular-mocks/angular-mocks.js',
           'node_modules/angular-ui-bootstrap/ui-bootstrap.min.js',
           'node_modules/angular-sanitize/angular-sanitize.min.js',
+          'node_modules/angular-dynamic-locale/dist/tmhDynamicLocale.js',
+          {
+              pattern: 'node_modules/angular-i18n/angular-locale_*.js',
+              watched: false,
+              included: false,
+              served: true
+          },
           'dist/templates.js',
           'directives/**/*.js'
         ],
 
-
         // list of files to exclude
         exclude: [
         ],
-
 
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
