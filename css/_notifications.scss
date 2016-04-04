@@ -1,35 +1,4 @@
 
-// Notices
-//
-//Notices indicate to the user that an event or action has taken place or that something is stopping the current action.
-// There are several different markers to make the type of notice easy to spot:
-// <ul class="wfm-simple-list"><li class="text-success"><b>Success: </b>Indicates successful action.</li>
-// <li><b>Info: </b>Gives hints and information.</li>
-// <li class="text-warning"><b>Warning: </b>Alerts that something has to be done before they can continue.</li>
-// <li class="text-danger"><b>Error: </b>Should be triggered when something goes wrong in the background.</li></ul>
-//
-// A notice should either self-destruct or be dismissable to free up space.
-//
-//<div class="jsprewrap">
-//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
-//	<div ng-show="showjs">
-//		<code><pre>
-//$scope.displaySuccess = function() {
-//		growl.success('<i class="mdi mdi-thumb-up"></i> Success: User is saved successfully.', {
-//				ttl: 5000,
-//				disableCountDown: true,
-//		});
-//};
-//		</pre></code>
-//	</div>
-//</div>
-//
-// Markup: notices.hbs
-//
-//Styleguide 2.5
-//
-
-/*This is because of growl and bootstrap*/
 .alert-error {
 	background-color:$red-600;
 	border: none;
@@ -54,69 +23,7 @@
 	border-radius: 0;
 }
 
-.alert-detail {
 
-	background-color: $gray012;
-	border: none;
-	border-radius: 0;
-}
-
-.notice-spacer{
-	padding:10px 5px;
-	margin-bottom:5px;
-}
-
-
-.growl-container > .growl-item {
-	padding: $full-padding;
-	margin-bottom: 0;
-	padding: 10px;
-	padding-right: 35px;
-	cursor: pointer;
-	vertical-align: middle;
-	box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
-  .mdi{
-    vertical-align: middle;
-		color:$gray054;
-  }
-}
-
-.growl-item .close {
-	text-shadow: none;
-	opacity: 1;
-  position: relative;
-  float: right;
-  background: 0 0;
-  border: 0;
-  color: $gray087;
-  padding: 0;
-
-}
-
-.growl-container > button {
-	border: none;
-	outline:none;
-}
-.growl-container > .growl-item.ng-enter,
-.growl-container > .growl-item.ng-leave {
-	-webkit-transition:0.5s all ease-in-out;
-	-moz-transition:0.5s all ease-in-out;
-	-o-transition:0.5s all ease-in-out;
-	transition:0.5s all ease-in-out;
-}
-
-.growl-container > .growl-item.ng-enter,
-.growl-container > .growl-item.ng-leave.ng-leave-active {
-	opacity:0;
-}
-.growl-container > .growl-item.ng-leave,
-.growl-container > .growl-item.ng-enter.ng-enter-active {
-	opacity:1;
-}
-
-.growl-container > div.growl-item {
-	background-repeat: no-repeat;
-}
 
 // Notifications
 //

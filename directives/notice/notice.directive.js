@@ -40,7 +40,7 @@
                     });
                 });
             },
-            template: '<div ng-repeat="notice in notices"><div class="materialcontainer"><div class="wfm-block wfm-notice" ng-class="setType(notice)"><i ng-class="setIcon(notice)"></i> <span ng-bind-html="notice.content"></span> <i class="pull-right mdi mdi-close" ng-click="deleteNotice(notice)"></i></div></div></div>',
+            template: '<div ng-repeat="notice in notices"><div class="notice-container"><div class="notice-item" ng-class="setType(notice)"><i ng-class="setIcon(notice)"></i> <span ng-bind-html="notice.content"></span> <i class="pull-right mdi mdi-close" ng-click="deleteNotice(notice)"></i></div></div></div>',
             controller: ['$scope', function($scope) {
                 $scope.setType = function(notice) {
                     return notice.type;

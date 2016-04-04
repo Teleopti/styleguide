@@ -23,7 +23,7 @@
             rootScope.notices = ['test'];
             rootScope.$digest();
 
-            expect(elementCompile[0].querySelectorAll('.wfm-notice').length).toBe(1);
+            expect(elementCompile[0].querySelectorAll('.notice-item').length).toBe(1);
         }));
 
         it('should display a newly added notice', inject(function($compile) {
@@ -36,7 +36,7 @@
             rootScope.notices.push('test2');
             rootScope.$digest();
 
-            expect(elementCompile[0].querySelectorAll('.wfm-notice').length).toBe(2);
+            expect(elementCompile[0].querySelectorAll('.notice-item').length).toBe(2);
         }));
 
         it('should remove current notice after time to live', function(done) {
@@ -52,7 +52,7 @@
                 rootScope.$digest();
 
                 $timeout(function() {
-                    expect(elementCompile[0].querySelectorAll('.wfm-notice').length).toBe(0);
+                    expect(elementCompile[0].querySelectorAll('.notice-item').length).toBe(0);
                     done();
                 }, 5000);
                 $timeout.flush();
@@ -75,7 +75,7 @@
                 rootScope.$digest();
 
                 $timeout(function() {
-                    expect(elementCompile[0].querySelectorAll('.wfm-notice').length).toBe(1);
+                    expect(elementCompile[0].querySelectorAll('.notice-item').length).toBe(1);
                     done();
                 }, 5000);
                 $timeout.flush();
@@ -98,7 +98,7 @@
                 rootScope.$digest();
 
                 $timeout(function() {
-                    expect(elementCompile[0].querySelectorAll('.wfm-notice').length).toBe(1);
+                    expect(elementCompile[0].querySelectorAll('.notice-item').length).toBe(1);
                     done();
                 }, 5000);
                 $timeout.flush();
@@ -115,7 +115,7 @@
             noticeService.warning('test', 5000, false);
             rootScope.$digest();
 
-            expect(elementCompile[0].querySelectorAll('.wfm-notice').length).toBe(1);
+            expect(elementCompile[0].querySelectorAll('.notice-item').length).toBe(1);
         }));
 
     });

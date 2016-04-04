@@ -16,7 +16,6 @@
       'wfm.timerangepicker',
       'wfm.daterangepicker',
       'wfm.workinghourspicker',
-      'angular-growl',
       'ngAnimate',
       'wfm.pagination',
       'wfm.modal',
@@ -37,7 +36,7 @@
     $translateProvider.preferredLanguage('en-us');
 
 }])
-.controller('mainCtrl', ['$scope', 'growl', '$translate', 'NoticeService', function($scope, growl, $translate, NoticeService) {
+.controller('mainCtrl', ['$scope', '$translate', 'NoticeService', function($scope, $translate, NoticeService) {
     $translate.use('en-us');
     /* Dummy data*/
     $scope.demos = [{id: '1'}, {id: '2'}, {id: '3'}, {id: '4'}];
@@ -132,38 +131,9 @@
     /*code for card list*/
     $scope.items = [{title: 'mdi-chart-bar'}, {title: 'mdi-chart-bar'}];
 
-    /*code for notices*/
-    $scope.displaySuccess = function() {
-        growl.success('<i class="mdi mdi-thumb-up"></i> Success: User is saved successfully.', {
-            ttl: 5000,
-            disableCountDown: true,
-        });
-    };
-
-    $scope.displayInfo = function() {
-        growl.info('<i class="mdi mdi-information"></i> Info: A user logged out.', {
-            ttl: 5000,
-            disableCountDown: true,
-        });
-    };
-
-    $scope.displayWarning = function() {
-        growl.warning('<i class="mdi mdi-alert"></i> Warning: Press refresh as the data was changed by another user.', {
-            ttl: 5000,
-            disableCountDown: true,
-        });
-    };
-
-    $scope.displayError = function() {
-        growl.error('<i class="mdi mdi-alert-octagon"></i> Error: Something exploded so fix it.', {
-            ttl: 5000,
-            disableCountDown: true,
-        });
-    };
-
-    /*Code for new notices*/
+    /*Code for notices*/
     $scope.displaySuccessNew = function() {
-        NoticeService.success('Success: User is saved successfully.', null, false);
+        NoticeService.success('Success: User is saved successfully.', 5000, true);
     };
 
     $scope.displayInfoNew = function() {

@@ -20,9 +20,9 @@
 //	</div>
 //</div>
 //
-// Markup: noticesnew.hbs
+// Markup: notices.hbs
 //
-//Styleguide 2.9
+//Styleguide 2.5
 //
 
 .alert-error {
@@ -61,12 +61,14 @@
 	margin-bottom:5px;
 }
 
+.notice-container{
+	width: 100%!important;
+}
 
 .notice-container > .notice-item {
 	padding: $full-padding;
 	margin-bottom: 0;
 	padding: 10px;
-	padding-right: 35px;
 	cursor: pointer;
 	vertical-align: middle;
 	box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
