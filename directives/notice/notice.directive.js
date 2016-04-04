@@ -43,29 +43,10 @@
             template: '<div ng-repeat="notice in notices"><div class="materialcontainer"><div class="wfm-block wfm-notice" ng-class="setType(notice)"><i ng-class="setIcon(notice)"></i> <span ng-bind-html="notice.content"></span> <i class="pull-right mdi mdi-close" ng-click="deleteNotice(notice)"></i></div></div></div>',
             controller: ['$scope', function($scope) {
                 $scope.setType = function(notice) {
-                    switch (notice.type) {
-                        case 'alert-success':
-                            return 'alert-success';
-                        case 'alert-error':
-                            return 'alert-error';
-                        case 'alert-info':
-                            return 'alert-info';
-                        case 'alert-warning':
-                            return 'alert-warning';
-                    }
+                    return notice.type;
                 };
-
                 $scope.setIcon = function(notice) {
-                    switch (notice.type) {
-                        case 'alert-success':
-                            return 'mdi mdi-thumb-up';
-                        case 'alert-error':
-                            return 'mdi mdi-alert-octagon';
-                        case 'alert-info':
-                            return 'mdi mdi-alert-circle';
-                        case 'alert-warning':
-                            return 'mdi mdi-alert';
-                    }
+                    return notice.icon;
                 };
             }]
         };
