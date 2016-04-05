@@ -17,7 +17,8 @@ angular.module('styleguideApp', [
   'ngAnimate',
   'wfm.pagination',
   'wfm.modal',
-  'wfm.numericValue'
+  'wfm.numericValue',
+  'gridshore.c3js.chart'
 ]).config(['$translateProvider', function($translateProvider) {
 
     $translateProvider
