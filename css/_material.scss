@@ -4,6 +4,7 @@ outline: -webkit-focus-ring-color auto 0;
 
 body{
 	background-color: $gray012;
+	color:$gray087;
   font-size: $standard-font-size!important;
 	overflow-x: hidden;
 	font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif!important;
@@ -16,11 +17,8 @@ body{
 	}
 }
 
-table{
-	border-spacing: 0!important;
-}
-
-button, input, select{	font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif!important;
+button, input, select{
+	font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif!important;
 }
 
 dd {
@@ -152,4 +150,30 @@ dd {
   .con-flex {
     flex: 1;
   }
+}
+
+@media screen and (max-width: 768px) {
+  .con-row {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+  .con-flex {
+    flex: 1 1 auto;
+  }
+}
+
+
+.flex-element-fill {
+	flex: 1 1 auto;
+	align-self:stretch;
+}
+
+.flex-element {
+	flex: 0 0 auto;
+}
+
+.flex-column {
+	display: flex;
+	flex-direction: column;
 }
