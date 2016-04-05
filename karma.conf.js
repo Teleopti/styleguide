@@ -19,6 +19,7 @@ module.exports = function(config) {
           'node_modules/angular-moment/angular-moment.min.js',
           'node_modules/angular-mocks/angular-mocks.js',
           'node_modules/angular-ui-bootstrap/ui-bootstrap.min.js',
+          'node_modules/angular-sanitize/angular-sanitize.min.js',
           'node_modules/angular-dynamic-locale/dist/tmhDynamicLocale.js',
           {
               pattern: 'node_modules/angular-i18n/angular-locale_*.js',
