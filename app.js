@@ -1,6 +1,7 @@
 angular.module('styleguideApp', [
   'pascalprecht.translate',
   'ngMaterial',
+  'ngSanitize',
   'ui.tree',
   'ui.grid',
   'ui.grid.autoResize',
