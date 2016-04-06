@@ -20,7 +20,8 @@
       'wfm.pagination',
       'wfm.modal',
       'wfm.numericValue',
-      'wfm.notice'
+      'wfm.notice',
+      'gridshore.c3js.chart'
 ]).config(['$translateProvider', function($translateProvider) {
 
     $translateProvider
