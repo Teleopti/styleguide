@@ -1,35 +1,23 @@
 
 // Line chart
 //
-//A chart used to present complex data. We use <a href="http://c3js.org/gettingstarted.html">C3 charts</a> to get nice features like legends, zoom and period selection.
-//<div class="jsprewrap">
-//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
-//	<div ng-show="showjs">
-//		<code><pre>
-//c3.generate({
-//		bindto: '#myChart',
-//		data: {
-//				columns: [
-//					['data1', 30, 200, 100, 400, 150, 250],
-//					['data2', 20, 180, 240, 100, 190, 0],
-//				],
-//				selection: {
-//						enabled: true,
-//				},
-//		},
-//		subchart: {
-//				show: true,
-//		},
-//		zoom: {
-//				enabled: true,
-//		},
-//});
-//		</pre></code>
-//	</div>
-//</div>
+//A chart used to present complex data. We use <a href="http://jettro.github.io/c3-angular-directive/#download">C3 charts</a> to get nice features like legends, zoom and period selection.
+//
+//Note: Column-values should be replaced with a variable in the project to keep the html clean.
 //
 //Markup:
-//	<div class="wfm-chart" id="myChart"></div>
+//	<c3chart bindto-id="chart2">
+//		<chart-column column-id="data 1"
+//		column-name="Data 1"
+//		column-color="#EF5350"
+//		column-values="30,200,100,400,150,250"
+//		column-type="line"/>
+//		<chart-column column-id="data 2"
+//		column-name="Data 2"
+//		column-color="#BA68C8"
+//		column-values="50,20,10,40,15,25"
+//		column-type="line"/>
+//	</c3chart>
 //
 //Styleguide 2.3
 //
@@ -39,9 +27,9 @@
 	background-color:$white;
 
 	.c3-tooltip td>span {
-	  margin-left: 10px;
-	  margin-top: 5px;
-	  border:1px solid white;
+		margin-left: 10px;
+		margin-top: 5px;
+		border:1px solid white;
 	}
 
 	.c3-tooltip td,.c3-tooltip th{
@@ -59,6 +47,6 @@
 	}
 
 	.c3-selected-circle {
-    fill: $white;
+		fill: $white;
 	}
 }
