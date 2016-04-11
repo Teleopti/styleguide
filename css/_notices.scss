@@ -25,33 +25,26 @@
 //Styleguide 2.5
 //
 
-.alert-error {
+.notice-error {
 	background-color:$red-600;
 	border: none;
 	border-radius: 0;
 }
 
-.alert-success {
+.notice-success {
 	background-color: $green-100;
 	border: none;
 	border-radius: 0;
 }
 
-.alert-info {
+.notice-info {
 	background-color: $blue-300;
 	border: none;
 	border-radius: 0;
 }
 
-.alert-warning {
+.notice-warning {
 	background-color: $orange-400;
-	border: none;
-	border-radius: 0;
-}
-
-.alert-detail {
-
-	background-color: $gray012;
 	border: none;
 	border-radius: 0;
 }
@@ -69,7 +62,6 @@
 	padding: $full-padding;
 	margin-bottom: 0;
 	padding: 10px;
-	cursor: pointer;
 	vertical-align: middle;
 	box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
   .mdi{
@@ -78,41 +70,17 @@
   }
 }
 
-.notice-item .close {
-	text-shadow: none;
-	opacity: 1;
-  position: relative;
-  float: right;
-  background: 0 0;
-  border: 0;
-  color: $gray087;
-  padding: 0;
-
+.notice-close {
+padding-left: $full-padding;
+cursor:pointer;
 }
 
-.notice-container > button {
-	border: none;
-	outline:none;
-}
 .notice-container > .notice-item.ng-enter,
 .notice-container > .notice-item.ng-leave {
 	-webkit-transition:0.5s all ease-in-out;
 	-moz-transition:0.5s all ease-in-out;
 	-o-transition:0.5s all ease-in-out;
 	transition:0.5s all ease-in-out;
-}
-
-.notice-container > .notice-item.ng-enter,
-.notice-container > .notice-item.ng-leave.ng-leave-active {
-	opacity:0;
-}
-.notice-container > .notice-item.ng-leave,
-.notice-container > .notice-item.ng-enter.ng-enter-active {
-	opacity:1;
-}
-
-.notice-container > div.notice-item {
-	background-repeat: no-repeat;
 }
 
 @keyframes notice-enter {
@@ -124,10 +92,4 @@
 	margin: 5px 0;
 	animation-name: notice-enter;
  animation-duration: 0.5s;
-}
-
-@media screen and (max-width: 960px) {
-	wfm-notice{
-		left:1%;
-	}
 }

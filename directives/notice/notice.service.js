@@ -1,15 +1,15 @@
 (function() {
     'use strict';
     angular.module('wfm.notice')
-		.service('NoticeService', ['$rootScope', function($rootScope) {
+		.service('NoticeService', ['$rootScope', '$translate', function($rootScope, $translate) {
     var service = {};
     $rootScope.wfmNotices = $rootScope.wfmNotices ? $rootScope.wfmNotices : [];
 
     var types = {
-        success: 'alert-success',
-        error: 'alert-error',
-        info: 'alert-info',
-        warning: 'alert-warning',
+        success: 'notice-success',
+        error: 'notice-error',
+        info: 'notice-info',
+        warning: 'notice-warning',
     };
 
     var icons = {
@@ -20,13 +20,15 @@
     };
 
     var addNotice = function(type, icon, content, timeToLive, destroyOnStateChange) {
+        var translatedContent = $translate.instant(content);
         var notice = {
             type: type,
             icon: icon,
-            content: content,
+            content: translatedContent,
             timeToLive: timeToLive,
             destroyOnStateChange: destroyOnStateChange
         };
+
         $rootScope.wfmNotices.push(notice);
     };
 
