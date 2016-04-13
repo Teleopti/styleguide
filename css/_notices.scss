@@ -114,3 +114,20 @@
 .notice-container > div.notice-item {
 	background-repeat: no-repeat;
 }
+
+@keyframes notice-enter {
+    from {opacity: 0; transform: translate(0,100%);}
+    to {opacity: 1; transform: translate(0px,0px);}
+}
+
+.notice-item{
+	margin: 5px 0;
+	animation-name: notice-enter;
+ animation-duration: 0.5s;
+}
+
+@media screen and (max-width: 960px) {
+	wfm-notice{
+		left:1%;
+	}
+}
