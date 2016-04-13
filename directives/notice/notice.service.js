@@ -1,7 +1,7 @@
 (function() {
     'use strict';
     angular.module('wfm.notice')
-		.service('NoticeService', ['$rootScope', '$translate', function($rootScope, $translate) {
+		.service('NoticeService', ['$rootScope', function($rootScope) {
     var service = {};
     $rootScope.wfmNotices = $rootScope.wfmNotices ? $rootScope.wfmNotices : [];
 
@@ -20,11 +20,10 @@
     };
 
     var addNotice = function(type, icon, content, timeToLive, destroyOnStateChange) {
-        var translatedContent = $translate.instant(content);
         var notice = {
             type: type,
             icon: icon,
-            content: translatedContent,
+            content: content,
             timeToLive: timeToLive,
             destroyOnStateChange: destroyOnStateChange
         };
