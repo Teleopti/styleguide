@@ -92,7 +92,7 @@ describe('time-range-picker directive', function() {
                     expect($locale['DATETIME_FORMATS']['shortTime']).toBe('HH:mm');
                     done();
                 });
-                setTimeout($timeout.flush, 500);
+                setTimeout($timeout.flush, 400);
             });
         });
 
