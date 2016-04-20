@@ -6,10 +6,10 @@
     $rootScope.wfmNotices = $rootScope.wfmNotices ? $rootScope.wfmNotices : [];
 
     var types = {
-        success: 'alert-success',
-        error: 'alert-error',
-        info: 'alert-info',
-        warning: 'alert-warning',
+        success: 'notice-success',
+        error: 'notice-error',
+        info: 'notice-info',
+        warning: 'notice-warning',
     };
 
     var icons = {
@@ -27,6 +27,7 @@
             timeToLive: timeToLive,
             destroyOnStateChange: destroyOnStateChange
         };
+
         $rootScope.wfmNotices.push(notice);
     };
 
