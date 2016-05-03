@@ -110,3 +110,14 @@
     margin-right: 10px!important;
     margin-left: 5px!important;
 }
+
+md-sidenav {
+	md-content {
+		background-color: $white !important;
+		color: $gray087;
+
+		option {
+			background-color: $white;
+		}
+	}
+}
