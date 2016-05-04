@@ -86,14 +86,14 @@ describe('time-range-picker directive', function() {
 
     describe('l10n', function() {
         it('should be able to change locale', function(done) {
-            inject(function($locale, $timeout, tmhDynamicLocale) {
+            inject(['$locale', '$timeout', 'tmhDynamicLocale', function($locale, $timeout, tmhDynamicLocale) {
                 tmhDynamicLocale.set('sv').then(function(locale) {
                     expect($locale.id).toBe('sv');
                     expect($locale['DATETIME_FORMATS']['shortTime']).toBe('HH:mm');
                     done();
                 });
                 setTimeout($timeout.flush, 400);
-            });
+            }]);
         });
 
         it('Should not show meridian in Swedish time-format', function(done) {
@@ -113,7 +113,7 @@ describe('time-range-picker directive', function() {
         });
 
         it('Should show meridian in US time-format', function(done) {
-            inject(function($locale, $timeout, tmhDynamicLocale) {
+            inject(['$locale', '$timeout', 'tmhDynamicLocale', function($locale, $timeout, tmhDynamicLocale) {
                 tmhDynamicLocale.set('zh-cn').then(function(locale) {
                     setTimeout(function() {
                         var element = elementCompileFn()(scope);
@@ -124,7 +124,7 @@ describe('time-range-picker directive', function() {
                     }, 200);
                 });
                 setTimeout($timeout.flush, 500);
-            });
+            }]);
         });
     });
 
