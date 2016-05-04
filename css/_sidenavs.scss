@@ -111,13 +111,11 @@
     margin-left: 5px!important;
 }
 
-md-sidenav {
-	md-content {
-		background-color: $white !important;
-		color: $gray087;
+.command-panel-content {
+	background-color: $white !important;
+	color: $gray087;
+}
 
-		option {
-			background-color: $white;
-		}
-	}
+.command-panel-option {
+	background-color: $white;
 }
