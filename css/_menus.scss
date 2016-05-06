@@ -6,7 +6,7 @@
 //
 //Markup:
 //  <h3>Button menu trigger:</h3>
-//  <div tabindex=0 class="context-menu wfm-btn wfm-btn-default">
+//  <div tabindex=0 class="context-menu context-btn wfm-btn wfm-btn-default">
 //  	Place me on the left
 //  	<span class="context-menu-right">
 //  		<ul class="wfm-list">
@@ -16,7 +16,7 @@
 //  		</ul>
 //  	</span>
 //  </div>
-//  <div tabindex=0 class="context-menu wfm-btn wfm-btn-default">
+//  <div tabindex=0 class="context-menu context-btn wfm-btn wfm-btn-default">
 //  	place me in the middle
 //  	<span class="context-menu-bottom">
 //  		<ul class="wfm-list">
@@ -26,7 +26,7 @@
 //  		</ul>
 //  	</span>
 //  </div>
-//  <div tabindex=0 class="context-menu wfm-btn wfm-btn-default">
+//  <div tabindex=0 class="context-menu context-btn wfm-btn wfm-btn-default">
 //  	Place me on the right
 //  	<span class="context-menu-left">
 //  		<ul class="wfm-list">
@@ -145,7 +145,6 @@
         top: 100%;
         left: 100%;
         margin: -40px 0 0 $full-padding*2;
-		    text-transform: lowercase;
 
         &:before {
             right: 100%;
@@ -157,7 +156,6 @@
         top: 100%;
         left: 50%;
         margin: $full-padding*2 0 0 -100px;
-		text-transform: lowercase;
 
         &:before {
             bottom: 100%; left: 50%;
@@ -169,11 +167,14 @@
         top: 100%;
         right: 100%;
         margin: -40px $full-padding*2 0 0;
-		text-transform: lowercase;
 
         &:before {
             left: 100%;
             margin-top: $full-padding*2;
         }
     }
+}
+
+.context-btn > span > ul > li {
+  text-transform: lowercase;
 }
