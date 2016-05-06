@@ -85,9 +85,6 @@
                 enabled: true,
             },
         },
-        subchart: {
-            show: true,
-        },
         zoom: {
             enabled: true,
         },
