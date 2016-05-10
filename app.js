@@ -67,12 +67,12 @@
 
     /*code for chips*/
     $scope.sizes = [
-      {Name: 'small', Type:'size'},
-      {Name: 'medium', Type:'size'},
-      {Name: 'large', Type:'size'},
-      {Name: 'insane', Type:'size'},
-      {Name: 'infinite', Type:'size'},
-      {Name: 'mustard', Type:'dressing'}
+      {Name: 'Small', Type:'Size'},
+      {Name: 'Medium', Type:'Size'},
+      {Name: 'Large', Type:'Size'},
+      {Name: 'Insane', Type:'Size'},
+      {Name: 'Infinite', Type:'Size'},
+      {Name: 'Mustard', Type:'Dressing'}
     ]
     ;
 

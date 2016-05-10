@@ -3,39 +3,7 @@
 //Chips are used to build horizontal lists of items. They consists of an indicator and a string to give more information.
 //The indicator can have warning classes to show severity or a short category text.
 //
-//Markup:
-//<div class="chip-wrap">
-//  <span class="pointer chip">
-//    <span class="filter-handle">
-//      Size
-//    </span>
-//    <span class="filter-chip">small</span>
-//  </span>
-//  <span class="pointer chip">
-//    <span class="filter-handle">
-//      <i class="mdi mdi-alert-circle"></i>
-//    </span>
-//    <span class="filter-chip">medium</span>
-//  </span>
-//  <span class="pointer chip">
-//    <span class="filter-handle chip-success">
-//      <i class="mdi mdi-thumb-up"></i>
-//    </span>
-//    <span class="filter-chip">large</span>
-//  </span>
-//  <span class="pointer chip">
-//    <span class="filter-handle chip-warning">
-//      <i class="mdi mdi-alert"></i>
-//    </span>
-//    <span class="filter-chip">insane</span>
-//  </span>
-//  <span class="pointer chip">
-//    <span class="filter-handle chip-error">
-//      <i class="mdi mdi-alert-octagon"></i>
-//    </span>
-//    <span class="filter-chip">infinite</span>
-//  </span>
-//</div>
+//Markup: chips.hbs
 //
 //Styleguide 1.19
 //
@@ -44,35 +12,21 @@
 //
 //Chips can be tied to a filter to hide or show them accordingly. It is possible to reverse the filter so that it filters in matches instead of out unmatched to save space.
 //
-//Markup:
-//  <label for="inputId" class="input-prepend">
-//	 <i class="mdi mdi-filter-outline">
-//	 <md-tooltip>Filter chips</md-tooltip></i>
-//	 <input type="text" id="inputId" ng-model="chipFilter" placeholder="Filter chips"/>
-//  </label>
-//</br>
-//<div class="chip-wrap" ng-repeat="item in sizes | filter: chipFilter">
-//  <span class="pointer chip">
-//    <span class="filter-handle">
-//      <span ng-bind="item.Type"></span>
-//    </span>
-//    <span class="filter-chip">
-//      <span ng-bind="item.Name"></span>
-//    </span>
-//  </span>
-//</div>
+//Markup: chips_filter.hbs
 //
 //Styleguide 1.19.1
 //
 
 
-.chip{
-  .filter-chip{
+.wfm-chip{
+  @extend .pointer;
+
+  .chip-text{
   	padding:$full-padding;
   	background:$gray012;
   	margin-right: 5px;
   }
-  .filter-handle{
+  .chip-handle{
   	padding:$full-padding;
   	background:$blue-100;
   }
@@ -87,7 +41,7 @@
   }
 }
 
-.chip-wrap{
+.wfm-chip-wrap{
 	display:inline-block;
 	margin:10px 0;
 }
