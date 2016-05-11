@@ -12,6 +12,8 @@
 //
 //Chips can be tied to a filter to hide or show them accordingly. It is possible to reverse the filter so that it filters in matches instead of out unmatched to save space.
 //
+//Note: The ng-bind is for styleguide demo purpose only, use <span style="word-spacing: -4px;">{ {item.Name} }</span> in the project.
+//
 //Markup: chips_filter.hbs
 //
 //Styleguide 1.19.1
