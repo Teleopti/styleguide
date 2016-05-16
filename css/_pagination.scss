@@ -30,6 +30,7 @@
   display: inline-block;
   padding: 10px;
   cursor: pointer;
+  vertical-align: text-top;
   background-color: $white;
   &.disabled {
     cursor: not-allowed;
