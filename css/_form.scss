@@ -76,7 +76,7 @@ select:after {
         display: inline-block;
         width: 18px;
         cursor: pointer;
-        color: rgba(0, 0, 0, 0.54);
+        color: $gray087;
 
         &:before {
             vertical-align: sub;
