@@ -20,7 +20,7 @@
       <dl>
         <dd>
           <div class="form-input-wrap">
-            <label for="nameId">Name: <input type="text" ng-model="form.name" name="Name" required="" id="nameId"/></label>
+            <label for="nameId">Name: <input type="text" ng-model="form.name" name="Name" required="" id="nameId" autofocus/></label>
             <div ng-cloak class="animate-input-message" ng-show ="form.$submitted || form.Name.$touched">
             <div class="form-input-message" ng-class="{formInvalidInput:form.Name.$error.required}">Tell me your name</div>
             </div>
