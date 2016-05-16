@@ -1,18 +1,20 @@
 
 describe('autofocus', function() {
-  var element;
-  beforeEach(
+    var element;
+    var rootScope;
+    var elementCompile;
+    beforeEach(
     function() {
-      module('wfm.autofocus');
+        module('wfm.autofocus');
     }
   );
 
-  beforeEach(inject(function($compile, $rootScope) {
-      rootScope = $rootScope.$new();
-  }));
+    beforeEach(inject(function($compile, $rootScope) {
+        rootScope = $rootScope.$new();
+    }));
 
-  it('should set the focus on input', function () {
-    inject(function($compile, $timeout) {
+    it('should set the focus on input', function () {
+        inject(function($compile, $timeout) {
         var element = angular.element('<input type="text" autofocus/>');
         elementCompile = $compile(element)(rootScope);
         rootScope.$digest();
@@ -21,5 +23,5 @@ describe('autofocus', function() {
         $timeout.flush();
         expect(element[0].focus).toHaveBeenCalled();
     });
-  })
+    });
 });
