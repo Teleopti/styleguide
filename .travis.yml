@@ -15,7 +15,9 @@ before_install:
   - 'if [ ! `which gcc-4.8` == "" ]; then export CXX=g++-4.8 && export CC=gcc-4.8; fi'
   - npm install -g grunt-cli
 install: npm install
-before_script: grunt dist --verbose
+before_script:
+    - grunt dist --verbose
+    - npm config set registry https://registry.npmjs.org/
 script:
   - ./node_modules/.bin/karma start --single-run --browsers PhantomJS
   - if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST"  ==  "false"  ]; then bash ./deploy-ghpages.sh; fi
