@@ -145,7 +145,7 @@
         top: 100%;
         left: 100%;
         margin: -40px 0 0 $full-padding*2;
-		    text-transform: lowercase;
+		    text-transform: initial;
 
         &:before {
             right: 100%;
@@ -157,7 +157,7 @@
         top: 100%;
         left: 50%;
         margin: $full-padding*2 0 0 -100px;
-		text-transform: lowercase;
+		text-transform: initial;
 
         &:before {
             bottom: 100%; left: 50%;
@@ -169,7 +169,7 @@
         top: 100%;
         right: 100%;
         margin: -40px $full-padding*2 0 0;
-		text-transform: lowercase;
+		text-transform: initial;
 
         &:before {
             left: 100%;

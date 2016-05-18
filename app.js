@@ -65,13 +65,16 @@
     };
     $scope.gridOptions.enableGridMenu = true;
 
-    /*code for select*/
+    /*code for chips*/
     $scope.sizes = [
-      'small (12-inch)',
-      'medium (14-inch)',
-      'large (16-inch)',
-      'insane (42-inch)',
-    ];
+      {Name: 'Small', Type:'Size'},
+      {Name: 'Medium', Type:'Size'},
+      {Name: 'Large', Type:'Size'},
+      {Name: 'Insane', Type:'Size'},
+      {Name: 'Infinite', Type:'Size'},
+      {Name: 'Mustard', Type:'Dressing'}
+    ]
+    ;
 
     /*Code for the chart*/
     c3.generate({
@@ -84,9 +87,6 @@
             selection: {
                 enabled: true,
             },
-        },
-        subchart: {
-            show: true,
         },
         zoom: {
             enabled: true,
