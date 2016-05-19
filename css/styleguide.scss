@@ -351,6 +351,10 @@
 //
 //Styleguide 9.1
 
+html{
+  overflow-y: auto!important;
+}
+
 .spacer {
   margin: 25px;
   padding: 15px;

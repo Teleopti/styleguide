@@ -229,17 +229,11 @@ select:after {
 //
 // The first example is a common select.
 //
-// The md-select doesnt render correctly in the styleguide but works fine in the project.
+//Note: The ng-bind is for styleguide demo purpose only, use <span style="word-spacing: -4px;">{ {item} }</span> in the project.
 //
 // Markup:
-//	<select>
-//		<option value="" disabled selected>Pick a number...</option>
-//		<option>1</option>
-//		<option>2</option>
-//		<option>3</option>
-//	</select>
 //	<md-select ng-model="model" placeholder="Pick an option">
-//		<md-option ng-repeat="item in demos" ng-value="{{item.id}}">{{item.id}}</md-option>
+//		<md-option ng-repeat="item in demos" ng-value="item.id"><span ng-bind="item.id"></span></md-option>
 //	</md-select>
 //
 //Styleguide 1.4
