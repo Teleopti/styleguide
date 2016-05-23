@@ -241,6 +241,7 @@ select:after {
 
 .md-select-menu-container {
   background: $white !important;
+  z-index: 9999;
 
   .md-active {
     z-index: 1010;
@@ -284,38 +285,8 @@ md-select {
   }
 }
 
-
-.ui-select{
-  width: 100%;
-  position: relative;
-
-  .bu-caret{
-    position: absolute;
-    right: -8px;
-    top: 4px;
-    pointer-events: none;
-  }
-
-  /* This is to remove the arrow of select element in IE*/
-  select::-ms-expand {	display: none; }
-  select{
-    -webkit-appearance: none;
-    appearance: none;
-  }
-  @-moz-document url-prefix(){
-    .ui-select{
-      border: 1px solid #CCC;
-      border-radius: 4px;
-      box-sizing: border-box;
-      position: relative;
-      overflow: hidden;
-    }
-    .ui-select select {
-      width: 110%;
-      background-position: right 30px center !important;
-      border: none !important;
-    }
-  }
+.bu-select{
+  margin-top:-5px;
 }
 
 md-autocomplete{
