@@ -3,7 +3,7 @@ label {
   font-weight: normal;
 }
 
-input[type='text'], [type='number'], input[type='password'], select {
+input[type='text'], [type='number'], input[type='password'], select{
   border: none;
   color: $text-color-standard;
   -webkit-appearance: none;
@@ -248,9 +248,10 @@ select:after {
   }
 }
 
-md-select.md-default-theme:not([disabled]):focus .md-select-label {
-  border-bottom: $pink-500 1px solid;
-  padding: 0;
+md-select:not([disabled]):focus .md-select-value{
+  border: none;
+  outline: none;
+  border-bottom: 1px solid $blue-100;
 }
 
 md-select-menu{
