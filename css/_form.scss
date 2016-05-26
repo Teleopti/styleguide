@@ -227,9 +227,7 @@ select:after {
 //
 // The select is used to provide many options to the user and make complex selections simpler.
 //
-// The first example is a common select.
-//
-//Note: The ng-bind is for styleguide demo purpose only, use <span style="word-spacing: -4px;">{ {item} }</span> in the project.
+// Note: The ng-bind is for styleguide demo purpose only, use <span style="word-spacing: -4px;">{ {item} }</span> in the project.
 //
 // Markup:
 //	<md-select ng-model="model" placeholder="Pick an option">
