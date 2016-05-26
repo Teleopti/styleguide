@@ -24,11 +24,14 @@ md-progress-linear .md-bar {
 }
 
 md-progress-linear[md-mode=buffer] .md-dashed:before {
-  background-color: rgb(197,202,233);
   animation:none;
   -webkit-animation:none;
 }
 
+md-progress-linear .md-container,
+md-progress-linear[md-mode=buffer]{
+	background-color: $gray012;
+}
 
 //Spinner
 //

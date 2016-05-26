@@ -1,39 +1,39 @@
 label {
-    display: inline !important;
-    font-weight: normal;
+  display: inline !important;
+  font-weight: normal;
 }
 
-input[type='text'], [type='number'], input[type='password'], select {
-    border: none;
-    color: $text-color-standard;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background: none;
-    line-height: 1;
-    cursor: pointer;
-    height: 20px;
-    border-bottom: 1px solid $gray-300;
+input[type='text'], [type='number'], input[type='password'], select{
+  border: none;
+  color: $text-color-standard;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: none;
+  line-height: 1;
+  cursor: pointer;
+  height: 20px;
+  border-bottom: 1px solid $gray-300;
 
-    &:focus {
-        border: none;
-        outline: none;
-        border-bottom: 1px solid $blue-100;
-    }
+  &:focus {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid $blue-100;
+  }
 }
 
 input::-ms-clear {
-	display: none;
+  display: none;
 }
 
 select:after {
-    width: 0;
-    height: 0;
-    padding: 0;
-    content: '';
-    border-left: .25em solid transparent;
-    border-right: .25em solid transparent;
-    border-top: .375em solid red;
-    pointer-events: none;
+  width: 0;
+  height: 0;
+  padding: 0;
+  content: '';
+  border-left: .25em solid transparent;
+  border-right: .25em solid transparent;
+  border-top: .375em solid red;
+  pointer-events: none;
 }
 
 // Inputs
@@ -70,23 +70,23 @@ select:after {
 //
 
 .input-prepend {
-    width: 100%;
+  width: 100%;
 
-    i {
-        display: inline-block;
-        width: 18px;
-        cursor: pointer;
-        color: $gray087;
+  i {
+    display: inline-block;
+    width: 18px;
+    cursor: pointer;
+    color: $gray087;
 
-        &:before {
-            vertical-align: sub;
-        }
+    &:before {
+      vertical-align: sub;
     }
+  }
 
-    input[type='text'] {
-        display: inline-block;
-        width: auto;
-    }
+  input[type='text'] {
+    display: inline-block;
+    width: auto;
+  }
 }
 
 // File upload
@@ -106,130 +106,128 @@ select:after {
 //
 
 .disableInputField {
-    display: inline-block;
-    background: none;
-    border: none;
-    outline: none;
-    width: 50%;
-    margin: 0;
-    text-overflow: ellipsis;
+  display: inline-block;
+  background: none;
+  border: none;
+  outline: none;
+  width: 50%;
+  margin: 0;
+  text-overflow: ellipsis;
 }
 
 .fileUpload {
-    position: relative;
-    overflow: hidden;
-    display: inline-block;
-    vertical-align: top;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: top;
 }
 
 .uploadBtn {
-    display: inline-block;
-    line-height: 22px;
-    cursor: pointer;
-    margin: 5px;
+  display: inline-block;
+  line-height: 22px;
+  cursor: pointer;
+  margin: 5px;
 }
 
 .fileUpload input.upload {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 0;
-    margin: 0;
-    padding: 0;
-    opacity: 0;
-    filter: alpha(opacity = 0);
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  filter: alpha(opacity = 0);
 }
 
 ::-webkit-input-placeholder {
-    /* WebKit browsers */
-    color: $text-color-muted;
+  /* WebKit browsers */
+  color: $text-color-muted;
 }
 
 :-moz-placeholder {
-    /* Mozilla Firefox 4 to 18 */
-    color: $text-color-muted;
-    opacity: 1;
+  /* Mozilla Firefox 4 to 18 */
+  color: $text-color-muted;
+  opacity: 1;
 }
 
 ::-moz-placeholder {
-    /* Mozilla Firefox 19+ */
-    color: $text-color-muted;
-    opacity: 1;
+  /* Mozilla Firefox 19+ */
+  color: $text-color-muted;
+  opacity: 1;
 }
 
 :-ms-input-placeholder {
-    /* Internet Explorer 10+ */
-    color: $text-color-muted;
+  /* Internet Explorer 10+ */
+  color: $text-color-muted;
 }
 
 /*Form validation*/
 .wfm-form {
-    label {
-        cursor: pointer !important;
-        color: $gray087;
-        display: inline-block !important;
-    }
+  label {
+    cursor: pointer !important;
+    color: $gray087;
+    display: inline-block !important;
+  }
 
-    input, select {
-        max-width: 100%;
-        margin-right: 100%;
-    }
+  input, select {
+    max-width: 100%;
+    margin-right: 100%;
+  }
 
-    input > .ng-invalid {
-        border-bottom: 5px solid red !important;
-    }
+  input > .ng-invalid {
+    border-bottom: 5px solid red !important;
+  }
 
-    input[type="text"],
-    input[type="number"],
-    input[type="password"],
-    input[type="email"] {
-        padding: 0 0 0 4px !important;
-    }
+  input[type="text"],
+  input[type="number"],
+  input[type="password"],
+  input[type="email"] {
+    padding: 0 0 0 4px !important;
+  }
 
-    select {
-        padding: 0 0 0 0;
-    }
+  select {
+    padding: 0 0 0 0;
+  }
 
-    .form-input-message {
-        opacity: 0;
-        height: 0;
-        transition: $transition-timing;
-    }
+  .form-input-message {
+    opacity: 0;
+    height: 0;
+    transition: $transition-timing;
+  }
 
-    .formInvalidInput {
-        opacity: 1;
-        height: auto;
-        color: red !important;
-    }
+  .formInvalidInput {
+    opacity: 1;
+    height: auto;
+    color: red !important;
+  }
 
-    .form-input-wrap {
-        padding: 10px 0;
-    }
+  .form-input-wrap {
+    padding: 10px 0;
+  }
 
-    .animate-input-message {
-        line-height: 20px;
-        height: auto;
-        opacity: 1;
-    }
+  .animate-input-message {
+    line-height: 20px;
+    height: auto;
+    opacity: 1;
+  }
 
-    .animate-input-message.ng-hide-add, .animate-input-message.ng-hide-remove {
-        transition: $transition-timing;
-    }
+  .animate-input-message.ng-hide-add, .animate-input-message.ng-hide-remove {
+    transition: $transition-timing;
+  }
 
-    .animate-input-message.ng-hide {
-        line-height: 0;
-        height: 0;
-        opacity: 0;
-    }
+  .animate-input-message.ng-hide {
+    line-height: 0;
+    height: 0;
+    opacity: 0;
+  }
 }
 
 // Select
 //
 // The select is used to provide many options to the user and make complex selections simpler.
 //
-// The first example is a common select.
-//
-//Note: The ng-bind is for styleguide demo purpose only, use <span style="word-spacing: -4px;">{ {item} }</span> in the project.
+// Note: The ng-bind is for styleguide demo purpose only, use <span style="word-spacing: -4px;">{ {item} }</span> in the project.
 //
 // Markup:
 //	<md-select ng-model="model" placeholder="Pick an option">
@@ -240,93 +238,83 @@ select:after {
 //
 
 .md-select-menu-container {
-    background: $white !important;
+  background: $white !important;
+  z-index: 9999;
 
-    .md-active {
-        z-index: 1010;
+  .md-active {
+    z-index: 1010;
+  }
+}
+
+md-select:not([disabled]):focus .md-select-value{
+  border: none;
+  outline: none;
+  padding-bottom: 1px;
+  border-bottom: 1px solid $blue-100;
+}
+
+.md-select-value :first-child{
+  transform: none!important;
+  -webkit-transform:none!important;
+}
+
+md-select-menu{
+  md-select:not([disabled]):focus .md-select-value,
+  md-option[selected],
+  md-content {
+    color: inherit!important;
+  }
+  md-option{
+    height: 30px;
+
+    &:hover {
+      background-color: $gray-300;
     }
-}
-
-md-select.md-default-theme:not([disabled]):focus .md-select-label {
-    border-bottom: $pink-500 1px solid;
-    padding: 0;
-}
-
-md-select-menu md-option:hover {
-    background-color: $gray-300;
-}
-
-md-select-menu md-option[selected], md-select-menu md-option[selected]:focus {
+  }
+  md-option:focus:not([disabled]):not([selected]),
+  md-option[selected], md-select-menu md-option[selected]:focus {
     background-color: $green-100;
+  }
 }
 
 md-select {
-    margin-top: auto;
+  margin-top: auto;
 
-    .md-select-label {
-        padding: 0;
-        height: 21px;
-    }
+  .md-select-label {
+    padding: 0;
+    height: 21px;
+  }
+
+  &:not([disabled]):focus .md-select-value {
+    color: inherit!important;
+  }
 }
 
-md-option {
-    height: 30px;
-}
-
-.ui-select{
-	width: 100%;
-	position: relative;
-
-	.bu-caret{
-			position: absolute;
-			right: -8px;
-	    top: 4px;
-			pointer-events: none;
-	}
-
-	/* This is to remove the arrow of select element in IE*/
-	select::-ms-expand {	display: none; }
-	select{
-    -webkit-appearance: none;
-    appearance: none;
-	}
-	@-moz-document url-prefix(){
-		.ui-select{
-			border: 1px solid #CCC;
-			border-radius: 4px;
-			box-sizing: border-box;
-			position: relative;
-			overflow: hidden;
-		}
-  	.ui-select select {
-			width: 110%;
-			background-position: right 30px center !important;
-			border: none !important;
-		}
-	}
+.bu-select{
+  margin-top:-5px;
 }
 
 md-autocomplete{
-	color: $gray087;
-	background:transparent;
-	height: 30px;
-	border-bottom: 1px solid $gray-300;
+  color: $gray087;
+  background:transparent;
+  height: 30px;
+  border-bottom: 1px solid $gray-300;
 
-	input:not(.md-input){
-	padding: 0;
-	}
+  input:not(.md-input){
+    padding: 0;
+  }
 
-	button:after{
-	display: none;
-	}
+  button:after{
+    display: none;
+  }
 
   button md-icon {
     transform: translate3d(-50%,-50%,0) scale(0.7);
   }
 
-	.md-whiteframe-1dp, .md-whiteframe-z1{
-	box-shadow: none;
-	}
+  .md-whiteframe-1dp, .md-whiteframe-z1{
+    box-shadow: none;
+  }
 }
 
 // Radio buttons
@@ -376,33 +364,33 @@ md-autocomplete{
 //
 
 .wfm-radio {
-    @extend .wfm-block;
+  @extend .wfm-block;
 
-    input[type='radio'] {
-        display: none;
-    }
+  input[type='radio'] {
+    display: none;
+  }
 
-    .wfm-radio-toggle {
-        position: absolute;
-        background-color: $gray026;
-        width: 20px;
-        height: 20px;
-        border-radius: 40px;
-        -webkit-transition: background-color .2s ease-in-out;
-        transition: background-color .2s ease-in-out;
-        cursor: pointer;
-    }
+  .wfm-radio-toggle {
+    position: absolute;
+    background-color: $gray026;
+    width: 20px;
+    height: 20px;
+    border-radius: 40px;
+    -webkit-transition: background-color .2s ease-in-out;
+    transition: background-color .2s ease-in-out;
+    cursor: pointer;
+  }
 
-    input[type=radio]:checked ~ label .wfm-radio-toggle,
-    input[type=radio]:checked ~ .wfm-radio-toggle {
-        background-color: $blue-300;
-    }
+  input[type=radio]:checked ~ label .wfm-radio-toggle,
+  input[type=radio]:checked ~ .wfm-radio-toggle {
+    background-color: $blue-300;
+  }
 
-    .wfm-radio-label {
-        margin-left: 20px + $full-padding;
-        white-space: nowrap;
-        cursor: pointer;
-    }
+  .wfm-radio-label {
+    margin-left: 20px + $full-padding;
+    white-space: nowrap;
+    cursor: pointer;
+  }
 }
 
 //Checkboxes
@@ -452,38 +440,38 @@ md-autocomplete{
 //
 
 .wfm-checkbox {
-    @extend .wfm-block;
+  @extend .wfm-block;
 
-    input[type='checkbox'] {
-        display: none;
-    }
+  input[type='checkbox'] {
+    display: none;
+  }
 
-    .wfm-checkbox-toggle:after {
-        position: absolute;
-        background-color: $gray026;
-        width: 20px;
-        height: 20px;
-        float: right;
-        border-radius: 2px;
-        content: " ";
-        -webkit-transition: background-color .2s ease-in-out;
-        transition: background-color .2s ease-in-out;
-        cursor: pointer;
-    }
+  .wfm-checkbox-toggle:after {
+    position: absolute;
+    background-color: $gray026;
+    width: 20px;
+    height: 20px;
+    float: right;
+    border-radius: 2px;
+    content: " ";
+    -webkit-transition: background-color .2s ease-in-out;
+    transition: background-color .2s ease-in-out;
+    cursor: pointer;
+  }
 
-    input[type=checkbox]:checked ~ label .wfm-checkbox-toggle:after,
-    input[type=checkbox]:checked ~ .wfm-checkbox-toggle:after {
-        background-color: $blue-300;
-        content: "✓";
-        text-align: center;
-        color: $white;
-    }
+  input[type=checkbox]:checked ~ label .wfm-checkbox-toggle:after,
+  input[type=checkbox]:checked ~ .wfm-checkbox-toggle:after {
+    background-color: $blue-300;
+    content: "✓";
+    text-align: center;
+    color: $white;
+  }
 
-    .wfm-checkbox-label {
-        margin-left: 20px + $full-padding;
-        white-space: nowrap;
-        cursor: pointer;
-    }
+  .wfm-checkbox-label {
+    margin-left: 20px + $full-padding;
+    white-space: nowrap;
+    cursor: pointer;
+  }
 }
 
 //Switch
@@ -503,58 +491,58 @@ md-autocomplete{
 //
 
 .wfm-switch {
-    position: relative;
-    height: 24px;
-    padding-top: 2px;
+  position: relative;
+  height: 24px;
+  padding-top: 2px;
 
-    label {
-        vertical-align: middle;
-    }
+  label {
+    vertical-align: middle;
+  }
 
-    input[type='checkbox'] {
-        display: none;
-    }
+  input[type='checkbox'] {
+    display: none;
+  }
 
-    .wfm-switch-toggle {
-        position: absolute;
-        background-color: $gray-300;
-        width: 48px;
-        height: 18px;
-        border-radius: 40px;
-        -webkit-transition: background-color .2s ease-in-out;
-        transition: background-color .2s ease-in-out;
-        margin: 2px 5px;
-        cursor: pointer;
-    }
+  .wfm-switch-toggle {
+    position: absolute;
+    background-color: $gray-300;
+    width: 48px;
+    height: 18px;
+    border-radius: 40px;
+    -webkit-transition: background-color .2s ease-in-out;
+    transition: background-color .2s ease-in-out;
+    margin: 2px 5px;
+    cursor: pointer;
+  }
 
-    .wfm-switch-toggle:after {
-        content: "";
-        display: block;
-        width: 12px;
-        height: 12px;
-        border-radius: 44px;
-        cursor: pointer;
-        position: absolute;
-        top: 3px;
-        z-index: 1;
-        left: 5px;
-        background-color: $white;
-        -webkit-transition: left .2s ease-in-out;
-        transition: left .2s ease-in-out;
-    }
+  .wfm-switch-toggle:after {
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 44px;
+    cursor: pointer;
+    position: absolute;
+    top: 3px;
+    z-index: 1;
+    left: 5px;
+    background-color: $white;
+    -webkit-transition: left .2s ease-in-out;
+    transition: left .2s ease-in-out;
+  }
 
-    input[type=checkbox]:checked ~ label .wfm-switch-toggle {
-        background-color: $blue-300;
-    }
+  input[type=checkbox]:checked ~ label .wfm-switch-toggle {
+    background-color: $blue-300;
+  }
 
-    input[type=checkbox]:checked ~ label .wfm-switch-toggle:after {
-        left: 30px;
-    }
+  input[type=checkbox]:checked ~ label .wfm-switch-toggle:after {
+    left: 30px;
+  }
 
-    .wfm-switch-label {
-        white-space: nowrap;
-        cursor: pointer;
-    }
+  .wfm-switch-label {
+    white-space: nowrap;
+    cursor: pointer;
+  }
 }
 
 //Slider
@@ -571,42 +559,42 @@ md-autocomplete{
 //
 
 md-slider {
-    .md-focus-thumb, .md-focus-ring {
-        display: none !important;
-    }
+  .md-focus-thumb, .md-focus-ring {
+    display: none !important;
+  }
 
-    .md-thumb {
-        cursor: pointer;
-    }
+  .md-thumb {
+    cursor: pointer;
+  }
 
-    .md-min .md-thumb:after{
-	     background-color: $white!important;
-     }
+  .md-min .md-thumb:after{
+    background-color: $white!important;
+  }
 
-    canvas {
-        display: none;
-    }
+  canvas {
+    display: none;
+  }
 }
 
 /*slider theme*/
 
 md-slider .md-thumb:after {
-    border-color: $blue-300;
-    background-color: $blue-300;
+  border-color: $blue-300;
+  background-color: $blue-300;
 }
 
 md-slider .md-track.md-track-fill,
 md-slider .md-sign {
-    background-color: $blue-300;
+  background-color: $blue-300;
 }
 
 md-slider .md-sign:after {
-    border-top-color: $blue-300;
+  border-top-color: $blue-300;
 }
 
 md-slider.md-min .md-thumb:after {
-    background-color: $white !important;
-    transition: all 0.5s ease-in-out;
+  background-color: $white !important;
+  transition: all 0.5s ease-in-out;
 }
 
 //Numeric value
