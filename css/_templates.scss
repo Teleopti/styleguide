@@ -1,0 +1,28 @@
+//Templates
+//
+//Every view is different, but in terms of layout we notice and strive for certain patterns. Starting with one of these tempates as a base puts us on more even ground from the beginning.
+//Obviously, these are only examples and the configuration of the layout grid and elements can be changed to suit your needs.
+//These templates are combinations of elements that are more extesivly documented in the element chapter.
+//
+//Note: Con-flex elements are marked by a dashed outline in the styleguide for structure and layout clarification, these should not be visible in the project.
+//
+//Styleguide 9
+//
+
+//Basic template
+//
+//The basic view is a view header and a panel. There are different kinds of panels and layouts within them available.
+//
+//Markup: base_template.hbs
+//
+//Styleguide 9.1
+//
+
+//Grid template
+//
+//This layout provides many options to display and manipulate data. Thanks to helper classes like <i><a href="http://teleopti.github.io/styleguide/styleguide/section-8.html#kssref-8-1">line-flex</a></i> and <i>grounded-actions</i> things stays neatly aligned.
+//
+//Markup: grid_template.hbs
+//
+//Styleguide 9.2
+//

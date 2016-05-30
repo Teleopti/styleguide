@@ -11,10 +11,15 @@
 //<div class="pull-left">.pull-left</div>
 //<div class="line-right">.line-right</div>
 //<div class="line-center">.line-center</div>
+//<div class="line-flex">.line-flex</div>
 //No style
 //
 //Styleguide 8.1
 //
+
+.line-flex{
+	display: inline-flex;
+}
 
 .line-right{
 	text-align:right;
