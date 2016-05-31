@@ -141,11 +141,11 @@
 
     /*Code for notices*/
     $scope.displaySuccessNew = function() {
-        NoticeService.success('Success: User is saved successfully.', 5000, true);
+        NoticeService.success('Success: User is saved successfully.', null, true);
     };
 
     $scope.displayInfoNew = function() {
-        NoticeService.info('Info: A user logged out.', 5000, true);
+        NoticeService.info('Info: A user logged out.', null, true);
     };
 
     $scope.displayWarningNew = function() {
