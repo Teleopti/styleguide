@@ -40,8 +40,8 @@
                     });
                 });
             },
-            template: '<div ng-repeat="notice in notices"><div class="notice-container"><div class="notice-item" ng-class="setType(notice)"><i ng-class="setIcon(notice)"></i>' +
-            '<span ng-bind-html="notice.content"></span> <i class="pull-right mdi mdi-close notice-close" ng-click="deleteNotice(notice)"></i></div></div></div><button class="wfm-btn notice-item wfm-btn-default" ng-click="clearAll()" ng-if="notices.length>=3">{{"Dismiss"|translate}}</button>',
+            template: '<div ng-repeat="notice in notices"><div class="notice-container"><div class="notice-item" ng-class="setType(notice)"><i ng-class="setIcon(notice)"></i><span ng-bind-html="notice.content"></span> <i class="pull-right mdi mdi-close notice-close" ng-click="deleteNotice(notice)"></i></div></div></div>' +
+            '<button class="wfm-btn notice-item wfm-btn-default" ng-click="clearAll()" ng-if="notices.length>=3">Dismiss all</button>',
             controller: ['$scope', function($scope) {
                 $scope.setType = function(notice) {
                     return notice.type;
