@@ -27,7 +27,7 @@
 //Markup:
 //<label>Template type:</label> <select ng-model="dateRangeTemplateType"
 //        ng-options="option for option in dateRangeTemplateTypes"></select>
-//<date-range-picker ng-model="dateRange" template-type="dateRangeTemplateType"></date-range-picker>
+//<date-range-picker must-be-equal-msg="Start date must be equal to or earlier than the end date." start-and-end-msg="Start date and end date must be set" ng-model="dateRange" template-type="dateRangeTemplateType"></date-range-picker>
 //
 //Styleguide 2.2
 //

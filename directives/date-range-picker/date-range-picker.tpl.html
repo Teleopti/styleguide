@@ -29,10 +29,10 @@
   </div>
 
   <div class="error-msg-container ng-invalid-order alert-error notice-spacer">
-    <i class='mdi mdi-alert-octagon'></i> <span>StartDateMustBeEqualToOrEarlierThanEndDate</span>
+    <i class='mdi mdi-alert-octagon'></i> <span ng-bind="notEqual"></span>
   </div>
   <div class="error-msg-container ng-invalid-empty alert-error notice-spacer">
-    <i class='mdi mdi-alert-octagon'></i> <span>StartDateAndEndDateMustBeSet</span>
+    <i class='mdi mdi-alert-octagon'></i> <span ng-bind="noStart"></span>
   </div>
 </div>
 
@@ -74,9 +74,9 @@
   </div>
 
   <div class="error-msg-container error-msg-popup-container ng-invalid-order alert-error notice-spacer">
-    <i class='mdi mdi-alert-octagon'></i> <span>StartDateMustBeEqualToOrEarlierThanEndDate</span>
+    <i class='mdi mdi-alert-octagon'></i> <span ng-bind="notEqual"></span>
   </div>
   <div class="error-msg-container error-msg-popup-container ng-invalid-empty alert-error notice-spacer" ng-if="hoverShow">
-    <i class='mdi mdi-alert-octagon'></i> <span>StartDateAndEndDateMustBeSet</span>
+    <i class='mdi mdi-alert-octagon'></i> <span ng-bind="noStart"></span>
   </div>
 </div>
