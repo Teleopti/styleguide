@@ -41,7 +41,7 @@
     <div tabindex=0 class="context-menu card-context popup-control" ng-click="onClickShowAllDates()" ng-class='{"pin-down" : dropDownState.showAllDatePickers}'>
       <i class="mdi mdi-calendar"></i>
     </div>
-    <div class="con-flex">
+    <div class="con-flex line-center">
       <input id="popupFromId"class="date-range-start-date pointer start-date-input"
       type="text"
       ng-click="dropDownState.showStartDatePicker = !dropDownState.showStartDatePicker"
@@ -56,7 +56,7 @@
       min-date="dummyMinDate"
       close-on-date-selection="false" />
     </div>
-    <div class="con-flex">
+    <div class="con-flex line-center">
       <input id="popupToId" class="pointer end-date-input date-range-end-date"
       type="text"
       ng-click="dropDownState.showEndDatePicker = !dropDownState.showEndDatePicker"
