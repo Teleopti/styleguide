@@ -26,6 +26,8 @@
         function postlink(scope, elem, attrs, ctrls) {
             var ngModelCtrl = ctrls[0],
                 dateRangeCtrl = ctrls[1];
+            scope.notEqual = attrs.mustBeEqualMsg;
+            scope.noStart = attrs.startAndEndMsg;
 
             scope.dummyMinDate = new Date('1970-01-01');
             scope.displayPopup = function() {
