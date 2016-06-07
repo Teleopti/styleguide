@@ -16,11 +16,13 @@
 
 // Date range picker
 //
-//A directive for specifying a date-only period. It is composed from datepicker with added validation messages. In WFM, the error messages will be translated automatically.
+//A directive for specifying a date-only period. It is composed from datepicker with added validation messages.
 //<table class="wfm-table">
 //<tr><th>Attribute Name</th><th>Usage</th><th>Required</th></tr>
 //<tr><td>ng-model</td><td>Bind to a js-object representing the date range. The object is composed by <code>startDate</code> and <code>endDate</code> key-value pairs</td><td>true</td></tr>
 //<tr><td>template-type</td><td>Declares whether to use <b>inline</b> or <b>popup</b> mode</td><td>false</td></tr>
+//<tr><td>must-be-equal-msg</td><td>Message shown if dates are in wrong order. Standard use is { {'StartDateMustBeEqualToOrEarlierThanEndDate' | translate} }</td><td>true</td></tr>
+//<tr><td>start-and-end-msg</td><td>Message shown if no dates are entered. Standard use is { {'StartDateAndEndDateMustBeSet' | translate} }</td><td>true</td></tr>
 //</table>
 //</br>
 //
