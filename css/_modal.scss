@@ -108,6 +108,8 @@
 //
 // Note: In all modals and panels the footer links should be buttons, not  &lt;a/&gt; tags.
 //
+//Note: Recomended translated text { {'AreYouSureYouWantToDelete' | translate} }
+//
 //Markup:
 //	<button ng-click='confirmModal1=true' class="wfm-btn wfm-btn-default">Do something dangerous</button>
 //	<div ng-cloak class="modal-box">
@@ -115,7 +117,8 @@
 //			<div class="modalbg">
 //				<div class="dialog-mini">
 //					<div class="modal-inner-content">
-//						Are you sure you want to do the thing?
+//						<h3>Affected item(s)</h3>
+//						Are you sure you want to delete?
 //					</div>
 //					<div class="modal-actions">
 //						<aside>
