@@ -53,6 +53,7 @@
 
     "browser": true,
     "node": true,
+    "jasmine": true,
 
     "globals": {
         "angular": false,

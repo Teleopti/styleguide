@@ -37,6 +37,10 @@
 //Styleguide 1.15.1
 //
 
+table{
+	border-spacing: 0!important;
+}
+
 .wfm-table {
 	width: 100%;
 	text-align: left;
@@ -50,7 +54,7 @@
 }
 
 .wfm-table th, .wfm-table-header {
-  color: $gray087;
+  color: $text-color-standard;
   background-color: $blue-100;
   text-align: center;
 
@@ -91,7 +95,7 @@
 
 .wfm-table-multi{
 	th:first-child,td:first-child{
-	  color: $gray087;
+	  color: $text-color-standard;
 	  font-weight:600;
 	  background-color: $blue-100;
 	}
@@ -149,8 +153,7 @@
 }
 
 .ui-grid{
-	border-left: none;
-	border-right:none;
+	border: none;
 }
 
 .big-table-wrapper{
@@ -198,13 +201,16 @@
 		box-shadow:none;
 	}
 }
-.ui-grid-menu .ui-grid-menu-inner ul li:hover, .ui-grid-menu .ui-grid-menu-inner ul li.ui-grid-menu-item-active{
+.ui-grid-menu .ui-grid-menu-inner ul li,
+.ui-grid-menu .ui-grid-menu-inner ul li:hover,
+.ui-grid-menu .ui-grid-menu-inner ul li.ui-grid-menu-item-active{
 	box-shadow:none;
+	border:none;
 }
 
 .ui-grid-selection-row-header-buttons{
 	opacity: 1;
-	color: $gray087;
+	color: $text-color-standard;
 }
 
 .ui-grid-menu-button{
@@ -212,8 +218,23 @@
 	border:none;
 }
 
+.ui-grid-menu-button .ui-grid-menu .ui-grid-menu-mid{
+	overflow-x:auto;
+}
+
+.ui-grid-menu .ui-grid-menu-inner .ui-grid-menu-close-button{
+	display: none;
+}
+
+.ui-grid-menu .ui-grid-menu-inner ul li button,
+.ui-grid-menu .ui-grid-menu-inner ul li button:hover,
+.ui-grid-menu .ui-grid-menu-inner ul li button:focus,
+.ui-grid-menu .ui-grid-menu-inner ul li button.ui-grid-menu-item-active{
+	box-shadow: none!important;
+}
+
 .ui-grid-row-selected::before{
-	color: $gray087;
+	color: $text-color-standard;
 }
 
 .big-table-wrapper{

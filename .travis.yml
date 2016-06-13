@@ -1,7 +1,7 @@
 
 language: node_js
 node_js:
-  - 4.2.2
+  - 4.2.6
 addons:
   apt:
     sources:
@@ -13,9 +13,8 @@ addons:
 before_install:
     # Use GCC 4.8 if it's available
   - 'if [ ! `which gcc-4.8` == "" ]; then export CXX=g++-4.8 && export CC=gcc-4.8; fi'
+  - npm config set registry https://registry.npmjs.org/
   - npm install -g grunt-cli
-  #temp fix for https://github.com/kss-node/kss-node/issues/236
-  - npm install -g git://github.com/RobLoach/kss-node.git#xdemo
 install: npm install
 before_script: grunt dist --verbose
 script:

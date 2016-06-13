@@ -4,18 +4,17 @@ Take a look to the [styleguide here](http://teleopti.github.io/styleguide/styleg
 
 ## How to contribute
 
-To be able to generate the styleguide you need kss-node:
+To be able to generate the styleguide you need to install the dependencies:
 
-		npm install -g kss
 		npm install
 
 To generate it:
 
-		grunt dist
+		grunt dist or npm run dist
 
 You can also use the watch task. The styleguide is generated after each scss change:
 
-		grunt
+		grunt or npm start
 
 Then, run a local instance (via visual studio for example). The local styleguide is accessible by the url [mylocalserver]/styleguide/styleguide
 

@@ -44,7 +44,7 @@
 	opacity:1;
 	float:right;
 	text-align: center;
-	color: $gray087;
+	color: $text-color-standard;
 
 	i{
 		opacity:0;
@@ -63,7 +63,7 @@
 	border-left: 3px solid transparent;
 
 	&:hover {
-		background-color: $gray012;
+		background-color: $gray-300;
 	}
 }
 

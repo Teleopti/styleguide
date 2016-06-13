@@ -1,23 +1,27 @@
-angular.module('styleguideApp', [
-  'pascalprecht.translate',
-  'ngMaterial',
-  'ui.tree',
-  'ui.grid',
-  'ui.grid.autoResize',
-  'ui.grid.exporter',
-  'ui.grid.selection',
-  'ui.bootstrap',
-  'ui.bootstrap.tpls',
-  'angularMoment',
-  'wfm.cardList',
-  'wfm.timerangepicker',
-  'wfm.daterangepicker',
-  'wfm.workinghourspicker',
-  'angular-growl',
-  'ngAnimate',
-  'wfm.pagination',
-  'wfm.modal',
-  'wfm.numericValue'
+(function() {
+    'use strict';
+    angular.module('styleguideApp', [
+      'pascalprecht.translate',
+      'ngMaterial',
+      'ngSanitize',
+      'ui.tree',
+      'ui.grid',
+      'ui.grid.autoResize',
+      'ui.grid.exporter',
+      'ui.grid.selection',
+      'ui.bootstrap',
+      'ui.bootstrap.tpls',
+      'angularMoment',
+      'wfm.cardList',
+      'wfm.timerangepicker',
+      'wfm.daterangepicker',
+      'wfm.workinghourspicker',
+      'ngAnimate',
+      'wfm.pagination',
+      'wfm.modal',
+      'wfm.numericValue',
+      'wfm.notice',
+      'gridshore.c3js.chart'
 ]).config(['$translateProvider', function($translateProvider) {
 
     $translateProvider
@@ -33,7 +37,7 @@ angular.module('styleguideApp', [
     $translateProvider.preferredLanguage('en-us');
 
 }])
-.controller('mainCtrl', ['$scope', 'growl', '$translate', function($scope, growl, $translate) {
+.controller('mainCtrl', ['$scope', '$translate', 'NoticeService', function($scope, $translate, NoticeService) {
     $translate.use('en-us');
     /* Dummy data*/
     $scope.demos = [{id: '1'}, {id: '2'}, {id: '3'}, {id: '4'}];
@@ -61,13 +65,16 @@ angular.module('styleguideApp', [
     };
     $scope.gridOptions.enableGridMenu = true;
 
-    /*code for select*/
+    /*code for chips*/
     $scope.sizes = [
-      'small (12-inch)',
-      'medium (14-inch)',
-      'large (16-inch)',
-      'insane (42-inch)',
-    ];
+      {Name: 'Small', Type:'Size'},
+      {Name: 'Medium', Type:'Size'},
+      {Name: 'Large', Type:'Size'},
+      {Name: 'Insane', Type:'Size'},
+      {Name: 'Infinite', Type:'Size'},
+      {Name: 'Mustard', Type:'Dressing'}
+    ]
+    ;
 
     /*Code for the chart*/
     c3.generate({
@@ -80,9 +87,6 @@ angular.module('styleguideApp', [
             selection: {
                 enabled: true,
             },
-        },
-        subchart: {
-            show: true,
         },
         zoom: {
             enabled: true,
@@ -112,6 +116,13 @@ angular.module('styleguideApp', [
     $scope.dateRangeTemplateType = 'inline';
     $scope.dateRangeTemplateTypes = ['popup', 'inline'];
 
+    /*Code for time range picker*/
+    $scope.timeRange = {
+        startTime: new Date('2015-01-01 08:00:00'),
+        endTime: new Date('2015-01-01 17:00:00')
+    };
+    $scope.disableNextDay = false;
+
     /*Code for modal*/
     $scope.modalShown = false;
     $scope.toggleModal = function() {
@@ -128,33 +139,21 @@ angular.module('styleguideApp', [
     /*code for card list*/
     $scope.items = [{title: 'mdi-chart-bar'}, {title: 'mdi-chart-bar'}];
 
-    /*code for notices*/
-    $scope.displaySuccess = function() {
-        growl.success('<i class="mdi mdi-thumb-up"></i> Success: User is saved successfully.', {
-            ttl: 5000,
-            disableCountDown: true,
-        });
+    /*Code for notices*/
+    $scope.displaySuccessNew = function() {
+        NoticeService.success('Success: User is saved successfully.', 5000, true);
     };
 
-    $scope.displayInfo = function() {
-        growl.info('<i class="mdi mdi-information"></i> Info: A user logged out.', {
-            ttl: 5000,
-            disableCountDown: true,
-        });
+    $scope.displayInfoNew = function() {
+        NoticeService.info('Info: A user logged out.', 5000, true);
     };
 
-    $scope.displayWarning = function() {
-        growl.warning('<i class="mdi mdi-alert"></i> Warning: Press refresh as the data was changed by another user.', {
-            ttl: 5000,
-            disableCountDown: true,
-        });
+    $scope.displayWarningNew = function() {
+        NoticeService.warning('Warning: Press refresh as the data was changed by another user.', 5000, true);
     };
 
-    $scope.displayError = function() {
-        growl.error('<i class="mdi mdi-alert-octagon"></i> Error: Something exploded so fix it.', {
-            ttl: 5000,
-            disableCountDown: true,
-        });
+    $scope.displayErrorNew = function() {
+        NoticeService.error('Error: Something exploded so fix it.', 5000, true);
     };
 
     /*code for working hours picker*/
@@ -178,3 +177,5 @@ angular.module('styleguideApp', [
         }
     });
 }]);
+
+})();

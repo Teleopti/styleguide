@@ -16,18 +16,20 @@
 
 // Date range picker
 //
-//A directive for specifying a date-only period. It is composed from datepicker with added validation messages. In WFM, the error messages will be translated automatically.
+//A directive for specifying a date-only period. It is composed from datepicker with added validation messages.
 //<table class="wfm-table">
 //<tr><th>Attribute Name</th><th>Usage</th><th>Required</th></tr>
 //<tr><td>ng-model</td><td>Bind to a js-object representing the date range. The object is composed by <code>startDate</code> and <code>endDate</code> key-value pairs</td><td>true</td></tr>
 //<tr><td>template-type</td><td>Declares whether to use <b>inline</b> or <b>popup</b> mode</td><td>false</td></tr>
+//<tr><td>must-be-equal-msg</td><td>Message shown if dates are in wrong order. Standard use is { {'StartDateMustBeEqualToOrEarlierThanEndDate' | translate} }</td><td>true</td></tr>
+//<tr><td>start-and-end-msg</td><td>Message shown if no dates are entered. Standard use is { {'StartDateAndEndDateMustBeSet' | translate} }</td><td>true</td></tr>
 //</table>
 //</br>
 //
 //Markup:
 //<label>Template type:</label> <select ng-model="dateRangeTemplateType"
 //        ng-options="option for option in dateRangeTemplateTypes"></select>
-//<date-range-picker ng-model="dateRange" template-type="dateRangeTemplateType"></date-range-picker>
+//<date-range-picker must-be-equal-msg="Start date must be equal to or earlier than the end date." start-and-end-msg="Start date and end date must be set" ng-model="dateRange" template-type="dateRangeTemplateType"></date-range-picker>
 //
 //Styleguide 2.2
 //
@@ -59,11 +61,11 @@
 }
 
 .glyphicon-chevron-right:before {
-    content: "\f1e5"!important;
+	content: "\f1e5"!important;
 }
 
 .glyphicon-chevron-left:before {
-    content: "\f1e4"!important;
+	content: "\f1e4"!important;
 }
 
 .wfm-datepicker{
@@ -74,8 +76,9 @@
 	}
 
 	.btn-default {
-	  border-color: transparent!important;
-	  background:$white;
+		border-color: transparent!important;
+		color:$text-color-standard;
+		background:$white;
 	}
 
 	.btn-info.active {
@@ -93,16 +96,16 @@
 	}
 
 	.btn.active, .btn:active {
-	  background-image: none;
-	   outline: 0;
+		background-image: none;
+		outline: 0;
 		-webkit-box-shadow: none;
 		box-shadow: none;
 	}
 
 	.btn-info {
-	  color: $gray100;
-	  background-color: transparent;
-	  border-color: transparent;
+		color: $gray100;
+		background-color: transparent;
+		border-color: transparent;
 	}
 
 	.text-info {
@@ -111,87 +114,54 @@
 
 	.range > button{
 		background-color:$green-100;
-    }
+	}
 }
 
 .wfm-date-range-picker-wrap {
-  .inline-datepicker-wrap {
-    display: inline-block;
-    position: relative;
-    .dropdown-menu {
-      position:absolute;
-      z-index:100;
-      margin-top: $full-padding;
-    }
-    .start-date-input + .dropdown-menu {
-      margin-left:-60px;
-    }
-    .end-date-input + .dropdown-menu {
-      margin-right: -60px;
-    }
-  }
 
-  .pin-down {
-    background-color: $gray012;
+	.pin-down {
+		background-color: $gray012;
 		@extend .material-depth-1;
-  }
+	}
 
-  .popup-control {
-    height:24px;
-    width:24px;
-    display:inline-block;
-    text-align:center;
-		padding:5px;
-    cursor:pointer;
-		border-radius: 50%;
-		transition: 0.5s all ease;
-		cursor:pointer;
-  }
+	.popup-control{
+		height: 18px;
+		width: 18px;
+	}
 
 	.popup-control:hover{
 		background-color: $gray012;
 	}
 
-  .inline-vertical-fix {
-    position: relative;
-    top: 4px;
-  }
+	&.ng-invalid .popup-control .mdi-calendar{
+		color: $red-800;
+	}
 
-  &.ng-invalid .popup-control .mdi-calendar{
-    color: $red-800;
-  }
+	input.ng-invalid {
+		border-bottom: 2px solid $red-600;
+	}
+	.in-date-range button {
+		background-color: $green-100;
+	}
+}
 
-  input {
-    text-align:center;
-    width:200px;
-  }
-  input.ng-invalid {
-    border-bottom: 2px solid $red-800;
-  }
-  .in-date-range button {
-    background-color: $green-100;
-  }
-  .hor-m-5{
-    margin-left:5px;
-    margin-right:5px;
-  }
+.dropdown-menu{
+	text-align: center;
 }
 
 .error-msg-container {
-  display: none;
-  margin-top: 5px;
-	@extend .material-depth-1;
+	display: none;
+	margin-top: 5px;
+	@extend .material-depth-2;
+	background: $red-600;
 }
 
 .error-msg-container.error-msg-popup-container {
-  position: absolute;
-  width: 490px;
+	position: absolute;
+	width: 490px;
 }
 
-.wfm-date-range-picker-wrap.ng-invalid.ng-invalid-empty .error-msg-container.ng-invalid-empty {
-  display: block !important;
-}
-
+.wfm-date-range-picker-wrap.ng-invalid.ng-invalid-empty .error-msg-container.ng-invalid-empty,
 .wfm-date-range-picker-wrap.ng-invalid.ng-invalid-order .error-msg-container.ng-invalid-order {
-  display: block !important;
+	display: block !important;
 }

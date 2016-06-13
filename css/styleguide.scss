@@ -1,4 +1,4 @@
-﻿@import './variables';
+﻿@import './classicvariables';
 
 //Elements
 //
@@ -308,6 +308,8 @@
 //
 //Take some time to consider your form layout in relation to the layout of your view and strive to use as much available space as possible.
 //
+//If your view only contains a wfm-form, consider using our autofocus directive on the first text/number input to get the user started.
+//
 //<div class="jsprewrap">
 //	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
 //	<div ng-show="showjs">
@@ -348,6 +350,10 @@
 // http://axbom.com/slaying-5-ux-myths-good-mankind/
 //
 //Styleguide 9.1
+
+html{
+  overflow-y: auto!important;
+}
 
 .spacer {
   margin: 25px;

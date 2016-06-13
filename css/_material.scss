@@ -4,6 +4,7 @@ outline: -webkit-focus-ring-color auto 0;
 
 body{
 	background-color: $gray012;
+	color:$gray087;
   font-size: $standard-font-size!important;
 	overflow-x: hidden;
 	font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif!important;
@@ -16,11 +17,8 @@ body{
 	}
 }
 
-table{
-	border-spacing: 0!important;
-}
-
-button, input, select{	font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif!important;
+button, input, select{
+	font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif!important;
 }
 
 dd {
@@ -44,6 +42,17 @@ dd {
 	@extend .material-depth-2;
 }
 
+.warm-overlay{
+	position:fixed;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	z-index:99999;
+	background-color: rgba(229, 146, 81, 0.15);
+	pointer-events: none;
+}
+
 .material-trench-1{
 	-webkit-box-shadow: inset 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 	-moz-box-shadow: inset 0 2px 5px 0 rgba(0, 0, 0, 0.26);
@@ -57,11 +66,6 @@ dd {
 .wfm-block {
 	padding:$full-padding;
 	width:100%;
-}
-
-.material-block-content {
-    padding: $full-padding;
-    vertical-align: middle;
 }
 
 .layout-container {
@@ -87,6 +91,7 @@ dd {
 .panel{
   margin-bottom: $full-padding*2;
   background:$white;
+  color:$text-color-standard;
   position: relative;
 	border-radius: 0;
 	border:0px solid transparent;
@@ -140,4 +145,30 @@ dd {
   .con-flex {
     flex: 1;
   }
+}
+
+@media screen and (max-width: 768px) {
+  .con-row {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+  .con-flex {
+    flex: 1 1 auto;
+  }
+}
+
+
+.flex-element-fill {
+	flex: 1 1 auto;
+	align-self:stretch;
+}
+
+.flex-element {
+	flex: 0 0 auto;
+}
+
+.flex-column {
+	display: flex;
+	flex-direction: column;
 }
