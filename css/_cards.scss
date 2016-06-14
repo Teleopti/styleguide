@@ -1,27 +1,140 @@
 
 
-//Cards
+//Card grid
 //
-//Cards are used to show a large number of same size content. Providing filters or ways to sort cards is good.
+// Cards are used to show a large number of similar content. Providing filters or ways to sort cards is appreciated.
+// Card actions should be triggered on click of the whole card.
 //
 //Markup:
-//	<div class="card-group">
-//		<div class="wfm-card" tabindex="0"><h2>Title</h2></div>
-//		<div class="wfm-card wfm-card-disabled" tabindex="0"><h2>Title</h2></div>
-//		<div class="wfm-card" tabindex="0"><h2>Title</h2></div>
-//		<div class="wfm-card" tabindex="0"><h2>Title</h2></div>
-//		<div class="wfm-card" tabindex="0"><h2>Title</h2></div>
-//		<div class="wfm-card" tabindex="0"><h2>Title</h2></div>
-//		<div class="wfm-card" tabindex="0"><h2>Title</h2></div>
-//	</div>
+//<div class="wfm-grid">
+// <div class="grid-card">
+//	 <div class="list-content">
+//		 <h2>Card header</h2>
+//		 <span>Short card tag line</span>
+//	 </div>
+// </div>
+// <div class="grid-card">
+//	 <div class="list-content">
+//		 <h2>Card header</h2>
+//		 <span>Short card tag line</span>
+//	 </div>
+// </div>
+// <div class="grid-card">
+//	 <div class="list-content">
+//		 <h2>Card header</h2>
+//		 <span>Short card tag line</span>
+//	 </div>
+// </div>
+//</div>
 //
 //Styleguide 1.18
 //
-.card-group {
-	display: inline-block;
-	width: 100%;
-	transition: 1s all ease-in-out;
-}
+
+//Mini card grid
+//
+//Smaller cards that provide more items on screen at once.
+//
+//Markup:
+//<div class="wfm-grid">
+// <div class="grid-card-mini">
+//	 <div class="list-content">
+//		 <h2>Card header</h2>
+//		 <span>Short card tag line</span>
+//	 </div>
+// </div>
+// <div class="grid-card-mini">
+//	 <div class="list-content">
+//		 <h2>Card header</h2>
+//		 <span>Short card tag line</span>
+//	 </div>
+// </div>
+// <div class="grid-card-mini">
+//	 <div class="list-content">
+//		 <h2>Card header</h2>
+//		 <span>Short card tag line</span>
+//	 </div>
+// </div>
+// <div class="grid-card-mini">
+//	 <div class="list-content">
+//		 <h2>Card header</h2>
+//		 <span>Short card tag line</span>
+//	 </div>
+// </div>
+// <div class="grid-card-mini">
+//	 <div class="list-content">
+//		 <h2>Card header</h2>
+//		 <span>Short card tag line</span>
+//	 </div>
+// </div>
+// <div class="grid-card-mini">
+//	 <div class="list-content">
+//		 <h2>Card header</h2>
+//		 <span>Short card tag line</span>
+//	 </div>
+// </div>
+//</div>
+//
+//Styleguide 1.18.1
+//
+
+ .wfm-grid {
+	display: flex;
+	flex-wrap: wrap;
+
+	.grid-card-disabled{
+		background: $gray012;
+		pointer-events: none;
+		cursor: not-allowed!important;
+	}
+
+	.grid-card, .grid-card-mini  {
+ 	 display: flex;
+ 	 padding: $full-padding;
+ 	 width: 100%;
+  }
+
+	@media all and (min-width: 768px) {
+		.grid-card {
+			width: 50%;
+		}
+
+		.grid-card-mini{
+			width:25%;
+		}
+	}
+
+	@media all and (min-width: 960px) {
+		.grid-card {
+			width: 33.33%;
+		}
+
+		.grid-card-mini{
+			width:16.66%;
+		}
+	}
+
+	.list-content {
+		background-color: $white;
+		display: flex;
+		flex-direction: column;
+		padding:$full-padding;
+		width: 100%;
+
+		@extend .material-depth-1;
+		@extend .raise;
+	}
+
+	.list-content span {
+		flex: 1 0 auto;
+		padding-bottom: $full-padding;
+	 }
+ }
+
+ .card-group {
+	 display: inline-block;
+	 width: 100%;
+	 transition: 1s all ease-in-out;
+ }
 
  .wfm-card {
 	 display: block;
