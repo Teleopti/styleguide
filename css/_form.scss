@@ -246,6 +246,10 @@ select:after {
   }
 }
 
+.md-select-menu-container {
+	z-index: 99999;
+}
+
 md-select:not([disabled]):focus .md-select-value{
   border: none;
   outline: none;
@@ -278,7 +282,7 @@ md-select-menu{
 }
 
 md-select {
-  margin-top: auto;
+  margin: 0!important;
 
   .md-select-label {
     padding: 0;

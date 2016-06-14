@@ -111,6 +111,14 @@
   background: $gray012!important;
 }
 
+.active-context{
+	background: $gray012;
+}
+
+.active-context i{
+	color: $text-color-standard;
+}
+
 .context-menu {
     position: relative;
     cursor:pointer;
