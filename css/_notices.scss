@@ -8,6 +8,7 @@
 // <li class="text-danger"><b>Error: </b>Should be triggered when something goes wrong in the background.</li></ul>
 //
 // A notice should either self-destruct on state change, when timeout is up or be dismissable to free up space. The Notice service methods take 3 arguments: content, timeToLive and destroyOnStateChange.
+// When creating a new notice you will get a notice object. You can destroy the notice by calling notice.destroy().
 //
 //<div class="jsprewrap">
 //	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
