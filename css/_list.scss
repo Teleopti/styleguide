@@ -1,35 +1,36 @@
 ﻿//Lists
 //
-//The lists is used to display long colections of similar information. 
-//A long list should be contained so that it doesnt overflow the main view.
+//The lists is used to display long collections of similar information. Keep in mind that a long list could push other things out of view.
 //
-//Styleguide 1.2.0
+//Styleguide 1.13.0
 
 //Simple list
 //
 //For when you just want to display some data in a simple list without any actions.
-//Note that clicking/selecting a list item is considered an action. In other words, if the user can do anything other than read the list, use a action list.
+//
+//If you need actions (click or select), go to "Actions list".
+//
 //Optionally a list item can have a small, one sentence description attached to it. If more information is needed about the items conceder using a modal or table.
 //
 //Markup:
-//<ul class="wfm-simple-list">
-//	<li>
-//		Tea
-//		<div class="subtext">Its hot</div>
-//	</li>
-//	<li>
-//		Beer
-//		<div class="subtext">Tasty but expensive</div>
-//	</li>
-//	<li>
-//		Coffe
-//	</li>
-//	<li class="active">
-//		Juice
-//	</li>
-//</ul>
+//	<ul class="wfm-simple-list">
+//		<li>
+//			Tea
+//			<div class="subtext">Its hot</div>
+//		</li>
+//		<li>
+//			Beer
+//			<div class="subtext">Tasty but expensive</div>
+//		</li>
+//		<li>
+//			Coffe
+//		</li>
+//		<li class="active">
+//			Juice
+//		</li>
+//	</ul>
 //
-//Styleguide 1.2.1
+//Styleguide 1.13.1
 //
 
 .wfm-simple-list {
@@ -38,7 +39,7 @@
 	max-height: 800px;
 	overflow-y: auto;
 	margin: 0;
-	
+
 	.subtext{
 		color:$gray054;
 	}
@@ -59,63 +60,91 @@
 //
 // Action lists are used for list where the user can perform actions. These can have several options attached to them in a so called  <a href="http://goo.gl/DMxAHS">leave-behind</a>, however, these options may only effect the list item they are a part of. Individual options can have a tooltip and an icon and they are displayed only if the item is hovered or clicked.
 //
-// If an item in the action list is not intractable in any way while others in the same list are 
-// If there are actions that affect the whole list (such as create new or delete all) they should be placed above or below the list.
+// Broad actions on the list (such as creating a new item or removing all) should be placed in the panel actions (see <a href="section-4.html">containers</a>, chapter).
 //
 //Markup:
-//<ul class="wfm-list">
-//	<li>
-//		<span class="list-item-container">
-//			List Item with one action in leave-behind
-//		</span>
-//		<div class="wfm-leave-behind wfm-leave-behind-1">
-//			<span>
-//				<i class="mdi mdi-delete"></i>
+//	<ul class="wfm-list">
+//		<li ng-click="listSelected1 = !listSelected1">
+//			<span class="list-item-container">
+//				List item with one action in leave-behind
 //			</span>
-//		</div>
-//	</li>
-//	<li>
-//		<span class="list-item-container">
-//			List Item with two actions in leave-behind
-//		</span>
-//		<div class="wfm-leave-behind wfm-leave-behind-2">
-//			<span>
-//				<i class="mdi mdi-pencil"></i>
-//				<i class="mdi mdi-delete"></i>
+//			<span ng-cloak ng-show="listSelected1" class="list-dot grow-out"><b class="mdi mdi-check list-mark"></b></span>
+//			<div class="wfm-leave-behind wfm-leave-behind-1">
+//				<span>
+//					<i class="mdi mdi-delete"></i>
+//				</span>
+//			</div>
+//		</li>
+//		<li ng-click="listSelected2 = !listSelected2">
+//			<span class="list-item-container">
+//				List item with two actions in leave-behind
 //			</span>
-//		</div>
-//	</li>
-//	<li class="active">
-//		<span class="list-item-container">
-//			List Item with three actions in leave-behind
-//		</span>
-//		<div class="wfm-leave-behind">
-//			<span>
-//				<i class="mdi mdi-content-copy"></i>
-//				<i class="mdi mdi-pencil"></i>
-//				<i class="mdi mdi-delete"></i>
-//			</span>	
-//		</div>
-//	</li>
-//	<li>
-//		<i class="mdi mdi-alert"></i> List Item with icon and no actions
-//	</li>
-//</ul>
+//			<span ng-cloak ng-show="listSelected2" class="list-dot grow-out"><b class="mdi mdi-check list-mark"></b></span>
+//			<div class="wfm-leave-behind wfm-leave-behind-2">
+//				<span>
+//					<i class="mdi mdi-pencil"></i>
+//					<i class="mdi mdi-delete"></i>
+//				</span>
+//			</div>
+//		</li>
+//		<li ng-click="listSelected3 = !listSelected3">
+//			<span class="list-item-container">
+//				List item with three actions in leave-behind
+//			</span>
+//			<span ng-cloak ng-show="listSelected3" class="list-dot grow-out"><b class="mdi mdi-check list-mark"></b></span>
+//			<div class="wfm-leave-behind">
+//				<span>
+//					<i class="mdi mdi-content-copy"></i>
+//					<i class="mdi mdi-pencil"></i>
+//					<i class="mdi mdi-delete"></i>
+//				</span>
+//			</div>
+//		</li>
+//		<li ng-click="listSelected4 = !listSelected4" class="disabled">
+//			<span class="list-item-container">
+//				Disabled list items without leave-behind
+//			</span>
+//			<span ng-cloak ng-show="listSelected4" class="list-dot grow-out"><b class="mdi mdi-check list-mark"></b></span>
+//			<div class="wfm-leave-behind">
+//				<span>
+//					<i class="mdi mdi-content-copy"></i>
+//					<i class="mdi mdi-pencil"></i>
+//					<i class="mdi mdi-delete"></i>
+//				</span>
+//			</div>
+//		</li>
+//	</ul>
 //
-//Styleguide 1.2.2
+//Styleguide 1.13.2
 //
+
+.list-dot{
+  float:left!important;
+	border-radius: 50%;
+	position: absolute;
+	left:$full-padding;
+	background:$green-100;
+	box-shadow: 0 0 0 3px $green-100;
+}
+
+ul {
+	margin-bottom:0!important;
+	list-style: none;
+	padding-left: 0;
+}
 
 .list-item-container{
 text-overflow: ellipsis;
 white-space: nowrap;
 overflow: hidden;
 display:inline-block;
+margin-left: 30px;
 }
 
 
 @media(min-width:600px){
 	.list-item-container{
-		max-width: 20em;
+		max-width: 100%;
 	}
 }
 
@@ -137,13 +166,13 @@ display:inline-block;
 	max-height: 800px;
 	overflow-y: auto;
 	margin: 0;
+	background: $white;
 }
 
 .wfm-list li {
 	padding: $full-padding;
 	cursor: pointer;
 	overflow: hidden;
-	background-color:$gray-100;
 	border-left: 3px solid transparent;
 	border-top:1px solid $gray012;
 	position:relative;
@@ -156,45 +185,54 @@ display:inline-block;
 
 	&.active{
 		border-left: 3px solid $pink-500;
-		background-color: $white;
+		background-color: $green-100;
 	}
+
 	&.active:hover{
 		border-left: 3px solid $pink-500;
-		background-color: $white;
+		background-color: $green-100;
 	}
 
 	i{
-		vertical-align: text-bottom;
+		vertical-align: baseline;
 		margin-right: $full-padding;
+		color: #555555;
+		padding-bottom: 5px;
+	}
+
+	&.disabled{
+		background: $gray012!important;
+		cursor: not-allowed;
+		pointer-events: none;
 	}
 }
 
 .wfm-leave-behind {
-  height: 37px;
+  height: 40px;
   width: 0;
   display: inline!important;
   position: absolute!important;
   right: 0;
   overflow: hidden;
-  margin-top: -5px;
+  margin-top: -8px;
   transition: all .5s ease-in-out;
   padding-top: 8px;
   background-color: #cacaca;
   z-index: 999;
   border-bottom: 8px solid transparent;
-	
+
 	span{
 		padding-left: $full-padding;
 		white-space:nowrap;
 	}
-	
-	i{	
+
+	i{
 		position: justify;
 		padding-top: 2px;
 		font-size: 18px;
 		margin: 0 5px;
 	}
-	
+
 	p{
 		padding-left:$full-padding;
 		margin:0 5px;

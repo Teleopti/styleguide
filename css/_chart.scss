@@ -1,48 +1,83 @@
 
 // Line chart
 //
-//A chart is a great way to present complex data. We use <a href="http://c3js.org/gettingstarted.html">C3 charts</a> to get nice features like legends, zoom and period selection. 
-//<h5>Javascript example</h5>
-//<code><pre>
-//var chart = c3.generate({
-//	bindto: '#myChart',
-//	data: {
-//		columns: [
-//			['data1', 30, 200, 100, 400, 150, 250],
-//			['data2', 20, 180, 240, 100, 190,0]
-//		]
-//	},
-//	subchart: {
-//		show: true
-//	},
-//	zoom: {
-//		enabled: true
-//	}
+//A chart used to present complex data. We use <a href="http://c3js.org/gettingstarted.html">default C3</a> or the <a href="http://jettro.github.io/c3-angular-directive/#download">C3 chart directive</a> to get nice features like legends, zoom and period selection.
+//
+//Note: Column-values in the directive should be replaced with a variable to keep the html clean.
+//<div class="jsprewrap">
+//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
+//	<div ng-show="showjs">
+//		<code><pre>
+//c3.generate({
+//		bindto: '#myChart',
+//		data: {
+//				columns: [
+//					['data1', 30, 200, 100, 400, 150, 250],
+//					['data2', 20, 180, 240, 100, 190, 0],
+//				],
+//				selection: {
+//						enabled: true,
+//				},
+//		},
+//		zoom: {
+//				enabled: true,
+//		},
 //});
-//</pre></code>
+//		</pre></code>
+//	</div>
+//</div>
 //
 //Markup:
-//	<div id="myChart"></div>
+//	<h3>Bind to chart with zoom and select</h3>
+//	<div class="wfm-chart" id="myChart"></div>
+//	<h3>c3 directive</h3>
+//	<c3chart class="wfm-chart" bindto-id="chart2">
+//		<chart-column column-id="data 1"
+//		column-name="Data 1"
+//		column-color="#EF5350"
+//		column-values="30,200,100,400,150,250"
+//		column-type="line"/>
+//		<chart-column column-id="data 2"
+//		column-name="Data 2"
+//		column-color="#BA68C8"
+//		column-values="50,20,10,40,15,25"
+//		column-type="line"/>
+//	</c3chart>
 //
 //Styleguide 2.3
 //
 
-.c3-tooltip td,.c3-tooltip th{
-  color:white;
-  background-color: rgba(0,0,0,0.54)!important;
-}
 
- .c3-tooltip td>span {
-  margin-left: 10px;
-  margin-top: 5px;
-  border:1px solid white;
-}
+.wfm-chart{
+	background-color:$white;
 
-.c3-brush .extent {
-	stroke: #0099FF!important;
-	fill: #0099FF!important;
-}
+	.c3-tooltip td>span {
+		margin-left: 10px;
+		margin-top: 5px;
+		border:1px solid white;
+	}
 
-g.tick line{
-	display:none;
+	.c3-tooltip td,.c3-tooltip th{
+		color:white;
+		background-color: $gray054!important;
+	}
+
+	.c3-brush .extent {
+		stroke: $blue-500!important;
+		fill: $blue-500!important;
+	}
+
+	g.tick line{
+		display:none;
+	}
+
+	.c3-selected-circle {
+		fill: $white;
+	}
+
+	.c3-axis,
+	.c3-axis-x,
+	.c3-legend-item{
+		fill:$text-color-standard;
+	}
 }

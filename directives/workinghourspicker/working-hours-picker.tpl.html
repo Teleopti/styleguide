@@ -1,0 +1,60 @@
+﻿<div class="row toolbar">
+	<div class="wfm-block">
+		<ul class="wfm-list">
+			<li>
+				<span class="list-item-container list-header">
+					&nbsp;
+				</span>
+				<span class="list-item-container">
+					<div ng-repeat-start="weekday in weekDays" ng-repeat-end>
+						<span translate>{{weekday | showWeekdays}}</span>
+					</div>
+				</span>
+			</li>
+
+			<li ng-repeat="WorkingPeriod in workingHours"
+				ng-click="$parent.toggleWorkingPeriodSelect(WorkingPeriod)">
+				<span class="list-item-container list-header">
+					<md-tooltip>{{getTimerangeDisplay(WorkingPeriod.StartTime, WorkingPeriod.EndTime)}}</md-tooltip>
+					{{ getTimerangeDisplay(WorkingPeriod.StartTime, WorkingPeriod.EndTime)}}
+				</span>
+
+				<span class="list-item-container">
+					<div ng-repeat-start="WeekDay in WorkingPeriod.WeekDaySelections" ng-repeat-end>
+						<div class="wfm-checkbox wfm-checkbox-inline ">
+							<input type="checkbox" id="check_workinghour_{{$parent.$index}}_weekday_{{WeekDay.WeekDay}}" ng-model="WeekDay.Checked" />
+							<label for="check_workinghour_{{$parent.$index}}_weekday_{{WeekDay.WeekDay}}" ng-click="enforceRadioBehavior($parent.$index, WeekDay.WeekDay)">
+								<span class="wfm-checkbox-toggle"></span>
+								<span class="wfm-checkbox-label"></span>
+							</label>
+						</div>
+					</div>
+				</span>
+
+				<div class="wfm-leave-behind wfm-leave-behind-2">
+					<span>
+						<i class="mdi mdi-check" ng-click="$parent.toggleAllChecks($index)">
+							<md-tooltip>
+								{{'ToggleAll' | translate}}
+							</md-tooltip>
+						</i>
+						<i class="mdi mdi-delete" ng-click="$parent.removeWorkingPeriod($index)">
+							<md-tooltip>
+								{{'DeletePeriod' | translate}}
+							</md-tooltip>
+						</i>
+					</span>
+				</div>
+			</li>
+		</ul>
+
+		<div class="wfm-block">
+			<time-range-picker ng-model="newWorkingPeriod"  disable-next-day="disableNextDay">
+				<button type="button" class="wfm-fab mini success" ng-click="addEmptyWorkingPeriod()">
+					<i class="mdi mdi-plus"></i>
+					<md-tooltip>{{'AddEmptyPeriod' | translate}}</md-tooltip>
+				</button>
+			</time-range-picker>
+		</div>
+	</div>
+</div>

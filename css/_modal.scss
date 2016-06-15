@@ -1,86 +1,3 @@
-﻿// Modals
-//
-// A modal is launched above the main view and stays there until the user has taken action. Since this is such a obnoxious element it should only be used when you absolutely want the user to focus on a single task.
-//
-//Markup:
-//	<div ng-cloak class="modal-box">
-//		<button ng-click="modalLaunch1 = !modalLaunch1" class="wfm-btn wfm-btn-default">Open modal</button>
-//		<div ng-cloak ng-show="modalLaunch1">
-//			<div class="modalbg">
-//				<div class="dialog">
-//					<div class="modal-header">
-//						Modal title
-//					</div>
-//					<div class="modal-inner-content">
-//						<div class="wfm-block">Ladies and gentlemen, allow me to introduce myself, I am the amazing modal window body!</div>
-//					</div>
-//					<div class="modal-footer">
-//						<aside>
-//							<a ng-click="modalLaunch1 = !modalLaunch1" class="wfm-btn wfm-btn-invis-default">dismiss</a>
-//							<a ng-click="modalLaunch1 = !modalLaunch1"  class="wfm-btn wfm-btn-invis-primary">Sounds good</a>
-//						</aside>
-//					</div>
-//				</div>
-//			</div>
-//		</div>
-//	</div>
-//
-//Styleguide 1.12
-//
-
-//Tabbed modal
-//
-//<div class="styleguide-break"><i class="mdi mdi-alert"></i><span>Use with care, creates complexity. </span></div>
-//When needing to display more information than the normal modal allows or present a string of actions to the user a tabbed modal can be used. 
-//
-//Markup:
-//<div ng-cloak class="modal-box">
-//	<button ng-click="modalLaunch2 = !modalLaunch2" class="wfm-btn wfm-btn-default">Open tab modal</button>
-//	<div ng-cloak ng-show="modalLaunch2">
-//		<div class="modalbg">
-//			<div class="dialog">
-//					<div class="wfm-slide-tabs">
-//						<md-content style="padding:0!important;">
-//							<md-tabs md-dynamic-height md-border-bottom>
-//								<md-tab label="first tab">
-//									<md-content class="md-padding">
-//										<h4 class="md-display-2">Tab One</h4>
-//										<p>Click a tab to watch me go!</p>
-//									</md-content>
-//								</md-tab>
-//								<md-tab label="second tab">
-//									<md-content class="md-padding">
-//										<h4 class="md-display-2">Tab Two</h4>
-//										<p>wheeeee</p>
-//									</md-content>
-//								</md-tab>
-//								<md-tab label="third tab">
-//									<md-content class="md-padding">
-//										<h4 class="md-display-2">Tab Three</h4>
-//										<p>Slow down!</p>
-//									</md-content>
-//								</md-tab>
-//								<md-tab label="fourth tab">
-//									<md-content class="md-padding">
-//										<h4 class="md-display-2">Tab Four</h4>
-//										<p>Now listen here you little whippersnapper. </p>
-//									</md-content>
-//								</md-tab>
-//							</md-tabs>
-//						</md-content>
-//					</div>
-//				<div class="modal-footer">
-//					<aside>
-//						<a ng-click="modalLaunch2 = !modalLaunch2" class="wfm-btn wfm-btn-invis-primary">dismiss</a>
-//					</aside>
-//				</div>
-//			</div>
-//		</div>
-//	</div>
-//</div>
-//
-//Styleguide 1.12.1
-//
 
 .modal-box {
 	.modalbg {
@@ -92,56 +9,138 @@
 		z-index: 99998;
 		background: $gray026;
 	}
-	
-	.modalbg .dialog {
+
+	.dialog, .dialog-mini {
 		width: 60%;
 		z-index: 99999;
 		position: relative;
 		top: -20px;
 		margin: 10% auto;
-		background: $white;	
+		background: $white;
 	}
 
+	.dialog-mini {
+		width: 25%;
+	}
+
+	.tabbed-panel > md-content{
+		padding: 0;
+	}
+
+	/*Dialog*/
+	@media only screen and (max-width:769px){
+		.dialog {
+			left:5px!important;
+			width:90%;
+			right:1%;
+		}
+	}
+
+	/*Mini dialog*/
 	@media only screen and (max-width:1200px){
-	.modalbg .dialog {
-	  width:90%;
-	 }
-	}
-	
-	@media(max-width:599px){
-		.modal-box .modalbg .dialog{
-			max-height:90%;
-			overflow-y:auto!important;	
+		.dialog-mini {
+			width:90%!important;
 		}
 	}
 
-	@media(min-width:600px){
-		.modal-box .modalbg .dialog{
-			max-height:70%;
-			overflow-y:auto!important;	
-		}
+
+	.modal-title{
+		padding-left:10px!important;
+		text-align: left;
 	}
-	
-	.modal-header{
-		padding: $full-padding;
-		background-color: $blue-500;
-		color: $white;
-	}
-	
+
 	.modal-inner-content{
 		background-color: $white;
-		color: $gray087;
+		color: $text-color-standard;
 		max-height: 70vh;
+		padding:10px;
 		overflow-y: auto;
+		text-align: left;
 	}
-	
-	.modal-footer{
-		padding: $full-padding * 2 $full-padding;
-		border-top: 1px solid $gray012;
-		color: $gray087;
+
+	.modal-actions{
+		color: $text-color-standard;
 	}
-	
+
 	aside{
 		text-align:right;
+	}
+}
+
+//Modal
+//
+// A modal is launched above the main view and stays there until the user has taken action. It can be quickly dismissed by clicking outside it or on the close icon (this should be treated as a cancel).
+//
+// Note: In all modals and panels the footer links should be buttons, not  &lt;a/&gt; tags.
+//
+//<div class="jsprewrap">
+//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
+//	<div ng-show="showjs">
+//		<code><pre>
+//    	$scope.modalShown = false;
+//    	$scope.toggleModal = function() {
+//      	$scope.modalShown = !$scope.modalShown;
+//    	};
+//		</pre></code>
+//	</div>
+//</div>
+//
+//Markup:
+//	<button ng-click='toggleModal()' class="wfm-btn wfm-btn-default">Open modal</button>
+//	<modal-dialog show='modalShown' ng-cloak>
+//		<h1 class="modal-title">Modal title</h1>
+//		<div class="modal-inner-content">
+//			Ladies and gentlemen, allow me to introduce myself, I am the amazing modal window body!
+//		</div>
+//		<div class="modal-actions">
+//			<aside>
+//				<button class="wfm-btn wfm-btn-invis-primary">Apply</button>
+//			</aside>
+//		</div>
+//	</modal-dialog>
+//
+//Styleguide 1.14.0
+//
+
+//Mini Confirmation modal
+//
+// The mini modal is used for confirmation. As opposed to the regular modal it cant be dissmissed without taking an action.
+//
+// Note: In all modals and panels the footer links should be buttons, not  &lt;a/&gt; tags.
+//
+//Note: Recomended translated text { {'AreYouSureYouWantToDelete' | translate} }
+//
+//Markup:
+//	<button ng-click='confirmModal1=true' class="wfm-btn wfm-btn-default">Do something dangerous</button>
+//	<div ng-cloak class="modal-box">
+//		<div ng-cloak ng-show="confirmModal1">
+//			<div class="modalbg">
+//				<div class="dialog-mini">
+//					<div class="modal-inner-content">
+//						<h3>Affected item(s)</h3>
+//						Are you sure you want to delete?
+//					</div>
+//					<div class="modal-actions">
+//						<aside>
+//							<button ng-click="confirmModal1=false" class="wfm-btn wfm-btn-invis-default">Cancel</button>
+//							<button ng-click="confirmModal1=false" class="wfm-btn wfm-btn-invis-primary">Apply</button>
+//						</aside>
+//					</div>
+//				</div>
+//			</div>
+//		</div>
+//	</div>
+//
+//Styleguide 1.14.1
+//
+
+.click-modal{
+
+	.head-actions {
+    margin-top: 0;
+	}
+
+	.dialog{
+		position: fixed;
 	}
 }

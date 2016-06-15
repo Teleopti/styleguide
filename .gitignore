@@ -3,12 +3,14 @@ node_modules
 styleguide
 css/main.css
 css/main.css.map
+css/styleguide.css
 css/main.min.css
 *.sln
 *.suo
 *.idea
-
-
+*~
 *.log
-
 *.tgz
+dist/
+css/main_dark.min.css
+css/main_dark.css

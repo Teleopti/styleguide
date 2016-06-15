@@ -3,47 +3,33 @@
 //The datepicker is based on bootstraps datepicker and all we do is wrap it and apply some special classes  to make it more compatible with material design.
 //
 //Markup:
-//<div class="wfm-datepicker-wrap">
-//	<div class="sub-header">
-//		From/to: 
-//	</div>
-//	<datepicker show-weeks="true" ng-model="someDate" class="wfm-datepicker"></datepicker>
-//</div >
+//	<div class="wfm-datepicker-wrap">
+//		<div class="sub-header">
+//			From/to:
+//		</div>
+//		<uib-datepicker show-weeks="true" ng-model="someDate" class="wfm-datepicker"></datepicker>
+//	</div >
 //
 //Styleguide 2.1
 //
 
 
-// Calendar with range highlighted
+// Date range picker
 //
-//Uses the 'custom class' with <a href="https://angular-ui.github.io/bootstrap/">ui bootstrap datepicker</a> to mark range.
-//<h5>Javascript example</h5>
-//<code><pre>$scope.setRangeClass = function (date, mode) {
-//	if (mode === 'day') {
-//		var dayToCheck = new Date(date).setHours(12, 0, 0, 0);
-//		var startDay = new Date($scope.startDate).setHours(12, 0, 0, 0);
-//		var endDay = new Date($scope.endDate).setHours(12, 0, 0, 0);
-//		if (dayToCheck >= startDay && dayToCheck < endDay) {
-//			return 'range';
-//		}
-//	}
-//	return '';
-//	};
-//</pre></code>
+//A directive for specifying a date-only period. It is composed from datepicker with added validation messages.
+//<table class="wfm-table">
+//<tr><th>Attribute Name</th><th>Usage</th><th>Required</th></tr>
+//<tr><td>ng-model</td><td>Bind to a js-object representing the date range. The object is composed by <code>startDate</code> and <code>endDate</code> key-value pairs</td><td>true</td></tr>
+//<tr><td>template-type</td><td>Declares whether to use <b>inline</b> or <b>popup</b> mode</td><td>false</td></tr>
+//<tr><td>must-be-equal-msg</td><td>Message shown if dates are in wrong order. Standard use is { {'StartDateMustBeEqualToOrEarlierThanEndDate' | translate} }</td><td>true</td></tr>
+//<tr><td>start-and-end-msg</td><td>Message shown if no dates are entered. Standard use is { {'StartDateAndEndDateMustBeSet' | translate} }</td><td>true</td></tr>
+//</table>
+//</br>
 //
 //Markup:
-//<div class="wfm-datepicker-wrap">
-//	<div class="sub-header">
-//		From: 
-//	</div>
-//<datepicker ng-model="startDate" max-date="endDate" custom-class="setRangeClass(date, mode)" class="wfm-datepicker"></datepicker>
-//</div>
-//<div class="wfm-datepicker-wrap">
-//	<div class="sub-header">
-//		To: 
-//	</div>
-//<datepicker ng-model="endDate" min-date="startDate" custom-class="setRangeClass(date, mode)" class="wfm-datepicker"></datepicker>
-//</div>
+//<label>Template type:</label> <select ng-model="dateRangeTemplateType"
+//        ng-options="option for option in dateRangeTemplateTypes"></select>
+//<date-range-picker must-be-equal-msg="Start date must be equal to or earlier than the end date." start-and-end-msg="Start date and end date must be set" ng-model="dateRange" template-type="dateRangeTemplateType"></date-range-picker>
 //
 //Styleguide 2.2
 //
@@ -53,18 +39,46 @@
 .wfm-datepicker-wrap {
 	@extend .material-depth-1;
 	margin: $full-padding;
-	display:inline-block; 
-	min-height:290px;
+	display:inline-block;
+	background-color:$white;
+	min-height:270px;
+}
+
+.glyphicon{
+	display: inline-block;
+	font: normal normal normal 24px/1 MaterialDesignIcons;
+	font-size: 16px;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	transform: translate(0, 0);
+}
+
+.glyphicon:hover:before{
+	box-shadow: 0px 0px 0px 5px $gray012;
+	background:$gray012;
+	border-radius: 1px;
+}
+
+.glyphicon-chevron-right:before {
+	content: "\f1e5"!important;
+}
+
+.glyphicon-chevron-left:before {
+	content: "\f1e4"!important;
 }
 
 .wfm-datepicker{
+	padding:5px;
+
 	table th {
 		border-color: transparent;
 	}
 
 	.btn-default {
-	  border-color: transparent!important;
-	  background:$white;
+		border-color: transparent!important;
+		color:$text-color-standard;
+		background:$white;
 	}
 
 	.btn-info.active {
@@ -82,23 +96,77 @@
 	}
 
 	.btn.active, .btn:active {
-	  background-image: none;
-	   outline: 0;
+		background-image: none;
+		outline: 0;
 		-webkit-box-shadow: none;
 		box-shadow: none;
 	}
 
 	.btn-info {
-	  color: $gray100;
-	  background-color: transparent;
-	  border-color: transparent;
+		color: $gray100;
+		background-color: transparent;
+		border-color: transparent;
 	}
 
 	.text-info {
 		color: inherit;
 	}
-	
+
 	.range > button{
 		background-color:$green-100;
-    }
+	}
+}
+
+.wfm-date-range-picker-wrap {
+
+	.pin-down {
+		background-color: $gray012;
+		@extend .material-depth-1;
+	}
+
+	.popup-control{
+		height: 18px;
+		width: 18px;
+	}
+
+	.popup-control:hover{
+		background-color: $gray012;
+	}
+
+	&.ng-invalid .popup-control .mdi-calendar{
+		color: $red-800;
+	}
+
+	input.ng-invalid {
+		border-bottom: 2px solid $red-600;
+	}
+	.in-date-range button {
+		background-color: $green-100;
+	}
+}
+
+.dropdown-menu{
+	text-align: center;
+	background-color: $white;
+}
+
+.popup-control{
+	box-sizing: initial;
+}
+
+.error-msg-container {
+	display: none;
+	margin-top: 5px;
+	@extend .material-depth-2;
+	background: $red-600;
+}
+
+.error-msg-container.error-msg-popup-container {
+	position: absolute;
+	width: 490px;
+}
+
+.wfm-date-range-picker-wrap.ng-invalid.ng-invalid-empty .error-msg-container.ng-invalid-empty,
+.wfm-date-range-picker-wrap.ng-invalid.ng-invalid-order .error-msg-container.ng-invalid-order {
+	display: block !important;
 }

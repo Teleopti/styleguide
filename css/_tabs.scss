@@ -1,79 +1,65 @@
-//Tabs
-//
-//Tabs are used to change big content areas and are a great way to divide a single task into smaller pieces. They are typicaly located at the top of the page or a big panel instead of a header. One important thing to remember is to order the tabs in a way that makes sense to the workflow.  Also, avoid having nested tabs or several tab -groups close together to avoid confusion.  
-//
-//Markup:
-//<div class="wfm-slide-tabs">
-//  <md-content class="md-padding">
-//    <md-tabs md-dynamic-height md-border-bottom>
-//      <md-tab label="first tab">
-//        <md-content class="md-padding">
-//          <h4>Tab One</h4>
-//          <p>Click a tab to watch me go!</p>
-//        </md-content>
-//      </md-tab>
-//      <md-tab label="second tab">
-//        <md-content class="md-padding">
-//          <h4>Tab Two</h4>
-//          <p>wheeeee</p>
-//        </md-content>
-//      </md-tab>
-//      <md-tab label="third tab">
-//        <md-content class="md-padding">
-//          <h4>Tab Three</h4>
-//          <p>Slow down!</p>
-//        </md-content>
-//      </md-tab>
-//      <md-tab label="fourth tab">
-//        <md-content class="md-padding">
-//          <h4>Tab Four</h4>
-//          <p>Now listen here you little whippersnapper, back in the good old days you had to break words all by the sweat of your own brow. You youngsters have it easy! If you have a long text in here, I will like just wrap to a new line if it has to. </p>
-//        </md-content>
-//      </md-tab>
-//    </md-tabs>
-//  </md-content>
-//</div>
-//
-//Styleguide 1.16
-//
-
 .wfm-slide-tabs{
+
+	.md-active {
+	    color:$gray087!important;
+	}
+	md-ink-bar {
+	    box-shadow: 0 -4px 5px 0 rgba(0,0,0,.26)!important;
+	}
+	md-tab-item:not([disabled]) {
+	  color:$gray087!important;
+	}
+
+	md-next-button{
+		padding-right: 18%;
+		background: $blue-100;
+	}
 
 	.md-ripple-container{
 		background-color:transparent!important;
 	}
-	
-	md-content{
-		padding:10px 5px!important;
+
+	.wizard-step{
+		float:right;
 	}
-	
+
+	md-content{
+		color:$gray087;
+	}
+
+	md-tabs{
+		border-radius: 0;
+	}
+
 	md-tabs.md-default-theme md-tab.active{
 		color:$gray087!important;
-		background-color:$blue-500!important;
 	}
-	
+
 	md-tab md-tab-label{
 		  padding-bottom: 10px!important;
 	}
-	
+
 	.md-header{
 		  height: 30px!important;
-		  background-color:$blue-300!important;
 	}
 }
 
+.wfm-slide-tabs md-ink-bar {
+    top: 0!important;
+		height: 36px;
+		z-index: -1;
+		background: $white;
+		@extend .material-depth-1;
+}
 
-//project tabs style
-	.wfm-slide-tabs md-content {
-		padding: 10px 5px !important;
-	}
+md-tabs .md-tab.md-active, md-tabs .md-tab.md-focused {
+		color:$gray087;
+}
 
-	.wfm-slide-tabs md-tabs.md-default-theme md-tab.active {
-		color: rgba(0,0,0,.87)!important;
-		  background-color:$blue-500 !important;
-	  height: 79%;
-	}
-	
+md-content.md-default-theme {
+    background-color: $white!important;
+}
+
 
 	.wfm-slide-tabs md-tabs .md-tab {
 		 margin-top: -8px;
@@ -81,99 +67,54 @@
 
 
 	.wfm-slide-tabs md-tabs-wrapper {
-		height: 30px !important;
-		background-color: $blue-300 !important;
-	}
-
-	.wfm-slide-tabs md-ink-bar{
-	  top: 28px;
+		height: 36px!important;
 	}
 
 	//modal
 	@media(max-width:599px){
 		.modal-box .modalbg .dialog{
 			max-height:90%;
-			overflow-y:auto!important;	
+			overflow-y:auto!important;
 		}
 	}
 
 	@media(min-width:600px){
 		.modal-box .modalbg .dialog{
 			max-height:70%;
-			overflow-y:auto!important;	
+			overflow-y:auto!important;
 		}
 	}
 
- .tab-group {
-	  width: 100%;
-	  display: -webkit-box;
-	  display: -webkit-flex;
-	  display: -ms-flexbox;
-	  display: flex;
-	  -webkit-flex-wrap: wrap;
-		  -ms-flex-wrap: wrap;
-			  flex-wrap: wrap;
-	  -webkit-box-align: center;
-	  -webkit-align-items: center;
-		  -ms-flex-align: center;
-			  align-items: center;
-	  -webkit-box-pack: center;
-	  -webkit-justify-content: center;
-		  -ms-flex-pack: center;
-			  justify-content: center;
-	  overflow: hidden;
-  
-	input[type=radio] {
-		display:none;
-	}
-
-	input[type=radio]:checked + .label {
-		font-weight: bold!important;
-		border-bottom: 3px solid $pink-500;
-		
-	}
-	
-	input[type=radio]:checked + .label + section {
-		display: block;
-	}
-	
-	.label {
-		color: $gray087;
-		padding:$full-padding!important; 
-		position: relative;
-		cursor:pointer;
-		z-index: 2;
-		-webkit-box-ordinal-group: 0;
-		-webkit-order: -1;
-		-ms-flex-order: -1;
-		order: -1;
-		-webkit-box-flex: 1;
-		-webkit-flex-grow: 1;
-		-ms-flex-positive: 1;
-		flex-grow: 1;
-		font-weight: normal;/*overrides bootstrap*/
-		min-width: 100px!important;
-		border-bottom: 3px solid $blue-300;
-		background-color: $blue-300;
-		text-align: center;
-		transition: $transition-timing;
-		border-radius: 0 !important; /*overrides bootstrap*/
-		margin-bottom: 0 !important; /*overrides bootstrap*/
-		font-size: 100% !important; /*overrides bootstrap*/
-	}
-	.tab-container {
-		@extend .wfm-block;
-		@extend .animate-show;
-	}
-	section {
-		  display: none;
-		  position: relative;
-		  z-index: 1;
-		  width: 100%;
-		  overflow: hidden;
-	}
+ .label:hover, .tab-group input[type=radio]:checked + .label{
+	background-color:$blue-500;
 }
 
- .label:hover, .tab-group input[type=radio]:checked + .label{
-	background-color:$blue-500; 
+.tabbed-panel{
+  md-content, md-padding{
+    padding:0!important;
+  }
+
+	.card-context{
+		margin: 0;
+	}
+
+  md-tabs-wrapper{
+    padding-top: 1px;
+    background:$blue-100;
+    border-width: 0 !important;
+    border-style: none!important;
+  }
+  .md-padding{
+    padding: 0 5px;
+  }
+
+  .head-actions{
+    margin-top:-8px;
+  }
+}
+
+.tabbed-panel-header{
+  .card-context{
+    margin-top: 15px;
+  }
 }

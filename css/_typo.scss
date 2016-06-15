@@ -1,27 +1,26 @@
-//Text 
+//Typography
 //
-//Styleguide 1.7
-//
-
-//Typography 
-//
-//Our standard font-family is  15px Calibri ('Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif). 
+//Our standard font-family is 14px Calibri ('Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif). Avoid introducing other font types or sizes as this may lead to issues with layout or translation.
 //
 //Markup:
+//<h1>View header</h1>
+//<h2>Panel header</h2>
+//<h3>Sub header</h3>
 //<p>Simple text</p>
-//<h1>Heading 1</h1>
-//<h2>Heading 2</h2>
-//<h3>Heading 3</h3>
-//<h4>Heading 4</h4>
 //
-//Styleguide 1.7.1
+//Styleguide 1.10
 //
 
 //Language
 //
-//We would like to keep a common naming for normal actions throughout the application.
+//The way we adress the user must also be concistent. Feeling familiar can help the user make quicker actions, even in unfamiliar modules.
+//By keeping common terms we also save translation resources.
 //
-//Markup:
+//Styleguide 6
+//
+
+//Usage
+//
 //<table class="wfm-table">
 //<thead><tr><th>Do</th><th>Don't</th><th>Distinction</th></tr></thead>
 //<tbody>
@@ -39,49 +38,43 @@
 // </tbody>
 //</table>
 //
-//Styleguide 1.7.2
+//Styleguide 6.1
 //
 
 h1,h2,h3,h4,h5,h6{
 	margin-top:10px!important;
 	margin-bottom:10px!important;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
 }
 
 h1{
-	font-size: 36px;
-}
-
-h2{
-	font-size: 30px;
-}
- 
-h3{
-	font-size: 24px;
-}
-
-h4{ 
 	font-size: 18px;
 }
 
-h5{ 
-	font-size: 14px;
+h2{
+	font-size: 16px;
 }
 
-h6{
-	font-size: 12px;
+h3{
+	font-size: $standard-font-size;
+	font-weight: bold;
 }
 
-// Helper classes for text
+// Colors for text
 //
-//Helper classes can be used if text needs to have a color association. Please remember that this can cause problems for people who are color-blind so use with care. 
+//Helper classes can be used if text needs to have a color association. Remember that this can cause problems for people who are color-blind so use with care.
 //
 //Markup:
 //<p class="text-muted">Fusce dapibus, tellus ac cursus commodo</p>
 //<p class="text-success">Fusce dapibus, tellus ac cursus commodo</p>
 //<p class="text-warning">Fusce dapibus, tellus ac cursus commodo</p>
 //<p class="text-danger">Fusce dapibus, tellus ac cursus commodo</p>
+//<p class="text-white">Fusce dapibus, tellus ac cursus commodo</p>
 //
-//Styleguide 1.7.3
+//Styleguide 8.4
 //
 
 .text-muted {
@@ -89,7 +82,7 @@ h6{
 }
 
 .text-success {
-	color: $green-400;
+	color: $green-300;
 }
 
 .text-warning {
@@ -98,4 +91,34 @@ h6{
 
 .text-danger {
 	color: $red-600;
+}
+
+.text-white{
+	color:$white;
+}
+
+// Other text helpers
+//
+//Markup:
+//<p class="caps">First letter is capitalized</p>
+//<p class="sm-font-size">small text</p>
+//<p class="full-padding">Padded</p>
+//<p class="padding-reset">remove padding</p>
+//
+//Styleguide 8.5
+//
+.sm-font-size {
+	font-size: $sm-font-size !important;
+}
+
+.full-padding {
+    padding: $full-padding;
+}
+
+.padding-reset{
+	padding:0!important;
+}
+
+.caps:first-letter {
+    text-transform: uppercase;
 }

@@ -1,0 +1,70 @@
+<div class="material-depth-1 navbar navbar-default">
+	<div class="navbar-header content">
+		<div class="navbar-left">
+			<span class="brand" ui-sref="main">Teleopti WFM</span>
+		</div>
+		<div class="navbar-right" >
+			<span>
+				<label for="searchBar" class="input-prepend">
+				<i class="mdi mdi-magnify">
+				<md-tooltip>Filter something</md-tooltip></i>
+				<input type="text" id="searchBar" placeholder="Search" class="global-search"/>
+				</label>
+			</span>
+			<span tabindex=0 class="nav-context-menu">
+				<i class="mdi mdi-bell"><md-tooltip>Notifications</md-tooltip></i>
+				<div class="nav-context-menu-left">
+					<div class="arrow-up"></div>
+					<div class="context-content" >
+						<div class="notification-list">
+								<h4>Notifications
+							<div class="wfm-switch">
+									<input type="checkbox" ng-model="activeNotification" ng-init="activeNotification=true" id="notificationToggle"/>
+									<label for="notificationToggle">
+										<span class="wfm-switch-toggle"></span>
+									</label>
+									<md-tooltip ng-if="activeNotification==true">Turn off</md-tooltip>
+									<md-tooltip ng-if="activeNotification==false">Turn on</md-tooltip>
+								</div>
+								</h4>
+								<div>
+									<ul ng-if="activeNotification==true" class="notification-list wfm-simple-list">
+											<li ng-repeat="item in demos">
+														<i class="mdi mdi-alert-circle"></i>
+														<b>Forecast</b>
+														<span class="pull-right">13:37</span>
+														<div class="subtext">Done without errors</div>
+											</li>
+									</ul>
+								</div>
+						</div>
+					</div>
+				</div>
+			</span>
+			<span tabindex=0 class="nav-context-menu">
+			<i class="mdi mdi-help-circle"><md-tooltip>Help</md-tooltip></i>
+			<div class="nav-context-menu-left">
+				<div class="arrow-up"></div>
+				<div class="context-content">
+						<h4>
+							<a href="#"></a>
+							<span class="caps">Current view</span>
+            </h4>
+						<p class="description">
+              Here you would find some information about the view you are currently in.</br>
+            </p>
+					<footer>
+						<a href="#" class="wfm-btn wfm-btn-primary-invis">Go to wiki</a>
+					</footer>
+				</div>
+			</div>
+		</span>
+			<a href="#"><i class="mdi mdi-settings"></i>
+				<md-tooltip>Settings</md-tooltip>
+			</a>
+			<a href="#"><i class="mdi mdi-logout"></i>
+				<md-tooltip>Logout</md-tooltip>
+			</a>
+		</div>
+	</div>
+</div>

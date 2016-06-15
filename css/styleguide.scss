@@ -1,8 +1,8 @@
-﻿@import './variables';
+﻿@import './classicvariables';
 
-//Style Rules
+//Elements
 //
-//Here are detailed all the style rules for the web application.
+//Elements are the individual parts that make up the application. Some (such as buttons and text) can be stand alone but genrally all elements are part of a container. By arranging elements in containers using layout, we can get a structured and consistent style.
 //
 //Styleguide 1
 //
@@ -12,9 +12,10 @@
 //
 //Getting a deeper look into the styles of shadows and positioning. The first thing we need to understand is the concept of stacked material (see the <a href="http://www.google.com/design/spec/what-is-material/elevation-shadows.html#elevation-shadows-shadows">Google guidelines</a> ).
 //
-//Keep the number of stacked layers to a minimum and the total number of layer below 3 (including the background). If a raised element lives inside of another raised element it should have a higher material-depth number (i.e a panel with a depth of 1 can have one panel with a depth of 2 above (inside) it.) 
+//Keep the number of stacked layers to a minimum and the total number of layer below 3 (including the background). If a raised element lives inside of another raised element it should still have a material-depth number of one, unless it is floating.
+//Floating elements live above the main layout (such as context menus) and should have the highest material-depth number possible (2).
 //
-//Elements floating above the main layout (such as context menus) should have the highest material-depth number possible (2).
+//If the element does not have a raised wrapper (i.e panel) and is placed freely on the background it should have a depth value of 1.
 //
 //Note: the 'spacer' class is for styleguide demo purpose only.
 //
@@ -22,109 +23,318 @@
 //<div class="spacer"> Background </div>
 //<div class="spacer material-depth-1"> Layer 1 </div>
 //<div class="spacer material-depth-2"> Layer 2 </div>
-//<div class="spacer material-depth-1"> 
-//	<p class="spacer material-depth-2"> Stacked </p>
+//<div class="spacer material-depth-1">
+//	<p class="spacer material-depth-1"> Stacked </p>
 //</div>
+//<div class="spacer material-depth-1 raise"> Elevate on hover </div>
+//<div class="spacer material-depth-1 ng-cloak reveal-material" ng-click="dissapear=true" ng-class="{'hide-material':dissapear}"> Animated layer</div>
 //
-//Styleguide 1.1.0 
-//
-
-//Trench
-//
-//<div class="styleguide-break"><i class="mdi mdi-alert"></i><span>We only use it for user interaction on small details. </span></div>
-//
-//The trench works much like the depth, however since it gives the illusion of a layer behind the current piece of material it should not be used on larger areas, as this will create raised "frames" around the trench.
-//
-//Note: the 'spacer' class is for styleguide demo purpose only.
-//
-//Markup:
-//<div class="spacer material-trench-1"> Layer 1 </div>
-//
-//Styleguide 1.1 .1
+//Styleguide 1.1
 //
 
 //Components
 //
-//Here you can find more complex elements that rely on Javascript and Angular.
+//This chapter details the use of more javascript heavy components and directives. Most of these need some configuration from the js side to make them work.
 //
 //Styleguide 2
 //
 
 //Colors
 //
-// We would like to provide alternative themes but it's a WIP
+//By using colors as variables we have the ability to provide custom themes in the future.
+//Please take note of the text color for each color - if there is text or icons on top of a full color background, please use the text color provided.
+//In general, the smaller and more separate something is, the more saturated it should be to grab attention.
 //
 //Styleguide 3
-// 
-
-//Layouts
 //
-//Here you can find some templates for your layout. Normaly you will not have to worry about the sidenavs or the topbar since these are loaded around your view.
+
+//Containers
+//
+//Containers are responsible for shaping the layout and creates structure to the views.
+//Almost everything described in the elements chapter should be housed inside a container.
+//There are different kinds of containers that all have different applications, what they do however have in common is the ability to house flex grids and/or elements.
+//When building a new view, start by picking one or several containers and a flex layout that fits with your views content.
+//
+//  Note: Con-flex elements are marked by a dashed outline in the styleguide for structure and layout clarification, these should <b>not</b> be visible in the project.
+//
+//  Note: Never nest a container within another container.
+//
+//  Note: In all modals and panels the footer links should be buttons, not  &lt;a/&gt; tags.
 //
 //Styleguide 4
-// 
+//
 //
 
-//Basic block layout
+//Layout
 //
-//This is the basic layout of the entire page. One of the main priciples here is that the content sould never make the layout-container scroll, but rather the content itself.
-// * 1 - Layout container
-// * 2 - Topbar
-// * 3 - Sidenav
-// * 4 - Sidenav toggle
-// * 5 - Ui view
-// * 6 - Panels
-//
-//<img src="../img/001.png"/>
-//
-//Styleguide 4.1
-// 
-//
-
-//Panels
-//
-//The panels are the building blocks of the layout. It is a way to group elements together or provide a means of separation.
+//The layout consists of the flex grid. Since the grid is adapting to the number of items inside it, be careful not to use too many in one row. The recomended max number of con-flex items in one row is 4, if more are needed, concider using a tabbed container or spreading them out over sveral rows.
 //
 //Markup:
-//<div class="role-nav material-depth-2">
-//	<div class="wfm-block sub-header">Title</div>
-//	<div class="wfm-block">
-//		This is the content, it can contain whatever you want!
-//	</div>
-//</div>
+// <div class="con-row">
+//    <div class="con-flex">100%</div>
+// </div>
+// <div class="con-row">
+//    <div class="con-flex">50%</div>
+//    <div class="con-flex">50%</div>
+// </div>
+// <div class="con-row">
+//    <div class="con-flex">33%</div>
+//    <div class="con-flex">33%</div>
+//    <div class="con-flex">33%</div>
+// </div>
+// <div class="con-row">
+//    <div class="con-flex">25%</div>
+//    <div class="con-flex">25%</div>
+//    <div class="con-flex">25%</div>
+//    <div class="con-flex">25%</div>
+// </div>
+// <div class="con-row">
+//    <div class="con-flex split-3-1">75%</div>
+//    <div class="con-flex">25%</div>
+// </div>
+//  <div class="con-row">
+//    <div class="con-flex split-1-2">50%</div>
+//    <div class="con-flex">25%</div>
+//    <div class="con-flex">25%</div>
+// </div>
+//
+//Styleguide 4.1
+//
+//
+
+//Panel
+//
+//The panel is the main container and the most versatile. It can house most elements and can be configured in a number of layouts.
+//If needed it can have a context menu or a footer for more actions. Since a panel is a raised piece of material, avoid using other raised elements on top of it, unless they are floating (like a action button or context menu)
+//The panel can have a footer with a number of actions, try to keep this number as small as possible. The most important action should be to the far right and if it is the primary action it should have a wfm-btn-invis-primary class.
+//
+//Markup:
+//  <div class="panel material-depth-1">
+//   <div class="sub-header">
+//     <h2>Panel title</h2>
+//     <div class="head-actions panel-menu">
+//       <div tabindex=0 class="context-menu card-context">
+//         <i class="mdi mdi-dots-vertical"></i>
+//         <span class="context-menu-left">
+//           <ul class="wfm-list">
+//             <li>Menu item 1</li>
+//             <li>Menu item 2</li>
+//             <li>Menu item 3</li>
+//           </ul>
+//         </span>
+//       </div>
+//     </div>
+//   </div>
+//  <div class="con-row">
+//     <div class="con-flex">Content</div>
+//  </div>
+//   <div class="con-footer">
+//  	 <button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+//     <button class="wfm-btn wfm-btn-invis-primary">Options</button>
+//   </div>
+//  </div>
 //
 //
 //Styleguide 4.2
-// 
-//
 
-//Scalability
+//Tabbed panel
 //
-//How to adapt our elements to big databases
+//When using tabbed panels, one important thing to remember is to order the tabs in a way that makes sense to the workflow.
+//Also, avoid several tab panels close together to avoid confusion and maintain focus. For the same reason, modals can not be launched from within tabs.
 //
-//Styleguide 6
-// 
+//Markup:
+//  <div class="panel material-depth-1">
+//    <div class="wfm-slide-tabs tabbed-panel">
+//      <div class="head-actions panel-menu">
+//        <div tabindex=0 class="context-menu card-context">
+//          <i class="mdi mdi-dots-vertical"></i>
+//          <span class="context-menu-left">
+//            <ul class="wfm-list">
+//              <li>Menu item 1</li>
+//              <li>Menu item 2</li>
+//              <li>Menu item 3</li>
+//            </ul>
+//          </span>
+//        </div>
+//      </div>
+//      <md-content class="md-padding">
+//        <md-tabs md-dynamic-height md-border-bottom >
+//          <md-tab label="Tab title1">
+//            <md-content class="md-padding">
+//              <div class="con-row">
+//                <div class="con-flex">Content</div>
+//              </div>
+//              <div class="con-footer">
+//                <button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+//                <button class="wfm-btn wfm-btn-invis-primary">Options</button>
+//              </div>
+//            </md-content>
+//          </md-tab>
+//          <md-tab label="Tab title2">
+//            <md-content class="md-padding">
+//              <div class="con-row">
+//            <div class="con-flex">Content</div>
+//          </div>
+//          <div class="con-footer">
+//            <button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+//            <button class="wfm-btn wfm-btn-invis-primary">Options</button>
+//          </div>
+//        </md-content>
+//      </md-tab>
+//      <md-tab label="Tab title3">
+//        <md-content class="md-padding">
+//          <div class="con-row">
+//            <div class="con-flex">Content</div>
+//          </div>
+//          <div class="con-footer">
+//            <button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+//            <button class="wfm-btn wfm-btn-invis-primary">Options</button>
+//          </div>
+//        </md-content>
+//      </md-tab>
+//      <md-tab label="Tab title4">
+//        <md-content class="md-padding">
+//          <div class="con-row">
+//            <div class="con-flex">Content</div>
+//          </div>
+//          <div class="con-row">
+//            <div class="con-flex">Things</div>
+//            <div class="con-flex">Things</div>
+//            <div class="con-flex">Things</div>
+//            <div class="con-flex">Things</div>
+//          </div>
+//          <div class="con-footer">
+//            <button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+//            <button class="wfm-btn wfm-btn-invis-primary">Options</button>
+//          </div>
+//        </md-content>
+//      </md-tab>
+//    </md-tabs>
+//    </md-content>
+//  </div>
+//  </div>
 //
+//
+//Styleguide 4.3
 
-//Big tables
+//Wizard panel
 //
-//The big table is used to give data more space and actions. Check out the <a href="http://ui-grid.info/docs/#/tutorial">documentation</a> to see all available functions.
+//In case you want to guide the user through a series of steps you can use a wizard panel.
 //
-//  Markup: bigtables.hbs 
 //
-//Styleguide 6.1 
+//<div class="jsprewrap">
+//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
+//	<div ng-show="showjs">
+//		<code><pre>
+//$scope.selectedIndex = 0;
+//$scope.nextTab = function() {
+//  var index = ($scope.selectedIndex === 50) ? 0 : $scope.selectedIndex + 1;
+//  $scope.selectedIndex = index;
+//};
+//		</pre></code>
+//	</div>
+//</div>
+//
+//Markup:
+//<div class="panel material-depth-1">
+//<div class="wfm-slide-tabs tabbed-panel">
+//    <div class="head-actions panel-menu">
+//      <div tabindex=0 class="context-menu card-context">
+//        <i class="mdi mdi-dots-vertical"></i>
+//        <span class="context-menu-left">
+//          <ul class="wfm-list">
+//            <li>Menu item 1</li>
+//            <li>Menu item 2</li>
+//            <li>Menu item 3</li>
+//          </ul>
+//        </span>
+//      </div>
+//    </div>
+//  <md-content class="md-padding">
+//    <md-tabs md-dynamic-height md-border-bottom md-selected="selectedIndex">
+//      <md-tab label="Tab title1">
+//        <md-content class="md-padding">
+//            <div class="con-row">
+//              <div class="con-flex">Content</div>
+//            </div>
+//          <div class="con-footer">
+//            <button class="wizard-step wfm-btn wfm-btn-invis-primary" ng-click="nextTab()">Next</button>
+//          </div>
+//        </md-content>
+//      </md-tab>
+//      <md-tab label="Tab title2">
+//        <md-content class="md-padding">
+//            <div class="con-row">
+//              <div class="con-flex">Content</div>
+//            </div>
+//          <div class="con-footer">
+//            <button class="wizard-step wfm-btn wfm-btn-invis-primary" ng-click="nextTab()">Next</button>
+//          </div>
+//        </md-content>
+//      </md-tab>
+//      <md-tab label="Tab title3">
+//        <md-content class="md-padding">
+//            <div class="con-row">
+//              <div class="con-flex">Content</div>
+//            </div>
+//          <div class="con-footer">
+//            <button class="wizard-step wfm-btn wfm-btn-invis-primary" ng-click="nextTab()">Next</button>
+//          </div>
+//        </md-content>
+//      </md-tab>
+//      <md-tab label="Tab title4">
+//        <md-content class="md-padding">
+//            <div class="con-row">
+//              <div class="con-flex">Content</div>
+//            </div>
+//          <div class="con-footer">
+//            <button class="wfm-btn wfm-btn-invis-primary">Done</button>
+//          </div>
+//        </md-content>
+//      </md-tab>
+//    </md-tabs>
+//  </md-content>
+//</div>
+//</div>
+//
+//
+//Styleguide 4.3.1
 
-.myGrid {
-     width: 100%;
-  }
-
+//Form layout
+//
+//Forms are made up of individual inputs that can be validated on interaction and/or on a submit.
+//
+//A form can be created in many different configurations and the layout should help the user complete the form without confusion. If it makes more sense the form could be devided into several more defined sections by putting &lt;h2&gt; headers directly after the &lt;dl&gt; tags.
+//
+//Take some time to consider your form layout in relation to the layout of your view and strive to use as much available space as possible.
+//
+//If your view only contains a wfm-form, consider using our autofocus directive on the first text/number input to get the user started.
+//
+//<div class="jsprewrap">
+//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
+//	<div ng-show="showjs">
+//		<code><pre>
+//$scope.reset = function(form) {
+//  if (form) {
+//    form.$setPristine();
+//    form.$setUntouched();
+//  }
+//};
+//		</pre></code>
+//	</div>
+//</div>
+//
+//Markup: form_panel.hbs
+//
+//
+//Styleguide 4.4
 
 //Resources
 //
 //Here you can find some links to go further in CSS best practices
 //
-//Styleguide 7
-// 
+//Styleguide 9
+//
 //
 
 //Urls
@@ -139,19 +349,46 @@
 //
 // http://axbom.com/slaying-5-ux-myths-good-mankind/
 //
-//Styleguide 7.1 
+//Styleguide 9.1
+
+html{
+  overflow-y: auto!important;
+}
 
 .spacer {
   margin: 25px;
   padding: 15px;
   text-align:center;
   display: inline-block;
-  background: white; 
+  background: white;
   }
+
+.jsprewrap{
+  width: 98%;
+  margin: 0 auto;
+  cursor:pointer;
+}
+
+.con-flex,.form-input-wrap{
+  border:1px dashed $gray026;
+}
+
+.ksscopy{
+  margin: -10px -10px 10px -10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #eee;
+  font-weight: bold;
+}
 
 /*template styles*/
 .kss-sidebar {
 	position:fixed!important;
+}
+
+#kss-node .kss-title__permalink {
+    font-size: 30px;
+    font-weight: normal;
 }
 
 #kss-node .kss-section {
@@ -167,18 +404,18 @@
 #kss-node ol.linenums li {
 	border:none;
 }
- 
+
 #kss-node .kss-sidebar {
   background: white;
   top: 0;
   z-index:9;
-} 
- 
+}
+
 .styleguide-break{
 	background-color:$orange-400;
 	color:$gray087;
 	padding:$full-padding;
-	
+
 	span:before{
 		content:"This element does not exist in material design. ";
 	}
@@ -186,4 +423,129 @@
 
 .angular-req span:before{
 	content:"This element require additional angular directives. "!important;
+}
+
+
+//Color swatches
+.swatch-list {
+
+	.blue-500-swatch {
+			background:$blue-500!important;
+	}
+	.blue-300-swatch {
+			background:$blue-300!important;
+	}
+	.blue-100-swatch {
+			background:$blue-100!important;
+	}
+
+	.green-500-swatch {
+		background:$green-500!important;
+	}
+	.green-300-swatch {
+		background:$green-300!important;
+	}
+	.green-100-swatch {
+		background:$green-100!important;
+	}
+
+	.purple-100-swatch {
+		background:$purple-100!important;
+	}
+	.purple-300-swatch {
+		background:$purple-300!important;
+	}
+	.purple-500-swatch {
+		background:$purple-500!important;
+	}
+
+	.brown-100-swatch {
+		background:$brown-100!important;
+	}
+	.brown-300-swatch {
+		background:$brown-300!important;
+	}
+	.brown-500-swatch {
+		background:$brown-500!important;
+	}
+
+	.teal-100-swatch {
+		background:$teal-100!important;
+	}
+	.teal-300-swatch {
+		background:$teal-300!important;
+	}
+	.teal-500-swatch {
+		background:$teal-500!important;
+	}
+
+	.pink-500-swatch {
+		background:$pink-500!important;
+	}
+	.pink-300-swatch {
+		background:$pink-300!important;
+	}
+	.pink-100-swatch {
+		background:$pink-100!important;
+	}
+
+	.orange-400-swatch {
+			background:$orange-400!important;
+	}
+	.orange-500-swatch {
+			background:$orange-500!important;
+	}
+	.orange-600-swatch {
+			background:$orange-600!important;
+	}
+	.red-800-swatch {
+			background:$red-800!important;
+	}
+	.red-700-swatch {
+			background:#EF5350!important;
+	}
+	.red-600-swatch {
+			background:$red-600!important;
+	}
+	.gray-054-swatch {
+			background:$gray054!important;
+	}
+	.gray-300-swatch {
+			background:$gray-300!important;
+	}
+	.gray-012-swatch {
+			background:$gray012!important;
+	}
+	.gray-026-swatch {
+			background:$gray026!important;
+	}
+	.gray-087-swatch {
+			background:$gray087!important;
+	}
+	.gray-100-swatch {
+			background:$gray100!important;
+	}
+  .gray-500-swatch {
+      background:$gray-500!important;
+  }
+	.white-swatch {
+			background:$white!important;
+	}
+
+	li{
+		position:relative;
+		width: 100px;
+		height: 100px;
+
+		.white-color-text{
+			color:$white;
+		}
+
+		p{
+			left:0;
+			right:0;
+			bottom:0;
+			position:absolute;
+		}
+	}
 }

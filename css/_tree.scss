@@ -1,83 +1,37 @@
-﻿//Trees
+//Tree
 //
-//<div class="styleguide-break angular-req"><i class="mdi mdi-alert-circle"></i><span>For example dynamic data. </span></div>
+//Styleguide 5
 //
-//A tree structure is used to show relations between different items. Selected items are marked with a checkmark and a background along with a left side border.  
-//Each tree line has a right align span child that could show an icon if the line is selected.
+
+//Tree element
 //
-//Markup:
-//<div class="tree">
-//<div class="angular-ui-tree">
-//	<ol id="tree-root" class="tree-line angular-ui-tree-nodes">
-//		<li class="angular-ui-tree-node">
-//			<div class="tree-toggle-group">
-//				<div class="toggle-handle open"><i class="mdi mdi-chevron-right"></i></div>
-//				<div class="angular-ui-tree-handle selected">
-//					Super parent
-//					<span><i class="mdi mdi-check"></i></span>
-//				</div>
-//			</div>
-//			<ol class="angular-ui-tree-nodes">
-//				<li class="angular-ui-tree-node">
-//					<div class="tree-toggle-group">
-//						<div class="toggle-handle open"><i class="mdi mdi-chevron-right"></i></div>
-//						<div class="angular-ui-tree-handle">
-//							Parent
-//							<span><i class="mdi mdi-check"></i></span>
-//						</div>
-//					</div>
-//					<ol class="angular-ui-tree-nodes">
-//						<li class="angular-ui-tree-node">
-//							<div class="tree-toggle-group">
-//								<div class="toggle-handle"></i></div>
-//								<div class="angular-ui-tree-handle selected">
-//									Child
-//									<span><i class="mdi mdi-check"></i></span>
-//								</div>
-//							</div>
-//						</li>
-//					</ol>
-//				</li>
-//			</ol>
-//			<ol class="angular-ui-tree-nodes">
-//				<li class="angular-ui-tree-node">
-//					<div class="tree-toggle-group">
-//						<div class="toggle-handle open"><i class="mdi mdi-chevron-right"></i></div>
-//						<div class="angular-ui-tree-handle">
-//							Parent
-//							<span><i class="mdi mdi-check"></i></span>
-//						</div>
-//					</div>
-//					<ol class="angular-ui-tree-nodes">
-//						<li class="angular-ui-tree-node">
-//							<div class="tree-toggle-group">
-//								<div class="toggle-handle"></i></div>
-//								<div class="angular-ui-tree-handle">
-//									Child
-//									<span>90%</span>
-//								</div>
-//							</div>
-//						</li>
-//					</ol>
-//				</li>
-//			</ol>
-//		</li>
-//	</ol>
-//</div>
+//A tree structure is used to show relations between different items. Selected items are marked with a checkmark and a background along with a left side border. Each tree line has a right align span child that could show an icon if the line is selected.
+//Please note thet the "ng-bind" span should be replaced with the normal angular binding.
+//
+//<div class="jsprewrap">
+//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
+//	<div ng-show="showjs">
+//		<code><pre>
+//$scope.treeDemos =   [
+//		{categories: [{name: 'item 1'}, {name: 'item 2'}, {name: 'item 3'}, {name: 'item 2'}], name: 'First Group',},
+//		{categories: [{name: 'item 1'}, {name: 'item 3'}], name: 'Second Group'}, {categories: [], name: 'Third Group'}
+//];
+//		</pre></code>
+//	</div>
 //</div>
 //
-//Styleguide 1.3
+//  Markup: tree.hbs
 //
+//Styleguide 5.1
 
 
 .tree {
 	max-height: 800px;
 	overflow-y: auto;
-	background-color: $gray012;
 	vertical-align: middle;
 
 
-	ol { 
+	ol {
 		list-style: none;
 	}
 
@@ -86,12 +40,12 @@
 	}
 }
 
-.angular-ui-tree-handle span {
+.angular-ui-tree-handle .tree-line-right {
 	opacity:1;
 	float:right;
 	text-align: center;
-	color: $gray087;
-	
+	color: $text-color-standard;
+
 	i{
 		opacity:0;
 	}
@@ -107,9 +61,9 @@
 	font-weight: 500;
 	transition: $transition-timing;
 	border-left: 3px solid transparent;
-	
+
 	&:hover {
-		background-color: $gray012;
+		background-color: $gray-300;
 	}
 }
 
@@ -125,13 +79,14 @@
 }
 
 .angular-ui-tree-handle.ng-hide {
-	line-height:0;	
+	line-height:0;
 }
 
 .toggle-handle {
 	display: inline-block;
 	width: 25px;
 	height: 25px;
+	cursor: pointer;
 	margin-right: 5px;
 	padding-top: 4px;
 }

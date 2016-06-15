@@ -1,0 +1,92 @@
+.animate-show {
+  opacity: 1;
+}
+
+.animate-show.ng-hide-add.ng-hide-add-active,
+.animate-show.ng-hide-remove.ng-hide-remove-active {
+  -webkit-transition: all linear 0.5s;
+  transition: all linear 0.5s;
+}
+
+.animate-show.ng-hide {
+  line-height: 0;
+  opacity: 0;
+}
+
+.bubble-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: $white;
+    overflow: hidden;
+
+    @media screen and (min-width:0\0) {
+      background: $blue-300;
+    }
+  }
+
+.bubble {
+  height: 60px;
+  width: 60px;
+  background-color: #66C2FF;
+  top: 15vh;
+  right: 50%;
+  position: absolute;
+  border-radius: 50%;
+  -moz-transform: scale(80);
+  -webkit-transform: scale(80);
+  -moz-transform: bg-in 5s cubic-bezier(0.2, 0.3, 0, 1);
+  -webkit-animation: bg-in 5s cubic-bezier(0.2, 0.3, 0, 1);
+  animation: bg-in 5s cubic-bezier(0.2, 0.3, 0, 1);
+}
+
+@-webkit-keyframes bg-in {
+  from {
+    -moz-transform: scale(0);
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+}
+
+.reveal-material {
+    cursor: pointer;
+    animation:grow 0.5s;
+    animation-timing-function:ease-out;
+    animation-play-state:running;
+    -webkit-animation:grow 1s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-timing-function:ease-out;
+    -webkit-animation-play-state:running;
+}
+
+.hide-material {
+    animation:shrink 0.5s;
+    animation-timing-function:ease-out;
+    animation-play-state:running;
+    -webkit-animation:shrink 0.5s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-timing-function:ease-out;
+    -webkit-animation-play-state:running;
+}
+
+@keyframes grow {
+    from {
+        transform: scale(0,0);
+    }
+    to {
+        transform: scale(1,1);
+    }
+}
+
+@keyframes shrink {
+    from {
+			  transform: scale(1,1);
+    }
+    to {
+				transform: scale(0,0);display: none!important;visibility: hidden!important;
+    }
+}

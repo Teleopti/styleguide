@@ -1,0 +1,39 @@
+// Working hours picker
+//
+//A directive for specifying the week day and time range. It is built taking the time range picker as a dependency.
+//
+//Markup:
+//	<working-hours-picker class="working-hours-picker" working-hours="workingHours"></working-hours-picker>
+//
+//Styleguide 2.7
+//
+
+.working-hours-picker {
+    .wfm-list > li > span {
+        padding: 0;
+        margin: 0;
+    }
+
+    .wfm-list > li > span.list-item-container.list-header {
+        width: 15%!important;
+        float: left;
+        display: inline-block;
+    }
+
+    .wfm-list > li > span.list-item-container {
+        width: 84%;
+        float: left;
+        display: inline-block;
+    }
+
+    .list-item-container > div {
+        width: 12%;
+        max-width: 120px;
+        float: left;
+        display: inline-block;
+    }
+
+    .list-item-container .wfm-checkbox {
+        padding: 0;
+    }
+}

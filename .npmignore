@@ -5,6 +5,4 @@ app.js
 styleguide.*
 *.sln
 *.suo
-*.scss
 *.hbs
-

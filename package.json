@@ -1,23 +1,56 @@
 {
   "name": "teleopti-styleguide",
-  "version": "0.0.2",
+  "version": "1.1.20",
   "repository": {
     "type": "git",
     "url": "git://github.com/Teleopti/styleguide.git"
+  },
+  "scripts": {
+    "test": "grunt test",
+    "start": "grunt",
+    "dist": "grunt dist",
+    "kss": "./node_modules/.bin/kss-node css styleguide css/styleguide.md --template kss-template --verbose"
   },
   "description": "Styleguide for Teleopti",
   "author": "Teleopti",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "3.3.4"
+    "angular": "1.4.7",
+    "angular-animate": "1.4.7",
+    "angular-aria": "1.4.7",
+    "angular-dynamic-locale": "^0.1.30",
+    "angular-i18n": "^1.5.3",
+    "angular-material": "1.0.5",
+    "angular-moment": "0.8.3",
+    "angular-route": "1.4.7",
+    "angular-translate": "2.7.2",
+    "angular-ui-bootstrap": "0.14.3",
+    "angular-ui-tree": "2.10.0",
+    "bootstrap": "3.2.0",
+    "moment": "2.8.3",
+    "angular-sanitize": "1.4.7"
   },
   "devDependencies": {
-    "grunt-contrib-cssmin": "^0.12.2",
+    "angular-mocks": "1.4.7",
     "grunt": "0.4.5",
+    "grunt-angular-templates": "1.0.3",
+    "grunt-contrib-cssmin": "0.12.2",
+    "grunt-contrib-jshint": "0.11.3",
+    "grunt-contrib-uglify": "0.11.1",
     "grunt-contrib-watch": "0.6.1",
-    "grunt-sass": "0.18.1",
+    "grunt-jscs": "2.3.0",
+    "grunt-karma": "0.12.0",
+    "grunt-sass": "1.1.0",
+    "grunt-sass-lint": "0.1.0-beta.4",
     "grunt-shell": "1.1.2",
-    "kss": ""
+    "jasmine-core": "2.3.4",
+    "karma": "0.13.9",
+    "karma-chrome-launcher": "0.2.0",
+    "karma-cli": "0.1.0",
+    "karma-jasmine": "0.3.6",
+    "karma-phantomjs-launcher": "1.0.0",
+    "kss": "2.4.0",
+	"phantomjs-prebuilt": "2.1.7"
   },
   "homepage": "http://teleopti.github.io/styleguide/styleguide"
 }

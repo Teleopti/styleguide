@@ -1,14 +1,35 @@
+
 language: node_js
 node_js:
-  - 0.10.36
+  - 4.2.6
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - gcc-4.8
+      - g++-4.8
+
 before_install:
+    # Use GCC 4.8 if it's available
+  - 'if [ ! `which gcc-4.8` == "" ]; then export CXX=g++-4.8 && export CC=gcc-4.8; fi'
+  - npm config set registry https://registry.npmjs.org/
   - npm install -g grunt-cli
-  - npm install -g kss
 install: npm install
-before_script: grunt dist
-script: 
-  - if [ "$TRAVIS_BRANCH" == "master" ]; then bash ./deploy-ghpages.sh; fi
+before_script: grunt dist --verbose
+script:
+  - ./node_modules/.bin/karma start --single-run --browsers PhantomJS
+  - if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST"  ==  "false"  ]; then bash ./deploy-ghpages.sh; fi
 env:
   global:
     - GH_REF: github.com/Teleopti/styleguide.git
     - secure: d9ejf1F4Q+kIhKVfaReYlW3itLeMmQzcuJH4vM/LffzJb/PusyI+mMBmo4Bc4h3GmkJEjCb78nrxjzRFZeG3C7C4jOgg2NGGIwQzpHoKcziwmfpX8BgFTnBU6VlmLUBnNxOINppLV6glMR0kHK6o/KLrKC56xKzHX4/yYrXcPdQ=
+notifications:
+  slack: teleopti:mStgbDoxN1zPMMc27nL6kNRw
+deploy:
+  provider: npm
+  username: 'teleopti_travis'
+  email: $email
+  api_key: $token
+  on:
+      tags: true

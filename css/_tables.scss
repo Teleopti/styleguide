@@ -1,48 +1,63 @@
 // Tables
 //
-//<div class="styleguide-break"><i class="mdi mdi-alert"></i><span></span></div>
-//
 // Tables are used to give a overview of data, however, following the <a href="index.html" >Main concepts</a> of the styleguide, only relevant data should be displayed. In the cases where that is not possible, please use infinite scrolling or pagination to keep the page lightweight.
-// If a table does take time to be loaded, a loading bar should be displayed during this time to indicate to the user that it will take some time and that the table is not broken.
+// If a table does take time to be loaded, a spinner should be displayed during this time to indicate to the user that it will take some time and that the table is not broken.
 //
-// A table should be displayed in alphabetical order by default, unless there is an obvious way the user would want the data sorted. Even so, the ability to sort and search within the table is most welcome. 
+// A table should be displayed in alphabetical order by default, unless there is an obvious way the user would want the data sorted. Even so, the ability to sort and search within the table is most welcome.
 //If the table can be sorted, it should have filled arrows in the header indicating the sorting direction (down for descending and up for ascending), clicking the header should change the sorting direction and the arrow direction.
 //
 //Cells containing numbers are right aligned using the 'number-cell' class to differentiate them from text content.</br>
-//If you need to display bigger forms of data or need more complex actions such as importing/exporting, multi select or the ability to hide columns - take a look at the <a href="section-6.html#kssref-6.1">'Big table' in chapeter 6 - Scalability</a>.
+//If you need to display bigger forms of data or need more complex actions such as importing/exporting, multi select or the ability to hide columns - take a look at the Big table.
 //
-//Styleguide 1.8
+//Styleguide 1.15
 //
 
 // Default table
 //
 //Markup:
-//<table class="wfm-table">
-//<thead><tr><th>texts</th><th>numbers</th></tr></thead>
-//<tbody><tr><td>text1</td><td class="number-cell">2135847</td></tr>
-// <tr><td>text1</td><td class="number-cell">2.3546</td></tr>
-// </tbody>
-//</table>
+//	<table class="wfm-table">
+//		<thead>
+//			<tr>
+//				<th>texts</th>
+//				<th>numbers</th>
+//			</tr>
+//		</thead>
+//		<tbody>
+//			<tr>
+//				<td>text1</td>
+//				<td class="number-cell">2135847</td>
+//			</tr>
+//			<tr>
+//				<td>text1</td>
+//				<td class="number-cell">2.3546</td>
+//			</tr>
+//		</tbody>
+//	</table>
 //
-//Styleguide 1.8.1
+//Styleguide 1.15.1
 //
+
+table{
+	border-spacing: 0!important;
+}
 
 .wfm-table {
 	width: 100%;
-  text-align: left;
+	text-align: left;
 }
 
 .wfm-table td, .wfm-table th {
   border: 1px solid $gray012;
   color: $gray054;
   padding: $full-padding;
+  background-color:$white;
 }
 
 .wfm-table th, .wfm-table-header {
-  color: $gray087;
+  color: $text-color-standard;
   background-color: $blue-100;
   text-align: center;
-  
+
 }
 
 .wfm-table .number-cell {
@@ -50,34 +65,86 @@
 }
 
 
-// Two dimensions table
+// Two dimensional table
 //
 //Markup:
-//<table class="wfm-table wfm-table-multi">
-//<thead><tr><th></th><th>column header</th><th>column header</th></tr></thead>
-//<tbody><tr><td>row header</td><td>item1</td><td>item2</td></tr>
-// <tr><td>row header</td><td>item3</td><td>item4</td></tr>
-// </tbody>
-//</table>
+//	<table class="wfm-table wfm-table-multi">
+//		<thead>
+//			<tr>
+//				<th></th>
+//				<th>column header</th>
+//				<th>column header</th>
+//			</tr>
+//		</thead>
+//		<tbody>
+//			<tr>
+//				<td>row header</td>
+//				<td>item1</td>
+//				<td>item2</td>
+//			</tr>
+//			<tr>
+//				<td>row header</td>
+//				<td>item3</td>
+//				<td>item4</td>
+//			</tr>
+//		</tbody>
+//	</table>
 //
-//Styleguide 1.8.2
+//Styleguide 1.15.2
 //
 
 .wfm-table-multi{
 	th:first-child,td:first-child{
-	  color: $gray087;
+	  color: $text-color-standard;
 	  font-weight:600;
 	  background-color: $blue-100;
 	}
 }
+
+
+//Big tables
+//
+//The big table is used to give data more space and actions. Check out the <a href="http://ui-grid.info/docs/#/tutorial">documentation</a> to see all available functions.
+//
+//<div class="jsprewrap">
+//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
+//	<div ng-show="showjs">
+//		<code><pre>
+//var data = [];
+//for (var i = 0; i < 100; i++) {
+//		data[i] = {};
+//		for (var j = 0; j < 10; j++) {
+//				data[i]['j' + j] = j;
+//		}
+//}
+//$scope.gridOptions = {
+//		exporterCsvFilename: 'myFile.csv',
+//		exporterMenuPdf: false,
+//		enableSelectAll: true,
+//		enableRowSelection: true,
+//		selectionRowHeaderWidth: 35,
+//		data: data,
+//};
+//$scope.gridOptions.enableGridMenu = true;
+//		</pre></code>
+//	</div>
+//</div>
+//
+// Markup: bigtables.hbs
+//
+//Styleguide 1.15.3
+
+.myGrid {
+     width: 100%;
+  }
 
 /* Datagrid */
 .ui-grid-header-cell {
 	@extend .wfm-table-header;
 	border: none;
 
-	 i{text-align:right; 
-	 float:none;} 
+	 i{text-align:right;
+	 float:none;}
 
 	 &:hover{
 		 background-color: $blue-300;
@@ -86,15 +153,14 @@
 }
 
 .ui-grid{
-	border-left: none;
-	border-right:none;
+	border: none;
 }
 
 .big-table-wrapper{
 	h4 span{
 		float:right;
 		margin-right:16px;
-		
+
 		i{
 			cursor:pointer;
 		}
@@ -135,31 +201,49 @@
 		box-shadow:none;
 	}
 }
-.ui-grid-menu .ui-grid-menu-inner ul li:hover, .ui-grid-menu .ui-grid-menu-inner ul li.ui-grid-menu-item-active{
+.ui-grid-menu .ui-grid-menu-inner ul li,
+.ui-grid-menu .ui-grid-menu-inner ul li:hover,
+.ui-grid-menu .ui-grid-menu-inner ul li.ui-grid-menu-item-active{
 	box-shadow:none;
-}
-.ui-grid-menu .ui-grid-menu-inner ul li{
-	padding: $full-padding;
+	border:none;
 }
 
 .ui-grid-selection-row-header-buttons{
-	opacity: 1; 
-	color: $gray087;
+	opacity: 1;
+	color: $text-color-standard;
 }
 
 .ui-grid-menu-button{
-	top: -39px;
 	background: transparent;
 	border:none;
 }
 
+.ui-grid-menu-button .ui-grid-menu .ui-grid-menu-mid{
+	overflow-x:auto;
+}
+
+.ui-grid-menu .ui-grid-menu-inner .ui-grid-menu-close-button{
+	display: none;
+}
+
+.ui-grid-menu .ui-grid-menu-inner ul li button,
+.ui-grid-menu .ui-grid-menu-inner ul li button:hover,
+.ui-grid-menu .ui-grid-menu-inner ul li button:focus,
+.ui-grid-menu .ui-grid-menu-inner ul li button.ui-grid-menu-item-active{
+	box-shadow: none!important;
+}
+
 .ui-grid-row-selected::before{
-	color: $gray087;
+	color: $text-color-standard;
+}
+
+.big-table-wrapper{
+	background-color:$white;
 }
 
 /*zebra stripe
 .ui-grid-row:nth-child(odd) > [ui-grid-row] > .ui-grid-cell{
-	background-color: $gray012!important; 
+	background-color: $gray012!important;
 }*/
 
 
@@ -193,7 +277,7 @@
 }
 
 .ui-grid-row-selected > [ui-grid-row] > .ui-grid-cell{
-	background-color: $green-100!important; 
+	background-color: $green-100!important;
 }
 
 .ui-grid-pinned-container.ui-grid-pinned-container-left .ui-grid-cell:last-child{
