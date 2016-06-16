@@ -443,7 +443,10 @@ md-autocomplete{
   @extend .wfm-block;
 
   input[type='checkbox'] {
-    display: none;
+    opacity: 0;
+    height: 20px;
+    width: 20px;
+    margin: -5px 0 0 -20px;
   }
 
   .wfm-checkbox-toggle:after {
@@ -467,82 +470,15 @@ md-autocomplete{
     color: $white;
   }
 
+  input[type=checkbox]:focus ~ label .wfm-checkbox-toggle:after,
+  input[type=checkbox]:focus ~ .wfm-checkbox-toggle:after {
+    @extend .material-trench-1;
+  }
+
   .wfm-checkbox-label {
     margin-left: 20px + $full-padding;
     white-space: nowrap;
     cursor: pointer;
-  }
-}
-
-//Checkboxes (focusable)
-//
-//This type of checkbox can receive focus via tabbing.
-//
-//Markup:
-//	<form>
-//		<div class="wfm-checkbox-focusable">
-//			<input type="checkbox" id="fcheck1" checked="true" tabindex="0"/>
-//			<label for="fcheck1">Check this via keyboard</label>
-//		</div>
-//		<div class="wfm-checkbox-focusable">
-//			<input type="checkbox" id="fcheck2" checked="true" tabindex="0"/>
-//			<label for="fcheck2">Check this via keyboard</label>
-//		</div>
-//	</form>
-//
-//Styleguide 1.7.1
-//
-
-.wfm-checkbox-focusable {
-  @extend .wfm-block;
-
-  $fcheck_height: 20px;
-  $fcheck_lheight: 16px;
-
-  position: relative;
-  height: $fcheck_height;
-
-  & > input[type='checkbox'] {
-    opacity: 0;
-    height: 0;
-    width: 0;
-    margin: 0;
-  }
-
-  & > label {
-    margin-left: 1.52em;
-    white-space: nowrap;
-    cursor: pointer;
-    vertical-align: middle;
-  }
-
-  & > label:before {
-    box-sizing: border-box;
-    position: absolute;
-    background-color: $gray026;
-    border: 2px solid transparent;
-    width: $fcheck_height;
-    height: $fcheck_height;
-    line-height: $fcheck_lheight;
-    top: 5px;
-    left: 5px;
-    border-radius: 2px;
-    content: " ";
-    text-align: center;
-    -webkit-transition: background-color .2s ease-in-out, border-color .2s ease-in-out;
-    transition: background-color .2s ease-in-out, border-color .2s ease-in-out;
-    cursor: pointer;
-  }
-
-  & > input[type=checkbox]:checked + label:before {
-    background-color: $blue-300;
-    content: "✓";
-    color: $white;
-  }
-
-  & > input[type=checkbox]:focus + label:before,
-  & > label:active::before {
-    border-color: $blue-500;
   }
 }
 
