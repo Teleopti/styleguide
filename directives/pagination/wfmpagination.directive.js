@@ -45,6 +45,15 @@
     var WfmPaginationCtrl = function ($scope) {
         var vm = this;
         vm.gotoPage = function (pageIndex) {
+            if (pageIndex < 1 || pageIndex > vm.paginationOptions.totalPages) {
+                return;
+            }
+            if (pageIndex === 1 && vm.paginationOptions.pageNumber === 1) {
+                return;
+            }
+            if (pageIndex === vm.paginationOptions.totalPages && vm.paginationOptions.pageNumber === vm.paginationOptions.totalPages) {
+                return;
+            }
             vm.paginationOptions.pageNumber = pageIndex;
             if (vm.getDataForPageCallback !== undefined) {
                 vm.getDataForPageCallback(pageIndex);
