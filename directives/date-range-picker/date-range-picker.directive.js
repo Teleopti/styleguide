@@ -2,9 +2,10 @@
 
     'use strict';
 
-    angular.module('wfm.daterangepicker', ['styleguide.templates']).directive('dateRangePicker', ['$filter', dateRangePicker]);
+    angular.module('wfm.daterangepicker', ['styleguide.templates'])
+           .directive('dateRangePicker', ['$locale', '$filter', dateRangePicker]);
 
-    function dateRangePicker($filter) {
+    function dateRangePicker($locale, $filter) {
         return {
             templateUrl: 'directives/date-range-picker/date-range-picker.tpl.html',
             scope: {
@@ -36,10 +37,7 @@
 
             popupSetup(scope);
 
-            scope.dateFormat = 'shortDate';
-            attrs.$observe('dateFormat', function(v) {
-                scope.dateFormat = v;
-            });
+            scope.dateFormat = $locale.DATETIME_FORMATS.shortDate;
 
             scope.setRangeClass = setRangeClass;
 
