@@ -10,6 +10,7 @@
             templateUrl: 'directives/date-range-picker/date-range-picker.tpl.html',
             scope: {
                 'templateType': '=?',
+                'customValidators': '=?',
                 'testStopUi': '@?'
             },
             controller: ['$element', '$animate', dateRangePickerCtrl],
@@ -27,13 +28,12 @@
         function postlink(scope, elem, attrs, ctrls) {
             var ngModelCtrl = ctrls[0],
                 dateRangeCtrl = ctrls[1];
-            scope.notEqual = attrs.mustBeEqualMsg;
-            scope.noStart = attrs.startAndEndMsg;
 
             scope.dummyMinDate = new Date('1970-01-01');
             scope.displayPopup = function() {
                 return scope.templateType === 'popup';
             };
+            scope.displayError = displayError;
 
             popupSetup(scope);
 
@@ -41,8 +41,26 @@
 
             scope.setRangeClass = setRangeClass;
 
-            ngModelCtrl.$validators.empty = validateByValidDates;
-            ngModelCtrl.$validators.order = validateByValidOrder;
+            scope.defaultValidators = [
+              {
+                  key: 'order',
+                  message: attrs.invalidOrderMessage || 'StartDateMustBeEqualToOrEarlierThanEndDate',
+                  validate: _validateStartAndEndByOrder
+              },
+              {
+                  key: 'empty',
+                  message: attrs.invalidEmptyMessage || 'StartDateAndEndDateMustBeSet',
+                  validate: _validateStartAndEndByNonEmpty
+              }
+            ];
+
+            scope.validators = scope.defaultValidators.concat(
+                scope.customValidators && angular.isArray(scope.customValidators) ? scope.customValidators : []);
+
+            angular.forEach(scope.validators, function(v) {
+                ngModelCtrl.$validators[v.key] = buildValidator(v.validate);
+            });
+
             ngModelCtrl.$render = render;
 
             scope.$watchCollection(function() {
@@ -54,6 +72,7 @@
                   $filter('date')(scope.endDate, 'yyyy-MM-dd')
                 ];
             }, function(v) {
+
                 if (scope.testStopUi) {return;}
                 updateViewModelFromUi();
                 hidePopup();
@@ -69,19 +88,28 @@
                 if (v !== null) {scope.dropDownState.showAllDatePickers = v;}
             });
 
-            function validateByValidDates(modelValue, viewValue) {
-
-                if (modelValue && angular.isDate(modelValue.startDate) && angular.isDate(modelValue.endDate)) {
-                    return true;
-                }
-                return false;
+            function displayError(errorKey) {
+                return ngModelCtrl.$error && ngModelCtrl.$error[errorKey];
             }
 
-            function validateByValidOrder(modelValue, viewValue) {
-                if (validateByValidDates(modelValue, viewValue)) {
-                    return modelValue.startDate <= modelValue.endDate;
-                }
-                return true;
+            function buildValidator(validateStartAndEnd) {
+                return function (modelValue, viewValue) {
+                    if (modelValue === undefined) {
+                        return true;
+                    }
+                    if (modelValue === null) {
+                        return false;
+                    }
+                    return validateStartAndEnd(modelValue.startDate, modelValue.endDate);
+                };
+            }
+
+            function _validateStartAndEndByOrder(startDate, endDate) {
+                return startDate <= endDate;
+            }
+
+            function _validateStartAndEndByNonEmpty(startDate, endDate) {
+                return angular.isDate(startDate) && angular.isDate(endDate);
             }
 
             function render() {
@@ -113,9 +141,10 @@
             }
 
             function setRangeClass(date, mode) {
-                if (!scope.startDate || !scope.endDate || moment(scope.startDate).isAfter(scope.endDate, 'day')) {
+                if (ngModelCtrl.$invalid) {
                     return '';
                 }
+
                 if (mode === 'day') {
                     if (!moment(date).isBefore(scope.startDate, 'day') && !moment(date).isAfter(scope.endDate, 'day')) {
                         return 'in-date-range';

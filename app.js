@@ -115,6 +115,13 @@
     };
     $scope.dateRangeTemplateType = 'inline';
     $scope.dateRangeTemplateTypes = ['popup', 'inline'];
+    $scope.dateRangeCustomValidators = [{
+        key: 'lessThan7Days',
+        message: 'DateRangeMustBeLessThanSevenDays',
+        validate: function(start, end) {
+            return moment(end).diff(moment(start), 'days') <= 7;
+        }
+    }];
 
     /*Code for time range picker*/
     $scope.timeRange = {
