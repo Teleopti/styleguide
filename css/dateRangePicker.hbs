@@ -1,5 +1,9 @@
 <label>Template type:</label>
-<select ng-model="dateRangeTemplateType" ng-options="option for option in dateRangeTemplateTypes"></select>
+<md-select ng-model="dateRangeTemplateType" aria-label="templateType">
+  <md-option ng-repeat="option in dateRangeTemplateTypes" ng-value="option">
+	<span ng-bind="option"></span>
+  </md-option>
+</md-select>
 <date-range-picker ng-model="dateRange" template-type="dateRangeTemplateType" custom-validators="dateRangeCustomValidators">
 </date-range-picker>
 
