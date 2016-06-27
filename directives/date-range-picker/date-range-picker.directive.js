@@ -48,9 +48,8 @@
                   validate: _validateStartAndEndByOrder
               },
               {
-                  key: 'empty',
-                  message: attrs.invalidEmptyMessage || 'StartDateAndEndDateMustBeSet',
-                  validate: _validateStartAndEndByNonEmpty
+                  key: 'parse',
+                  message: attrs.invalidEmptyMessage || 'StartDateAndEndDateMustBeSet'
               }
             ];
 
@@ -61,6 +60,7 @@
                 ngModelCtrl.$validators[v.key] = buildValidator(v.validate);
             });
 
+            ngModelCtrl.$parsers.push(parseView);
             ngModelCtrl.$render = render;
 
             scope.$watchCollection(function() {
@@ -97,9 +97,15 @@
                     if (modelValue === undefined) {
                         return true;
                     }
+
+                    if (!validateStartAndEnd) {
+                        return true;
+                    }
+
                     if (modelValue === null) {
                         return false;
                     }
+
                     return validateStartAndEnd(modelValue.startDate, modelValue.endDate);
                 };
             }
@@ -108,15 +114,26 @@
                 return startDate <= endDate;
             }
 
-            function _validateStartAndEndByNonEmpty(startDate, endDate) {
-                return angular.isDate(startDate) && angular.isDate(endDate);
-            }
-
             function render() {
                 if (ngModelCtrl.$viewValue) {
                     scope.startDate = ngModelCtrl.$viewValue.startDate;
                     scope.endDate = ngModelCtrl.$viewValue.endDate;
                 }
+            }
+
+            function parseView(viewValue) {
+                if (!viewValue) {
+                    return undefined;
+                }
+
+                if (!(scope.startDate && angular.isDate(scope.startDate))) {
+                    return undefined;
+                }
+
+                if (!(scope.endDate && angular.isDate(scope.endDate))) {
+                    return undefined;
+                }
+                return viewValue;
             }
 
             function updateViewModelFromUi() {
