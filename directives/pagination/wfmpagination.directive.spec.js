@@ -48,7 +48,7 @@
           };
           var isTriggered = false;
           scope.$digest();
-          targetScope.gotoPage(1);
+          targetScope.gotoPage(2);
           expect(isTriggered).toBe(false);
       });
 
