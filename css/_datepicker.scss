@@ -21,15 +21,14 @@
 //<tr><th>Attribute Name</th><th>Usage</th><th>Required</th></tr>
 //<tr><td>ng-model</td><td>Bind to a js-object representing the date range. The object is composed by <code>startDate</code> and <code>endDate</code> key-value pairs</td><td>true</td></tr>
 //<tr><td>template-type</td><td>Declares whether to use <b>inline</b> or <b>popup</b> mode</td><td>false</td></tr>
-//<tr><td>must-be-equal-msg</td><td>Message shown if dates are in wrong order. Standard use is { {'StartDateMustBeEqualToOrEarlierThanEndDate' | translate} }</td><td>true</td></tr>
-//<tr><td>start-and-end-msg</td><td>Message shown if no dates are entered. Standard use is { {'StartDateAndEndDateMustBeSet' | translate} }</td><td>true</td></tr>
+//<tr><td>invalid-order-message</td><td>Message shown if dates are in wrong order. Standard use is 'StartDateMustBeEqualToOrEarlierThanEndDate'</td><td>false</td></tr>
+//<tr><td>invalid-empty-message</td><td>Message shown if no dates are entered. Standard use is 'StartDateAndEndDateMustBeSet'</td><td>false</td></tr>
+//<tr><td>custom-validators</td><td>Define additional validations. The value should be an array of validator-definition objects, which should have <code>key</code>, <code>message</code>, and <code>validate</code> properties defined. The <code>validate</code> attribute must be a function that accepts <code>startDate</code> and <code>endDate</code> as input and returns a boolean to indicate validation result.</td><td>false</td></tr>
 //</table>
+//
 //</br>
 //
-//Markup:
-//<label>Template type:</label> <select ng-model="dateRangeTemplateType"
-//        ng-options="option for option in dateRangeTemplateTypes"></select>
-//<date-range-picker must-be-equal-msg="Start date must be equal to or earlier than the end date." start-and-end-msg="Start date and end date must be set" ng-model="dateRange" template-type="dateRangeTemplateType"></date-range-picker>
+//Markup: dateRangePicker.hbs
 //
 //Styleguide 2.2
 //
@@ -155,7 +154,6 @@
 }
 
 .error-msg-container {
-	display: none;
 	z-index: 999;
 	margin-top: 5px;
 	@extend .material-depth-2;
@@ -165,9 +163,4 @@
 .error-msg-container.error-msg-popup-container {
 	position: absolute;
 	width: 490px;
-}
-
-.wfm-date-range-picker-wrap.ng-invalid.ng-invalid-empty .error-msg-container.ng-invalid-empty,
-.wfm-date-range-picker-wrap.ng-invalid.ng-invalid-order .error-msg-container.ng-invalid-order {
-	display: block !important;
 }
