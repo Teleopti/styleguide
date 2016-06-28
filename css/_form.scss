@@ -246,6 +246,10 @@ select:after {
   }
 }
 
+.md-select-menu-container {
+	z-index: 99999;
+}
+
 md-select:not([disabled]):focus .md-select-value{
   border: none;
   outline: none;
@@ -278,7 +282,7 @@ md-select-menu{
 }
 
 md-select {
-  margin-top: auto;
+  margin: 0!important;
 
   .md-select-label {
     padding: 0;
@@ -443,7 +447,10 @@ md-autocomplete{
   @extend .wfm-block;
 
   input[type='checkbox'] {
-    display: none;
+    opacity: 0;
+    height: 20px;
+    width: 20px;
+    margin: -5px 0 0 -20px;
   }
 
   .wfm-checkbox-toggle:after {
@@ -465,6 +472,11 @@ md-autocomplete{
     content: "✓";
     text-align: center;
     color: $white;
+  }
+
+  input[type=checkbox]:focus ~ label .wfm-checkbox-toggle:after,
+  input[type=checkbox]:focus ~ .wfm-checkbox-toggle:after {
+    @extend .material-trench-1;
   }
 
   .wfm-checkbox-label {

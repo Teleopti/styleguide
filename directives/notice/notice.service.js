@@ -1,5 +1,11 @@
 (function() {
     'use strict';
+    var uid = (function() {
+        var uid = -1;
+        return function () {
+            return ++uid;
+        };
+    })();
     angular.module('wfm.notice')
 		.service('NoticeService', ['$rootScope', function($rootScope) {
     var service = {};
@@ -20,28 +26,38 @@
     };
 
     var addNotice = function(type, icon, content, timeToLive, destroyOnStateChange) {
+        var id = uid();
         var notice = {
+            id: id,
             type: type,
             icon: icon,
             content: content,
             timeToLive: timeToLive,
-            destroyOnStateChange: destroyOnStateChange
+            destroyOnStateChange: destroyOnStateChange,
+            destroy: function () {
+                $rootScope.wfmNotices = $rootScope.wfmNotices.filter(function(notice) {
+                    return notice.id !== id;
+                });
+            }
         };
 
         $rootScope.wfmNotices.push(notice);
+        return {
+            destroy: notice.destroy
+        };
     };
 
     service.warning = function(content, timeToLive, destroyOnStateChange) {
-        addNotice(types.warning, icons.warning, content, timeToLive, destroyOnStateChange);
+        return addNotice(types.warning, icons.warning, content, timeToLive, destroyOnStateChange);
     };
     service.error = function(content, timeToLive, destroyOnStateChange) {
-        addNotice(types.error, icons.error, content, timeToLive, destroyOnStateChange);
+        return addNotice(types.error, icons.error, content, timeToLive, destroyOnStateChange);
     };
     service.info = function(content, timeToLive, destroyOnStateChange) {
-        addNotice(types.info, icons.info, content, timeToLive, destroyOnStateChange);
+        return addNotice(types.info, icons.info, content, timeToLive, destroyOnStateChange);
     };
     service.success = function(content, timeToLive, destroyOnStateChange) {
-        addNotice(types.success, icons.success, content, timeToLive, destroyOnStateChange);
+        return addNotice(types.success, icons.success, content, timeToLive, destroyOnStateChange);
     };
 
     return service;

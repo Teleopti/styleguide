@@ -41,8 +41,8 @@
         scope.toggleAllChecks = toggleAllChecks;
 
         scope.newWorkingPeriod = {
-            startTime: new Date('2015-01-01 08:00:00'),
-            endTime: new Date('2015-01-01 17:00:00')
+            startTime: new Date(2016, 0, 1, 8),
+            endTime: new Date(2016, 0, 1, 17)
         };
 
         scope.disableNextDay = true;
