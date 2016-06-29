@@ -42,12 +42,14 @@ describe('date-range-picker directive', function() {
     });
 
     it('Should show error when start-date or end-date is not set', function() {
-        scope.dateRange.startDate = null;
-
+        scope.dateRange.startDate =  new Date('2015-09-30');
         var element = elementCompile(scope);
         scope.$apply();
 
-        expect(element.hasClass('ng-invalid-empty')).toBeTruthy();
+        scope.dateRange.startDate =  null;
+        scope.$apply();
+
+        expect(element.hasClass('ng-invalid')).toBeTruthy();
 
     });
 
