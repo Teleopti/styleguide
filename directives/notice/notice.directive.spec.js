@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    fdescribe('wfmNotice', function() {
+    describe('wfmNotice', function() {
         var elementCompile,
             rootScope,
             directiveScope;
