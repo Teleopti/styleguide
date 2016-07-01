@@ -157,7 +157,7 @@ select:after {
   opacity: 1;
 }
 
-:-ms-input-placeholder {
+input:-ms-input-placeholder {
   /* Internet Explorer 10+ */
   color: $text-color-muted;
 }
