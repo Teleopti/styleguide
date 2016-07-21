@@ -1,0 +1,66 @@
+<div class="view-header with-desc">
+  <div class="view-title">
+    <h1><i class="mdi mdi-cake"></i> Module</h1>
+    <p>This grid show you important things.</p>
+  </div>
+</div>
+<div class="con-row">
+  <div class="con-flex">
+    <div class="panel material-depth-1">
+      <div class="sub-header">
+        <div class="con-row">
+          <div class="con-flex line-flex">
+            <label for="inputId" class="input-prepend">
+              <i class="mdi mdi-filter-outline">
+                <md-tooltip>Filter module grid</md-tooltip></i>
+                <input type="text" id="inputId" placeholder="Filter something"/>
+              </label>
+              <div class="wfm-checkbox pull-right">
+                <input type="checkbox" id="check1" checked="true"/>
+                <label for="check1">
+                  <span class="wfm-checkbox-toggle"></span>
+                  <span class="wfm-checkbox-label">Filter option</span>
+                </label>
+              </div>
+            </div>
+            <div class="con-flex split-1-2"></div>
+          </div>
+          <div class="head-actions grounded-actions panel-menu">
+            <div tabindex=0 class="context-menu card-context">
+              <i class="mdi mdi-dots-vertical"></i>
+              <span class="context-menu-left">
+                <ul class="wfm-list">
+                  <li>Menu item 1</li>
+                  <li>Menu item 2</li>
+                  <li>Menu item 3</li>
+                </ul>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="con-row">
+          <div class="con-flex">
+            <div ui-grid="gridOptions" ui-grid-exporter ui-grid-auto-resize ui-grid-selection class="myGrid"></div>
+          </div>
+        </div>
+        <div class="con-row">
+          <div class="con-flex">
+            <div class="wfm-switch">
+            	<input type="checkbox" id="switch1" />
+            	<label for="switch1">
+            		<span class="wfm-switch-label">Show selected items</span>
+            		<span class="wfm-switch-toggle"></span>
+            	</label>
+            </div>
+          </div>
+          <div class="con-flex split-2-1">
+            <wfm-pagination class="pull-pagination" pagination-options="paginationOptions" get-data-for-page-callback="getPageData"></wfm-pagination>
+          </div>
+        </div>
+        <div class="con-footer">
+          <button class="wfm-btn wfm-btn-invis-default">Option</button>
+          <button class="wfm-btn wfm-btn-invis-primary">Action</button>
+        </div>
+      </div>
+    </div>
+  </div>
