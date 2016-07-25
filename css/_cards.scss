@@ -179,10 +179,12 @@
 //Markup:
 //	<wfm-card-list >
 //		<wfm-card ng-repeat="item in items">
-//			<card-header>
+//			<card-header tabindex="-1">
+//      <div tabindex="0">
 //				<span><i class="mdi" ng-class="item.title"></i></span>
 //					Single card title
 //				<span class="chevron"><i class="mdi mdi-chevron-right"></i></span>
+//      </div>
 //			</card-header>
 //			<card-body class="panel">
 //	 			<div class="con-row demo-outline">
@@ -206,10 +208,12 @@
 //Markup:
 //	<wfm-card-list multi-select>
 //		<wfm-card ng-repeat="item in items">
-//			<card-header>
+//			<card-header tabindex="-1">
+//      <div tabindex="0">
 //				<span><i class="mdi" ng-class="item.title"></i></span>
-//				Multi card title
+//					Multi card title
 //				<span class="chevron"><i class="mdi mdi-chevron-right"></i></span>
+//      </div>
 //			</card-header>
 //			<card-body class="panel">
 //	 			<div class="con-row demo-outline">
