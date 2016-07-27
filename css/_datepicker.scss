@@ -144,6 +144,11 @@
 	}
 }
 
+.popup-datetime-wrap{
+	position: absolute;
+	display: flex;
+}
+
 .dropdown-menu{
 	text-align: center;
 	background-color: $white;
@@ -154,13 +159,6 @@
 }
 
 .error-msg-container {
-	z-index: 999;
 	margin-top: 5px;
-	@extend .material-depth-2;
 	background: $red-600;
-}
-
-.error-msg-container.error-msg-popup-container {
-	position: absolute;
-	width: 490px;
 }
