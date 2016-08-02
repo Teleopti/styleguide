@@ -77,100 +77,112 @@
 //Styleguide 1.18.1
 //
 
- .wfm-grid {
-	display: flex;
-	flex-wrap: wrap;
+.wfm-grid {
+  display: flex;
+  flex-wrap: wrap;
 
-	.grid-card-disabled{
-		background: $gray012;
-		pointer-events: none;
-		cursor: not-allowed!important;
-	}
-
-	.grid-card, .grid-card-mini  {
- 	 display: flex;
- 	 padding: $full-padding;
- 	 width: 100%;
+  .grid-card-disabled{
+    background: $gray012;
+    pointer-events: none;
+    cursor: not-allowed!important;
   }
 
-	@media all and (min-width: 768px) {
-		.grid-card {
-			width: 50%;
-		}
+  .grid-card, .grid-card-mini  {
+    display: flex;
+    padding: $full-padding;
+    width: 100%;
+  }
 
-		.grid-card-mini{
-			width:25%;
-		}
-	}
+  a:focus{
+    outline: rgb(0, 153, 255) solid 1px!important;
+  }
 
-	@media all and (min-width: 960px) {
-		.grid-card {
-			width: 33.33%;
-		}
+  @media all and (min-width: 768px) {
+    .grid-card {
+      width: 50%;
+    }
 
-		.grid-card-mini{
-			width:16.66%;
-		}
-	}
+    .grid-card-mini{
+      width:25%;
+    }
+  }
 
-	.list-content {
-		background-color: $white;
-		display: flex;
-		flex-direction: column;
-		padding:$full-padding;
-		width: 100%;
+  @media all and (min-width: 960px) {
+    .grid-card {
+      width: 33.33%;
+    }
 
-		@extend .material-depth-1;
-		@extend .raise;
-	}
+    .grid-card-mini{
+      width:16.66%;
+    }
+  }
 
-	.list-content span {
-		flex: 1 0 auto;
-		padding-bottom: $full-padding;
-	 }
- }
+  .list-content {
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    padding:$full-padding;
+    width: 100%;
 
- .card-group {
-	 display: inline-block;
-	 width: 100%;
-	 transition: 1s all ease-in-out;
- }
+    @extend .material-depth-1;
+    @extend .raise;
+  }
 
- .wfm-card {
-	 display: block;
-	 width: auto;
-	 background:$white;
-	 float: left;
-	 min-width: 15rem;
-	 min-height: 150px;
-	 @extend .material-depth-1;
-	 margin: 5px;
-	 cursor:pointer;
-	 padding: 10px;
-	 transition:0.2s all ease-in-out;
+  .list-content span {
+    flex: 1 0 auto;
+    padding-bottom: $full-padding;
+  }
+}
 
-	 &:hover,&:focus{
-	 	box-shadow: 0 8px 17px 0 rgba(0,0,0,.2)!important;
-	 }
- }
+.card-group {
+  display: inline-block;
+  width: 100%;
+  transition: 1s all ease-in-out;
+}
 
- .wfm-card-disabled {
-	 background-color:$gray026;
+.wfm-card-title{
+	outline: 0 solid transparent!important;
+}
 
-	 &:hover{
-	 	box-shadow: 0 8px 17px 0 rgba(0,0,0,.2)!important;
-		cursor: not-allowed;
-	 }
- }
+.wfm-card {
+  display: block;
+  width: auto;
+  background:$white;
+  float: left;
+  min-width: 15rem;
+  min-height: 150px;
+  @extend .material-depth-1;
+  margin: 5px;
+  cursor:pointer;
+  padding: 10px;
+  transition:0.2s all ease-in-out;
 
- // Card List
- //
- //	The Teleopti Card List is used to show a list of expanding content. Each card can be clicked to expanded while the compact version shows information at a glance.
- //
- //It is encouraged to add as much relevant information as possible to the header of the card (while avoiding text wrapping). Any html elements provided within the &lt;card-header&gt; and/or &lt;card-body&gt; tags will be rendered accordingly.
- //
- //Styleguide 4.6
- //
+  &:hover,&:focus{
+    box-shadow: 0 8px 17px 0 rgba(0,0,0,.2)!important;
+  }
+}
+
+.wfm-card-unselected{
+  background: $white;
+}
+
+.wfm-card-disabled {
+  background-color:$gray026;
+
+  &:hover{
+    box-shadow: 0 8px 17px 0 rgba(0,0,0,.2)!important;
+    cursor: not-allowed;
+  }
+}
+
+// Card List
+//
+//	The Teleopti Card List is used to show a list of expanding content. Each card can be clicked to expanded while the compact version shows information at a glance.
+//
+//It is encouraged to add as much relevant information as possible to the header of the card (while avoiding text wrapping). Any html elements provided within the &lt;card-header&gt; and/or &lt;card-body&gt; tags will be rendered accordingly.
+//
+//Styleguide 4.6
+//
 
 // Single
 //
@@ -233,73 +245,73 @@
 
 /*Overrides bootstrap*/
 .wfm-card-list {
-	width: 100%;
+  width: 100%;
 }
 
 .wfm-card-title {
-	cursor: pointer;
-	min-height: 35px;
-	line-height: 35px;
-	padding: 0 $full-padding *3;
+  cursor: pointer;
+  min-height: 35px;
+  line-height: 35px;
+  padding: 0 $full-padding *3;
 
-	.chevron{
-		float: right;
-	}
+  .chevron{
+    float: right;
+  }
 }
 
 md-content {
-	padding-bottom: $full-padding *2;
-	background-color: transparent!important;
+  padding-bottom: $full-padding *2;
+  background-color: transparent!important;
 }
 
 .wfm-card-unselected{
-	width: 90%;
-	margin: $full-padding *2 auto;
+  width: 90%;
+  margin: $full-padding *2 auto;
 
-	transition-property: box-shadow, background-color;
-	transition-duration: 0.2s;
-	transition-timing-function: ease-out;
-	background: $white;
-	color:$text-color-standard;
+  transition-property: box-shadow, background-color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
+  background: $white;
+  color:$text-color-standard;
 }
 
 .wfm-card-unselected:hover{
-	@extend .material-depth-2;
-	background-color: $white!important;
+  @extend .material-depth-2;
+  background-color: $white!important;
 }
 
 .wfm-card-selected {
-	margin: 25px auto;
-	width: 95%;
-	transition-property: width, height;
-	transition-duration: 0.2s;
-	transition-timing-function: ease-out;
+  margin: 25px auto;
+  width: 95%;
+  transition-property: width, height;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
 
-	.chevron{
-		transition:all 0.2s ease-in-out;
-		transform:rotate(90deg);
-	}
+  .chevron{
+    transition:all 0.2s ease-in-out;
+    transform:rotate(90deg);
+  }
 }
 
 wfm-card:first-child .wfm-card-selected {
-	margin-top: $full-padding *2;
+  margin-top: $full-padding *2;
 }
 
 wfm-card:last-child .wfm-card-selected {
-	margin-bottom: $full-padding *2;
+  margin-bottom: $full-padding *2;
 }
 
 md-card{
-	border-radius: 0;
+  border-radius: 0;
 }
 
 .wfm-card-selected .wfm-card-title{
-	background-color: $blue-100;
-	transition: background-color 0.3s linear;
-	transition: box-shadow 0.3s linear;
+  background-color: $blue-100;
+  transition: background-color 0.3s linear;
+  transition: box-shadow 0.3s linear;
 }
 
 .wfm-card-content {
-	padding: 10px 16px;
-	background-color: $white;
+  padding: 10px 16px;
+  background-color: $white;
 }
