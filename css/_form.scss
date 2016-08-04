@@ -247,7 +247,7 @@ input:-ms-input-placeholder {
 }
 
 .md-select-menu-container {
-	z-index: 99999;
+  z-index: 99999;
 }
 
 md-select:not([disabled]):focus .md-select-value{
@@ -315,12 +315,34 @@ md-autocomplete{
   button md-icon {
     transform: translate3d(-50%,-50%,0) scale(0.7);
   }
-
-  .md-whiteframe-1dp, .md-whiteframe-z1{
-    box-shadow: none;
-  }
 }
 
+.md-whiteframe-1dp, .md-whiteframe-z1{
+	box-shadow: none;
+}
+
+.md-virtual-repeat-scroller{
+	background: $white;
+}
+
+md-autocomplete-parent-scope{
+	color: $text-color-standard;
+}
+.md-autocomplete-suggestions >li {
+	color: $text-color-standard;
+
+	&:hover{
+		background:$gray012!important;
+	}
+}
+
+md-autocomplete[disabled]{
+	background:$gray012;
+
+	input{
+		cursor: not-allowed!important;
+	}
+}
 // Radio buttons
 //
 // Radio buttons are a group of options that can only have one item selected at a time.
