@@ -36,6 +36,7 @@
 //
 //The action button functions similarly to the raised buttons except that are on the floating layer above the entire layout. They are also similar in that they are unique in each view, indicating the primary positive action. More about when to use it can be found in the <a href="http://www.google.com/design/spec/components/buttons.html#buttons-floating-action-button">google material guidelines.</a>
 // A action button is always located inside the view header.
+//
 //Markup:
 //	<button class="wfm-fab  material-depth-1"><i class="mdi mdi-account"></i>
 //		<md-tooltip>My account</md-tooltip>
