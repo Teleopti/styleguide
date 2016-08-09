@@ -183,6 +183,9 @@
                 if (!scope.dropDownState.showAllDatePickers) {
                     scope.dropDownState.showStartDatePicker = scope.dropDownState.showEndDatePicker = scope.dropDownState.showAllDatePickers = true;
                 }
+                else {
+                    scope.dropDownState.showStartDatePicker = scope.dropDownState.showEndDatePicker = scope.dropDownState.showAllDatePickers = false;
+                }
             };
         }
     }
