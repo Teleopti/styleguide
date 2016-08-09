@@ -4,8 +4,14 @@
 	<span ng-bind="option"></span>
   </md-option>
 </md-select>
-<date-range-picker ng-model="dateRange" template-type="dateRangeTemplateType" custom-validators="dateRangeCustomValidators">
-</date-range-picker>
+
+
+
+<div class="con-row">
+  <div class="con-flex">
+    <date-range-picker ng-model="dateRange" template-type="dateRangeTemplateType" custom-validators="dateRangeCustomValidators"></date-range-picker>
+  </div>
+</div>
 
 <!--
   dateRangeCustomValidators = [{

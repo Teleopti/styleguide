@@ -2,9 +2,6 @@
   <div class="con-row">
     <div class="con-flex line-center">
       <div class="wfm-datepicker-wrap date-range-start-date">
-        <div class="sub-header">
-          <span>From</span>: <strong>{{ startDate | date: dateFormat }}</strong>
-        </div>
         <uib-datepicker ng-model="startDate"
 						show-weeks="true"
 						custom-class="setRangeClass(date, mode)"
@@ -15,9 +12,6 @@
     </div>
     <div class="con-flex line-center">
       <div class="wfm-datepicker-wrap date-range-end-date">
-        <div class="sub-header">
-          <span>To</span>: <strong>{{ endDate | date: dateFormat }}</strong>
-        </div>
         <uib-datepicker ng-model="endDate"
 						show-weeks="true"
 						custom-class="setRangeClass(date, mode)"
@@ -30,55 +24,58 @@
 
   <div ng-repeat="validator in validators"
 	   ng-if="displayError(validator.key)"
-	   class="error-msg-container error-msg-popup-container alert-error notice-spacer">
+	   class="error-msg-container inline-error-msg-container alert-error notice-spacer">
     <i class='mdi mdi-alert-octagon'></i><span translate>{{validator.message}}</span>
   </div>
 
 </div>
 
-<div ng-show="displayPopup()">
-  <div class="con-row">
-    <div tabindex=0 class="context-menu card-context popup-control" ng-click="onClickShowAllDates()" ng-class='{"pin-down" : dropDownState.showAllDatePickers}'>
-      <i class="mdi mdi-calendar"></i>
-    </div>
-    <div class="con-flex line-center">
-      <input id="popupFromId"
-			 class="date-range-start-date pointer start-date-input"
-			 type="text"
-			 ng-click="dropDownState.showStartDatePicker = !dropDownState.showStartDatePicker"
-			 ng-model="startDate"
-			 uib-datepicker-popup="{{dateFormat}}"
-			 on-open-focus="false"
-			 custom-class="setRangeClass(date, mode)"
-			 show-weeks="true"
-			 is-open="dropDownState.showStartDatePicker"
-			 ng-required="true"
-			 show-button-bar="false"
-			 min-date="dummyMinDate"
-			 close-on-date-selection="false" />
-    </div>
-    <div class="con-flex line-center">
-      <input id="popupToId"
-			 class="pointer end-date-input date-range-end-date"
-			 type="text"
-			 ng-click="dropDownState.showEndDatePicker = !dropDownState.showEndDatePicker"
-			 ng-model="endDate"
-			 uib-datepicker-popup="{{dateFormat}}"
-			 on-open-focus="false"
-			 show-weeks="true"
-			 custom-class="setRangeClass(date, mode)"
-			 is-open="dropDownState.showEndDatePicker"
-			 ng-required="true"
-			 show-button-bar="false"
-			 min-date="dummyMinDate"
-			 close-on-date-selection="false" />
-    </div>
+<div class="popup-wrap" ng-show="displayPopup()">
+  <div tabindex=0 class="context-menu card-context popup-control" ng-click="onClickShowAllDates()" ng-class='{"pin-down" : dropDownState.showAllDatePickers}'>
+    <i class="mdi mdi-calendar"></i>
   </div>
 
-  <div ng-repeat="validator in validators"
-	   ng-if="displayError(validator.key)"
-	   class="error-msg-container error-msg-popup-container alert-error notice-spacer">
-    <i class='mdi mdi-alert-octagon'></i><span translate>{{validator.message}}</span>
+  <div ng-class='{"popup-container" : dropDownState.showStartDatePicker || dropDownState.showEndDatePicker}'>
+    <div class="con-row">
+      <div class="con-flex line-center">
+        <input id="popupFromId"
+         class="date-range-start-date pointer start-date-input"
+         type="text"
+         ng-click="dropDownState.showStartDatePicker = !dropDownState.showStartDatePicker"
+         ng-model="startDate"
+         uib-datepicker-popup="{{dateFormat}}"
+         on-open-focus="false"
+         custom-class="setRangeClass(date, mode)"
+         show-weeks="true"
+         is-open="dropDownState.showStartDatePicker"
+         ng-required="true"
+         show-button-bar="false"
+         min-date="dummyMinDate"
+         close-on-date-selection="false" />
+      </div>
+      <div class="con-flex line-center">
+        <input id="popupToId"
+         class="pointer end-date-input date-range-end-date"
+         type="text"
+         ng-click="dropDownState.showEndDatePicker = !dropDownState.showEndDatePicker"
+         ng-model="endDate"
+         uib-datepicker-popup="{{dateFormat}}"
+         on-open-focus="false"
+         show-weeks="true"
+         custom-class="setRangeClass(date, mode)"
+         is-open="dropDownState.showEndDatePicker"
+         ng-required="true"
+         show-button-bar="false"
+         min-date="dummyMinDate"
+         close-on-date-selection="false" />
+      </div>
+    </div>
+    <div class="con-row">
+      <div ng-repeat="validator in validators"
+         ng-if="displayError(validator.key)"
+         class="error-msg-container error-msg-popup-container alert-error notice-spacer">
+        <i class='mdi mdi-alert-octagon'></i><span translate>{{validator.message}}</span>
+      </div>
+    </div>
   </div>
-
 </div>
