@@ -118,6 +118,10 @@
 
 .wfm-date-range-picker-wrap {
 
+	.dropdown-menu{
+		position: initial!important;
+	}
+
 	.pin-down {
 		background-color: $gray012;
 		@extend .material-depth-1;
