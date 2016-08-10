@@ -475,6 +475,10 @@ md-autocomplete[disabled]{
     margin: -5px 0 0 -20px;
   }
 
+  label {
+    position: relative;
+  }
+
   .wfm-checkbox-toggle:after {
     position: absolute;
     background-color: $gray026;
@@ -486,6 +490,8 @@ md-autocomplete[disabled]{
     -webkit-transition: background-color .2s ease-in-out;
     transition: background-color .2s ease-in-out;
     cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   input[type=checkbox]:checked ~ label .wfm-checkbox-toggle:after,
