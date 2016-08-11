@@ -38,7 +38,7 @@ select:after {
 
 // Inputs
 //
-//Standard inputs can be used as is and on their own. If you want to build a form with several inputs and actions on submit, please look at the <a href=file:///C:/Users/carlr/Repos/styleguide/styleguide/styleguide/section-4.html>form layout</a>.
+//Standard inputs dont need any added style. If you want to build a form with several inputs and actions on submit, please look at the <a href=file:///C:/Users/carlr/Repos/styleguide/styleguide/styleguide/section-4.html>form layout</a>.
 //
 //Note:  &lt;br/&gt; tags are for styleguide demo purpose only.
 //
@@ -91,7 +91,7 @@ select:after {
 
 // File upload
 //
-//Letting users import data from files cuts down on a lot of maual entry. Make there is enough feedback on what file has been selected.
+//Let users import data from files to cuts down on a lot of maual entry.
 //
 //Markup:
 //<label class="fileUpload">
@@ -247,7 +247,7 @@ input:-ms-input-placeholder {
 }
 
 .md-select-menu-container {
-	z-index: 99999;
+  z-index: 99999;
 }
 
 md-select:not([disabled]):focus .md-select-value{
@@ -315,12 +315,34 @@ md-autocomplete{
   button md-icon {
     transform: translate3d(-50%,-50%,0) scale(0.7);
   }
-
-  .md-whiteframe-1dp, .md-whiteframe-z1{
-    box-shadow: none;
-  }
 }
 
+.md-whiteframe-1dp, .md-whiteframe-z1{
+	box-shadow: none;
+}
+
+.md-virtual-repeat-scroller{
+	background: $white;
+}
+
+md-autocomplete-parent-scope{
+	color: $text-color-standard;
+}
+.md-autocomplete-suggestions >li {
+	color: $text-color-standard;
+
+	&:hover{
+		background:$gray012!important;
+	}
+}
+
+md-autocomplete[disabled]{
+	background:$gray012;
+
+	input{
+		cursor: not-allowed!important;
+	}
+}
 // Radio buttons
 //
 // Radio buttons are a group of options that can only have one item selected at a time.
@@ -499,7 +521,7 @@ md-autocomplete{
 //		</label>
 //	</div>
 //
-//Styleguide 1.8
+//Styleguide 1.7.1
 //
 
 .wfm-switch {

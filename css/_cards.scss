@@ -1,63 +1,188 @@
 
 
-//Cards
+//Card grid
 //
-//Cards are used to show a large number of same size content. Providing filters or ways to sort cards is good.
+// Cards are used to show a large number of similar content. Providing filters or ways to sort cards is appreciated.
+// Card actions should be triggered on click of the whole card.
 //
 //Markup:
-//	<div class="card-group">
-//		<div class="wfm-card" tabindex="0"><h2>Title</h2></div>
-//		<div class="wfm-card wfm-card-disabled" tabindex="0"><h2>Title</h2></div>
-//		<div class="wfm-card" tabindex="0"><h2>Title</h2></div>
-//		<div class="wfm-card" tabindex="0"><h2>Title</h2></div>
-//		<div class="wfm-card" tabindex="0"><h2>Title</h2></div>
-//		<div class="wfm-card" tabindex="0"><h2>Title</h2></div>
-//		<div class="wfm-card" tabindex="0"><h2>Title</h2></div>
-//	</div>
+//<div class="wfm-grid">
+// <div class="grid-card">
+//	 <div class="list-content">
+//		 <h2>Card header</h2>
+//		 <span>Short card tag line</span>
+//	 </div>
+// </div>
+// <div class="grid-card">
+//	 <div class="list-content">
+//		 <h2>Card header</h2>
+//		 <span>Short card tag line</span>
+//	 </div>
+// </div>
+// <div class="grid-card">
+//	 <div class="list-content">
+//		 <h2>Card header</h2>
+//		 <span>Short card tag line</span>
+//	 </div>
+// </div>
+//</div>
 //
 //Styleguide 1.18
 //
-.card-group {
-	display: inline-block;
-	width: 100%;
-	transition: 1s all ease-in-out;
+
+//Mini card grid
+//
+//Smaller cards that provide more items on screen at once.
+//
+//Markup:
+//<div class="wfm-grid">
+// <div class="grid-card-mini">
+//	 <div class="list-content">
+//		 <h2>Card header</h2>
+//		 <span>Short card tag line</span>
+//	 </div>
+// </div>
+// <div class="grid-card-mini">
+//	 <div class="list-content">
+//		 <h2>Card header</h2>
+//		 <span>Short card tag line</span>
+//	 </div>
+// </div>
+// <div class="grid-card-mini">
+//	 <div class="list-content">
+//		 <h2>Card header</h2>
+//		 <span>Short card tag line</span>
+//	 </div>
+// </div>
+// <div class="grid-card-mini">
+//	 <div class="list-content">
+//		 <h2>Card header</h2>
+//		 <span>Short card tag line</span>
+//	 </div>
+// </div>
+// <div class="grid-card-mini">
+//	 <div class="list-content">
+//		 <h2>Card header</h2>
+//		 <span>Short card tag line</span>
+//	 </div>
+// </div>
+// <div class="grid-card-mini">
+//	 <div class="list-content">
+//		 <h2>Card header</h2>
+//		 <span>Short card tag line</span>
+//	 </div>
+// </div>
+//</div>
+//
+//Styleguide 1.18.1
+//
+
+.wfm-grid {
+  display: flex;
+  flex-wrap: wrap;
+
+  .grid-card-disabled{
+    background: $gray012;
+    pointer-events: none;
+    cursor: not-allowed!important;
+  }
+
+  .grid-card, .grid-card-mini  {
+    display: flex;
+    padding: $full-padding;
+    width: 100%;
+  }
+
+  a:focus{
+    outline: rgb(0, 153, 255) solid 1px!important;
+  }
+
+  @media all and (min-width: 768px) {
+    .grid-card {
+      width: 50%;
+    }
+
+    .grid-card-mini{
+      width:25%;
+    }
+  }
+
+  @media all and (min-width: 960px) {
+    .grid-card {
+      width: 33.33%;
+    }
+
+    .grid-card-mini{
+      width:16.66%;
+    }
+  }
+
+  .list-content {
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    padding:$full-padding;
+    width: 100%;
+
+    @extend .material-depth-1;
+    @extend .raise;
+  }
+
+  .list-content span {
+    flex: 1 0 auto;
+    padding-bottom: $full-padding;
+  }
 }
 
- .wfm-card {
-	 display: block;
-	 width: auto;
-	 background:$white;
-	 float: left;
-	 min-width: 15rem;
-	 min-height: 150px;
-	 @extend .material-depth-1;
-	 margin: 5px;
-	 cursor:pointer;
-	 padding: 10px;
-	 transition:0.2s all ease-in-out;
+.card-group {
+  display: inline-block;
+  width: 100%;
+  transition: 1s all ease-in-out;
+}
 
-	 &:hover,&:focus{
-	 	box-shadow: 0 8px 17px 0 rgba(0,0,0,.2)!important;
-	 }
- }
+.wfm-card-title{
+	outline: 0 solid transparent!important;
+}
 
- .wfm-card-disabled {
-	 background-color:$gray026;
+.wfm-card {
+  display: block;
+  width: auto;
+  background:$white;
+  float: left;
+  min-width: 15rem;
+  min-height: 150px;
+  @extend .material-depth-1;
+  margin: 5px;
+  cursor:pointer;
+  padding: 10px;
+  transition:0.2s all ease-in-out;
 
-	 &:hover{
-	 	box-shadow: 0 8px 17px 0 rgba(0,0,0,.2)!important;
-		cursor: not-allowed;
-	 }
- }
+  &:hover,&:focus{
+    box-shadow: 0 8px 17px 0 rgba(0,0,0,.2)!important;
+  }
+}
 
- // Card List
- //
- //	The Teleopti Card List is used to show a list of expanding content. Each card can be clicked to expanded while the compact version shows information at a glance.
- //
- //It is encouraged to add as much relevant information as possible to the header of the card (while avoiding text wrapping). Any html elements provided within the &lt;card-header&gt; and/or &lt;card-body&gt; tags will be rendered accordingly.
- //
- //Styleguide 4.6
- //
+.wfm-card-unselected{
+  background: $white;
+}
+
+.wfm-card-disabled {
+  background-color:$gray026;
+
+  &:hover{
+    box-shadow: 0 8px 17px 0 rgba(0,0,0,.2)!important;
+    cursor: not-allowed;
+  }
+}
+
+// Card List
+//
+//	The Teleopti Card List is used to show a list of expanding content. Each card can be clicked to expanded while the compact version shows information at a glance.
+//
+//It is encouraged to add as much relevant information as possible to the header of the card (while avoiding text wrapping). Any html elements provided within the &lt;card-header&gt; and/or &lt;card-body&gt; tags will be rendered accordingly.
+//
+//Styleguide 4.6
+//
 
 // Single
 //
@@ -66,10 +191,12 @@
 //Markup:
 //	<wfm-card-list >
 //		<wfm-card ng-repeat="item in items">
-//			<card-header>
+//			<card-header tabindex="-1">
+//      <div tabindex="0">
 //				<span><i class="mdi" ng-class="item.title"></i></span>
 //					Single card title
 //				<span class="chevron"><i class="mdi mdi-chevron-right"></i></span>
+//      </div>
 //			</card-header>
 //			<card-body class="panel">
 //	 			<div class="con-row demo-outline">
@@ -93,10 +220,12 @@
 //Markup:
 //	<wfm-card-list multi-select>
 //		<wfm-card ng-repeat="item in items">
-//			<card-header>
+//			<card-header tabindex="-1">
+//      <div tabindex="0">
 //				<span><i class="mdi" ng-class="item.title"></i></span>
-//				Multi card title
+//					Multi card title
 //				<span class="chevron"><i class="mdi mdi-chevron-right"></i></span>
+//      </div>
 //			</card-header>
 //			<card-body class="panel">
 //	 			<div class="con-row demo-outline">
@@ -116,73 +245,73 @@
 
 /*Overrides bootstrap*/
 .wfm-card-list {
-	width: 100%;
+  width: 100%;
 }
 
 .wfm-card-title {
-	cursor: pointer;
-	min-height: 35px;
-	line-height: 35px;
-	padding: 0 $full-padding *3;
+  cursor: pointer;
+  min-height: 35px;
+  line-height: 35px;
+  padding: 0 $full-padding *3;
 
-	.chevron{
-		float: right;
-	}
+  .chevron{
+    float: right;
+  }
 }
 
 md-content {
-	padding-bottom: $full-padding *2;
-	background-color: transparent!important;
+  padding-bottom: $full-padding *2;
+  background-color: transparent!important;
 }
 
 .wfm-card-unselected{
-	width: 90%;
-	margin: $full-padding *2 auto;
+  width: 90%;
+  margin: $full-padding *2 auto;
 
-	transition-property: box-shadow, background-color;
-	transition-duration: 0.2s;
-	transition-timing-function: ease-out;
-	background: $white;
-	color:$text-color-standard;
+  transition-property: box-shadow, background-color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
+  background: $white;
+  color:$text-color-standard;
 }
 
 .wfm-card-unselected:hover{
-	@extend .material-depth-2;
-	background-color: $white!important;
+  @extend .material-depth-2;
+  background-color: $white!important;
 }
 
 .wfm-card-selected {
-	margin: 25px auto;
-	width: 95%;
-	transition-property: width, height;
-	transition-duration: 0.2s;
-	transition-timing-function: ease-out;
+  margin: 25px auto;
+  width: 95%;
+  transition-property: width, height;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
 
-	.chevron{
-		transition:all 0.2s ease-in-out;
-		transform:rotate(90deg);
-	}
+  .chevron{
+    transition:all 0.2s ease-in-out;
+    transform:rotate(90deg);
+  }
 }
 
 wfm-card:first-child .wfm-card-selected {
-	margin-top: $full-padding *2;
+  margin-top: $full-padding *2;
 }
 
 wfm-card:last-child .wfm-card-selected {
-	margin-bottom: $full-padding *2;
+  margin-bottom: $full-padding *2;
 }
 
 md-card{
-	border-radius: 0;
+  border-radius: 0;
 }
 
 .wfm-card-selected .wfm-card-title{
-	background-color: $blue-100;
-	transition: background-color 0.3s linear;
-	transition: box-shadow 0.3s linear;
+  background-color: $blue-100;
+  transition: background-color 0.3s linear;
+  transition: box-shadow 0.3s linear;
 }
 
 .wfm-card-content {
-	padding: 10px 16px;
-	background-color: $white;
+  padding: 10px 16px;
+  background-color: $white;
 }
