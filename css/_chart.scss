@@ -74,4 +74,10 @@
 	.c3-selected-circle {
 		fill: $white;
 	}
+
+	.c3-axis,
+	.c3-axis-x,
+	.c3-legend-item{
+		fill:$text-color-standard;
+	}
 }

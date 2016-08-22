@@ -2,7 +2,7 @@
 
 //Elements
 //
-//Elements are the individual parts that make up the application. Some (such as buttons and text) can be stand alone but genrally all elements are part of a container. By arranging elements in containers using layout, we can get a structured and consistent style.
+//Elements are the individual parts that make up the application. Some (such as buttons and text) can be stand alone but generally all elements are part of a container. By arranging elements in containers using layout, we can get a structured and consistent style.
 //
 //Styleguide 1
 //
@@ -10,12 +10,12 @@
 
 //Depth
 //
-//Getting a deeper look into the styles of shadows and positioning. The first thing we need to understand is the concept of stacked material (see the <a href="http://www.google.com/design/spec/what-is-material/elevation-shadows.html#elevation-shadows-shadows">Google guidelines</a> ).
-//
-//Keep the number of stacked layers to a minimum and the total number of layer below 3 (including the background). If a raised element lives inside of another raised element it should still have a material-depth number of one, unless it is floating.
-//Floating elements live above the main layout (such as context menus) and should have the highest material-depth number possible (2).
-//
-//If the element does not have a raised wrapper (i.e panel) and is placed freely on the background it should have a depth value of 1.
+//Material is built on depth (see the <a href="http://www.google.com/design/spec/what-is-material/elevation-shadows.html#elevation-shadows-shadows">Google guidelines</a> ).
+//We have 3 'layers'; the background, material layer and the floating layer.
+//<ul>
+//<li>Background layer: Just the flat gray background. Plain text can be housed here.</li>
+//<li>Material layer: material depth 1 hold most of the containers and elements.</li>
+//<li>Floating layer: material depth 2 hold things that are elevated above the material layer.</li>
 //
 //Note: the 'spacer' class is for styleguide demo purpose only.
 //
@@ -423,6 +423,10 @@ html{
 
 .angular-req span:before{
 	content:"This element require additional angular directives. "!important;
+}
+
+md-tooltip {
+    position: fixed;
 }
 
 

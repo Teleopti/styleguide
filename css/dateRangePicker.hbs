@@ -1,0 +1,18 @@
+<label>Template type:</label>
+<md-select ng-model="dateRangeTemplateType" aria-label="templateType">
+  <md-option ng-repeat="option in dateRangeTemplateTypes" ng-value="option">
+	<span ng-bind="option"></span>
+  </md-option>
+</md-select>
+<date-range-picker ng-model="dateRange" template-type="dateRangeTemplateType" custom-validators="dateRangeCustomValidators">
+</date-range-picker>
+
+<!--
+  dateRangeCustomValidators = [{
+     key: 'lessThan7Days',
+     message: 'DateRangeMustBeLessThanSevenDays',
+     validate: function(start, end) {
+        return moment(end).diff(moment(start), 'days') <= 7;
+     }
+  }];
+-->
