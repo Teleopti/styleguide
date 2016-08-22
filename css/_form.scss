@@ -343,6 +343,11 @@ md-autocomplete[disabled]{
 		cursor: not-allowed!important;
 	}
 }
+
+.wfm-form > md-autocomplete-wrap > input {
+	margin-right: 0!important;
+}
+
 // Radio buttons
 //
 // Radio buttons are a group of options that can only have one item selected at a time.
