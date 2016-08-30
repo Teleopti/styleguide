@@ -118,6 +118,10 @@
 
 .wfm-date-range-picker-wrap {
 
+	.dropdown-menu{
+		position: initial!important;
+	}
+
 	.pin-down {
 		background-color: $gray012;
 		@extend .material-depth-1;
@@ -153,6 +157,23 @@
 	box-sizing: initial;
 }
 
+.popup-wrap {
+    display: inline-flex;
+}
+
+.popup-container{
+	position: absolute;
+	background: $white;
+	@extend .material-depth-2;
+
+	.error-msg-popup-container {
+	    position: absolute;
+	    left: 0;
+	    right: 0;
+			width:auto!important;
+	}
+}
+
 .error-msg-container {
 	z-index: 999;
 	margin-top: 5px;
@@ -160,7 +181,7 @@
 	background: $red-600;
 }
 
-.error-msg-container.error-msg-popup-container {
+.inline-error-msg-container, .error-msg-popup-container{
 	position: absolute;
 	width: 490px;
 }
