@@ -29,7 +29,6 @@
             var ngModelCtrl = ctrls[0],
                 dateRangeCtrl = ctrls[1];
 
-            scope.dummyMinDate = new Date('1970-01-01');
             scope.displayPopup = function() {
                 return scope.templateType === 'popup';
             };
@@ -39,8 +38,12 @@
 
             scope.dateFormat = $locale.DATETIME_FORMATS.shortDate;
 
-            scope.setRangeClass = setRangeClass;
-
+	    scope.datepickerOptions = {
+		customClass: getDayClass,
+		showWeeks: true,
+		startingDay: $locale.DATETIME_FORMATS.FIRSTDAYOFWEEK
+	    };
+	    
             scope.defaultValidators = [
               {
                   key: 'order',
@@ -154,10 +157,13 @@
 
             function refreshDatepickers() {
                 if (!scope.startDate || !scope.endDate) {return;}
-                scope.dummyMinDate = new Date('1970-01-01');
+		scope.datepickerOptions = angular.copy(scope.datepickerOptions);
             }
 
-            function setRangeClass(date, mode) {
+            function getDayClass(data) {
+		var date = data.date,
+		    mode = data.mode;
+				
                 if (ngModelCtrl.$invalid) {
                     return '';
                 }

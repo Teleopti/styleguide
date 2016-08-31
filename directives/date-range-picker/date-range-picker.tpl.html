@@ -5,12 +5,11 @@
         <div class="sub-header">
           <span>From</span>: <strong>{{ startDate | date: dateFormat }}</strong>
         </div>
-        <uib-datepicker ng-model="startDate"
-						show-weeks="true"
-						custom-class="setRangeClass(date, mode)"
-						min-date="dummyMinDate"
-						class="wfm-datepicker">
-		</uib-datepicker>
+        <div uib-datepicker
+	     ng-model="startDate"
+	     datepicker-options="datepickerOptions"	     
+	     class="wfm-datepicker">
+	</div>
       </div>
     </div>
     <div class="con-flex line-center">
@@ -18,12 +17,11 @@
         <div class="sub-header">
           <span>To</span>: <strong>{{ endDate | date: dateFormat }}</strong>
         </div>
-        <uib-datepicker ng-model="endDate"
-						show-weeks="true"
-						custom-class="setRangeClass(date, mode)"
-						min-date="dummyMinDate"
-						class="wfm-datepicker">
-		</uib-datepicker>
+        <div uib-datepicker
+	     ng-model="endDate"
+	     datepicker-options="datepickerOptions"
+	     class="wfm-datepicker">
+	</div>
       </div>
     </div>
   </div>
@@ -43,35 +41,31 @@
     </div>
     <div class="con-flex line-center">
       <input id="popupFromId"
-			 class="date-range-start-date pointer start-date-input"
-			 type="text"
-			 ng-click="dropDownState.showStartDatePicker = !dropDownState.showStartDatePicker"
-			 ng-model="startDate"
-			 uib-datepicker-popup="{{dateFormat}}"
-			 on-open-focus="false"
-			 custom-class="setRangeClass(date, mode)"
-			 show-weeks="true"
-			 is-open="dropDownState.showStartDatePicker"
-			 ng-required="true"
-			 show-button-bar="false"
-			 min-date="dummyMinDate"
-			 close-on-date-selection="false" />
+	     class="date-range-start-date pointer start-date-input"
+	     type="text"
+	     ng-click="dropDownState.showStartDatePicker = !dropDownState.showStartDatePicker"
+	     ng-model="startDate"
+	     uib-datepicker-popup="{{dateFormat}}"
+	     on-open-focus="false"
+	     is-open="dropDownState.showStartDatePicker"
+	     ng-required="true"
+	     show-button-bar="false"
+	     datepicker-options="datepickerOptions"	 
+	     close-on-date-selection="false" />
     </div>
     <div class="con-flex line-center">
       <input id="popupToId"
-			 class="pointer end-date-input date-range-end-date"
-			 type="text"
-			 ng-click="dropDownState.showEndDatePicker = !dropDownState.showEndDatePicker"
-			 ng-model="endDate"
-			 uib-datepicker-popup="{{dateFormat}}"
-			 on-open-focus="false"
-			 show-weeks="true"
-			 custom-class="setRangeClass(date, mode)"
-			 is-open="dropDownState.showEndDatePicker"
-			 ng-required="true"
-			 show-button-bar="false"
-			 min-date="dummyMinDate"
-			 close-on-date-selection="false" />
+	     class="pointer end-date-input date-range-end-date"
+	     type="text"
+	     ng-click="dropDownState.showEndDatePicker = !dropDownState.showEndDatePicker"
+	     ng-model="endDate"
+	     uib-datepicker-popup="{{dateFormat}}"
+	     on-open-focus="false"
+	     is-open="dropDownState.showEndDatePicker"
+	     ng-required="true"
+	     show-button-bar="false"
+	     datepicker-options="datepickerOptions"	 
+	     close-on-date-selection="false" />
     </div>
   </div>
 
