@@ -3,7 +3,7 @@
     'use strict';
 
     angular.module('wfm.daterangepicker', ['styleguide.templates'])
-           .directive('dateRangePicker', ['$locale', '$filter', dateRangePicker]);
+        .directive('dateRangePicker', ['$locale', '$filter', dateRangePicker]);
 
     function dateRangePicker($locale, $filter) {
         return {
@@ -38,12 +38,12 @@
 
             scope.dateFormat = $locale.DATETIME_FORMATS.shortDate;
 
-	    scope.datepickerOptions = {
-		customClass: getDayClass,
-		showWeeks: true,
-		startingDay: $locale.DATETIME_FORMATS.FIRSTDAYOFWEEK
-	    };
-	    
+            scope.datepickerOptions = {
+                customClass: getDayClass,
+                showWeeks: true,
+                startingDay: $locale.DATETIME_FORMATS.FIRSTDAYOFWEEK
+            };
+
             scope.defaultValidators = [
               {
                   key: 'order',
@@ -157,13 +157,14 @@
 
             function refreshDatepickers() {
                 if (!scope.startDate || !scope.endDate) {return;}
-		scope.datepickerOptions = angular.copy(scope.datepickerOptions);
+                scope.startDate = moment(scope.startDate).toDate();
+                scope.endDate = moment(scope.endDate).toDate();
             }
 
             function getDayClass(data) {
-		var date = data.date,
-		    mode = data.mode;
-				
+                var date = data.date,
+                    mode = data.mode;
+
                 if (ngModelCtrl.$invalid) {
                     return '';
                 }

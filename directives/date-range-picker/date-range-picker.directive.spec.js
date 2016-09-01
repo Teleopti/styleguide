@@ -27,7 +27,7 @@ describe('date-range-picker directive', function() {
     it('Should show datepickers for start-date and end-date', function() {
         var element = elementCompile(scope);
         scope.$digest();
-        var datepickers = element.find('uib-datepicker');
+        var datepickers =  element[0].querySelectorAll('[uib-datepicker]');
         expect(datepickers.length).toEqual(2);
     });
 
