@@ -3,7 +3,7 @@
     'use strict';
 
     angular.module('wfm.daterangepicker', ['styleguide.templates'])
-           .directive('dateRangePicker', ['$locale', '$filter', dateRangePicker]);
+        .directive('dateRangePicker', ['$locale', '$filter', dateRangePicker]);
 
     function dateRangePicker($locale, $filter) {
         return {
@@ -29,7 +29,6 @@
             var ngModelCtrl = ctrls[0],
                 dateRangeCtrl = ctrls[1];
 
-            scope.dummyMinDate = new Date('1970-01-01');
             scope.displayPopup = function() {
                 return scope.templateType === 'popup';
             };
@@ -39,7 +38,11 @@
 
             scope.dateFormat = $locale.DATETIME_FORMATS.shortDate;
 
-            scope.setRangeClass = setRangeClass;
+            scope.datepickerOptions = {
+                customClass: getDayClass,
+                showWeeks: true,
+                startingDay: $locale.DATETIME_FORMATS.FIRSTDAYOFWEEK
+            };
 
             scope.defaultValidators = [
               {
@@ -154,10 +157,14 @@
 
             function refreshDatepickers() {
                 if (!scope.startDate || !scope.endDate) {return;}
-                scope.dummyMinDate = new Date('1970-01-01');
+                scope.startDate = moment(scope.startDate).toDate();
+                scope.endDate = moment(scope.endDate).toDate();
             }
 
-            function setRangeClass(date, mode) {
+            function getDayClass(data) {
+                var date = data.date,
+                    mode = data.mode;
+
                 if (ngModelCtrl.$invalid) {
                     return '';
                 }
