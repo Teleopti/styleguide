@@ -1,6 +1,7 @@
 (function() {
     'use strict';
     angular.module('styleguideApp', [
+      'currentUserInfoService',
       'pascalprecht.translate',
       'tmh.dynamicLocale',
       'ngMaterial',
@@ -13,6 +14,8 @@
       'ui.bootstrap',
       'ui.bootstrap.tpls',
       'angularMoment',
+      'ui.bootstrap.persian.datepicker',
+      'wfm.culturalDatepicker',
       'wfm.cardList',
       'wfm.timerangepicker',
       'wfm.daterangepicker',
@@ -36,9 +39,10 @@
             });
         $translateProvider.preferredLanguage('en-us');
         tmhDynamicLocaleProvider.localeLocationPattern('../node_modules/angular-i18n/angular-locale_{{locale}}.js');
-    }]).controller('mainCtrl', ['$scope', '$translate', 'NoticeService', 'tmhDynamicLocale', function($scope, $translate, NoticeService, tmhDynamicLocale) {
+    }]).controller('mainCtrl', ['$scope', '$translate','NoticeService', 'tmhDynamicLocale', function($scope, $translate, NoticeService, tmhDynamicLocale) {
         $translate.use(window.navigator.language.toLowerCase());
         tmhDynamicLocale.set(window.navigator.language.toLowerCase());
+
         /* Dummy data*/
         $scope.demos = [{id: '1'}, {id: '2'}, {id: '3'}, {id: '4'}];
         $scope.treeDemos =   [
@@ -185,4 +189,13 @@
         });
     }]);
 
+    angular.module('currentUserInfoService', [])
+    .service('CurrentUserInfo', function() {
+        this.CurrentUserInfo = function () {
+          var dateFormatLocale = 'en-GB';
+          return {
+              DateFormatLocale: dateFormatLocale
+          };
+      };
+    });
 })();
