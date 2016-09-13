@@ -429,6 +429,21 @@ md-tooltip {
     position: fixed;
 }
 
+.darktheme-background {
+    background: #303030 !important;
+    p {
+      color: rgba(255,255,255,0.87)!important;
+    }
+}
+
+.classictheme-background {
+    background: $gray012 !important;
+    p {
+      color: $text-color-standard !important;
+    }
+
+}
+
 
 //Color swatches
 .swatch-list {
@@ -536,13 +551,118 @@ md-tooltip {
 			background:$white!important;
 	}
 
+  //dark theme starts here
+
+  .blue-500-swatch-dark {
+			background: #0a84d6!important;
+	}
+	.blue-300-swatch-dark {
+			background: #136fac!important;
+	}
+	.blue-100-swatch-dark {
+			background:#1d5a83 !important;
+	}
+
+	.green-500-swatch-dark {
+		background:#84ad32!important;
+	}
+	.green-300-swatch-dark {
+		background:#6f8e32 !important;
+	}
+	.green-100-swatch-dark {
+		background:#627b32!important;
+	}
+
+	.purple-100-swatch-dark {
+		background:#9C27B0!important;
+	}
+	.purple-300-swatch-dark {
+		background:#BA68C8!important;
+	}
+	.purple-500-swatch-dark {
+		background:#E1BEE7!important;
+	}
+
+	.brown-100-swatch-dark {
+		background:#795548!important;
+	}
+	.brown-300-swatch-dark {
+		background:#A1887F!important;
+	}
+	.brown-500-swatch-dark {
+		background: #D7CCC8!important;
+	}
+
+	.teal-100-swatch-dark {
+		background: #009688 !important;
+	}
+	.teal-300-swatch-dark {
+		background:#4DB6AC !important;
+	}
+	.teal-500-swatch-dark {
+		background:#B2DFDB!important;
+	}
+
+	.pink-500-swatch-dark {
+		background: #F8BBD0!important;
+	}
+	.pink-300-swatch-dark {
+		background: #F06292!important;
+	}
+	.pink-100-swatch-dark {
+		background:#E91E63!important;
+	}
+
+	.orange-400-swatch-dark {
+			background:#c27c36!important;
+	}
+	.orange-500-swatch-dark {
+			background:#d68636!important;
+	}
+	.orange-600-swatch-dark {
+			background: #ea9036 !important;
+	}
+	.red-800-swatch-dark {
+			background:#ee8f7d!important;
+	}
+	.red-700-swatch-dark {
+			background:#EF5350!important;
+	}
+	.red-600-swatch-dark {
+			background:#ca3333!important;
+	}
+	.gray-054-swatch-dark {
+			background: rgba(107, 107, 107, 1)!important;
+	}
+	.gray-300-swatch-dark {
+			background:#555555!important;
+	}
+	.gray-012-swatch-dark {
+			background:#303030!important;
+	}
+	.gray-026-swatch-dark {
+			background: rgba(0,0,0,0.26)!important;
+	}
+	.gray-087-swatch-dark {
+			background: #d1d1d1!important;
+	}
+	.gray-100-swatch-dark {
+			background:#9E9E9E!important;
+	}
+  .gray-500-swatch-dark {
+      background:#9E9E9E!important;
+  }
+	.white-swatch-dark {
+			background: #424242!important;
+	}
+
 	li{
 		position:relative;
 		width: 100px;
 		height: 100px;
 
 		.white-color-text{
-			color:$white;
+			color:$white!important;
 		}
 
 		p{
