@@ -2,13 +2,7 @@
 //
 //The datepicker is based on bootstraps datepicker and all we do is wrap it and apply some special classes  to make it more compatible with material design.
 //
-//Markup:
-//	<div class="wfm-datepicker-wrap">
-//		<div class="sub-header">
-//			From/to:
-//		</div>
-//		<div uib-datepicker show-weeks="true" ng-model="someDate" class="wfm-datepicker"></div>
-//	</div >
+//Markup: <wfm-cultural-datepicker></wfm-cultural-datepicker>
 //
 //Styleguide 2.1
 //
