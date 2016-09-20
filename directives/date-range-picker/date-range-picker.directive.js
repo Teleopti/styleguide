@@ -40,8 +40,7 @@
 
             scope.datepickerOptions = {
                 customClass: getDayClass,
-                showWeeks: true,
-                startingDay: $locale.DATETIME_FORMATS.FIRSTDAYOFWEEK
+                showWeeks: true
             };
 
             scope.defaultValidators = [
