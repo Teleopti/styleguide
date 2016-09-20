@@ -21,7 +21,7 @@ module.exports = function(grunt) {
            },
            test:{
                files:['directives/**/*.spec.js'],
-               tasks:['karma:continuous']
+               tasks:['uglify','karma:continuous']
            }
        },
        cssmin: {
