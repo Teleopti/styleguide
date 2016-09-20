@@ -20,7 +20,7 @@ module.exports = function(grunt) {
                tasks: ['sass:styleguide', 'sass:dist','ngtemplates', 'shell', 'cssmin'],
            },
            test:{
-               files:['directives/**/*.js'],
+               files:['directives/**/*.spec.js'],
                tasks:['karma:continuous']
            }
        },
