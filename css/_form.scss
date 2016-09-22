@@ -318,34 +318,34 @@ md-autocomplete{
 }
 
 .md-whiteframe-1dp, .md-whiteframe-z1{
-	box-shadow: none;
+  box-shadow: none;
 }
 
 .md-virtual-repeat-scroller{
-	background: $white;
+  background: $white;
 }
 
 md-autocomplete-parent-scope{
-	color: $text-color-standard;
+  color: $text-color-standard;
 }
 .md-autocomplete-suggestions >li {
-	color: $text-color-standard;
+  color: $text-color-standard;
 
-	&:hover{
-		background:$gray012!important;
-	}
+  &:hover{
+    background:$gray012!important;
+  }
 }
 
 md-autocomplete[disabled]{
-	background:$gray012;
+  background:$gray012;
 
-	input{
-		cursor: not-allowed!important;
-	}
+  input{
+    cursor: not-allowed!important;
+  }
 }
 
 .wfm-form > md-autocomplete-wrap > input {
-	margin-right: 0!important;
+  margin-right: 0!important;
 }
 
 // Radio buttons
@@ -648,35 +648,35 @@ md-slider.md-min .md-thumb:after {
 
 
 wfm-multiple-search-input{
-	.advanced-input-dropdown {
-		position: absolute;
-		z-index: 115;
-		top: auto;
-		left: 0rem;
-	}
+  .advanced-input-dropdown {
+    position: absolute;
+    z-index: 115;
+    top: auto;
+    left: 18px;
+  }
 
-	.advanced-input-container {
-		position: absolute;
-		background-color: $white;
-		z-index: 15;
-		top: -11px;
-		left: 18px;
-	}
+  .advanced-input-container {
+    position: absolute;
+    background-color: $white;
+    z-index: 15;
+    top: -11px;
+    left: 18px;
+  }
 
-	.wfm-multiple-search-wrapper{
-		position: relative;
-	}
+  .wfm-multiple-search-wrapper{
+    position: relative;
+  }
 
-	.advanced-input{
-		transition:2s width ease-in-out;
-		width:138px;
-		text-overflow: ellipsis!important;
-	}
+  .advanced-input{
+    transition:2s width ease-in-out;
+    width:138px;
+    text-overflow: ellipsis!important;
+  }
 
-	.expand-advanced-input{
-		max-width: 75%;
-		width:313px!important;
-	}
+  .expand-advanced-input{
+    max-width: 75%;
+    width:313px!important;
+  }
 }
 
 //Multiple search

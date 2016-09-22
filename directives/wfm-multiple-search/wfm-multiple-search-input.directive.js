@@ -58,7 +58,7 @@
         var quotedKeywords = '';
         var pattern = /['"](.*?)['"]/ig;
         var match;
-        while (match === pattern.exec(displayValue)) {
+        while ((match = pattern.exec(displayValue))) {
             var keyword = match[1].trim();
             if (keyword.length > 0) {
                 quotedKeywords = quotedKeywords + ' "' + keyword + '"';
@@ -82,7 +82,7 @@
             }
             var regex = /(\S*?):\s{0,}(.*?);/ig;
             var match;
-            while (match === regex.exec(expression)) {
+            while ((match = regex.exec(expression))) {
                 var searchType = match[1].trim();
                 var searchValue = parseSearchValue(match[2].trim());
                 setSearchFormProperty(searchType, searchValue);

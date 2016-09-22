@@ -2,7 +2,7 @@
     var element, scope, vm;
     beforeEach(function () {
         module('pascalprecht.translate');
-        module('wfm.templates');
+        module('styleguide.templates');
         module('wfm.multiplesearchinput');
     });
 
