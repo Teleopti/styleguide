@@ -18,7 +18,7 @@
     function getWfmCardTemplate() {
         return '<md-card ng-class="vm.isSelected() ? \'wfm-card-selected material-depth-2\' : \'wfm-card-unselected\' ">' +
         '<div ng-click="vm.select()" tabindex="-1" class="wfm-card-title" transclude-id="header"></div>' +
-        '<div class="wfm-card-content" ng-show="vm.isSelected()">' +
+        '<div class="wfm-card-content animate-show" ng-show="vm.isSelected()">' +
         '<div transclude-id="body"></div>' +
         '</div>' +
         '</md-card>';

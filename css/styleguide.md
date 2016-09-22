@@ -16,9 +16,8 @@ which have been implemented in <a href="https://www.google.com/inbox/">Google in
 <li><h2>Less clicks</h2>
 <div class="subtext">Keep the number of clicks in mind when building a view. </div>
 </li>
-<li><h2>Scalability</h2></li>
-<li><h2>Automate</h2>
-<div class="subtext">Do tasks behind the scenes.</div>
+<li><h2>Scalability</h2>
+<div class="subtext">Conceder how things works with any number of data items, from S to XL</div>
 </li>
 <li><h2>Help the user</h2>
 <div class="subtext">"Nature doesn't like empty space, and neither do users".
