@@ -10,7 +10,7 @@
 		    <button class="wfm-btn wfm-btn-invis-default"
 			    ng-class="{'wfm-btn-invis-disabled': disableNextDay }"
 			    ng-click="toggleNextDay()">
-			{{ nextDay ? "+ 1" : "+ 0"}}
+			       {{ nextDay ? "NextDay" : "SameDay"}}
 		    </button>
 		</div>
 	    </td>
@@ -20,7 +20,7 @@
 <div class="error-msg-container ng-invalid-order alert-error notice-spacer">
     <i class="mdi mdi-alert-octagon"></i>
     <span translate>EndTimeMustBeGreaterOrEqualToStartTime</span>
-</div> 		
+</div>
 <div class="error-msg-container ng-invalid-parse alert-error notice-spacer">
     <i class="mdi mdi-alert-octagon"></i>
     <span translate>StartTimeAndEndTimeMustBeSet</span>
