@@ -39,15 +39,14 @@
             });
         $translateProvider.preferredLanguage('en-us');
         tmhDynamicLocaleProvider.localeLocationPattern('../node_modules/angular-i18n/angular-locale_{{locale}}.js');
-    }]).controller('mainCtrl', ['$scope', '$translate','NoticeService', 'tmhDynamicLocale', function($scope, $translate, NoticeService, tmhDynamicLocale) {
+    }]).controller('mainCtrl', ['$scope', '$translate','NoticeService','tmhDynamicLocale', function($scope, $translate, NoticeService, tmhDynamicLocale) {
         $translate.use(window.navigator.language.toLowerCase());
         tmhDynamicLocale.set(window.navigator.language.toLowerCase());
 
         /* Dummy data*/
         $scope.demos = [{id: '1'}, {id: '2'}, {id: '3'}, {id: '4'}];
         $scope.treeDemos =   [
-          {categories: [{name: 'item 1'}, {name: 'item 2'}, {name: 'item 3'}, {name: 'item 2'}],
-           name: 'First Group',},
+          {categories: [{name: 'item 1'}, {name: 'item 2'}, {name: 'item 3'}, {name: 'item 2'}],name: 'First Group',},
           {categories: [{name: 'item 1'}, {name: 'item 3'}], name: 'Second Group'}, {categories: [], name: 'Third Group'}];
 
         /* Code for Grid */
@@ -187,15 +186,35 @@
                 $scope.numericValueFloatInputResult = $scope.numericValueFloatInput;
             }
         });
+
+        /*code for cultrual-datepicker*/
+        $scope.dateForDatepicker = new Date();
+        /*fake controler code for directive.controler*/
+        $scope.select = 'en-GB';
+        $scope.newValue = function(select) {
+            $scope.isJalaali = $scope.select === 'fa-IR' ? true : false;
+            $scope.isGregorian = $scope.select === 'en-GB' ? true : false;
+            $scope.isGregorian = !$scope.isJalaali;
+        };
+        $scope.isGregorian = $scope.select === 'en-GB' ? true : false;
+    }]);
+
+    /*code for cultrual-datepicker: Overrides the directive with high priority*/
+    angular.module('wfm.culturalDatepicker', ['currentUserInfoService'])
+    .directive('wfmCulturalDatepicker', ['CurrentUserInfo',function(CurrentUserInfo) {
+        return {
+            priority: 20,
+            restrict: 'E',
+            template:
+            '<div class="wfm-datepicker-wrap wfm-cultural-datepicker-container">' +
+            '<persian-datepicker ng-if="isJalaali" ng-model="dateForDatepicker" class="wfm-datepicker"></persian-datepicker>' +
+            '<div uib-datepicker ng-if="isGregorian" ng-model="dateForDatepicker" class="wfm-datepicker"></div>' +
+            '</div>'
+        };
     }]);
 
     angular.module('currentUserInfoService', [])
     .service('CurrentUserInfo', function() {
-        this.CurrentUserInfo = function () {
-          var dateFormatLocale = 'en-GB';
-          return {
-              DateFormatLocale: dateFormatLocale
-          };
-      };
+        //keep for faking the service
     });
 })();

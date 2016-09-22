@@ -2,21 +2,22 @@
 'use strict';
 angular.module('wfm.culturalDatepicker', ['currentUserInfoService'])
 .controller('CulturalDatepickerCtrl', ['$scope', 'CurrentUserInfo', function($scope, CurrentUserInfo) {
-    $scope.dt = new Date();
     var dateFormat = CurrentUserInfo.CurrentUserInfo().DateFormatLocale;
     $scope.isJalaali = dateFormat === 'fa-IR' ? true : false;
     $scope.isGregorian = !$scope.isJalaali;
 }])
-.directive('wfmCulturalDatepicker', function() {
+.directive('wfmCulturalDatepicker', ['CurrentUserInfo',function(CurrentUserInfo) {
     return {
-        bindToController: true,
         controller: 'CulturalDatepickerCtrl',
-        controllerAs: 'ctrl',
         restrict: 'E',
         scope: {
-            dt: '='
+            date: '=ngModel'
         },
-        templateUrl: 'directives/cultural-datepicker/cultural-datepicker.tpl.html'
+        template:
+        '<div class="wfm-datepicker-wrap wfm-cultural-datepicker-container">' +
+        '<persian-datepicker ng-if="isJalaali" ng-model="date" class="wfm-datepicker"></persian-datepicker>' +
+        '<div uib-datepicker ng-if="isGregorian" ng-model="date" class="wfm-datepicker"></div>' +
+        '</div>'
     };
-});
+}]);
 })();
