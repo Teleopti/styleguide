@@ -7,7 +7,7 @@
   </div>
   <div class="con-flex" ng-show="!disableNextDay || nextDay">
     <div tabindex=0 class="context-menu card-context" style="margin:0;" ng-click="toggleNextDay()">
-      <i ng-if="!nextDay" class="mdi mdi-calendar-today" ng-class="{'wfm-btn-invis-disabled': disableNextDay }">
+      <i ng-if="!nextDay" class="mdi mdi-weather-sunny" ng-class="{'wfm-btn-invis-disabled': disableNextDay }">
         <md-tooltip><span translate>Today</span></md-tooltip>
       </i>
       <i ng-if="nextDay" class="mdi mdi-weather-night" ng-class="{'wfm-btn-invis-disabled': disableNextDay }">
