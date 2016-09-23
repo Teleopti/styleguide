@@ -12,68 +12,60 @@
 //</br>
 //
 //Markup:
-//<time-range-picker ng-model="timeRange" disable-next-day="disableNextDay"></time-range-picker>
+//  <div class="con-row">
+//    <time-range-picker ng-model="timeRange" disable-next-day="disableNextDay"></time-range-picker>
+//  </div>
 //
 //Styleguide 2.4
 //
 
 .wfm-time-range-picker-wrap {
+  position: relative;
 
-    button, input {
-        font-size: $standard-font-size;
-    }
+  button, input {
+    font-size: $standard-font-size;
+  }
 
-    td {
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-    }
-    .wfm-timepicker-wrap {
-        td {
-            padding: 0;
-        }
-        .md-button {
-            min-width: 48px;
-            width: 48px;
-            margin: 0;
-            padding: 0;
-            height: 25px;
-            line-height: 25px;
-            min-height: 25px;
-        }
-        input{
-            width:50px;
-            text-align:center;
-            margin-left: 2px;
-            margin-right: 2px;
-        }
-    }
+  timepicker-wrap > div{
+    margin-top: 3px;
+  }
 
-    .next-day-toggle .wfm-btn {
-        margin: 0;
-        padding-top: 0;
-        padding-bottom: 0;
+  .wfm-timepicker-wrap {
+    .md-button {
+      min-width: 48px;
+      width: 48px;
+      margin: 0;
+      padding: 0;
+      height: 25px;
+      line-height: 25px;
+      min-height: 25px;
     }
+    input{
+      width:50px;
+      text-align:center;
+      margin-left: 2px;
+      margin-right: 2px;
+    }
+  }
 
-    .has-error > input {
-        border:2px solid #F44336;
-    }
+  .has-error > input {
+    border:2px solid #F44336;
+  }
 
-    .error-msg-container {
-        display: none;
-        z-index: 999;
-        margin-top: 10px;
-    }
+  .error-msg-container {
+    display: none;
+    z-index: 999;
+    width:100%;
+    margin-top: 10px;
+    position: absolute;
+  }
 
-    &.ng-invalid {
-        &.ng-invalid-order .error-msg-container.ng-invalid-order {
-            display: block !important;
-        }
-        &.ng-invalid-parse .error-msg-container.ng-invalid-parse {
-            display: block !important;
-        }
+  &.ng-invalid {
+    &.ng-invalid-order .error-msg-container.ng-invalid-order {
+      display: block !important;
     }
+    &.ng-invalid-parse .error-msg-container.ng-invalid-parse {
+      display: block !important;
+    }
+  }
 }
