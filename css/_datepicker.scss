@@ -2,7 +2,7 @@
 //
 //The datepicker is based on bootstraps datepicker and all we do is wrap it and apply some special classes  to make it more compatible with material design.
 //
-//Markup: <wfm-cultural-datepicker></wfm-cultural-datepicker>
+//Markup: <wfm-cultural-datepicker ng-model='dateForDatepicker'></wfm-cultural-datepicker>
 //
 //Styleguide 2.1
 //
@@ -35,6 +35,11 @@
 	display:inline-block;
 	background-color:$white;
 	min-height:270px;
+}
+
+.wfm-cultural-datepicker-container {
+	display:inline-block;
+	min-height:290px;
 }
 
 .glyphicon{

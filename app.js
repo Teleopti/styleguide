@@ -187,6 +187,7 @@
                 $scope.numericValueFloatInputResult = $scope.numericValueFloatInput;
             }
         });
+        $scope.dateForDatepicker = new Date();
     }]);
 
     angular.module('currentUserInfoService', [])
