@@ -1,5 +1,80 @@
 ﻿@import './classicvariables';
 
+//Overview
+//
+// <p>These guidelines are strongly inspired by <a href="http://www.google.com/design/spec/material-design/introduction.html">Material design</a>
+// which have been implemented in <a href="https://www.google.com/inbox/">Google inbox</a> and <a href="http://www.materialup.com/">Android</a> </p>
+// <p>If something is missing, please refer to it.</p>
+//
+//Styleguide 0
+//
+
+//Style
+//
+// <h2 class="kss-title__permalink">Main concepts</h2>
+// <ul class="wfm-simple-list">
+// <li><b>Consistency</b>
+// <div class="subtext">By making the users recognize elements and behaviors we make the product faster to use.</div>
+// </li>
+// <li><b>Less clicks</b>
+// <div class="subtext">Keep the number of clicks in mind when building a view. </div>
+// </li>
+// <li><b>Scalability</b>
+// <div class="subtext">Conceder how things works with any number of data items, from S to XL</div>
+// </li>
+// <li><b>Help the user</b>
+// <div class="subtext">"Nature doesn't like empty space, and neither do users".
+// Never provide an empty form but suggest things or display placeholders.</div>
+// </li>
+// <li><b>Performance</b>
+// <div class="subtext">Avoid big bunches of data which doesn't fit on the screen. Consider aggregating data as an entry point.</div></li>
+// <li><b>Responsiveness</b>
+// <div class="subtext">Using the containers and elements from this Styleguide should result in a layout that works on desktops, tablets and phones.</div>
+// </li>
+// </ul>
+// <h2 class="kss-title__permalink">Other things to keep in mind</h2>
+// <ul class="wfm-simple-list">
+// <li>
+// <b>Number of actions</b>
+// <div class="subtext">Reduce the number of actions displayed at the same time. Maybe some of them could be hidden until needed? For example, split similar actions in a context menu into several menus so a user don't get overwhelmed</div></li>
+// <li><b>Loading</b>
+// <div class="subtext">If something takes time, dont leave the users in the dark. Display a loading bar, a spinner or a message.</li></li>
+// <li><b>Sorting and filters</b>
+// <div class="subtext">Provide ways to filter and sort large amounts of data, such as lists and tables.</div></li>
+// <li><i>SignalR depends on JQuery, but do not use JQuery for other purposes. </i>(We want to phase it out eventually)</li>
+// </ul>
+// <h2 class="kss-title__permalink">Help</h2>
+// <ul class="wfm-simple-list">
+// <li>
+// <b> Tooltips</b>
+// <div class="subtext">Add useful tooltips on elements providing *more* information (3/4 words max => "create a user" for an icon "+" for example).</div>
+// </li>
+// <li>
+// <b>Wiki page</b>
+// <div class="subtext">The wiki page for each module can be accessed from the top right corner</div>
+// </li>
+// </ul>
+// <h2 class="kss-title__permalink">Notices and Notifications</h2>
+// <ul class="wfm-simple-list">
+//  <li>
+// <div class="subtext">Notices and notifications are ways to inform the users what we are doing.
+// Notices are temporary alerts that should quickly show up and disappear when appropriate.
+// Notifications are more permanent and remind the users what happened recently.
+// It must be possible for the user to unsuscribe/resuscribe on each notification because if there is a risk that several notifications are created at once, make sure they are aggregated into a more manageable format.</div>
+// </li>
+// </ul>
+//
+// Styleguide 0.1
+//
+
+// Code style
+//
+// More info here soon.
+// <a href="https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md">Until then...</a>
+//
+//Styleguide 0.2
+//
+
 //Elements
 //
 //Elements are the individual parts that make up the application. Some (such as buttons and text) can be stand alone but generally all elements are part of a container. By arranging elements in containers using layout, we can get a structured and consistent style.
@@ -348,6 +423,8 @@
 // http://alistapart.com/article/creating-style-guides
 //
 // http://axbom.com/slaying-5-ux-myths-good-mankind/
+//
+// https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md
 //
 //Styleguide 9.1
 
