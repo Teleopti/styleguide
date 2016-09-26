@@ -25,7 +25,8 @@
     return {
         restrict: 'E',
         scope: {
-            workingHours: '='
+            workingHours: '=',
+            disableNextDay: '=?'
         },
         templateUrl: 'directives/workinghourspicker/working-hours-picker.tpl.html',
         link: postLink
@@ -44,8 +45,6 @@
             startTime: new Date(2016, 0, 1, 8),
             endTime: new Date(2016, 0, 1, 17)
         };
-
-        scope.disableNextDay = true;
 
         var weekDays = workingHoursPickerService.createEmptyWorkingPeriod().WeekDaySelections;
         var translations = [];
