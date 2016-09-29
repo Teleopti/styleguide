@@ -318,34 +318,34 @@ md-autocomplete{
 }
 
 .md-whiteframe-1dp, .md-whiteframe-z1{
-	box-shadow: none;
+  box-shadow: none;
 }
 
 .md-virtual-repeat-scroller{
-	background: $white;
+  background: $white;
 }
 
 md-autocomplete-parent-scope{
-	color: $text-color-standard;
+  color: $text-color-standard;
 }
 .md-autocomplete-suggestions >li {
-	color: $text-color-standard;
+  color: $text-color-standard;
 
-	&:hover{
-		background:$gray012!important;
-	}
+  &:hover{
+    background:$gray012!important;
+  }
 }
 
 md-autocomplete[disabled]{
-	background:$gray012;
+  background:$gray012;
 
-	input{
-		cursor: not-allowed!important;
-	}
+  input{
+    cursor: not-allowed!important;
+  }
 }
 
 .wfm-form > md-autocomplete-wrap > input {
-	margin-right: 0!important;
+  margin-right: 0!important;
 }
 
 // Radio buttons
@@ -645,3 +645,61 @@ md-slider.md-min .md-thumb:after {
 //Markup: numericvalue.hbs
 //
 //Styleguide 2.8
+
+
+wfm-multiple-search-input{
+  .advanced-input-dropdown {
+    position: absolute;
+    z-index: 115;
+    top: auto;
+    left: 18px;
+  }
+
+  .advanced-input-container {
+    position: absolute;
+    background-color: $white;
+    z-index: 15;
+    top: -11px;
+    left: 18px;
+  }
+
+  .wfm-multiple-search-wrapper{
+    position: relative;
+  }
+
+  .advanced-input{
+    transition:2s width ease-in-out;
+    width:138px;
+    text-overflow: ellipsis!important;
+  }
+
+  .expand-advanced-input{
+    max-width: 75%;
+    width:313px!important;
+  }
+}
+
+//Multiple search
+//
+//This Searchbar is placed inside the panel sub-header instead of a &lt;h2&gt; to provide advanced search capabilities in that panel.
+//
+//Note: 'Searchch' text is translated in the project
+//
+//<div class="jsprewrap">
+//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
+//	<div ng-show="showjs">
+//		<code><pre>
+//$scope.searchOptions = {
+//    keyword: '',
+//    searchKeywordChanged: false,
+//    searchFields: [
+//      'option1','option2','option3','option4','option5','option6'
+//    ]
+//};
+//		</pre></code>
+//	</div>
+//</div>
+//
+//Markup: multiple-search.hbs
+//
+//Styleguide 4.2.1
