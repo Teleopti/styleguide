@@ -25,6 +25,7 @@
       'wfm.modal',
       'wfm.numericValue',
       'wfm.notice',
+      'wfm.multiplesearchinput',
       'gridshore.c3js.chart'
     ]).config(['$translateProvider', 'tmhDynamicLocaleProvider', function($translateProvider, tmhDynamicLocaleProvider) {
         $translateProvider
@@ -170,6 +171,15 @@
         /*code for working hours picker*/
         $scope.workingHours = [];
 
+        /*code for multiple input*/
+        $scope.searchOptions = {
+            keyword: '',
+            searchKeywordChanged: false,
+            searchFields: [
+              'option1','option2','option3','option4','option5','option6'
+            ]
+        };
+
         /*code for numeric value directive*/
         function isFloat(n) {
             return Number(n) === n && n % 1 !== 0;
@@ -187,7 +197,6 @@
                 $scope.numericValueFloatInputResult = $scope.numericValueFloatInput;
             }
         });
-        $scope.dateForDatepicker = new Date();
     }]);
 
     angular.module('currentUserInfoService', [])
