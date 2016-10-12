@@ -589,51 +589,52 @@ md-autocomplete[disabled]{
 //The slider is used to input a range or value on a scale. It can be controlled with left and right arrow keys for greater accuracy if focused.
 //
 //Markup:
-//Default
-//<md-slider flex min="0" max="100" aria-label="slider"></md-slider>
-//With label
-//<md-slider flex md-discrete min="0" max="100" aria-label="slider"></md-slider>
+//<label>Generic:</label><md-slider flex min="0" max="10" aria-label="slider"></md-slider>
+//<label>With label:</label><md-slider flex md-discrete min="0" max="100" aria-label="slider"></md-slider>
+//<label>Vertical.</label><md-slider flex md-discrete min="0" max="100" aria-label="slider" md-vertical></md-slider>
 //
 //Styleguide 1.9
 //
 
-md-slider {
-  .md-focus-thumb, .md-focus-ring {
-    display: none !important;
-  }
-
-  .md-thumb {
-    cursor: pointer;
-  }
-
-  .md-min .md-thumb:after{
-    background-color: $white!important;
-  }
-
-  canvas {
-    display: none;
-  }
+md-slider[md-vertical] .md-sign:after{
+  border-left-color: $blue-500;
 }
 
-/*slider theme*/
+md-slider{
 
-md-slider .md-thumb:after {
-  border-color: $blue-300;
+.md-thumb{
+  transform: scale(0.7)!important;
+}
+
+.md-slider-content{
+  cursor: pointer;
+}
+
+.md-track-ticks{
+  opacity: 0;
+}
+
+.md-track.md-track-fill,
+.md-thumb:after{
+  background-color: $blue-300!important;
+  border-color: $blue-300!important;
+}
+
+.md-sign{
+  background-color:$blue-500;
+}
+.md-sign:after{
+  border-top-color: $blue-500;
+}
+
+.md-min .md-thumb:after{
   background-color: $blue-300;
 }
 
-md-slider .md-track.md-track-fill,
-md-slider .md-sign {
-  background-color: $blue-300;
+.md-slider-wrapper:focus > .md-thumb{
+  background-color:red !important;
 }
 
-md-slider .md-sign:after {
-  border-top-color: $blue-300;
-}
-
-md-slider.md-min .md-thumb:after {
-  background-color: $white !important;
-  transition: all 0.5s ease-in-out;
 }
 
 //Numeric value
