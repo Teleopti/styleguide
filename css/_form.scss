@@ -60,15 +60,26 @@ select:after {
 //However, don't mix standard inputs and prepend ones. These inputs should have a placeholder and maybe a tooltip for explanation, since the icon is used in place of a label.
 //
 //Markup:
-//	<label for="inputId" class="input-prepend">
-//		<i class="mdi mdi-filter-outline">
-//		<md-tooltip>Filter something</md-tooltip></i>
-//		<input type="text" id="inputId" placeholder="Filter something"/>
-//	</label>
+//<label for="filter" class="input-icon">
+//  <i class="mdi mdi-filter-outline">
+//    <input type="text" id="filter" placeholder="filter roles...">
+//    <md-tooltip>Filter</md-tooltip>
+//  </i>
+//</label>
 //
 //Styleguide 1.3.1
 //
 
+.input-icon i{
+	display: inline-flex;
+	width:100%;
+}
+.input-icon input{
+	margin-left: 5px;
+  width: 100%;
+}
+
+/*Depricated*/
 .input-prepend {
   width: 100%;
 
