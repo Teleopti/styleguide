@@ -61,8 +61,9 @@
 //
 //  Note: In all modals and panels the footer links should be buttons, not  &lt;a/&gt; tags.
 //
-//Styleguide 4
+//<input style="opacity:0;pointer-events:none;" autofocus>
 //
+//Styleguide 4
 //
 
 //Layout
@@ -304,11 +305,11 @@
 //
 //Forms are made up of individual inputs that can be validated on interaction and/or on a submit.
 //
-//A form can be created in many different configurations and the layout should help the user complete the form without confusion. If it makes more sense the form could be devided into several more defined sections by putting &lt;h2&gt; headers directly after the &lt;dl&gt; tags.
+//A form can be created in many different configurations and the layout should help the user complete the form without confusion. If it makes more sense the form could be devided into several more defined sections using headers.
 //
 //Take some time to consider your form layout in relation to the layout of your view and strive to use as much available space as possible.
 //
-//If your view only contains a wfm-form, consider using our autofocus directive on the first text/number input to get the user started.
+//If your view only contains a wfm-form, consider using our autofocus directive on the first text/number input to get the user started and possibly a floating action button as a submit.
 //
 //<div class="jsprewrap">
 //	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
