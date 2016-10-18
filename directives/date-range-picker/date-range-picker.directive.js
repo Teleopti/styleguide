@@ -13,16 +13,20 @@
                 'customValidators': '=?',
                 'testStopUi': '@?'
             },
-            controller: ['$element', '$animate', dateRangePickerCtrl],
+            controller: ['$scope', '$element', '$animate', 'CurrentUserInfo', dateRangePickerCtrl],
             require: ['ngModel', 'dateRangePicker'],
             link: postlink
         };
 
-        function dateRangePickerCtrl($element, $animate) {
+        function dateRangePickerCtrl(scope, $element, $animate, CurrentUserInfo) {
             /* jshint validthis: true */
             var ctrl = this;
             $element.addClass('wfm-date-range-picker-wrap');
             $animate.enabled($element, false);
+
+            var dateFormat = CurrentUserInfo.CurrentUserInfo().DateFormatLocale;
+            scope.isJalaali = dateFormat === 'fa-IR' ? true : false;
+            scope.isGregorian = !scope.isJalaali;
         }
 
         function postlink(scope, elem, attrs, ctrls) {

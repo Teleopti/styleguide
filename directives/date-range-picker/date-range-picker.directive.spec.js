@@ -8,7 +8,17 @@ describe('date-range-picker directive', function() {
       }
     );
 
-    beforeEach(inject(function($compile, $rootScope) {
+    beforeEach(module(function($provide) {
+        $provide.service('CurrentUserInfo', function() {
+            this.CurrentUserInfo = function() {
+                return {
+                    DateFormatLocale: 'en-us'
+                };
+            };
+        });
+    }));
+
+    beforeEach(inject(function($compile, $rootScope, CurrentUserInfo) {
         scope = $rootScope.$new();
 
         scope.dateRange = {
