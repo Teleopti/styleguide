@@ -8,12 +8,13 @@
         }])
         .directive('wfmCulturalDatepicker', function() {
             var jalaaliTemplate = '<persian-datepicker ng-if="isJalaali" ng-model="date" class="wfm-datepicker"></persian-datepicker>';
-            var gregorianTemplate = '<div uib-datepicker ng-if="isGregorian" ng-model="date" class="wfm-datepicker"></div>';
+            var gregorianTemplate = '<div uib-datepicker ng-if="isGregorian" ng-model="date" datepicker-options="datepickerOptions" class="wfm-datepicker"></div>';
             return {
                 controller: 'CulturalDatepickerCtrl',
                 restrict: 'E',
                 scope: {
-                    date: '=ngModel'
+                    date: '=ngModel',
+                    datepickerOptions: '=datepickerOptions'
                 },
                 template: '<div class="wfm-datepicker-wrap wfm-cultural-datepicker-container">' + jalaaliTemplate + gregorianTemplate + '</div>'
             };
