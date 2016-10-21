@@ -11,6 +11,7 @@
             var weekdays = localeData._weekdaysShort;
 
             if (input.WeekDay >= weekdays.length) {
+                console.log('fail');
                 return '';
             }
             return weekdays[input.WeekDay];

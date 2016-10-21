@@ -11,7 +11,7 @@
 //<div class="pull-left">.pull-left</div>
 //<div class="line-right">.line-right</div>
 //<div class="line-center">.line-center</div>
-//No style
+//<div class="inline-flex">.inline-flex</div>
 //
 //Styleguide 8.1
 //
@@ -34,6 +34,10 @@
 
 .cursor-pointer,.pointer{
   cursor: pointer;
+}
+
+.inline-flex{
+	display:inline-flex!important;
 }
 
 

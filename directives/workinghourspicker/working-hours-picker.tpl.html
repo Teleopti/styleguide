@@ -1,60 +1,36 @@
-﻿<div class="row toolbar">
-	<div class="wfm-block">
-		<ul class="wfm-list">
-			<li>
-				<span class="list-item-container list-header">
-					&nbsp;
-				</span>
-				<span class="list-item-container">
-					<div ng-repeat-start="weekday in weekDays" ng-repeat-end>
-						<span translate>{{weekday | showWeekdays}}</span>
-					</div>
-				</span>
-			</li>
+<div class="con-row">
+	<div><!--No need for a con-flex here, its in the directive-->
+		<button type="button" class="wfm-fab mini" ng-click="addEmptyWorkingPeriod()">
+			<i class="mdi mdi-plus"></i>
+			<md-tooltip>{{'AddEmptyPeriod' | translate}}</md-tooltip>
+		</button>
+		<time-range-picker ng-model="newWorkingPeriod" disable-next-day="disableNextDay"></time-range-picker>
+	</div>
+</div>
 
-			<li ng-repeat="WorkingPeriod in workingHours"
-				ng-click="$parent.toggleWorkingPeriodSelect(WorkingPeriod)">
-				<span class="list-item-container list-header">
-					<md-tooltip>{{getTimerangeDisplay(WorkingPeriod.StartTime, WorkingPeriod.EndTime)}}</md-tooltip>
-					{{ getTimerangeDisplay(WorkingPeriod.StartTime, WorkingPeriod.EndTime)}}
-				</span>
-
-				<span class="list-item-container">
-					<div ng-repeat-start="WeekDay in WorkingPeriod.WeekDaySelections" ng-repeat-end>
-						<div class="wfm-checkbox wfm-checkbox-inline ">
-							<input type="checkbox" id="check_workinghour_{{$parent.$index}}_weekday_{{WeekDay.WeekDay}}" ng-model="WeekDay.Checked" />
-							<label for="check_workinghour_{{$parent.$index}}_weekday_{{WeekDay.WeekDay}}" ng-click="enforceRadioBehavior($parent.$index, WeekDay.WeekDay)">
-								<span class="wfm-checkbox-toggle"></span>
-								<span class="wfm-checkbox-label"></span>
-							</label>
-						</div>
-					</div>
-				</span>
-
-				<div class="wfm-leave-behind wfm-leave-behind-2">
-					<span>
-						<i class="mdi mdi-check" ng-click="$parent.toggleAllChecks($index)">
-							<md-tooltip>
-								{{'ToggleAll' | translate}}
-							</md-tooltip>
-						</i>
-						<i class="mdi mdi-delete" ng-click="$parent.removeWorkingPeriod($index)">
-							<md-tooltip>
-								{{'DeletePeriod' | translate}}
-							</md-tooltip>
-						</i>
-					</span>
-				</div>
-			</li>
-		</ul>
-
-		<div class="con-row">
-			<time-range-picker ng-model="newWorkingPeriod"  disable-next-day="disableNextDay">
-				<button type="button" class="wfm-fab mini success" ng-click="addEmptyWorkingPeriod()">
-					<i class="mdi mdi-plus"></i>
-					<md-tooltip>{{'AddEmptyPeriod' | translate}}</md-tooltip>
-				</button>
-			</time-range-picker>
+<div ng-repeat="WorkingPeriod in workingHours">
+	<div class="con-row working-hours-row">
+		<div class="con-flex">
+			<h2>{{ getTimerangeDisplay(WorkingPeriod.StartTime, WorkingPeriod.EndTime)}}</h2>
+		</div>
+		<div class="con-flex" ng-repeat="WeekDay in WorkingPeriod.WeekDaySelections">
+			<div class="wfm-checkbox working-hours-radio">
+				<input type="checkbox" id="check_workinghour_{{$parent.$index}}_weekday_{{WeekDay.WeekDay}}" ng-model="WeekDay.Checked"/>
+				<label for="check_workinghour_{{$parent.$index}}_weekday_{{WeekDay.WeekDay}}" ng-click="enforceRadioBehavior($parent.$index, WeekDay.WeekDay)">
+					<span class="wfm-checkbox-toggle"></span>
+					<span class="wfm-checkbox-label"><span translate>{{WeekDay | showWeekdays}}</span></span>
+				</label>
+			</div>
+		</div>
+		<div class="con-flex">
+			<div tabindex=0 class="context-menu card-context" ng-click="$parent.removeWorkingPeriod($index)">
+				<i class="mdi mdi-delete"></i>
+				<md-tooltip>{{'DeletePeriod' | translate}} {{ getTimerangeDisplay(WorkingPeriod.StartTime, WorkingPeriod.EndTime)}}</md-tooltip>
+			</div>
+			<div tabindex=0 class="context-menu card-context" ng-click="$parent.toggleAllChecks($index)">
+				<i class="mdi mdi-check"></i>
+				<md-tooltip>{{'ToggleAll' | translate}}</md-tooltip>
+			</div>
 		</div>
 	</div>
 </div>
