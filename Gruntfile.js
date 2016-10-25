@@ -55,7 +55,8 @@ module.exports = function(grunt) {
        },
        jshint: {
            options: {
-               jshintrc: '.jshintrc' //http://jshint.com/docs/options/
+               jshintrc: '.jshintrc', //http://jshint.com/docs/options/
+               fix: true // Autofix code style violations when possible
            },
            all: ['Gruntfile.js', 'directives/**/*.js', 'app.js'],
        },
