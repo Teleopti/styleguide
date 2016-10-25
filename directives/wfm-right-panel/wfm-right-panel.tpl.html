@@ -1,0 +1,24 @@
+﻿<md-backdrop class="md-sidenav-backdrop md-opaque ng-scope" ng-if="vm.panelOptions.showBackdrop && vm.panelOptions.panelState"
+             ng-click="vm.panelOptions.panelState = false;"></md-backdrop>
+
+<button class="open-right-panel call-out-button wfm-btn wfm-btn-invis-primary" ng-if="vm.panelOptions.showPopupButton" ng-click="vm.panelOptions.panelState = true">
+	<i class="mdi mdi-chevron-double-left"></i>
+</button>
+
+<div resizable r-directions="['left']" r-flex="false" ng-show="vm.showPanel">
+
+	<md-sidenav class="md-sidenav-right wfm-right-panel drsElement" md-component-id="right-panel" md-is-open="vm.panelOptions.panelState">
+
+		<div class="sidenav-header">
+			<span class="close-right-panel chevron pull-left" ng-click="vm.closePanel()" ng-if="vm.panelOptions.showCloseButton">
+				<i class="mdi mdi-arrow-right"></i>
+				<md-tooltip>{{"HidePanel" | translate}}</md-tooltip>
+			</span>
+			<span>{{vm.panelOptions.panelTitle | translate}}</span>
+		</div>
+
+		<div class="panel-content" ng-transclude></div>
+
+	</md-sidenav>
+
+</div>
