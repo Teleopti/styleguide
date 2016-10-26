@@ -55,8 +55,8 @@ module.exports = function(grunt) {
        },
        jshint: {
            options: {
-               jshintrc: '.jshintrc', //http://jshint.com/docs/options/
-               fix: true // Autofix code style violations when possible
+               jshintrc: '.jshintrc' //http://jshint.com/docs/options/
+  
            },
            all: ['Gruntfile.js', 'directives/**/*.js', 'app.js'],
        },
@@ -64,6 +64,7 @@ module.exports = function(grunt) {
            src: ['Gruntfile.js', 'directives/**/*.js', 'app.js'],
            options: {
                config: '.jscsrc',
+               fix: true, // Autofix code style violations when possible.
            },
        },
        ngtemplates: {
