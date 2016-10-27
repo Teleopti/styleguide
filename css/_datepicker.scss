@@ -29,6 +29,28 @@
 
 
 /*Overrides bootstrap*/
+.wfm-datepicker-controllers-container
+{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.wfm-datepicker-container {
+	position: relative;
+}
+
+.wfm-datepicker-popup-row {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 9999;
+}
+
+.start-date-indicator {
+	margin-right: 20px;
+}
+
 .wfm-datepicker-wrap {
 	@extend .material-depth-1;
 	margin: $full-padding;
@@ -162,4 +184,10 @@
 .error-msg-container.error-msg-popup-container {
 	position: absolute;
 	width: 490px;
+}
+
+.error-msg-popup {
+	margin-left: 10px;
+	top: 290px;
+	left: 0px;
 }
