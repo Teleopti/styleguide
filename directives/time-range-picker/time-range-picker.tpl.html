@@ -1,20 +1,16 @@
-<div class="con-row">
-  <div class="con-flex">
-    <timepicker-wrap ng-model="startTime"></timepicker-wrap>
+<div class="inline-flex">
+<timepicker-wrap ng-model="startTime"></timepicker-wrap>
+<timepicker-wrap ng-model="endTime"></timepicker-wrap>
+<div ng-show="!disableNextDay || nextDay">
+  <div tabindex=0 class="context-menu card-context" style="margin:0;" ng-click="toggleNextDay()">
+    <i ng-if="!nextDay" class="mdi mdi-weather-sunny" ng-class="{'wfm-btn-invis-disabled': disableNextDay }">
+      <md-tooltip><span translate>Today</span></md-tooltip>
+    </i>
+    <i ng-if="nextDay" class="mdi mdi-weather-night" ng-class="{'wfm-btn-invis-disabled': disableNextDay }">
+      <md-tooltip><span translate>OverMidnight</span></md-tooltip>
+    </i>
   </div>
-  <div class="con-flex">
-    <timepicker-wrap ng-model="endTime"></timepicker-wrap>
-  </div>
-  <div class="con-flex" ng-show="!disableNextDay || nextDay">
-    <div tabindex=0 class="context-menu card-context" style="margin:0;" ng-click="toggleNextDay()">
-      <i ng-if="!nextDay" class="mdi mdi-weather-sunny" ng-class="{'wfm-btn-invis-disabled': disableNextDay }">
-        <md-tooltip><span translate>Today</span></md-tooltip>
-      </i>
-      <i ng-if="nextDay" class="mdi mdi-weather-night" ng-class="{'wfm-btn-invis-disabled': disableNextDay }">
-        <md-tooltip><span translate>OverMidnight</span></md-tooltip> 
-      </i>
-    </div>
-  </div>
+</div>
 </div>
 
 <div class="error-msg-container ng-invalid-order alert-error notice-spacer">
