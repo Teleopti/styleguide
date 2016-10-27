@@ -34,10 +34,31 @@ describe('date-range-picker directive', function() {
         expect(element).toBeDefined();
     });
 
-    it('Should show datepickers for start-date and end-date', function() {
+    it('Should show inline datepickers for start-date and end-date for gregorian dates', function() {
         var element = elementCompile(scope);
         scope.$digest();
-        var datepickers =  element[0].querySelectorAll('[uib-datepicker]');
+        var datepickers =  element[0].querySelectorAll('.inline-datepicker[uib-datepicker]');
+        expect(datepickers.length).toEqual(2);
+    });
+
+    it('Should show inline datepickers for start-date and end-date for persian dates', function() {
+        var element = elementCompile(scope);
+        scope.$digest();
+        var datepickers =  element[0].querySelectorAll('persian-datepicker.inline-datepicker');
+        expect(datepickers.length).toEqual(2);
+    });
+
+    it('Should show popup datepickers for start-date and end-date for gregorian dates', function() {
+        var element = elementCompile(scope);
+        scope.$digest();
+        var datepickers =  element[0].querySelectorAll('.popup-datepicker[uib-datepicker]');
+        expect(datepickers.length).toEqual(2);
+    });
+
+    it('Should show popup datepickers for start-date and end-date for persian dates', function() {
+        var element = elementCompile(scope);
+        scope.$digest();
+        var datepickers =  element[0].querySelectorAll('persian-datepicker.popup-datepicker');
         expect(datepickers.length).toEqual(2);
     });
 
