@@ -50,13 +50,14 @@
                 onClose: '&'
             },
             transclude: true,
-            templateUrl: 'app/global/wfmrightpanel/wfmrightpanel.tpl.html',
+            templateUrl: 'directives/wfm-right-panel/wfm-right-panel.tpl.html',
             link: linkFunction
         };
     }
 
     function linkFunction(scope, attr, element) {
-        scope.vm.panelOptions.panelTitle = scope.vm.panelOptions.panelTitle || 'Right Panel';
+        scope.vm.panelOptions.panelTitle = scope.vm.panelOptions.panelTitle || 'Panel';
+        scope.vm.panelOptions.sidePanelTitle = scope.vm.panelOptions.sidePanelTitle || 'Right Panel';
         scope.vm.panelOptions.showCloseButton = scope.vm.panelOptions.showCloseButton === true;
         scope.vm.panelOptions.showBackdrop = scope.vm.panelOptions.showBackdrop === true;
         scope.vm.panelOptions.showResizer = scope.vm.panelOptions.showResizer === true;
