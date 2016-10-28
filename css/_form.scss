@@ -277,6 +277,10 @@ md-select:not([disabled]):focus .md-select-value{
   -webkit-transform:none!important;
 }
 
+.md-select-value>span:not(.md-select-icon){
+	white-space: normal;
+}
+
 md-select-menu{
   md-select:not([disabled]):focus .md-select-value,
   md-option[selected],
@@ -285,6 +289,7 @@ md-select-menu{
   }
   md-option{
     height: 30px;
+    color:$text-color-standard;
 
     &:hover {
       background-color: $gray-300;
@@ -307,6 +312,11 @@ md-select {
   &:not([disabled]):focus .md-select-value {
     color: inherit!important;
   }
+}
+
+.inline-select{
+	margin-top:-5px!important;
+	margin-left: 5px!important;
 }
 
 .bu-select{

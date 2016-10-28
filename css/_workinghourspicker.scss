@@ -18,8 +18,9 @@
 
 .working-hours-radio{
   margin-top: $full-padding;
+  display: flex;
 }
 
 .working-hours-row{
-  border-top: 1px solid $gray012;
+	border-top: 1px solid $gray012;
 }
