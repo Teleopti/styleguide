@@ -24,26 +24,33 @@
   @extend .pointer;
 
   .chip-text{
-  	padding:$full-padding;
-  	background:$gray012;
-  	margin-right: 5px;
+    padding:$full-padding;
+    background:$gray012;
+    margin-right: 5px;
   }
   .chip-handle{
-  	padding:$full-padding;
-  	background:$blue-100;
+    padding:$full-padding;
+    background:$blue-100;
   }
   .chip-success{
-  	background: $green-100!important;
+    background: $green-100!important;
   }
   .chip-warning{
-  	background: $orange-400!important;
+    background: $orange-400!important;
   }
   .chip-error{
-  	background: $red-600!important;
+    background: $red-600!important;
   }
 }
 
+.chip-disabled{
+  .wfm-chip{
+    cursor: not-allowed!important;
+  }
+  color:$text-color-muted!important;
+}
+
 .wfm-chip-wrap{
-	display:inline-block;
-	margin:10px 0;
+  display:inline-block;
+  margin:10px 0;
 }
