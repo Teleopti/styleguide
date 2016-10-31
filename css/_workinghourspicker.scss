@@ -2,38 +2,25 @@
 //
 //A directive for specifying the week day and time range. It is built taking the time range picker as a dependency.
 //
+//<table class="wfm-table">
+//<tr><th>Attribute Name</th><th>Usage</th><th>Required</th></tr>
+//<tr><td>working-hours</td><td>Bind to time range object</td><td>true</td></tr>
+//<tr><td>disable-next-day</td><td>Disable next-day switch</td><td>false</td></tr>
+//<tr><td>template-url</td><td>Use a custom template</td><td>false</td></tr>
+//</table>
+//</br>
+//
 //Markup:
-//	<working-hours-picker class="working-hours-picker" working-hours="workingHours"></working-hours-picker>
+//	<working-hours-picker class="working-hours-picker" working-hours="workingHours" disable-next-day="disableNextDay"></working-hours-picker>
 //
 //Styleguide 2.7
 //
 
-.working-hours-picker {
-    .wfm-list > li > span {
-        padding: 0;
-        margin: 0;
-    }
+.working-hours-radio{
+  margin-top: $full-padding;
+  display: flex;
+}
 
-    .wfm-list > li > span.list-item-container.list-header {
-        width: 15%!important;
-        float: left;
-        display: inline-block;
-    }
-
-    .wfm-list > li > span.list-item-container {
-        width: 84%;
-        float: left;
-        display: inline-block;
-    }
-
-    .list-item-container > div {
-        width: 12%;
-        max-width: 120px;
-        float: left;
-        display: inline-block;
-    }
-
-    .list-item-container .wfm-checkbox {
-        padding: 0;
-    }
+.working-hours-row{
+	border-top: 1px solid $gray012;
 }

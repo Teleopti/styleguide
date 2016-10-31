@@ -1,8 +1,83 @@
 ﻿@import './classicvariables';
 
+//Overview
+//
+// <p>These guidelines are strongly inspired by <a href="http://www.google.com/design/spec/material-design/introduction.html">Material design</a>
+// which have been implemented in <a href="https://www.google.com/inbox/">Google inbox</a> and <a href="http://www.materialup.com/">Android</a> </p>
+// <p>If something is missing, please refer to it.</p>
+//
+//Styleguide 0
+//
+
+//Style
+//
+// <h2 class="kss-title__permalink">Main concepts</h2>
+// <ul class="wfm-simple-list">
+// <li><b>Consistency</b>
+// <div class="subtext">By making the users recognize elements and behaviors we make the product faster to use.</div>
+// </li>
+// <li><b>Less clicks</b>
+// <div class="subtext">Keep the number of clicks in mind when building a view. </div>
+// </li>
+// <li><b>Scalability</b>
+// <div class="subtext">Conceder how things works with any number of data items, from S to XL</div>
+// </li>
+// <li><b>Help the user</b>
+// <div class="subtext">"Nature doesn't like empty space, and neither do users".
+// Never provide an empty form but suggest things or display placeholders.</div>
+// </li>
+// <li><b>Performance</b>
+// <div class="subtext">Avoid big bunches of data which doesn't fit on the screen. Consider aggregating data as an entry point.</div></li>
+// <li><b>Responsiveness</b>
+// <div class="subtext">Using the containers and elements from this Styleguide should result in a layout that works on desktops, tablets and phones.</div>
+// </li>
+// </ul>
+// <h2 class="kss-title__permalink">Other things to keep in mind</h2>
+// <ul class="wfm-simple-list">
+// <li>
+// <b>Number of actions</b>
+// <div class="subtext">Reduce the number of actions displayed at the same time. Maybe some of them could be hidden until needed? For example, split similar actions in a context menu into several menus so a user don't get overwhelmed</div></li>
+// <li><b>Loading</b>
+// <div class="subtext">If something takes time, dont leave the users in the dark. Display a loading bar, a spinner or a message.</li></li>
+// <li><b>Sorting and filters</b>
+// <div class="subtext">Provide ways to filter and sort large amounts of data, such as lists and tables.</div></li>
+// <li><i>SignalR depends on JQuery, but do not use JQuery for other purposes. </i>(We want to phase it out eventually)</li>
+// </ul>
+// <h2 class="kss-title__permalink">Help</h2>
+// <ul class="wfm-simple-list">
+// <li>
+// <b> Tooltips</b>
+// <div class="subtext">Add useful tooltips on elements providing *more* information (3/4 words max => "create a user" for an icon "+" for example).</div>
+// </li>
+// <li>
+// <b>Wiki page</b>
+// <div class="subtext">The wiki page for each module can be accessed from the top right corner</div>
+// </li>
+// </ul>
+// <h2 class="kss-title__permalink">Notices and Notifications</h2>
+// <ul class="wfm-simple-list">
+//  <li>
+// <div class="subtext">Notices and notifications are ways to inform the users what we are doing.
+// Notices are temporary alerts that should quickly show up and disappear when appropriate.
+// Notifications are more permanent and remind the users what happened recently.
+// It must be possible for the user to unsuscribe/resuscribe on each notification because if there is a risk that several notifications are created at once, make sure they are aggregated into a more manageable format.</div>
+// </li>
+// </ul>
+//
+// Styleguide 0.1
+//
+
+// Code style
+//
+// More info here soon.
+// <a href="https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md">Until then...</a>
+//
+//Styleguide 0.2
+//
+
 //Elements
 //
-//Elements are the individual parts that make up the application. Some (such as buttons and text) can be stand alone but genrally all elements are part of a container. By arranging elements in containers using layout, we can get a structured and consistent style.
+//Elements are the individual parts that make up the application. Some (such as buttons and text) can be stand alone but generally all elements are part of a container. By arranging elements in containers using layout, we can get a structured and consistent style.
 //
 //Styleguide 1
 //
@@ -10,12 +85,12 @@
 
 //Depth
 //
-//Getting a deeper look into the styles of shadows and positioning. The first thing we need to understand is the concept of stacked material (see the <a href="http://www.google.com/design/spec/what-is-material/elevation-shadows.html#elevation-shadows-shadows">Google guidelines</a> ).
-//
-//Keep the number of stacked layers to a minimum and the total number of layer below 3 (including the background). If a raised element lives inside of another raised element it should still have a material-depth number of one, unless it is floating.
-//Floating elements live above the main layout (such as context menus) and should have the highest material-depth number possible (2).
-//
-//If the element does not have a raised wrapper (i.e panel) and is placed freely on the background it should have a depth value of 1.
+//Material is built on depth (see the <a href="http://www.google.com/design/spec/what-is-material/elevation-shadows.html#elevation-shadows-shadows">Google guidelines</a> ).
+//We have 3 'layers'; the background, material layer and the floating layer.
+//<ul>
+//<li>Background layer: Just the flat gray background. Plain text can be housed here.</li>
+//<li>Material layer: material depth 1 hold most of the containers and elements.</li>
+//<li>Floating layer: material depth 2 hold things that are elevated above the material layer.</li>
 //
 //Note: the 'spacer' class is for styleguide demo purpose only.
 //
@@ -61,8 +136,9 @@
 //
 //  Note: In all modals and panels the footer links should be buttons, not  &lt;a/&gt; tags.
 //
-//Styleguide 4
+//<input style="opacity:0;pointer-events:none;" autofocus>
 //
+//Styleguide 4
 //
 
 //Layout
@@ -304,11 +380,11 @@
 //
 //Forms are made up of individual inputs that can be validated on interaction and/or on a submit.
 //
-//A form can be created in many different configurations and the layout should help the user complete the form without confusion. If it makes more sense the form could be devided into several more defined sections by putting &lt;h2&gt; headers directly after the &lt;dl&gt; tags.
+//A form can be created in many different configurations and the layout should help the user complete the form without confusion. If it makes more sense the form could be devided into several more defined sections using headers.
 //
 //Take some time to consider your form layout in relation to the layout of your view and strive to use as much available space as possible.
 //
-//If your view only contains a wfm-form, consider using our autofocus directive on the first text/number input to get the user started.
+//If your view only contains a wfm-form, consider using our autofocus directive on the first text/number input to get the user started and possibly a floating action button as a submit.
 //
 //<div class="jsprewrap">
 //	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
@@ -348,6 +424,8 @@
 // http://alistapart.com/article/creating-style-guides
 //
 // http://axbom.com/slaying-5-ux-myths-good-mankind/
+//
+// https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md
 //
 //Styleguide 9.1
 
@@ -423,6 +501,25 @@ html{
 
 .angular-req span:before{
 	content:"This element require additional angular directives. "!important;
+}
+
+md-tooltip {
+    position: fixed;
+}
+
+.darktheme-background {
+    background: #303030 !important;
+    p {
+      color: rgba(255,255,255,0.87)!important;
+    }
+}
+
+.classictheme-background {
+    background: $gray012 !important;
+    p {
+      color: $text-color-standard !important;
+    }
+
 }
 
 
@@ -532,13 +629,118 @@ html{
 			background:$white!important;
 	}
 
+  //dark theme starts here
+
+  .blue-500-swatch-dark {
+			background: #0a84d6!important;
+	}
+	.blue-300-swatch-dark {
+			background: #136fac!important;
+	}
+	.blue-100-swatch-dark {
+			background:#1d5a83 !important;
+	}
+
+	.green-500-swatch-dark {
+		background:#84ad32!important;
+	}
+	.green-300-swatch-dark {
+		background:#6f8e32 !important;
+	}
+	.green-100-swatch-dark {
+		background:#627b32!important;
+	}
+
+	.purple-100-swatch-dark {
+		background:#9C27B0!important;
+	}
+	.purple-300-swatch-dark {
+		background:#BA68C8!important;
+	}
+	.purple-500-swatch-dark {
+		background:#E1BEE7!important;
+	}
+
+	.brown-100-swatch-dark {
+		background:#795548!important;
+	}
+	.brown-300-swatch-dark {
+		background:#A1887F!important;
+	}
+	.brown-500-swatch-dark {
+		background: #D7CCC8!important;
+	}
+
+	.teal-100-swatch-dark {
+		background: #009688 !important;
+	}
+	.teal-300-swatch-dark {
+		background:#4DB6AC !important;
+	}
+	.teal-500-swatch-dark {
+		background:#B2DFDB!important;
+	}
+
+	.pink-500-swatch-dark {
+		background: #F8BBD0!important;
+	}
+	.pink-300-swatch-dark {
+		background: #F06292!important;
+	}
+	.pink-100-swatch-dark {
+		background:#E91E63!important;
+	}
+
+	.orange-400-swatch-dark {
+			background:#c27c36!important;
+	}
+	.orange-500-swatch-dark {
+			background:#d68636!important;
+	}
+	.orange-600-swatch-dark {
+			background: #ea9036 !important;
+	}
+	.red-800-swatch-dark {
+			background:#ee8f7d!important;
+	}
+	.red-700-swatch-dark {
+			background:#EF5350!important;
+	}
+	.red-600-swatch-dark {
+			background:#ca3333!important;
+	}
+	.gray-054-swatch-dark {
+			background: rgba(107, 107, 107, 1)!important;
+	}
+	.gray-300-swatch-dark {
+			background:#555555!important;
+	}
+	.gray-012-swatch-dark {
+			background:#303030!important;
+	}
+	.gray-026-swatch-dark {
+			background: rgba(0,0,0,0.26)!important;
+	}
+	.gray-087-swatch-dark {
+			background: #d1d1d1!important;
+	}
+	.gray-100-swatch-dark {
+			background:#9E9E9E!important;
+	}
+  .gray-500-swatch-dark {
+      background:#9E9E9E!important;
+  }
+	.white-swatch-dark {
+			background: #424242!important;
+	}
+
 	li{
 		position:relative;
 		width: 100px;
 		height: 100px;
 
 		.white-color-text{
-			color:$white;
+			color:$white!important;
 		}
 
 		p{

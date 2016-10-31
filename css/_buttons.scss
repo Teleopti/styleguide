@@ -10,8 +10,7 @@
 
 // Flat buttons
 //
-//The flat buttons are 'printed' on the material and only show its area when hovered, it uses capital letters to differentiate it from a link.
-//Use the flat buttons when there is a panel/area behind (around) the button.
+//The flat buttons are 'printed' on another pice of material and only show its area when hovered, it uses capital letters to differentiate it from a link.
 //
 //Markup:
 //<button class="wfm-btn wfm-btn-invis-default">Default</button>
@@ -23,7 +22,7 @@
 
 // Raised buttons
 //
-//The raised buttons lives on a raised layer and its area is always visible. Use raised buttons when there is no panel/area behind (around) the button.
+//The raised buttons is itself a pice of material and its area is always visible. Use raised buttons when there is no panel/area behind (around) the button.
 //
 //Markup:
 //<button class="wfm-btn wfm-btn-default">Default</button>
@@ -35,7 +34,8 @@
 
 // Action buttons
 //
-//The floating action button functions similarly to the raised buttons except that they float above the entire layout (even though its located inside the view header). They are also similar in that they are unique in each view, indicating the primary positive action. More about when to use it can be found in the <a href="http://www.google.com/design/spec/components/buttons.html#buttons-floating-action-button">google material guidelines.</a>
+//The action button functions similarly to the raised buttons except that are on the floating layer above the entire layout. They are also similar in that they are unique in each view, indicating the primary positive action. More about when to use it can be found in the <a href="http://www.google.com/design/spec/components/buttons.html#buttons-floating-action-button">google material guidelines.</a>
+// A action button is always located inside the view header.
 //
 //Markup:
 //	<button class="wfm-fab  material-depth-1"><i class="mdi mdi-account"></i>
@@ -59,7 +59,6 @@
 //
 //Styleguide 1.8.3
 //
-
 
 //Removing action buttons
 //
@@ -164,7 +163,7 @@
 
 	&.mini{
 		padding: 8px!important;
-		/*max-height: 34px;*/
+		max-height: 34px;
 	}
 
 	&:hover{

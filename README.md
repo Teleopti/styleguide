@@ -1,8 +1,9 @@
 # Teleopti styleguide [![Build Status](https://travis-ci.org/Teleopti/styleguide.svg?branch=master)](https://travis-ci.org/Teleopti/styleguide)
 
-Take a look to the [styleguide here](http://teleopti.github.io/styleguide/styleguide)
+Take a look to the [styleguide here](http://teleopti.github.io/styleguide/styleguide/section-0.html)
 
 ## How to contribute
+First, fork the project and create a new branch on the fork.
 
 To be able to generate the styleguide you need to install the dependencies:
 
@@ -21,11 +22,7 @@ Then, run a local instance (via visual studio for example). The local styleguide
 
 ### Submit your contribution:
 
-* create your own branch
-
-* commit
-
-* create a pull request from this branch to master.
+* create a pull request from your branch to Teleopti/master.
 
 
 ## Atom packages for this project
@@ -42,8 +39,16 @@ If you use Atom you can install those packages to help you following the guideli
 
 * Upgrade the version number in package.json
 
-* Commit
+* Go to https://github.com/Teleopti/styleguide/releases
 
-* Tag
+* Click on "Draft a new release"
 
-* Push
+* The tag version should be "v"+the new version number (like v1.1.21)
+
+* The target should be the commit with the version upgrade
+
+* Title should be "v"+the new version number (like v1.1.21)
+
+* And you can write some details about the release
+
+* Click on "Publish release"

@@ -152,7 +152,7 @@
         var meridianInfo = getMeridiemInfoByLocale($locale);
 
         return {
-            template: '<timepicker></timepicker>',
+            template: '<div uib-timepicker></div>',
             controller: ['$scope', timepickerWrapCtrl],
             compile: compileFn
         };

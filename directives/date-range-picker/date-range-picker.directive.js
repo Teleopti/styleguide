@@ -3,7 +3,7 @@
     'use strict';
 
     angular.module('wfm.daterangepicker', ['styleguide.templates'])
-           .directive('dateRangePicker', ['$locale', '$filter', dateRangePicker]);
+        .directive('dateRangePicker', ['$locale', '$filter', dateRangePicker]);
 
     function dateRangePicker($locale, $filter) {
         return {
@@ -13,23 +13,26 @@
                 'customValidators': '=?',
                 'testStopUi': '@?'
             },
-            controller: ['$element', '$animate', dateRangePickerCtrl],
+            controller: ['$scope', '$element', '$animate', 'CurrentUserInfo', dateRangePickerCtrl],
             require: ['ngModel', 'dateRangePicker'],
             link: postlink
         };
 
-        function dateRangePickerCtrl($element, $animate) {
+        function dateRangePickerCtrl(scope, $element, $animate, CurrentUserInfo) {
             /* jshint validthis: true */
             var ctrl = this;
             $element.addClass('wfm-date-range-picker-wrap');
             $animate.enabled($element, false);
+
+            var dateFormat = CurrentUserInfo.CurrentUserInfo().DateFormatLocale;
+            scope.isJalaali = dateFormat === 'fa-IR' ? true : false;
+            scope.isGregorian = !scope.isJalaali;
         }
 
         function postlink(scope, elem, attrs, ctrls) {
             var ngModelCtrl = ctrls[0],
                 dateRangeCtrl = ctrls[1];
 
-            scope.dummyMinDate = new Date('1970-01-01');
             scope.displayPopup = function() {
                 return scope.templateType === 'popup';
             };
@@ -39,7 +42,10 @@
 
             scope.dateFormat = $locale.DATETIME_FORMATS.shortDate;
 
-            scope.setRangeClass = setRangeClass;
+            scope.datepickerOptions = {
+                customClass: getDayClass,
+                showWeeks: true
+            };
 
             scope.defaultValidators = [
               {
@@ -154,10 +160,14 @@
 
             function refreshDatepickers() {
                 if (!scope.startDate || !scope.endDate) {return;}
-                scope.dummyMinDate = new Date('1970-01-01');
+                scope.startDate = moment(scope.startDate).toDate();
+                scope.endDate = moment(scope.endDate).toDate();
             }
 
-            function setRangeClass(date, mode) {
+            function getDayClass(data) {
+                var date = data.date,
+                    mode = data.mode;
+
                 if (ngModelCtrl.$invalid) {
                     return '';
                 }

@@ -2,13 +2,7 @@
 //
 //The datepicker is based on bootstraps datepicker and all we do is wrap it and apply some special classes  to make it more compatible with material design.
 //
-//Markup:
-//	<div class="wfm-datepicker-wrap">
-//		<div class="sub-header">
-//			From/to:
-//		</div>
-//		<uib-datepicker show-weeks="true" ng-model="someDate" class="wfm-datepicker"></datepicker>
-//	</div >
+//Markup: <wfm-cultural-datepicker ng-model='dateForDatepicker' datepicker-options='datepickerOptions'></wfm-cultural-datepicker>
 //
 //Styleguide 2.1
 //
@@ -35,12 +29,39 @@
 
 
 /*Overrides bootstrap*/
+.wfm-datepicker-controllers-container
+{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.wfm-datepicker-container {
+	position: relative;
+}
+
+.wfm-datepicker-popup-row {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 9999;
+}
+
+.start-date-indicator {
+	margin-right: 20px;
+}
+
 .wfm-datepicker-wrap {
 	@extend .material-depth-1;
 	margin: $full-padding;
 	display:inline-block;
 	background-color:$white;
 	min-height:270px;
+}
+
+.wfm-cultural-datepicker-container {
+	display:inline-block;
+	min-height:290px;
 }
 
 .glyphicon{
@@ -163,4 +184,10 @@
 .error-msg-container.error-msg-popup-container {
 	position: absolute;
 	width: 490px;
+}
+
+.error-msg-popup {
+	margin-left: 10px;
+	top: 290px;
+	left: 0px;
 }
