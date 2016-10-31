@@ -25,7 +25,7 @@ describe('wfm-multiple-search-input directive', function() {
         }
     }));
 
-    xit('should display search fields', function() {
+    it('should display search fields', function() {
         vm.showAdvancedSearchOption = true;
         scope.$apply();
         var inputs = element.find('form').find('input');
@@ -39,7 +39,7 @@ describe('wfm-multiple-search-input directive', function() {
         expect(allFieldsExist).toBe(true);
     });
 
-    xit('shoulde invoke search callback', function () {
+    it('shoulde invoke search callback', function () {
         var searchExpression;
         scope.searchOptions.keyword = 'FirstName:Ash;LastName:Bcd';
         scope.searchKeyword = function (expression) {
