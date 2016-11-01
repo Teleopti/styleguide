@@ -37,13 +37,6 @@ describe('wfm-multiple-search-input directive', function() {
         scope.$apply();
         var inputs = element.find('form').find('input');
         expect(inputs.length).toBe(scope.searchOptions.searchFields.length);
-
-        var allFieldsExist = true;
-        angular.forEach(inputs, function (input) {
-            var fieldName = angular.element(input).attr('placeholder');
-            allFieldsExist = allFieldsExist && scope.searchOptions.searchFields.indexOf(fieldName) > -1;
-        });
-        expect(allFieldsExist).toBe(true);
     });
 
     it('shoulde invoke search callback', function () {
