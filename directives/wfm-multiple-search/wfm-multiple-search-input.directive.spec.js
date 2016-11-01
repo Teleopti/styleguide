@@ -4,6 +4,13 @@ describe('wfm-multiple-search-input directive', function() {
     beforeEach(function () {
         module('styleguide.templates');
         module('wfm.multiplesearchinput');
+        module(function ($provide) {
+            $provide.value('translateFilter', function () {
+                return function (key) {
+                   return key;
+                };
+            });
+        });
     });
 
     beforeEach(inject(function (_$compile_, _$rootScope_) {
