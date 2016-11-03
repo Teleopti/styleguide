@@ -17,10 +17,11 @@
 //
 
 .working-hours-radio{
-  margin-top: $full-padding;
+  margin:0;
+  padding: 0!important;
   display: flex;
 }
 
 .working-hours-row{
-	border-top: 1px solid $gray012;
+  border-top: 1px solid $gray012;
 }
