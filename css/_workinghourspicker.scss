@@ -24,4 +24,9 @@
 
 .working-hours-row{
   border-top: 1px solid $gray012;
+
+  .selected-day{
+    margin-top: 11px;
+    position: absolute;
+  }
 }

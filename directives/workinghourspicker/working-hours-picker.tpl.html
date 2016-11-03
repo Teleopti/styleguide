@@ -14,7 +14,7 @@
 			<h2>{{ getTimerangeDisplay(WorkingPeriod.StartTime, WorkingPeriod.EndTime)}}</h2>
 		</div>
 		<div class="con-flex split-1-2">
-			<div style="margin-top: 11px;position: absolute;">
+			<div class="selected-day">
 				<span ng-if="selectedDay.Checked" ng-repeat="selectedDay in WorkingPeriod.WeekDaySelections">
 					{{selectedDay | showWeekdays}}
 				</span>
