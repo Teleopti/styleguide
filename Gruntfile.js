@@ -63,8 +63,8 @@ module.exports = function(grunt) {
        jscs: {
            src: ['Gruntfile.js', 'directives/**/*.js', 'app.js'],
            options: {
-               config: '.jscsrc',
-               fix: true, // Autofix code style violations when possible.
+               config: '.jscsrc'
+               //fix: true, // Autofix code style violations when possible.
            },
        },
        ngtemplates: {
