@@ -7,7 +7,7 @@ describe('wfm-multiple-search-input directive', function() {
         module(function ($provide) {
             $provide.value('translateFilter', function () {
                 return function (key) {
-                   return key;
+                    return key;
                 };
             });
         });
