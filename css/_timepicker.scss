@@ -32,10 +32,10 @@
 
   .wfm-timepicker-wrap {
     .md-button {
-      min-width: 48px;
-      width: 48px;
+      text-align: left!important;
+      min-width: auto!important;
       margin: 0;
-      padding: 0;
+      margin-right:$full-padding; 
       height: 25px;
       line-height: 25px;
       min-height: 25px;
