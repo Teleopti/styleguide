@@ -12,7 +12,7 @@
 		<div class="con-flex line-center" ng-show="isJalaali">
 			<div class="wfm-datepicker-wrap date-range-start-date">
 				<div class="sub-header">
-					<span>From</span>: <strong>{{ startDate | date: dateFormat }}</strong>
+					<span>From</span>: <strong>{{startDate | persianDate:'fullDate' }}</strong>
 				</div>
 				<persian-datepicker ng-model="startDate" datepicker-options="datepickerOptions" class="wfm-datepicker inline-datepicker">
 				</persian-datepicker>
@@ -30,7 +30,7 @@
 		<div class="con-flex line-center" ng-show="isJalaali">
 			<div class="wfm-datepicker-wrap date-range-end-date">
 				<div class="sub-header">
-					<span>To</span>: <strong>{{ endDate | date: dateFormat }}</strong>
+					<span>To</span>: <strong>{{ endDate | persianDate:'fullDate' }}</strong>
 				</div>
 				<persian-datepicker ng-model="endDate" datepicker-options="datepickerOptions" class="wfm-datepicker inline-datepicker">
 				</persian-datepicker>
@@ -48,10 +48,10 @@
 		<i class="mdi mdi-calendar"></i>
 	</div>
 	<div tabindex=0 class="start-date-indicator" ng-click="displayCalendars = !displayCalendars">
-			<span>From</span>: {{ startDate | date: dateFormat }}
+			<span class="pointer">From: </span><span ng-if="isGregorian" class="pointer">{{ startDate | date: dateFormat }}</span><span ng-if="isJalaali" class="pointer">{{ startDate | persianDate:'shortDate' }}</span>
 	</div>
 	<div tabindex=0 ng-click="displayCalendars = !displayCalendars">
-			<span>To</span>: {{ endDate | date: dateFormat }}
+			<span class="pointer">To: </span><span ng-if="isGregorian" class="pointer">{{ endDate | date: dateFormat }}</span><span ng-if="isJalaali" class="pointer">{{ endDate | persianDate:'shortDate' }}</span>
 	</div>
 </div>
 <div class="wfm-datepicker-container" ng-show="displayCalendars">
