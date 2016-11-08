@@ -2,7 +2,7 @@
 
     'use strict';
 
-    angular.module('wfm.daterangepicker', ['styleguide.templates'])
+    angular.module('wfm.daterangepicker', ['styleguide.templates', 'persianDate'])
         .directive('dateRangePicker', ['$locale', '$filter', dateRangePicker]);
 
     function dateRangePicker($locale, $filter) {
