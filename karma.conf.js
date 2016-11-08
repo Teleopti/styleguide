@@ -28,7 +28,8 @@ module.exports = function(config) {
               served: true
           },
           'dist/templates.js',
-          'directives/**/*.js'
+          'directives/**/*.js',
+          'vendor/angular-bootstrap-persian-datepicker-master/*.js'
         ],
 
         // list of files to exclude

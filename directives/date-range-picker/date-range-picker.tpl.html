@@ -12,7 +12,7 @@
 		<div class="con-flex line-center" ng-show="isJalaali">
 			<div class="wfm-datepicker-wrap date-range-start-date">
 				<div class="sub-header">
-					<span>From</span>: <strong>{{startDate | persianDate:'fullDate' }}</strong>
+					<span>From</span>: <strong>{{startDate | persianDate:'shortDate' }}</strong>
 				</div>
 				<persian-datepicker ng-model="startDate" datepicker-options="datepickerOptions" class="wfm-datepicker inline-datepicker">
 				</persian-datepicker>
@@ -30,7 +30,7 @@
 		<div class="con-flex line-center" ng-show="isJalaali">
 			<div class="wfm-datepicker-wrap date-range-end-date">
 				<div class="sub-header">
-					<span>To</span>: <strong>{{ endDate | persianDate:'fullDate' }}</strong>
+					<span>To</span>: <strong>{{ endDate | persianDate:'shortDate' }}</strong>
 				</div>
 				<persian-datepicker ng-model="endDate" datepicker-options="datepickerOptions" class="wfm-datepicker inline-datepicker">
 				</persian-datepicker>
