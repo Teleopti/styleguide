@@ -9,7 +9,8 @@
     "test": "grunt test",
     "start": "grunt",
     "dist": "grunt dist",
-    "kss": "./node_modules/.bin/kss-node css styleguide css/styleguide.md --template kss-template --verbose"
+    "kss": "./node_modules/.bin/kss-node css styleguide css/styleguide.md --template kss-template --verbose",
+    "styleguide": "nucleus --config config.nucleus.json"
   },
   "description": "Styleguide for Teleopti",
   "author": "Teleopti",
@@ -36,6 +37,8 @@
     "angular-mocks": "1.4.7",
     "grunt": "0.4.5",
     "grunt-angular-templates": "1.0.3",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-cssmin": "0.12.2",
     "grunt-contrib-jshint": "0.11.3",
     "grunt-contrib-uglify": "0.11.1",
@@ -52,7 +55,7 @@
     "karma-jasmine": "0.3.6",
     "karma-phantomjs-launcher": "1.0.0",
     "kss": "2.4.0",
-    "phantomjs-prebuilt": "2.1.7"
+    "phantomjs-prebuilt": "2.1.13"
   },
   "homepage": "http://teleopti.github.io/styleguide/styleguide"
 }
