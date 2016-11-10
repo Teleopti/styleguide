@@ -1,4 +1,4 @@
-module.exports = function (grunt) {
+module.exports = function(grunt) {
 
     grunt.initConfig({
         sass: {
@@ -139,24 +139,9 @@ module.exports = function (grunt) {
                     // includes files within path
                     {
                         expand: true,
-                        cwd: 'fonts',
-                        flatten: true,
-                        src: ['*'],
-                        dest: 'styleguide/fonts',
-                        filter: 'isFile'
-                    },
-                ],
-            },
-            materialFont: {
-                files: [
-                    // includes files within path
-                    {
-                        expand: true,
-                        cwd: 'fonts',
-                        flatten: true,
-                        src: ['../vendor/mdi/css/materialdesignicons.min.css'],
-                        dest: 'styleguide/icons',
-                        filter: 'isFile'
+                        cwd: 'vendor/mdi',
+                        src: ['**'],
+                        dest: 'styleguide/icons/'
                     },
                 ],
             },
