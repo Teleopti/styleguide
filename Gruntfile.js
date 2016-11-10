@@ -117,10 +117,10 @@ module.exports = function (grunt) {
                     'css/styleguide.css',
                     'css/main.min.css',
                     'node_modules/angular-ui-tree/dist/angular-ui-tree.min.css',
-                    'vendor/mdi/css/materialdesignicons.min.css',
                     'node_modules/angular-material/angular-material.min.css',
                     'node_modules/angular-ui-grid/ui-grid.min.css',
-                    'vendor/c3/c3.min.css'
+                    'vendor/c3/c3.min.css',
+                    'vendor/mdi/css/materialdesignicons.min.css'
                 ],
                 dest: 'styleguide/dist/dependencies.min.css'
             }
@@ -147,6 +147,19 @@ module.exports = function (grunt) {
                     },
                 ],
             },
+            materialFont: {
+                files: [
+                    // includes files within path
+                    {
+                        expand: true,
+                        cwd: 'fonts',
+                        flatten: true,
+                        src: ['../vendor/mdi/css/materialdesignicons.min.css'],
+                        dest: 'styleguide/icons',
+                        filter: 'isFile'
+                    },
+                ],
+            },
             uigrid: {
                 files: [
                     // includes files within path
@@ -155,7 +168,8 @@ module.exports = function (grunt) {
                         cwd: 'fonts',
                         flatten: true,
                         src: ['../node_modules/angular-ui-grid/ui-grid.woff',
-                        '../node_modules/angular-ui-grid/ui-grid.ttf'],
+                            '../node_modules/angular-ui-grid/ui-grid.ttf'
+                        ],
                         dest: 'styleguide/dist/',
                         filter: 'isFile'
                     },
