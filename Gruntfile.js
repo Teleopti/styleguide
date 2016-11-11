@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
     grunt.initConfig({
         sass: {
@@ -18,6 +18,10 @@ module.exports = function(grunt) {
             styleguide: {
                 files: ['css/*.scss', 'css/*.hbs', 'css/*.md', 'directives/**/*.js', 'app.js'],
                 tasks: ['sass:styleguide', 'sass:dist', 'ngtemplates', 'shell', 'cssmin'],
+            },
+            watchAll: {
+                files: ['js/**', 'css/**.scss','directives/**','kss-template/**' ],
+                tasks: ['sass:styleguide', 'sass:dist', 'ngtemplates', 'shell', 'cssmin']
             },
             test: {
                 files: ['directives/**/*.spec.js'],
@@ -160,7 +164,6 @@ module.exports = function(grunt) {
                     },
                 ],
             }
-
         }
     });
 
