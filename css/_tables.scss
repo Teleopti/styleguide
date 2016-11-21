@@ -293,3 +293,11 @@ table{
 .ui-grid-pinned-container.ui-grid-pinned-container-left .ui-grid-header-cell:last-child{
 	border-right: none;
 }
+
+//Temp fix for bug #40330.
+//Related issue links: https://github.com/angular-ui/ui-grid/issues/4938
+//                     https://github.com/angular-ui/ui-grid/issues/4548
+//Delete this when the issue is fixed.
+.ui-grid-cell.ui-grid-disable-selection.ui-grid-row-header-cell {
+	pointer-events: initial;
+}
