@@ -1,7 +1,7 @@
 // Karma configuration
 // Generated on Tue Aug 18 2015 15:02:38 GMT+0200 (Romance Daylight Time)
 
-module.exports = function(config) {
+module.exports = function (config) {
     config.set({
 
         // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -14,21 +14,22 @@ module.exports = function(config) {
 
         // list of files / patterns to load in the browser
         files: [
-          'node_modules/moment/min/moment-with-locales.min.js',
+            'styleguide/dist/dependencies.min.js',
+        'node_modules/moment/min/moment-with-locales.min.js',
           'node_modules/angular/angular.min.js',
           'node_modules/angular-moment/angular-moment.min.js',
           'node_modules/angular-mocks/angular-mocks.js',
           'node_modules/angular-ui-bootstrap/ui-bootstrap.min.js',
           'node_modules/angular-sanitize/angular-sanitize.min.js',
           'node_modules/angular-dynamic-locale/dist/tmhDynamicLocale.js',
-          {
-              pattern: 'node_modules/angular-i18n/angular-locale_*.js',
-              watched: false,
-              included: false,
-              served: true
-          },
-          'dist/templates.js',
-          'directives/**/*.js'
+            {
+                pattern: 'node_modules/angular-i18n/angular-locale_*.js',
+                watched: false,
+                included: false,
+                served: true
+            },
+            'styleguide/dist/templates.js',
+            'directives/**/*.js',
         ],
 
         // list of files to exclude

@@ -4,7 +4,7 @@
     angular.module('ui.bootstrap.timepicker')
 	   .run([
 	     '$templateCache', function($templateCache) {
-		 $templateCache.put("template/timepicker/timepicker.html",				    
+		 $templateCache.put("uib/template/timepicker/timepicker.html",				    
 				    "<table>" +
 				    "  <tbody>" +
 				    "    <tr>" +

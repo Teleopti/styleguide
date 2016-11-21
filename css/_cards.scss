@@ -229,7 +229,8 @@
 //			</card-header>
 //			<card-body class="panel">
 //	 			<div class="con-row demo-outline">
-//	    		<div class="con-flex">Content</div>
+//	    		<div class="con-flex">Content
+//          </div>
 //	 			</div>
 //	  		<div class="con-footer">
 //		 			<button class="wfm-btn wfm-btn-invis-default">Advanced</button>
@@ -265,9 +266,6 @@ md-content {
 }
 
 .wfm-card-unselected{
-  width: 90%;
-  margin: $full-padding *2 auto;
-
   transition-property: box-shadow, background-color;
   transition-duration: 0.2s;
   transition-timing-function: ease-out;
@@ -281,8 +279,6 @@ md-content {
 }
 
 .wfm-card-selected {
-  margin: 25px auto;
-  width: 95%;
   transition-property: width, height;
   transition-duration: 0.2s;
   transition-timing-function: ease-out;

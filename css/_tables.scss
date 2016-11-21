@@ -48,7 +48,7 @@ table{
 
 .wfm-table td, .wfm-table th {
   border: 1px solid $gray012;
-  color: $gray054;
+  color: $text-color-standard;
   padding: $full-padding;
   background-color:$white;
 }
@@ -122,6 +122,7 @@ table{
 //		exporterMenuPdf: false,
 //		enableSelectAll: true,
 //		enableRowSelection: true,
+//		enableHorizontalScrollbar: uiGridConstants.scrollbars.NEVER,
 //		selectionRowHeaderWidth: 35,
 //		data: data,
 //};

@@ -1,6 +1,6 @@
 # Teleopti styleguide [![Build Status](https://travis-ci.org/Teleopti/styleguide.svg?branch=master)](https://travis-ci.org/Teleopti/styleguide)
 
-Take a look to the [styleguide here](http://teleopti.github.io/styleguide/styleguide)
+Take a look to the [styleguide here](http://teleopti.github.io/styleguide/styleguide/section-0.html)
 
 ## How to contribute
 First, fork the project and create a new branch on the fork.

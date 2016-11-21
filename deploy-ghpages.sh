@@ -5,15 +5,13 @@
 
  git config user.name "Travis-CI"
  git config user.email "carl.rockman@teleopti.com"
- cp -R ../styleguide ./styleguide
- cp -R ../vendor ./vendor
- cp -R ../css ./css
- cp -R ../dist ./dist
-
- cp -R ../node_modules ./node_modules; find ./node_modules -type l -exec rm -f {} \;
- rm -rf ./node_modules/bootstrap/docs
- cp ../app.js ./app.js
-
+ rm -rf ../css;
+ rm -rf ../directives
+ rm -rf ../fonts
+ rm -rf ../kss-template
+ rm -rf ../vendor
+ cp -R ../styleguide ./
+ rm -rf ../styleguide
  git add . -A
 
  if test -n "$(git status --porcelain)"; then
