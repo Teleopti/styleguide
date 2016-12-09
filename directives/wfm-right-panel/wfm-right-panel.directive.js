@@ -1,7 +1,41 @@
 (function () {
     'use strict';
 
-    var wfmRightPanelCtrl = function ($mdSidenav, $scope) {
+    angular.module('wfm.rightPanel', ['angularResizable']).directive('wfmRightPanel', wfmRightPanelDirective);
+
+    function wfmRightPanelDirective() {
+        return {
+            controller: 'wfmRightPanelCtrl',
+            controllerAs: 'vm',
+            bindToController: true,
+            scope: {
+                panelOptions: '=',
+                onOpen: '&',
+                onClose: '&'
+            },
+            transclude: true,
+            templateUrl: 'directives/wfm-right-panel/wfm-right-panel.tpl.html',
+            link: linkFunction
+        };
+    }
+
+    function linkFunction(scope, attr, element) {
+        scope.vm.panelOptions.sidePanelTitle = scope.vm.panelOptions.sidePanelTitle || 'Right Panel';
+        scope.vm.panelOptions.showCloseButton = scope.vm.panelOptions.showCloseButton === true;
+        scope.vm.panelOptions.showBackdrop = scope.vm.panelOptions.showBackdrop === true;
+        scope.vm.panelOptions.showResizer = scope.vm.panelOptions.showResizer === true;
+        scope.vm.panelOptions.showPopupButton = scope.vm.panelOptions.showPopupButton === true;
+
+        if (!scope.vm.panelOptions.showResizer) {
+            $('wfm-right-panel .resizable .rg-left').hide();
+        }
+    }
+
+    angular.module('wfm.rightPanel').controller('wfmRightPanelCtrl', wfmRightPanelCtrl);
+    
+    wfmRightPanelCtrl.$inject = ['$mdSidenav', '$scope'];
+
+    function wfmRightPanelCtrl($mdSidenav, $scope) {
         var vm = this;
         vm.showPanel = false;
         vm.panelOptions.panelState = false;
@@ -33,38 +67,4 @@
             }
         }, true);
     };
-
-    var wfmRightPanel = angular.module('wfm.rightPanel', ['angularResizable']);
-    wfmRightPanel.controller('wfmRightPanelCtrl', wfmRightPanelCtrl);
-    wfmRightPanelCtrl.$inject = ['$mdSidenav', '$scope'];
-    wfmRightPanel.directive('wfmRightPanel', wfmRightPanelDirective);
-
-    function wfmRightPanelDirective() {
-        return {
-            controller: 'wfmRightPanelCtrl',
-            controllerAs: 'vm',
-            bindToController: true,
-            scope: {
-                panelOptions: '=',
-                onOpen: '&',
-                onClose: '&'
-            },
-            transclude: true,
-            templateUrl: 'directives/wfm-right-panel/wfm-right-panel.tpl.html',
-            link: linkFunction
-        };
-    }
-
-    function linkFunction(scope, attr, element) {
-        scope.vm.panelOptions.panelTitle = scope.vm.panelOptions.panelTitle || 'Panel';
-        scope.vm.panelOptions.sidePanelTitle = scope.vm.panelOptions.sidePanelTitle || 'Right Panel';
-        scope.vm.panelOptions.showCloseButton = scope.vm.panelOptions.showCloseButton === true;
-        scope.vm.panelOptions.showBackdrop = scope.vm.panelOptions.showBackdrop === true;
-        scope.vm.panelOptions.showResizer = scope.vm.panelOptions.showResizer === true;
-        scope.vm.panelOptions.showPopupButton = scope.vm.panelOptions.showPopupButton === true;
-
-        if (!scope.vm.panelOptions.showResizer) {
-            $('wfm-right-panel .resizable .rg-left').hide();
-        }
-    }
 })();

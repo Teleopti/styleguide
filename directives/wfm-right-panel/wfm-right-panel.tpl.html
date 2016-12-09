@@ -1,27 +1,21 @@
 <md-backdrop class="md-sidenav-backdrop md-opaque ng-scope" ng-if="vm.panelOptions.showBackdrop && vm.panelOptions.panelState" ng-click="vm.panelOptions.panelState = false;"></md-backdrop>
 
-<div class="sub-header">
-  <h2>{{vm.panelOptions.panelTitle | translate}}</h2>
-  <div class="head-actions panel-menu">
-    <div tabindex=0 class="context-menu card-context open-right-panel" ng-if="vm.panelOptions.showPopupButton" ng-click="vm.panelOptions.panelState = true">
-      <i class="mdi mdi-chevron-double-left"></i>
-        <md-tooltip>{{"ShowRightPanel" | translate}}</md-tooltip>
-    </div>
-  </div>
+<div tabindex=0 class="context-menu card-context open-right-panel" ng-if="vm.panelOptions.showPopupButton" ng-click="vm.panelOptions.panelState = true">
+	<i class="mdi mdi-chevron-double-left"></i>
+	<md-tooltip>{{"ShowRightPanel" | translate}}</md-tooltip>
 </div>
 
 <div resizable r-directions="['left']" r-flex="false" ng-show="vm.showPanel">
-  <md-sidenav class="md-sidenav-right wfm-right-panel drsElement" md-component-id="right-panel" md-is-open="vm.panelOptions.panelState">
-    <div class="sub-header">
-      <h2>{{vm.panelOptions.sidePanelTitle | translate}}</h2>
-      <div class="head-actions panel-menu close-right-panel" ng-click="vm.closePanel()" ng-if="vm.panelOptions.showCloseButton">
-        <div tabindex=0 class="context-menu card-context">
-          <i class="mdi mdi-arrow-right"></i>
-          <md-tooltip>{{"HidePanel" | translate}}</md-tooltip>
-        </div>
-      </div>
-    </div>
-
-    <div class="panel-content" ng-transclude></div>
-  </md-sidenav>
+	<md-sidenav class="md-sidenav-right wfm-right-panel drsElement" md-component-id="right-panel" md-is-open="vm.panelOptions.panelState">
+	<div class="sub-header">
+		<span>{{vm.panelOptions.sidePanelTitle | translate}}</span>
+		<div class="head-actions panel-menu close-right-panel" ng-click="vm.closePanel()" ng-if="vm.panelOptions.showCloseButton">
+			<div tabindex=0 class="context-menu card-context">
+				<i class="mdi mdi-arrow-right"></i>
+				<md-tooltip>{{"HidePanel" | translate}}</md-tooltip>
+			</div>
+		</div>
+	</div>
+	<div class="panel-content" ng-transclude></div>
+	</md-sidenav>
 </div>

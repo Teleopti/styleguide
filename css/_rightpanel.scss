@@ -1,0 +1,12 @@
+wfm-right-panel{
+	float: right;
+}
+
+wfm-right-panel .sub-header{
+	padding: 10px 5px;
+	border-bottom: 1px solid $gray012;
+}
+
+.open-right-panel, .close-right-panel{
+	z-index: 1;
+}
