@@ -139,9 +139,9 @@ module.exports = function(grunt) {
                     // includes files within path
                     {
                         expand: true,
-                        cwd: 'vendor/mdi',
+                        cwd: 'vendor/mdi/fonts/',
                         src: ['**'],
-                        dest: 'styleguide/icons/'
+                        dest: 'styleguide/fonts/'
                     },
                 ],
             },
