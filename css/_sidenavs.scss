@@ -1,48 +1,3 @@
-// Panel with sidebar
-//
-//The sub header of a regular panel can be repaced to provide a sidebar within the panel.
-//
-//<div class="jsprewrap">
-//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
-//	<div ng-show="showjs">
-//		<code><pre>
-//$scope.rightPanelOptions = {
-//		panelState: false,
-//		panelTitle: 'Main panel tilte',
-//		sidePanelTitle: 'Sidepanel title',
-//		showCloseButton: true,
-//		showBackdrop: true,
-//		showResizer: false,
-//		showPopupButton: true
-//};
-//		</pre></code>
-//	</div>
-//</div>
-//
-// Markup:
-//<div class="panel material-depth-1">
-//	<wfm-right-panel panel-options="rightPanelOptions" style="min-height:400px">
-//		<div class="con-row">
-//			<div class="con-flex">content</div>
-//		</div>
-//	<div class="con-footer">
-//		<button class="wfm-btn wfm-btn-invis-default">Action</button>
-//	</div>
-//	</wfm-right-panel>
-//	<div class="con-row">
-//		<div class="con-flex">Content</div>
-//	</div>
-//	<div class="con-footer">
-//		<button class="wfm-btn wfm-btn-invis-default">Advanced</button>
-//		<button class="wfm-btn wfm-btn-invis-primary">Options</button>
-//	</div>
-//</div>
-//
-//Styleguide 4.2.2
-//
-
-
-
 .sidenav-toggle {
 
 	input[type='checkbox']{
@@ -148,17 +103,4 @@
 .sidenav-icon {
     margin-right: 10px!important;
     margin-left: 5px!important;
-}
-
-.command-panel-content {
-	background-color: $white !important;
-	color: $gray087;
-}
-
-.command-panel-option {
-	background-color: $white;
-}
-
-.md-sidenav-right {
-	background:$white;
 }
