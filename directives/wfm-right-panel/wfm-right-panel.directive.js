@@ -56,14 +56,13 @@
     }
 
     function linkFunction(scope, attr, element) {
-        scope.vm.panelOptions.panelTitle = scope.vm.panelOptions.panelTitle || 'Panel';
         scope.vm.panelOptions.sidePanelTitle = scope.vm.panelOptions.sidePanelTitle || 'Right Panel';
         scope.vm.panelOptions.showCloseButton = scope.vm.panelOptions.showCloseButton === true;
         scope.vm.panelOptions.showBackdrop = scope.vm.panelOptions.showBackdrop === true;
         scope.vm.panelOptions.showResizer = scope.vm.panelOptions.showResizer === true;
         scope.vm.panelOptions.showPopupButton = scope.vm.panelOptions.showPopupButton === true;
 
-        if (!scope.vm.panelOptions.showResizer) {
+        if (!scope.vm.panelOptions.showResizer && scope.vm.panelOptions.panelState) {
             $('wfm-right-panel .resizable .rg-left').hide();
         }
     }
