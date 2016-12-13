@@ -184,11 +184,10 @@
       /*code for rightPanel*/
       $scope.rightPanelOptions = {
           panelState: false,
-          panelTitle: 'Main panel tilte',
           sidePanelTitle: 'Sidepanel title',
           showCloseButton: true,
-          showBackdrop: true,
           showResizer: false,
+          showBackdrop: true,
           showPopupButton: true
       };
 
