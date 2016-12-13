@@ -1,8 +1,10 @@
 <md-backdrop class="md-sidenav-backdrop md-opaque ng-scope" ng-if="vm.panelOptions.showBackdrop && vm.panelOptions.panelState" ng-click="vm.panelOptions.panelState = false;"></md-backdrop>
 
-<div tabindex=0 class="context-menu card-context open-right-panel" ng-if="vm.panelOptions.showPopupButton" ng-click="vm.panelOptions.panelState = true">
-	<i class="mdi mdi-chevron-double-left"></i>
-	<md-tooltip>{{"ShowRightPanel" | translate}}</md-tooltip>
+<div class="head-actions panel-menu">
+	<div tabindex=0 class="context-menu card-context open-right-panel" ng-if="vm.panelOptions.showPopupButton" ng-click="vm.panelOptions.panelState = true">
+	 <i class="mdi mdi-chevron-double-left"></i>
+	 <md-tooltip>{{"ShowRightPanel" | translate}}</md-tooltip>
+	</div>
 </div>
 
 <div resizable r-directions="['left']" r-flex="false" ng-show="vm.showPanel">
