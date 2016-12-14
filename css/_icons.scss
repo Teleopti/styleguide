@@ -55,29 +55,14 @@
 //
 
 .mdi:before {
-font-size: 18px!important;
+	font-size: 18px !important;
 }
-
 .mdi-icon {
-display: inline-block;
-  font: normal normal normal 24px/1 MaterialDesignIcons;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transform: translate(0, 0);
-}
-
-[class^="ui-grid-icon"]:before, [class*=" ui-grid-icon"]:before{
-	@extend .mdi-icon;
-}
-
-.ui-grid-icon-angle-down:before {	content: "\f35d";}
-.ui-grid-icon-down-dir:before {	content:"\f35e";}
-.ui-grid-icon-up-dir:before {	content:"\f361";}
-.ui-grid-icon-sort-alt-up:before{	content:"\f447";}
-.ui-grid-icon-sort-alt-down:before{	content:"\f448"}
-.ui-grid-icon-cancel:before{content:"\f1f4"}
-.ui-grid-icon-menu::before {content: "\f253";}
-.ui-grid-icon-ok::before{content: "\f1d1";
+	display: inline-block;
+	font: normal normal normal 24px/1 MaterialDesignIcons;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	transform: translate(0, 0);
 }
