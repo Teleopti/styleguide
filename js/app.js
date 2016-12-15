@@ -65,7 +65,8 @@
           exporterCsvFilename: 'myFile.csv',
           exporterMenuPdf: false,
           enableSelectAll: true,
-          enableRowSelection: true,
+          enableFullRowSelection: true,
+          enableRowHeaderSelection: true,
           selectionRowHeaderWidth: 35,
           data: data,
       };

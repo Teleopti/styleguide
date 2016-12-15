@@ -121,7 +121,8 @@ table{
 //		exporterCsvFilename: 'myFile.csv',
 //		exporterMenuPdf: false,
 //		enableSelectAll: true,
-//		enableRowSelection: true,
+//		enableFullRowSelection: true,
+//		enableRowHeaderSelection: true,
 //		enableHorizontalScrollbar: uiGridConstants.scrollbars.NEVER,
 //		selectionRowHeaderWidth: 35,
 //		data: data,
@@ -168,8 +169,62 @@ table{
 	}
 }
 
-.ui-grid-header-canvas{
-	background-color:$blue-100;
+/*icons*/
+.ui-grid-icon-ok:before {
+	content: "\f1d6" !important;
+}
+.ui-grid-all-selected.ui-grid-icon-ok:before {
+	content: "\f1da" !important;
+}
+.ui-grid-row-selected .ui-grid-icon-ok:before {
+	content: "\f1da" !important;
+}
+.ui-grid-menu-item .ui-grid-icon-ok:before {
+	content: "\f272" !important;
+}
+.ui-grid-menu-item .ui-grid-icon-cancel:before {
+	content: "\f273" !important;
+}
+.ui-grid-icon-down-dir:before {
+	content: "\f135" !important;
+}
+.ui-grid-icon-up-dir:before {
+	content: "\f145" !important;
+}
+.ui-grid-header-canvas {
+	background-color: $blue-100;
+}
+.ui-grid-icon-angle-down:before {
+	content: "\f35d";
+}
+.ui-grid-icon-down-dir:before {
+	content: "\f35e";
+}
+.ui-grid-icon-up-dir:before {
+	content: "\f361";
+}
+.ui-grid-icon-sort-alt-up:before {
+	content: "\f447";
+}
+.ui-grid-icon-sort-alt-down:before {
+	content: "\f448"
+}
+.ui-grid-icon-cancel:before {
+	content: "\f1f4"
+}
+.ui-grid-icon-menu::before {
+	content: "\f253";
+}
+
+/*Using mdi icons for checkbox */
+[class^="ui-grid-icon"]:before, [class*=" ui-grid-icon"]:before{
+	display: inline-block;
+	font: normal normal normal 24px/1 MaterialDesignIcons;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	transform: translate(0, 0);
 }
 
 .ui-grid-viewport.ng-isolate-scope {
@@ -210,7 +265,6 @@ table{
 }
 
 .ui-grid-selection-row-header-buttons{
-	opacity: 1;
 	color: $text-color-standard;
 }
 
@@ -246,36 +300,6 @@ table{
 .ui-grid-row:nth-child(odd) > [ui-grid-row] > .ui-grid-cell{
 	background-color: $gray012!important;
 }*/
-
-
-/*icons*/
-.ui-grid-icon-ok:before {
-	content: "\f1d6"!important;
-}
-
-.ui-grid-all-selected.ui-grid-icon-ok:before  {
-	content: "\f1da"!important;
-}
-
-.ui-grid-row-selected .ui-grid-icon-ok:before  {
-	content: "\f1da"!important;
-}
-
-.ui-grid-menu-item .ui-grid-icon-ok:before {
-	content: "\f272"!important;
-}
-
-.ui-grid-menu-item .ui-grid-icon-cancel:before {
-	content: "\f273"!important;
-}
-
-.ui-grid-icon-down-dir:before {
-	content: "\f135"!important;
-}
-
-.ui-grid-icon-up-dir:before {
-  content: "\f145"!important;
-}
 
 .ui-grid-row-selected > [ui-grid-row] > .ui-grid-cell{
 	background-color: $green-100!important;

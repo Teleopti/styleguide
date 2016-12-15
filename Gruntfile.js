@@ -114,13 +114,13 @@ module.exports = function(grunt) {
             distCss: {
                 src: [
                     'vendor/fonts.css',
-                    'css/styleguide.css',
-                    'css/main.min.css',
                     'node_modules/angular-ui-tree/dist/angular-ui-tree.min.css',
                     'node_modules/angular-material/angular-material.min.css',
                     'node_modules/angular-ui-grid/ui-grid.min.css',
                     'vendor/c3/c3.min.css',
-                    'vendor/mdi/css/materialdesignicons.min.css'
+                    'vendor/mdi/css/materialdesignicons.min.css',
+                    'css/styleguide.css',
+                    'css/main.min.css'
                 ],
                 dest: 'styleguide/dist/dependencies.min.css'
             }
