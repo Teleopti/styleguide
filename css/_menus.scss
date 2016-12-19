@@ -120,12 +120,13 @@
 }
 
 .context-menu {
+    @extend .unselectable;
     position: relative;
     cursor:pointer;
     background:transparent;
     border:none;
     display: inline-block;
-
+  
     [class*="context-menu-"] {
         transition: $transition-timing;
         @extend .material-depth-2;

@@ -104,6 +104,7 @@ h3{
 //<p class="sm-font-size">small text</p>
 //<p class="full-padding">Padded</p>
 //<p class="padding-reset">remove padding</p>
+//<p class="unselectable">This text could not be selected</p>
 //
 //Styleguide 8.5
 //
@@ -121,4 +122,11 @@ h3{
 
 .caps:first-letter {
     text-transform: uppercase;
+}
+
+.unselectable {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
