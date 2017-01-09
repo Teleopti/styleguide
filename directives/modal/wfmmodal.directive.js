@@ -51,17 +51,17 @@
                     };
                     scope.hideModal = function() {
                         var activeSelect = document.getElementsByClassName('md-select-menu-container md-active');
-                        if (activeSelect) {
+                        if (activeSelect.length > 0) {
                             activeSelect[0].remove();
                         }
 
                         var selectBackdrop = document.getElementsByClassName('md-select-backdrop');
-                        if (selectBackdrop) {
+                        if (selectBackdrop.length > 0) {
                             selectBackdrop[0].remove();
                         }
 
                         var scrollMask = document.getElementsByClassName('md-scroll-mask');
-                        if (scrollMask) {
+                        if (scrollMask.length > 0) {
                             scrollMask[0].remove();
                         }
                         scope.show = false;
