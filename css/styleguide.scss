@@ -141,7 +141,7 @@
 //
 //  Note: Con-flex elements are marked by a dashed outline in the styleguide for structure and layout clarification, these should <b>not</b> be visible in the project.
 //
-//  Note: Layout rows and flex elements can be nested if needed. However, avoid putting panels/containers inside other panels/containers. 
+//  Note: Layout rows and flex elements can be nested if needed. However, avoid putting panels/containers inside other panels/containers.
 //
 //  Note: In all modals and panels the footer links should be buttons, not  &lt;a/&gt; tags.
 //
@@ -152,7 +152,34 @@
 
 //Layout
 //
-//The layout consists of the flex grid. Since the grid is adapting to the number of items inside it, be careful not to use too many in one row. The recomended max number of con-flex items in one row is 4, if more are needed, concider using a tabbed container or spreading them out over sveral rows.
+//The layout consists of the flex grid. Since the grid is adapting to the number of items inside it but does not wrap, be careful not to use too many in one row. If many are needed, concider using a tabbed container, a card-grid or spreading them out over sveral rows.
+//<table class="wfm-table">
+//	<thead>
+//		<tr>
+//			<th>Class</th>
+//			<th>Description</th>
+//		</tr>
+//	</thead>
+//	<tbody>
+//		<tr>
+//			<td>con-row</td>
+//			<td>A flex container for con-flex boxes</td>
+//		</tr>
+//		<tr>
+//			<td>con-flex</td>
+//			<td>When inside a con-row it will devide its with with the number of con-flex siblings</td>
+//		</tr>
+//		<tr>
+//			<td>x2</td>
+//			<td>Will use the same space as two con-flex containers</td>
+//		</tr>
+//		<tr>
+//			<td>x3</td>
+//			<td>Will use the same space as three con-flex containers</td>
+//		</tr>
+//	</tbody>
+//</table>
+//<br>
 //
 //Markup:
 // <div class="con-row">
@@ -174,11 +201,11 @@
 //    <div class="con-flex">25%</div>
 // </div>
 // <div class="con-row">
-//    <div class="con-flex split-3-1">75%</div>
+//    <div class="con-flex x3">75%</div>
 //    <div class="con-flex">25%</div>
 // </div>
 //  <div class="con-row">
-//    <div class="con-flex split-1-2">50%</div>
+//    <div class="con-flex x2">50%</div>
 //    <div class="con-flex">25%</div>
 //    <div class="con-flex">25%</div>
 // </div>
