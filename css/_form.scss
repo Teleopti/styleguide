@@ -261,20 +261,11 @@ input:-ms-input-placeholder {
   }
 }
 
-.md-select-menu-container {
-  z-index: 99999;
-}
-
 md-select:not([disabled]):focus .md-select-value{
   border: none;
   outline: none;
   padding-bottom: 1px;
   border-bottom: 1px solid $blue-100;
-}
-
-.md-select-value :first-child{
-  transform: none!important;
-  -webkit-transform:none!important;
 }
 
 .md-select-value>span:not(.md-select-icon){
