@@ -20,7 +20,7 @@ module.exports = function (grunt) {
                 tasks: ['sass:styleguide', 'sass:dist', 'ngtemplates', 'shell', 'cssmin'],
             },
             watchAll: {
-                files: ['js/**', 'css/**.scss','directives/**','kss-template/**'],
+                files: ['js/**', 'css/**.scss', 'directives/**', 'kss-template/**'],
                 tasks: ['sass:styleguide', 'sass:dist', 'ngtemplates', 'shell', 'cssmin']
             },
             test: {
@@ -35,8 +35,8 @@ module.exports = function (grunt) {
             },
             target: {
                 files: {
-                    'css/main.min.css': 'css/main.css',
-                    'css/main_dark.min.css': 'css/main_dark.css'
+                    'styleguide/dist/main.min.css': 'css/main.css',
+                    'styleguide/dist/main_dark.min.css': 'css/main_dark.css'
                 },
             },
         },
@@ -131,13 +131,31 @@ module.exports = function (grunt) {
 
         },
         uglify: {
-            'styleguide/dist/wfmdirectives.min.js':
-            [
-                'directives/**/*.js', '!directives/**/*.spec.js'
-            ],
-            'styleguide/dist/main.min.js': 'js/*.js'
+            dist: {
+                'styleguide/dist/wfmdirectives.min.js':
+                [
+                    'directives/**/*.js', '!directives/**/*.spec.js'
+                ],
+                'styleguide/dist/main.min.js': 'js/*.js'
+            },
+            options: {
+                sourceMap: false,
+                beautify: false,
+                mangle: false
+            }
         },
         copy: {
+            sass: {
+                files: [
+                    // includes files within path
+                    {
+                        expand: true,
+                        cwd: './css/',
+                        src: ['*.scss'],
+                        dest: 'styleguide/sass/'
+                    },
+                ]
+            },
             fonts: {
                 files: [
                     // includes files within path
