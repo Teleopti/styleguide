@@ -7,7 +7,7 @@ body{
 	color:$gray087;
   font-size: $standard-font-size!important;
 	overflow-x: hidden;
-	font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif!important;
+	font-family: Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif!important;
 
 	a:focus, a:hover{
 		text-decoration:none;
@@ -18,7 +18,7 @@ body{
 }
 
 button, input, select{
-	font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif!important;
+	font-family: Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif!important;
 }
 
 dd {
@@ -122,11 +122,11 @@ dd {
   }
 }
 
-.split-3-1{
+.split-3-1, .x3{
   flex-basis: 50%!important;
 }
 
-.split-1-2{
+.split-1-2, .x2{
   flex-basis: 25%!important;
 }
 

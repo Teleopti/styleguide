@@ -65,7 +65,8 @@
           exporterCsvFilename: 'myFile.csv',
           exporterMenuPdf: false,
           enableSelectAll: true,
-          enableRowSelection: true,
+          enableFullRowSelection: true,
+          enableRowHeaderSelection: true,
           selectionRowHeaderWidth: 35,
           data: data,
       };
@@ -184,11 +185,10 @@
       /*code for rightPanel*/
       $scope.rightPanelOptions = {
           panelState: false,
-          panelTitle: 'Main panel tilte',
           sidePanelTitle: 'Sidepanel title',
           showCloseButton: true,
-          showBackdrop: true,
           showResizer: false,
+          showBackdrop: true,
           showPopupButton: true
       };
 

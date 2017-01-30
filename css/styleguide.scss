@@ -116,9 +116,18 @@
 
 //Colors
 //
-//By using colors as variables we have the ability to provide custom themes in the future.
-//Please take note of the text color for each color - if there is text or icons on top of a full color background, please use the text color provided.
-//In general, the smaller and more separate something is, the more saturated it should be to grab attention.
+// Colors are used to indicate states of some elements (green for selected items, orange for warnings, red for errors and so on) or to make things blend in/stick out more.
+// In general, the smaller and more separate something is, the more saturated it can be to grab attention.
+// By providing common color variables we can have different themes and still keep a consistent feeling.
+// In the example below you can see how the colors are represented in different themes. You can also see the preferred text color for that color.
+// There are some predefined colors for standard text that will adapt to the theme automatically:
+//  <table class="wfm-table">
+//    <thead><tr><th>Variable</th><th>Description</th></tr></thead>
+//    <tbody>
+//      <tr><td>$text-color-standard</td><td>Standard color used in panels</td></tr>
+//      <tr><td>$text-color-muted</td><td>Slightly muted color for use on disabled/secondary text</td></tr>
+//    </tbody>
+//  </table>
 //
 //Styleguide 3
 //
@@ -132,7 +141,7 @@
 //
 //  Note: Con-flex elements are marked by a dashed outline in the styleguide for structure and layout clarification, these should <b>not</b> be visible in the project.
 //
-//  Note: Never nest a container within another container.
+//  Note: Layout rows and flex elements can be nested if needed. However, avoid putting panels/containers inside other panels/containers.
 //
 //  Note: In all modals and panels the footer links should be buttons, not  &lt;a/&gt; tags.
 //
@@ -143,7 +152,34 @@
 
 //Layout
 //
-//The layout consists of the flex grid. Since the grid is adapting to the number of items inside it, be careful not to use too many in one row. The recomended max number of con-flex items in one row is 4, if more are needed, concider using a tabbed container or spreading them out over sveral rows.
+//The layout consists of the flex grid. Since the grid is adapting to the number of items inside it but does not wrap, be careful not to use too many in one row. If many are needed, conceder using a tabbed container, a card-grid or spreading them out over several rows.
+//<table class="wfm-table">
+//	<thead>
+//		<tr>
+//			<th>Class</th>
+//			<th>Description</th>
+//		</tr>
+//	</thead>
+//	<tbody>
+//		<tr>
+//			<td>con-row</td>
+//			<td>A flex container for con-flex boxes</td>
+//		</tr>
+//		<tr>
+//			<td>con-flex</td>
+//			<td>When inside a con-row it will divide its with with the number of con-flex siblings</td>
+//		</tr>
+//		<tr>
+//			<td>x2</td>
+//			<td>Will use the same space as two con-flex containers</td>
+//		</tr>
+//		<tr>
+//			<td>x3</td>
+//			<td>Will use the same space as three con-flex containers</td>
+//		</tr>
+//	</tbody>
+//</table>
+//<br>
 //
 //Markup:
 // <div class="con-row">
@@ -165,11 +201,11 @@
 //    <div class="con-flex">25%</div>
 // </div>
 // <div class="con-row">
-//    <div class="con-flex split-3-1">75%</div>
+//    <div class="con-flex x3">75%</div>
 //    <div class="con-flex">25%</div>
 // </div>
 //  <div class="con-row">
-//    <div class="con-flex split-1-2">50%</div>
+//    <div class="con-flex x2">50%</div>
 //    <div class="con-flex">25%</div>
 //    <div class="con-flex">25%</div>
 // </div>
@@ -487,6 +523,18 @@ html{
   background: white;
   top: 0;
   z-index:9;
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+@media screen and (min-width: 769px){
+	#kss-node .kss-sidebar {
+	  background: white;
+	  top: 0;
+	  z-index:9;
+	  max-height: 100%;
+	  overflow-y: auto;
+	}
 }
 
 .styleguide-break{
