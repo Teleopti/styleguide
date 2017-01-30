@@ -20,7 +20,7 @@ module.exports = function (grunt) {
                 tasks: ['sass:styleguide', 'sass:dist', 'ngtemplates', 'shell', 'cssmin'],
             },
             watchAll: {
-                files: ['js/**', 'css/**.scss','directives/**','kss-template/**' ],
+                files: ['js/**', 'css/**.scss','directives/**','kss-template/**'],
                 tasks: ['sass:styleguide', 'sass:dist', 'ngtemplates', 'shell', 'cssmin']
             },
             test: {
