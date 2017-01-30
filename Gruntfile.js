@@ -131,18 +131,11 @@ module.exports = function (grunt) {
 
         },
         uglify: {
-            dist: {
-                'styleguide/dist/wfmdirectives.min.js':
-                [
-                    'directives/**/*.js', '!directives/**/*.spec.js'
-                ],
-                'styleguide/dist/main.min.js': 'js/*.js'
-            },
-            options: {
-                sourceMap: false,
-                beautify: false,
-                mangle: false
-            }
+            'styleguide/dist/wfmdirectives.min.js':
+            [
+                'directives/**/*.js', '!directives/**/*.spec.js'
+            ],
+            'styleguide/dist/main.min.js': 'js/*.js'
         },
         copy: {
             sass: {
