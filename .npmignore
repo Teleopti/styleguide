@@ -1,8 +1,9 @@
 .sass-cache
-styleguide/
 vendor/
 app.js
-styleguide.*
 *.sln
 *.suo
 *.hbs
+directives/
+css/
+js/
