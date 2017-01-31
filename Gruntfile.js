@@ -89,8 +89,8 @@ module.exports = function (grunt) {
         concat: {
             distJs: {
                 src: [
-                    'node_modules/moment/min/moment-with-locales.min.js',
                     'node_modules/angular/angular.min.js',
+                    'node_modules/angular-i18n/angular-locale_en-us.js',
                     'node_modules/angular-ui-tree/dist/angular-ui-tree.min.js',
                     'node_modules/angular-animate/angular-animate.min.js',
                     'node_modules/angular-route/angular-route.min.js',
@@ -104,9 +104,10 @@ module.exports = function (grunt) {
                     'node_modules/angular-translate/dist/angular-translate.min.js',
                     'node_modules/angular-dynamic-locale/dist/tmhDynamicLocale.js',
                     'node_modules/angular-moment/angular-moment.min.js',
-                    'vendor/ui-bootstrap-custom-build/datepicker.directive.ext.js',
+                    'node_modules/moment/min/moment-with-locales.min.js',
                     'vendor/angular-bootstrap-persian-datepicker-master/persiandate.js',
                     'vendor/angular-bootstrap-persian-datepicker-master/persian-datepicker-tpls.js',
+                    'vendor/ui-bootstrap-custom-build/datepicker.directive.ext.js',
                     'vendor/ui-bootstrap-custom-build/timepicker.directive.ext.js',
                     'vendor/d3/d3.min.js',
                     'vendor/c3/c3.min.js',
