@@ -7,7 +7,6 @@
 //Styleguide 2.1
 //
 
-
 // Date range picker
 //
 //A directive for specifying a date-only period. It is composed from datepicker with added validation messages.
@@ -21,6 +20,28 @@
 //</table>
 //
 //</br>
+//
+//<div class="jsprewrap">
+//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
+//	<div ng-show="showjs">
+//		<code><pre>
+//$scope.dateRange = {
+//    startDate: new Date(),
+//    endDate: new Date()
+//};
+//$scope.dateRangeTemplateType = 'inline';
+//$scope.dateRangeTemplateTypes = ['popup', 'inline'];
+//$scope.dateRangeCustomValidators = [{
+//    key: 'lessThan7Days',
+//    message: 'DateRangeMustBeLessThanSevenDays',
+//    validate: function(start, end) {
+//        return moment(end).diff(moment(start), 'days') <= 7;
+//    }
+//}];
+//		</pre></code>
+//	</div>
+//</div>
+//
 //
 //Markup: dateRangePicker.hbs
 //
