@@ -19,7 +19,7 @@
 //<tr><td>invalid-empty-message</td><td>Message shown if no dates are entered. Standard use is 'StartDateAndEndDateMustBeSet'</td><td>false</td></tr>
 //<tr><td>custom-validators</td><td>Define additional validations. The value should be an array of validator-definition objects, which should have <code>key</code>, <code>message</code>, and <code>validate</code> properties defined. The <code>validate</code> attribute must be a function that accepts <code>startDate</code> and <code>endDate</code> as input and returns a boolean to indicate validation result.</td><td>false</td></tr>
 //</table>
-//
+// 
 //</br>
 //
 //Markup: dateRangePicker.hbs
