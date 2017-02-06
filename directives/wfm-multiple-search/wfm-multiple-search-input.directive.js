@@ -41,9 +41,11 @@ var keyValueSeprator = ':';
         }
     };
 
-    vm.focusSearch = function($event){
+    vm.focusSearch = function($event) {
         vm.focusToSearch = true;
-        if($event && $event.which == 13) vm.focusToSearch = false;
+        if ($event && $event.which === 13) {
+            vm.focusToSearch = false;
+        }
     };
 
     function setSearchFormProperty(searchType, searchValue) {
