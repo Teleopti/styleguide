@@ -41,6 +41,11 @@ var keyValueSeprator = ':';
         }
     };
 
+    vm.focusSearch = function($event){
+        vm.focusToSearch = true;
+        if($event && $event.which == 13) vm.focusToSearch = false;
+    };
+
     function setSearchFormProperty(searchType, searchValue) {
         angular.forEach(vm.searchOptions.searchFields, function (propName) {
             if (propName.toUpperCase() === searchType.toUpperCase()) {
