@@ -4,8 +4,8 @@
 	ng-model="vm.searchOptions.keyword" ng-keydown="vm.focusSearch($event);$event.which === 13 && vm.searchCallback(vm.searchOptions.keyword) || vm.turnOffAdvancedSearch()" ng-change="vm.validateSearchKeywordChanged()"
 	ng-click="vm.toggleAdvancedSearchOption($event)" keyword-format/>
 
-	<button ng-click="vm.searchCallback(vm.searchOptions.keyword);vm.turnOffAdvancedSearch()" ng-class="{'focusing-search': vm.focusToSearch}" style="background:none;border:none;">
-		<i class="mdi mdi-magnify"></i>
+	<button ng-click="vm.searchCallback(vm.searchOptions.keyword);vm.turnOffAdvancedSearch()" style="background:none;border:none;">
+		<i class="mdi mdi-magnify" ng-class="{'focusing-search': vm.focusToSearch}"></i>
 		<md-tooltip>{{'Search' | translate}}</md-tooltip>
 	</button>
 
