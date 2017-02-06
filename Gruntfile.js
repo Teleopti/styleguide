@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
     grunt.initConfig({
         sass: {
@@ -19,6 +19,10 @@ module.exports = function(grunt) {
                 files: ['css/*.scss', 'css/*.hbs', 'css/*.md', 'directives/**/*.js', 'app.js'],
                 tasks: ['sass:styleguide', 'sass:dist', 'ngtemplates', 'shell', 'cssmin'],
             },
+            watchAll: {
+                files: ['js/**', 'css/**.scss', 'directives/**', 'kss-template/**'],
+                tasks: ['sass:styleguide', 'sass:dist', 'ngtemplates', 'shell', 'cssmin']
+            },
             test: {
                 files: ['directives/**/*.spec.js'],
                 tasks: ['uglify', 'karma:continuous']
@@ -31,8 +35,8 @@ module.exports = function(grunt) {
             },
             target: {
                 files: {
-                    'css/main.min.css': 'css/main.css',
-                    'css/main_dark.min.css': 'css/main_dark.css'
+                    'styleguide/dist/main.min.css': 'css/main.css',
+                    'styleguide/dist/main_dark.min.css': 'css/main_dark.css'
                 },
             },
         },
@@ -85,8 +89,8 @@ module.exports = function(grunt) {
         concat: {
             distJs: {
                 src: [
-                    'node_modules/moment/min/moment-with-locales.min.js',
                     'node_modules/angular/angular.min.js',
+                    'node_modules/angular-i18n/angular-locale_en-us.js',
                     'node_modules/angular-ui-tree/dist/angular-ui-tree.min.js',
                     'node_modules/angular-animate/angular-animate.min.js',
                     'node_modules/angular-route/angular-route.min.js',
@@ -100,9 +104,10 @@ module.exports = function(grunt) {
                     'node_modules/angular-translate/dist/angular-translate.min.js',
                     'node_modules/angular-dynamic-locale/dist/tmhDynamicLocale.js',
                     'node_modules/angular-moment/angular-moment.min.js',
-                    'vendor/ui-bootstrap-custom-build/datepicker.directive.ext.js',
+                    'node_modules/moment/min/moment-with-locales.min.js',
                     'vendor/angular-bootstrap-persian-datepicker-master/persiandate.js',
                     'vendor/angular-bootstrap-persian-datepicker-master/persian-datepicker-tpls.js',
+                    'vendor/ui-bootstrap-custom-build/datepicker.directive.ext.js',
                     'vendor/ui-bootstrap-custom-build/timepicker.directive.ext.js',
                     'vendor/d3/d3.min.js',
                     'vendor/c3/c3.min.js',
@@ -134,6 +139,17 @@ module.exports = function(grunt) {
             'styleguide/dist/main.min.js': 'js/*.js'
         },
         copy: {
+            sass: {
+                files: [
+                    // includes files within path
+                    {
+                        expand: true,
+                        cwd: './css/',
+                        src: ['*.scss'],
+                        dest: 'styleguide/sass/'
+                    },
+                ]
+            },
             fonts: {
                 files: [
                     // includes files within path
@@ -160,7 +176,6 @@ module.exports = function(grunt) {
                     },
                 ],
             }
-
         }
     });
 
