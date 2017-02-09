@@ -18,7 +18,7 @@
 //<tr><td>invalid-empty-message</td><td>Message shown if no dates are entered. Standard use is 'StartDateAndEndDateMustBeSet'</td><td>false</td></tr>
 //<tr><td>custom-validators</td><td>Define additional validations. The value should be an array of validator-definition objects, which should have <code>key</code>, <code>message</code>, and <code>validate</code> properties defined. The <code>validate</code> attribute must be a function that accepts <code>startDate</code> and <code>endDate</code> as input and returns a boolean to indicate validation result.</td><td>false</td></tr>
 //</table>
-// 
+//
 //</br>
 //
 //<div class="jsprewrap">
@@ -101,12 +101,11 @@
 	border-radius: 1px;
 }
 
-.glyphicon-chevron-right:before {
-	content: "\f1e5"!important;
-}
-
 .glyphicon-chevron-left:before {
-	content: "\f1e4"!important;
+    content: "«"!important;
+}
+.glyphicon-chevron-right:before {
+    content: "»"!important;
 }
 
 .wfm-datepicker{
