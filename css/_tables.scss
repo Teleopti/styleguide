@@ -154,6 +154,10 @@ table{
 	 }
 }
 
+.ui-grid-header-canvas{
+	background:$blue-100;
+}
+
 .ui-grid{
 	border: none;
 }
@@ -181,9 +185,13 @@ table{
 	vertical-align: sub!important;
 }
 
-.ui-grid-icon-angle-down:before,
-.ui-grid-icon-menu::before {
+.ui-grid-icon-angle-down:before{
 	content: "≡";
+}
+
+.ui-grid-icon-menu::before{
+	content: "᎒";
+	vertical-align: sub!important;
 }
 
 .ui-grid-menu-button .ui-grid-menu .ui-grid-menu-mid{
@@ -278,6 +286,7 @@ table{
 
 .ui-grid-selection-row-header-buttons{
 	color: $text-color-standard;
+	opacity: 1!important;
 }
 
 .ui-grid-menu-button{
