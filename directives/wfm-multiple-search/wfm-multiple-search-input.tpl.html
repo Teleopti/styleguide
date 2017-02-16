@@ -1,11 +1,15 @@
 <label for="advanced-search" class="input-prepend wfm-multiple-search-wrapper">
-	<i class="mdi mdi-magnify">
-		<md-tooltip>{{ vm.title }}</md-tooltip>
-	</i>
+	
 	<input id="advanced-search" class="advanced-input" type="text" placeholder="{{vm.title}}" ng-class="{'expand-advanced-input': vm.showAdvancedSearchOption}"
-	ng-model="vm.searchOptions.keyword" ng-keydown="$event.which === 13 && vm.searchCallback(vm.searchOptions.keyword) || vm.turnOffAdvancedSearch()" ng-change="vm.validateSearchKeywordChanged()"
+	ng-model="vm.searchOptions.keyword" ng-keydown="vm.focusSearch($event);$event.which === 13 && vm.searchCallback(vm.searchOptions.keyword) || vm.turnOffAdvancedSearch()" ng-change="vm.validateSearchKeywordChanged()"
 	ng-click="vm.toggleAdvancedSearchOption($event)" keyword-format/>
-	<div class="advanced-input-dropdown" ng-cloak ng-if="vm.showAdvancedSearchOption" outside-click="vm.turnOffAdvancedSearch()">
+
+	<button ng-click="vm.searchCallback(vm.searchOptions.keyword);vm.turnOffAdvancedSearch()" style="background:none;border:none;">
+		<i class="mdi mdi-magnify" ng-class="{'focusing-search': vm.focusToSearch}"></i>
+		<md-tooltip>{{'Search' | translate}}</md-tooltip>
+	</button>
+
+	<div class="advanced-input-dropdown" ng-cloak ng-if="vm.showAdvancedSearchOption" outside-click="vm.turnOffAdvancedSearch();vm.focusToSearch=false;">
 		<div class="con-row">
 			<div class="con-flex">
 				<div class="panel material-depth-1">
@@ -22,7 +26,7 @@
 							</div>
 						</div>
 						<div class="con-footer">
-							<button id="go-advanced-search" class="wfm-btn wfm-btn-invis-primary" ng-click="vm.advancedSearch()">Search</button>
+							<button id="go-advanced-search" class="wfm-btn wfm-btn-invis-primary" ng-click="vm.advancedSearch()">{{'Search' | translate}}</button>
 						</div>
 					</form>
 				</div>

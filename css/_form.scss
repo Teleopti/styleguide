@@ -667,7 +667,7 @@ wfm-multiple-search-input{
     position: absolute;
     z-index: 115;
     top: auto;
-    left: 18px;
+    left: 0px;
   }
 
   .advanced-input-container {
@@ -691,6 +691,10 @@ wfm-multiple-search-input{
   .expand-advanced-input{
     max-width: 75%;
     width:313px!important;
+  }
+
+  .focusing-search {
+    color: $blue-500;
   }
 }
 
