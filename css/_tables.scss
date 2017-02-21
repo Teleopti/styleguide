@@ -154,6 +154,10 @@ table{
 	 }
 }
 
+.ui-grid-header-canvas{
+	background:$blue-100;
+}
+
 .ui-grid{
 	border: none;
 }
@@ -170,61 +174,77 @@ table{
 }
 
 /*icons*/
-.ui-grid-icon-ok:before {
-	content: "\f1d6" !important;
-}
-.ui-grid-all-selected.ui-grid-icon-ok:before {
-	content: "\f1da" !important;
-}
-.ui-grid-row-selected .ui-grid-icon-ok:before {
-	content: "\f1da" !important;
-}
-.ui-grid-menu-item .ui-grid-icon-ok:before {
-	content: "\f272" !important;
-}
-.ui-grid-menu-item .ui-grid-icon-cancel:before {
-	content: "\f273" !important;
-}
-.ui-grid-icon-down-dir:before {
-	content: "\f135" !important;
-}
-.ui-grid-icon-up-dir:before {
-	content: "\f145" !important;
-}
-.ui-grid-header-canvas {
-	background-color: $blue-100;
-}
-.ui-grid-icon-angle-down:before {
-	content: "\f35d";
-}
-.ui-grid-icon-down-dir:before {
-	content: "\f35e";
-}
-.ui-grid-icon-up-dir:before {
-	content: "\f361";
-}
-.ui-grid-icon-sort-alt-up:before {
-	content: "\f447";
-}
-.ui-grid-icon-sort-alt-down:before {
-	content: "\f448"
-}
-.ui-grid-icon-cancel:before {
-	content: "\f1f4"
-}
-.ui-grid-icon-menu::before {
-	content: "\f253";
+
+
+.ui-grid-header-cell:last-child .ui-grid-column-resizer.right{
+	border:none!important;
 }
 
-/*Using mdi icons for checkbox */
-[class^="ui-grid-icon"]:before, [class*=" ui-grid-icon"]:before{
-	display: inline-block;
-	font: normal normal normal 24px/1 MaterialDesignIcons;
-	font-size: inherit;
-	text-rendering: auto;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	transform: translate(0, 0);
+.ui-grid-menu-items li i,
+.ui-grid-icon-angle-down:before{
+	vertical-align: sub!important;
+}
+
+.ui-grid-icon-angle-down:before{
+	content: "≡";
+}
+
+.ui-grid-icon-menu::before{
+	content: "᎒";
+	vertical-align: sub!important;
+}
+
+.ui-grid-menu-button .ui-grid-menu .ui-grid-menu-mid{
+	overflow:auto;
+}
+
+.ui-grid-menu .ui-grid-menu-inner ul li button.ui-grid-menu-item-active{
+	background:$green-100!important;
+}
+
+.ui-grid-icon-up-dir:before,
+.ui-grid-icon-sort-alt-up:before {
+    content: "↑"!important;
+}
+.ui-grid-icon-down-dir:before,
+.ui-grid-icon-sort-alt-down:before
+ {
+    content: "↓"!important;
+}
+
+// .ui-grid-icon-menu::before {
+//     background-color: $white;
+//     cursor: pointer;
+// 		position: absolute;
+// 		border: 5px solid white;
+// 		margin: 5px;
+// 		width: 24px;
+// 		height: 24px;
+// 		border-radius: 50%;
+// 		right:$full-padding;
+// 		top:0;
+// }
+
+.ui-grid-icon-ok:before,
+.ui-grid-menu-item > .ui-grid-icon-cancel:before {
+    content: ''!important;
+    background-color: $gray026;
+    height: 18px;
+    width: 18px;
+    border-radius: 2px;
+    content: " ";
+    transition: background-color .20s ease-in-out;
+    cursor: pointer;
+		overflow: hidden;
+}
+
+.ui-grid-all-selected.ui-grid-icon-ok:before,
+.ui-grid-row-selected .ui-grid-icon-ok:before,
+.ui-grid-menu-item > .ui-grid-icon-ok:before {
+	background-color: $blue-300;
+	content: "✓"!important;
+	text-align: center;
+	color: #fff;
 }
 
 .ui-grid-viewport.ng-isolate-scope {
@@ -266,6 +286,7 @@ table{
 
 .ui-grid-selection-row-header-buttons{
 	color: $text-color-standard;
+	opacity: 1!important;
 }
 
 .ui-grid-menu-button{
