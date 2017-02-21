@@ -665,6 +665,22 @@ md-slider{
 
 
 wfm-multiple-search-input{
+  .wfm-multiple-search-wrapper{
+    position: relative;
+    height: 20px;
+  }
+
+  .advanced-input{
+    transition:2s width ease-in-out;
+    width:138px;
+    text-overflow: ellipsis!important;
+  }
+
+  .search-icon{
+    display: inline-block;
+    vertical-align: bottom;
+  }
+
   .advanced-input-dropdown {
     position: absolute;
     z-index: 115;
@@ -679,16 +695,6 @@ wfm-multiple-search-input{
     z-index: 15;
     top: -11px;
     left: 18px;
-  }
-
-  .wfm-multiple-search-wrapper{
-    position: relative;
-  }
-
-  .advanced-input{
-    transition:2s width ease-in-out;
-    width:138px;
-    text-overflow: ellipsis!important;
   }
 
   .expand-advanced-input{
