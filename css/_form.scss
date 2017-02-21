@@ -668,8 +668,9 @@ wfm-multiple-search-input{
   .advanced-input-dropdown {
     position: absolute;
     z-index: 115;
-    top: auto;
-    left: 0px;
+    top: 20px;
+    left: 0;
+    min-width: 313px;
   }
 
   .advanced-input-container {
@@ -713,6 +714,7 @@ wfm-multiple-search-input{
 //$scope.searchOptions = {
 //    keyword: '',
 //    searchKeywordChanged: false,
+//    focusingSearch: false,
 //    searchFields: [
 //      'option1','option2','option3','option4','option5','option6'
 //    ]

@@ -10,6 +10,7 @@ var keyValueSeprator = ':';
     vm.advancedSearchForm = {};
 
     vm.validateSearchKeywordChanged = function () {
+        vm.focusSearch();
         vm.searchOptions.searchKeywordChanged = true;
         parseSearchExpressionInputted();
     };
@@ -41,11 +42,13 @@ var keyValueSeprator = ':';
         }
     };
 
-    vm.focusSearch = function($event) {
-        vm.focusToSearch = true;
-        if ($event && $event.which === 13) {
-            vm.focusToSearch = false;
-        }
+    vm.focusSearch = function() {
+        vm.searchOptions.focusingSearch = true;
+    };
+
+    vm.resetFocusSearch = function () {
+        vm.searchOptions.focusingSearch = false;
+        return true;
     };
 
     function setSearchFormProperty(searchType, searchValue) {

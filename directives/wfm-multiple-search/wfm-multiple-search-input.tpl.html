@@ -1,15 +1,14 @@
-<label for="advanced-search" class="input-prepend wfm-multiple-search-wrapper">
-	
+<div class="wfm-multiple-search-wrapper">
 	<input id="advanced-search" class="advanced-input" type="text" placeholder="{{vm.title}}" ng-class="{'expand-advanced-input': vm.showAdvancedSearchOption}"
-	ng-model="vm.searchOptions.keyword" ng-keydown="vm.focusSearch($event);$event.which === 13 && vm.searchCallback(vm.searchOptions.keyword) || vm.turnOffAdvancedSearch()" ng-change="vm.validateSearchKeywordChanged()"
+	ng-model="vm.searchOptions.keyword" ng-keydown="$event.which === 13 && vm.resetFocusSearch() && vm.searchCallback(vm.searchOptions.keyword) || vm.turnOffAdvancedSearch()" ng-change="vm.validateSearchKeywordChanged()"
 	ng-click="vm.toggleAdvancedSearchOption($event)" keyword-format/>
-
-	<button ng-click="vm.searchCallback(vm.searchOptions.keyword);vm.turnOffAdvancedSearch()" style="background:none;border:none;">
-		<i class="mdi mdi-magnify" ng-class="{'focusing-search': vm.focusToSearch}"></i>
+	
+	<span class="cursor-pointer" ng-click="vm.searchCallback(vm.searchOptions.keyword);vm.turnOffAdvancedSearch();vm.resetFocusSearch()">
+		<i class="mdi mdi-magnify" ng-class="{'focusing-search': vm.searchOptions.focusingSearch}"></i>
 		<md-tooltip>{{'Search' | translate}}</md-tooltip>
-	</button>
+	</span>
 
-	<div class="advanced-input-dropdown" ng-cloak ng-if="vm.showAdvancedSearchOption" outside-click="vm.turnOffAdvancedSearch();vm.focusToSearch=false;">
+	<div class="advanced-input-dropdown" ng-cloak ng-if="vm.showAdvancedSearchOption" outside-click="vm.turnOffAdvancedSearch();">
 		<div class="con-row">
 			<div class="con-flex">
 				<div class="panel material-depth-1">
@@ -32,4 +31,5 @@
 				</div>
 			</div>
 		</div>
-	</label>
+	</div>
+</div>
