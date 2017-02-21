@@ -1,16 +1,19 @@
-<label for="advanced-search" class="input-prepend wfm-multiple-search-wrapper">
-	<i class="mdi mdi-magnify">
-		<md-tooltip>{{ vm.title }}</md-tooltip>
-	</i>
+<div class="wfm-multiple-search-wrapper">
 	<input id="advanced-search" class="advanced-input" type="text" placeholder="{{vm.title}}" ng-class="{'expand-advanced-input': vm.showAdvancedSearchOption}"
-	ng-model="vm.searchOptions.keyword" ng-keydown="$event.which === 13 && vm.searchCallback(vm.searchOptions.keyword) || vm.turnOffAdvancedSearch()" ng-change="vm.validateSearchKeywordChanged()"
+	ng-model="vm.searchOptions.keyword" ng-keydown="$event.which === 13 && vm.resetFocusSearch() && vm.searchCallback(vm.searchOptions.keyword) || vm.turnOffAdvancedSearch()" ng-change="vm.validateSearchKeywordChanged()"
 	ng-click="vm.toggleAdvancedSearchOption($event)" keyword-format/>
-	<div class="advanced-input-dropdown" ng-cloak ng-if="vm.showAdvancedSearchOption" outside-click="vm.turnOffAdvancedSearch()">
+	
+	<span class="cursor-pointer search-icon" ng-click="vm.searchCallback(vm.searchOptions.keyword);vm.turnOffAdvancedSearch();vm.resetFocusSearch()">
+		<i class="mdi mdi-magnify" ng-class="{'focusing-search': vm.searchOptions.focusingSearch}"></i>
+		<md-tooltip>{{'Search' | translate}}</md-tooltip>
+	</span>
+
+	<div class="advanced-input-dropdown" ng-cloak ng-if="vm.showAdvancedSearchOption" outside-click="vm.turnOffAdvancedSearch();">
 		<div class="con-row">
 			<div class="con-flex">
 				<div class="panel material-depth-1">
 					<div class="sub-header">
-						<h2>{{ 'Searchcl' | translate }}</h2>
+						<h2>{{ 'Search' | translate }}</h2>
 					</div>
 					<form name="form" class="wfm-form" novalidate>
 						<div class="con-row" ng-repeat="searchField in vm.searchOptions.searchFields" ng-if="$even">
@@ -22,10 +25,11 @@
 							</div>
 						</div>
 						<div class="con-footer">
-							<button id="go-advanced-search" class="wfm-btn wfm-btn-invis-primary" ng-click="vm.advancedSearch()">Search</button>
+							<button id="go-advanced-search" class="wfm-btn wfm-btn-invis-primary" ng-click="vm.advancedSearch()">{{'Search' | translate}}</button>
 						</div>
 					</form>
 				</div>
 			</div>
 		</div>
-	</label>
+	</div>
+</div>
