@@ -1,90 +1,91 @@
-<div ng-show="!displayPopup()">
-	<div class="con-row">
-		<div class="con-flex line-center" ng-show="isGregorian">
-			<div class="wfm-datepicker-wrap date-range-start-date">
-				<div class="sub-header">
-					<span>From</span>: <strong>{{ startDate | date: dateFormat }}</strong>
-				</div>
-				<div ng-show="isGregorian" uib-datepicker ng-model="startDate" datepicker-options="datepickerOptions" class="wfm-datepicker inline-datepicker">
-				</div>
-			</div>
-		</div>
-		<div class="con-flex line-center" ng-show="isJalaali">
-			<div class="wfm-datepicker-wrap date-range-start-date">
-				<div class="sub-header">
-					<span>From</span>: <strong>{{startDate | persianDate:'shortDate' }}</strong>
-				</div>
-				<persian-datepicker ng-model="startDate" datepicker-options="datepickerOptions" class="wfm-datepicker inline-datepicker">
-				</persian-datepicker>
-			</div>
-		</div>
-		<div class="con-flex line-center" ng-show="isGregorian">
-			<div class="wfm-datepicker-wrap date-range-end-date">
-				<div class="sub-header">
-					<span>To</span>: <strong>{{ endDate | date: dateFormat }}</strong>
-				</div>
-				<div uib-datepicker ng-model="endDate" datepicker-options="datepickerOptions" class="wfm-datepicker inline-datepicker">
+<div class="wfm-date-range-picker">
+	<div ng-show="!displayPopup()">
+		<div class="con-row">
+			<div class="con-flex line-center" ng-show="isGregorian">
+				<div class="wfm-datepicker-wrap date-range-start-date">
+					<div class="sub-header">
+						<span>From</span>: <strong>{{ startDate | date: dateFormat }}</strong>
+					</div>
+					<div ng-show="isGregorian" uib-datepicker ng-model="startDate" datepicker-options="datepickerOptions" class="wfm-datepicker inline-datepicker">
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="con-flex line-center" ng-show="isJalaali">
-			<div class="wfm-datepicker-wrap date-range-end-date">
-				<div class="sub-header">
-					<span>To</span>: <strong>{{ endDate | persianDate:'shortDate' }}</strong>
+			<div class="con-flex line-center" ng-show="isJalaali">
+				<div class="wfm-datepicker-wrap date-range-start-date">
+					<div class="sub-header">
+						<span>From</span>: <strong>{{startDate | persianDate:'shortDate' }}</strong>
+					</div>
+					<persian-datepicker ng-model="startDate" datepicker-options="datepickerOptions" class="wfm-datepicker inline-datepicker">
+					</persian-datepicker>
 				</div>
-				<persian-datepicker ng-model="endDate" datepicker-options="datepickerOptions" class="wfm-datepicker inline-datepicker">
-				</persian-datepicker>
 			</div>
-		</div>
-	</div>
-	<div ng-repeat="validator in validators" ng-if="displayError(validator.key)" class="error-msg-container error-msg-popup-container alert-error notice-spacer">
-		<i class='mdi mdi-alert-octagon'></i><span translate>{{validator.message}}</span>
-	</div>
-</div>
-
-<div ng-show="displayPopup()">
-<div class="wfm-datepicker-controllers-container">
-	<div tabindex=0 class="context-menu card-context popup-control" ng-click="displayCalendars = !displayCalendars">
-		<i class="mdi mdi-calendar"></i>
-	</div>
-	<div tabindex=0 class="start-date-indicator" ng-click="displayCalendars = !displayCalendars">
-			<span class="pointer">From: </span><span ng-if="isGregorian" class="pointer">{{ startDate | date: dateFormat }}</span><span ng-if="isJalaali" class="pointer">{{ startDate | persianDate:'shortDate' }}</span>
-	</div>
-	<div tabindex=0 ng-click="displayCalendars = !displayCalendars">
-			<span class="pointer">To: </span><span ng-if="isGregorian" class="pointer">{{ endDate | date: dateFormat }}</span><span ng-if="isJalaali" class="pointer">{{ endDate | persianDate:'shortDate' }}</span>
-	</div>
-</div>
-<div class="wfm-datepicker-container" ng-show="displayCalendars">
-	<div class="con-row wfm-datepicker-popup-row">
-		<div class="con-flex line-center" ng-show="isGregorian">
-			<div class="wfm-datepicker-wrap date-range-start-date">
-				<div ng-show="isGregorian" uib-datepicker ng-model="startDate" datepicker-options="datepickerOptions" class="wfm-datepicker popup-datepicker">
+			<div class="con-flex line-center" ng-show="isGregorian">
+				<div class="wfm-datepicker-wrap date-range-end-date">
+					<div class="sub-header">
+						<span>To</span>: <strong>{{ endDate | date: dateFormat }}</strong>
+					</div>
+					<div uib-datepicker ng-model="endDate" datepicker-options="datepickerOptions" class="wfm-datepicker inline-datepicker">
+					</div>
+				</div>
+			</div>
+			<div class="con-flex line-center" ng-show="isJalaali">
+				<div class="wfm-datepicker-wrap date-range-end-date">
+					<div class="sub-header">
+						<span>To</span>: <strong>{{ endDate | persianDate:'shortDate' }}</strong>
+					</div>
+					<persian-datepicker ng-model="endDate" datepicker-options="datepickerOptions" class="wfm-datepicker inline-datepicker">
+					</persian-datepicker>
 				</div>
 			</div>
 		</div>
-		<div class="con-flex line-center" ng-show="isJalaali">
-			<div class="wfm-datepicker-wrap date-range-start-date">
-				<persian-datepicker ng-model="startDate" datepicker-options="datepickerOptions" class="wfm-datepicker popup-datepicker">
-				</persian-datepicker>
-			</div>
-		</div>
-		<div class="con-flex line-center" ng-show="isGregorian">
-			<div class="wfm-datepicker-wrap date-range-end-date">
-				<div uib-datepicker ng-model="endDate" datepicker-options="datepickerOptions" class="wfm-datepicker popup-datepicker">
-				</div>
-			</div>
-		</div>
-		<div class="con-flex line-center" ng-show="isJalaali">
-			<div class="wfm-datepicker-wrap date-range-end-date">
-				<persian-datepicker ng-model="endDate" datepicker-options="datepickerOptions" class="wfm-datepicker popup-datepicker">
-				</persian-datepicker>
-			</div>
+		<div ng-repeat="validator in validators" ng-if="displayError(validator.key)" class="error-msg-container error-msg-popup-container alert-error notice-spacer">
+			<i class='mdi mdi-alert-octagon'></i><span translate>{{validator.message}}</span>
 		</div>
 	</div>
 
-	<div ng-repeat="validator in validators" ng-if="displayError(validator.key)" class="error-msg-container error-msg-popup-container error-msg-popup alert-error notice-spacer">
-		<i class='mdi mdi-alert-octagon'></i><span translate>{{validator.message}}</span>
-	</div>
-</div>
+	<div ng-show="displayPopup()" outside-click="displayCalendars = false">
+		<div class="wfm-datepicker-controllers-container">
+			<div tabindex=0 class="context-menu card-context popup-control" ng-click="displayCalendars = !displayCalendars">
+				<i class="mdi mdi-calendar"></i>
+			</div>
+			<div tabindex=0 class="start-date-indicator" ng-click="displayCalendars = !displayCalendars">
+					<span class="pointer">From: </span><span ng-if="isGregorian" class="pointer">{{ startDate | date: dateFormat }}</span><span ng-if="isJalaali" class="pointer">{{ startDate | persianDate:'shortDate' }}</span>
+			</div>
+			<div tabindex=0 ng-click="displayCalendars = !displayCalendars">
+					<span class="pointer">To: </span><span ng-if="isGregorian" class="pointer">{{ endDate | date: dateFormat }}</span><span ng-if="isJalaali" class="pointer">{{ endDate | persianDate:'shortDate' }}</span>
+			</div>
+		</div>
+		<div class="wfm-datepicker-container" ng-show="displayCalendars">
+			<div class="con-row wfm-datepicker-popup-row">
+				<div class="con-flex line-center" ng-show="isGregorian">
+					<div class="wfm-datepicker-wrap date-range-start-date">
+						<div ng-show="isGregorian" uib-datepicker ng-model="startDate" datepicker-options="datepickerOptions" class="wfm-datepicker popup-datepicker">
+						</div>
+					</div>
+				</div>
+				<div class="con-flex line-center" ng-show="isJalaali">
+					<div class="wfm-datepicker-wrap date-range-start-date">
+						<persian-datepicker ng-model="startDate" datepicker-options="datepickerOptions" class="wfm-datepicker popup-datepicker">
+						</persian-datepicker>
+					</div>
+				</div>
+				<div class="con-flex line-center" ng-show="isGregorian">
+					<div class="wfm-datepicker-wrap date-range-end-date">
+						<div uib-datepicker ng-model="endDate" datepicker-options="datepickerOptions" class="wfm-datepicker popup-datepicker">
+						</div>
+					</div>
+				</div>
+				<div class="con-flex line-center" ng-show="isJalaali">
+					<div class="wfm-datepicker-wrap date-range-end-date">
+						<persian-datepicker ng-model="endDate" datepicker-options="datepickerOptions" class="wfm-datepicker popup-datepicker">
+						</persian-datepicker>
+					</div>
+				</div>
+			</div>
 
+			<div ng-repeat="validator in validators" ng-if="displayError(validator.key)" class="error-msg-container error-msg-popup-container error-msg-popup alert-error notice-spacer">
+				<i class='mdi mdi-alert-octagon'></i><span translate>{{validator.message}}</span>
+			</div>
+		</div>
+	</div>
 </div>

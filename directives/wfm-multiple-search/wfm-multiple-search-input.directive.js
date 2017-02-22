@@ -120,28 +120,6 @@ var keyValueSeprator = ':';
     };
 };
 
-	var outsideClickDirective = function ($window, $parse) {
-    return {
-        restrict: 'A',
-        link: linkFunction
-    };
-
-    function linkFunction(scope, element, attrs) {
-        var outsideClickHandler = $parse(attrs.outsideClick);
-        var clickEventHandler = function (event) {
-            if (element[0].contains(event.target)) {return;}
-            outsideClickHandler(scope, {$event: event});
-            scope.$apply();
-        };
-        angular.element($window).on('click', clickEventHandler);
-
-        var cleanUp = function () {
-            window.angular.element($window).off('click', clickEventHandler);
-        };
-        scope.$on('$destroy', cleanUp);
-    }
-	};
-
 var keywordFormatDirective = function ($filter) {
     return {
         restrict: 'A',
@@ -172,9 +150,8 @@ var keywordFormatDirective = function ($filter) {
     }
 };
 
-	angular.module('wfm.multiplesearchinput', [])
+	angular.module('wfm.multiplesearchinput', ['wfm.helpingDirectives'])
 		.directive('wfmMultipleSearchInput', multipleSearchInputDirective)
-		.directive('outsideClick', ['$document', '$parse', outsideClickDirective])
 		.directive('keywordFormat', ['$filter', keywordFormatDirective])
 		.controller('multipleSearchInputCtrl', multipleSearchInputCtrl);
 
