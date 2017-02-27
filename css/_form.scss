@@ -253,12 +253,13 @@ input:-ms-input-placeholder {
 //Styleguide 1.4
 //
 
+//z index needs to be higher than 81
 .md-select-menu-container {
   background: $white !important;
-  z-index: 9999;
+  z-index: 140;
 
   .md-active {
-    z-index: 1010;
+    z-index: 150;
   }
 }
 

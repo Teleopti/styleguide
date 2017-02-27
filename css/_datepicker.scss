@@ -65,7 +65,7 @@
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	z-index: 9999;
+	z-index: 40;
 }
 
 .start-date-indicator {
@@ -195,7 +195,7 @@
 }
 
 .error-msg-container {
-	z-index: 999;
+	z-index: 30;
 	margin-top: 5px;
 	@extend .material-depth-2;
 	background: $red-600;
