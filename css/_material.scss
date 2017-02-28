@@ -71,6 +71,7 @@ dd {
 .layout-container {
   width:100%;
   display: -webkit-flex;
+	display: -ms-flexbox;
   display: flex;
   -webkit-flex-direction: row;
   flex-direction: row;
@@ -79,6 +80,7 @@ dd {
 .layout-container .content {
 	-webkit-flex: auto;
 	flex: auto;
+	-ms-flex: auto;
 	padding: 10px;
 	flex-basis: 70%;
 	margin: 62px 10px 0px 10px;
@@ -133,17 +135,20 @@ dd {
 @media screen and (min-width: 768px) {
   .con-row {
     display: flex;
+		display: -ms-flexbox;
     flex-direction: row;
     flex-wrap: nowrap;
   }
   .con-flex {
     flex: 1;
+		-ms-flex: 1;
   }
 }
 
 @media screen and (max-width: 768px) {
   .con-row {
     display: flex;
+		display: -ms-flexbox;
     flex-direction: column;
     flex-wrap: nowrap;
   }
@@ -152,14 +157,15 @@ dd {
   }
 }
 
-
 .flex-element-fill {
 	flex: 1 1 auto;
+	-ms-flex: 1 1 auto;
 	align-self:stretch;
 }
 
 .flex-element {
 	flex: 0 0 auto;
+	-ms-flex: 0 0 auto;
 }
 
 .flex-column {
