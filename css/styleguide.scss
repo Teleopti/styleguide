@@ -107,6 +107,36 @@
 //Styleguide 1.1
 //
 
+//Z Index
+//
+// Aside from the material layers there is also the z-index of css. In general, avoid using higher than 100 z-index for content to keep elements from overlapping.
+// When using z-index between 10 and 100, aim for the lower end of those and move in increments of 10 so that the single numbers can be used for easy modifications if needed.
+// <table class="wfm-table">
+// 	<thead>
+// 		<tr>
+// 			<th>z-index</th>
+// 			<th>Usage</th>
+// 		</tr>
+// 	</thead>
+// 	<tbody>
+// 		<tr>
+// 			<td>> 1000</td>
+// 			<td>Used for global elements like the navbar and tooltips</td>
+// 		</tr>
+// 		<tr>
+// 			<td>10 - 100</td>
+// 			<td>Used for overlays such as modals and context menus</td>
+// 		</tr>
+//     <tr>
+//       <td>< 10</td>
+//       <td>Used to make minor adjustments to content within panels, modules or templates</td>
+//     </tr>
+// 	</tbody>
+// </table>
+//
+//Styleguide 1.1.1
+//
+
 //Components
 //
 //This chapter details the use of more javascript heavy components and directives. Most of these need some configuration from the js side to make them work.
