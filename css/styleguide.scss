@@ -422,6 +422,11 @@
 //
 //If your view only contains a wfm-form, consider using our autofocus directive on the first text/number input to get the user started and possibly a floating action button as a submit.
 //
+//
+//Styleguide 4.4.0
+
+//Basic Form panel
+//
 //<div class="jsprewrap">
 //	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
 //	<div ng-show="showjs">
@@ -439,7 +444,54 @@
 //Markup: form_panel.hbs
 //
 //
-//Styleguide 4.4
+//Styleguide 4.4.1
+
+//Devided Form panel
+//
+//Dividing the inputs into different sub-categories using headers can make the structure more clear.
+//
+//<div class="jsprewrap">
+//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
+//	<div ng-show="showjs">
+//		<code><pre>
+//$scope.reset = function(form) {
+//  if (form) {
+//    form.$setPristine();
+//    form.$setUntouched();
+//  }
+//};
+//		</pre></code>
+//	</div>
+//</div>
+//
+// Markup: form2_panel.hbs
+//
+//
+//Styleguide 4.4.2
+
+//Split Form panel
+//
+//The layout inside the form can be changed to give more space to certain parts, just remember to structure the inputs in a logical way.
+//
+//<div class="jsprewrap">
+//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
+//	<div ng-show="showjs">
+//		<code><pre>
+//$scope.reset = function(form) {
+//  if (form) {
+//    form.$setPristine();
+//    form.$setUntouched();
+//  }
+//};
+//		</pre></code>
+//	</div>
+//</div>
+//
+// Markup: form3_panel.hbs
+//
+//
+//Styleguide 4.4.3
+
 
 //Resources
 //
