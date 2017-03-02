@@ -40,13 +40,6 @@ angular.module('ui.bootstrap.persian.datepicker', ['ui.bootstrap.dateparser', 'u
 		};
 	})
 
-
-
-
-
-
-
-
 .constant('datepickerConfig', {
   formatDay: 'dd',
   formatMonth: 'MMMM',
