@@ -21,6 +21,13 @@ input[type='text'], [type='number'], input[type='password'], select{
   }
 }
 
+textarea{
+	background-color: $white;
+	color:$text-color-standard;
+	resize:vertical;
+	width:100%;
+}
+
 input::-ms-clear {
   display: none;
 }
@@ -364,6 +371,21 @@ md-autocomplete[disabled]{
 
 .wfm-form > md-autocomplete-wrap > input {
   margin-right: 0!important;
+}
+
+.md-autocomplete-suggestions-container li .highlight{
+	color:$gray087 !important;
+	font-weight: bold;
+}
+
+md-select-menu md-content md-option:not([disabled]):hover,
+md-autocomplete[disabled]:not([md-floating-label]),
+.md-autocomplete-suggestions-container li.selected {
+	background: $gray012!important;
+}
+
+.md-virtual-repeat-container.md-autocomplete-suggestions-container { //for IE: clear buttom cause item list dont open
+    height: 225.5px !important;
 }
 
 // Radio buttons
