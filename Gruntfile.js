@@ -68,7 +68,6 @@ module.exports = function (grunt) {
             src: ['Gruntfile.js', 'directives/**/*.js', 'app.js'],
             options: {
                 config: '.jscsrc',
-                fix: true
                 //fix: true, // Autofix code style violations when possible.
             },
         },
