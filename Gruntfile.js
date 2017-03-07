@@ -67,7 +67,8 @@ module.exports = function (grunt) {
         jscs: {
             src: ['Gruntfile.js', 'directives/**/*.js', 'app.js'],
             options: {
-                config: '.jscsrc'
+                config: '.jscsrc',
+                fix: true
                 //fix: true, // Autofix code style violations when possible.
             },
         },
@@ -179,10 +180,10 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-shell');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-karma');
@@ -195,5 +196,5 @@ module.exports = function (grunt) {
     grunt.registerTask('default', ['dist', 'watch:styleguide']);
     grunt.registerTask('test', ['karma:styleguide']);
     grunt.registerTask('devTest', ['watch:test']);
-    grunt.registerTask('dist', ['jscs', 'jshint', 'ngtemplates', 'sass:styleguide', 'sass:dist', 'shell', 'cssmin', 'concat', 'uglify', 'copy']); // this task is kind of package
+    grunt.registerTask('dist', ['jscs', 'ngtemplates', 'sass:styleguide', 'sass:dist', 'shell', 'cssmin', 'concat', 'uglify', 'copy']); // this task is kind of package
 };
