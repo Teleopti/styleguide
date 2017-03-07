@@ -4,8 +4,8 @@ describe('date-range-picker directive', function() {
 
     beforeEach(
       function() {
-          module('wfm.daterangepicker');
-      }
+        module('wfm.daterangepicker');
+    }
     );
 
     beforeEach(module(function($provide) {

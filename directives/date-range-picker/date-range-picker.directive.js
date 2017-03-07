@@ -51,14 +51,14 @@
 
             scope.defaultValidators = [
               {
-                  key: 'order',
-                  message: attrs.invalidOrderMessage || 'StartDateMustBeEqualToOrEarlierThanEndDate',
-                  validate: _validateStartAndEndByOrder
-              },
+                key: 'order',
+                message: attrs.invalidOrderMessage || 'StartDateMustBeEqualToOrEarlierThanEndDate',
+                validate: _validateStartAndEndByOrder
+            },
               {
-                  key: 'parse',
-                  message: attrs.invalidEmptyMessage || 'StartDateAndEndDateMustBeSet'
-              }
+                key: 'parse',
+                message: attrs.invalidEmptyMessage || 'StartDateAndEndDateMustBeSet'
+            }
             ];
 
             scope.validators = scope.defaultValidators.concat(

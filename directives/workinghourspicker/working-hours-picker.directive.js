@@ -49,61 +49,61 @@
             }
 
             $q.all(translations).then(function (ts) {
-            for (i = 0; i < weekDays.length; i++) {
-                weekDays[i].Text = ts[i];
-            }
-            scope.weekDays = weekDays;
-        });
+                for (i = 0; i < weekDays.length; i++) {
+                    weekDays[i].Text = ts[i];
+                }
+                scope.weekDays = weekDays;
+            });
 
             function toggleAllChecks(index) {
-            var isToggleOff = scope.workingHours[index].WeekDaySelections.every(function(x) { return x.Checked; });
+                var isToggleOff = scope.workingHours[index].WeekDaySelections.every(function(x) { return x.Checked; });
 
-            if (isToggleOff) {
-                angular.forEach(scope.workingHours[index].WeekDaySelections, function(d) {
-                    d.Checked = false;
-                });
-            } else {
-                angular.forEach(scope.workingHours[index].WeekDaySelections, function (d) {
-                    d.Checked = true;
-                    enforceRadioBehavior(index, d.WeekDay);
-                });
+                if (isToggleOff) {
+                    angular.forEach(scope.workingHours[index].WeekDaySelections, function(d) {
+                        d.Checked = false;
+                    });
+                } else {
+                    angular.forEach(scope.workingHours[index].WeekDaySelections, function (d) {
+                        d.Checked = true;
+                        enforceRadioBehavior(index, d.WeekDay);
+                    });
+                }
             }
-        }
 
             function enforceRadioBehavior(refIndex, weekDay) {
-            clearConflictWorkingHourSelection(scope.workingHours, refIndex, weekDay);
-        }
+                clearConflictWorkingHourSelection(scope.workingHours, refIndex, weekDay);
+            }
 
             function addEmptyWorkingPeriod() {
-            var startTime = scope.newWorkingPeriod.startTime,
-            endTime = scope.newWorkingPeriod.endTime;
-            scope.workingHours.push(workingHoursPickerService.createEmptyWorkingPeriod(angular.copy(startTime), angular.copy(endTime)));
-        }
+                var startTime = scope.newWorkingPeriod.startTime,
+                endTime = scope.newWorkingPeriod.endTime;
+                scope.workingHours.push(workingHoursPickerService.createEmptyWorkingPeriod(angular.copy(startTime), angular.copy(endTime)));
+            }
 
             function removeWorkingPeriod(index) {
-            scope.workingHours.splice(index, 1);
-        }
+                scope.workingHours.splice(index, 1);
+            }
 
             function clearConflictWorkingHourSelection(workingHours, refIndex, weekDay) {
-            angular.forEach(workingHours, function (workingHour, i) {
-                if (i === refIndex) {return;}
-                angular.forEach(workingHour.WeekDaySelections, function (d) {
-                    if (weekDay === d.WeekDay) { d.Checked = false;}
+                angular.forEach(workingHours, function (workingHour, i) {
+                    if (i === refIndex) {return;}
+                    angular.forEach(workingHour.WeekDaySelections, function (d) {
+                        if (weekDay === d.WeekDay) { d.Checked = false;}
+                    });
                 });
-            });
-        }
+            }
 
             function getTimerangeDisplay(startTime, endTime) {
-            var startTimeMoment = moment(startTime),
-            endTimeMoment = moment(endTime);
-            if (startTimeMoment.isSame(endTimeMoment, 'day')) {
-                return $filter('date')(startTime, $locale.DATETIME_FORMATS.shortTime) + ' - ' +
-                $filter('date')(endTime, $locale.DATETIME_FORMATS.shortTime);
-            } else {
-                return $filter('date')(startTime, $locale.DATETIME_FORMATS.shortTime) + ' - ' +
-                $filter('date')(endTime, $locale.DATETIME_FORMATS.shortTime) + ' +1';
+                var startTimeMoment = moment(startTime),
+                endTimeMoment = moment(endTime);
+                if (startTimeMoment.isSame(endTimeMoment, 'day')) {
+                    return $filter('date')(startTime, $locale.DATETIME_FORMATS.shortTime) + ' - ' +
+                    $filter('date')(endTime, $locale.DATETIME_FORMATS.shortTime);
+                } else {
+                    return $filter('date')(startTime, $locale.DATETIME_FORMATS.shortTime) + ' - ' +
+                    $filter('date')(endTime, $locale.DATETIME_FORMATS.shortTime) + ' +1';
+                }
             }
-        }
         }
     }
 ]);
