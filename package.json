@@ -60,11 +60,11 @@
   "homepage": "http://teleopti.github.io/styleguide/styleguide",
   "resolutions": {
     "angular": "1.5.8",
-    "async": "2.1.5",
+    "async": "1.5.2",
     "colors": "1.1.2",
     "glob": "7.1.1",
     "iconv-lite": "0.4.15",
-    "js-yaml": "3.8.2",
+    "js-yaml": "3.5.5",
     "minimatch": "3.0.3",
     "nopt": "3.0.6",
     "rimraf": "2.6.1",
@@ -77,14 +77,14 @@
     "esprima": "3.1.3",
     "underscore": "1.8.3",
     "cli": "0.11.3",
-    "concat-stream": "1.5.2",
+    "concat-stream": "1.6.0",
     "uglify-js": "2.6.4",
     "commander": "2.9.0",
     "source-map": "0.5.6",
     "once": "1.4.0",
     "readable-stream": "2.1.5",
     "isarray": "1.0.0",
-    "yargs": "6.6.0",
+    "yargs": "4.8.1",
     "camelcase": "2.1.1",
     "cliui": "3.2.0",
     "window-size": "0.1.0",
@@ -109,7 +109,7 @@
     "entities": "1.1.1",
     "globule": "1.1.0",
     "debug": "2.6.1",
-    "qs": "6.3.1",
+    "qs": "6.4.0",
     "estraverse": "4.2.0",
     "globals": "9.16.0",
     "ms": "0.7.2",
@@ -151,6 +151,6 @@
     "raw-body": "2.2.0",
     "yargs-parser": "4.2.1",
     "component-emitter": "1.2.1",
-    "lodash": "4.6.1"
+    "lodash": "4.17.4"
   }
 }
