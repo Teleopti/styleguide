@@ -1,8 +1,5 @@
 
 language: node_js
-cache: 
-  directories:
-    - node_modules
 node_js:
   - "node" #latest stable
 addons:
