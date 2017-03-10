@@ -79,6 +79,7 @@
 
 .wfm-grid {
   display: flex;
+  display: -ms-flexbox;
   flex-wrap: wrap;
 
   .grid-card-disabled{
@@ -89,6 +90,7 @@
 
   .grid-card, .grid-card-mini  {
     display: flex;
+    display: -ms-flexbox;
     padding: $full-padding;
     width: 100%;
   }
@@ -120,6 +122,7 @@
   .list-content {
     background-color: $white;
     display: flex;
+    display: -ms-flexbox;
     flex-direction: column;
     padding:$full-padding;
     width: 100%;
@@ -130,6 +133,7 @@
 
   .list-content span {
     flex: 1 0 auto;
+    -ms-flex: 1 0 auto;
     padding-bottom: $full-padding;
   }
 }

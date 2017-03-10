@@ -79,6 +79,7 @@ select:after {
 
 .input-icon i{
 	display: inline-flex;
+  display: -ms-inline-flexbox;
 	width:100%;
 }
 .input-icon input{
