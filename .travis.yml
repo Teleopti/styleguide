@@ -19,7 +19,7 @@ before_install:
 cache:
   yarn: true
 install:
-  -yarn install --network-concurrency 1
+  - yarn install --network-concurrency 1
 before_script: grunt dist --verbose
 script:
   - ./node_modules/.bin/karma start --single-run --browsers PhantomJS
