@@ -53,6 +53,7 @@
 .wfm-datepicker-controllers-container
 {
 	display: flex;
+	display: -ms-flexbox; 
 	justify-content: flex-start;
 	align-items: center;
 }

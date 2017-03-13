@@ -19,6 +19,7 @@
 .working-hours-radio{
   margin-top: $full-padding;
   display: flex;
+  display: -ms-flexbox; 
 }
 
 .working-hours-row{

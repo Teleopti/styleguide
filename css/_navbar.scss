@@ -42,6 +42,7 @@
 .view-header{
 	width:100%;
 	display: inline-flex;
+	display: -ms-inline-flexbox;
 }
 .view-title{
 	width:90%;
@@ -96,6 +97,7 @@
 	overflow: hidden;
 	position: relative;
 	display: flex;
+	display: -ms-flexbox;
 
 	&:hover{
 		background: $gray012;
