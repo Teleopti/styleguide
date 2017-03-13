@@ -1,5 +1,7 @@
 
 language: node_js
+dist: trusty
+sudo: false
 node_js:
   - "node" #latest stable
 addons:
@@ -19,7 +21,7 @@ before_install:
 cache:
   yarn: true
 install:
-  - yarn install --network-concurrency 8
+  - yarn install --network-concurrency 8 #default is 15
 before_script: grunt dist --verbose
 script:
   - ./node_modules/.bin/karma start --single-run --browsers PhantomJS
