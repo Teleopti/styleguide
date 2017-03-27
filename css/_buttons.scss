@@ -16,6 +16,8 @@
 //<button class="wfm-btn wfm-btn-invis-default">Default</button>
 //<button class="wfm-btn wfm-btn-invis-primary">Primary</button>
 //<button class="wfm-btn wfm-btn-invis-disabled">Disabled</button>
+//<button class="wfm-btn wfm-btn-invis-default" disabled>Default disabled</button>
+//<button class="wfm-btn wfm-btn-invis-primary" disabled>Primary disabled</button>
 //
 //Styleguide 1.8.1
 //
@@ -28,6 +30,8 @@
 //<button class="wfm-btn wfm-btn-default">Default</button>
 //<button class="wfm-btn wfm-btn-primary">Primary</button>
 //<button class="wfm-btn wfm-btn-primary-disabled">Disabled</button>
+//<button class="wfm-btn wfm-btn-default" disabled>Default disabled</button>
+//<button class="wfm-btn wfm-btn-primary" disabled>Primary disabled</button>
 //
 //Styleguide 1.8.2
 //
@@ -128,6 +132,7 @@
 	}
 }
 
+.wfm-btn-invis-default[disabled], .wfm-btn-invis-primary[disabled],
 .wfm-btn-invis-disabled {
 	color: $text-color-muted!important;
 	background-color: transparent;
@@ -137,12 +142,15 @@
 	}
 }
 
+.wfm-btn-default[disabled], .wfm-btn-primary[disabled],
 .wfm-btn-primary-disabled{
 	color: $text-color-muted!important;
 	background-color: $gray012;
+	box-shadow: none;
 
 	&:hover{
 		cursor: not-allowed;
+		box-shadow: none;
 	}
 }
 
@@ -151,7 +159,7 @@
 	background-color: $white;
 	@extend .material-depth-1;
 
-		&:hover{
+	&:hover{
 		@extend .material-depth-2;
 	}
 }
@@ -161,7 +169,7 @@
 	background-color: $blue-500;
 	@extend .material-depth-1;
 
-		&:hover{
+	&:hover{
 		@extend .material-depth-2;
 	}
 }
