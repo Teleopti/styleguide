@@ -103,6 +103,19 @@
 //Styleguide 1.8.5
 //
 
+// Small buttons
+//
+// Small buttons have smaller paddings and no margins, so can fit components that contain buttons.
+// It is a supplementary class to flat and raised buttons.
+//
+//Markup:
+//<button class="wfm-btn wfm-btn-sm wfm-btn-invis-default">Small Flat</button>
+//<button class="wfm-btn wfm-btn-sm wfm-btn-primary">Small Raised</button>
+//<button class="wfm-btn wfm-btn-sm wfm-btn-primary" disabled>Small Disabled Raised</button>
+//
+//Styleguide 1.8.6
+//
+
 .wfm-btn {
 	border: none;
 	padding: 10px;
@@ -112,6 +125,11 @@
 	transition: all 0.2s ease-in-out;
 	text-decoration:none!important;
 	text-transform: uppercase;
+}
+
+.wfm-btn-sm {
+	padding: 5px;
+	margin: 0;
 }
 
 .wfm-btn-invis-default {
