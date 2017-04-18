@@ -24,7 +24,7 @@
 // </li>
 // <li><b>Help the user</b>
 // <div class="subtext">"Nature doesn't like empty space, and neither do users".
-// Never provide an empty form but suggest things or display placeholders.</div>
+// Never provide an empty form but suggest things or display placeholders. When the user arrive to your view, dont present an empty state even if there are no items to show - instead provide friendly instructions on how to get started.</div>
 // </li>
 // <li><b>Performance</b>
 // <div class="subtext">Avoid big bunches of data which doesn't fit on the screen. Consider aggregating data as an entry point.</div></li>
@@ -36,12 +36,15 @@
 // <ul class="wfm-simple-list">
 // <li>
 // <b>Number of actions</b>
-// <div class="subtext">Reduce the number of actions displayed at the same time. Maybe some of them could be hidden until needed? For example, split similar actions in a context menu into several menus so a user don't get overwhelmed</div></li>
+// <div class="subtext">Reduce the number of actions displayed at the same time. Maybe some of the less important ones can be hidden until needed? For example, split similar actions in a context menu into several menus so a user don't get overwhelmed</div></li>
 // <li><b>Loading</b>
 // <div class="subtext">If something takes time, dont leave the users in the dark. Display a loading bar, a spinner or a message.</li></li>
-// <li><b>Sorting and filters</b>
-// <div class="subtext">Provide ways to filter and sort large amounts of data, such as lists and tables.</div></li>
-// <li><i>SignalR depends on JQuery, but do not use JQuery for other purposes. </i>(We want to phase it out eventually)</li>
+// <li><b>Sorting, searching and filtering</b>
+// <div class="subtext">We want to provide good ways for the user to find what they are looking for. Sort large amounts of data alphabetically or chronologically by default but give the user the option to change sorting order.
+// If we show a large set of data, provide a filter to narrow it down. If there is a large amount of data available but not visible, provide helpful search functionality to bring up what the user wants.</div></li>
+// <li><b>JQuery and Bootstrap</b>
+// <div class="subtext"><i>SignalR depends on JQuery, we do not use JQuery for other purposes. We want to phase it out eventually. Datepickers and timepickers comes from bootstrap, these we would also like to phase out.</i></div>
+// </li>
 // </ul>
 // <h2 class="kss-title__permalink">Help</h2>
 // <ul class="wfm-simple-list">
