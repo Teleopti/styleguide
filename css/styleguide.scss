@@ -642,17 +642,12 @@ md-tooltip {
 
 .darktheme-background {
     background: #303030 !important;
-    p {
-      color: rgba(255,255,255,0.87)!important;
-    }
+    color: rgba(255,255,255,0.87)!important;
 }
 
 .classictheme-background {
     background: $gray012 !important;
-    p {
-      color: $text-color-standard !important;
-    }
-
+    color: $text-color-standard;
 }
 
 
@@ -661,6 +656,9 @@ md-tooltip {
 
 	.blue-500-swatch {
 			background:$blue-500!important;
+      p{
+        color:white;
+      }
 	}
 	.blue-300-swatch {
 			background:$blue-300!important;
@@ -684,9 +682,15 @@ md-tooltip {
 	}
 	.purple-300-swatch {
 		background:$purple-300!important;
+    p{
+      color:white;
+    }
 	}
 	.purple-500-swatch {
 		background:$purple-500!important;
+    p{
+      color:white;
+    }
 	}
 
 	.brown-100-swatch {
@@ -694,9 +698,15 @@ md-tooltip {
 	}
 	.brown-300-swatch {
 		background:$brown-300!important;
+    p{
+      color:white;
+    }
 	}
 	.brown-500-swatch {
 		background:$brown-500!important;
+    p{
+      color:white;
+    }
 	}
 
 	.teal-100-swatch {
@@ -707,13 +717,22 @@ md-tooltip {
 	}
 	.teal-500-swatch {
 		background:$teal-500!important;
+    p{
+      color:white;
+    }
 	}
 
 	.pink-500-swatch {
 		background:$pink-500!important;
+    p{
+      color:white;
+    }
 	}
 	.pink-300-swatch {
 		background:$pink-300!important;
+    p{
+      color:white;
+    }
 	}
 	.pink-100-swatch {
 		background:$pink-100!important;
@@ -730,6 +749,9 @@ md-tooltip {
 	}
 	.red-800-swatch {
 			background:$red-800!important;
+      p{
+        color:white;
+      }
 	}
 	.red-700-swatch {
 			background:#EF5350!important;
@@ -739,6 +761,9 @@ md-tooltip {
 	}
 	.gray-054-swatch {
 			background:$gray054!important;
+      p{
+        color:white;
+      }
 	}
 	.gray-300-swatch {
 			background:$gray-300!important;
@@ -792,6 +817,9 @@ md-tooltip {
 	}
 	.purple-500-swatch-dark {
 		background:#E1BEE7!important;
+    p{
+      color:$text-color-standard!important;
+    }
 	}
 
 	.brown-100-swatch-dark {
@@ -799,9 +827,15 @@ md-tooltip {
 	}
 	.brown-300-swatch-dark {
 		background:#A1887F!important;
+    p{
+      color:$text-color-standard!important;
+    }
 	}
 	.brown-500-swatch-dark {
 		background: #D7CCC8!important;
+    p{
+      color:$text-color-standard!important;
+    }
 	}
 
 	.teal-100-swatch-dark {
@@ -809,13 +843,22 @@ md-tooltip {
 	}
 	.teal-300-swatch-dark {
 		background:#4DB6AC !important;
+    p{
+      color:$text-color-standard!important;
+    }
 	}
 	.teal-500-swatch-dark {
 		background:#B2DFDB!important;
+    p{
+      color:$text-color-standard!important;
+    }
 	}
 
 	.pink-500-swatch-dark {
 		background: #F8BBD0!important;
+    p{
+      color:$text-color-standard!important;
+    }
 	}
 	.pink-300-swatch-dark {
 		background: #F06292!important;
@@ -835,6 +878,9 @@ md-tooltip {
 	}
 	.red-800-swatch-dark {
 			background:#ee8f7d!important;
+      p{
+        color:$text-color-standard!important;
+      }
 	}
 	.red-700-swatch-dark {
 			background:#EF5350!important;
@@ -856,6 +902,9 @@ md-tooltip {
 	}
 	.gray-087-swatch-dark {
 			background: #d1d1d1!important;
+      p{
+        color:$text-color-standard!important;
+      }
 	}
 	.gray-100-swatch-dark {
 			background:#9E9E9E!important;
@@ -873,7 +922,7 @@ md-tooltip {
 		height: 100px;
 
 		.white-color-text{
-			color:$white!important;
+			color:$white;
 		}
 
 		p{
