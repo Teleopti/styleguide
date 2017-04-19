@@ -518,6 +518,10 @@ md-autocomplete[disabled]:not([md-floating-label]),
     display: none;
   }
 
+  label {
+    position: relative;
+  }
+
   .wfm-checkbox-toggle:after {
     position: absolute;
     background-color: $gray026;
@@ -529,6 +533,8 @@ md-autocomplete[disabled]:not([md-floating-label]),
     -webkit-transition: background-color .2s ease-in-out;
     transition: background-color .2s ease-in-out;
     cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   input[type=checkbox]:checked ~ label .wfm-checkbox-toggle:after,
