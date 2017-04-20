@@ -13,24 +13,37 @@
 		<div class="con-flex">
 			<h2>{{ getTimerangeDisplay(WorkingPeriod.StartTime, WorkingPeriod.EndTime)}}</h2>
 		</div>
-		<div class="con-flex" ng-repeat="WeekDay in WorkingPeriod.WeekDaySelections">
-			<div class="wfm-checkbox working-hours-radio">
-				<input type="checkbox" id="check_workinghour_{{$parent.$index}}_weekday_{{WeekDay.WeekDay}}" ng-model="WeekDay.Checked"/>
-				<label for="check_workinghour_{{$parent.$index}}_weekday_{{WeekDay.WeekDay}}" ng-click="enforceRadioBehavior($parent.$index, WeekDay.WeekDay)">
-					<span class="wfm-checkbox-toggle"></span>
-					<span class="wfm-checkbox-label"><span translate>{{WeekDay | showWeekdays}}</span></span>
-				</label>
+		<div class="con-flex split-1-2">
+			<div class="selected-day">
+				<span ng-if="selectedDay.Checked" ng-repeat="selectedDay in WorkingPeriod.WeekDaySelections">
+					{{selectedDay | showWeekdays}}
+				</span>
 			</div>
+
+			<md-select
+			ng-model="selectedWeekDays"
+			multiple="true"
+			aria-label="workingHourSelect">
+			<div class="con-row" ng-repeat="WeekDay in WorkingPeriod.WeekDaySelections">
+				<div class="wfm-checkbox working-hours-radio">
+					<input type="checkbox" id="check_workinghour_{{$parent.$index}}_weekday_{{WeekDay.WeekDay}}" ng-model="WeekDay.Checked"/>
+					<label class="con-flex pointer" for="check_workinghour_{{$parent.$index}}_weekday_{{WeekDay.WeekDay}}" ng-click="enforceRadioBehavior($parent.$index, WeekDay.WeekDay)">
+						<span class="wfm-checkbox-toggle"></span>
+						<span class="wfm-checkbox-label"><span translate>{{WeekDay | showWeekdays}}</span></span>
+					</label>
+				</div>
+			</div>
+		</md-select>
+	</div>
+	<div class="con-flex line-right">
+		<div tabindex=0 class="context-menu card-context" ng-click="$parent.removeWorkingPeriod($index)">
+			<i class="mdi mdi-delete"></i>
+			<md-tooltip>{{'DeletePeriod' | translate}} {{ getTimerangeDisplay(WorkingPeriod.StartTime, WorkingPeriod.EndTime)}}</md-tooltip>
 		</div>
-		<div class="con-flex">
-			<div tabindex=0 class="context-menu card-context" ng-click="$parent.removeWorkingPeriod($index)">
-				<i class="mdi mdi-delete"></i>
-				<md-tooltip>{{'DeletePeriod' | translate}} {{ getTimerangeDisplay(WorkingPeriod.StartTime, WorkingPeriod.EndTime)}}</md-tooltip>
-			</div>
-			<div tabindex=0 class="context-menu card-context" ng-click="$parent.toggleAllChecks($index)">
-				<i class="mdi mdi-check"></i>
-				<md-tooltip>{{'ToggleAll' | translate}}</md-tooltip>
-			</div>
+		<div tabindex=0 class="context-menu card-context" ng-click="$parent.toggleAllChecks($index)">
+			<i class="mdi mdi-check"></i>
+			<md-tooltip>{{'ToggleAll' | translate}}</md-tooltip>
 		</div>
 	</div>
+</div>
 </div>
