@@ -15,13 +15,13 @@ describe('autofocus', function() {
 
     it('should set the focus on input', function () {
         inject(function($compile, $timeout) {
-        var element = angular.element('<input type="text" autofocus/>');
-        elementCompile = $compile(element)(rootScope);
-        rootScope.$digest();
+            var element = angular.element('<input type="text" autofocus/>');
+            elementCompile = $compile(element)(rootScope);
+            rootScope.$digest();
 
-        spyOn(element[0],'focus');
-        $timeout.flush();
-        expect(element[0].focus).toHaveBeenCalled();
-    });
+            spyOn(element[0],'focus');
+            $timeout.flush();
+            expect(element[0].focus).toHaveBeenCalled();
+        });
     });
 });

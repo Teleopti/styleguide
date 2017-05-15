@@ -2,43 +2,42 @@
 
 (function() {
     var wfmPagination = angular.module('wfm.pagination', []);
-    wfmPagination.run([
-		'$templateCache', function($templateCache) {
-    $templateCache.put('wfm-pagination-default.tpl.html',
-    '<div class="pagination" ng-if="vm.paginationOptions.totalPages > 0">' +
-    '	<ul>' +
-    '		<li class=" pagination-item" ng-class="{disabled: vm.paginationOptions.pageNumber == 1 || vm.paginationOptions.totalPages == 0}"' +
-    '		style="padding-top: 4px; padding-bottom: 4px;">' +
-    '			<a href="" ng-click="vm.gotoPage(1)">' +
-    '				<i class="mdi mdi-skip-previous"></i>' +
-    '			</a>' +
-    '		</li>' +
-    '		<li class="pagination-item" ng-class="{disabled: vm.paginationOptions.pageNumber == 1 || vm.paginationOptions.totalPages == 0}"' +
-    '		style="padding-top: 4px; padding-bottom: 4px;">' +
-    '			<a href="" ng-click="vm.gotoPage(vm.paginationOptions.pageNumber - 1)">' +
-    '				<i class="mdi mdi-chevron-left"></i>' +
-    '			</a>' +
-    '		</li>' +
-    '		<li class="pagination-item" ng-repeat="n in vm.getVisiblePageNumbers()"' +
-    '			ng-class="{active: n == vm.paginationOptions.pageNumber}" ng-click="vm.gotoPage(n)" style="padding-top: 4px; padding-bottom: 4px;">' +
-    '			<a href="" ng-bind="n"></a>' +
-    '		</li>' +
-    '		<li class="pagination-item" ng-class="{disabled: vm.paginationOptions.pageNumber == vm.paginationOptions.totalPages || vm.paginationOptions.totalPages == 0}"' +
-    '		style="padding-top: 4px; padding-bottom: 4px;">' +
-    '			<a href="" ng-click="vm.gotoPage(vm.paginationOptions.pageNumber + 1)">' +
-    '				<i class="mdi mdi-chevron-right"></i>' +
-    '			</a>' +
-    '		</li>' +
-    '		<li class="pagination-item" ng-class="{disabled: vm.paginationOptions.pageNumber == vm.paginationOptions.totalPages || vm.paginationOptions.totalPages == 0}"' +
-    '		style="padding-top: 4px; padding-bottom: 4px;">' +
-    '			<a href="" ng-click="vm.gotoPage(vm.paginationOptions.totalPages)">' +
-    '				<i class="mdi mdi-skip-next"></i>' +
-    '			</a>' +
-    '		</li>' +
-    '	</ul>' +
-    '</div>'
-    );
-		}]);
+    wfmPagination.run(['$templateCache', function($templateCache) {
+        $templateCache.put('wfm-pagination-default.tpl.html',
+        '<div class="pagination" ng-if="vm.paginationOptions.totalPages > 0">' +
+        '	<ul>' +
+        '		<li class=" pagination-item" ng-class="{disabled: vm.paginationOptions.pageNumber == 1 || vm.paginationOptions.totalPages == 0}"' +
+        '		style="padding-top: 4px; padding-bottom: 4px;">' +
+        '			<a href="" ng-click="vm.gotoPage(1)">' +
+        '				<i class="mdi mdi-skip-previous"></i>' +
+        '			</a>' +
+        '		</li>' +
+        '		<li class="pagination-item" ng-class="{disabled: vm.paginationOptions.pageNumber == 1 || vm.paginationOptions.totalPages == 0}"' +
+        '		style="padding-top: 4px; padding-bottom: 4px;">' +
+        '			<a href="" ng-click="vm.gotoPage(vm.paginationOptions.pageNumber - 1)">' +
+        '				<i class="mdi mdi-chevron-left"></i>' +
+        '			</a>' +
+        '		</li>' +
+        '		<li class="pagination-item" ng-repeat="n in vm.getVisiblePageNumbers()"' +
+        '			ng-class="{active: n == vm.paginationOptions.pageNumber}" ng-click="vm.gotoPage(n)" style="padding-top: 4px; padding-bottom: 4px;">' +
+        '			<a href="" ng-bind="n"></a>' +
+        '		</li>' +
+        '		<li class="pagination-item" ng-class="{disabled: vm.paginationOptions.pageNumber == vm.paginationOptions.totalPages || vm.paginationOptions.totalPages == 0}"' +
+        '		style="padding-top: 4px; padding-bottom: 4px;">' +
+        '			<a href="" ng-click="vm.gotoPage(vm.paginationOptions.pageNumber + 1)">' +
+        '				<i class="mdi mdi-chevron-right"></i>' +
+        '			</a>' +
+        '		</li>' +
+        '		<li class="pagination-item" ng-class="{disabled: vm.paginationOptions.pageNumber == vm.paginationOptions.totalPages || vm.paginationOptions.totalPages == 0}"' +
+        '		style="padding-top: 4px; padding-bottom: 4px;">' +
+        '			<a href="" ng-click="vm.gotoPage(vm.paginationOptions.totalPages)">' +
+        '				<i class="mdi mdi-skip-next"></i>' +
+        '			</a>' +
+        '		</li>' +
+        '	</ul>' +
+        '</div>'
+        );
+    }]);
 })();
 
 (function () {

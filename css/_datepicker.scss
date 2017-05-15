@@ -70,6 +70,7 @@
 .wfm-datepicker-controllers-container
 {
 	display: flex;
+	display: -ms-flexbox; 
 	justify-content: flex-start;
 	align-items: center;
 }
@@ -83,6 +84,14 @@
 	top: 0px;
 	left: 0px;
 	z-index: 40;
+}
+
+.wfm-date-range-picker .modal-box .modalbg{
+	background: transparent;
+}
+
+.modal-box .wfm-datepicker-popup-row{
+	z-index: 50;
 }
 
 .start-date-indicator {

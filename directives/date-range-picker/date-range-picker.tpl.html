@@ -43,7 +43,7 @@
 		</div>
 	</div>
 
-	<div ng-show="displayPopup()" outside-click="displayCalendars = false">
+	<div ng-show="displayPopup()">
 		<div class="wfm-datepicker-controllers-container">
 			<div tabindex=0 class="context-menu card-context popup-control" ng-click="displayCalendars = !displayCalendars">
 				<i class="mdi mdi-calendar"></i>
@@ -55,7 +55,8 @@
 					<span class="pointer">To: </span><span ng-if="isGregorian" class="pointer">{{ endDate | date: dateFormat }}</span><span ng-if="isJalaali" class="pointer">{{ endDate | persianDate:'shortDate' }}</span>
 			</div>
 		</div>
-		<div class="wfm-datepicker-container" ng-show="displayCalendars">
+		<div class="wfm-datepicker-container modal-box" ng-show="displayCalendars">
+			<div class="modalbg" ng-click="hideDateRangePicker()"></div>
 			<div class="con-row wfm-datepicker-popup-row">
 				<div class="con-flex line-center" ng-show="isGregorian">
 					<div class="wfm-datepicker-wrap date-range-start-date">

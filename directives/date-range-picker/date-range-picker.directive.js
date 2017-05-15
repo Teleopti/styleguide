@@ -36,7 +36,9 @@
             scope.displayPopup = function() {
                 return scope.templateType === 'popup';
             };
+            scope.displayCalendars = false;
             scope.displayError = displayError;
+            scope.hideDateRangePicker = hideDateRangePicker;
 
             popupSetup(scope);
 
@@ -49,14 +51,14 @@
 
             scope.defaultValidators = [
               {
-                  key: 'order',
-                  message: attrs.invalidOrderMessage || 'StartDateMustBeEqualToOrEarlierThanEndDate',
-                  validate: _validateStartAndEndByOrder
-              },
+                key: 'order',
+                message: attrs.invalidOrderMessage || 'StartDateMustBeEqualToOrEarlierThanEndDate',
+                validate: _validateStartAndEndByOrder
+            },
               {
-                  key: 'parse',
-                  message: attrs.invalidEmptyMessage || 'StartDateAndEndDateMustBeSet'
-              }
+                key: 'parse',
+                message: attrs.invalidEmptyMessage || 'StartDateAndEndDateMustBeSet'
+            }
             ];
 
             scope.validators = scope.defaultValidators.concat(
@@ -96,6 +98,24 @@
 
             function displayError(errorKey) {
                 return ngModelCtrl.$error && ngModelCtrl.$error[errorKey];
+            }
+
+            function hideDateRangePicker() {
+                var activeSelect = document.getElementsByClassName('md-select-menu-container md-active');
+                if (activeSelect.length > 0) {
+                    activeSelect[0].remove();
+                }
+
+                var selectBackdrop = document.getElementsByClassName('md-select-backdrop');
+                if (selectBackdrop.length > 0) {
+                    selectBackdrop[0].remove();
+                }
+
+                var scrollMask = document.getElementsByClassName('md-scroll-mask');
+                if (scrollMask.length > 0) {
+                    scrollMask[0].remove();
+                }
+                scope.displayCalendars = false;
             }
 
             function buildValidator(validateStartAndEnd) {
