@@ -54,14 +54,6 @@ describe('wfm-multiple-search-input directive', function() {
         expect(vm.advancedSearchForm['FirstName']).toBe(undefined);
         expect(vm.advancedSearchForm['LastName']).toBe(undefined);
     });
-    it('should generate the term expression from search fields', function() {
-        vm.showAdvancedSearchOption = true;
-        vm.advancedSearchForm['FirstName'] = 'Ash';
-        vm.advancedSearchForm['LastName'] = 'Bcd';
-        vm.advancedSearch();
-        scope.$apply();
-        expect(scope.searchOptions.keyword).toBe('FirstName: Ash; LastName: Bcd');
-    });
 
     it('shoulde invoke search callback', function () {
         var searchExpression;
@@ -78,7 +70,7 @@ describe('wfm-multiple-search-input directive', function() {
         expect(vm.showAdvancedSearchOption).toBe(false);
         expect(vm.searchOptions.searchKeywordChanged).toBe(true);
         expect(scope.searchOptions.keyword).toBe(searchExpression);
-        expect(scope.searchOptions.keyword).toBe('FirstName: Ash22; LastName: Bcd;');
+        expect(scope.searchOptions.keyword).toBe('FirstName: Ash22; LastName: Bcd');
     });
 
     it('should parse terms correctly by search with option', inject(function () {
@@ -89,7 +81,7 @@ describe('wfm-multiple-search-input directive', function() {
 
         vm.advancedSearch();
 
-        expect(vm.searchOptions.keyword).toEqual('FirstName: Ashley Smith; Organization: London Shenzhen;');
+        expect(vm.searchOptions.keyword).toEqual('FirstName: Ashley Smith; Organization: London Shenzhen');
     }));
 
     it('should handle both single quote and double quote in search value correctly', inject(function () {
