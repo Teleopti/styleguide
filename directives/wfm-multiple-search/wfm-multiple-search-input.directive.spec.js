@@ -38,6 +38,30 @@ describe('wfm-multiple-search-input directive', function() {
         var inputs = element.find('form').find('input');
         expect(inputs.length).toBe(scope.searchOptions.searchFields.length);
     });
+    it('should synchronize the term expression to search fields accordingly', function() {
+        vm.showAdvancedSearchOption = true;
+        scope.searchOptions.keyword = 'FirstName:Ash;LastName:Bcd';
+        vm.validateSearchKeywordChanged();
+        scope.$apply();
+        expect(vm.advancedSearchForm['FirstName']).toBe('Ash');
+        expect(vm.advancedSearchForm['LastName']).toBe('Bcd');
+    });
+    it('should not synchronize the term expression with wrong field key to search fields accordingly', function() {
+        vm.showAdvancedSearchOption = true;
+        scope.searchOptions.keyword = 'First name:Ash;Last name:Bcd';
+        vm.validateSearchKeywordChanged();
+        scope.$apply();
+        expect(vm.advancedSearchForm['FirstName']).toBe(undefined);
+        expect(vm.advancedSearchForm['LastName']).toBe(undefined);
+    });
+    it('should generate the term expression from search fields', function() {
+        vm.showAdvancedSearchOption = true;
+        vm.advancedSearchForm['FirstName'] = 'Ash';
+        vm.advancedSearchForm['LastName'] = 'Bcd';
+        vm.advancedSearch();
+        scope.$apply();
+        expect(scope.searchOptions.keyword).toBe('FirstName: Ash; LastName: Bcd');
+    });
 
     it('shoulde invoke search callback', function () {
         var searchExpression;
