@@ -37,23 +37,21 @@ md-tooltip {
 //Markup:
 //  <a href="#" ng-click="counter = counter+1" class="wfm-btn wfm-btn-primary wfm-badge-wrapper">
 //    <i class="mdi mdi-cake "></i>
-//    <wfm-badge badge-model="1"> </wfm-badge>
+//    <wfm-badge badge-model="1" status="'notice-info'"> </wfm-badge>
 //  </a>
 //  <a href="#" ng-click="counter = counter+1" class="wfm-btn wfm-btn-default wfm-badge-wrapper">
 //    <i class="mdi mdi-cake "></i>
-//    <wfm-badge badge-model="50" status="'orange'"> </wfm-badge>
+//    <wfm-badge badge-model="50" status="'notice-warning'"> </wfm-badge>
 //  </a>
 //  <div tabindex=0 class="context-menu card-context wfm-badge-wrapper">
 //    <i class="mdi mdi-cake"></i>
-//    <wfm-badge badge-model="999" status="'red'"> </wfm-badge>
+//    <wfm-badge badge-model="999" status="'notice-error'"> </wfm-badge>
 //    <md-tooltip>Options</md-tooltip>
 //  </div>
 //
 //Styleguide 1.20
 //
 
-
-//temp badge stuff
 .wfm-badge-wrapper{
   position: relative!important;
 }
@@ -68,21 +66,12 @@ md-tooltip {
   line-height: 12px!important;
   padding: 5px;
   z-index: 10;
-  border-radius: 15px;
+  color:$text-color-standard;
+  border-radius: 15px!important;
 }
 
 md-tab-item> wfm-badge > span{
   top: unset!important;
   bottom: 4px;
   right: 4px!important;
-}
-
-.orange{
-  background: #FFA726!important;
-}
-.red{
-  background: #EF5350!important;
-}
-.green{
-  background: #9CCC65!important;
 }
