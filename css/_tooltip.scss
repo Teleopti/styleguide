@@ -27,3 +27,62 @@ md-tooltip {
 .action-icon{
   cursor:pointer;
 }
+
+// Badge
+//
+//Badges are used to show the size of a group of items. It can show a fixed number or tick up as the user add more items to the group.
+//By using colors we can indicate the status or severity of that amount.
+//Badges can be applied to a number of containers as well, such as <a href="section-4.html#kssref-4-2">panels and tabs</a>.
+//
+//Markup:
+//  <a href="#" ng-click="counter = counter+1" class="wfm-btn wfm-btn-primary wfm-badge-wrapper">
+//    <i class="mdi mdi-cake "></i>
+//    <wfm-badge badge-model="1"> </wfm-badge>
+//  </a>
+//  <a href="#" ng-click="counter = counter+1" class="wfm-btn wfm-btn-default wfm-badge-wrapper">
+//    <i class="mdi mdi-cake "></i>
+//    <wfm-badge badge-model="50" status="'orange'"> </wfm-badge>
+//  </a>
+//  <div tabindex=0 class="context-menu card-context wfm-badge-wrapper">
+//    <i class="mdi mdi-cake"></i>
+//    <wfm-badge badge-model="999" status="'red'"> </wfm-badge>
+//    <md-tooltip>Options</md-tooltip>
+//  </div>
+//
+//Styleguide 1.20
+//
+
+
+//temp badge stuff
+.wfm-badge-wrapper{
+  position: relative!important;
+}
+
+.wfm-badge {
+  background: #33B6E6;
+  color: white;
+  font-size: 12px;
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  line-height: 12px!important;
+  padding: 5px;
+  z-index: 10;
+  border-radius: 15px;
+}
+
+md-tab-item> wfm-badge > span{
+  top: unset!important;
+  bottom: 4px;
+  right: 4px!important;
+}
+
+.orange{
+  background: #FFA726!important;
+}
+.red{
+  background: #EF5350!important;
+}
+.green{
+  background: #9CCC65!important;
+}

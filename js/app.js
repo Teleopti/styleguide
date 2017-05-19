@@ -27,6 +27,7 @@
       'wfm.notice',
       'wfm.multiplesearchinput',
       'wfm.rightPanel',
+      'wfm.badge',
       'gridshore.c3js.chart'
   ]).config(['$translateProvider', 'tmhDynamicLocaleProvider', function($translateProvider, tmhDynamicLocaleProvider) {
       $translateProvider
