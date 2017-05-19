@@ -193,6 +193,6 @@ module.exports = function (grunt) {
     // Default task(s).
     grunt.registerTask('default', ['dist', 'watch:styleguide']);
     grunt.registerTask('test', ['karma:styleguide']);
-    grunt.registerTask('devTest', ['watch:test']);
+    grunt.registerTask('devTest', ['karma:continuous','watch:test']);
     grunt.registerTask('dist', ['jscs', 'ngtemplates', 'sass:styleguide', 'sass:dist', 'shell', 'cssmin', 'concat', 'uglify', 'copy']); // this task is kind of package
 };
