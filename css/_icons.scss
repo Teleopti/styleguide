@@ -70,6 +70,20 @@
 //Styleguide 7.1
 //
 
+//Huge icon
+//
+//Huge icons are used on big empty areas to grab user attention and in combination with some text initiate a module.
+//
+//Markup:
+// <i class="mdi mdi-information-outline huge-icon line-center"></i>
+//
+//Styleguide 7.2
+//
+
 .mdi:before {
 	font-size: 18px !important;
+}
+
+.huge-icon::before{
+	font-size: 150px!important;
 }
