@@ -51,15 +51,6 @@
 //	<button class="wfm-fab  material-depth-1 success"><i class="mdi mdi-plus"></i>
 //		<md-tooltip>Add a thing</md-tooltip>
 //	</button>
-//	<button class="wfm-fab  material-depth-1 mini"><i class="mdi mdi-account"></i>
-//		<md-tooltip>My account</md-tooltip>
-//	</button>
-//	<button class="wfm-fab  material-depth-1 mini info"><i class="mdi mdi-arrow-right"></i>
-//		<md-tooltip>Carry on</md-tooltip>
-//	</button>
-//	<button class="wfm-fab  material-depth-1 mini success"><i class="mdi mdi-plus"></i>
-//		<md-tooltip>Add a thing</md-tooltip>
-//	</button>
 //
 //Styleguide 1.8.3
 //
@@ -99,6 +90,15 @@
 //		<i class="mdi mdi-account" ng-class="{'mdi-account-outline':toggle}"></i>
 //		<md-tooltip>Toggle something</md-tooltip>
 //	</div>
+// <h3>Color</h3>
+//	<div tabindex=0 class="context-menu card-context notice-info">
+//		<i class="mdi mdi-comment-outline"></i>
+//		<md-tooltip>Options</md-tooltip>
+//	</div>
+//	<button tabindex=0 class="context-menu card-context notice-success">
+//		<i class="mdi mdi-comment-check-outline"></i>
+//		<md-tooltip>Options</md-tooltip>
+//	</button>
 //
 //Styleguide 1.8.5
 //
