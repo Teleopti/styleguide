@@ -78,6 +78,7 @@
 //
 // Icons can be used as buttons or toggles. In this case they should have a bigger trigger area, a cursor pointer and preferably a tooltip to explain its action.
 // They can also house a <a href=section-1.html#kssref-1-12>context menu.</a>
+// Using buttons, icons can be disabled.
 //
 //Markup:
 // <h3>Simple</h3>
@@ -85,20 +86,28 @@
 //		<i class="mdi mdi-cake"></i>
 //		<md-tooltip>Options</md-tooltip>
 //	</div>
+// <h3>Color</h3>
+//	<button tabindex=0 class="context-menu card-context notice-info">
+//		<i class="mdi mdi-comment-outline"></i>
+//		<md-tooltip>info</md-tooltip>
+//	</button>
+//	<button tabindex=0 class="context-menu card-context notice-success">
+//		<i class="mdi mdi-comment-check-outline"></i>
+//		<md-tooltip>success</md-tooltip>
+//	</button>
+//	<button tabindex=0 class="context-menu card-context" disabled>
+//		<i class="mdi mdi-comment-remove-outline"></i>
+//		<md-tooltip>disabled</md-tooltip>
+//	</button>
 // <h3>Toggle</h3>
 //	<div tabindex=0 class="context-menu card-context" ng-click="toggle = !toggle">
 //		<i class="mdi mdi-account" ng-class="{'mdi-account-outline':toggle}"></i>
 //		<md-tooltip>Toggle something</md-tooltip>
 //	</div>
-// <h3>Color</h3>
-//	<div tabindex=0 class="context-menu card-context notice-info">
-//		<i class="mdi mdi-comment-outline"></i>
-//		<md-tooltip>Options</md-tooltip>
+//	<div tabindex=0 class="context-menu card-context" ng-click="toggle2 = !toggle2" ng-class="{'notice-success':toggle2, 'notice-info':!toggle2}">
+//		<i class="mdi mdi-checkbox-blank-outline" ng-class="{'mdi-checkbox-marked':toggle2}"></i>
+//		<md-tooltip>Toggle something</md-tooltip>
 //	</div>
-//	<button tabindex=0 class="context-menu card-context notice-success">
-//		<i class="mdi mdi-comment-check-outline"></i>
-//		<md-tooltip>Options</md-tooltip>
-//	</button>
 //
 //Styleguide 1.8.5
 //

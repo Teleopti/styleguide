@@ -103,12 +103,12 @@
 }
 
 .card-context:hover{
-  background: $gray012!important;
+  background: $gray012;
 }
 
 .card-context:focus{
   @extend .material-depth-2;
-  background: $gray012!important;
+  background: $gray012;
 }
 
 .active-context{
@@ -185,4 +185,9 @@
             margin-top: $full-padding*2;
         }
     }
+}
+
+.context-menu[disabled]{
+	background: $gray012 !important;
+	cursor: not-allowed;
 }
