@@ -19,7 +19,7 @@
 //
 
 md-tooltip {
-  font-size: $standard-font-size;
+  font-size: $standard-font-size!important;
   font-weight: lighter;
     z-index:100;
 }
