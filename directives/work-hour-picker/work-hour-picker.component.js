@@ -24,7 +24,7 @@
         };
 
         // PM format h:mm a
-        ctrl.errorMessage = 'Input is not valid';
+        ctrl.errorMessage = $translate.instant('InvalidInput');
         ctrl.selectedDays = [];
         ctrl.overNight = false;
         ctrl.showSummary = false;
