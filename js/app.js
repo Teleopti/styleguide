@@ -29,6 +29,8 @@
       'wfm.rightPanel',
       'gridshore.c3js.chart',
       'wfm.workPicker'
+      'wfm.badge',
+      'gridshore.c3js.chart'
   ]).config(['$translateProvider', 'tmhDynamicLocaleProvider', function($translateProvider, tmhDynamicLocaleProvider) {
       $translateProvider
     .translations('en-us', {

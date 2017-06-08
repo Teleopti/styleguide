@@ -27,28 +27,30 @@
 //
 
 .notice-error {
-	background-color:$red-600;
-	border: none;
-	border-radius: 0;
-}
-
-.notice-success {
-	background-color: $green-100;
-	border: none;
-	border-radius: 0;
-}
-
-.notice-info {
-	background-color: $blue-300;
+	background-color:$red-600!important;
 	border: none;
 	border-radius: 0;
 }
 
 .notice-warning {
-	background-color: $orange-400;
+	background-color: $orange-400!important;
 	border: none;
 	border-radius: 0;
 }
+
+.notice-success {
+	background-color: $green-100!important;
+	border: none;
+	border-radius: 0;
+}
+
+.notice-info {
+	background-color: $blue-300!important;
+	border: none;
+	border-radius: 0;
+}
+
+
 
 .notice-spacer{
 	padding:10px 5px;
