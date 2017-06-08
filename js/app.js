@@ -27,7 +27,6 @@
       'wfm.notice',
       'wfm.multiplesearchinput',
       'wfm.rightPanel',
-      'gridshore.c3js.chart',
       'wfm.workPicker',
       'wfm.badge',
       'gridshore.c3js.chart'
