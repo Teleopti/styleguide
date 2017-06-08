@@ -135,7 +135,7 @@
             }
         }
 
-        function checkValidTime (form) {
+        function formIsInvalid (form) {
             if (!form.openHour || !form.closeHour) {
                 ctrl.errorMessage = $translate.instant('StartTimeAndEndTimeMustBeSet');
                 form.$invalid = true;
@@ -154,7 +154,7 @@
         }
 
         ctrl.saveHours = function(form) {
-            if (checkValidTime(form)) {
+            if (formIsInvalid(form)) {
                 return;
             }
             for (var i = 0; i < ctrl.weekdays.length; i++) {
