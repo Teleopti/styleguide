@@ -44,6 +44,11 @@
 	display: inline-block;
 }
 
+.inline-flex{
+	display: inline-flex!important;
+	display: -ms-inline-flexbox!important;
+}
+
 // Cursor types
 //
 //Markup:
@@ -55,12 +60,6 @@
 .cursor-pointer,.pointer{
   cursor: pointer;
 }
-
-.inline-flex{
-	display:inline-flex!important;
-	display: -ms-inline-flexbox!important;
-}
-
 
 // Showing and hiding content
 //
@@ -82,12 +81,6 @@
 .invisible {
   visibility: hidden;
 }
-.hidden-visibility {
-	visibility: hidden;
-}
 .block{
 	display: block!important;
-}
-.relative{
-	position: relative;
 }
