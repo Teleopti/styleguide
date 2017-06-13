@@ -198,7 +198,7 @@
 //			<card-header tabindex="-1">
 //      <div tabindex="0">
 //				<span><i class="mdi" ng-class="item.title"></i></span>
-//					Single card title
+//					<b>Single card title</b>
 //				<span class="chevron"><i class="mdi mdi-chevron-right"></i></span>
 //      </div>
 //			</card-header>
@@ -227,7 +227,7 @@
 //			<card-header tabindex="-1">
 //      <div tabindex="0">
 //				<span><i class="mdi" ng-class="item.title"></i></span>
-//					Multi card title
+//					<b>Multi card title</b>
 //				<span class="chevron"><i class="mdi mdi-chevron-right"></i></span>
 //      </div>
 //			</card-header>
@@ -306,7 +306,8 @@ md-card{
 }
 
 .wfm-card-selected .wfm-card-title{
-  background-color: $blue-100;
+  background-color: $white;
+  color: $text-color-standard;
   transition: background-color 0.3s linear;
   transition: box-shadow 0.3s linear;
 }

@@ -3,9 +3,9 @@
     'use strict';
 
     angular.module('wfm.daterangepicker', ['styleguide.templates', 'persianDate', 'wfm.helpingDirectives'])
-        .directive('dateRangePicker', ['$locale', '$filter', dateRangePicker]);
+        .directive('dateRangePicker', ['$locale', '$filter', '$parse', dateRangePicker]);
 
-    function dateRangePicker($locale, $filter) {
+    function dateRangePicker($locale, $filter, $parse) {
         return {
             templateUrl: 'directives/date-range-picker/date-range-picker.tpl.html',
             scope: {
@@ -31,7 +31,15 @@
 
         function postlink(scope, elem, attrs, ctrls) {
             var ngModelCtrl = ctrls[0],
-                dateRangeCtrl = ctrls[1];
+                dateRangeCtrl = ctrls[1],
+                translations = {};
+
+            if (attrs.translations) {
+                translations = $parse(attrs.translations)(scope.$parent) || translations;
+            }
+
+            scope.xxFrom = translations.From || 'From';
+            scope.xxTo = translations.To || 'To';
 
             scope.displayPopup = function() {
                 return scope.templateType === 'popup';

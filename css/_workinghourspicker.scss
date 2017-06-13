@@ -16,10 +16,67 @@
 //Styleguide 2.7
 //
 
+.working-hour-picker{
+	.mini{
+		min-width: 32px;
+		color:$text-color-standard;
+		background: rgba(0,0,0,0.1);
+	}
+	.mini-active{
+		background: $blue-300;
+		color:$white;
+		box-shadow: 0 8px 17px 0 rgba(0,0,0,.2);
+	}
+	.mini-success{
+		background: $green-100;
+		color:$text-color-standard;
+		box-shadow: 0 8px 17px 0 rgba(0,0,0,.2);
+	}
+	.work-day{
+		opacity: 1;
+		transition: all 0.5s cubic-bezier(.25,.8,.25,1);
+	}
+	.inactive-work-day{
+		opacity: 0;
+		transform: translate(-50px, 0px);
+	}
+	.working-hour-dropdown{
+		position: absolute;
+		top: 55px;
+		left: 0;
+		right: 0;
+		z-index: 20;
+		background: $white;
+	}
+	.day-row{
+		flex-direction:row;
+	}
+
+.uib-timepicker{
+	width: 100%;
+}
+
+	.uib-time{
+		.md-button{
+			margin:0px!important;
+			&:hover{
+				background-color: #ececec!important;
+			}
+		}
+	}
+
+	@media screen and (max-width:768px){
+		.day-row > .con-flex{
+			padding:0!important;
+		}
+	}
+}
+
+//old work hour picker
 .working-hours-radio{
   margin-top: $full-padding;
   display: flex;
-  display: -ms-flexbox; 
+  display: -ms-flexbox;
 }
 
 .working-hours-row{

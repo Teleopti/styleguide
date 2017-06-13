@@ -24,7 +24,7 @@
 // </li>
 // <li><b>Help the user</b>
 // <div class="subtext">"Nature doesn't like empty space, and neither do users".
-// Never provide an empty form but suggest things or display placeholders.</div>
+// Never provide an empty form but suggest things or display placeholders. When the user arrive to your view, dont present an empty state even if there are no items to show - instead provide friendly instructions on how to get started.</div>
 // </li>
 // <li><b>Performance</b>
 // <div class="subtext">Avoid big bunches of data which doesn't fit on the screen. Consider aggregating data as an entry point.</div></li>
@@ -36,12 +36,15 @@
 // <ul class="wfm-simple-list">
 // <li>
 // <b>Number of actions</b>
-// <div class="subtext">Reduce the number of actions displayed at the same time. Maybe some of them could be hidden until needed? For example, split similar actions in a context menu into several menus so a user don't get overwhelmed</div></li>
+// <div class="subtext">Reduce the number of actions displayed at the same time. Maybe some of the less important ones can be hidden until needed? For example, split similar actions in a context menu into several menus so a user don't get overwhelmed</div></li>
 // <li><b>Loading</b>
 // <div class="subtext">If something takes time, dont leave the users in the dark. Display a loading bar, a spinner or a message.</li></li>
-// <li><b>Sorting and filters</b>
-// <div class="subtext">Provide ways to filter and sort large amounts of data, such as lists and tables.</div></li>
-// <li><i>SignalR depends on JQuery, but do not use JQuery for other purposes. </i>(We want to phase it out eventually)</li>
+// <li><b>Sorting, searching and filtering</b>
+// <div class="subtext">We want to provide good ways for the user to find what they are looking for. Sort large amounts of data alphabetically or chronologically by default but give the user the option to change sorting order.
+// If we show a large set of data, provide a filter to narrow it down. If there is a large amount of data available but not visible, provide helpful search functionality to bring up what the user wants.</div></li>
+// <li><b>JQuery and Bootstrap</b>
+// <div class="subtext"><i>SignalR depends on JQuery, we do not use JQuery for other purposes. We want to phase it out eventually. Datepickers and timepickers comes from bootstrap, these we would also like to phase out.</i></div>
+// </li>
 // </ul>
 // <h2 class="kss-title__permalink">Help</h2>
 // <ul class="wfm-simple-list">
@@ -359,6 +362,62 @@
 //
 //Styleguide 4.3
 
+//Tabbed panel with badges
+//
+//Adding a <a href="section-1.html#kssref-1-20">badge</a> to the tab label or the context menu icon give the user more information on what can be hidden inside the tab and draw attention to specific tabs.
+//
+//Markup:
+//<div class="panel material-depth-1">
+//<div class="wfm-slide-tabs tabbed-panel">
+//    <div class="head-actions panel-menu">
+//      <div tabindex=0 class="context-menu card-context wfm-badge-wrapper">
+//        <i class="mdi mdi-dots-vertical "></i>
+//        <wfm-badge badge-model="5" status="'notice-error'"> </wfm-badge>
+//        <md-tooltip>Options</md-tooltip>
+//        <span class="context-menu-left">
+//          <ul class="wfm-list">
+//            <li>Menu item 1</li>
+//            <li>Menu item 2</li>
+//            <li>Menu item 3</li>
+//          </ul>
+//        </span>
+//      </div>
+//    </div>
+//  <md-content class="md-padding">
+//    <md-tabs md-dynamic-height md-border-bottom>
+//      <md-tab label="Tab title1">
+//        <md-content class="md-padding">
+//            <div class="con-row">
+//              <div class="con-flex">Content</div>
+//            </div>
+//          <div class="con-footer">
+//            <button class="wfm-btn wfm-btn-invis-primary">Options</button>
+//          </div>
+//        </md-content>
+//      </md-tab>
+//       <md-tab>
+//        <md-tab-label class="wfm-badge-wrapper">
+//          Tab Title 2
+//          <wfm-badge badge-model="10" status="'notice-success'"> </wfm-badge>
+//        </md-tab-label>
+//        <md-tab-body class="md-padding">
+//          <div class="con-row">
+//            <div class="con-flex">Content</div>
+//          </div>
+//          <div class="con-footer">
+//            <button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+//            <button class="wfm-btn wfm-btn-invis-primary">Options</button>
+//          </div>
+//        </md-tab-body>
+//      </md-tab>
+//    </md-tabs>
+//  </md-content>
+//</div>
+//</div>
+//
+//
+//Styleguide 4.3.1
+
 //Wizard panel
 //
 //In case you want to guide the user through a series of steps you can use a wizard panel.
@@ -440,7 +499,7 @@
 //</div>
 //
 //
-//Styleguide 4.3.1
+//Styleguide 4.3.2
 
 //Form layout
 //
@@ -639,17 +698,12 @@ md-tooltip {
 
 .darktheme-background {
     background: #303030 !important;
-    p {
-      color: rgba(255,255,255,0.87)!important;
-    }
+    color: rgba(255,255,255,0.87)!important;
 }
 
 .classictheme-background {
     background: $gray012 !important;
-    p {
-      color: $text-color-standard !important;
-    }
-
+    color: $text-color-standard;
 }
 
 
@@ -658,6 +712,9 @@ md-tooltip {
 
 	.blue-500-swatch {
 			background:$blue-500!important;
+      p{
+        color:white;
+      }
 	}
 	.blue-300-swatch {
 			background:$blue-300!important;
@@ -681,9 +738,15 @@ md-tooltip {
 	}
 	.purple-300-swatch {
 		background:$purple-300!important;
+    p{
+      color:white;
+    }
 	}
 	.purple-500-swatch {
 		background:$purple-500!important;
+    p{
+      color:white;
+    }
 	}
 
 	.brown-100-swatch {
@@ -691,9 +754,15 @@ md-tooltip {
 	}
 	.brown-300-swatch {
 		background:$brown-300!important;
+    p{
+      color:white;
+    }
 	}
 	.brown-500-swatch {
 		background:$brown-500!important;
+    p{
+      color:white;
+    }
 	}
 
 	.teal-100-swatch {
@@ -704,13 +773,22 @@ md-tooltip {
 	}
 	.teal-500-swatch {
 		background:$teal-500!important;
+    p{
+      color:white;
+    }
 	}
 
 	.pink-500-swatch {
 		background:$pink-500!important;
+    p{
+      color:white;
+    }
 	}
 	.pink-300-swatch {
 		background:$pink-300!important;
+    p{
+      color:white;
+    }
 	}
 	.pink-100-swatch {
 		background:$pink-100!important;
@@ -727,6 +805,9 @@ md-tooltip {
 	}
 	.red-800-swatch {
 			background:$red-800!important;
+      p{
+        color:white;
+      }
 	}
 	.red-700-swatch {
 			background:#EF5350!important;
@@ -736,6 +817,9 @@ md-tooltip {
 	}
 	.gray-054-swatch {
 			background:$gray054!important;
+      p{
+        color:white;
+      }
 	}
 	.gray-300-swatch {
 			background:$gray-300!important;
@@ -789,6 +873,9 @@ md-tooltip {
 	}
 	.purple-500-swatch-dark {
 		background:#E1BEE7!important;
+    p{
+      color:$text-color-standard!important;
+    }
 	}
 
 	.brown-100-swatch-dark {
@@ -796,9 +883,15 @@ md-tooltip {
 	}
 	.brown-300-swatch-dark {
 		background:#A1887F!important;
+    p{
+      color:$text-color-standard!important;
+    }
 	}
 	.brown-500-swatch-dark {
 		background: #D7CCC8!important;
+    p{
+      color:$text-color-standard!important;
+    }
 	}
 
 	.teal-100-swatch-dark {
@@ -806,13 +899,22 @@ md-tooltip {
 	}
 	.teal-300-swatch-dark {
 		background:#4DB6AC !important;
+    p{
+      color:$text-color-standard!important;
+    }
 	}
 	.teal-500-swatch-dark {
 		background:#B2DFDB!important;
+    p{
+      color:$text-color-standard!important;
+    }
 	}
 
 	.pink-500-swatch-dark {
 		background: #F8BBD0!important;
+    p{
+      color:$text-color-standard!important;
+    }
 	}
 	.pink-300-swatch-dark {
 		background: #F06292!important;
@@ -832,6 +934,9 @@ md-tooltip {
 	}
 	.red-800-swatch-dark {
 			background:#ee8f7d!important;
+      p{
+        color:$text-color-standard!important;
+      }
 	}
 	.red-700-swatch-dark {
 			background:#EF5350!important;
@@ -853,6 +958,9 @@ md-tooltip {
 	}
 	.gray-087-swatch-dark {
 			background: #d1d1d1!important;
+      p{
+        color:$text-color-standard!important;
+      }
 	}
 	.gray-100-swatch-dark {
 			background:#9E9E9E!important;
@@ -870,7 +978,7 @@ md-tooltip {
 		height: 100px;
 
 		.white-color-text{
-			color:$white!important;
+			color:$white;
 		}
 
 		p{

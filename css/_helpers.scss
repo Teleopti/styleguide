@@ -48,6 +48,8 @@
 //<div class="show">displayed</div>
 //<div class="hidden">hidden</div>
 //<div class="invisible">invisible</div>
+//<div class="block">display block</div>
+//<div class="relative">relative</div>
 //
 //Styleguide 8.3
 //
@@ -62,4 +64,10 @@
 }
 .hidden-visibility {
 	visibility: hidden;
+}
+.block{
+	display: block!important;
+}
+.relative{
+	position: relative;
 }
