@@ -120,6 +120,7 @@ module.exports = function (grunt) {
                     'vendor/fonts.css',
                     'node_modules/angular-ui-tree/dist/angular-ui-tree.min.css',
                     'node_modules/angular-material/angular-material.min.css',
+                    'node_modules/angular-resizable/angular-resizable.min.css',
                     'node_modules/angular-ui-grid/ui-grid.min.css',
                     'vendor/c3/c3.min.css',
                     'vendor/mdi/css/materialdesignicons.min.css',

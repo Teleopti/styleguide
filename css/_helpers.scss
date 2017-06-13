@@ -12,6 +12,14 @@
 //<div class="line-right">.line-right</div>
 //<div class="line-center">.line-center</div>
 //<div class="inline-flex">.inline-flex</div>
+//<div>
+//		<div class="inline-block">.inline-block 1 </div>
+//		<div class="inline-block">.inline-block 2 </div>
+//		<div class="inline-block">.inline-block 3 </div>
+//</div>
+//<div class="relative">.relative
+//		<div class="absolute">.absolute</div>
+//</div>
 //
 //Styleguide 8.1
 //
@@ -21,7 +29,19 @@
 }
 
 .line-center{
-  text-align: center;
+	text-align: center;
+}
+
+.relative{
+	position: relative;
+}
+
+.absolute{
+	position: absolute;
+}
+
+.inline-block{
+	display: inline-block;
 }
 
 // Cursor types

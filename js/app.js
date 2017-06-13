@@ -188,7 +188,7 @@
           panelState: false,
           sidePanelTitle: 'Sidepanel title',
           showCloseButton: true,
-          showResizer: false,
+          showResizer: true,
           showBackdrop: true,
           showPopupButton: true
       };
