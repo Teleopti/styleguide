@@ -1,0 +1,56 @@
+<button ng-click='confirmModal1=true' class="wfm-btn wfm-btn-primary">Take the tour</button>
+<div ng-cloak class="modal-box">
+	<div ng-cloak ng-show="confirmModal1">
+		<div class="modalbg">
+			<div class="dialog material-depth-1">
+        <div class="panel">
+        <div class="wfm-slide-tabs tabbed-panel">
+          <div class="head-actions panel-menu">
+            <div tabindex=0 class="context-menu card-context" ng-click="confirmModal1=false">
+              <i class="mdi mdi-close"></i>
+            </div>
+          </div>
+         <md-content class="md-padding">
+           <md-tabs md-dynamic-height md-border-bottom md-selected="selectedIndex">
+             <md-tab label="Analyze">
+               <md-content class="md-padding">
+                   <div class="con-row">
+                     <div class="con-flex borderless">
+                        <b>Analyze</b>
+                        Think about your view:
+                          <ul>
+                            <li> - What actions can the user perform?</li>
+                            <li> - How much data does it need to contain?</li>
+                            <li> - Will there be subviews?</li>
+                          </ul></br></br>
+                          Questions like this helps you understand *what* to build
+                      </div>
+                   </div>
+                 <div class="con-footer">
+                   <button class="wizard-step wfm-btn wfm-btn-invis-primary" ng-click="nextTab()">Next</button>
+                 </div>
+               </md-content>
+             </md-tab>
+             <md-tab label="Basics">
+               <md-content class="md-padding">
+                   <div class="con-row">
+                     <div class="con-flex borderless">
+                      Lets start building something.
+                      By now you should have some idea about what the view will do, so go ahead an add a *View header*
+                      There are many layout configurations and you need to decide wich one to use for your view.</div>
+                     <div class="con-flex borderless">
+
+                     </div>
+                   </div>
+                 <div class="con-footer">
+                   <button class="wizard-step wfm-btn wfm-btn-invis-primary" ng-click="nextTab()">Next</button>
+                 </div>
+               </md-content>
+             </md-tab>
+           </md-tabs>
+         </md-content>
+        </div>
+        </div>
+		</div>
+	</div>
+</div>
