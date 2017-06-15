@@ -39,8 +39,8 @@ $gray054: rgba(107, 107, 107, 1);
 $gray087: #d1d1d1; //sidebar text
 $gray100: #9E9E9E;
 $white: #424242; //sidebar background
-$text-color-standard:rgba(255,255,255,0.87)!important;
-$text-color-muted:rgba(255,255,255,0.54)!important;
+$text-color-standard:$gray087!important;
+$text-color-muted:$gray-300!important;
 
 $full-padding: 5px; /*sets wfm-block*/
 $half-padding: 3px;

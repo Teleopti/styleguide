@@ -117,7 +117,7 @@
 	padding: $full-padding*2;
 	margin: $full-padding;
 	cursor: pointer;
-	border-radius: 3px;
+	border-radius: $half-padding;
 	transition: $transition-timing;
 	text-decoration:none!important;
 	text-transform: uppercase;
