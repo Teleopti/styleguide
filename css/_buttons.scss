@@ -164,7 +164,7 @@
 .wfm-btn-invis-default[disabled],
 .wfm-btn-invis-primary[disabled],
 .wfm-btn-invis-disabled {
-	color: $text-color-muted!important;
+	color: $text-color-muted;
 	background-color: transparent;
 
 	&:hover{
@@ -176,7 +176,7 @@
 .wfm-btn-primary[disabled],
 .wfm-btn-primary-disabled,
 .context-menu[disabled]{
-	color: $text-color-muted!important;
+	color: $text-color-muted;
 	background-color: $gray012;
 	box-shadow: none;
 
