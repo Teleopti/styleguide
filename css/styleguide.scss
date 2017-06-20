@@ -166,7 +166,7 @@
 //                        </div>
 //                     </div>
 //                   <div class="con-footer">
-//                     <button class="wizard-step wfm-btn wfm-btn-invis-primary" ng-click="nextTab()">Next</button>
+//                     <button class="wizard-step wfm-btn wfm-btn-invis-primary" ng-click='confirmModal1=false'>End tour</button>
 //                   </div>
 //                 </md-content>
 //               </md-tab>
@@ -642,9 +642,6 @@
 //            <div class="con-row">
 //              <div class="con-flex">Content</div>
 //            </div>
-//          <div class="con-footer">
-//            <button class="wfm-btn wfm-btn-invis-primary">Done</button>
-//          </div>
 //        </md-content>
 //      </md-tab>
 //    </md-tabs>
