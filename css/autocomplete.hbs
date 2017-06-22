@@ -1,0 +1,18 @@
+
+ <md-autocomplete
+   md-min-length="0"
+   md-selected-item="selectedItem"
+   md-search-text="searchText.name"
+   md-items="item in ACitems | filter:searchText"
+   md-item-text="item.name"
+   placeholder="Select one">
+   <md-item-template>
+    <span ng-bind="item.name"></span>
+   </md-item-template>
+   <md-not-found ng-cloak>
+    Nothing like that was found, try again
+   </md-not-found>
+</md-autocomplete>
+<i class="mdi mdi-close pointer ie-cross grow-out" ng-show="selectedItem" ng-click="selectedItem=null">
+  <md-tooltip>Clear</md-tooltip>
+</i>
