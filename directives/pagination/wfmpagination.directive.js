@@ -1,6 +1,4 @@
-'use strict';
-
-(function() {
+(function() { 'use strict';
     var wfmPagination = angular.module('wfm.pagination', []);
     wfmPagination.run(['$templateCache', function($templateCache) {
         $templateCache.put('wfm-pagination-default.tpl.html',
