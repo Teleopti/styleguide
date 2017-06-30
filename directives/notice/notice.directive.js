@@ -1,5 +1,4 @@
-'use strict';
-(function() {
+(function() { 'use strict';
     var wfmNotice = angular.module('wfm.notice');
 
     wfmNotice.directive('wfmNotice', ['$timeout', '$rootScope', function($timeout, $rootScope) {
