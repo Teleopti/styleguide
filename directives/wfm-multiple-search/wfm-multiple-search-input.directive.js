@@ -18,7 +18,7 @@
             vm.showAdvancedSearchOption = false;
         };
 
-        vm.toggleAdvancedSearchOption = function ($event) {
+        vm.openAdvancedSearchOption = function ($event) {
             vm.showAdvancedSearchOption = true;
             $event.stopPropagation();
             parseSearchExpressionInputted();
@@ -43,11 +43,7 @@
         };
 
         vm.handleAdvanceSearchShowup = function () {
-            if (!vm.searchOptions.keyword) {
-                vm.showAdvancedSearchOption = true;
-            } else {
-                vm.showAdvancedSearchOption = false;
-            }
+            vm.showAdvancedSearchOption = !vm.searchOptions.keyword;
         };
 
         vm.focusSearch = function () {
@@ -64,7 +60,7 @@
             vm.handleAdvanceSearchShowup();
         };
 
-        vm.searchTextInputKeydown = function (event) {
+        vm.searchTextInputKeyup = function (event) {
             if (event.which === 13) {
                 vm.resetFocusSearch();
                 vm.searchCallback(vm.searchOptions.keyword);
