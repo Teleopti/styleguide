@@ -1,16 +1,7 @@
 <div class="wfm-multiple-search-wrapper">
 	<input id="advanced-search" class="advanced-input" type="text" placeholder="{{vm.title}}" ng-class="{'expand-advanced-input': vm.showAdvancedSearchOption}"
-	ng-model="vm.searchOptions.keyword" ng-keydown="$event.which === 13 && vm.resetFocusSearch() && vm.searchCallback(vm.searchOptions.keyword) || vm.turnOffAdvancedSearch()" ng-change="vm.validateSearchKeywordChanged()"
-	ng-click="vm.toggleAdvancedSearchOption($event)" keyword-format/>
-	
-	<span class="cursor-pointer search-icon" ng-click="vm.searchCallback(vm.searchOptions.keyword);vm.turnOffAdvancedSearch();vm.resetFocusSearch()">
-		<i class="mdi mdi-magnify" ng-class="{'focusing-search': vm.searchOptions.focusingSearch}"></i>
-		<md-tooltip>{{'Search' | translate}}</md-tooltip>
-	</span>
-
+	ng-model="vm.searchOptions.keyword" ng-keyup="vm.searchTextInputKeyup($event)" ng-focus="vm.openAdvancedSearchOption($event)" ng-change="vm.searchTextChange()" ng-click="vm.openAdvancedSearchOption($event)" keyword-format/>
 	<div class="advanced-input-dropdown" ng-cloak ng-if="vm.showAdvancedSearchOption" outside-click="vm.turnOffAdvancedSearch();">
-		<div class="con-row">
-			<div class="con-flex">
 				<div class="panel material-depth-1">
 					<div class="sub-header">
 						<h2>{{ 'Search' | translate }}</h2>
@@ -18,10 +9,10 @@
 					<form name="form" class="wfm-form" novalidate>
 						<div class="con-row" ng-repeat="searchField in vm.searchOptions.searchFields" ng-if="$even">
 							<div class="full-padding" >
-								<input autocomplete="off" ng-if="vm.searchOptions.searchFields[$index]" id="criteria-{{vm.searchOptions.searchFields[$index]}}" class="con-flex" type="text" ng-keydown="$event.which === 13 && vm.advancedSearch()" placeholder="{{'PersonFinderField'+ vm.searchOptions.searchFields[$index]|translate}}" ng-model="vm.advancedSearchForm[vm.searchOptions.searchFields[$index]]"/>
+								<input autocomplete="off" ng-if="vm.searchOptions.searchFields[$index]" id="criteria-{{vm.searchOptions.searchFields[$index]}}" class="con-flex" type="text" ng-keyup="$event.which === 13 && vm.advancedSearch()" placeholder="{{'PersonFinderField'+ vm.searchOptions.searchFields[$index]|translate}}" ng-model="vm.advancedSearchForm[vm.searchOptions.searchFields[$index]]"/>
 							</div>
 							<div class="full-padding">
-								<input autocomplete="off" ng-if="vm.searchOptions.searchFields[$index + 1]" id="criteria-{{vm.searchOptions.searchFields[$index + 1]}}" class="con-flex" type="text" ng-keydown="$event.which === 13 && vm.advancedSearch()" placeholder="{{'PersonFinderField'+ vm.searchOptions.searchFields[$index + 1]|translate}}" ng-model="vm.advancedSearchForm[vm.searchOptions.searchFields[$index + 1]]" />
+								<input autocomplete="off" ng-if="vm.searchOptions.searchFields[$index + 1]" id="criteria-{{vm.searchOptions.searchFields[$index + 1]}}" class="con-flex" type="text" ng-keyup="$event.which === 13 && vm.advancedSearch()" placeholder="{{'PersonFinderField'+ vm.searchOptions.searchFields[$index + 1]|translate}}" ng-model="vm.advancedSearchForm[vm.searchOptions.searchFields[$index + 1]]" />
 							</div>
 						</div>
 						<div class="con-footer">
@@ -29,7 +20,12 @@
 						</div>
 					</form>
 				</div>
-			</div>
-		</div>
+	</div>
+
+	<div class="search-button">
+		<span class="cursor-pointer search-icon" ng-focus="vm.turnOffAdvancedSearch()" ng-click="vm.searchCallback(vm.searchOptions.keyword);vm.turnOffAdvancedSearch();vm.resetFocusSearch()">
+			<i class="mdi mdi-magnify" ng-class="{'focusing-search': vm.searchOptions.focusingSearch}"></i>
+			<md-tooltip>{{'Search' | translate}}</md-tooltip>
+		</span>
 	</div>
 </div>

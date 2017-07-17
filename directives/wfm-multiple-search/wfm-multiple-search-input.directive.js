@@ -18,8 +18,8 @@
             vm.showAdvancedSearchOption = false;
         };
 
-        vm.toggleAdvancedSearchOption = function ($event) {
-            vm.showAdvancedSearchOption = !vm.showAdvancedSearchOption;
+        vm.openAdvancedSearchOption = function ($event) {
+            vm.showAdvancedSearchOption = true;
             $event.stopPropagation();
             parseSearchExpressionInputted();
         };
@@ -42,13 +42,31 @@
             }
         };
 
-        vm.focusSearch = function() {
+        vm.handleAdvanceSearchShowup = function () {
+            vm.showAdvancedSearchOption = !vm.searchOptions.keyword;
+        };
+
+        vm.focusSearch = function () {
             vm.searchOptions.focusingSearch = true;
         };
 
         vm.resetFocusSearch = function () {
             vm.searchOptions.focusingSearch = false;
             return true;
+        };
+
+        vm.searchTextChange = function () {
+            vm.validateSearchKeywordChanged();
+            vm.handleAdvanceSearchShowup();
+        };
+
+        vm.searchTextInputKeyup = function (event) {
+            if (event.which === 13) {
+                vm.resetFocusSearch();
+                vm.searchCallback(vm.searchOptions.keyword);
+                vm.turnOffAdvancedSearch();
+                return;
+            }
         };
 
         function setSearchFormProperty(searchType, searchValue) {
@@ -77,8 +95,8 @@
             quotedKeywords = quotedKeywords.trim();
 
             var unquotedKeywords = displayValue
-        .replace(pattern, '').trim()
-        .replace('"', '').trim();
+                .replace(pattern, '').trim()
+                .replace('"', '').trim();
 
             return (quotedKeywords + ' ' + unquotedKeywords).trim();
         }
@@ -121,7 +139,7 @@
     };
 
     angular.module('wfm.multiplesearchinput', ['wfm.helpingDirectives'])
-     .directive('wfmMultipleSearchInput', multipleSearchInputDirective)
-     .controller('multipleSearchInputCtrl', multipleSearchInputCtrl);
+        .directive('wfmMultipleSearchInput', multipleSearchInputDirective)
+        .controller('multipleSearchInputCtrl', multipleSearchInputCtrl);
 
 })();
