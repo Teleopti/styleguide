@@ -51,6 +51,21 @@
 //	<button class="wfm-fab  material-depth-1 success"><i class="mdi mdi-plus"></i>
 //		<md-tooltip>Add a thing</md-tooltip>
 //	</button>
+//  <button class="wfm-fab  material-depth-1 disabled"><i class="mdi mdi-plus"></i>
+//		<md-tooltip>Add a thing</md-tooltip>
+//	</button>
+//	<button class="wfm-fab  material-depth-1 mini"><i class="mdi mdi-account"></i>
+//		<md-tooltip>My account</md-tooltip>
+//	</button>
+//	<button class="wfm-fab  material-depth-1 mini info"><i class="mdi mdi-arrow-right"></i>
+//		<md-tooltip>Carry on</md-tooltip>
+//	</button>
+//	<button class="wfm-fab  material-depth-1 mini success"><i class="mdi mdi-plus"></i>
+//		<md-tooltip>Add a thing</md-tooltip>
+//	</button>
+//	<button class="wfm-fab  material-depth-1 mini disabled"><i class="mdi mdi-plus"></i>
+//		<md-tooltip>Add a thing</md-tooltip>
+//	</button>
 //
 //Styleguide 1.8.3
 //
@@ -218,6 +233,18 @@
 	color:$white;
 }
 
+.wfm-fab.disabled {
+	@extend .wfm-fab;
+	color: $text-color-muted!important;
+	background-color: $gray012;
+	box-shadow: none;
+
+	&:hover{
+		cursor: not-allowed;
+		box-shadow: none;
+	}
+
+}
 .grow-out {
     animation:grow 0.2s;
     animation-timing-function:ease-in-out;
