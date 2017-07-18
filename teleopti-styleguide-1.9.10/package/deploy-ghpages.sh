@@ -15,6 +15,7 @@
  git add . -A
 
  if test -n "$(git status --porcelain)"; then
+ 	echo "start release soon loop1"
     # Uncommitted changes
  	git commit -m "Deployed to Github Pages"
  	git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" gh-pages > /dev/null 2>&1
@@ -25,7 +26,6 @@
 
 	rm -rf ./node_modules
 
-	echo "npm pack start"
 	npm pack
 
 	cd ..
@@ -37,7 +37,7 @@
  	git add .
 
 	if test -n "$(git status --porcelain)"; then
-		
+		echo "start release soon loop2"
     	# Uncommitted changes
  		git config user.name "Travis-CI"
  		git config user.email "carl.rockman@teleopti.com"
