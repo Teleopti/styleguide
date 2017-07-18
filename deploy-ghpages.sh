@@ -25,9 +25,6 @@
 
 	rm -rf ./node_modules
 
-	echo "npm pack start"
-	npm pack
-
 	cd ..
 	git clone -b Release --single-branch https://github.com/Teleopti/styleguide.git Release
     cp -n out/*.tgz Release
