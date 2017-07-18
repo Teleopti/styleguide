@@ -25,10 +25,8 @@ install:
 before_script: grunt dist --verbose
 script:
   - ./node_modules/.bin/karma start --single-run --browsers PhantomJS
-before_deploy:
-  - npm pack #might be redundant
 after_deploy:
-  -./deploy-ghpages.sh
+  - ./deploy-ghpages.sh
 env:
   global:
     - GH_REF: github.com/Teleopti/styleguide.git
