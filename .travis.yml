@@ -25,7 +25,9 @@ install:
 before_script: grunt dist --verbose
 script:
   - ./node_modules/.bin/karma start --single-run --browsers PhantomJS
-  - if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST"  ==  "false"  ]; then bash ./deploy-ghpages.sh; fi
+after_deploy:
+  - chmod +x deploy-ghpages.sh
+  - bash ./deploy-ghpages.sh
 env:
   global:
     - GH_REF: github.com/Teleopti/styleguide.git

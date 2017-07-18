@@ -120,6 +120,7 @@ module.exports = function (grunt) {
                     'vendor/fonts.css',
                     'node_modules/angular-ui-tree/dist/angular-ui-tree.min.css',
                     'node_modules/angular-material/angular-material.min.css',
+                    'node_modules/angular-resizable/angular-resizable.min.css',
                     'node_modules/angular-ui-grid/ui-grid.min.css',
                     'vendor/c3/c3.min.css',
                     'vendor/mdi/css/materialdesignicons.min.css',
@@ -193,6 +194,6 @@ module.exports = function (grunt) {
     // Default task(s).
     grunt.registerTask('default', ['dist', 'watch:styleguide']);
     grunt.registerTask('test', ['karma:styleguide']);
-    grunt.registerTask('devTest', ['watch:test']);
+    grunt.registerTask('devTest', ['karma:continuous','watch:test']);
     grunt.registerTask('dist', ['jscs', 'ngtemplates', 'sass:styleguide', 'sass:dist', 'shell', 'cssmin', 'concat', 'uglify', 'copy']); // this task is kind of package
 };

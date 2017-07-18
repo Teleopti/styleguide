@@ -51,15 +51,6 @@
 //	<button class="wfm-fab  material-depth-1 success"><i class="mdi mdi-plus"></i>
 //		<md-tooltip>Add a thing</md-tooltip>
 //	</button>
-//	<button class="wfm-fab  material-depth-1 mini"><i class="mdi mdi-account"></i>
-//		<md-tooltip>My account</md-tooltip>
-//	</button>
-//	<button class="wfm-fab  material-depth-1 mini info"><i class="mdi mdi-arrow-right"></i>
-//		<md-tooltip>Carry on</md-tooltip>
-//	</button>
-//	<button class="wfm-fab  material-depth-1 mini success"><i class="mdi mdi-plus"></i>
-//		<md-tooltip>Add a thing</md-tooltip>
-//	</button>
 //
 //Styleguide 1.8.3
 //
@@ -87,6 +78,7 @@
 //
 // Icons can be used as buttons or toggles. In this case they should have a bigger trigger area, a cursor pointer and preferably a tooltip to explain its action.
 // They can also house a <a href=section-1.html#kssref-1-12>context menu.</a>
+// Using buttons, icons can be disabled.
 //
 //Markup:
 // <h3>Simple</h3>
@@ -94,9 +86,26 @@
 //		<i class="mdi mdi-cake"></i>
 //		<md-tooltip>Options</md-tooltip>
 //	</div>
+// <h3>Color</h3>
+//	<button tabindex=0 class="context-menu card-context notice-info">
+//		<i class="mdi mdi-comment-outline"></i>
+//		<md-tooltip>info</md-tooltip>
+//	</button>
+//	<button tabindex=0 class="context-menu card-context notice-success">
+//		<i class="mdi mdi-comment-check-outline"></i>
+//		<md-tooltip>success</md-tooltip>
+//	</button>
+//	<button tabindex=0 class="context-menu card-context" disabled>
+//		<i class="mdi mdi-comment-remove-outline"></i>
+//		<md-tooltip>disabled</md-tooltip>
+//	</button>
 // <h3>Toggle</h3>
 //	<div tabindex=0 class="context-menu card-context" ng-click="toggle = !toggle">
 //		<i class="mdi mdi-account" ng-class="{'mdi-account-outline':toggle}"></i>
+//		<md-tooltip>Toggle something</md-tooltip>
+//	</div>
+//	<div tabindex=0 class="context-menu card-context" ng-click="toggle2 = !toggle2" ng-class="{'notice-success':toggle2, 'notice-info':!toggle2}">
+//		<i class="mdi mdi-checkbox-blank-outline" ng-class="{'mdi-checkbox-marked':toggle2}"></i>
 //		<md-tooltip>Toggle something</md-tooltip>
 //	</div>
 //
@@ -105,57 +114,35 @@
 
 .wfm-btn {
 	border: none;
-	padding: 10px;
-	margin: 5px;
+	padding: $full-padding*2;
+	margin: $full-padding;
 	cursor: pointer;
-	border-radius: 3px;
-	transition: all 0.2s ease-in-out;
+	border-radius: $half-padding;
+	transition: $transition-timing;
 	text-decoration:none!important;
 	text-transform: uppercase;
 }
 
 .wfm-btn-invis-default {
-	color: $gray100!important;
+	color: $gray100;
 	background-color: transparent;
 
 	&:hover{
-		background-color: #ececec;
+		background-color: $gray-300;
 	}
 }
 
 .wfm-btn-invis-primary {
-	color: $blue-500!important;
+	color: $blue-500;
 	background-color: transparent;
 
 	&:hover{
-		background-color: #ececec;
-	}
-}
-
-.wfm-btn-invis-default[disabled], .wfm-btn-invis-primary[disabled],
-.wfm-btn-invis-disabled {
-	color: $text-color-muted!important;
-	background-color: transparent;
-
-	&:hover{
-		cursor: not-allowed;
-	}
-}
-
-.wfm-btn-default[disabled], .wfm-btn-primary[disabled],
-.wfm-btn-primary-disabled{
-	color: $text-color-muted!important;
-	background-color: $gray012;
-	box-shadow: none;
-
-	&:hover{
-		cursor: not-allowed;
-		box-shadow: none;
+		background-color: $gray-300;
 	}
 }
 
 .wfm-btn-default {
-	color: $text-color-standard!important;
+	color: $text-color-standard;
 	background-color: $white;
 	@extend .material-depth-1;
 
@@ -171,6 +158,31 @@
 
 	&:hover{
 		@extend .material-depth-2;
+	}
+}
+
+.wfm-btn-invis-default[disabled],
+.wfm-btn-invis-primary[disabled],
+.wfm-btn-invis-disabled {
+	color: $text-color-muted;
+	background-color: transparent;
+
+	&:hover{
+		cursor: not-allowed;
+	}
+}
+
+.wfm-btn-default[disabled],
+.wfm-btn-primary[disabled],
+.wfm-btn-primary-disabled,
+.context-menu[disabled]{
+	color: $text-color-muted;
+	background-color: $gray012;
+	box-shadow: none;
+
+	&:hover{
+		cursor: not-allowed;
+		box-shadow: none;
 	}
 }
 

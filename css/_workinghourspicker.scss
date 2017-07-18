@@ -4,14 +4,14 @@
 //
 //<table class="wfm-table">
 //<tr><th>Attribute Name</th><th>Usage</th><th>Required</th></tr>
-//<tr><td>working-hours</td><td>Bind to time range object</td><td>true</td></tr>
-//<tr><td>disable-next-day</td><td>Disable next-day switch</td><td>false</td></tr>
-//<tr><td>template-url</td><td>Use a custom template</td><td>false</td></tr>
+//<tr><td>working-hours</td><td>The model</td><td>true</td></tr>
+//<tr><td>over-night-switch</td><td>Allow next-day switch</td><td>false</td></tr>
+//<tr><td>time-format-switch</td><td>Allow user to change between 24h/12h format</td><td>false</td></tr>
 //</table>
 //</br>
 //
 //Markup:
-//	<working-hours-picker class="working-hours-picker" working-hours="workingHours" disable-next-day="disableNextDay"></working-hours-picker>
+//	<work-picker working-hours="model" over-night-switch="true" time-format-switch="true">
 //
 //Styleguide 2.7
 //

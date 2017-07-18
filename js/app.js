@@ -27,6 +27,8 @@
       'wfm.notice',
       'wfm.multiplesearchinput',
       'wfm.rightPanel',
+      'wfm.workPicker',
+      'wfm.badge',
       'gridshore.c3js.chart'
   ]).config(['$translateProvider', 'tmhDynamicLocaleProvider', function($translateProvider, tmhDynamicLocaleProvider) {
       $translateProvider
@@ -187,7 +189,7 @@
           panelState: false,
           sidePanelTitle: 'Sidepanel title',
           showCloseButton: true,
-          showResizer: false,
+          showResizer: true,
           showBackdrop: true,
           showPopupButton: true
       };
