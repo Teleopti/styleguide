@@ -58,13 +58,13 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
-angular-animate@1.5.8:
-  version "1.5.8"
-  resolved "https://registry.yarnpkg.com/angular-animate/-/angular-animate-1.5.8.tgz#535f7369225aba7fb15bf7134c71b15bc635c586"
+angular-animate@1.5.9:
+  version "1.5.9"
+  resolved "http://hestia:4873/angular-animate/-/angular-animate-1.5.9.tgz#c958d524f9333a48abdaefb32947c7e611f54453"
 
-angular-aria@1.5.8:
-  version "1.5.8"
-  resolved "https://registry.yarnpkg.com/angular-aria/-/angular-aria-1.5.8.tgz#558fa07dc82c6fa57b1438e660bbdcfcb805a2f5"
+angular-aria@1.5.9:
+  version "1.5.9"
+  resolved "http://hestia:4873/angular-aria/-/angular-aria-1.5.9.tgz#cef4936fbcf8dbf7ecdabc5b475da59d98b3694b"
 
 angular-dynamic-locale@0.1.30:
   version "0.1.30"
@@ -74,13 +74,13 @@ angular-i18n@1.5.8:
   version "1.5.8"
   resolved "https://registry.yarnpkg.com/angular-i18n/-/angular-i18n-1.5.8.tgz#ad4133a6c283f7e46a14b272e8a4aabc9331d41e"
 
-angular-material@1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/angular-material/-/angular-material-1.1.1.tgz#ed12f394ba71a9189d664115624f6787a7439af2"
+angular-material@1.1.4:
+  version "1.1.4"
+  resolved "http://hestia:4873/angular-material/-/angular-material-1.1.4.tgz#27de35646f54ccd320080af0c708e1b438af87f6"
 
-angular-mocks@1.4.7:
-  version "1.4.7"
-  resolved "https://registry.yarnpkg.com/angular-mocks/-/angular-mocks-1.4.7.tgz#d7343ee0a033f9216770bda573950f6814d95227"
+angular-mocks@1.5.9:
+  version "1.5.9"
+  resolved "http://hestia:4873/angular-mocks/-/angular-mocks-1.5.9.tgz#5d6d6b37873d6c59e32e195f5de161f4a3f2f7e8"
 
 angular-moment@0.8.3:
   version "0.8.3"
@@ -92,17 +92,19 @@ angular-resizable@1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/angular-resizable/-/angular-resizable-1.2.0.tgz#9dd29af008f8b54abfc051bd269a8f0b4fe43f1a"
 
-angular-route@1.5.8:
-  version "1.5.8"
-  resolved "https://registry.yarnpkg.com/angular-route/-/angular-route-1.5.8.tgz#964093de7ec8dc5799bd56a93a6ce5f60095674b"
+angular-route@1.5.9:
+  version "1.5.9"
+  resolved "http://hestia:4873/angular-route/-/angular-route-1.5.9.tgz#4f0582eb0fb4435443a05a7d8c5eb9bdc2c5c41c"
 
-angular-sanitize@1.5.8:
-  version "1.5.8"
-  resolved "https://registry.yarnpkg.com/angular-sanitize/-/angular-sanitize-1.5.8.tgz#1832f69487ee820a21cbe30055a8fb1bdf297ab8"
+angular-sanitize@1.5.9:
+  version "1.5.9"
+  resolved "http://hestia:4873/angular-sanitize/-/angular-sanitize-1.5.9.tgz#e2d7dd8e8587f1342b6d2efdfa67311fcf1f65ed"
 
-angular-translate@2.7.2:
-  version "2.7.2"
-  resolved "https://registry.yarnpkg.com/angular-translate/-/angular-translate-2.7.2.tgz#6ce3a3e07f6f2d4436d8b78f0e324294ab31a167"
+angular-translate@2.15.1:
+  version "2.15.1"
+  resolved "http://hestia:4873/angular-translate/-/angular-translate-2.15.1.tgz#920f7d2b877819e1c0fa881781b9b675f36480ce"
+  dependencies:
+    angular ">=1.2.26 <=1.6"
 
 angular-ui-bootstrap@2.1.3:
   version "2.1.3"
@@ -118,9 +120,9 @@ angular-ui-tree@2.10.0:
   version "2.10.0"
   resolved "https://registry.yarnpkg.com/angular-ui-tree/-/angular-ui-tree-2.10.0.tgz#dec858a064bc3fe53f7f32ecc6452813346b9dae"
 
-angular@1.5.8:
-  version "1.5.8"
-  resolved "https://registry.yarnpkg.com/angular/-/angular-1.5.8.tgz#925a5392b8c212d09572dc446db7e01264e094cb"
+angular@1.5.9, "angular@>=1.2.26 <=1.6":
+  version "1.5.9"
+  resolved "http://hestia:4873/angular/-/angular-1.5.9.tgz#b7aeff42dad87881e06be16b6690fe766d868b51"
 
 "angular@>=1.2.16 1.4.x":
   version "1.4.14"
