@@ -40,6 +40,7 @@ deploy:
   username: 'teleopti_travis'
   email: $email
   api_key: $token
+  skip_cleanup: true
   on:
       tags: true
-      skip_cleanup: true
+      
