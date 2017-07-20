@@ -36,7 +36,7 @@
                 expression += getSearchCriteria(title, vm.advancedSearchForm[searchType]);
             });
 
-            expression = expression.trim();
+            expression = expression.trim().slice(0, -1);
             if (expression !== '' && expression !== vm.searchOptions.keyword) {
                 vm.searchOptions.searchKeywordChanged = true;
             }
