@@ -9,6 +9,7 @@
         function linkFunction(scope, element, attrs) {
             var outsideClickHandler = $parse(attrs.outsideClick);
             var clickEventHandler = function (event) {
+                event.preventDefault();
                 if (element[0].contains(event.target)) {return;}
                 outsideClickHandler(scope, {$event: event});
                 scope.$apply();

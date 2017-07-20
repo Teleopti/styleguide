@@ -36,6 +36,7 @@
  	git add .
 
 	if test -n "$(git status --porcelain)"; then
+		
     	# Uncommitted changes
  		git config user.name "Travis-CI"
  		git config user.email "carl.rockman@teleopti.com"

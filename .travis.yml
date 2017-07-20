@@ -18,6 +18,7 @@ before_install:
   - npm config set registry https://registry.npmjs.org/
   - curl -o- -L https://yarnpkg.com/install.sh | bash #install yarn
   - export PATH=$HOME/.yarn/bin:$PATH
+  - yarn config set registry https://registry.npmjs.org/
 cache:
   yarn: true
 install:
@@ -25,7 +26,9 @@ install:
 before_script: grunt dist --verbose
 script:
   - ./node_modules/.bin/karma start --single-run --browsers PhantomJS
-  - if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST"  ==  "false"  ]; then bash ./deploy-ghpages.sh; fi
+after_deploy:
+  - chmod +x deploy-ghpages.sh
+  - bash ./deploy-ghpages.sh
 env:
   global:
     - GH_REF: github.com/Teleopti/styleguide.git
@@ -37,5 +40,7 @@ deploy:
   username: 'teleopti_travis'
   email: $email
   api_key: $token
+  skip_cleanup: true
   on:
       tags: true
+      

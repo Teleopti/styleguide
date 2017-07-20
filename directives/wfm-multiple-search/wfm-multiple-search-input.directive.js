@@ -14,13 +14,17 @@
             vm.searchOptions.searchKeywordChanged = true;
             parseSearchExpressionInputted();
         };
-        vm.turnOffAdvancedSearch = function () {
+
+        vm.turnOffAdvancedSearch = function ($event) {
+            if ($event && $event.target.id === 'advanced-search') {
+                $event.stopPropagation();
+                return;
+            }
             vm.showAdvancedSearchOption = false;
         };
 
         vm.toggleAdvancedSearchOption = function ($event) {
             vm.showAdvancedSearchOption = !vm.showAdvancedSearchOption;
-            $event.stopPropagation();
             parseSearchExpressionInputted();
         };
         vm.advancedSearch = function () {
@@ -42,14 +46,14 @@
             }
         };
 
-        vm.focusSearch = function() {
+        vm.focusSearch = function () {
             vm.searchOptions.focusingSearch = true;
         };
 
         vm.resetFocusSearch = function () {
             vm.searchOptions.focusingSearch = false;
             return true;
-        };
+        }
 
         function setSearchFormProperty(searchType, searchValue) {
             angular.forEach(vm.searchOptions.searchFields, function (propName) {
@@ -77,8 +81,8 @@
             quotedKeywords = quotedKeywords.trim();
 
             var unquotedKeywords = displayValue
-        .replace(pattern, '').trim()
-        .replace('"', '').trim();
+                .replace(pattern, '').trim()
+                .replace('"', '').trim();
 
             return (quotedKeywords + ' ' + unquotedKeywords).trim();
         }
@@ -120,8 +124,39 @@
         };
     };
 
+    var keywordFormatDirective = function ($filter) {
+        return {
+            restrict: 'A',
+            require: '?ngModel',
+            link: linkFunction
+        };
+
+        function linkFunction(scope, element, attrs, ctrl) {
+            if (!ctrl) { return; }
+            ctrl.$formatters.unshift(function () {
+                var modelValue = ctrl.$modelValue;
+                var formattedValues = [];
+                var expressions = modelValue.split(searchExpressionSeprator);
+                angular.forEach(expressions, function (expression) {
+                    var items = expression.split(keyValueSeprator);
+                    var key = items[0];
+                    var value = items[1];
+                    if (value) {
+                        var displayKey = $filter('translate')(key);
+                        formattedValues.push(displayKey + keyValueSeprator + value);
+                    }
+                });
+                if (formattedValues.length > 0) {
+                    return formattedValues.join(searchExpressionSeprator);
+                }
+                return modelValue;
+            });
+        }
+    };
+
     angular.module('wfm.multiplesearchinput', ['wfm.helpingDirectives'])
-     .directive('wfmMultipleSearchInput', multipleSearchInputDirective)
-     .controller('multipleSearchInputCtrl', multipleSearchInputCtrl);
+        .directive('wfmMultipleSearchInput', multipleSearchInputDirective)
+        .directive('keywordFormat', ['$filter', keywordFormatDirective])
+        .controller('multipleSearchInputCtrl', multipleSearchInputCtrl);
 
 })();

@@ -2,16 +2,15 @@
 
 //Overview
 //
-// <p>These guidelines are strongly inspired by <a href="http://www.google.com/design/spec/material-design/introduction.html">Material design</a>
+// <p>This is a living styleguide and anyone is able to contribute, however any changes made will need to be considered with the main project in mind.</br>
+// These guidelines are strongly inspired by <a href="http://www.google.com/design/spec/material-design/introduction.html">Material design</a>
 // which have been implemented in <a href="https://www.google.com/inbox/">Google inbox</a> and <a href="http://www.materialup.com/">Android</a> </p>
-// <p>If something is missing, please refer to it.</p>
 //
 //Styleguide 0
 //
 
-//Style
+//Main concepts
 //
-// <h2 class="kss-title__permalink">Main concepts</h2>
 // <ul class="wfm-simple-list">
 // <li><b>Consistency</b>
 // <div class="subtext">By making the users recognize elements and behaviors we make the product faster to use.</div>
@@ -45,25 +44,11 @@
 // <li><b>JQuery and Bootstrap</b>
 // <div class="subtext"><i>SignalR depends on JQuery, we do not use JQuery for other purposes. We want to phase it out eventually. Datepickers and timepickers comes from bootstrap, these we would also like to phase out.</i></div>
 // </li>
-// </ul>
-// <h2 class="kss-title__permalink">Help</h2>
-// <ul class="wfm-simple-list">
 // <li>
-// <b> Tooltips</b>
-// <div class="subtext">Add useful tooltips on elements providing *more* information (3/4 words max => "create a user" for an icon "+" for example).</div>
-// </li>
-// <li>
-// <b>Wiki page</b>
-// <div class="subtext">The wiki page for each module can be accessed from the top right corner</div>
-// </li>
-// </ul>
-// <h2 class="kss-title__permalink">Notices and Notifications</h2>
-// <ul class="wfm-simple-list">
-//  <li>
-// <div class="subtext">Notices and notifications are ways to inform the users what we are doing.
-// Notices are temporary alerts that should quickly show up and disappear when appropriate.
-// Notifications are more permanent and remind the users what happened recently.
-// It must be possible for the user to unsuscribe/resuscribe on each notification because if there is a risk that several notifications are created at once, make sure they are aggregated into a more manageable format.</div>
+// <b> Help</b>
+// <div class="subtext">
+//  Help the user understand what their actions will do, what can be done in your module, how to quickly get up and running and let the know if something goes wrong.
+//  Add useful tooltips on elements providing *more* information (3/4 words max => "create a user" for an icon "+" for example) or remind users that they can find more information on the wiki page for each module.</div>
 // </li>
 // </ul>
 //
@@ -76,6 +61,175 @@
 // <a href="https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md">Until then...</a>
 //
 //Styleguide 0.2
+//
+
+.borderless{
+  border:none!important;
+
+  b{
+    display: block;
+  }
+}
+
+// Getting started
+//
+// To quickly get started building a view we provide a guide and a few examples of how to combine <a href=section-1.html>elements</a> and <a href=section-4.html>containers</a> to create basic layouts.
+//  </br>
+//  <button ng-click='confirmModal1=true' class="wfm-btn wfm-btn-primary">Take the tour</button>
+//  <div ng-cloak class="modal-box">
+//  	<div ng-cloak ng-show="confirmModal1">
+//  		<div class="modalbg">
+//  			<div class="dialog material-depth-1">
+//          <div class="panel">
+//          <div class="wfm-slide-tabs tabbed-panel">
+//            <div class="head-actions panel-menu">
+//              <div tabindex=0 class="context-menu card-context" ng-click="confirmModal1=false">
+//                <i class="mdi mdi-close"></i>
+//              </div>
+//            </div>
+//           <md-content class="md-padding">
+//             <md-tabs md-dynamic-height md-border-bottom md-selected="selectedIndex">
+//               <md-tab label="Analyze">
+//                 <md-content class="md-padding">
+//                     <div class="con-row">
+//                       <div class="con-flex borderless">
+//                          <b>Think about your view</b>
+//                            <ul>
+//                              <li> - What actions can the user perform?</li>
+//                              <li> - How much data does it need to contain?</li>
+//                              <li> - Will there be subviews?</li>
+//                              <li> - How often will it be used?</li>
+//                            </ul></br></br>
+//                            Questions like this helps you understand *what* to build
+//                        </div>
+//                     </div>
+//                   <div class="con-footer">
+//                     <button class="wizard-step wfm-btn wfm-btn-invis-primary" ng-click="nextTab()">Next</button>
+//                   </div>
+//                 </md-content>
+//               </md-tab>
+//               <md-tab label="View Header">
+//                 <md-content class="md-padding">
+//                     <div class="con-row">
+//                       <div class="con-flex borderless">
+//                        <b>Lets start building</b>
+//                        By now you should have some idea about what the view will do, so go ahead an add a <a href="section-1.html#kssref-1-2" target="_blank">View header</a>.
+//                        If you are building a subview (like a settings page or a form), you dont need a view header.
+//                        </div>
+//                     </div>
+//                   <div class="con-footer">
+//                     <button class="wizard-step wfm-btn wfm-btn-invis-primary" ng-click="nextTab()">Next</button>
+//                   </div>
+//                 </md-content>
+//               </md-tab>
+//               <md-tab label="Layout">
+//                 <md-content class="md-padding">
+//                     <div class="con-row">
+//                       <div class="con-flex borderless">
+//                        <b>Flexible boxes</b>
+//                        Now that we have a heading, lets add the grid. The <a href="section-4.html#kssref-4-1" target="_blank">flex grid</a>
+//                        is used to contain things in neat boxes. The boxes will fill as much space as they can on each row:
+//                        if you have one flex box, it will take 100% of the row, if you have two boxes they will take 50% each and so on.
+//                        </div>
+//                     </div>
+//                   <div class="con-footer">
+//                     <button class="wizard-step wfm-btn wfm-btn-invis-primary" ng-click="nextTab()">Next</button>
+//                   </div>
+//                 </md-content>
+//               </md-tab>
+//               <md-tab label="Panels">
+//                 <md-content class="md-padding">
+//                     <div class="con-row">
+//                       <div class="con-flex borderless">
+//                        <b>Planned panels</b>
+//                          Inside each flex box of our grid we can now add <a href="section-4.html#kssref-4-2" target="_blank">panels</a>. Panels can in turn contain any kind and number of <a href="section-1.html" target="_blank">elements</a>.
+//                          A panel is like a mini-version of the view structure; it needs to be analyzed, it has a header and you can add the flex grid inside it for layout.
+//                          The panel can have header and footer actions, these should only apply to the panel content so that each panel is self contained and understandable.
+//                        </div>
+//                     </div>
+//                   <div class="con-footer">
+//                     <button class="wizard-step wfm-btn wfm-btn-invis-primary" ng-click="nextTab()">Next</button>
+//                   </div>
+//                 </md-content>
+//               </md-tab>
+//               <md-tab label="Details">
+//                 <md-content class="md-padding">
+//                     <div class="con-row">
+//                       <div class="con-flex borderless">
+//                        <b>Now what?</b>
+//                          <ul>
+//                            <li>- Reflect on how each panel, element, container and flexbox works together</li>
+//                            <li>- Add details such as <a href="section-1.html#kssref-1-16" target="_blank">loaders</a> and <a href="section-1.html#kssref-1-17" target="_blank">tooltips</a></li>
+//                            <li>- Think of where to put future features</li>
+//                            <li>- Share a screenshot of your view</li>
+//                          To get a quick template of all this, copy the "basic layout" example below.
+//                        </div>
+//                     </div>
+//                   <div class="con-footer">
+//                     <button class="wizard-step wfm-btn wfm-btn-invis-primary" ng-click='confirmModal1=false'>End tour</button>
+//                   </div>
+//                 </md-content>
+//               </md-tab>
+//             </md-tabs>
+//           </md-content>
+//          </div>
+//        </div>
+//  		</div>
+//  	</div>
+//  </div>
+//
+//Styleguide 0.3
+//
+
+//Basic layout
+//
+// Markup:
+//  <div class="view-header with-fab with-desc">
+//    <div class="view-title">
+//      <h1><i class="mdi mdi-cake"></i> Hello world</h1>
+//      <p>This module will do great things when it grows up</p>
+//    </div>
+//    <div class="fab-wrapper">
+//      <button class="wfm-fab  material-depth-1"><i class="mdi mdi-plus"></i>
+//        <md-tooltip>
+//          Get started
+//        </md-tooltip>
+//      </button>
+//    </div>
+//  </div>
+//  <div class="con-row">
+//    <div class="con-flex">
+//      <div class="panel material-depth-1">
+//        <div class="sub-header">
+//          <h2>A humble panel</h2>
+//          <div class="head-actions panel-menu">
+//            <div tabindex=0 class="context-menu card-context">
+//              <i class="mdi mdi-dots-vertical"></i>
+//            </div>
+//          </div>
+//        </div>
+//        <div class="con-row">
+//          <div class="con-flex">
+//            Panels can host any elements you want, just break it up using the layout grid (row/flex).
+//          </div>
+//        </div>
+//        <div class="con-row">
+//          <div class="con-flex">
+//          This is a flexbox
+//          </div>
+//          <div class="con-flex">
+//          This is also a flexbox
+//          </div>
+//        </div>
+//        <div class="con-footer">
+//          <button class="wfm-btn wfm-btn-invis-default">secondary</button>
+//          <button class="wfm-btn wfm-btn-invis-primary">main</button>
+//        </div>
+//      </div>
+//    </div>
+//  </div>
+//
+// Styleguide 0.3.1
 //
 
 //Elements
@@ -488,9 +642,6 @@
 //            <div class="con-row">
 //              <div class="con-flex">Content</div>
 //            </div>
-//          <div class="con-footer">
-//            <button class="wfm-btn wfm-btn-invis-primary">Done</button>
-//          </div>
 //        </md-content>
 //      </md-tab>
 //    </md-tabs>

@@ -4,7 +4,7 @@
     angular.module('wfm.badge', [])
     .component('wfmBadge',
     {
-        template: '<span class="wfm-badge material-depth-1 grow-out" ng-class="$ctrl.status"  ng-if="$ctrl.badgeModel>0">{{$ctrl.badgeModel}}</span>',
+        templateUrl: 'directives/badge/badge.tpl.html',
         controller: BadgeCtrl,
         bindings: {
             badgeModel: '=',

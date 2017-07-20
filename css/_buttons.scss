@@ -114,57 +114,35 @@
 
 .wfm-btn {
 	border: none;
-	padding: 10px;
-	margin: 5px;
+	padding: $full-padding*2;
+	margin: $full-padding;
 	cursor: pointer;
-	border-radius: 3px;
-	transition: all 0.2s ease-in-out;
+	border-radius: $half-padding;
+	transition: $transition-timing;
 	text-decoration:none!important;
 	text-transform: uppercase;
 }
 
 .wfm-btn-invis-default {
-	color: $gray100!important;
+	color: $gray100;
 	background-color: transparent;
 
 	&:hover{
-		background-color: #ececec;
+		background-color: $gray-300;
 	}
 }
 
 .wfm-btn-invis-primary {
-	color: $blue-500!important;
+	color: $blue-500;
 	background-color: transparent;
 
 	&:hover{
-		background-color: #ececec;
-	}
-}
-
-.wfm-btn-invis-default[disabled], .wfm-btn-invis-primary[disabled],
-.wfm-btn-invis-disabled {
-	color: $text-color-muted!important;
-	background-color: transparent;
-
-	&:hover{
-		cursor: not-allowed;
-	}
-}
-
-.wfm-btn-default[disabled], .wfm-btn-primary[disabled],
-.wfm-btn-primary-disabled, .context-menu[disabled]{
-	color: $text-color-muted!important;
-	background-color: $gray012;
-	box-shadow: none;
-
-	&:hover{
-		cursor: not-allowed;
-		box-shadow: none;
+		background-color: $gray-300;
 	}
 }
 
 .wfm-btn-default {
-	color: $text-color-standard!important;
+	color: $text-color-standard;
 	background-color: $white;
 	@extend .material-depth-1;
 
@@ -180,6 +158,31 @@
 
 	&:hover{
 		@extend .material-depth-2;
+	}
+}
+
+.wfm-btn-invis-default[disabled],
+.wfm-btn-invis-primary[disabled],
+.wfm-btn-invis-disabled {
+	color: $text-color-muted;
+	background-color: transparent;
+
+	&:hover{
+		cursor: not-allowed;
+	}
+}
+
+.wfm-btn-default[disabled],
+.wfm-btn-primary[disabled],
+.wfm-btn-primary-disabled,
+.context-menu[disabled]{
+	color: $text-color-muted;
+	background-color: $gray012;
+	box-shadow: none;
+
+	&:hover{
+		cursor: not-allowed;
+		box-shadow: none;
 	}
 }
 
