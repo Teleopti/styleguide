@@ -14,13 +14,16 @@
             vm.searchOptions.searchKeywordChanged = true;
             parseSearchExpressionInputted();
         };
-        vm.turnOffAdvancedSearch = function () {
+        vm.turnOffAdvancedSearch = function ($event) {
+            if ($event && $event.target.id === 'advanced-search') {
+                $event.stopPropagation();
+                return;
+            }
             vm.showAdvancedSearchOption = false;
         };
 
         vm.openAdvancedSearchOption = function ($event) {
             vm.showAdvancedSearchOption = true;
-            $event.stopPropagation();
             parseSearchExpressionInputted();
         };
         vm.advancedSearch = function () {
