@@ -10,6 +10,7 @@
             var outsideClickHandler = $parse(attrs.outsideClick);
             var clickEventHandler = function (event) {
                 if (element[0].contains(event.target)) {return;}
+                event.preventDefault();
                 outsideClickHandler(scope, {$event: event});
                 scope.$apply();
             };
