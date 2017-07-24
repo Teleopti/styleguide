@@ -28,8 +28,7 @@
         };
 
         vm.advancedSearch = function () {
-            vm.updateSearchExpression();
-            vm.showAdvancedSearchOption = false;
+            vm.turnOffAdvancedSearch();
             vm.searchCallback && vm.searchCallback(vm.searchOptions.keyword);
         };
 
@@ -46,12 +45,17 @@
             }
             vm.searchOptions.keyword = expression;
         }
+        vm.clearSearch = function () {
+            angular.forEach(vm.searchOptions.searchFields, function (searchType) {
+                vm.advancedSearchForm[searchType] = '';
+            });
+            vm.searchOptions.keyword = '';
+        }
 
-        vm.onInputKeyUp = function ($event) {
+        vm.onSearchFieldInputKeyUp = function ($event) {
+            vm.updateSearchExpression();
             if ($event.which === 13) {
                 vm.advancedSearch();
-            } else {
-                vm.updateSearchExpression();
             }
         }
 
