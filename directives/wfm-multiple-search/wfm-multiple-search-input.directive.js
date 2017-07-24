@@ -26,9 +26,14 @@
             vm.showAdvancedSearchOption = true;
             parseSearchExpressionInputted();
         };
-        vm.advancedSearch = function () {
-            vm.showAdvancedSearchOption = false;
 
+        vm.advancedSearch = function () {
+            vm.updateSearchExpression();
+            vm.showAdvancedSearchOption = false;
+            vm.searchCallback && vm.searchCallback(vm.searchOptions.keyword);
+        };
+
+        vm.updateSearchExpression = function () {
             var expression = '';
             angular.forEach(vm.searchOptions.searchFields, function (searchType) {
                 var title = searchType;
@@ -40,10 +45,15 @@
                 vm.searchOptions.searchKeywordChanged = true;
             }
             vm.searchOptions.keyword = expression;
-            if (vm.searchCallback) {
-                vm.searchCallback(expression);
+        }
+
+        vm.onInputKeyUp = function ($event) {
+            if ($event.which === 13) {
+                vm.advancedSearch();
+            } else {
+                vm.updateSearchExpression();
             }
-        };
+        }
 
         vm.handleAdvanceSearchShowup = function () {
             vm.showAdvancedSearchOption = !vm.searchOptions.keyword;

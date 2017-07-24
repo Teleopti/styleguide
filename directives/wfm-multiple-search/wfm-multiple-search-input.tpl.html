@@ -11,12 +11,12 @@
 				<div class="con-row" ng-repeat="searchField in vm.searchOptions.searchFields" ng-if="$even">
 					<div class="full-padding">
 						<input autocomplete="off" ng-if="vm.searchOptions.searchFields[$index]" id="criteria-{{vm.searchOptions.searchFields[$index]}}"
-						 class="con-flex" type="text" ng-keyup="$event.which === 13 && vm.advancedSearch()" placeholder="{{'PersonFinderField'+ vm.searchOptions.searchFields[$index]|translate}}"
+						 class="con-flex" type="text" ng-keyup="vm.onInputKeyUp($event)" placeholder="{{'PersonFinderField'+ vm.searchOptions.searchFields[$index]|translate}}"
 						 ng-model="vm.advancedSearchForm[vm.searchOptions.searchFields[$index]]" />
 					</div>
 					<div class="full-padding">
 						<input autocomplete="off" ng-if="vm.searchOptions.searchFields[$index + 1]" id="criteria-{{vm.searchOptions.searchFields[$index + 1]}}"
-						 class="con-flex" type="text" ng-keyup="$event.which === 13 && vm.advancedSearch()" placeholder="{{'PersonFinderField'+ vm.searchOptions.searchFields[$index + 1]|translate}}"
+						 class="con-flex" type="text" ng-keyup="vm.onInputKeyUp($event)" placeholder="{{'PersonFinderField'+ vm.searchOptions.searchFields[$index + 1]|translate}}"
 						 ng-model="vm.advancedSearchForm[vm.searchOptions.searchFields[$index + 1]]" />
 					</div>
 				</div>
