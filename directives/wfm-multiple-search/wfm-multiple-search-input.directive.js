@@ -137,6 +137,23 @@
                 title: '=',
                 searchOptions: '=?',
                 searchCallback: '=?'
+            },
+            link: function (scope, element, attrs, ctrl) {
+                element.on('focusout', function (event) {
+                    if (!element[0].contains(event.relatedTarget)) {
+                        setTimeout(function () {
+                            ctrl.turnOffAdvancedSearch();
+                            scope.$apply();
+                        });
+                    }
+                });
+
+                element.on('keydown', function (event) {
+                    if (event.which === 27) {
+                        ctrl.turnOffAdvancedSearch();                       
+                        scope.$apply();
+                    }
+                });
             }
         };
     };
