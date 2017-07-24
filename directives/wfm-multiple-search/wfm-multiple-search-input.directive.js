@@ -28,6 +28,7 @@
         };
 
         vm.advancedSearch = function () {
+            vm.updateSearchExpression();
             vm.turnOffAdvancedSearch();
             vm.searchCallback && vm.searchCallback(vm.searchOptions.keyword);
         };
@@ -164,7 +165,7 @@
 
                 element.on('keydown', function (event) {
                     if (event.which === 27) {
-                        ctrl.turnOffAdvancedSearch();                       
+                        ctrl.turnOffAdvancedSearch();
                         scope.$apply();
                     }
                 });
