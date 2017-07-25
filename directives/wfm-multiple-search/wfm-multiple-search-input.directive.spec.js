@@ -1,4 +1,4 @@
-describe('wfm-multiple-search-input directive', function() {
+describe('wfm-multiple-search-input directive', function () {
     var element, scope, vm;
 
     beforeEach(function () {
@@ -32,13 +32,13 @@ describe('wfm-multiple-search-input directive', function() {
         }
     }));
 
-    it('should display search fields', function() {
+    it('should display search fields', function () {
         vm.showAdvancedSearchOption = true;
         scope.$apply();
         var inputs = element.find('form').find('input');
         expect(inputs.length).toBe(scope.searchOptions.searchFields.length);
     });
-    it('should synchronize the term expression to search fields accordingly', function() {
+    it('should synchronize the term expression to search fields accordingly', function () {
         vm.showAdvancedSearchOption = true;
         scope.searchOptions.keyword = 'FirstName:Ash;LastName:Bcd';
         vm.validateSearchKeywordChanged();
@@ -46,7 +46,7 @@ describe('wfm-multiple-search-input directive', function() {
         expect(vm.advancedSearchForm['FirstName']).toBe('Ash');
         expect(vm.advancedSearchForm['LastName']).toBe('Bcd');
     });
-    it('should not synchronize the term expression with wrong field key to search fields accordingly', function() {
+    it('should not synchronize the term expression with wrong field key to search fields accordingly', function () {
         vm.showAdvancedSearchOption = true;
         scope.searchOptions.keyword = 'First name:Ash;Last name:Bcd';
         vm.validateSearchKeywordChanged();
@@ -115,5 +115,14 @@ describe('wfm-multiple-search-input directive', function() {
 
         expect(vm.advancedSearchForm.FirstName).toEqual('John King');
         expect(vm.advancedSearchForm.Organization).toEqual(undefined);
+    }));
+
+    it('should clear the advanced search field and simple search input when click clear button', inject(function () {
+        vm.searchOptions.keyword = 'FirstName: Ashley Smith; Organization: London Shenzhen';
+        vm.validateSearchKeywordChanged();
+        vm.clearSearch();
+        expect(!!vm.searchOptions.keyword).toEqual(false);
+        expect(!!vm.advancedSearchForm.FirstName).toEqual(false);
+        expect(!!vm.advancedSearchForm.Organization).toEqual(false);
     }));
 });

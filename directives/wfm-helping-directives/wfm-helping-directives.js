@@ -7,12 +7,11 @@
         };
 
         function linkFunction(scope, element, attrs) {
-            var outsideClickHandler = $parse(attrs.outsideClick);
             var clickEventHandler = function (event) {
                 if (element[0].contains(event.target)) {return;}
-                event.preventDefault();
-                outsideClickHandler(scope, {$event: event});
-                scope.$apply();
+                scope.$apply(function() {
+                    $parse(attrs.outsideClick)(scope, {$event: event});
+                });
             };
             angular.element($window).on('click', clickEventHandler);
 
