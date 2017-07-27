@@ -166,6 +166,8 @@
                 element.on('keydown', function (event) {
                     if (event.which === 27) {
                         ctrl.turnOffAdvancedSearch();
+                        ctrl.focusSearch();
+                        angular.element(element[0].querySelector('.search-icon')).focus();
                         scope.$apply();
                     }
                 });
