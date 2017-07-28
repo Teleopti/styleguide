@@ -696,13 +696,16 @@ wfm-multiple-search-input{
     transition:2s width ease-in-out;
     width:138px;
     text-overflow: ellipsis!important;
+    outline: none !important;  
   }
 
   .search-icon{
     display: inline-block;
     vertical-align: bottom;
+    &:not(:focus){
+      outline: none !important;
+    }
   }
-
   .advanced-input-dropdown {
     position: absolute;
     z-index: 115;

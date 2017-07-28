@@ -26,9 +26,14 @@
             vm.showAdvancedSearchOption = true;
             parseSearchExpressionInputted();
         };
-        vm.advancedSearch = function () {
-            vm.showAdvancedSearchOption = false;
 
+        vm.advancedSearch = function () {
+            vm.updateSearchExpression();
+            vm.turnOffAdvancedSearch();
+            vm.searchCallback && vm.searchCallback(vm.searchOptions.keyword);
+        };
+
+        vm.updateSearchExpression = function () {
             var expression = '';
             angular.forEach(vm.searchOptions.searchFields, function (searchType) {
                 var title = searchType;
@@ -40,10 +45,20 @@
                 vm.searchOptions.searchKeywordChanged = true;
             }
             vm.searchOptions.keyword = expression;
-            if (vm.searchCallback) {
-                vm.searchCallback(expression);
+        }
+        vm.clearSearch = function () {
+            angular.forEach(vm.searchOptions.searchFields, function (searchType) {
+                vm.advancedSearchForm[searchType] = '';
+            });
+            vm.searchOptions.keyword = '';
+        }
+
+        vm.onSearchFieldInputKeyUp = function ($event) {
+            vm.updateSearchExpression();
+            if ($event.which === 13) {
+                vm.advancedSearch();
             }
-        };
+        }
 
         vm.handleAdvanceSearchShowup = function () {
             vm.showAdvancedSearchOption = !vm.searchOptions.keyword;
@@ -137,6 +152,25 @@
                 title: '=',
                 searchOptions: '=?',
                 searchCallback: '=?'
+            },
+            link: function (scope, element, attrs, ctrl) {
+                element.on('focusout', function (event) {
+                    if (!element[0].contains(event.relatedTarget)) {
+                        setTimeout(function () {
+                            ctrl.turnOffAdvancedSearch();
+                            scope.$apply();
+                        });
+                    }
+                });
+
+                element.on('keydown', function (event) {
+                    if (event.which === 27) {
+                        ctrl.turnOffAdvancedSearch();
+                        ctrl.focusSearch();
+                        angular.element(element[0].querySelector('.search-icon')).focus();
+                        scope.$apply();
+                    }
+                });
             }
         };
     };
