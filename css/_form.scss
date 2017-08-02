@@ -687,23 +687,26 @@ md-slider{
 
 
 wfm-multiple-search-input{
-  .wfm-multiple-search-wrapper{
-    position: relative;
-    height: 20px;
-  }
+    .wfm-multiple-search-wrapper{
+      position: relative;
+      height: 20px;
+    }
 
-  .advanced-input{
-    transition:2s width ease-in-out;
-    width:138px;
-    text-overflow: ellipsis!important;
-    outline: none !important;  
-  }
+    .advanced-input{
+      transition:2s width ease-in-out;
+      width:138px;
+      text-overflow: ellipsis!important;
+      outline: none !important;  
+    }
+    .search-icon:focus{
+      outline: rgb(0, 153, 255) solid 1px;
+    }
 
-  .search-icon{
-    display: inline-block;
-    vertical-align: bottom;
-    &:not(:focus){
-      outline: none !important;
+    .search-icon{
+      display: inline-block;
+      vertical-align: bottom;
+      &:not(:focus){
+        outline: none !important;
     }
   }
   .advanced-input-dropdown {
