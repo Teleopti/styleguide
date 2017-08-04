@@ -697,15 +697,19 @@ wfm-multiple-search-input{
     width:138px;
     text-overflow: ellipsis!important;
     outline: none !important;  
-  }
-
-  .search-icon{
+  }    
+  
+  .search-icon {
     display: inline-block;
     vertical-align: bottom;
+    &:focus{
+      outline: rgb(0, 153, 255) solid 1px;
+    }
     &:not(:focus){
       outline: none !important;
     }
   }
+
   .advanced-input-dropdown {
     position: absolute;
     z-index: 115;
