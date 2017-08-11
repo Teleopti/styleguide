@@ -448,7 +448,6 @@ md-autocomplete[disabled]:not([md-floating-label]),
     width: 20px;
     height: 20px;
     border-radius: 40px;
-    -webkit-transition: background-color .2s ease-in-out;
     transition: background-color .2s ease-in-out;
     cursor: pointer;
   }
@@ -526,7 +525,6 @@ md-autocomplete[disabled]:not([md-floating-label]),
     float: right;
     border-radius: 2px;
     content: " ";
-    -webkit-transition: background-color .2s ease-in-out;
     transition: background-color .2s ease-in-out;
     cursor: pointer;
   }
@@ -586,14 +584,13 @@ md-autocomplete[disabled]:not([md-floating-label]),
     width: 48px;
     height: 18px;
     border-radius: 40px;
-    -webkit-transition: background-color .2s ease-in-out;
     transition: background-color .2s ease-in-out;
     margin: 2px 5px;
     cursor: pointer;
   }
 
   .wfm-switch-toggle:after {
-    content: "";
+    content: " ";
     display: block;
     width: 12px;
     height: 12px;
@@ -604,7 +601,6 @@ md-autocomplete[disabled]:not([md-floating-label]),
     z-index: 1;
     left: 5px;
     background-color: $white;
-    -webkit-transition: left .2s ease-in-out;
     transition: left .2s ease-in-out;
   }
 
@@ -696,9 +692,9 @@ wfm-multiple-search-input{
     transition:2s width ease-in-out;
     width:138px;
     text-overflow: ellipsis!important;
-    outline: none !important;  
-  }    
-  
+    outline: none !important;
+  }
+
   .search-icon {
     display: inline-block;
     vertical-align: bottom;
