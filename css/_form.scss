@@ -324,6 +324,32 @@ md-select {
   margin-top:-5px;
 }
 
+// Autocomplete
+//
+// More information about the autocomplete element can be found in the <a href="https://material.angularjs.org/1.1.4/api/directive/mdAutocomplete">documentation</a>.
+//
+// Markup: autocomplete.hbs
+//
+// Styleguide 1.5
+//
+
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	.hide-on-ie{
+		display: none!important;
+	}
+
+	.ie-cross {
+		display: inline!important;
+    float: right;
+    margin-top: -20px;
+	}
+}
+
+.ie-cross{
+	display: none;
+}
+
 md-autocomplete{
   color: $gray087;
   background:transparent;
@@ -374,9 +400,12 @@ md-autocomplete[disabled]{
   margin-right: 0!important;
 }
 
-.md-autocomplete-suggestions-container li .highlight{
-	color:$gray087 !important;
-	font-weight: bold;
+.md-autocomplete-suggestions-container{
+  margin-bottom: $full-padding!important;
+  li .highlight{
+  	color:$gray087 !important;
+  	font-weight: bold;
+  }
 }
 
 md-select-menu md-content md-option:not([disabled]):hover,
@@ -385,9 +414,9 @@ md-autocomplete[disabled]:not([md-floating-label]),
 	background: $gray012!important;
 }
 
-.md-virtual-repeat-container.md-autocomplete-suggestions-container { //for IE: clear buttom cause item list dont open
-    height: 225.5px !important;
-}
+// .md-virtual-repeat-container.md-autocomplete-suggestions-container { //for IE: clear buttom cause item list dont open
+//     max-height: 225.5px !important;
+// }
 
 // Radio buttons
 //
