@@ -22,10 +22,10 @@ input[type='text'], [type='number'], input[type='password'], select{
 }
 
 textarea{
-	background-color: $white;
-	color:$text-color-standard;
-	resize:vertical;
-	width:100%;
+  background-color: $white;
+  color:$text-color-standard;
+  resize:vertical;
+  width:100%;
 }
 
 input::-ms-clear {
@@ -78,12 +78,12 @@ select:after {
 //
 
 .input-icon i{
-	display: inline-flex;
+  display: inline-flex;
   display: -ms-inline-flexbox;
-	width:100%;
+  width:100%;
 }
 .input-icon input{
-	margin-left: 5px;
+  margin-left: 5px;
   width: 100%;
   font-style: normal!important;
 }
@@ -279,7 +279,7 @@ md-select:not([disabled]):focus .md-select-value{
 }
 
 .md-select-value>span:not(.md-select-icon){
-	white-space: normal;
+  white-space: normal;
 }
 
 md-select-menu{
@@ -316,8 +316,8 @@ md-select {
 }
 
 .inline-select{
-	margin-top:-5px!important;
-	margin-left: 5px!important;
+  margin-top:-5px!important;
+  margin-left: 5px!important;
 }
 
 .bu-select{
@@ -375,18 +375,18 @@ md-autocomplete[disabled]{
 }
 
 .md-autocomplete-suggestions-container li .highlight{
-	color:$gray087 !important;
-	font-weight: bold;
+  color:$gray087 !important;
+  font-weight: bold;
 }
 
 md-select-menu md-content md-option:not([disabled]):hover,
 md-autocomplete[disabled]:not([md-floating-label]),
 .md-autocomplete-suggestions-container li.selected {
-	background: $gray012!important;
+  background: $gray012!important;
 }
 
 .md-virtual-repeat-container.md-autocomplete-suggestions-container { //for IE: clear buttom cause item list dont open
-    height: 225.5px !important;
+  height: 225.5px !important;
 }
 
 // Radio buttons
@@ -448,7 +448,6 @@ md-autocomplete[disabled]:not([md-floating-label]),
     width: 20px;
     height: 20px;
     border-radius: 40px;
-    -webkit-transition: background-color .2s ease-in-out;
     transition: background-color .2s ease-in-out;
     cursor: pointer;
   }
@@ -526,7 +525,6 @@ md-autocomplete[disabled]:not([md-floating-label]),
     float: right;
     border-radius: 2px;
     content: " ";
-    -webkit-transition: background-color .2s ease-in-out;
     transition: background-color .2s ease-in-out;
     cursor: pointer;
   }
@@ -577,7 +575,9 @@ md-autocomplete[disabled]:not([md-floating-label]),
   }
 
   input[type='checkbox'] {
-    display: none;
+    opacity: 0;
+    height: 1px;
+    width: 1px;
   }
 
   .wfm-switch-toggle {
@@ -586,14 +586,13 @@ md-autocomplete[disabled]:not([md-floating-label]),
     width: 48px;
     height: 18px;
     border-radius: 40px;
-    -webkit-transition: background-color .2s ease-in-out;
     transition: background-color .2s ease-in-out;
     margin: 2px 5px;
     cursor: pointer;
   }
 
   .wfm-switch-toggle:after {
-    content: "";
+    content: " ";
     display: block;
     width: 12px;
     height: 12px;
@@ -604,7 +603,6 @@ md-autocomplete[disabled]:not([md-floating-label]),
     z-index: 1;
     left: 5px;
     background-color: $white;
-    -webkit-transition: left .2s ease-in-out;
     transition: left .2s ease-in-out;
   }
 
@@ -640,38 +638,38 @@ md-slider[md-vertical] .md-sign:after{
 
 md-slider{
 
-.md-thumb{
-  transform: scale(0.7)!important;
-}
+  .md-thumb{
+    transform: scale(0.7)!important;
+  }
 
-.md-slider-content{
-  cursor: pointer;
-}
+  .md-slider-content{
+    cursor: pointer;
+  }
 
-.md-track-ticks{
-  opacity: 0;
-}
+  .md-track-ticks{
+    opacity: 0;
+  }
 
-.md-track.md-track-fill,
-.md-thumb:after{
-  background-color: $blue-300!important;
-  border-color: $blue-300!important;
-}
+  .md-track.md-track-fill,
+  .md-thumb:after{
+    background-color: $blue-300!important;
+    border-color: $blue-300!important;
+  }
 
-.md-sign{
-  background-color:$blue-500;
-}
-.md-sign:after{
-  border-top-color: $blue-500;
-}
+  .md-sign{
+    background-color:$blue-500;
+  }
+  .md-sign:after{
+    border-top-color: $blue-500;
+  }
 
-.md-min .md-thumb:after{
-  background-color: $blue-300;
-}
+  .md-min .md-thumb:after{
+    background-color: $blue-300;
+  }
 
-.md-slider-wrapper:focus > .md-thumb{
-  background-color:red !important;
-}
+  .md-slider-wrapper:focus > .md-thumb{
+    background-color:red !important;
+  }
 
 }
 
@@ -696,9 +694,9 @@ wfm-multiple-search-input{
     transition:2s width ease-in-out;
     width:138px;
     text-overflow: ellipsis!important;
-    outline: none !important;  
-  }    
-  
+    outline: none !important;
+  }
+
   .search-icon {
     display: inline-block;
     vertical-align: bottom;
