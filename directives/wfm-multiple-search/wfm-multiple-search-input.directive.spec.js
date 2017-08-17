@@ -15,7 +15,7 @@ describe('wfm-multiple-search-input directive', function () {
 
     beforeEach(inject(function (_$compile_, _$rootScope_) {
         scope = _$rootScope_.$new();
-        var elementCompile = _$compile_('<wfm-multiple-search-input title="\'Filter people\'" search-options="searchOptions" search-callback="searchKeyword"></wfm-multiple-search-input>');
+        var elementCompile = _$compile_('<wfm-multiple-search-input search-title="\'Filter people\'" search-options="searchOptions" search-callback="searchKeyword"></wfm-multiple-search-input>');
         element = elementCompile(scope);
         scope.searchOptions = {
             keyword: '',
