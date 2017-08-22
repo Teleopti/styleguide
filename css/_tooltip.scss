@@ -21,7 +21,11 @@
 md-tooltip {
   font-size: $standard-font-size!important;
   font-weight: lighter;
-    z-index:100;
+    z-index:1010;
+}
+
+.md-tooltip {
+  height: auto  !important;
 }
 
 .action-icon{
