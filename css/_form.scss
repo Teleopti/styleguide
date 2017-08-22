@@ -21,6 +21,10 @@ input[type='text'], [type='number'], input[type='password'], select{
   }
 }
 
+.wfm-form input, .wfm-form select{
+	margin:0!important;
+}
+
 textarea{
   background-color: $white;
   color:$text-color-standard;
