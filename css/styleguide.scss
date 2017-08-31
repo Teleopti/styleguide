@@ -55,14 +55,6 @@
 // Styleguide 0.1
 //
 
-// Code style
-//
-// More info here soon.
-// <a href="https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md">Until then...</a>
-//
-//Styleguide 0.2
-//
-
 .borderless{
   border:none!important;
 
@@ -178,7 +170,7 @@
 //  	</div>
 //  </div>
 //
-//Styleguide 0.3
+//Styleguide 0.2
 //
 
 //Basic layout
@@ -732,30 +724,110 @@
 //
 //Styleguide 4.4.3
 
-
-//Resources
-//
-//Here you can find some links to go further in CSS best practices
+//Naming and best practice
 //
 //Styleguide 9
 //
 //
 
-//Urls
+//States
 //
-// https://developer.mozilla.org/en-US/docs/Web/CSS
+//Setting the state correctly is important due to our online help, since the online help link is based on the state.
+//When a state changes, it will result in a new online help link which may cause customers to meet an empty page if this has not been handled in the online help.
+//Therefore, avoid creating temporary or hidden states as much as possible.
+//Talk to Lina if changing states or adding new ones.
 //
-// http://philipwalton.com/articles/css-architecture/
+//When creating a new state, name it using "spinal-case".
 //
-// http://styleguides.io/
+//When working to replace an existing state, name the new state "state-name-new" until its ready. When it is, replace it with "state-name".
 //
-// http://alistapart.com/article/creating-style-guides
+//Note: "config" cannot be used as a child state name.
 //
-// http://axbom.com/slaying-5-ux-myths-good-mankind/
-//
-// https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md
+//<div class="jsprewrap">
+//	<div ng-cloak ng-click="showjs = !showjs" class="ksscopy">Example</div>
+//	<div ng-show="showjs">
+//		<code><pre>
+// function stateConfig($stateProvider) {
+//   $stateProvider.state('example',
+//   {
+//     url: '/example',
+//     templateUrl: 'app/example/example.html',
+//     controller: 'ExampleController'
+//   })
+//   .state('example.child',
+//   {
+//     url: '/child',
+//     templateUrl: 'app/example/example-child.html',
+//     controller: 'ExampleChildController'
+//   })
+//   .state('example.another-view',
+//   {
+//     url: '/another-view',
+//     templateUrl: 'app/example/another-view.html',
+//     controller: 'ExampleSecondViewController'
+//   })
+// }
+//		</pre></code>
+//	</div>
+//</div>
 //
 //Styleguide 9.1
+
+//Translations
+//
+// Add translation keys to the resource file and provide the string and a description.
+// If you need to change the string on a previously added key, please choose one of the following options:
+//<br/>
+// Remove the key completely (in all translation files as well) and add a new key
+// <b>OR</b>
+// Change the string for the original key, and delete all previous translation of that key
+// </ul>
+//
+//Styleguide 9.2
+//
+
+//Resources
+//
+//Here you can find some links to go further in JS, CSS and UX best practices
+//
+//Styleguide 10
+//
+//
+
+//Urls
+//
+// <ul class="wfm-simple-list">
+// 	<li>
+// 		<a href="https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md">Angular styleguide - John Papa</a>
+// 		<div class="subtext">The code style we strive to follow in our JS</div>
+// 	</li>
+// 	<li>
+// 		<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference">Css quick reference - MDN</a>
+// 		<div class="subtext">Good for looking up CSS properties and syntax</div>
+// 	</li>
+// 	<li>
+// 		<a href="https://caniuse.com/">Can i use?</a>
+// 		<div class="subtext">CSS reference across all browsers</div>
+// 	</li>
+// 	<li>
+// 		<a href="http://philipwalton.com/articles/css-architecture/">Css architecture - Philip Walton</a>
+// 		<div class="subtext">Article by a Google engineer on how to build good CSS</div>
+// 	</li>
+// 	<li>
+// 		<a href="https://www.behance.net/gallery/47810259/2017-Design-Trends-Guide">Design trends 2017</a>
+// 		<div class="subtext">A compilation of design trends in 2017 @ Behance</div>
+// 	</li>
+// 	<li>
+// 		<a href="http://axbom.com/slaying-5-ux-myths-good-mankind/">UX myths - Per Axbom</a>
+// 		<div class="subtext">Common pitfalls in UX thinking</div>
+// 	</li>
+// 	<li>
+// 		<a href="http://styleguides.io/">Styleguides</a>
+// 		<div class="subtext">A collection of styleguides for reference</div>
+// 	</li>
+// </ul>
+//
+//Styleguide 10.1
 
 html{
   overflow-y: auto!important;
