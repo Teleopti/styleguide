@@ -228,7 +228,7 @@
 //      <div tabindex="0">
 //				<span><i class="mdi" ng-class="item.title"></i></span>
 //					<b>Multi card title</b>
-//				<span class="chevron"><i class="mdi mdi-chevron-right"></i></span>
+//          <span class="chevron"><i class="mdi mdi-chevron-right"></i></span>
 //      </div>
 //			</card-header>
 //			<card-body class="panel">
@@ -245,6 +245,16 @@
 //	</wfm-card-list>
 //
 //Styleguide 4.6.2
+//
+
+// Open multiple by default
+//
+// The multi select cards can be set to be open by default.
+//
+//Markup: cardlist_default.hbs
+//
+//
+//Styleguide 4.6.3
 //
 
 
