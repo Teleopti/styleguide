@@ -37,15 +37,45 @@ md-tooltip {
 //Badges are used to show the size of a group of items. It can show a fixed number or tick up as the user add more items to the group.
 //By using colors we can indicate the status or severity of that amount.
 //Badges can be applied to a number of containers as well, such as <a href="section-4.html#kssref-4-2">panels and tabs</a>.
+//<table class="wfm-table">
+//	<thead>
+//		<tr>
+//			<th>Attribute Name</th>
+//			<th>Usage</th>
+//		</tr>
+//	</thead>
+//	<tbody>
+//		<tr>
+//			<td>badge-model</td>
+//			<td>Bind the number to show</td>
+//		</tr>
+//		<tr>
+//			<td>status</td>
+//			<td>notice-info/notice-error/notice-warning/notice-success</td>
+//		</tr>
+//    <tr>
+//      <td>pulse</td>
+//      <td>true/false - if the badge should pulse on change</td>
+//    </tr>
+//    <tr>
+//      <td>show-empty</td>
+//      <td>true/false - if the badge should appear even if the badge-model is undefined</td>
+//    </tr>
+//	</tbody>
+//</table>
 //
 //Markup:
-//  <a href="#" ng-click="counter = counter+1" class="wfm-btn wfm-btn-primary wfm-badge-wrapper">
+//  <a href="#" ng-click="counterX = counterX+1" class="wfm-btn wfm-btn-primary wfm-badge-wrapper">
 //    <i class="mdi mdi-cake "></i>
-//    <wfm-badge badge-model="1" status="'notice-info'"> </wfm-badge>
+//    <wfm-badge badge-model="counterX" pulse="true" show-empty="true" status="'notice-info'"> </wfm-badge>
 //  </a>
-//  <a href="#" ng-click="counter = counter+1" class="wfm-btn wfm-btn-default wfm-badge-wrapper">
+//  <a href="#" ng-click="counterY = counterY+1" class="wfm-btn wfm-btn-default wfm-badge-wrapper">
 //    <i class="mdi mdi-cake "></i>
-//    <wfm-badge badge-model="50" status="'notice-warning'"> </wfm-badge>
+//    <wfm-badge badge-model="counterY" pulse="true" show-empty="false" status="'notice-warning'"> </wfm-badge>
+//  </a>
+//  <a href="#" ng-click="counterZ = counterZ+1" class="wfm-btn wfm-btn-default wfm-badge-wrapper">
+//    <i class="mdi mdi-cake "></i>
+//    <wfm-badge badge-model="counterZ" pulse="true" show-empty="false" status="'notice-success'"> </wfm-badge>
 //  </a>
 //  <div tabindex=0 class="context-menu card-context wfm-badge-wrapper">
 //    <i class="mdi mdi-cake"></i>
@@ -72,6 +102,61 @@ md-tooltip {
   z-index: 10;
   color:$text-color-standard;
   border-radius: 15px!important;
+  text-align: center;
+}
+
+#pulse-element{
+  position: absolute;
+  top: -0.5em;
+  left: 0.5em;
+}
+
+.notice-info>.pulse{
+    animation-name: infoNoticePulse;
+}
+
+.notice-warning>.pulse{
+    animation-name: warningNoticePulse;
+}
+
+.notice-error>.pulse{
+    animation-name: errorNoticePulse;
+}
+
+.notice-success>.pulse{
+    animation-name: successNoticePulse;
+}
+
+.pulse{
+  padding: 5px;
+  border-radius: 50%;
+  animation-duration: 1.25s;
+  animation-timing-function:  cubic-bezier(0.66, 0, 0, 1);
+  animation-fill-mode: forwards;
+  animation-iteration-count:3;
+  animation-direction: normal;
+}
+
+.wfm-badge-content{
+  position:relative;
+  z-index:5;
+}
+
+@keyframes infoNoticePulse {
+  0% {box-shadow: 0 0 0 0 rgba(102, 194, 255, 0.8);}
+  100% {box-shadow: 0 0 0 25px rgba(102, 194, 255, 0);}
+}
+@keyframes warningNoticePulse {
+  0% {box-shadow: 0 0 0 0 rgba(255, 194, 133, 0.8);}
+  100% {box-shadow: 0 0 0 25px rgba(255, 194, 133, 0);}
+}
+@keyframes errorNoticePulse {
+  0% {box-shadow: 0 0 0 0 rgba(238, 143, 125, 0.8);}
+  100% {box-shadow: 0 0 0 25px rgba(238, 143, 125, 0);}
+}
+@keyframes successNoticePulse {
+  0% {box-shadow: 0 0 0 0 rgba(194, 224, 133, 0.8);}
+  100% {box-shadow: 0 0 0 25px rgba(194, 224, 133, 0);}
 }
 
 md-tab-item> wfm-badge > span{
