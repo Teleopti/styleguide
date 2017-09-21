@@ -367,7 +367,8 @@ md-select {
 //    ]
 //  }
 //];
-//vm.preselected = preselected = {skillIds: ['XYZ']};
+//vm.preselectedSkill = {skillIds: ['XYZ']};
+//vm.preselectedSkillGroup = {skillAreaId: ['XYZ']};
 //$scope.output = function (selectedItem){
 //   $scope.filterOutput = selectedItem;
 //}
