@@ -62,10 +62,12 @@ describe('skillPickerComponent', function () {
         ctrl = $componentController('skillPicker', null, {
             skills: mockedSkills,
             skillAreas: mockedSkillAreas,
-            itemToReturn: mockedItemToReturn
+            itemToReturn: mockedItemToReturn,
+            preselectedItem: preselectedSkill
         });
         spyOn(ctrl, 'itemToReturn');
 
+        ctrl.$onInit();
         ctrl.selectedSkill = ctrl.skills[0];
         ctrl.selectSkill(ctrl.skills[0]);
         ctrl.selectedSkillArea = ctrl.skillAreas[0];
@@ -80,10 +82,12 @@ describe('skillPickerComponent', function () {
         ctrl = $componentController('skillPicker', null, {
             skills: mockedSkills,
             skillAreas: mockedSkillAreas,
-            itemToReturn: mockedItemToReturn
+            itemToReturn: mockedItemToReturn,
+            preselectedItem: preselectedSkill
         });
         spyOn(ctrl, 'itemToReturn');
 
+        ctrl.$onInit();
         ctrl.selectedSkill = ctrl.skills[0];
         ctrl.selectSkill(ctrl.skills[0]);
         ctrl.selectedSkill = null;
@@ -97,10 +101,12 @@ describe('skillPickerComponent', function () {
         ctrl = $componentController('skillPicker', null, {
             skills: mockedSkills,
             skillAreas: mockedSkillAreas,
-            itemToReturn: mockedItemToReturn
+            itemToReturn: mockedItemToReturn,
+            preselectedItem: preselectedSkill
         });
         spyOn(ctrl, 'itemToReturn');
 
+        ctrl.$onInit();
         ctrl.selectedSkillArea = ctrl.skillAreas[0];
         ctrl.selectSkillArea(ctrl.skillAreas[0]);
         ctrl.selectedSkillArea = null;
@@ -119,7 +125,6 @@ describe('skillPickerComponent', function () {
         });
 
         ctrl.$onInit();
-
         expect(ctrl.selectedSkill).toEqual(mockedSkills[0]);
     });
 

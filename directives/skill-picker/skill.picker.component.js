@@ -2,21 +2,20 @@
     'use strict';
 
     angular
-        .module('wfm.skillPicker', [])
-        .component('skillPicker', {
-            templateUrl: 'directives/skill-picker/skill-picker.tpl.html',
-            controller: SkillPickerComponentController,
-            bindings: {
-                skills: '=',
-                skillAreas: '=',
-                itemToReturn: '=',
-                preselectedItem: '='
-            },
-        });
+    .module('wfm.skillPicker', [])
+    .component('skillPicker', {
+        templateUrl: 'directives/skill-picker/skill-picker.tpl.html',
+        controller: SkillPickerComponentController,
+        bindings: {
+            skills: '=',
+            skillAreas: '=',
+            itemToReturn: '=',
+            preselectedItem: '='
+        },
+    });
     SkillPickerComponentController.inject = [];
     function SkillPickerComponentController() {
         var ctrl = this;
-
         ctrl.skillsLoaded = true;
         ctrl.skillAreasLoaded = true;
         ctrl.$onInit = function () {
