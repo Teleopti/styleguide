@@ -328,6 +328,104 @@ md-select {
   margin-top:-5px;
 }
 
+// Skill picker
+//
+// The skill picker is used to switch between selected skills and selected skill groups.
+//<div class="jsprewrap">
+//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
+//	<div ng-show="showjs">
+//	<code><pre>
+//vm.mockSkills = [
+//  {
+//    Id: 'XYZ',
+//    Name: 'skill1'
+//  },
+//  {
+//    Id: 'ABC',
+//    Name: 'skill2'
+//  }
+//];
+//vm.mockedSkillGroups = [
+//  {
+//    Name: 'SkillArea1',
+//    Id: '123',
+//    Skills: [
+//      {
+//        Id: 'XYZ',
+//        Name: 'skill1'
+//      }
+//    ]
+//  },
+//  {
+//    Name: 'SkillArea2',
+//    Id: '321',
+//    Skills: [
+//      {
+//        Id: 'ABC',
+//        Name: 'skill2'
+//      }
+//    ]
+//  }
+//];
+//vm.preselectedSkill = {skillIds: ['XYZ']};
+//vm.preselectedSkillGroup = {skillAreaId: ['XYZ']};
+//$scope.output = function (selectedItem){
+//   $scope.filterOutput = selectedItem;
+//}
+//};
+//		</pre></code>
+//	</div>
+//</div>
+//<table class="wfm-table">
+//	<thead>
+//		<tr>
+//			<th>Attribute Name</th>
+//			<th>Usage</th>
+//		</tr>
+//	</thead>
+//	<tbody>
+//		<tr>
+//			<td>skills</td>
+//			<td>Model for binding skills</td>
+//		</tr>
+//		<tr>
+//			<td>skill-areas</td>
+//			<td>Model for binding skill groups</td>
+//		</tr>
+//    <tr>
+//      <td>item-to-return</td>
+//      <td>The currently selected item (skill or group) returned as a callback function</td>
+//    </tr>
+//    <tr>
+//      <td>preselected</td>
+//      <td>Send in a item to be preselected on load</td>
+//    </tr>
+//	</tbody>
+//</table>
+//
+// Markup:
+//<skill-picker skills="mockSkills" skill-areas="mockedSkillGroups" item-to-return="output" preselected-item="preselected"></skill-picker>
+//<p ng-if="filterOutput">Selected skill/group: <span ng-bind="filterOutput.Name"></span></p>
+//
+//Styleguide 2.9
+//
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	.hide-on-ie{
+		display: none!important;
+	}
+
+	.ie-cross {
+		display: inline!important;
+    float: right;
+    margin-top: -20px;
+	}
+}
+
+.ie-cross{
+	display: none;
+}
+
 md-autocomplete{
   color: $gray087;
   background:transparent;
@@ -378,15 +476,18 @@ md-autocomplete[disabled]{
   margin-right: 0!important;
 }
 
-.md-autocomplete-suggestions-container li .highlight{
-  color:$gray087 !important;
-  font-weight: bold;
+.md-autocomplete-suggestions-container{
+  margin-bottom: $full-padding!important;
+  li .highlight{
+  	color:$gray087 !important;
+  	font-weight: bold;
+  }
 }
 
 md-select-menu md-content md-option:not([disabled]):hover,
 md-autocomplete[disabled]:not([md-floating-label]),
 .md-autocomplete-suggestions-container li.selected {
-  background: $gray012!important;
+	background: $gray012!important;
 }
 
 .md-virtual-repeat-container.md-autocomplete-suggestions-container { //for IE: clear buttom cause item list dont open
