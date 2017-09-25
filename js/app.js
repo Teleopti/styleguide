@@ -153,7 +153,7 @@
       };
 
       /*code for card list*/
-      $scope.items = [{title: 'mdi-chart-bar', bool: true}, {title: 'mdi-chart-bar', bool: false}];
+      $scope.items = [{title: 'mdi-chart-bar', bool: true}, {title: 'mdi-chart-bar', bool: false}, {title: 'mdi-chart-bar', bool: true}];
 
       /*Code for notices*/
       $scope.displaySuccessNew = function() {
