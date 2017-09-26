@@ -233,6 +233,32 @@
         showPopupButton: true
       };
 
+      // code for homepage
+      $scope.menuItems = [];
+      $scope.addItemToList = function (url, header) {
+        var item = {
+          Link: '<a href="' + url + '"><li>'+ header +'</li></a>',
+          Name: header
+        }
+        if ($scope.menuItems.indexOf(item) == -1) {
+            $scope.menuItems.push(item);
+        }
+      }
+      $scope.getChapteIcon = function (index) {
+        console.log(index);
+        if (index == 'Overview') {return 'mdi-airballoon'}
+        if (index == 'Elements') {return 'mdi-puzzle'}
+        if (index == 'Components') {return 'mdi-cube-outline'}
+        if (index == 'Colors') {return 'mdi-invert-colors'}
+        if (index == 'Containers') {return 'mdi-border-none'}
+        if (index == 'Tree') {return 'mdi-file-tree'}
+        if (index == 'Language') {return 'mdi-sort-alphabetical'}
+        if (index == 'Icons') {return 'mdi-image-filter-vintage'}
+        if (index == 'Helper classes') {return 'mdi-auto-fix'}
+        if (index == 'Naming and best practice') {return 'mdi-crown'}
+        if (index == 'Resources') {return 'mdi-school'}
+      }
+
       /*code for numeric value directive*/
       function isFloat(n) {
         return Number(n) === n && n % 1 !== 0;
