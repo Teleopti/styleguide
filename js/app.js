@@ -245,7 +245,6 @@
         }
       }
       $scope.getChapteIcon = function (index) {
-        console.log(index);
         if (index == 'Overview') {return 'mdi-airballoon'}
         if (index == 'Elements') {return 'mdi-puzzle'}
         if (index == 'Components') {return 'mdi-cube-outline'}
