@@ -65,7 +65,7 @@ describe('skillPickerComponent', function () {
             itemToReturn: mockedItemToReturn,
         });
         spyOn(ctrl, 'itemToReturn');
-
+        ctrl.$onInit();
         ctrl.selectedSkill = ctrl.skills[0];
         ctrl.selectSkill(ctrl.skills[0]);
         ctrl.selectedSkillArea = ctrl.skillAreas[0];
@@ -83,7 +83,7 @@ describe('skillPickerComponent', function () {
             itemToReturn: mockedItemToReturn
         });
         spyOn(ctrl, 'itemToReturn');
-
+        ctrl.$onInit();
         ctrl.selectedSkill = ctrl.skills[0];
         ctrl.selectSkill(ctrl.skills[0]);
         ctrl.selectedSkill = null;
@@ -100,7 +100,7 @@ describe('skillPickerComponent', function () {
             itemToReturn: mockedItemToReturn
         });
         spyOn(ctrl, 'itemToReturn');
-
+        ctrl.$onInit();
         ctrl.selectedSkillArea = ctrl.skillAreas[0];
         ctrl.selectSkillArea(ctrl.skillAreas[0]);
         ctrl.selectedSkillArea = null;
@@ -110,7 +110,7 @@ describe('skillPickerComponent', function () {
         expect(ctrl.itemToReturn).toHaveBeenCalledWith(undefined);
     });
 
-    xit('should have preselected skill', function () {
+    it('should have preselected skill', function () {
         ctrl = $componentController('skillPicker', null, {
             skills: mockedSkills,
             skillAreas: mockedSkillAreas,
@@ -122,7 +122,7 @@ describe('skillPickerComponent', function () {
         expect(ctrl.selectedSkill).toEqual(mockedSkills[0]);
     });
 
-    xit('should have preselected skill area', function () {
+    it('should have preselected skill area', function () {
         ctrl = $componentController('skillPicker', null, {
             skills: mockedSkills,
             skillAreas: mockedSkillAreas,

@@ -19,11 +19,14 @@
         ctrl.skillsLoaded = true;
         ctrl.skillAreasLoaded = true;
         ctrl.$onInit = function () {
+            if (!ctrl.preselectedItem) {
+                return
+            }
             if (angular.isDefined(ctrl.preselectedItem.skillIds)) {
                 ctrl.selectedSkill = ctrl.skills.find(function(skill) {
                     return skill.Id === ctrl.preselectedItem.skillIds[0];
                 });
-            } else {
+            } else if (angular.isDefined(ctrl.preselectedItem.skillAreaId)) {
                 ctrl.selectedSkillArea = ctrl.skillAreas.find(function(sa) {
                     return sa.Id === ctrl.preselectedItem.skillAreaId
                 });
