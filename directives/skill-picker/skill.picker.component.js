@@ -18,6 +18,9 @@
         var ctrl = this;
         ctrl.skillsLoaded = true;
         ctrl.skillAreasLoaded = true;
+        ctrl.selectedSkill;
+        ctrl.selectedSkillArea;
+
         ctrl.$onInit = function () {
             if (!ctrl.preselectedItem) {
                 return
