@@ -1,4 +1,4 @@
-//Time Range Picker
+//Time range Picker
 //
 //A directive for managing time range. The time range is represented by any object that have <code>startTime</code> and <code>endTime</code> keys, each with a js Date object as value. The range can be overnight if <code>disable-next-day</code> is set to false. In that case, a <code>+ 1</code> sign will be shown to indicate the end time is at the second day.
 //The pickers are self-adjusted to the user's time-format setting, i.e. meridian will be used for 12-h format and disabled for 24-h format with correct meridian texts.
