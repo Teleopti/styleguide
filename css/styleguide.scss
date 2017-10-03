@@ -1,4 +1,4 @@
-﻿@import './classicvariables';
+@import './classicvariables';
 
 //Overview
 //
@@ -331,7 +331,8 @@
 
 //Layout
 //
-//The layout consists of the flex grid. Since the grid is adapting to the number of items inside it but does not wrap, be careful not to use too many in one row. If many are needed, consider using a tabbed container, a card-grid or spreading them out over several rows.
+//The default layout grid is a flex-row that splits its width evenly among the number of flex-items inside it (i.e one flex-item will take 100%, two flex-items will take 50%, four flex-items will take 25% and so on). The default layout will keep its flex-items in a row until the screen gets small enough that it gives each flex-item 100% width;
+//
 //<table class="wfm-table">
 //	<thead>
 //		<tr>
@@ -389,9 +390,63 @@
 //    <div class="con-flex">25%</div>
 // </div>
 //
-//Styleguide 4.1
+//Styleguide 4.1.0
 //
 //
+
+//Fluid layout
+//
+// A fluid layout will wrap the flex-items into columns instead of dividing the width evenly depending on the number.
+// It is important to remember that if the items have different height, the tallest item will set the height for the whole row.
+//
+//Markup:
+//<div class="con-fluid-row">
+//<div class="con-fluid-flex" ng-repeat="item in bigList">
+// (<span ng-bind="item.id"></span>) Default to 1/3
+//</div>
+//</div>
+//
+//Styleguide 4.1.1
+//
+
+//Dense fluid layout
+//
+//A more dense version of the fluid layout for smaller elements.
+//
+//Markup:
+//<div class="con-fluid-row dense">
+//<div class="con-fluid-flex" ng-repeat="item in bigList">
+// (<span ng-bind="item.id"></span>) Default to 1/5
+//</div>
+//</div>
+//
+//Styleguide 4.1.2
+//
+
+.con-fluid-row {
+  display: grid;
+  grid-gap: 0px;
+  grid-template-columns: repeat(auto-fill, minmax(33%, auto));
+}
+.con-fluid-flex{
+  padding: $full-padding;
+}
+
+.dense{
+  grid-template-columns: repeat(auto-fill, minmax(19%, auto));
+}
+
+@media screen and (max-width: 960px) {
+  .con-fluid-row{
+    grid-template-columns: repeat(auto-fill, minmax(49%, auto))!important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .con-fluid-row{
+    grid-template-columns: repeat(auto-fill, minmax(100%, auto))!important;
+  }
+}
 
 //Panel
 //
@@ -839,7 +894,7 @@ html{
   text-align:center;
   display: inline-block;
   background: white;
-  }
+}
 
 .jsprewrap{
   width: 98%;
@@ -847,7 +902,7 @@ html{
   cursor:pointer;
 }
 
-.con-flex,.form-input-wrap{
+.con-flex,.form-input-wrap, .con-fluid-flex{
   border:1px dashed $gray026;
 }
 
@@ -861,26 +916,26 @@ html{
 
 /*template styles*/
 .kss-sidebar {
-	position:fixed!important;
+  position:fixed!important;
 }
 
 #kss-node .kss-title__permalink {
-    font-size: 30px;
-    font-weight: normal;
+  font-size: 30px;
+  font-weight: normal;
 }
 
 #kss-node .kss-section {
-	max-width: 80%;
+  max-width: 80%;
 }
 
 .kss-style code {
-	font-size: 12px;
-	line-height: 14px !important;
-	font-family: Menlo,Monaco,"Andale Mono","lucida console","Courier New",monospace;
+  font-size: 12px;
+  line-height: 14px !important;
+  font-family: Menlo,Monaco,"Andale Mono","lucida console","Courier New",monospace;
 }
 
 #kss-node ol.linenums li {
-	border:none;
+  border:none;
 }
 
 #kss-node .kss-sidebar {
@@ -892,323 +947,323 @@ html{
 }
 
 @media screen and (min-width: 769px){
-	#kss-node .kss-sidebar {
-	  background: white;
-	  top: 0;
-	  z-index:9;
-	  max-height: 100%;
-	  overflow-y: auto;
-	}
+  #kss-node .kss-sidebar {
+    background: white;
+    top: 0;
+    z-index:9;
+    max-height: 100%;
+    overflow-y: auto;
+  }
 }
 
 .styleguide-break{
-	background-color:$orange-400;
-	color:$gray087;
-	padding:$full-padding;
+  background-color:$orange-400;
+  color:$gray087;
+  padding:$full-padding;
 
-	span:before{
-		content:"This element does not exist in material design. ";
-	}
+  span:before{
+    content:"This element does not exist in material design. ";
+  }
 }
 
 .angular-req span:before{
-	content:"This element require additional angular directives. "!important;
+  content:"This element require additional angular directives. "!important;
 }
 
 md-tooltip {
-    position: fixed;
+  position: fixed;
 }
 
 .darktheme-background {
-    background: #303030 !important;
-    color: rgba(255,255,255,0.87)!important;
+  background: #303030 !important;
+  color: rgba(255,255,255,0.87)!important;
 }
 
 .classictheme-background {
-    background: $gray012 !important;
-    color: $text-color-standard;
+  background: $gray012 !important;
+  color: $text-color-standard;
 }
 
 
 //Color swatches
 .swatch-list {
 
-	.blue-500-swatch {
-			background:$blue-500!important;
-      p{
-        color:white;
-      }
-	}
-	.blue-300-swatch {
-			background:$blue-300!important;
-	}
-	.blue-100-swatch {
-			background:$blue-100!important;
-	}
-
-	.green-500-swatch {
-		background:$green-500!important;
-	}
-	.green-300-swatch {
-		background:$green-300!important;
-	}
-	.green-100-swatch {
-		background:$green-100!important;
-	}
-
-	.purple-100-swatch {
-		background:$purple-100!important;
-	}
-	.purple-300-swatch {
-		background:$purple-300!important;
+  .blue-500-swatch {
+    background:$blue-500!important;
     p{
       color:white;
     }
-	}
-	.purple-500-swatch {
-		background:$purple-500!important;
-    p{
-      color:white;
-    }
-	}
-
-	.brown-100-swatch {
-		background:$brown-100!important;
-	}
-	.brown-300-swatch {
-		background:$brown-300!important;
-    p{
-      color:white;
-    }
-	}
-	.brown-500-swatch {
-		background:$brown-500!important;
-    p{
-      color:white;
-    }
-	}
-
-	.teal-100-swatch {
-		background:$teal-100!important;
-	}
-	.teal-300-swatch {
-		background:$teal-300!important;
-	}
-	.teal-500-swatch {
-		background:$teal-500!important;
-    p{
-      color:white;
-    }
-	}
-
-	.pink-500-swatch {
-		background:$pink-500!important;
-    p{
-      color:white;
-    }
-	}
-	.pink-300-swatch {
-		background:$pink-300!important;
-    p{
-      color:white;
-    }
-	}
-	.pink-100-swatch {
-		background:$pink-100!important;
-	}
-
-	.orange-400-swatch {
-			background:$orange-400!important;
-	}
-	.orange-500-swatch {
-			background:$orange-500!important;
-	}
-	.orange-600-swatch {
-			background:$orange-600!important;
-	}
-	.red-800-swatch {
-			background:$red-800!important;
-      p{
-        color:white;
-      }
-	}
-	.red-700-swatch {
-			background:#EF5350!important;
-	}
-	.red-600-swatch {
-			background:$red-600!important;
-	}
-	.gray-054-swatch {
-			background:$gray054!important;
-      p{
-        color:white;
-      }
-	}
-	.gray-300-swatch {
-			background:$gray-300!important;
-	}
-	.gray-012-swatch {
-			background:$gray012!important;
-	}
-	.gray-026-swatch {
-			background:$gray026!important;
-	}
-	.gray-087-swatch {
-			background:$gray087!important;
-	}
-	.gray-100-swatch {
-			background:$gray100!important;
-	}
-  .gray-500-swatch {
-      background:$gray-500!important;
   }
-	.white-swatch {
-			background:$white!important;
-	}
+  .blue-300-swatch {
+    background:$blue-300!important;
+  }
+  .blue-100-swatch {
+    background:$blue-100!important;
+  }
+
+  .green-500-swatch {
+    background:$green-500!important;
+  }
+  .green-300-swatch {
+    background:$green-300!important;
+  }
+  .green-100-swatch {
+    background:$green-100!important;
+  }
+
+  .purple-100-swatch {
+    background:$purple-100!important;
+  }
+  .purple-300-swatch {
+    background:$purple-300!important;
+    p{
+      color:white;
+    }
+  }
+  .purple-500-swatch {
+    background:$purple-500!important;
+    p{
+      color:white;
+    }
+  }
+
+  .brown-100-swatch {
+    background:$brown-100!important;
+  }
+  .brown-300-swatch {
+    background:$brown-300!important;
+    p{
+      color:white;
+    }
+  }
+  .brown-500-swatch {
+    background:$brown-500!important;
+    p{
+      color:white;
+    }
+  }
+
+  .teal-100-swatch {
+    background:$teal-100!important;
+  }
+  .teal-300-swatch {
+    background:$teal-300!important;
+  }
+  .teal-500-swatch {
+    background:$teal-500!important;
+    p{
+      color:white;
+    }
+  }
+
+  .pink-500-swatch {
+    background:$pink-500!important;
+    p{
+      color:white;
+    }
+  }
+  .pink-300-swatch {
+    background:$pink-300!important;
+    p{
+      color:white;
+    }
+  }
+  .pink-100-swatch {
+    background:$pink-100!important;
+  }
+
+  .orange-400-swatch {
+    background:$orange-400!important;
+  }
+  .orange-500-swatch {
+    background:$orange-500!important;
+  }
+  .orange-600-swatch {
+    background:$orange-600!important;
+  }
+  .red-800-swatch {
+    background:$red-800!important;
+    p{
+      color:white;
+    }
+  }
+  .red-700-swatch {
+    background:#EF5350!important;
+  }
+  .red-600-swatch {
+    background:$red-600!important;
+  }
+  .gray-054-swatch {
+    background:$gray054!important;
+    p{
+      color:white;
+    }
+  }
+  .gray-300-swatch {
+    background:$gray-300!important;
+  }
+  .gray-012-swatch {
+    background:$gray012!important;
+  }
+  .gray-026-swatch {
+    background:$gray026!important;
+  }
+  .gray-087-swatch {
+    background:$gray087!important;
+  }
+  .gray-100-swatch {
+    background:$gray100!important;
+  }
+  .gray-500-swatch {
+    background:$gray-500!important;
+  }
+  .white-swatch {
+    background:$white!important;
+  }
 
   //dark theme starts here
 
   .blue-500-swatch-dark {
-			background: #0a84d6!important;
-	}
-	.blue-300-swatch-dark {
-			background: #136fac!important;
-	}
-	.blue-100-swatch-dark {
-			background:#1d5a83 !important;
-	}
-
-	.green-500-swatch-dark {
-		background:#84ad32!important;
-	}
-	.green-300-swatch-dark {
-		background:#6f8e32 !important;
-	}
-	.green-100-swatch-dark {
-		background:#627b32!important;
-	}
-
-	.purple-100-swatch-dark {
-		background:#9C27B0!important;
-	}
-	.purple-300-swatch-dark {
-		background:#BA68C8!important;
-	}
-	.purple-500-swatch-dark {
-		background:#E1BEE7!important;
-    p{
-      color:$text-color-standard!important;
-    }
-	}
-
-	.brown-100-swatch-dark {
-		background:#795548!important;
-	}
-	.brown-300-swatch-dark {
-		background:#A1887F!important;
-    p{
-      color:$text-color-standard!important;
-    }
-	}
-	.brown-500-swatch-dark {
-		background: #D7CCC8!important;
-    p{
-      color:$text-color-standard!important;
-    }
-	}
-
-	.teal-100-swatch-dark {
-		background: #009688 !important;
-	}
-	.teal-300-swatch-dark {
-		background:#4DB6AC !important;
-    p{
-      color:$text-color-standard!important;
-    }
-	}
-	.teal-500-swatch-dark {
-		background:#B2DFDB!important;
-    p{
-      color:$text-color-standard!important;
-    }
-	}
-
-	.pink-500-swatch-dark {
-		background: #F8BBD0!important;
-    p{
-      color:$text-color-standard!important;
-    }
-	}
-	.pink-300-swatch-dark {
-		background: #F06292!important;
-	}
-	.pink-100-swatch-dark {
-		background:#E91E63!important;
-	}
-
-	.orange-400-swatch-dark {
-			background:#c27c36!important;
-	}
-	.orange-500-swatch-dark {
-			background:#d68636!important;
-	}
-	.orange-600-swatch-dark {
-			background: #ea9036 !important;
-	}
-	.red-800-swatch-dark {
-			background:#ee8f7d!important;
-      p{
-        color:$text-color-standard!important;
-      }
-	}
-	.red-700-swatch-dark {
-			background:#EF5350!important;
-	}
-	.red-600-swatch-dark {
-			background:#ca3333!important;
-	}
-	.gray-054-swatch-dark {
-			background: rgba(107, 107, 107, 1)!important;
-	}
-	.gray-300-swatch-dark {
-			background:#555555!important;
-	}
-	.gray-012-swatch-dark {
-			background:#303030!important;
-	}
-	.gray-026-swatch-dark {
-			background: rgba(0,0,0,0.26)!important;
-	}
-	.gray-087-swatch-dark {
-			background: #d1d1d1!important;
-      p{
-        color:$text-color-standard!important;
-      }
-	}
-	.gray-100-swatch-dark {
-			background:#9E9E9E!important;
-	}
-  .gray-500-swatch-dark {
-      background:#9E9E9E!important;
+    background: #0a84d6!important;
   }
-	.white-swatch-dark {
-			background: #424242!important;
-	}
+  .blue-300-swatch-dark {
+    background: #136fac!important;
+  }
+  .blue-100-swatch-dark {
+    background:#1d5a83 !important;
+  }
 
-	li{
-		position:relative;
-		width: 100px;
-		height: 100px;
+  .green-500-swatch-dark {
+    background:#84ad32!important;
+  }
+  .green-300-swatch-dark {
+    background:#6f8e32 !important;
+  }
+  .green-100-swatch-dark {
+    background:#627b32!important;
+  }
 
-		.white-color-text{
-			color:$white;
-		}
+  .purple-100-swatch-dark {
+    background:#9C27B0!important;
+  }
+  .purple-300-swatch-dark {
+    background:#BA68C8!important;
+  }
+  .purple-500-swatch-dark {
+    background:#E1BEE7!important;
+    p{
+      color:$text-color-standard!important;
+    }
+  }
 
-		p{
-			left:0;
-			right:0;
-			bottom:0;
-			position:absolute;
-		}
-	}
+  .brown-100-swatch-dark {
+    background:#795548!important;
+  }
+  .brown-300-swatch-dark {
+    background:#A1887F!important;
+    p{
+      color:$text-color-standard!important;
+    }
+  }
+  .brown-500-swatch-dark {
+    background: #D7CCC8!important;
+    p{
+      color:$text-color-standard!important;
+    }
+  }
+
+  .teal-100-swatch-dark {
+    background: #009688 !important;
+  }
+  .teal-300-swatch-dark {
+    background:#4DB6AC !important;
+    p{
+      color:$text-color-standard!important;
+    }
+  }
+  .teal-500-swatch-dark {
+    background:#B2DFDB!important;
+    p{
+      color:$text-color-standard!important;
+    }
+  }
+
+  .pink-500-swatch-dark {
+    background: #F8BBD0!important;
+    p{
+      color:$text-color-standard!important;
+    }
+  }
+  .pink-300-swatch-dark {
+    background: #F06292!important;
+  }
+  .pink-100-swatch-dark {
+    background:#E91E63!important;
+  }
+
+  .orange-400-swatch-dark {
+    background:#c27c36!important;
+  }
+  .orange-500-swatch-dark {
+    background:#d68636!important;
+  }
+  .orange-600-swatch-dark {
+    background: #ea9036 !important;
+  }
+  .red-800-swatch-dark {
+    background:#ee8f7d!important;
+    p{
+      color:$text-color-standard!important;
+    }
+  }
+  .red-700-swatch-dark {
+    background:#EF5350!important;
+  }
+  .red-600-swatch-dark {
+    background:#ca3333!important;
+  }
+  .gray-054-swatch-dark {
+    background: rgba(107, 107, 107, 1)!important;
+  }
+  .gray-300-swatch-dark {
+    background:#555555!important;
+  }
+  .gray-012-swatch-dark {
+    background:#303030!important;
+  }
+  .gray-026-swatch-dark {
+    background: rgba(0,0,0,0.26)!important;
+  }
+  .gray-087-swatch-dark {
+    background: #d1d1d1!important;
+    p{
+      color:$text-color-standard!important;
+    }
+  }
+  .gray-100-swatch-dark {
+    background:#9E9E9E!important;
+  }
+  .gray-500-swatch-dark {
+    background:#9E9E9E!important;
+  }
+  .white-swatch-dark {
+    background: #424242!important;
+  }
+
+  li{
+    position:relative;
+    width: 100px;
+    height: 100px;
+
+    .white-color-text{
+      color:$white;
+    }
+
+    p{
+      left:0;
+      right:0;
+      bottom:0;
+      position:absolute;
+    }
+  }
 }
