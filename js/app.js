@@ -30,6 +30,7 @@
     'wfm.workPicker',
     'wfm.skillPicker',
     'wfm.badge',
+    'wfm.popup',
     'gridshore.c3js.chart'
   ]).config(['$translateProvider', 'tmhDynamicLocaleProvider', function($translateProvider, tmhDynamicLocaleProvider) {
     $translateProvider
