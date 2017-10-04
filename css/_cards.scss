@@ -110,9 +110,13 @@
     justify-content: space-between;
   }
 
-  .section{
-    display: flex;
+  @media all and (max-width: 768px) {
+    .card-footer-section{
+      display: flex;
+      justify-content: space-between;
+    }
   }
+
 }
 
 // Card
@@ -129,7 +133,7 @@
 //     <div class="con-flex">Content</div>
 //  </div>
 //  <div class="card-footer con-row">
-//    <span class="con-flex">
+//    <span class="con-flex card-footer-section">
 //      <div tabindex=0 class="context-menu card-context">
 //        <i class="mdi mdi-duck"></i>
 //      </div>
@@ -140,7 +144,7 @@
 //        <i class="mdi mdi-settings"></i>
 //      </div>
 //    </span>
-//    <span class="con-flex line-right">
+//    <span class="con-flex line-right card-footer-section">
 //      <button class="wfm-btn wfm-btn-invis-default">Default</button>
 //      <button class="wfm-btn wfm-btn-invis-primary">Primary</button>
 //    </span>
