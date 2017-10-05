@@ -14,8 +14,5 @@
     PopupComponentController.inject = [];
     function PopupComponentController() {
         var ctrl = this;
-
-        console.log(ctrl.show);
-
     }
 })();
