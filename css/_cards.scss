@@ -1,82 +1,4 @@
 
-
-//Card grid
-//
-// Cards are used to show a large number of similar content. Providing filters or ways to sort cards is appreciated.
-// Card actions should be triggered on click of the whole card.
-//
-//Markup:
-//<div class="wfm-grid">
-// <div class="grid-card">
-//	 <div class="list-content">
-//		 <h2>Card header</h2>
-//		 <span>Short card tag line</span>
-//	 </div>
-// </div>
-// <div class="grid-card">
-//	 <div class="list-content">
-//		 <h2>Card header</h2>
-//		 <span>Short card tag line</span>
-//	 </div>
-// </div>
-// <div class="grid-card">
-//	 <div class="list-content">
-//		 <h2>Card header</h2>
-//		 <span>Short card tag line</span>
-//	 </div>
-// </div>
-//</div>
-//
-//Styleguide 1.18
-//
-
-//Mini card grid
-//
-//Smaller cards that provide more items on screen at once.
-//
-//Markup:
-//<div class="wfm-grid">
-// <div class="grid-card-mini">
-//	 <div class="list-content">
-//		 <h2>Card header</h2>
-//		 <span>Short card tag line</span>
-//	 </div>
-// </div>
-// <div class="grid-card-mini">
-//	 <div class="list-content">
-//		 <h2>Card header</h2>
-//		 <span>Short card tag line</span>
-//	 </div>
-// </div>
-// <div class="grid-card-mini">
-//	 <div class="list-content">
-//		 <h2>Card header</h2>
-//		 <span>Short card tag line</span>
-//	 </div>
-// </div>
-// <div class="grid-card-mini">
-//	 <div class="list-content">
-//		 <h2>Card header</h2>
-//		 <span>Short card tag line</span>
-//	 </div>
-// </div>
-// <div class="grid-card-mini">
-//	 <div class="list-content">
-//		 <h2>Card header</h2>
-//		 <span>Short card tag line</span>
-//	 </div>
-// </div>
-// <div class="grid-card-mini">
-//	 <div class="list-content">
-//		 <h2>Card header</h2>
-//		 <span>Short card tag line</span>
-//	 </div>
-// </div>
-//</div>
-//
-//Styleguide 1.18.1
-//
-
 .wfm-grid {
   display: flex;
   display: -ms-flexbox;
@@ -145,7 +67,7 @@
 }
 
 .wfm-card-title{
-	outline: 0 solid transparent!important;
+  outline: 0 solid transparent!important;
 }
 
 .wfm-card {
@@ -178,6 +100,93 @@
     cursor: not-allowed;
   }
 }
+
+.card{
+  background: $gray012;
+
+  .card-footer{
+    background: $white;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media all and (max-width: 768px) {
+    .card-footer-section{
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+}
+
+// Card
+//
+// The card is a simpler version of the panel with more direct actions available in the footer.
+// The card can have different colors by applying notice-info, notice-warning, notice-error and notice-success classes to the card element.
+//
+// Markup:
+//<div class="card panel material-depth-1">
+//    <div class="sub-header">
+//      <h2>Card title</h2>
+//    </div>
+//  <div class="con-row">
+//     <div class="con-flex">Content</div>
+//  </div>
+//  <div class="card-footer con-row">
+//    <span class="con-flex card-footer-section">
+//      <div tabindex=0 class="context-menu card-context">
+//        <i class="mdi mdi-duck"></i>
+//      </div>
+//      <div tabindex=0 class="context-menu card-context">
+//        <i class="mdi mdi-alert"></i>
+//      </div>
+//      <div tabindex=0 class="context-menu card-context">
+//        <i class="mdi mdi-settings"></i>
+//      </div>
+//    </span>
+//    <span class="con-flex line-right card-footer-section">
+//      <button class="wfm-btn wfm-btn-invis-default">Default</button>
+//      <button class="wfm-btn wfm-btn-invis-primary">Primary</button>
+//    </span>
+//  </div>
+//</div>
+// <h3>With color:
+//<select ng-model="selectedClass">
+//<option>notice-success</option>
+//<option>notice-info</option>
+//<option>notice-error</option>
+//<option>notice-warning</option>
+//</select>
+//</h3>
+//<div class="card panel material-depth-1" ng-class="selectedClass">
+//    <div class="sub-header">
+//      <h2>Colorful card title</h2>
+//    </div>
+//  <div class="con-row">
+//     <div class="con-flex">Content</div>
+//  </div>
+//  <div class="card-footer con-row">
+//    <span class="con-flex card-footer-section">
+//      <div tabindex=0 class="context-menu card-context">
+//        <i class="mdi mdi-duck"></i>
+//      </div>
+//      <div tabindex=0 class="context-menu card-context">
+//        <i class="mdi mdi-alert"></i>
+//      </div>
+//      <div tabindex=0 class="context-menu card-context">
+//        <i class="mdi mdi-settings"></i>
+//      </div>
+//    </span>
+//    <span class="con-flex line-right card-footer-section">
+//      <button class="wfm-btn wfm-btn-invis-default">Default</button>
+//      <button class="wfm-btn wfm-btn-invis-primary">Primary</button>
+//    </span>
+//  </div>
+//</div>
+//
+//
+//Styleguide 4.5
+//
 
 // Card List
 //
