@@ -1,5 +1,5 @@
 <div class="wfm-multiple-search-wrapper">
-	<input id="advanced-search" class="advanced-input" type="text" placeholder="{{vm.title}}" ng-class="{'expand-advanced-input': vm.showAdvancedSearchOption}"
+	<input id="advanced-search" class="advanced-input" type="text" placeholder="{{vm.searchTitle}}" ng-class="{'expand-advanced-input': vm.showAdvancedSearchOption}"
 	 ng-model="vm.searchOptions.keyword" ng-keyup="vm.searchTextInputKeyup($event)" ng-focus="vm.openAdvancedSearchOption($event)"
 	 ng-change="vm.searchTextChange()" ng-click="vm.openAdvancedSearchOption($event)" />
 	<div class="advanced-input-dropdown" ng-cloak ng-if="vm.showAdvancedSearchOption" outside-click="vm.turnOffAdvancedSearch($event);">

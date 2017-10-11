@@ -12,6 +12,8 @@
 //<div class="line-right">.line-right</div>
 //<div class="line-center">.line-center</div>
 //<div class="inline-flex">.inline-flex</div>
+//<div class="margin-center">.margin-center</div>
+//<div class="align-bottom-flex">.align-bottom-flex</div>
 //<div>
 //		<div class="inline-block">.inline-block 1 </div>
 //		<div class="inline-block">.inline-block 2 </div>
@@ -49,16 +51,30 @@
 	display: -ms-inline-flexbox!important;
 }
 
+.margin-center{
+	margin: 0 auto;
+}
+
+
 // Cursor types
 //
 //Markup:
 //<div class="cursor-pointer">hover me</div>
+//<div class="non-pointer">I cant be <a>clicked</a>, hovered or tabbed to</div>
 //
 //Styleguide 8.2
 //
 
 .cursor-pointer,.pointer{
   cursor: pointer;
+}
+
+.non-pointer{
+	pointer-events: none;
+
+	&:focus{
+		display: none;
+	}
 }
 
 // Showing and hiding content
