@@ -171,3 +171,28 @@ dd {
 	display: flex;
 	flex-direction: column;
 }
+
+.con-fluid-row {
+  display: grid;
+  grid-gap: 0px;
+  grid-template-columns: repeat(auto-fill, minmax(33%, auto));
+}
+.con-fluid-flex{
+  padding: $full-padding;
+}
+
+.dense{
+  grid-template-columns: repeat(auto-fill, minmax(19%, auto));
+}
+
+@media screen and (max-width: 960px) {
+  .con-fluid-row{
+    grid-template-columns: repeat(auto-fill, minmax(49%, auto))!important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .con-fluid-row{
+    grid-template-columns: repeat(auto-fill, minmax(100%, auto))!important;
+  }
+}
