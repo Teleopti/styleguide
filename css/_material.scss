@@ -179,6 +179,9 @@ dd {
 }
 .con-fluid-flex{
   padding: $full-padding;
+	.panel{
+		margin-bottom: 0!important;
+	}
 }
 
 .dense{
