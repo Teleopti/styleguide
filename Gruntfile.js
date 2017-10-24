@@ -111,7 +111,8 @@ module.exports = function (grunt) {
                     'vendor/d3/d3.min.js',
                     'vendor/c3/c3.min.js',
                     'vendor/c3/c3-angular.min.js',
-                    'vendor/ui-grid/uigrid.disable-animation.directive.js'
+                    'vendor/ui-grid/uigrid.disable-animation.directive.js',
+                    'vendor/ui-grid/ui-grid.fix.js'
                 ],
                 dest: 'styleguide/dist/dependencies.min.js'
             },
