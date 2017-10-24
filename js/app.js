@@ -30,6 +30,7 @@
     'wfm.workPicker',
     'wfm.skillPicker',
     'wfm.badge',
+    'wfm.btnGroup',
     'wfm.popup',
     'gridshore.c3js.chart'
   ]).config(['$translateProvider', 'tmhDynamicLocaleProvider', function($translateProvider, tmhDynamicLocaleProvider) {
@@ -86,8 +87,10 @@
         {Name: 'Insane', Type:'Size'},
         {Name: 'Infinite', Type:'Size'},
         {Name: 'Mustard', Type:'Dressing'}
-      ]
-      ;
+      ];
+
+      // code for button group
+      $scope.demoArr = ['item1', 'item2', 'item3'];
 
       /*Code for the chart*/
       c3.generate({

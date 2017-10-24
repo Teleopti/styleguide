@@ -239,3 +239,36 @@
     -webkit-animation-timing-function:ease-in-out;
     -webkit-animation-play-state:running;
 }
+
+
+// Button group
+//
+// A dynamic group of buttons that act in a radio way
+//
+//Markup:
+//<h3>Raised <span ng-bind="outputItem1"></span> </h3>
+//	<wfm-btn-group items="demoArr" selected="outputItem1" btn-style="'wfm-btn-default'" selection-style="'wfm-btn-primary'"></wfm-btn-group>
+// <br/>
+//<h3>Flat <span ng-bind="outputItem2"></span> </h3>
+//	<wfm-btn-group items="demoArr" selected="outputItem2" btn-style="'wfm-btn-invis-default'" selection-style="'wfm-btn-invis-primary'"></wfm-btn-group>
+//
+//Styleguide 1.8.6
+//
+
+.wfm-btn-group{
+	  display: inline-block;
+		margin: $full-padding;
+	.wfm-btn{
+		margin: 0!important;
+		box-shadow: none;
+		border-radius: 0;
+	}
+	.first{
+		border-top-left-radius: 3px;
+		border-bottom-left-radius: 3px;
+	}
+	.last{
+		border-top-right-radius: 3px;
+		border-bottom-right-radius: 3px;
+	}
+}
