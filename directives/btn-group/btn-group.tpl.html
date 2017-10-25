@@ -1,3 +1,3 @@
-<div class="wfm-btn-group" ng-class="{'material-depth-1':$ctrl.btnStyle == 'wfm-btn-default'}">
-  <button ng-repeat="item in $ctrl.items" class="wfm-btn {{$ctrl.btnStyle}}" ng-class="{'{{$ctrl.selectionStyle}}': $ctrl.selected === item, 'first':$first, 'last':$last}" ng-click="$ctrl.groupItemClick(item)">{{item}}</button>
+<div class="wfm-btn-group" ng-class="{'material-depth-1':$ctrl.btnClass == 'wfm-btn-default'}">
+  <button ng-repeat="item in $ctrl.items" class="wfm-btn {{$ctrl.btnClass}}" ng-class="{'{{$ctrl.selectionClass}}': $ctrl.selected === item, 'first':$first, 'last':$last}" ng-click="$ctrl.groupItemClick(item)">{{item}}</button>
 </div>

@@ -9,8 +9,8 @@
         bindings: {
             items: '<',
             selected: '=',
-            btnStyle: '<',
-            selectionStyle: '<'
+            btnClass: '<',
+            selectionClass: '<'
         }
     });
 

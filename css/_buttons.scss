@@ -247,7 +247,7 @@
 //
 //Markup:
 //<h3>Raised <span ng-bind="outputItem1"></span> </h3>
-//	<wfm-btn-group items="demoArr" selected="outputItem1" btn-style="'wfm-btn-default'" selection-style="'wfm-btn-primary'"></wfm-btn-group>
+//	<wfm-btn-group items="demoArr" selected="outputItem1" btn-class="'wfm-btn-default'" selection-class="'wfm-btn-primary'"></wfm-btn-group>
 // <br/>
 //<h3>Flat <span ng-bind="outputItem2"></span> </h3>
 //	<wfm-btn-group items="demoArr" selected="outputItem2" btn-style="'wfm-btn-invis-default'" selection-style="'wfm-btn-invis-primary'"></wfm-btn-group>
