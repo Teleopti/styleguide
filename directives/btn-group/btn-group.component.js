@@ -8,7 +8,8 @@
         controller: BtnGroupCtrl,
         bindings: {
             items: '<',
-            selected: '=',
+            defaultSelected: '<',
+            output: '=',
             btnClass: '<',
             selectionClass: '<'
         }
@@ -18,9 +19,14 @@
     function BtnGroupCtrl() {
         var ctrl = this;
 
-        ctrl.groupItemClick = groupItemClick;
-        function groupItemClick(item) {
-            ctrl.selected = item;
+        ctrl.$onInit = function () {
+            if (ctrl.defaultSelected) {
+                ctrl.output = ctrl.defaultSelected;
+            }
+        }
+
+        ctrl.setOutput = function(item) {
+            ctrl.output = item;
         }
     }
 })();
