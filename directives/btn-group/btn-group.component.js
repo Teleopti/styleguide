@@ -8,7 +8,7 @@
         controller: BtnGroupCtrl,
         bindings: {
             items: '<',
-            defaultSelected: '<',
+            selected: '<',
             output: '<',
             btnClass: '<',
             selectionClass: '<'
@@ -20,9 +20,9 @@
         var ctrl = this;
 
         ctrl.$onInit = function () {
-            if (ctrl.defaultSelected) {
-                ctrl.output(ctrl.defaultSelected)
-                ctrl.internalSelect = ctrl.defaultSelected;
+            if (ctrl.selected) {
+                ctrl.output(ctrl.selected)
+                ctrl.internalSelect = ctrl.selected;
             }
         }
     }
