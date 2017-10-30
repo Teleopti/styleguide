@@ -9,7 +9,7 @@
         bindings: {
             items: '<',
             defaultSelected: '<',
-            output: '=',
+            output: '<',
             btnClass: '<',
             selectionClass: '<'
         }
@@ -21,12 +21,9 @@
 
         ctrl.$onInit = function () {
             if (ctrl.defaultSelected) {
-                ctrl.output = ctrl.defaultSelected;
+                ctrl.output(ctrl.defaultSelected)
+                ctrl.internalSelect = ctrl.defaultSelected;
             }
-        }
-
-        ctrl.setOutput = function(item) {
-            ctrl.output = item;
         }
     }
 })();

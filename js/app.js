@@ -91,6 +91,12 @@
 
       // code for button group
       $scope.demoArr = ['item1', 'item2', 'item3'];
+      $scope.outputCallback1 = function (output) {
+        $scope.outputItem1 = output;
+      }
+      $scope.outputCallback2 = function (output) {
+        $scope.outputItem2 = output;
+      }
 
       /*Code for the chart*/
       c3.generate({

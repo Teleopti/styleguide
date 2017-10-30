@@ -244,13 +244,43 @@
 // Button group
 //
 // A dynamic group of buttons that act in a radio way
+//<table class="wfm-table">
+//	<thead>
+//		<tr>
+//			<th>Attribute Name</th>
+//			<th>Usage</th>
+//		</tr>
+//	</thead>
+//	<tbody>
+//		<tr>
+//			<td>items</td>
+//			<td>Array of button labels</td>
+//		</tr>
+//		<tr>
+//			<td>default-selected</td>
+//			<td>Item to be selected by default</td>
+//		</tr>
+//    <tr>
+//      <td>output</td>
+//      <td>Callback function on item click</td>
+//    </tr>
+//    <tr>
+//      <td>btn-class</td>
+//      <td>Style for unselected item ('wfm-btn-default' / 'wfm-btn-invis-default')</td>
+//    </tr>
+//    <tr>
+//      <td>selection-class</td>
+//      <td>Style for selected item ('wfm-btn-primary' / 'wfm-btn-invis-primary')</td>
+//    </tr>
+//	</tbody>
+//</table>
 //
 //Markup:
 //<h3>Raised <span ng-bind="outputItem1"></span> </h3>
-//	<wfm-btn-group items="demoArr" default-selected="demoArr[1]" output="outputItem1" btn-class="'wfm-btn-default'" selection-class="'wfm-btn-primary'"></wfm-btn-group>
+//	<wfm-btn-group items="demoArr" default-selected="demoArr[1]" output="outputCallback1" btn-class="'wfm-btn-default'" selection-class="'wfm-btn-primary'"></wfm-btn-group>
 // <br/>
 //<h3>Flat <span ng-bind="outputItem2"></span> </h3>
-//	<wfm-btn-group items="demoArr" output="outputItem2" btn-class="'wfm-btn-invis-default'" selection-class="'wfm-btn-invis-primary'"></wfm-btn-group>
+//	<wfm-btn-group items="demoArr" output="outputCallback2" btn-class="'wfm-btn-invis-default'" selection-class="'wfm-btn-invis-primary'"></wfm-btn-group>
 //
 //Styleguide 1.8.6
 //
