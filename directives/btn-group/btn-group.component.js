@@ -22,7 +22,6 @@
         ctrl.$onInit = function () {
             if (ctrl.selected) {
                 ctrl.output(ctrl.selected)
-                ctrl.internalSelect = ctrl.selected;
             }
         }
     }
