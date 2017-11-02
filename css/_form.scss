@@ -22,7 +22,7 @@ input[type='text'], [type='number'], input[type='password'], select{
 }
 
 .wfm-form input, .wfm-form select{
-	margin:0!important;
+  margin:0!important;
 }
 
 textarea{
@@ -45,6 +45,10 @@ select:after {
   border-right: .25em solid transparent;
   border-top: .375em solid red;
   pointer-events: none;
+}
+
+.md-ink-ripple{
+  color:transparent!important;
 }
 
 // Inputs
@@ -411,19 +415,19 @@ md-select {
 //
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-	.hide-on-ie{
-		display: none!important;
-	}
+  .hide-on-ie{
+    display: none!important;
+  }
 
-	.ie-cross {
-		display: inline!important;
+  .ie-cross {
+    display: inline!important;
     float: right;
     margin-top: -20px;
-	}
+  }
 }
 
 .ie-cross{
-	display: none;
+  display: none;
 }
 
 md-autocomplete{
@@ -479,15 +483,15 @@ md-autocomplete[disabled]{
 .md-autocomplete-suggestions-container{
   margin-bottom: $full-padding!important;
   li .highlight{
-  	color:$gray087 !important;
-  	font-weight: bold;
+    color:$gray087 !important;
+    font-weight: bold;
   }
 }
 
 md-select-menu md-content md-option:not([disabled]):hover,
 md-autocomplete[disabled]:not([md-floating-label]),
 .md-autocomplete-suggestions-container li.selected {
-	background: $gray012!important;
+  background: $gray012!important;
 }
 
 .md-virtual-repeat-container.md-autocomplete-suggestions-container { //for IE: clear buttom cause item list dont open
@@ -508,39 +512,46 @@ md-autocomplete[disabled]:not([md-floating-label]),
 //</div>
 //
 //Markup:
-//	<form>
-//		<div class="wfm-radio">
-//			<input type="radio" name="group1" id="radio1" checked="true"/>
-//			<label for="radio1">
-//				<span class="wfm-radio-toggle"></span>
-//				<span class="wfm-radio-label">This</span>
-//			</label>
-//		</div>
-//		<div class="wfm-radio">
-//			<input type="radio" name="group1" id="radio2" />
-//			<label for="radio2">
-//				<span class="wfm-radio-toggle"></span>
-//				<span class="wfm-radio-label">That</span>
-//			</label>
-//		</div>
-//	</form>
-//	<h3>Using ng-repeat:</h3>
-//	<form>
-//		<div ng-repeat="item in demos">
-//			<div class="wfm-radio">
-//				<label>
-//					<input type="radio" name="radio" value="value">
-//					<span class="wfm-radio-toggle"></span>
-//					<span class="wfm-radio-label">Im looped out!</span>
-//				</label>
-//			</div>
-//		</div>
-//	</form>
+//<h3>Simple (<span ng-bind="data1"></span>)</h3>
+//<form>
+//  <md-radio-group ng-model="data1">
+//    <md-radio-button value="Option 1" aria-label="radio">Option 1</md-radio-button>
+//    <md-radio-button value="Option 2" aria-label="radio">Option 2</md-radio-button>
+//    <md-radio-button value="Option 3" aria-label="radio">Option 3</md-radio-button>
+//  </md-radio-group>
+// <h3>Repeated (<span ng-bind="data2"></span>)</h3>
+//  <md-radio-group ng-model="data2">
+//    <md-radio-button ng-repeat="item in demos" ng-value="item.id" aria-label="{{item.id}}">
+//     Option <span ng-bind="item.id"></span>
+//    </md-radio-button>
+//  </md-radio-group>
+//</form>
 //
 //Styleguide 1.6
 //
 
-.wfm-radio {
+md-radio-group{
+  .md-off{
+    border: none!important;
+  }
+  .md-on {
+    transform: scale(1)!important;
+    background-color: transparent;
+  }
+}
+md-radio-button {
+  margin: $full-padding 0;
+  .md-container:before {
+    background: $gray026;
+  }
+}
+md-radio-group .md-checked .md-on {
+  background-color: $blue-300 !important;
+}
+
+
+
+.wfm-radio { //depricated, remove as soon as possible
   @extend .wfm-block;
 
   input[type='radio'] {
@@ -583,39 +594,38 @@ md-autocomplete[disabled]:not([md-floating-label]),
 //</div>
 //
 //Markup:
-//	<form>
-//		<div class="wfm-checkbox">
-//			<input type="checkbox" id="check1" checked="true"/>
-//			<label for="check1">
-//				<span class="wfm-checkbox-toggle"></span>
-//				<span class="wfm-checkbox-label">Check </span>
-//			</label>
-//		</div>
-//		<div class="wfm-checkbox">
-//			<input type="checkbox" id="check2" />
-//			<label for="check2">
-//				<span class="wfm-checkbox-toggle"></span>
-//				<span class="wfm-checkbox-label">Check </span>
-//			</label>
-//		</div>
-//	</form>
-//	<h3>Using ng-repeat:</h3>
-//	<form>
-//		<div ng-repeat="item in demos">
-//			<div class="wfm-checkbox">
-//				<label>
-//					<input type="checkbox" name="checkbox" value="value">
-//					<span class="wfm-checkbox-toggle"></span>
-//					<span class="wfm-checkbox-label">Im looped out!</span>
-//				</label>
-//			</div>
-//		</div>
-//	</form>
+//  <h3>Simple</h3>
+//  <md-checkbox ng-model="checkData1" aria-label="Checkbox">Option 1</md-checkbox>
+//  <md-checkbox ng-model="checkData2" aria-label="Checkbox">Option 2</md-checkbox>
+//  <md-checkbox ng-model="checkData3" aria-label="Checkbox">Option 3</md-checkbox>
+//  <h3>Repeated</h3>
+//  <md-checkbox ng-repeat="item in demos" ng-model="item.checked" aria-label="Checkbox">Option <span ng-bind="item.id"></span></md-checkbox>
 //
 //Styleguide 1.7
 //
 
-.wfm-checkbox {
+md-checkbox {
+  display: block;
+  margin: $full-padding 0;
+  .md-icon{
+    border-width: 0;
+    border-style: solid;
+    border-color: transparent;
+    border-radius: 0;
+    background-color: $gray026;
+  }
+
+  &.md-checked .md-icon {
+    background-color: $blue-300;
+    &:after {
+      left: 7px;
+      top: 1px;
+    }
+  }
+}
+
+
+.wfm-checkbox { //Depricated remove as soon as possible
   @extend .wfm-block;
 
   input[type='checkbox'] {
@@ -659,18 +669,31 @@ md-autocomplete[disabled]:not([md-floating-label]),
 // The switch is used to toggle between two states (for example show/hide, using <a href="http://goo.gl/M5U1oC">Angulars ng-show or ng-hide</a> to toggle other elements).
 //
 //Markup:
-//	<div class="wfm-switch">
-//		<input type="checkbox" id="switch1" />
-//		<label for="switch1">
-//			<span class="wfm-switch-label">Show selected items</span>
-//			<span class="wfm-switch-toggle"></span>
-//		</label>
-//	</div>
+//<md-switch ng-model="switchData1" aria-label="Switch">
+// <span ng-if="!switchData1">Toggle me</span>
+// <span ng-if="switchData1">Thanks!</span>
+//</md-switch>
 //
 //Styleguide 1.7.1
 //
+md-switch {
+  .md-bar {
+    height: 18px;
+    top: 3px;
+    background-color: $gray026;
+  }
+  &.md-checked {
+    .md-bar {
+      background: $blue-300;
+    }
+    .md-thumb {
+      background-color: $blue-500;
+    }
+  }
+}
 
-.wfm-switch {
+
+.wfm-switch { //depricated remove as soon as possible
   position: relative;
   height: 24px;
   padding-top: 2px;
