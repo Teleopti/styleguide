@@ -46,7 +46,7 @@
     });
     $translateProvider.preferredLanguage('en-us');
     tmhDynamicLocaleProvider.localeLocationPattern('../node_modules/angular-i18n/angular-locale_{{locale}}.js');
-  }]).controller('mainCtrl', ['$scope', '$translate','NoticeService', 'tmhDynamicLocale', function($scope, $translate, NoticeService, tmhDynamicLocale) {
+  }]).controller('mainCtrl', ['$scope', '$translate','NoticeService', 'tmhDynamicLocale', '$timeout', function($scope, $translate, NoticeService, tmhDynamicLocale, $timeout) {
     $translate.use(window.navigator.language.toLowerCase());
     tmhDynamicLocale.set(window.navigator.language.toLowerCase());
 
@@ -232,7 +232,7 @@
       ];
       $scope.preselected = {skillIds: ['XYZ']};
       $scope.output = function (selectedItem){
-         $scope.filterOutput = selectedItem;
+        $scope.filterOutput = selectedItem;
       }
 
       /*code for rightPanel*/
@@ -253,7 +253,7 @@
           Name: header
         }
         if ($scope.menuItems.indexOf(item) == -1) {
-            $scope.menuItems.push(item);
+          $scope.menuItems.push(item);
         }
       }
       $scope.getChapteIcon = function (index) {
@@ -274,6 +274,16 @@
       function isFloat(n) {
         return Number(n) === n && n % 1 !== 0;
       }
+
+      // timer
+      $scope.loading = function () {
+        $scope.waitAMoment = true;
+        $timeout( function(){
+          $scope.waitAMoment = false;
+        }, 5000 );
+      }
+
+
 
       $scope.numericValueInput = '12,000';
       $scope.numericValueInputResult = 12000;
