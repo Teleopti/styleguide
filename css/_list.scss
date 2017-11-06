@@ -1,4 +1,4 @@
-﻿//Lists
+//Lists
 //
 //The lists is used to display long collections of similar information. Keep in mind that a long list could push other things out of view.
 //
@@ -10,7 +10,7 @@
 //
 //If you need actions (click or select), go to "Actions list".
 //
-//Optionally a list item can have a small, one sentence description attached to it. If more information is needed about the items conceder using a modal or table.
+//Optionally a list item can have a small, one sentence description attached to it. If more information is needed about the items consider using a modal or table.
 //
 //Markup:
 //	<ul class="wfm-simple-list">
@@ -52,7 +52,7 @@
 }
 
 /*.wfm-simple-list li:nth-child(even) {
-   background-color: $gray012;
+background-color: $gray012;
 }*/
 
 
@@ -119,12 +119,16 @@
 //
 
 .list-dot{
-  float:left!important;
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	background-color: $green-100;
 	border-radius: 50%;
+	text-align: center;
+	line-height: 25px;
 	position: absolute;
-	left:$full-padding;
-	background:$green-100;
-	box-shadow: 0 0 0 3px $green-100;
+	top: 0.2em;
+	left: $half-padding;
 }
 
 ul {
@@ -134,11 +138,11 @@ ul {
 }
 
 .list-item-container{
-text-overflow: ellipsis;
-white-space: nowrap;
-overflow: hidden;
-display:inline-block;
-margin-left: 30px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	display:inline-block;
+	margin-left: 30px;
 }
 
 
@@ -208,18 +212,18 @@ margin-left: 30px;
 }
 
 .wfm-leave-behind {
-  height: 40px;
-  width: 0;
-  display: inline!important;
-  position: absolute!important;
-  right: 0;
-  overflow: hidden;
-  margin-top: -8px;
-  transition: all .5s ease-in-out;
-  padding-top: 8px;
-  background-color: #cacaca;
-  z-index: 30;
-  border-bottom: 8px solid transparent;
+	height: 40px;
+	width: 0;
+	display: inline!important;
+	position: absolute!important;
+	right: 0;
+	overflow: hidden;
+	margin-top: -8px;
+	transition: all .5s ease-in-out;
+	padding-top: 8px;
+	background-color: #cacaca;
+	z-index: 30;
+	border-bottom: 8px solid transparent;
 
 	span{
 		padding-left: $full-padding;

@@ -1,0 +1,21 @@
+<wfm-card-list multi-select>
+	  <wfm-card ng-repeat="item in items" open="item.bool">
+		 <card-header tabindex="-1">
+      <div tabindex="0">
+			  <span><i class="mdi" ng-class="item.title"></i></span>
+				 <b>Multi card title</b>
+			  <span class="chevron"><i class="mdi mdi-chevron-right"></i></span>
+      </div>
+		 </card-header>
+		 <card-body class="panel">
+ 			 <div class="con-row demo-outline">
+    		 <div class="con-flex">Content
+          </div>
+ 			 </div>
+  		 <div class="con-footer">
+	 			  <button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+    		 <button class="wfm-btn wfm-btn-invis-primary">Options</button>
+  		 </div>
+		 </card-body>
+	  </wfm-card>
+</wfm-card-list>

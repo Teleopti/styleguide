@@ -1,8 +1,11 @@
+//Menus
+//
+//Styleguide 1.12.0
+
 // Context menus
 //
-//Context menus are used where more actions are needed.
-//To keep them manageable, limit the number of actions displayed within to a maximum of 5.
-//Additionally a menu can not trigger a child menu from within itself.
+//A content menu contains only a list of actions, to keep them manageable, try to limit the number of actions displayed within to a maximum of 5.
+//Additionally a context menu can not trigger another context menu from within itself.
 //
 //Markup:
 //  <h3>Button menu trigger:</h3>
@@ -88,7 +91,7 @@
 //  	</span>
 //  </div>
 //
-//Styleguide 1.12
+//Styleguide 1.12.1
 //
 .card-context{
   border: none;
@@ -112,77 +115,113 @@
 }
 
 .active-context{
-	background: $gray012;
+  background: $gray012;
 }
 
 .active-context i{
-	color: $text-color-standard;
+  color: $text-color-standard;
 }
 
 .context-menu {
-    @extend .unselectable;
-    position: relative;
-    cursor:pointer;
-    background:transparent;
-    border:none;
-    display: inline-block;
+  @extend .unselectable;
+  position: relative;
+  cursor:pointer;
+  background:transparent;
+  border:none;
+  display: inline-block;
 
+  [class*="context-menu-"] {
+    transition: $transition-timing;
+    @extend .material-depth-2;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    min-width: 200px;
+  }
+
+  &:focus {
+    @extend .material-depth-2;
     [class*="context-menu-"] {
-        transition: $transition-timing;
-        @extend .material-depth-2;
-        position: absolute;
-        opacity: 0;
-        visibility: hidden;
-        min-width: 200px;
+      visibility: visible;
+      opacity: 1;
+      z-index: 10;
     }
+  }
 
-    &:focus {
-      @extend .material-depth-2;
-        [class*="context-menu-"] {
-            visibility: visible;
-            opacity: 1;
-            z-index: 10;
-        }
+  ul{
+    color:$gray087;
+    text-align:left!important;
+  }
+
+  .context-menu-right {
+    top: 100%;
+    left: 100%;
+    margin: -40px 0 0 $full-padding*2;
+    text-transform: initial;
+
+    &:before {
+      right: 100%;
+      margin-top: $full-padding*2;
     }
+  }
 
-	ul{
-		color:$gray087;
-		text-align:left!important;
-	}
+  .context-menu-bottom {
+    top: 100%;
+    left: 50%;
+    margin: $full-padding*2 0 0 -100px;
+    text-transform: initial;
 
-    .context-menu-right {
-        top: 100%;
-        left: 100%;
-        margin: -40px 0 0 $full-padding*2;
-		    text-transform: initial;
-
-        &:before {
-            right: 100%;
-            margin-top: $full-padding*2;
-        }
+    &:before {
+      bottom: 100%; left: 50%;
+      margin-left: -$full-padding*2;
     }
+  }
 
-    .context-menu-bottom {
-        top: 100%;
-        left: 50%;
-        margin: $full-padding*2 0 0 -100px;
-		text-transform: initial;
+  .context-menu-left {
+    top: 100%;
+    right: 100%;
+    margin: -40px $full-padding*2 0 0;
+    text-transform: initial;
 
-        &:before {
-            bottom: 100%; left: 50%;
-            margin-left: -$full-padding*2;
-        }
+    &:before {
+      left: 100%;
+      margin-top: $full-padding*2;
     }
+  }
+}
 
-    .context-menu-left {
-        top: 100%;
-        right: 100%;
-        margin: -40px $full-padding*2 0 0;
-		text-transform: initial;
+// Pop-up menu
+//
+//A popup menu is similar to a context menu but can contain any number of things. It will adapt to the width of the content so be careful not to squeeze in elements that wont fit on small screens.
+//
+//Markup:
+//<button class="wfm-btn wfm-btn-default" ng-click="toggle =!toggle">Default</button>
+//<wfm-popup show="toggle">
+//  <div class="sub-header">
+//    <h2>Popup Title</h2>
+//  </div>
+//  <div class="con-row">
+//    <div class="con-flex">
+//        Content
+//      </div>
+//  </div>
+//  <div class="con-footer">
+//    <button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+//    <button class="wfm-btn wfm-btn-invis-primary">Options</button>
+//  </div>
+//</wfm-popup>
+//
+//Styleguide 1.12.2
+//
 
-        &:before {
-            left: 100%;
-            margin-top: $full-padding*2;
-        }
-    }
+.wfm-popup-wrap{
+  position: absolute;
+
+  .popup-panel{
+    z-index: 51;
+  }
+
+  .modalbg{
+    background: transparent;
+  }
 }

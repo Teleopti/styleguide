@@ -149,7 +149,7 @@
             bindToController: true,
             templateUrl: 'directives/wfm-multiple-search/wfm-multiple-search-input.tpl.html',
             scope: {
-                title: '=',
+                searchTitle: '=',
                 searchOptions: '=?',
                 searchCallback: '=?'
             },

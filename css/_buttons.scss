@@ -99,6 +99,11 @@
 //		<i class="mdi mdi-comment-remove-outline"></i>
 //		<md-tooltip>disabled</md-tooltip>
 //	</button>
+// <h3>Loading</h3>
+//	<div tabindex=0 class="context-menu card-context context-loading">
+//		<i class="mdi mdi-cake"></i>
+//		<md-tooltip>Options</md-tooltip>
+//	</div>
 // <h3>Toggle</h3>
 //	<div tabindex=0 class="context-menu card-context" ng-click="toggle = !toggle">
 //		<i class="mdi mdi-account" ng-class="{'mdi-account-outline':toggle}"></i>
@@ -108,9 +113,39 @@
 //		<i class="mdi mdi-checkbox-blank-outline" ng-class="{'mdi-checkbox-marked':toggle2}"></i>
 //		<md-tooltip>Toggle something</md-tooltip>
 //	</div>
+//	<div tabindex=0 class="context-menu card-context" ng-click="loading()" ng-class="{'context-loading':waitAMoment}">
+//		<i class="mdi mdi-cake"></i>
+//		<md-tooltip>Options</md-tooltip>
+//	</div>
 //
 //Styleguide 1.8.5
 //
+
+.context-loading{
+	border-top: 3px solid $blue-100!important;
+	border-right: 3px solid $blue-100!important;
+	border-bottom: 3px solid $blue-100!important;
+	border-left: 3px solid $blue-500!important;
+	animation: rotate 1s;
+	animation-iteration-count: infinite;
+	animation-timing-function:ease-in-out;
+	animation-play-state:running;
+	animation-fill-mode: forwards;
+	box-shadow: none!important;
+	margin:0;
+
+	i{
+		opacity: 0;
+	}
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg) scale(0.85);
+    }
+    to {
+        transform: rotate(360deg) scale(0.85);
+    }
+}
 
 .wfm-btn {
 	border: none;
@@ -238,4 +273,67 @@
     animation-fill-mode: forwards;
     -webkit-animation-timing-function:ease-in-out;
     -webkit-animation-play-state:running;
+}
+
+
+// Button group
+//
+// A dynamic group of buttons that act in a radio way
+//<table class="wfm-table">
+//	<thead>
+//		<tr>
+//			<th>Attribute Name</th>
+//			<th>Usage</th>
+//		</tr>
+//	</thead>
+//	<tbody>
+//		<tr>
+//			<td>items</td>
+//			<td>Array of button labels</td>
+//		</tr>
+//		<tr>
+//			<td>selected</td>
+//			<td>Item to be selected</td>
+//		</tr>
+//    <tr>
+//      <td>output</td>
+//      <td>Callback function on item click</td>
+//    </tr>
+//    <tr>
+//      <td>btn-class</td>
+//      <td>Style for unselected item ('wfm-btn-default' / 'wfm-btn-invis-default')</td>
+//    </tr>
+//    <tr>
+//      <td>selection-class</td>
+//      <td>Style for selected item ('wfm-btn-primary' / 'wfm-btn-invis-primary')</td>
+//    </tr>
+//	</tbody>
+//</table>
+//
+//Markup:
+//<h3>Raised <span ng-bind="outputItem1"></span> </h3>
+//	<wfm-btn-group items="demoArr" selected="demoArr[1]" output="outputCallback1" btn-class="'wfm-btn-default'" selection-class="'wfm-btn-primary'"></wfm-btn-group>
+// <br/>
+//<h3>Flat <span ng-bind="outputItem2"></span> </h3>
+//	<wfm-btn-group items="demoArr" output="outputCallback2" btn-class="'wfm-btn-invis-default'" selection-class="'wfm-btn-invis-primary'"></wfm-btn-group>
+//
+//Styleguide 1.8.6
+//
+
+.wfm-btn-group{
+	  display: inline-block;
+		margin: $full-padding;
+	.wfm-btn{
+		margin: 0!important;
+		box-shadow: none;
+		border-radius: 0;
+	}
+	.first{
+		border-top-left-radius: 3px;
+		border-bottom-left-radius: 3px;
+	}
+	.last{
+		border-top-right-radius: 3px;
+		border-bottom-right-radius: 3px;
+	}
 }
