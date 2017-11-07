@@ -339,6 +339,13 @@ table{
 	border-right: none;
 }
 
+.big-table-wrapper table tbody tr {
+	border-bottom: 1px solid $gray012!important;
+}
+.table>tbody>tr>td{
+	border-top:none;
+}
+
 //Temp fix for bug #40330.
 //Related issue links: https://github.com/angular-ui/ui-grid/issues/4938
 //                     https://github.com/angular-ui/ui-grid/issues/4548
