@@ -9,7 +9,7 @@
             bindings: {
                 skills: '<',
                 skillAreas: '<',
-                itemToReturn: '&',
+                itemToReturn: '=',
                 preselectedItem: '<'
             },
         });
