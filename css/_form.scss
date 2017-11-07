@@ -47,8 +47,8 @@ select:after {
   pointer-events: none;
 }
 
-.md-ink-ripple{
-  color:transparent!important;
+.md-ink-ripple:before {
+  background-color: transparent !important;
 }
 
 // Inputs
@@ -543,6 +543,10 @@ md-radio-button {
   margin: $full-padding 0;
   .md-container:before {
     background: $gray026;
+  }
+  .md-container{
+    background: $gray026;
+    border-radius: 50%;
   }
 }
 md-radio-group .md-checked .md-on {
