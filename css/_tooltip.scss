@@ -1,4 +1,4 @@
-﻿
+
 // Tooltips
 //
 //Tooltips should be added wherever more information is needed. Keep the text short and clear as to not obstruct other elements on smaller screens.
@@ -21,7 +21,7 @@
 md-tooltip {
   font-size: $standard-font-size!important;
   font-weight: lighter;
-    z-index:1010;
+  z-index:1010;
 }
 
 .md-tooltip {
@@ -107,24 +107,24 @@ md-tooltip {
 
 #pulse-element{
   position: absolute;
-  top: -0.5em;
+  top: 0.5em;
   left: 0.5em;
 }
 
 .notice-info>.pulse{
-    animation-name: infoNoticePulse;
+  animation-name: infoNoticePulse;
 }
 
 .notice-warning>.pulse{
-    animation-name: warningNoticePulse;
+  animation-name: warningNoticePulse;
 }
 
 .notice-error>.pulse{
-    animation-name: errorNoticePulse;
+  animation-name: errorNoticePulse;
 }
 
 .notice-success>.pulse{
-    animation-name: successNoticePulse;
+  animation-name: successNoticePulse;
 }
 
 .pulse{

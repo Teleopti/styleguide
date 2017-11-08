@@ -1,4 +1,4 @@
-﻿//Buttons
+//Buttons
 //
 //When using buttons try helping the user understand what the action will do and what object it will effect. This can be done using good terms and tooltips.
 //For more details take a look at the <a href="http://www.google.com/design/spec/components/buttons.html#buttons-usage">material design buttons</a>
@@ -133,18 +133,22 @@
 	animation-fill-mode: forwards;
 	box-shadow: none!important;
 	margin:0;
+	margin:0!important;
+	transition: none;
+	transform: rotate(0deg) scale(0.85);
+	
 
 	i{
 		opacity: 0;
 	}
 }
 @keyframes rotate {
-    from {
-        transform: rotate(0deg) scale(0.85);
-    }
-    to {
-        transform: rotate(360deg) scale(0.85);
-    }
+	from {
+		transform: rotate(0deg) scale(0.85);
+	}
+	to {
+		transform: rotate(360deg) scale(0.85);
+	}
 }
 
 .wfm-btn {
@@ -254,25 +258,25 @@
 }
 
 .grow-out {
-    animation:grow 0.2s;
-    animation-timing-function:ease-in-out;
-    animation-play-state:running;
-    -webkit-animation:grow 0.2s;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-    -webkit-animation-timing-function:ease-in-out;
-    -webkit-animation-play-state:running;
+	animation:grow 0.2s;
+	animation-timing-function:ease-in-out;
+	animation-play-state:running;
+	-webkit-animation:grow 0.2s;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	-webkit-animation-timing-function:ease-in-out;
+	-webkit-animation-play-state:running;
 }
 
 .shrink-in {
-    animation:shrink 0.2s;
-    animation-timing-function:ease-in-out;
-    animation-play-state:running;
-    -webkit-animation:shrink 0.2s;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-    -webkit-animation-timing-function:ease-in-out;
-    -webkit-animation-play-state:running;
+	animation:shrink 0.2s;
+	animation-timing-function:ease-in-out;
+	animation-play-state:running;
+	-webkit-animation:shrink 0.2s;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	-webkit-animation-timing-function:ease-in-out;
+	-webkit-animation-play-state:running;
 }
 
 
@@ -321,8 +325,8 @@
 //
 
 .wfm-btn-group{
-	  display: inline-block;
-		margin: $full-padding;
+	display: inline-block;
+	margin: $full-padding;
 	.wfm-btn{
 		margin: 0!important;
 		box-shadow: none;
