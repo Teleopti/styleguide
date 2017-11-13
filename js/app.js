@@ -70,6 +70,7 @@
 
       $scope.gridOptions = {
         exporterCsvFilename: 'myFile.csv',
+        exporterOlderExcelCompatibility: true,
         exporterMenuPdf: false,
         enableSelectAll: true,
         enableFullRowSelection: true,
