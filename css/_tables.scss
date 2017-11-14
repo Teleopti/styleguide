@@ -1,4 +1,4 @@
-// Tables
+// Table
 //
 // Tables are used to give a overview of data, however, following the <a href="index.html" >Main concepts</a> of the styleguide, only relevant data should be displayed. In the cases where that is not possible, please use infinite scrolling or pagination to keep the page lightweight.
 // If a table does take time to be loaded, a spinner should be displayed during this time to indicate to the user that it will take some time and that the table is not broken.
@@ -8,11 +8,6 @@
 //
 //Cells containing numbers are right aligned using the 'number-cell' class to differentiate them from text content.</br>
 //If you need to display bigger forms of data or need more complex actions such as importing/exporting, multi select or the ability to hide columns - take a look at the Big table.
-//
-//Styleguide 1.15
-//
-
-// Default table
 //
 //Markup:
 //	<table class="wfm-table">
@@ -34,7 +29,7 @@
 //		</tbody>
 //	</table>
 //
-//Styleguide 1.15.1
+//Styleguide 1.25
 //
 
 table{
@@ -90,7 +85,7 @@ table{
 //		</tbody>
 //	</table>
 //
-//Styleguide 1.15.2
+//Styleguide 1.26
 //
 
 .wfm-table-multi{
@@ -102,7 +97,7 @@ table{
 }
 
 
-//Big tables
+//Big table
 //
 //The big table is used to give data more space and actions. Check out the <a href="http://ui-grid.info/docs/#/tutorial">documentation</a> to see all available functions.
 //
@@ -134,7 +129,7 @@ table{
 //
 // Markup: bigtables.hbs
 //
-//Styleguide 1.15.3
+//Styleguide 1.27
 
 .myGrid {
      width: 100%;

@@ -185,21 +185,13 @@
 //</div>
 //
 //
-//Styleguide 4.5
+//Styleguide 4.13
 //
 
-// Card List
-//
-//	The Teleopti Card List is used to show a list of expanding content. Each card can be clicked to expanded while the compact version shows information at a glance.
-//
-//It is encouraged to add as much relevant information as possible to the header of the card (while avoiding text wrapping). Any html elements provided within the &lt;card-header&gt; and/or &lt;card-body&gt; tags will be rendered accordingly.
-//
-//Styleguide 4.6
-//
-
-// Single
+// Card list
 //
 // The single select card list only allows for one card open at any given time, this is useful when the content needs more focused attention.
+// It is encouraged to add as much relevant information as possible to the header of the card (while avoiding text wrapping). Any html elements provided within the &lt;card-header&gt; and/or &lt;card-body&gt; tags will be rendered accordingly.
 //
 //Markup:
 //	<wfm-card-list >
@@ -223,10 +215,10 @@
 //		</wfm-card>
 //	</wfm-card-list>
 //
-//Styleguide 4.6.1
+//Styleguide 4.14
 //
 
-// Multiple
+// Card list (multiple)
 //
 // The multi select card list can have any number of cards open to allow for easy comparison of content.
 //
@@ -253,17 +245,17 @@
 //		</wfm-card>
 //	</wfm-card-list>
 //
-//Styleguide 4.6.2
+//Styleguide 4.15
 //
 
-// Open multiple by default
+// Card list (open by default)
 //
 // The multi select cards can be set to be open by default.
 //
 //Markup: cardlist_default.hbs
 //
 //
-//Styleguide 4.6.3
+//Styleguide 4.16
 //
 
 
