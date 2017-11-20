@@ -51,7 +51,7 @@ select:after {
   background-color: transparent !important;
 }
 
-// Inputs
+// Input
 //
 //Standard inputs dont need any added style. If you want to build a form with several inputs and actions on submit, please look at the <a href=section-4.html#kssref-4-4>form layout</a>.
 //
@@ -66,7 +66,7 @@ select:after {
 // <br/>
 //	<input type="number" placeholder="Numbers..." />
 //
-//Styleguide 1.3
+//Styleguide 1.4
 //
 
 // Input with prepend
@@ -82,7 +82,7 @@ select:after {
 //  </i>
 //</label>
 //
-//Styleguide 1.3.1
+//Styleguide 1.5
 //
 
 .input-icon i{
@@ -130,7 +130,7 @@ select:after {
 //</label>
 //<input id="uploadFile" class="disableInputField" disabled="disabled" value="No file selected" />
 //
-//Styleguide 1.3.2
+//Styleguide 1.6
 //
 
 .disableInputField {
@@ -266,7 +266,7 @@ input:-ms-input-placeholder {
 //		<md-option ng-repeat="item in demos" ng-value="item.id"><span ng-bind="item.id"></span></md-option>
 //	</md-select>
 //
-//Styleguide 1.4
+//Styleguide 1.7
 //
 
 //z index needs to be higher than 81
@@ -498,7 +498,7 @@ md-autocomplete[disabled]:not([md-floating-label]),
   height: 225.5px !important;
 }
 
-// Radio buttons
+// Radio button
 //
 // Radio buttons are a group of options that can only have one item selected at a time.
 //
@@ -527,7 +527,7 @@ md-autocomplete[disabled]:not([md-floating-label]),
 //  </md-radio-group>
 //</form>
 //
-//Styleguide 1.6
+//Styleguide 1.8
 //
 
 md-radio-group{
@@ -584,7 +584,7 @@ md-radio-group .md-checked .md-on {
   }
 }
 
-//Checkboxes
+//Checkbox
 //
 //Checkboxes are used for selecting multiple input options.
 //
@@ -605,7 +605,7 @@ md-radio-group .md-checked .md-on {
 //  <h3>Repeated</h3>
 //  <md-checkbox ng-repeat="item in demos" ng-model="item.checked" aria-label="Checkbox">Option <span ng-bind="item.id"></span></md-checkbox>
 //
-//Styleguide 1.7
+//Styleguide 1.9
 //
 
 md-checkbox {
@@ -678,7 +678,7 @@ md-checkbox {
 // <span ng-if="switchData1">Thanks!</span>
 //</md-switch>
 //
-//Styleguide 1.7.1
+//Styleguide 1.10
 //
 md-switch {
   .md-bar {
@@ -761,7 +761,7 @@ md-switch {
 //<label>With label:</label><md-slider flex md-discrete min="0" max="100" aria-label="slider"></md-slider>
 //<label>Vertical.</label><md-slider flex md-discrete min="0" max="100" aria-label="slider" md-vertical></md-slider>
 //
-//Styleguide 1.9
+//Styleguide 1.17
 //
 
 md-slider[md-vertical] .md-sign:after{
@@ -866,7 +866,7 @@ wfm-multiple-search-input{
   }
 }
 
-//Multiple search
+//Multiple search panel
 //
 //This Searchbar is placed inside the panel sub-header instead of a &lt;h2&gt; to provide advanced search capabilities in that panel.
 //
@@ -890,4 +890,4 @@ wfm-multiple-search-input{
 //
 //Markup: multiple-search.hbs
 //
-//Styleguide 4.2.1
+//Styleguide 4.5

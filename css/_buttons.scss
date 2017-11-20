@@ -1,16 +1,11 @@
-//Buttons
+// Flat button
 //
 //When using buttons try helping the user understand what the action will do and what object it will effect. This can be done using good terms and tooltips.
 //For more details take a look at the <a href="http://www.google.com/design/spec/components/buttons.html#buttons-usage">material design buttons</a>
 //
-//Note: A primary button is UNIQUE on a page and is for the MAIN action on that page.
-//
-//Styleguide 1.8
-//
-
-// Flat buttons
-//
 //The flat buttons are 'printed' on another pice of material and only show its area when hovered, it uses capital letters to differentiate it from a link.
+//
+//Note: A primary button is UNIQUE on a page and is for the MAIN action on that page.
 //
 //Markup:
 //<button class="wfm-btn wfm-btn-invis-default">Default</button>
@@ -19,10 +14,10 @@
 //<button class="wfm-btn wfm-btn-invis-default" disabled>Default disabled</button>
 //<button class="wfm-btn wfm-btn-invis-primary" disabled>Primary disabled</button>
 //
-//Styleguide 1.8.1
+//Styleguide 1.11
 //
 
-// Raised buttons
+// Raised button
 //
 //The raised buttons is itself a pice of material and its area is always visible. Use raised buttons when there is no panel/area behind (around) the button.
 //
@@ -33,10 +28,10 @@
 //<button class="wfm-btn wfm-btn-default" disabled>Default disabled</button>
 //<button class="wfm-btn wfm-btn-primary" disabled>Primary disabled</button>
 //
-//Styleguide 1.8.2
+//Styleguide 1.12
 //
 
-// Action buttons
+// Action button
 //
 //The action button functions similarly to the raised buttons except that are on the floating layer above the entire layout. They are also similar in that they are unique in each view, indicating the primary positive action. More about when to use it can be found in the <a href="http://www.google.com/design/spec/components/buttons.html#buttons-floating-action-button">google material guidelines.</a>
 // A action button is always located inside the view header.
@@ -52,10 +47,10 @@
 //		<md-tooltip>Add a thing</md-tooltip>
 //	</button>
 //
-//Styleguide 1.8.3
+//Styleguide 1.13
 //
 
-//Removing action buttons
+// Action button (removing)
 //
 //The action button can not be disabled, rather it should simply not be displayed if unavailable.
 //It is possible to trigger the animations using ng-click and/or ng-class.
@@ -71,10 +66,10 @@
 //		<md-tooltip>Click me and im gone</md-tooltip>
 //	</button>
 //
-//Styleguide 1.8.4
+//Styleguide 1.14
 //
 
-// Icon buttons
+// Icon button
 //
 // Icons can be used as buttons or toggles. In this case they should have a bigger trigger area, a cursor pointer and preferably a tooltip to explain its action.
 // They can also house a <a href=section-1.html#kssref-1-12>context menu.</a>
@@ -118,7 +113,7 @@
 //		<md-tooltip>Options</md-tooltip>
 //	</div>
 //
-//Styleguide 1.8.5
+//Styleguide 1.15
 //
 
 .context-loading{
@@ -136,7 +131,7 @@
 	margin:0!important;
 	transition: none;
 	transform: rotate(0deg) scale(0.85);
-	
+
 
 	i{
 		opacity: 0;
@@ -321,7 +316,7 @@
 //<h3>Flat <span ng-bind="outputItem2"></span> </h3>
 //	<wfm-btn-group items="demoArr" output="outputCallback2" btn-class="'wfm-btn-invis-default'" selection-class="'wfm-btn-invis-primary'"></wfm-btn-group>
 //
-//Styleguide 1.8.6
+//Styleguide 1.16
 //
 
 .wfm-btn-group{

@@ -1,10 +1,3 @@
-//Loading
-//
-// When operations take time we display a loading bar or loader to indicate to the user that we are still running.
-//
-//Styleguide 1.16
-//
-
 //Progress bar
 //
 //The loading bar is displayed at the top of the ui-view. If the process can be estimated or calculated we show the linear bar. Otherwise we use an indeterminite bar.
@@ -16,7 +9,7 @@
 //<md-progress-linear md-mode="indeterminate"></md-progress-linear>
 //<div class="wfm-block material-depth-1"> Loading...</div>
 //
-//Styleguide 1.16.1
+//Styleguide 1.28
 //
 
 md-progress-linear .md-bar {
@@ -40,7 +33,7 @@ md-progress-linear[md-mode=buffer]{
 //Markup:
 //<md-progress-circular md-mode="indeterminate"></md-progress-circular>
 //
-//Styleguide 1.16.2
+//Styleguide 1.29
 //
 
 md-progress-circular .md-inner .md-left .md-half-circle {
