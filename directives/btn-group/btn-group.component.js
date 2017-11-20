@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('wfm.btnGroup', [])
+    angular.module('wfm.btnGroup', ['pascalprecht.translate'])
     .component('wfmBtnGroup',
     {
         templateUrl: 'directives/btn-group/btn-group.tpl.html',
@@ -15,8 +15,8 @@
         }
     });
 
-    BtnGroupCtrl.$inject = [];
-    function BtnGroupCtrl() {
+    BtnGroupCtrl.$inject = ['$translate'];
+    function BtnGroupCtrl($translate) {
         var ctrl = this;
 
         ctrl.$onInit = function () {
