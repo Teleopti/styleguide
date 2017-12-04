@@ -2,23 +2,6 @@
 //
 //The datepicker is based on bootstraps datepicker and all we do is wrap it and apply some special classes  to make it more compatible with material design.
 //
-//<form>
-// 	<div class="wfm-radio">
-// 		<input type="radio" name="group1" id="radio1" ng-model="select" value="en-GB" ng-change='newValue(select)'/>
-// 		<label for="radio1">
-// 			<span class="wfm-radio-toggle"></span>
-// 			<span class="wfm-radio-label">Gregorian</span>
-// 		</label>
-// 	</div>
-// 	<div class="wfm-radio">
-// 		<input type="radio" name="group1" id="radio2" ng-model="select" value="fa-IR" ng-change='newValue(select)'/>
-// 		<label for="radio2">
-// 			<span class="wfm-radio-toggle"></span>
-// 			<span class="wfm-radio-label">Jalaali</span>
-// 		</label>
-// 	</div>
-//</form>
-//
 //Markup: <wfm-cultural-datepicker ng-model='dateForDatepicker'></wfm-cultural-datepicker>
 //
 //Styleguide 2.1

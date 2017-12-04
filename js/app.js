@@ -30,6 +30,8 @@
     'wfm.workPicker',
     'wfm.skillPicker',
     'wfm.badge',
+    'wfm.btnGroup',
+    'wfm.popup',
     'gridshore.c3js.chart'
   ]).config(['$translateProvider', 'tmhDynamicLocaleProvider', function($translateProvider, tmhDynamicLocaleProvider) {
     $translateProvider
@@ -44,7 +46,7 @@
     });
     $translateProvider.preferredLanguage('en-us');
     tmhDynamicLocaleProvider.localeLocationPattern('../node_modules/angular-i18n/angular-locale_{{locale}}.js');
-  }]).controller('mainCtrl', ['$scope', '$translate','NoticeService', 'tmhDynamicLocale', function($scope, $translate, NoticeService, tmhDynamicLocale) {
+  }]).controller('mainCtrl', ['$scope', '$translate','NoticeService', 'tmhDynamicLocale', '$timeout', function($scope, $translate, NoticeService, tmhDynamicLocale, $timeout) {
     $translate.use(window.navigator.language.toLowerCase());
     tmhDynamicLocale.set(window.navigator.language.toLowerCase());
 
@@ -68,6 +70,7 @@
 
       $scope.gridOptions = {
         exporterCsvFilename: 'myFile.csv',
+        exporterOlderExcelCompatibility: true,
         exporterMenuPdf: false,
         enableSelectAll: true,
         enableFullRowSelection: true,
@@ -85,8 +88,16 @@
         {Name: 'Insane', Type:'Size'},
         {Name: 'Infinite', Type:'Size'},
         {Name: 'Mustard', Type:'Dressing'}
-      ]
-      ;
+      ];
+
+      // code for button group
+      $scope.demoArr = ['item1', 'item2', 'item3'];
+      $scope.outputCallback1 = function (output) {
+        $scope.outputItem1 = output;
+      }
+      $scope.outputCallback2 = function (output) {
+        $scope.outputItem2 = output;
+      }
 
       /*Code for the chart*/
       c3.generate({
@@ -222,7 +233,7 @@
       ];
       $scope.preselected = {skillIds: ['XYZ']};
       $scope.output = function (selectedItem){
-         $scope.filterOutput = selectedItem;
+        $scope.filterOutput = selectedItem;
       }
 
       /*code for rightPanel*/
@@ -243,7 +254,7 @@
           Name: header
         }
         if ($scope.menuItems.indexOf(item) == -1) {
-            $scope.menuItems.push(item);
+          $scope.menuItems.push(item);
         }
       }
       $scope.getChapteIcon = function (index) {
@@ -264,6 +275,16 @@
       function isFloat(n) {
         return Number(n) === n && n % 1 !== 0;
       }
+
+      // timer
+      $scope.loading = function () {
+        $scope.waitAMoment = true;
+        $timeout( function(){
+          $scope.waitAMoment = false;
+        }, 5000 );
+      }
+
+
 
       $scope.numericValueInput = '12,000';
       $scope.numericValueInputResult = 12000;

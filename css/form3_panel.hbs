@@ -36,20 +36,8 @@
       <div class="con-flex x3">
         <div class="form-input-wrap">
           <label>Group:</label>
-          <div class="wfm-checkbox">
-            <input type="checkbox" ng-model="splitForm.box1" name="Box1" id="box1" required=""/>
-            <label for="box1">
-              <span class="wfm-checkbox-toggle"></span>
-              <span class="wfm-checkbox-label">Group A</span>
-            </label>
-          </div>
-          <div class="wfm-checkbox">
-            <input type="checkbox" ng-model="splitForm.box2" name="Box2" id="box2" required=""/>
-            <label for="box2">
-              <span class="wfm-checkbox-toggle"></span>
-              <span class="wfm-checkbox-label">Group B</span>
-            </label>
-          </div>
+          <md-checkbox ng-model="splitForm.box1" aria-label="Checkbox">Option 1</md-checkbox>
+          <md-checkbox ng-model="splitForm.box2" aria-label="Checkbox">Option 2</md-checkbox>
         </div>
       </div>
     </div>

@@ -35,11 +35,25 @@
                 $rootScope: rootScope
             });
             rootScope.$digest();
-            noticeService.warning('test', null, false);
-            noticeService.warning('test', null, false);
+            noticeService.warning('test1', null, false);
+            noticeService.warning('test2', null, false);
             rootScope.$digest();
 
             expect(elementCompile[0].querySelectorAll('.notice-item').length).toBe(2);
+        }));
+
+        it('should display not add a existing notice', inject(function($compile, $injector) {
+            var element = '<wfm-notice notices="wfmNotices"></wfm-notice>';
+            elementCompile = $compile(element)(rootScope);
+            var noticeService = $injector.get('NoticeService', {
+                $rootScope: rootScope
+            });
+            rootScope.$digest();
+            noticeService.warning('test1', null, false);
+            noticeService.warning('test1', null, false);
+            rootScope.$digest();
+
+            expect(elementCompile[0].querySelectorAll('.notice-item').length).toBe(1);
         }));
 
         it('should remove current notice after time to live', function(done) {
@@ -69,8 +83,8 @@
                     $rootScope: rootScope
                 });
                 rootScope.$digest();
-                noticeService.warning('test', 3000, false);
-                noticeService.warning('test', null, false);
+                noticeService.warning('test1', 3000, false);
+                noticeService.warning('test2', null, false);
                 rootScope.$digest();
 
                 $timeout(function() {

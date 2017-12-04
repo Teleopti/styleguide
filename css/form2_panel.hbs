@@ -36,26 +36,13 @@
         <h3>Preferences</h3>
         <div class="form-input-wrap">
           <label>Pick the best one:</label>
-          <div class="wfm-radio">
-            <label>
-              <input type="radio" name="item" data-ng-model="radio" data-ng-value="item">
-              <span class="wfm-radio-toggle"></span>
-              <span class="wfm-radio-label">Cake</span>
-            </label>
-          </div>
-          <div class="wfm-radio">
-            <label>
-              <input type="radio" name="item" data-ng-model="radio" data-ng-value="item">
-              <span class="wfm-radio-toggle"></span>
-              <span class="wfm-radio-label">Pie</span>
-            </label>
-          </div>
-          <div class="wfm-radio">
-            <label>
-              <input type="radio" name="item" data-ng-model="radio" data-ng-value="item">
-              <span class="wfm-radio-toggle"></span>
-              <span class="wfm-radio-label">Pudding</span>
-            </label>
+          <md-radio-group ng-model="devidedForm.dessert">
+            <md-radio-button value="Option 1" aria-label="radio">Cake</md-radio-button>
+            <md-radio-button value="Option 2" aria-label="radio">Pie</md-radio-button>
+            <md-radio-button value="Option 3" aria-label="radio">Ice cream</md-radio-button>
+          </md-radio-group>
+          <div ng-cloak class="animate-show" ng-show ="devidedForm.$submitted || devidedForm.dessert.$touched">
+            <div class="form-input-message" ng-class="{formInvalidInput:!devidedForm.dessert}">At least one is required</div>
           </div>
         </div>
       </div>
