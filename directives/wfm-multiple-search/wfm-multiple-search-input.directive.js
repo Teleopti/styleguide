@@ -45,13 +45,14 @@
                 vm.searchOptions.searchKeywordChanged = true;
             }
             vm.searchOptions.keyword = expression;
-        }
+        };
+
         vm.clearSearch = function () {
             angular.forEach(vm.searchOptions.searchFields, function (searchType) {
                 vm.advancedSearchForm[searchType] = '';
             });
             vm.searchOptions.keyword = '';
-        }
+        };
 
         vm.onSearchFieldInputKeyUp = function ($event) {
             vm.updateSearchExpression();
@@ -81,10 +82,16 @@
         vm.searchTextInputKeyup = function (event) {
             if (event.which === 13) {
                 vm.resetFocusSearch();
-                vm.searchCallback(vm.searchOptions.keyword);
+                vm.searchCallback && vm.searchCallback(vm.searchOptions.keyword);
                 vm.turnOffAdvancedSearch();
                 return;
             }
+        };
+
+        vm.searchIconClickFn = function() {
+            vm.searchCallback && vm.searchCallback(vm.searchOptions.keyword);
+            vm.turnOffAdvancedSearch();
+            vm.resetFocusSearch();
         };
 
         function setSearchFormProperty(searchType, searchValue) {

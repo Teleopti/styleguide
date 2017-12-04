@@ -11,12 +11,12 @@
 				<div class="con-row" ng-repeat="searchField in vm.searchOptions.searchFields" ng-if="$even">
 					<div class="full-padding">
 						<input autocomplete="off" ng-if="vm.searchOptions.searchFields[$index]" id="criteria-{{vm.searchOptions.searchFields[$index]}}"
-						 class="con-flex" type="text" ng-keyup="vm.onSearchFieldInputKeyUp($event)" placeholder="{{'PersonFinderField'+ vm.searchOptions.searchFields[$index]|translate}}"
+						 class="con-flex advanced-search-field" type="text" ng-keyup="vm.onSearchFieldInputKeyUp($event)" placeholder="{{'PersonFinderField'+ vm.searchOptions.searchFields[$index]|translate}}"
 						 ng-model="vm.advancedSearchForm[vm.searchOptions.searchFields[$index]]" />
 					</div>
 					<div class="full-padding">
 						<input autocomplete="off" ng-if="vm.searchOptions.searchFields[$index + 1]" id="criteria-{{vm.searchOptions.searchFields[$index + 1]}}"
-						 class="con-flex" type="text" ng-keyup="vm.onSearchFieldInputKeyUp($event)" placeholder="{{'PersonFinderField'+ vm.searchOptions.searchFields[$index + 1]|translate}}"
+						 class="con-flex advanced-search-field" type="text" ng-keyup="vm.onSearchFieldInputKeyUp($event)" placeholder="{{'PersonFinderField'+ vm.searchOptions.searchFields[$index + 1]|translate}}"
 						 ng-model="vm.advancedSearchForm[vm.searchOptions.searchFields[$index + 1]]" />
 					</div>
 				</div>
@@ -29,7 +29,7 @@
 	</div>
 
 	<div class="search-button inline-block">
-		<span class="cursor-pointer search-icon" ng-focus="vm.turnOffAdvancedSearch()" ng-click="vm.searchCallback(vm.searchOptions.keyword);vm.turnOffAdvancedSearch();vm.resetFocusSearch()">
+		<span class="cursor-pointer search-icon" ng-focus="vm.turnOffAdvancedSearch()" ng-click="vm.searchIconClickFn()">
 			<i class="mdi mdi-magnify" ng-class="{'focusing-search': vm.searchOptions.focusingSearch}"></i>
 			<md-tooltip>{{'Search' | translate}}</md-tooltip>
 		</span>

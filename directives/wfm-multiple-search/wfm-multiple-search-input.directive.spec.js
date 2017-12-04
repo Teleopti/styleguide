@@ -73,6 +73,44 @@ describe('wfm-multiple-search-input directive', function () {
         expect(scope.searchOptions.keyword).toBe('FirstName: Ash22; LastName: Bcd');
     });
 
+    it('shoulde invoke search callback by pressing Enter', function () {
+        var searchExpression;
+        scope.searchOptions.keyword = 'Ashley Bill';
+        scope.searchKeyword = function (expression) {
+            searchExpression = expression;
+        };
+        scope.$apply();
+
+        vm.searchTextChange();
+
+        var keyupEvent = {
+            which: 13
+        };
+        vm.searchTextInputKeyup(keyupEvent);
+
+        expect(vm.showAdvancedSearchOption).toBe(false);
+        expect(vm.searchOptions.searchKeywordChanged).toBe(true);
+        expect(scope.searchOptions.keyword).toBe(searchExpression);
+        expect(scope.searchOptions.keyword).toBe('Ashley Bill');
+    });
+
+    it('shoulde invoke search callback by clicking search icon', function () {
+        var searchExpression;
+        scope.searchOptions.keyword = 'Ashley Bill';
+        scope.searchKeyword = function (expression) {
+            searchExpression = expression;
+        };
+        scope.$apply();
+
+        vm.searchTextChange();
+        vm.searchIconClickFn();
+
+        expect(vm.showAdvancedSearchOption).toBe(false);
+        expect(vm.searchOptions.searchKeywordChanged).toBe(true);
+        expect(scope.searchOptions.keyword).toBe(searchExpression);
+        expect(scope.searchOptions.keyword).toBe('Ashley Bill');
+    });
+
     it('should parse terms correctly by search with option', inject(function () {
         vm.advancedSearchForm = {
             FirstName: 'Ashley Smith',
