@@ -818,7 +818,6 @@ md-slider{
 
 wfm-multiple-search-input{
   display: inline-block;
-  margin: 10px 10px 10px 0;
 
   .wfm-multiple-search-wrapper{
     position: relative;
@@ -826,7 +825,6 @@ wfm-multiple-search-input{
   }
 
   .advanced-input{
-    transition: 2s width ease-in-out;
     width: 200px;
     text-overflow: ellipsis!important;
     outline: none !important;
