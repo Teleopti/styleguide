@@ -16,7 +16,9 @@
 
 <script type="text/ng-template" id="item_renderer.html">
 	<div class="tree-toggle-group">
-		<div class="toggle-handle" ng-class="{open: item.show}" ng-click="item.show = !item.show"><i ng-show="item.categories.length > 0" class="mdi mdi-chevron-right"></i></div>
+		<div class="toggle-handle" ng-class="{open: item.show}" ng-click="item.show = !item.show">
+			<i ng-show="item.categories.length > 0" class="mdi mdi-chevron-right"></i>
+		</div>
 		<div ui-tree-handle ng-class="{selected: item.selected}" ng-click="item.selected=!item.selected">
 			<span ng-bind="item.name"></span>
 			<span class="tree-line-right"><i class="mdi mdi-check"></i></span>

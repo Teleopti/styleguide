@@ -2,10 +2,17 @@
 //
 //The sub header of a regular panel can be repaced to provide a sidebar within the panel.
 //
-//<div class="jsprewrap">
-//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
-//	<div ng-show="showjs">
-//		<code><pre>
+// <div class="jsprewrap">
+//   <div class="ksscopy kss-style" ng-click="showJs['sidebar'] = !showJs['sidebar']">
+//       <span ng-hide="showJs['sidebar']">Show</span>
+//      <span ng-show="showJs['sidebar']">Hide</span>
+//     JavaScript
+//     <i class="mdi mdi-code-tags pull-right"></i>
+//   </div>
+//   <div class="animate-show" ng-show="showJs['sidebar']">
+//     <code>
+//       <pre class="prettyprint linenums lang-js">
+//
 //$scope.rightPanelOptions = {
 //		panelState: false,
 //		sidePanelTitle: 'Side panel title',
@@ -14,9 +21,10 @@
 //		showBackdrop: true,
 //		showPopupButton: true
 //};
-//		</pre></code>
-//	</div>
-//</div>
+//       </pre>
+//     </code>
+//   </div>
+// </div>
 //
 // Markup:
 //<div class="panel material-depth-1">

@@ -19,28 +19,34 @@
 //<tr><td>custom-validators</td><td>Define additional validations. The value should be an array of validator-definition objects, which should have <code>key</code>, <code>message</code>, and <code>validate</code> properties defined. The <code>validate</code> attribute must be a function that accepts <code>startDate</code> and <code>endDate</code> as input and returns a boolean to indicate validation result.</td><td>false</td></tr>
 //</table>
 //
-//</br>
+// <div class="jsprewrap">
+//   <div class="ksscopy kss-style" ng-click="showJs['datepicker1'] = !showJs['datepicker1']">
+//       <span ng-hide="showJs['datepicker1']">Show</span>
+//      <span ng-show="showJs['datepicker1']">Hide</span>
+//     JavaScript
+//     <i class="mdi mdi-code-tags pull-right"></i>
+//   </div>
+//   <div class="animate-show" ng-show="showJs['datepicker1']">
+//     <code>
+//       <pre class="prettyprint linenums lang-js">
 //
-//<div class="jsprewrap">
-//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
-//	<div ng-show="showjs">
-//		<code><pre>
-//$scope.dateRange = {
-//    startDate: new Date(),
-//    endDate: new Date()
-//};
-//$scope.dateRangeTemplateType = 'inline';
-//$scope.dateRangeTemplateTypes = ['popup', 'inline'];
-//$scope.dateRangeCustomValidators = [{
-//    key: 'lessThan7Days',
-//    message: 'DateRangeMustBeLessThanSevenDays',
-//    validate: function(start, end) {
-//        return moment(end).diff(moment(start), 'days') <= 7;
-//    }
-//}];
-//		</pre></code>
-//	</div>
-//</div>
+// $scope.dateRange = {
+//	 startDate: new Date(),
+//	 endDate: new Date()
+// };
+// $scope.dateRangeTemplateType = 'inline';
+// $scope.dateRangeTemplateTypes = ['popup', 'inline'];
+// $scope.dateRangeCustomValidators = [{
+// 	key: 'lessThan7Days',
+// 	message: 'DateRangeMustBeLessThanSevenDays',
+// 	validate: function(start, end) {
+// 		return moment(end).diff(moment(start), 'days') <= 7;
+// 	}
+// }];
+//       </pre>
+//     </code>
+//   </div>
+// </div>
 //
 //
 //Markup: dateRangePicker.hbs
@@ -111,10 +117,10 @@
 }
 
 .glyphicon-chevron-left:before {
-    content: "«"!important;
+	content: "«"!important;
 }
 .glyphicon-chevron-right:before {
-    content: "»"!important;
+	content: "»"!important;
 }
 
 .wfm-datepicker{

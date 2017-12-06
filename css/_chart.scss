@@ -4,28 +4,35 @@
 //A chart used to present complex data. We use <a href="http://c3js.org/gettingstarted.html">default C3</a> or the <a href="http://jettro.github.io/c3-angular-directive/#download">C3 chart directive</a> to get nice features like legends, zoom and period selection.
 //
 //Note: Column-values in the directive should be replaced with a variable to keep the html clean.
-//<div class="jsprewrap">
-//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
-//	<div ng-show="showjs">
-//		<code><pre>
-//c3.generate({
-//		bindto: '#myChart',
-//		data: {
-//				columns: [
-//					['data1', 30, 200, 100, 400, 150, 250],
-//					['data2', 20, 180, 240, 100, 190, 0],
-//				],
-//				selection: {
-//						enabled: true,
-//				},
-//		},
-//		zoom: {
-//				enabled: true,
-//		},
-//});
-//		</pre></code>
-//	</div>
-//</div>
+// <div class="jsprewrap">
+//   <div class="ksscopy kss-style" ng-click="showJs['chart'] = !showJs['chart']">
+//       <span ng-hide="showJs['chart']">Show</span>
+//      <span ng-show="showJs['chart']">Hide</span>
+//     JavaScript
+//     <i class="mdi mdi-code-tags pull-right"></i>
+//   </div>
+//   <div class="animate-show" ng-show="showJs['chart']">
+//     <code>
+//       <pre class="prettyprint linenums lang-js">
+//         c3.generate({
+//       		bindto: '#myChart',
+//       		data: {
+//       				columns: [
+//       					['data1', 30, 200, 100, 400, 150, 250],
+//       					['data2', 20, 180, 240, 100, 190, 0],
+//       				],
+//       				selection: {
+//       						enabled: true,
+//       				},
+//       		},
+//       		zoom: {
+//       				enabled: true,
+//       		},
+//         });
+//       </pre>
+//     </code>
+//   </div>
+// </div>
 //
 //Markup:
 //	<h3>Bind to chart with zoom and select</h3>

@@ -101,10 +101,17 @@ table{
 //
 //The big table is used to give data more space and actions. Check out the <a href="http://ui-grid.info/docs/#/tutorial">documentation</a> to see all available functions.
 //
-//<div class="jsprewrap">
-//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
-//	<div ng-show="showjs">
-//		<code><pre>
+// <div class="jsprewrap">
+//   <div class="ksscopy kss-style" ng-click="showJs['bigTable'] = !showJs['bigTable']">
+//       <span ng-hide="showJs['bigTable']">Show</span>
+//      <span ng-show="showJs['bigTable']">Hide</span>
+//     JavaScript
+//     <i class="mdi mdi-code-tags pull-right"></i>
+//   </div>
+//   <div class="animate-show" ng-show="showJs['bigTable']">
+//     <code>
+//       <pre class="prettyprint linenums lang-js">
+//
 //var data = [];
 //for (var i = 0; i < 100; i++) {
 //		data[i] = {};
@@ -124,9 +131,10 @@ table{
 //		data: data,
 //};
 //$scope.gridOptions.enableGridMenu = true;
-//		</pre></code>
-//	</div>
-//</div>
+//       </pre>
+//     </code>
+//   </div>
+// </div>
 //
 // Markup: bigtables.hbs
 //

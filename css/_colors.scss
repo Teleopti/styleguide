@@ -13,276 +13,58 @@
 //             <md-content class="md-padding classictheme-background">
 //               <div class="con-row">
 //                 <div class="con-flex">
-//                  Blue - Primary color
-//                   <ul class="swatch-list">
-//                     <li class="spacer material-depth-1 blue-100-swatch">
-//                           <p>$blue-100 #99D6FF</p>
-//                     </li>
-//                     <li class="spacer material-depth-1 blue-300-swatch">
-//                           <p>$blue-300 #66C2FF</p>
-//                     </li>
-//                     <li class="spacer material-depth-1 blue-500-swatch">
-//                           <p >$blue-500 #0099FF</p>
-//                     </li>
-//                   </ul>
-//                 Orange - Reserved for warnings
-//                   <ul class="swatch-list">
-//                     <li class="spacer material-depth-1 orange-400-swatch">
-//                           <p>$orange-400 #FFC285</p>
-//                     </li>
-//                     <li class="spacer material-depth-1 orange-500-swatch">
-//                           <p>$orange-500 #FFA726</p>
-//                     </li>
-//                     <li class="spacer material-depth-1 orange-600-swatch">
-//                           <p>$orange-600 #FB8C00</p>
-//                     </li>
-//                   </ul>
-//                 Red - Reserved for errors
-//                 <ul class="swatch-list">
-//                     <li class="spacer material-depth-1 red-600-swatch">
-//                           <p>$red-600 #EE8F7D</p>
-//                     </li>
-//                     <li class="spacer material-depth-1 red-700-swatch">
-//                           <p >$red-700 #EF5350</p>
-//                     </li>
-//                     <li class="spacer material-depth-1 red-800-swatch">
-//                           <p >$red-800 #D32F2F</p>
-//                     </li>
-//                 </ul>
-//                 Green - Reserved for selection/success
-//                   <ul class="swatch-list">
-//                     <li class="spacer material-depth-1 green-100-swatch">
-//                           <p>$green-100 #C2E085</p>
-//                     </li>
-//                     <li class="spacer material-depth-1 green-300-swatch">
-//                          <p>$green-300 #9CCC65</p>
-//                     </li>
-//                     <li class="spacer material-depth-1 green-500-swatch">
-//                          <p>$green-500 #8BC34A</p>
-//                     </li>
-//                   </ul>
-//                 <div class="md-col6">
-//                 Pink
-//                   <ul class="swatch-list">
-//                     <li class="spacer material-depth-1 pink-100-swatch">
-//                           <p>$pink-100 #F8BBD0</p>
-//                     </li>
-//                     <li class="spacer material-depth-1 pink-300-swatch">
-//                           <p >$pink-300 #F06292</p>
-//                     </li>
-//                     <li class="spacer material-depth-1 pink-500-swatch">
-//                           <p >$pink-500 #E91E63</p>
-//                     </li>
-//                   </ul>
-//                 Purple
-//                   <ul class="swatch-list">
-//                     <li class="spacer material-depth-1 purple-100-swatch">
-//                           <p>$purple-100 #E1BEE7</p>
-//                     </li>
-//                     <li class="spacer material-depth-1 purple-300-swatch">
-//                           <p >$purple-300 #BA68C8</p>
-//                     </li>
-//                     <li class="spacer material-depth-1 purple-500-swatch">
-//                           <p >$purple-500 #9C27B0</p>
-//                     </li>
-//                   </ul>
-//                 Teal
-//                   <ul class="swatch-list">
-//                     <li class="spacer material-depth-1 teal-100-swatch">
-//                           <p>$teal-100 #B2DFDB</p>
-//                     </li>
-//                     <li class="spacer material-depth-1 teal-300-swatch">
-//                           <p>$teal-300 #4DB6AC</p>
-//                     </li>
-//                     <li class="spacer material-depth-1 teal-500-swatch">
-//                           <p >$teal-500 #009688</p>
-//                     </li>
-//                   </ul>
-//                 Brown
-//                   <ul class="swatch-list">
-//                     <li class="spacer material-depth-1 brown-100-swatch">
-//                           <p>$brown-100 #D7CCC8</p>
-//                     </li>
-//                     <li class="spacer material-depth-1 brown-300-swatch">
-//                           <p >$brown-300 #A1887F</p>
-//                     </li>
-//                     <li class="spacer material-depth-1 brown-500-swatch">
-//                           <p >$brown-500 #795548</p>
-//                     </li>
-//                   </ul>
-//                 Transparent Gray
-//                   <ul class="swatch-list">
-//                     <li class="spacer material-depth-1 white-swatch">
-//                           <p>$white <br> #ffffff</p>
-//                     </li>
-//                     <li class="spacer material-depth-1 gray-012-swatch">
-//                           <p>$gray012 rgba(0,0,0,0.06)</p>
-//                     </li>
-//                     <li class="spacer material-depth-1 gray-026-swatch">
-//                          <p>$gray026 rgba(0,0,0,0.26)</p>
-//                     </li>
-//                     <li class="spacer material-depth-1 gray-054-swatch">
-//                           <p >$gray054 rgba(0,0,0,0.54)</p>
-//                     </li>
-//                     <li class="spacer material-depth-1 gray-087-swatch">
-//                           <p class="white-color-text">$gray087 rgba(0,0,0,0.87)</p>
-//                     </li>
-//                   </ul>
-//                 Solid gray
-//                   <ul class="swatch-list">
-//                     <li class="spacer material-depth-1 gray-300-swatch">
-//                           <p>$gray-300 #E0E0E0</p>
-//                     </li>
-//                     <li class="spacer material-depth-1 gray-500-swatch">
-//                           <p>$gray-500 #9E9E9E</p>
-//                     </li>
-//                     <li class="spacer material-depth-1 gray-100-swatch">
-//                           <p class="white-color-text">$gray100 rgba(0,0,0,1)</p>
-//                     </li>
-//                   </ul>
-//                 </div>
+//                  <div class="con-fluid-row swatch-list">
+//                    <div class="con-fluid-flex" style="border:none" ng-repeat="swatch in classicSwatches">
+//                      <div class="card panel swatch">
+//                        <div ng-class="swatch.Class">
+//                          <div class="spacer"></div>
+//                        </div>
+//                        <div class="card-footer con-row">
+//                          <div class="con-flex">
+//                            <article>
+//                              <b ng-bind="swatch.Variable"></b></br>
+//                              Used for <span ng-bind="swatch.Use"></span></br>
+//                              Code: <span ng-bind="swatch.Color"></span> </br>
+//                              Text color: <span ng-bind="swatch.TextColor"></span>
+//                            </article>
+//                          </div>
+//                        </div>
+//                      </div>
+//                    </div>
+//                   </div>
 //               </div>
 //             </md-content>
 //           </md-tab>
 //           <md-tab label="Dark Theme Colors">
 //             <md-content class="md-padding darktheme-background" >
 //               <div class="con-row">
-//             <div class="con-flex">
-//             <p>Blue - Primary color</p>
-//               <ul class="swatch-list">
-//                 <li class="spacer material-depth-1 blue-100-swatch-dark">
-//                       <p class="white-color-text">$blue-100 #1d5a83</p>
-//                 </li>
-//                 <li class="spacer material-depth-1 blue-300-swatch-dark">
-//                       <p class="white-color-text">$blue-300 #136fac</p>
-//                 </li>
-//                 <li class="spacer material-depth-1 blue-500-swatch-dark">
-//                       <p class="white-color-text">$blue-500 #0a84d6</p>
-//                 </li>
-//               </ul>
-//             <p>Orange - Reserved for warnings</p>
-//               <ul class="swatch-list">
-//                 <li class="spacer material-depth-1 orange-400-swatch-dark">
-//                       <p>$orange-400 #c27c36</p>
-//                 </li>
-//                 <li class="spacer material-depth-1 orange-500-swatch-dark">
-//                       <p>$orange-500 #d68636</p>
-//                 </li>
-//                 <li class="spacer material-depth-1 orange-600-swatch-dark">
-//                       <p>$orange-600 #ea9036</p>
-//                 </li>
-//               </ul>
-//            <p>Red - Reserved for errors</p>
-//             <ul class="swatch-list">
-//                 <li class="spacer material-depth-1 red-600-swatch-dark">
-//                       <p>$red-600 <br>#ca3333</p>
-//                 </li>
-//                 <li class="spacer material-depth-1 red-700-swatch-dark">
-//                       <p>$red-700  #EF5350</p>
-//                 </li>
-//                 <li class="spacer material-depth-1 red-800-swatch-dark">
-//                       <p class="white-color-text">$red-800 <br> #ee8f7d</p>
-//                 </li>
-//             </ul>
-//             <p>Green - Reserved for selection/success</p>
-//               <ul class="swatch-list">
-//                 <li class="spacer material-depth-1 green-100-swatch-dark">
-//                       <p>$green-100 #627b32</p>
-//                 </li>
-//                 <li class="spacer material-depth-1 green-300-swatch-dark">
-//                      <p>$green-300 #6f8e32</p>
-//                 </li>
-//                 <li class="spacer material-depth-1 green-500-swatch-dark">
-//                      <p>$green-500 #84ad32</p>
-//                 </li>
-//               </ul>
-//             <div class="md-col6">
-//           <p>Pink</p>
-//               <ul class="swatch-list">
-//                 <li class="spacer material-depth-1 pink-100-swatch-dark">
-//                       <p>$pink-100 #E91E63</p>
-//                 </li>
-//                 <li class="spacer material-depth-1 pink-300-swatch-dark">
-//                       <p class="white-color-text">$pink-300 #F06292</p>
-//                 </li>
-//                 <li class="spacer material-depth-1 pink-500-swatch-dark">
-//                       <p class="white-color-text">$pink-500 #F8BBD0</p>
-//                 </li>
-//               </ul>
-//             <p>Purple</p>
-//               <ul class="swatch-list">
-//                 <li class="spacer material-depth-1 purple-100-swatch-dark">
-//                       <p>$purple-100 #9C27B0</p>
-//                 </li>
-//                 <li class="spacer material-depth-1 purple-300-swatch-dark">
-//                       <p class="white-color-text">$purple-300 #BA68C8</p>
-//                 </li>
-//                 <li class="spacer material-depth-1 purple-500-swatch-dark">
-//                       <p class="white-color-text">$purple-500 #E1BEE7</p>
-//                 </li>
-//               </ul>
-//             <p>Teal</p>
-//               <ul class="swatch-list">
-//                 <li class="spacer material-depth-1 teal-100-swatch-dark">
-//                       <p>$teal-100 #B2DFDB</p>
-//                 </li>
-//                 <li class="spacer material-depth-1 teal-300-swatch-dark">
-//                       <p>$teal-300 #4DB6AC</p>
-//                 </li>
-//                 <li class="spacer material-depth-1 teal-500-swatch-dark">
-//                       <p class="white-color-text">$teal-500 #009688</p>
-//                 </li>
-//               </ul>
-//            <p> Brown</p>
-//               <ul class="swatch-list">
-//                 <li class="spacer material-depth-1 brown-100-swatch-dark">
-//                       <p>$brown-100 #795548</p>
-//                 </li>
-//                 <li class="spacer material-depth-1 brown-300-swatch-dark">
-//                       <p class="white-color-text">$brown-300 #A1887F</p>
-//                 </li>
-//                 <li class="spacer material-depth-1 brown-500-swatch-dark">
-//                       <p class="white-color-text">$brown-500 #D7CCC8</p>
-//                 </li>
-//               </ul>
-//            <p> Transparent Gray</p>
-//               <ul class="swatch-list">
-//                 <li class="spacer material-depth-1 white-swatch-dark">
-//                       <p>$white <br>#424242</p>
-//                 </li>
-//                 <li class="spacer material-depth-1 gray-012-swatch-dark">
-//                       <p>$gray012 #303030</p>
-//                 </li>
-//                 <li class="spacer material-depth-1 gray-026-swatch-dark">
-//                      <p>$gray026 rgba(0,0,0,0.26)</p>
-//                 </li>
-//                 <li class="spacer material-depth-1 gray-054-swatch-dark">
-//                       <p class="white-color-text">$gray054 rgba(107, 107, 107, 1)</p>
-//                 </li>
-//                 <li class="spacer material-depth-1 gray-087-swatch-dark">
-//                       <p class="white-color-text">$gray087 #d1d1d1</p>
-//                 </li>
-//               </ul>
-//            <p> Solid gray</p>
-//               <ul class="swatch-list">
-//                 <li class="spacer material-depth-1 gray-300-swatch-dark">
-//                       <p>$gray-300 #555555</p>
-//                 </li>
-//                 <li class="spacer material-depth-1 gray-500-swatch-dark">
-//                       <p  class="white-color-text">$gray-500 #9E9E9E</p>
-//                 </li>
-//                 <li class="spacer material-depth-1 gray-100-swatch-dark">
-//                       <p class="white-color-text">$gray100 #c2e085</p>
-//                 </li>
-//               </ul>
-//             </div>
-//           </div>
-//         </md-content>
-//       </md-tab>
-//     </md-tabs>
-//     </md-content>
+//                 <div class="con-flex">
+//                  <div class="con-fluid-row swatch-list">
+//                    <div class="con-fluid-flex" style="border:none" ng-repeat="swatch in classicSwatches">
+//                      <div class="card panel swatch">
+//                        <div ng-class="swatch.DarkClass">
+//                          <div class="spacer"></div>
+//                        </div>
+//                        <div class="card-footer con-row" style="background:#424242">
+//                          <div class="con-flex">
+//                            <article>
+//                              <b ng-bind="swatch.Variable"></b></br>
+//                              Used for <span ng-bind="swatch.Use"></span></br>
+//                              Code: <span ng-bind="swatch.DarkColor"></span> </br>
+//                              Text color: <span ng-bind="swatch.DarkTextColor"></span>
+//                            </article>
+//                          </div>
+//                        </div>
+//                      </div>
+//                    </div>
+//                   </div>
+//               </div>
+//           </md-content>
+//           </md-tab>
+//         </md-tabs>
+//      </md-content>
 //   </div>
-//   </div>
+// </div>
 //
 //Styleguide 3.1
 //

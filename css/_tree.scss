@@ -8,17 +8,25 @@
 //A tree structure is used to show relations between different items. Selected items are marked with a checkmark and a background along with a left side border. Each tree line has a right align span child that could show an icon if the line is selected.
 //Please note thet the "ng-bind" span should be replaced with the normal angular binding.
 //
-//<div class="jsprewrap">
-//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
-//	<div ng-show="showjs">
-//		<code><pre>
+// <div class="jsprewrap">
+//   <div class="ksscopy kss-style" ng-click="showJs['tree'] = !showJs['tree']">
+//       <span ng-hide="showJs['tree']">Show</span>
+//      <span ng-show="showJs['tree']">Hide</span>
+//     JavaScript
+//     <i class="mdi mdi-code-tags pull-right"></i>
+//   </div>
+//   <div class="animate-show" ng-show="showJs['tree']">
+//     <code>
+//       <pre class="prettyprint linenums lang-js">
+//
 //$scope.treeDemos =   [
 //		{categories: [{name: 'item 1'}, {name: 'item 2'}, {name: 'item 3'}, {name: 'item 2'}], name: 'First Group',},
 //		{categories: [{name: 'item 1'}, {name: 'item 3'}], name: 'Second Group'}, {categories: [], name: 'Third Group'}
 //];
-//		</pre></code>
-//	</div>
-//</div>
+//       </pre>
+//     </code>
+//   </div>
+// </div>
 //
 //  Markup: tree.hbs
 //
