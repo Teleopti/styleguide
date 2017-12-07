@@ -13,7 +13,7 @@
 		<div class="con-flex working-hours-period">
 			<h2>{{ getTimerangeDisplay(WorkingPeriod.StartTime, WorkingPeriod.EndTime)}}</h2>
 		</div>
-		<div class="con-flex" ng-repeat="WeekDay in WorkingPeriod.WeekDaySelections">
+		<div class="con-flex working-hours-day" ng-repeat="WeekDay in WorkingPeriod.WeekDaySelections">
 			<md-checkbox ng-model="WeekDay.Checked" aria-label="Checkbox" ng-click="enforceRadioBehavior($parent.$index, WeekDay.WeekDay)">
 					<span translate>{{WeekDay | showWeekdays}}</span>
 			</md-checkbox>

@@ -76,7 +76,7 @@
 .working-hours-row {
 	border-top: 1px solid $gray012;
 
-	& > .con-flex {
+	.working-hours-period, .working-hours-day, .working-hours-menu {
 		align-self: center;
 	}
 
