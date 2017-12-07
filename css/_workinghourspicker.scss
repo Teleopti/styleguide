@@ -72,13 +72,20 @@
 	}
 }
 
-//old work hour picker
-.working-hours-radio{
-  margin-top: $full-padding;
-  display: flex;
-  display: -ms-flexbox;
-}
-
-.working-hours-row{
+//Old working-hours-picker
+.working-hours-row {
 	border-top: 1px solid $gray012;
+
+	.working-hours-period, .working-hours-day, .working-hours-action {
+		align-self: center;
+	}
+
+	.working-hours-period {
+		flex-grow: 2;
+	}
+
+	.working-hours-action {
+		flex-grow: 1.5;
+	}
+
 }

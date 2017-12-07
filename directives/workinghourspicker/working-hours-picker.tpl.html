@@ -10,19 +10,15 @@
 
 <div ng-repeat="WorkingPeriod in workingHours">
 	<div class="con-row working-hours-row">
-		<div class="con-flex">
+		<div class="con-flex working-hours-period">
 			<h2>{{ getTimerangeDisplay(WorkingPeriod.StartTime, WorkingPeriod.EndTime)}}</h2>
 		</div>
-		<div class="con-flex" ng-repeat="WeekDay in WorkingPeriod.WeekDaySelections">
-			<div class="wfm-checkbox working-hours-radio">
-				<input type="checkbox" id="check_workinghour_{{$parent.$index}}_weekday_{{WeekDay.WeekDay}}" ng-model="WeekDay.Checked"/>
-				<label for="check_workinghour_{{$parent.$index}}_weekday_{{WeekDay.WeekDay}}" ng-click="enforceRadioBehavior($parent.$index, WeekDay.WeekDay)">
-					<span class="wfm-checkbox-toggle"></span>
-					<span class="wfm-checkbox-label"><span translate>{{WeekDay | showWeekdays}}</span></span>
-				</label>
-			</div>
+		<div class="con-flex working-hours-day" ng-repeat="WeekDay in WorkingPeriod.WeekDaySelections">
+			<md-checkbox ng-model="WeekDay.Checked" aria-label="Checkbox" ng-click="enforceRadioBehavior($parent.$index, WeekDay.WeekDay)">
+					<span translate>{{WeekDay | showWeekdays}}</span>
+			</md-checkbox>
 		</div>
-		<div class="con-flex">
+		<div class="con-flex working-hours-action">
 			<div tabindex=0 class="context-menu card-context" ng-click="$parent.removeWorkingPeriod($index)">
 				<i class="mdi mdi-delete"></i>
 				<md-tooltip>{{'DeletePeriod' | translate}} {{ getTimerangeDisplay(WorkingPeriod.StartTime, WorkingPeriod.EndTime)}}</md-tooltip>
