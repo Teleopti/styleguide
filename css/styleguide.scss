@@ -958,11 +958,22 @@ body{
 }
 
 .section-hero{
-  color: white!important;
   background: #0099FF!important;
   outline: 420px solid #0099FF;
   z-index: -1;
   position: relative;
+
+  .kss-style{
+      color: white!important;
+
+      a{
+        color: white!important;
+      }
+
+      .kss-title__ref{
+        display: none!important;
+      }
+  }
 }
 
 .kss-style code {
@@ -978,6 +989,7 @@ body{
   max-width: 100%;
   background: white;
   padding: 0.5rem;
+  margin-bottom: 2rem!important;
 }
 @media screen and (min-width: 769px){
   #kss-node .kss-sidebar {
