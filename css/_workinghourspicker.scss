@@ -76,7 +76,7 @@
 .working-hours-row {
 	border-top: 1px solid $gray012;
 
-	.working-hours-period, .working-hours-day, .working-hours-menu {
+	.working-hours-period, .working-hours-day, .working-hours-action {
 		align-self: center;
 	}
 
@@ -84,7 +84,7 @@
 		flex-grow: 2;
 	}
 
-	.working-hours-menu {
+	.working-hours-action {
 		flex-grow: 1.5;
 	}
 

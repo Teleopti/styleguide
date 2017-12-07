@@ -18,7 +18,7 @@
 					<span translate>{{WeekDay | showWeekdays}}</span>
 			</md-checkbox>
 		</div>
-		<div class="con-flex working-hours-menu">
+		<div class="con-flex working-hours-action">
 			<div tabindex=0 class="context-menu card-context" ng-click="$parent.removeWorkingPeriod($index)">
 				<i class="mdi mdi-delete"></i>
 				<md-tooltip>{{'DeletePeriod' | translate}} {{ getTimerangeDisplay(WorkingPeriod.StartTime, WorkingPeriod.EndTime)}}</md-tooltip>
