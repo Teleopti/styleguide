@@ -284,7 +284,329 @@
         }, 5000 );
       }
 
-
+      // color list
+      $scope.classicSwatches = [
+        {
+          Variable: '$blue-100',
+          Color: '#99D6FF',
+          Class: 'blue-100-swatch',
+          DarkColor: '#1d5a83',
+          DarkClass: 'blue-100-swatch-dark',
+          DarkTextColor: '$text-color-standard',
+          TextColor: '$text-color-standard',
+          Use: 'highlights'
+        },
+        {
+          Variable: '$blue-300',
+          Color: '#66C2FF',
+          Class: 'blue-300-swatch',
+          DarkColor: '#136fac',
+          DarkClass: 'blue-300-swatch-dark',
+          DarkTextColor: '$text-color-standard',
+          TextColor: '$text-color-standard',
+          Use: 'secondary actions'
+        },
+        {
+          Variable: '$blue-500',
+          Color: '#0099FF',
+          Class: 'blue-500-swatch',
+          DarkColor: '#0a84d6',
+          DarkClass: 'blue-500-swatch-dark',
+          DarkTextColor: '$white',
+          TextColor: '$white',
+          Use: 'primary actions'
+        },
+        {
+          Variable: '$orange-400',
+          Color: '#FFC285',
+          Class: 'orange-400-swatch',
+          DarkColor: '#c27c36',
+          DarkClass: 'orange-400-swatch-dark',
+          DarkTextColor: '$text-color-standard',
+          TextColor: '$text-color-standard',
+          Use: 'warnings'
+        },
+        {
+          Variable: '$orange-500',
+          Color: '#FFA726',
+          Class: 'orange-500-swatch',
+          DarkColor: '#d68636',
+          DarkClass: 'orange-500-swatch-dark',
+          DarkTextColor: '$text-color-standard',
+          TextColor: '$text-color-standard',
+          Use: 'warnings'
+        },
+        {
+          Variable: '$orange-600',
+          Color: '#FB8C00',
+          Class: 'orange-600-swatch',
+          DarkColor: '#ea9036',
+          DarkClass: 'orange-600-swatch-dark',
+          DarkTextColor: '$text-color-standard',
+          TextColor: '$text-color-standard',
+          Use: 'warnings'
+        },
+        {
+          Variable: '$red-600',
+          Color: '#EE8F7D',
+          Class: 'red-600-swatch',
+          DarkColor: '#ca3333',
+          DarkClass: 'red-600-swatch-dark',
+          DarkTextColor: '$text-color-standard',
+          TextColor: '$text-color-standard',
+          Use: 'errors'
+        },
+        {
+          Variable: '$red-700',
+          Color: '#EF5350',
+          Class: 'red-700-swatch',
+          DarkColor: '#EF5350',
+          DarkClass: 'red-700-swatch-dark',
+          DarkTextColor: '$text-color-standard',
+          TextColor: '$text-color-standard',
+          Use: 'errors'
+        },
+        {
+          Variable: '$red-800',
+          Color: '#D32F2F',
+          Class: 'red-800-swatch',
+          DarkColor: '#ee8f7d',
+          DarkClass: 'red-800-swatch-dark',
+          DarkTextColor: '$white',
+          TextColor: '$white',
+          Use: 'errors'
+        },
+        {
+          Variable: '$green-100',
+          Color: '#C2E085',
+          Class: 'green-100-swatch',
+          DarkColor: '#627b32',
+          DarkClass: 'green-100-swatch-dark',
+          DarkTextColor: '$text-color-standard',
+          TextColor: '$text-color-standard',
+          Use: 'selection and success'
+        },
+        {
+          Variable: '$green-300',
+          Color: '#9CCC65',
+          Class: 'green-300-swatch',
+          DarkColor: '#6f8e32',
+          DarkClass: 'green-300-swatch-dark',
+          DarkTextColor: '$text-color-standard',
+          TextColor: '$text-color-standard',
+          Use: 'selection and success'
+        },
+        {
+          Variable: '$green-500',
+          Color: '#8BC34A',
+          Class: 'green-500-swatch',
+          DarkColor: '#84ad32',
+          DarkClass: 'green-500-swatch-dark',
+          DarkTextColor: '$text-color-standard',
+          TextColor: '$text-color-standard',
+          Use: 'selection and success'
+        },
+        {
+          Variable: '$pink-100',
+          Color: '#F8BBD0',
+          Class: 'pink-100-swatch',
+          DarkColor: '#E91E63',
+           DarkClass: 'pink-100-swatch-dark',
+           DarkTextColor: '$text-color-standard',
+           TextColor: '$text-color-standard',
+          Use: 'loading'
+        },
+        {
+          Variable: '$pink-300',
+          Color: '#F06292',
+          Class: 'pink-300-swatch',
+          DarkColor: '#F06292',
+          DarkClass: 'pink-300-swatch-dark',
+          DarkTextColor: '$text-color-standard',
+          TextColor: '$white',
+          Use: 'loading'
+        },
+        {
+          Variable: '$pink-500',
+          Color: '#E91E63',
+          Class: 'pink-500-swatch',
+          DarkColor: '#F8BBD0',
+          DarkClass: 'pink-500-swatch-dark',
+          DarkTextColor: '$white',
+          TextColor: '$white',
+          Use: 'loading'
+        },
+        {
+          Variable: '$purple-100',
+          Color: '#E1BEE7',
+          Class: 'purple-100-swatch',
+          DarkColor: '#9C27B0',
+          DarkClass: 'purple-100-swatch-dark',
+          DarkTextColor: '$text-color-standard',
+          TextColor: '$text-color-standard',
+          Use: 'priority'
+        },
+        {
+          Variable: '$purple-300',
+          Color: '#BA68C8',
+          Class: 'purple-300-swatch',
+          DarkColor: '#BA68C8',
+          DarkClass: 'purple-300-swatch-dark',
+          DarkTextColor: '$text-color-standard',
+          TextColor: '$white',
+          Use: 'priority'
+        },
+        {
+          Variable: '$purple-500',
+          Color: '#9C27B0',
+          Class: 'purple-500-swatch',
+          DarkColor: '#E1BEE7',
+          DarkClass: 'purple-500-swatch-dark',
+          DarkTextColor: '$white',
+          TextColor: '$white',
+          Use: 'priority'
+        },
+        {
+          Variable: '$teal-100',
+          Color: '#B2DFDB',
+          Class: 'teal-100-swatch',
+          DarkColor: '#009688',
+          DarkClass: 'teal-100-swatch-dark',
+          DarkTextColor: '$text-color-standard',
+          TextColor: '$text-color-standard',
+          Use: 'flavor'
+        },
+        {
+          Variable: '$teal-300',
+          Color: '#4DB6AC',
+          Class: 'teal-300-swatch',
+          DarkColor: '#4DB6AC',
+          DarkClass: 'teal-300-swatch-dark',
+          DarkTextColor: '$white',
+          TextColor: '$text-color-standard',
+          Use: 'flavor'
+        },
+        {
+          Variable: '$teal-500',
+          Color: '#009688',
+          Class: 'teal-500-swatch',
+          DarkColor: '#B2DFDB',
+          DarkClass: 'teal-500-swatch-dark',
+          DarkTextColor: '$white',
+          TextColor: '$white',
+          Use: 'flavor'
+        },
+        {
+          Variable: '$brown-100',
+          Color: '#D7CCC8',
+          Class: 'brown-100-swatch',
+          DarkColor: '#795548',
+          DarkClass: 'brown-100-swatch-dark',
+          DarkTextColor: '$text-color-standard',
+          TextColor: '$text-color-standard',
+          Use: 'flavor'
+        },
+        {
+          Variable: '$brown-300',
+          Color: '#A1887F',
+          Class: 'brown-300-swatch',
+          DarkColor: '#A1887F',
+          DarkClass: 'brown-300-swatch-dark',
+          DarkTextColor: '$white',
+          TextColor: '$white',
+          Use: 'flavor'
+        },
+        {
+          Variable: '$brown-500',
+          Color: '#795548',
+          Class: 'brown-500-swatch',
+          DarkColor: '#D7CCC8',
+          DarkClass: 'brown-500-swatch-dark',
+          DarkTextColor: '$white',
+          TextColor: '$white',
+          Use: 'flavor'
+        },
+        {
+          Variable: '$white',
+          Color: '#ffffff',
+          Class: 'white-swatch',
+          DarkColor: '#424242',
+          DarkClass: 'white-swatch-dark',
+          DarkTextColor: '$text-color-standard',
+          TextColor: '$text-color-standard',
+          Use: 'backgrounds and highlights'
+        },
+        {
+          Variable: '$gray-300',
+          Color: '#E0E0E0',
+          Class: 'gray-300-swatch',
+          DarkColor: '#555555',
+          DarkClass: 'gray-300-swatch-dark',
+          DarkTextColor: '$text-color-standard',
+          TextColor: '$white',
+          Use: 'solid hover'
+        },
+        {
+          Variable: '$gray012',
+          Color: 'rgba(0,0,0,0.06)',
+          Class: 'gray-012-swatch',
+          DarkColor: '#303030',
+          DarkClass: 'gray-012-swatch-dark',
+          DarkTextColor: '$text-color-standard',
+          TextColor: '$text-color-standard',
+          Use: 'hovers and backgrounds'
+        },
+        {
+          Variable: '$gray026',
+          Color: 'rgba(0,0,0,0.26)',
+          Class: 'gray-026-swatch',
+          DarkColor: 'rgba(0,0,0,0.26)',
+          DarkClass: 'gray-026-swatch-dark',
+          DarkTextColor: '$text-color-standard',
+          TextColor: '$text-color-standard',
+          Use: 'disabled actions'
+        },
+        {
+          Variable: '$gray-500',
+          Color: '#9E9E9E',
+          Class: 'gray-500-swatch',
+          DarkColor: '#9E9E9E',
+          DarkClass: 'gray-500-swatch-dark',
+          DarkTextColor: '$text-color-standard',
+          TextColor: '$text-color-standard',
+          Use: 'solid disabled'
+        },
+        {
+          Variable: '$gray054',
+          Color: 'rgba(0,0,0,0.54)',
+          Class: 'gray-054-swatch',
+          DarkColor: 'rgba(107, 107, 107, 1)',
+          DarkClass: 'gray-054-swatch-dark',
+          DarkTextColor: '$text-color-standard',
+          TextColor: '$white',
+          Use: 'flavor'
+        },
+        {
+          Variable: '$gray087',
+          Color: 'rgba(0,0,0,0.87)',
+          Class: 'gray-087-swatch',
+          DarkColor: '#d1d1d1',
+          DarkClass: 'gray-087-swatch-dark',
+          DarkTextColor: '$white',
+          TextColor: '$white',
+          Use: 'text'
+        },
+        {
+          Variable: '$gray100',
+          Color: '#000000',
+          Class: 'gray-100-swatch',
+          DarkColor: '#c2e085',
+          DarkClass: 'gray-100-swatch-dark',
+          DarkTextColor: '$text-color-standard',
+          TextColor: '$white',
+          Use: 'flavor'
+        }
+      ]
 
       $scope.numericValueInput = '12,000';
       $scope.numericValueInputResult = 12000;

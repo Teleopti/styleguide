@@ -11,16 +11,24 @@
 // A notice should either self-destruct on state change, when timeout is up or be dismissable to free up space. The Notice service methods take 3 arguments: content, timeToLive and destroyOnStateChange.
 // When creating a new notice you will get a notice object. You can destroy the notice by calling notice.destroy().
 //
-//<div class="jsprewrap">
-//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
-//	<div ng-show="showjs">
-//		<code><pre>
+// <div class="jsprewrap">
+//   <div class="ksscopy kss-style" ng-click="showJs['notice'] = !showJs['notice']">
+//       <span ng-hide="showJs['notice']">Show</span>
+//      <span ng-show="showJs['notice']">Hide</span>
+//     JavaScript
+//     <i class="mdi mdi-code-tags pull-right"></i>
+//   </div>
+//   <div class="animate-show" ng-show="showJs['notice']">
+//     <code>
+//       <pre class="prettyprint linenums lang-js">
+//
 //$scope.displaySuccess = function() {
 //		NoticeService.success(message, 5000, true);
 //};
-//		</pre></code>
-//	</div>
-//</div>
+//       </pre>
+//     </code>
+//   </div>
+// </div>
 //
 // Markup: notices.hbs
 //

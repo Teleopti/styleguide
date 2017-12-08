@@ -335,10 +335,43 @@ md-select {
 // Skill picker
 //
 // The skill picker is used to switch between selected skills and selected skill groups.
-//<div class="jsprewrap">
-//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
-//	<div ng-show="showjs">
-//	<code><pre>
+//<table class="wfm-table">
+//	<thead>
+//		<tr>
+//			<th>Attribute Name</th>
+//			<th>Usage</th>
+//		</tr>
+//	</thead>
+//	<tbody>
+//		<tr>
+//			<td>skills</td>
+//			<td>Model for binding skills</td>
+//		</tr>
+//		<tr>
+//			<td>skill-areas</td>
+//			<td>Model for binding skill groups</td>
+//		</tr>
+//    <tr>
+//      <td>item-to-return</td>
+//      <td>The currently selected item (skill or group) returned as a callback function</td>
+//    </tr>
+//    <tr>
+//      <td>preselected</td>
+//      <td>Send in a item to be preselected on load</td>
+//    </tr>
+//	</tbody>
+//</table>
+// <div class="jsprewrap">
+//   <div class="ksscopy kss-style" ng-click="showJs['skillPicker'] = !showJs['skillPicker']">
+//       <span ng-hide="showJs['skillPicker']">Show</span>
+//      <span ng-show="showJs['skillPicker']">Hide</span>
+//     JavaScript
+//     <i class="mdi mdi-code-tags pull-right"></i>
+//   </div>
+//   <div class="animate-show" ng-show="showJs['skillPicker']">
+//     <code>
+//       <pre class="prettyprint linenums lang-js">
+//
 //vm.mockSkills = [
 //  {
 //    Id: 'XYZ',
@@ -377,35 +410,10 @@ md-select {
 //   $scope.filterOutput = selectedItem;
 //}
 //};
-//		</pre></code>
-//	</div>
-//</div>
-//<table class="wfm-table">
-//	<thead>
-//		<tr>
-//			<th>Attribute Name</th>
-//			<th>Usage</th>
-//		</tr>
-//	</thead>
-//	<tbody>
-//		<tr>
-//			<td>skills</td>
-//			<td>Model for binding skills</td>
-//		</tr>
-//		<tr>
-//			<td>skill-areas</td>
-//			<td>Model for binding skill groups</td>
-//		</tr>
-//    <tr>
-//      <td>item-to-return</td>
-//      <td>The currently selected item (skill or group) returned as a callback function</td>
-//    </tr>
-//    <tr>
-//      <td>preselected</td>
-//      <td>Send in a item to be preselected on load</td>
-//    </tr>
-//	</tbody>
-//</table>
+//       </pre>
+//     </code>
+//   </div>
+// </div>
 //
 // Markup:
 //<skill-picker skills="mockSkills" skill-areas="mockedSkillGroups" item-to-return="output" preselected-item="preselected"></skill-picker>
@@ -502,14 +510,22 @@ md-autocomplete[disabled]:not([md-floating-label]),
 //
 // Radio buttons are a group of options that can only have one item selected at a time.
 //
-//<div class="jsprewrap">
-//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
-//	<div ng-show="showjs">
-//		<code><pre>
+// <div class="jsprewrap">
+//   <div class="ksscopy kss-style" ng-click="showJs['radio'] = !showJs['radio']">
+//       <span ng-hide="showJs['radio']">Show</span>
+//      <span ng-show="showJs['radio']">Hide</span>
+//     JavaScript
+//     <i class="mdi mdi-code-tags pull-right"></i>
+//   </div>
+//   <div class="animate-show" ng-show="showJs['radio']">
+//     <code>
+//       <pre class="prettyprint linenums lang-js">
+//
 //	  $scope.demos = [{id: '1'}, {id: '2'}, {id: '3'}, {id: '4'}];
-//		</pre></code>
-//	</div>
-//</div>
+//       </pre>
+//     </code>
+//   </div>
+// </div>
 //
 //Markup:
 //<h3>Simple (<span ng-bind="data1"></span>)</h3>
@@ -588,14 +604,22 @@ md-radio-group .md-checked .md-on {
 //
 //Checkboxes are used for selecting multiple input options.
 //
-//<div class="jsprewrap">
-//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
-//	<div ng-show="showjs">
-//		<code><pre>
+// <div class="jsprewrap">
+//   <div class="ksscopy kss-style" ng-click="showJs['check'] = !showJs['check']">
+//       <span ng-hide="showJs['check']">Show</span>
+//      <span ng-show="showJs['check']">Hide</span>
+//     JavaScript
+//     <i class="mdi mdi-code-tags pull-right"></i>
+//   </div>
+//   <div class="animate-show" ng-show="showJs['check']">
+//     <code>
+//       <pre class="prettyprint linenums lang-js">
+//
 //	  $scope.demos = [{id: '1'}, {id: '2'}, {id: '3'}, {id: '4'}];
-//		</pre></code>
-//	</div>
-//</div>
+//       </pre>
+//     </code>
+//   </div>
+// </div>
 //
 //Markup:
 //  <h3>Simple</h3>
@@ -893,10 +917,17 @@ wfm-multiple-search-input{
 //
 //Note: The header text is translated in the project but the names of the inputs needs to be translated using $translate.instant() in the controller.
 //
-//<div class="jsprewrap">
-//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
-//	<div ng-show="showjs">
-//		<code><pre>
+// <div class="jsprewrap">
+//   <div class="ksscopy kss-style" ng-click="showJs['advSearch'] = !showJs['advSearch']">
+//       <span ng-hide="showJs['advSearch']">Show</span>
+//      <span ng-show="showJs['advSearch']">Hide</span>
+//     JavaScript
+//     <i class="mdi mdi-code-tags pull-right"></i>
+//   </div>
+//   <div class="animate-show" ng-show="showJs['advSearch']">
+//     <code>
+//       <pre class="prettyprint linenums lang-js">
+//
 //$scope.searchOptions = {
 //    keyword: '',
 //    searchKeywordChanged: false,
@@ -905,9 +936,10 @@ wfm-multiple-search-input{
 //      'option1','option2','option3','option4','option5','option6'
 //    ]
 //};
-//		</pre></code>
-//	</div>
-//</div>
+//       </pre>
+//     </code>
+//   </div>
+// </div>
 //
 //Markup: multiple-search.hbs
 //
