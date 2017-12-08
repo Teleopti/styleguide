@@ -961,11 +961,23 @@ body{
   margin: 0!important;
   padding: 1rem;
 }
-.kss-nav__menu-item{
-  padding: 0.5rem;
 
-  a{
+.kss-nav__menu-item {
+  padding: 0.5rem;
+  a {
     color: $text-color-standard!important;
+  }
+}
+
+.kss-nav__menu > .kss-nav__menu-item {
+  padding: 0;
+  & > a {
+    display: block;
+    height: 100%;
+    padding: 0.5rem;
+  }
+  & > a:hover {
+    background: $gray012;
   }
 }
 
