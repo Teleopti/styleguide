@@ -12,6 +12,12 @@
 //<div class="line-right">.line-right</div>
 //<div class="line-center">.line-center</div>
 //<div class="inline-flex">.inline-flex</div>
+// <div class="align-row-center">
+// .vertical center
+// </div>
+// <div class="align-row-baseline">
+// .vertical baseline
+// </div>
 //<div class="margin-center">.margin-center</div>
 //<div class="align-bottom-flex">.align-bottom-flex</div>
 //<div>
@@ -25,6 +31,17 @@
 //
 //Styleguide 8.1
 //
+
+.align-row-center{
+	display: flex;
+	align-items: center;
+}
+
+
+.align-row-center{
+	display: flex;
+	align-items: baseline;
+}
 
 .line-right{
 	text-align:right;
