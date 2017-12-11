@@ -411,9 +411,9 @@
           Color: '#F8BBD0',
           Class: 'pink-100-swatch',
           DarkColor: '#E91E63',
-           DarkClass: 'pink-100-swatch-dark',
-           DarkTextColor: '$text-color-standard',
-           TextColor: '$text-color-standard',
+          DarkClass: 'pink-100-swatch-dark',
+          DarkTextColor: '$text-color-standard',
+          TextColor: '$text-color-standard',
           Use: 'loading'
         },
         {
@@ -606,7 +606,83 @@
           TextColor: '$white',
           Use: 'flavor'
         }
-      ]
+      ];
+
+      $scope.checkResourceSection  = function (header) {
+        if (header === 'Links') {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      $scope.resourceList = [
+        {
+          link:'<a href="https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md">Angular styleguide - John Papa</a>',
+          desc: 'The code style we strive to follow in our JS',
+          category: 'JavaScript'
+        },
+        {
+          link:'<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference">Css quick reference - MDN</a>',
+          desc: 'Good for looking up CSS properties and syntax',
+          category: 'CSS'
+        },
+        {
+          link:'<a href="https://caniuse.com/">Can i use?</a>',
+          desc: 'CSS reference across all browsers',
+          category: 'CSS'
+        },
+        {
+          link:'<a href="https://philipwalton.com/articles/css-architecture/">Css architecture - Philip Walton</a>',
+          desc: 'Article by a Google engineer on how to build good CSS',
+          category: 'CSS'
+        },
+        {
+          link:'<a href="https://www.behance.net/gallery/47810259/2017-Design-Trends-Guide">Design trends 2017</a>',
+          desc: 'A compilation of design trends in 2017',
+          category: 'UI'
+        },
+        {
+          link:'<a href="https://blog.snappa.com/graphic-design-trends-2018/">Design trends 2018</a>',
+          desc: 'A compilation of design trends in 2018',
+          category: 'UI'
+        },
+        {
+          link:'<a href="https://axbom.com/slaying-5-ux-myths-good-mankind/">UX myths - Per Axbom</a>',
+          desc: 'Common pitfalls in UX thinking',
+          category: 'UX'
+        },
+        {
+          link:'<a href="https://www.ventureharbour.com/form-design-best-practices/">Form UX Examples - Marcus Taylor</a>',
+          desc: 'Insights on form design and UX',
+          category: 'UX'
+        },
+        {
+          link:'<a href="http://styleguides.io/">Styleguides.io</a>',
+          desc: 'A collection of styleguides for reference',
+          category: 'UI'
+        },
+        {
+          link:'<a href="https://travis-ci.org/Teleopti/styleguide">Travis-ci</a>',
+          desc: 'Travis is a continuous integration service used to build and test the styleguide',
+          category: 'Tool'
+        },
+        {
+          link:'<a href="http://warpspire.com/kss/">knyle style sheets</a>',
+          desc: 'Kss is a styleguide documentation template',
+          category: 'Tool'
+        },
+        {
+          link:'<a href="https://gruntjs.com/">Grunt</a>',
+          desc: 'Grunt is a taskrunner used to compile and uglify scss and js',
+          category: 'Tool'
+        },
+        {
+          link:'<a href="https://www.npmjs.com/package/teleopti-styleguide">NPM</a>',
+          desc: 'The styleguide gets released as a node package here',
+          category: 'Tool'
+        }
+      ];
 
       $scope.numericValueInput = '12,000';
       $scope.numericValueInputResult = 12000;
