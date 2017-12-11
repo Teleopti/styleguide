@@ -45,6 +45,7 @@
       'Sat': 'Sat'
     });
     $translateProvider.preferredLanguage('en-us');
+    $translateProvider.useSanitizeValueStrategy('escape');
     tmhDynamicLocaleProvider.localeLocationPattern('../node_modules/angular-i18n/angular-locale_{{locale}}.js');
   }]).controller('mainCtrl', ['$scope', '$translate','NoticeService', 'tmhDynamicLocale', '$timeout', function($scope, $translate, NoticeService, tmhDynamicLocale, $timeout) {
     $translate.use(window.navigator.language.toLowerCase());
