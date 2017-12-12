@@ -153,6 +153,7 @@
         the "#ifDepth 1" block as seen below.
       }}
       {{#eachSection rootName}}
+
       {{#ifDepth 1}}
       <div id="kssref-{{referenceURI}}" class="kss-section section-hero kss-section--depth-{{depth}}">
         {{else}}
@@ -184,7 +185,31 @@
           </div>
           {{/if}}
         </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('{{header}}')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
 
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
+           <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
+              <span ng-bind="item.desc"></span></br>
+
+           </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
         {{#if markup}}
 
         <div class="jsprewrap" ng-cloak>
