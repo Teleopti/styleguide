@@ -34,7 +34,7 @@ dd {
 
 .raise{
 	cursor:pointer;
-	transition: 0.2s all ease-in-out;
+	transition: $transition-timing;
 }
 
 .raise:hover{

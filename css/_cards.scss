@@ -63,7 +63,7 @@
 .card-group {
   display: inline-block;
   width: 100%;
-  transition: 1s all ease-in-out;
+  transition: $transition-timing;
 }
 
 .wfm-card-title{
@@ -81,7 +81,7 @@
   margin: 5px;
   cursor:pointer;
   padding: 10px;
-  transition:0.2s all ease-in-out;
+  transition: $transition-timing;
 
   &:hover,&:focus{
     box-shadow: 0 8px 17px 0 rgba(0,0,0,.2)!important;
@@ -299,7 +299,7 @@ md-content {
   transition-timing-function: ease-out;
 
   .chevron{
-    transition:all 0.2s ease-in-out;
+    transition: $transition-timing;
     transform:rotate(90deg);
   }
 }

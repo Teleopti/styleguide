@@ -230,7 +230,7 @@
 	color:white;
 	text-align:center;
 	border-radius: 50%;
-	transition: all 0.2s ease-in-out;
+	transition: $transition-timing;
 	text-decoration:none!important;
 
 	&.mini{
@@ -253,24 +253,24 @@
 }
 
 .grow-out {
-	animation:grow 0.2s;
-	animation-timing-function:ease-in-out;
+	animation:grow 600ms;
+	animation-timing-function:cubic-bezier(.33,.11,.02,.99);
 	animation-play-state:running;
-	-webkit-animation:grow 0.2s;
+	-webkit-animation:grow 600ms;
 	-webkit-animation-fill-mode: forwards;
 	animation-fill-mode: forwards;
-	-webkit-animation-timing-function:ease-in-out;
+	-webkit-animation-timing-function:cubic-bezier(.33,.11,.02,.99);
 	-webkit-animation-play-state:running;
 }
 
 .shrink-in {
-	animation:shrink 0.2s;
-	animation-timing-function:ease-in-out;
+	animation:shrink 600ms;
+	animation-timing-function:cubic-bezier(.33,.11,.02,.99);
 	animation-play-state:running;
-	-webkit-animation:shrink 0.2s;
+	-webkit-animation:shrink 600ms;
 	-webkit-animation-fill-mode: forwards;
 	animation-fill-mode: forwards;
-	-webkit-animation-timing-function:ease-in-out;
+	-webkit-animation-timing-function:cubic-bezier(.33,.11,.02,.99);
 	-webkit-animation-play-state:running;
 }
 
