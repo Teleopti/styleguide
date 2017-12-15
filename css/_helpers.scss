@@ -117,3 +117,22 @@
 .block{
 	display: block!important;
 }
+
+//Animations
+//
+//Markup:
+// <!-- Add material depth on hover -->
+//<div class="spacer material-depth-1 raise"> Hover to raise</div>
+//<br/>
+// <!-- Load element with a growing effect -->
+//<div class="spacer material-depth-1 grow-out"> Grows out from center</div>
+//<br/>
+// <!-- Hide element with a zooming effect -->
+//<div class="spacer material-depth-1" ng-click="dissapear=true" ng-class="{'reveal-material':dissapear}"> Click to dissapear</div>
+//<br/>
+// <!-- Load element with a fade effect when using ng-show -->
+//<p ng-click="showMaterial = !showMaterial">trigger animation 1</p>
+//<div class="spacer material-depth-1 animate-show" ng-show="showMaterial"> Fade in</div>
+//
+//Styleguide 8.6
+//

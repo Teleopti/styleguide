@@ -584,7 +584,7 @@ md-radio-group .md-checked .md-on {
     width: 20px;
     height: 20px;
     border-radius: 40px;
-    transition: background-color .2s ease-in-out;
+    transition: $transition-timing;
     cursor: pointer;
   }
 
@@ -668,7 +668,7 @@ md-checkbox {
     float: right;
     border-radius: 2px;
     content: " ";
-    transition: background-color .2s ease-in-out;
+    transition: $transition-timing;
     cursor: pointer;
   }
 
@@ -742,7 +742,7 @@ md-switch {
     width: 48px;
     height: 18px;
     border-radius: 40px;
-    transition: background-color .2s ease-in-out;
+    transition: $transition-timing;
     margin: 2px 5px;
     cursor: pointer;
   }
@@ -759,7 +759,7 @@ md-switch {
     z-index: 1;
     left: 5px;
     background-color: $white;
-    transition: left .2s ease-in-out;
+    transition: $transition-timing;
   }
 
   input[type=checkbox]:checked ~ label .wfm-switch-toggle {

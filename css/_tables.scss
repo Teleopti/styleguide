@@ -237,7 +237,7 @@ table{
     width: 18px;
     border-radius: 2px;
     content: " ";
-    transition: background-color .20s ease-in-out;
+    transition: $transition-timing;
     cursor: pointer;
 		overflow: hidden;
 }

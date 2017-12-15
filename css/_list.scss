@@ -213,7 +213,7 @@ ul {
 	right: 0;
 	overflow: hidden;
 	margin-top: -8px;
-	transition: all .5s ease-in-out;
+	transition: $transition-timing;
 	padding-top: 8px;
 	background-color: #cacaca;
 	z-index: 30;
