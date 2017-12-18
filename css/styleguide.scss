@@ -959,8 +959,8 @@ body{
 }
 
 .section-hero{
-  background: #0099FF!important;
-  outline: 420px solid #0099FF;
+  background: $primary!important;
+  outline: 420px solid $primary;
   z-index: -1;
   position: relative;
 

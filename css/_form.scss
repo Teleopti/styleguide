@@ -12,12 +12,12 @@ input[type='text'], [type='number'], input[type='password'], select{
   line-height: 1;
   cursor: pointer;
   height: 20px;
-  border-bottom: 1px solid $gray-300;
+  border-bottom: 1px solid $hover;
 
   &:focus {
     border: none;
     outline: none;
-    border-bottom: 1px solid $blue-100;
+    border-bottom: 1px solid $secondary;
   }
 }
 
@@ -104,7 +104,7 @@ select:after {
     display: inline-block;
     width: 18px;
     cursor: pointer;
-    color: $gray087;
+    color: $text-color-standard;
 
     &:before {
       vertical-align: sub;
@@ -194,7 +194,7 @@ input:-ms-input-placeholder {
 .wfm-form {
   label {
     cursor: pointer !important;
-    color: $gray087;
+    color: $text-color-standard;
     display: inline-block !important;
   }
 
@@ -283,7 +283,7 @@ md-select:not([disabled]):focus .md-select-value{
   border: none;
   outline: none;
   padding-bottom: 1px;
-  border-bottom: 1px solid $blue-100;
+  border-bottom: 1px solid $secondary;
 }
 
 .md-select-value>span:not(.md-select-icon){
@@ -299,14 +299,10 @@ md-select-menu{
   md-option{
     height: 30px;
     color:$text-color-standard;
-
-    &:hover {
-      background-color: $gray-300;
-    }
   }
   md-option:focus:not([disabled]):not([selected]),
   md-option[selected], md-select-menu md-option[selected]:focus {
-    background-color: $green-100!important;
+    background: $secondary!important;
   }
 }
 
@@ -439,10 +435,10 @@ md-select {
 }
 
 md-autocomplete{
-  color: $gray087;
+  color: $text-color-standard;
   background:transparent;
   height: 30px;
-  border-bottom: 1px solid $gray-300;
+  border-bottom: 1px solid $hover;
 
   input:not(.md-input){
     padding: 0;
@@ -472,12 +468,12 @@ md-autocomplete-parent-scope{
   color: $text-color-standard;
 
   &:hover{
-    background:$gray012!important;
+    background:$highlight!important;
   }
 }
 
 md-autocomplete[disabled]{
-  background:$gray012;
+  background:$hover;
 
   input{
     cursor: not-allowed!important;
@@ -491,7 +487,7 @@ md-autocomplete[disabled]{
 .md-autocomplete-suggestions-container{
   margin-bottom: $full-padding!important;
   li .highlight{
-    color:$gray087 !important;
+    color:$text-color-standard !important;
     font-weight: bold;
   }
 }
@@ -499,7 +495,7 @@ md-autocomplete[disabled]{
 md-select-menu md-content md-option:not([disabled]):hover,
 md-autocomplete[disabled]:not([md-floating-label]),
 .md-autocomplete-suggestions-container li.selected {
-  background: $gray012!important;
+  background: $highlight!important;
 }
 
 .md-virtual-repeat-container.md-autocomplete-suggestions-container { //for IE: clear buttom cause item list dont open
@@ -558,15 +554,15 @@ md-radio-group{
 md-radio-button {
   margin: $full-padding 0;
   .md-container:before {
-    background: $gray026;
+    background: $hover;
   }
   .md-container{
-    background: $gray026;
+    background: $hover;
     border-radius: 50%;
   }
 }
 md-radio-group .md-checked .md-on {
-  background-color: $blue-300 !important;
+  background-color: $secondary !important;
 }
 
 
@@ -580,7 +576,7 @@ md-radio-group .md-checked .md-on {
 
   .wfm-radio-toggle {
     position: absolute;
-    background-color: $gray026;
+    background-color: $hover;
     width: 20px;
     height: 20px;
     border-radius: 40px;
@@ -590,7 +586,7 @@ md-radio-group .md-checked .md-on {
 
   input[type=radio]:checked ~ label .wfm-radio-toggle,
   input[type=radio]:checked ~ .wfm-radio-toggle {
-    background-color: $blue-300;
+    background-color: $secondary;
   }
 
   .wfm-radio-label {
@@ -640,11 +636,11 @@ md-checkbox {
     border-style: solid;
     border-color: transparent;
     border-radius: 0;
-    background-color: $gray026;
+    background-color: $hover;
   }
 
   &.md-checked .md-icon {
-    background-color: $blue-300;
+    background-color: $secondary;
     &:after {
       left: 7px;
       top: 1px;
@@ -708,14 +704,14 @@ md-switch {
   .md-bar {
     height: 18px;
     top: 3px;
-    background-color: $gray026;
+    background-color: $hover;
   }
   &.md-checked {
     .md-bar {
-      background: $blue-300;
+      background: $secondary;
     }
     .md-thumb {
-      background-color: $blue-500;
+      background-color: $primary;
     }
   }
 }
@@ -789,7 +785,7 @@ md-switch {
 //
 
 md-slider[md-vertical] .md-sign:after{
-  border-left-color: $blue-500;
+  border-left-color: $primary;
 }
 
 md-slider{
@@ -808,19 +804,19 @@ md-slider{
 
   .md-track.md-track-fill,
   .md-thumb:after{
-    background-color: $blue-300!important;
-    border-color: $blue-300!important;
+    background-color: $secondary!important;
+    border-color: $secondary!important;
   }
 
   .md-sign{
-    background-color:$blue-500;
+    background-color:$primary;
   }
   .md-sign:after{
-    border-top-color: $blue-500;
+    border-top-color: $primary;
   }
 
   .md-min .md-thumb:after{
-    background-color: $blue-300;
+    background-color: $secondary;
   }
 
   .md-slider-wrapper:focus > .md-thumb{
@@ -887,7 +883,7 @@ wfm-multiple-search-input{
   }
 
   .focusing-search {
-    color: $blue-500;
+    color: $primary;
   }
 
   .focusing-search:before {

@@ -35,7 +35,7 @@
 	margin: 0;
 
 	.subtext{
-		color:$gray054;
+		color:$gray-500;
 	}
 }
 
@@ -116,7 +116,7 @@ background-color: $gray012;
 	display: inline-block;
 	width: 25px;
 	height: 25px;
-	background-color: $green-100;
+	background-color: $secondary;
 	border-radius: 50%;
 	text-align: center;
 	line-height: 25px;
@@ -172,34 +172,34 @@ ul {
 	cursor: pointer;
 	overflow: hidden;
 	border-left: 3px solid transparent;
-	border-top:1px solid $gray012;
+	border-top:1px solid $hover;
 	position:relative;
 	overflow-x:hidden;
 
 	&:hover{
-		border-left: 3px solid $gray-500;
-		background-color:$gray-300;
+		border-left: 3px solid $hover;
+		background-color:$highlight;
 	}
 
 	&.active{
-		border-left: 3px solid $pink-500;
-		background-color: $green-100;
+		border-left: 3px solid $hover;
+		background-color: $secondary;
 	}
 
 	&.active:hover{
-		border-left: 3px solid $pink-500;
-		background-color: $green-100;
+		border-left: 3px solid $primary;
+		background-color: $secondary;
 	}
 
 	i{
 		vertical-align: baseline;
 		margin-right: $full-padding;
-		color: #555555;
+		color: $text-color-standard;
 		padding-bottom: 5px;
 	}
 
 	&.disabled{
-		background: $gray012!important;
+		background: $hover!important;
 		cursor: not-allowed;
 		pointer-events: none;
 	}
@@ -215,7 +215,7 @@ ul {
 	margin-top: -8px;
 	transition: $transition-timing;
 	padding-top: 8px;
-	background-color: #cacaca;
+	background-color: $hover;
 	z-index: 30;
 	border-bottom: 8px solid transparent;
 

@@ -71,14 +71,14 @@
 	border-left: 3px solid transparent;
 
 	&:hover {
-		background-color: $gray-300;
+		background-color: $highlight;
 	}
 }
 
 .angular-ui-tree-handle.selected {
 	padding-left: 5px;
-	border-left: 3px solid $pink-500;
-	background-color: $green-100;
+	border-left: 3px solid $hover;
+	background-color: $secondary;
 }
 
 .angular-ui-tree-handle.selected.ng-hide {
