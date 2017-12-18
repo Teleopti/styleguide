@@ -117,10 +117,10 @@
 //
 
 .context-loading{
-	border-top: 3px solid $blue-100!important;
-	border-right: 3px solid $blue-100!important;
-	border-bottom: 3px solid $blue-100!important;
-	border-left: 3px solid $blue-500!important;
+	border-top: 3px solid $secondary!important;
+	border-right: 3px solid $secondary!important;
+	border-bottom: 3px solid $secondary!important;
+	border-left: 3px solid $primary!important;
 	animation: rotate 1s;
 	animation-iteration-count: infinite;
 	animation-timing-function:ease-in-out;
@@ -158,20 +158,20 @@
 }
 
 .wfm-btn-invis-default {
-	color: $gray100;
+	color: $text-color-standard;
 	background-color: transparent;
 
 	&:hover{
-		background-color: $gray-300;
+		background-color: $highlight;
 	}
 }
 
 .wfm-btn-invis-primary {
-	color: $blue-500;
+	color: $primary;
 	background-color: transparent;
 
 	&:hover{
-		background-color: $gray-300;
+		background-color: $highlight;
 	}
 }
 
@@ -187,7 +187,7 @@
 
 .wfm-btn-primary {
 	color: $white;
-	background-color: $blue-500;
+	background-color: $primary;
 	@extend .material-depth-1;
 
 	&:hover{
@@ -211,7 +211,7 @@
 .wfm-btn-primary-disabled,
 .context-menu[disabled]{
 	color: $text-color-muted;
-	background-color: $gray012;
+	background-color: $hover;
 	box-shadow: none;
 
 	&:hover{
@@ -226,7 +226,7 @@
 	cursor: pointer;
 	padding:15px;
 	line-height:16px!important;
-	background-color:$blue-500;
+	background-color:$primary;
 	color:white;
 	text-align:center;
 	border-radius: 50%;

@@ -5,7 +5,7 @@
   flex-wrap: wrap;
 
   .grid-card-disabled{
-    background: $gray012;
+    background: $hover;
     pointer-events: none;
     cursor: not-allowed!important;
   }
@@ -93,7 +93,7 @@
 }
 
 .wfm-card-disabled {
-  background-color:$gray026;
+  background-color:$hover;
 
   &:hover{
     box-shadow: 0 8px 17px 0 rgba(0,0,0,.2)!important;

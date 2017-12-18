@@ -103,16 +103,16 @@
 }
 
 .card-context:hover{
-  background: $gray012;
+  background: $highlight;
 }
 
 .card-context:focus{
   @extend .material-depth-2;
-  background: $gray012;
+  background: $hover;
 }
 
 .active-context{
-  background: $gray012;
+  background: $highlight;
 }
 
 .active-context i{
@@ -146,7 +146,7 @@
   }
 
   ul{
-    color:$gray087;
+    color:$text-color-standard;
     text-align:left!important;
   }
 

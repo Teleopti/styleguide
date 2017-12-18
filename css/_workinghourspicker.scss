@@ -23,12 +23,12 @@
 		background: rgba(0,0,0,0.1);
 	}
 	.mini-active{
-		background: $blue-300;
+		background: $secondary;
 		color:$white;
 		box-shadow: 0 8px 17px 0 rgba(0,0,0,.2);
 	}
 	.mini-success{
-		background: $green-100;
+		background: $highlight;
 		color:$text-color-standard;
 		box-shadow: 0 8px 17px 0 rgba(0,0,0,.2);
 	}
@@ -74,7 +74,7 @@
 
 //Old working-hours-picker
 .working-hours-row {
-	border-top: 1px solid $gray012;
+	border-top: 1px solid $hover;
 
 	.working-hours-period, .working-hours-day, .working-hours-action {
 		align-self: center;

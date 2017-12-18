@@ -25,12 +25,12 @@
 
   .chip-text{
     padding:$full-padding;
-    background:$gray012;
+    background:$hover;
     margin-right: 5px;
   }
   .chip-handle{
     padding:$full-padding;
-    background:$blue-100;
+    background:$secondary;
   }
   .chip-success{
     background: $green-100!important;
