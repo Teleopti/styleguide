@@ -1,4 +1,46 @@
 
+//Color shorthand
+//
+// These colors should be used as default when building new components
+// <table class="wfm-table">
+// <thead>
+// <tr>
+// <th>Variable</th>
+// <th>Uses</th>
+// </tr>
+// </thead>
+// <tbody>
+// <tr>
+// <td>$primary</td>
+// <td>Used for navbars, primary actions and backgrounds </td>
+// </tr>
+// <tr>
+// <td>$secondary</td>
+// <td>Used for headers and passive elements</td>
+// </tr>
+// <tr>
+// <td>$highlight</td>
+// <td>Used for selected and active elements</td>
+// </tr>
+// <tr>
+// <td>$hover</td>
+// <td>Used for hover backgrounds or inactive elements</td>
+// </tr>
+// </tbody>
+// </table>
+// <p>There are some predefined colors for standard text that will adapt to the theme automatically:</p>
+//  <table class="wfm-table">
+//    <thead><tr><th>Variable</th><th>Description</th></tr></thead>
+//    <tbody>
+//      <tr><td>$text-color-standard</td><td>Standard color used in panels</td></tr>
+//      <tr><td>$text-color-muted</td><td>Slightly muted color for use on disabled/secondary text</td></tr>
+//    </tbody>
+//  </table>
+//
+//Styleguide 3.1
+//
+
+
 //Main colors
 //
 //  <div class="panel material-depth-1">
@@ -66,7 +108,7 @@
 //   </div>
 // </div>
 //
-//Styleguide 3.1
+//Styleguide 3.2
 //
 
 $full-padding: 5px; /*sets wfm-block*/

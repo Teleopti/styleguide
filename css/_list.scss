@@ -178,7 +178,7 @@ ul {
 
 	&:hover{
 		border-left: 3px solid $hover;
-		background-color:$highlight;
+		background-color:$hover;
 	}
 
 	&.active{
@@ -188,7 +188,7 @@ ul {
 
 	&.active:hover{
 		border-left: 3px solid $primary;
-		background-color: $secondary;
+		background-color: $hover;
 	}
 
 	i{
