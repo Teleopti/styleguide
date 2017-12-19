@@ -283,7 +283,7 @@ md-select:not([disabled]):focus .md-select-value{
   border: none;
   outline: none;
   padding-bottom: 1px;
-  border-bottom: 1px solid $secondary;
+  border-bottom: 1px solid $hover;
 }
 
 .md-select-value>span:not(.md-select-icon){
@@ -468,7 +468,7 @@ md-autocomplete-parent-scope{
   color: $text-color-standard;
 
   &:hover{
-    background:$highlight!important;
+    background:$hover!important;
   }
 }
 
@@ -495,7 +495,7 @@ md-autocomplete[disabled]{
 md-select-menu md-content md-option:not([disabled]):hover,
 md-autocomplete[disabled]:not([md-floating-label]),
 .md-autocomplete-suggestions-container li.selected {
-  background: $highlight!important;
+  background: $hover!important;
 }
 
 .md-virtual-repeat-container.md-autocomplete-suggestions-container { //for IE: clear buttom cause item list dont open
@@ -711,7 +711,7 @@ md-switch {
       background: $secondary;
     }
     .md-thumb {
-      background-color: $primary;
+      background-color: $highlight;
     }
   }
 }

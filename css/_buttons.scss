@@ -117,10 +117,10 @@
 //
 
 .context-loading{
-	border-top: 3px solid $secondary!important;
-	border-right: 3px solid $secondary!important;
-	border-bottom: 3px solid $secondary!important;
-	border-left: 3px solid $primary!important;
+	border-top: 3px solid $gray012!important;
+	border-right: 3px solid $gray012!important;
+	border-bottom: 3px solid $gray012!important;
+	border-left: 3px solid $secondary!important;
 	animation: rotate 1s;
 	animation-iteration-count: infinite;
 	animation-timing-function:ease-in-out;
@@ -162,7 +162,7 @@
 	background-color: transparent;
 
 	&:hover{
-		background-color: $highlight;
+		background-color: $hover;
 	}
 }
 
@@ -171,7 +171,7 @@
 	background-color: transparent;
 
 	&:hover{
-		background-color: $highlight;
+		background-color: $hover;
 	}
 }
 
