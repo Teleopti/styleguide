@@ -13,7 +13,7 @@
 //
 
 md-progress-linear .md-bar {
-	background-color:$highlight!important;
+	background-color:$secondary!important;
 }
 
 md-progress-linear[md-mode=buffer] .md-dashed:before {
@@ -37,7 +37,7 @@ md-progress-linear[md-mode=buffer]{
 //
 
 md-progress-circular path{
-	stroke: $highlight;
+	stroke: $secondary;
 }
 //
 // md-progress-circular .md-inner .md-left .md-half-circle {
