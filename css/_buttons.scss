@@ -167,7 +167,7 @@
 }
 
 .wfm-btn-invis-primary {
-	color: $primary;
+	color: $secondary;
 	background-color: transparent;
 
 	&:hover{
@@ -186,8 +186,8 @@
 }
 
 .wfm-btn-primary {
-	color: $white;
-	background-color: $primary;
+	color: $text-color-standard;
+	background-color: $secondary;
 	@extend .material-depth-1;
 
 	&:hover{
@@ -226,8 +226,8 @@
 	cursor: pointer;
 	padding:15px;
 	line-height:16px!important;
-	background-color:$primary;
-	color:white;
+	background-color:$secondary;
+	color:$text-color-standard;
 	text-align:center;
 	border-radius: 50%;
 	transition: $transition-timing;

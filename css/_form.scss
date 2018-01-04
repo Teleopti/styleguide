@@ -642,6 +642,7 @@ md-checkbox {
   &.md-checked .md-icon {
     background-color: $secondary;
     &:after {
+      border-color: $text-color-standard;
       left: 7px;
       top: 1px;
     }
@@ -711,7 +712,7 @@ md-switch {
       background: $secondary;
     }
     .md-thumb {
-      background-color: $primary;
+      background-color: $highlight;
     }
   }
 }
