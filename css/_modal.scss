@@ -11,16 +11,20 @@
 	}
 
 	.dialog, .dialog-mini {
-		width: 60%;
+		max-height: 85%!important;
 		z-index: 50;
-		position: relative;
-		top: -20px;
-		margin: 10% auto;
+		position: fixed;
+		margin: 0;
+		top: 10%;
+		left: 15%;
+		right: 15%;
+		width: auto!important;
 		background: $white;
 	}
 
 	.dialog-mini {
-		width: 25%;
+		left: 30%;
+		right: 30%;
 	}
 
 	.tabbed-panel > md-content{
@@ -29,10 +33,9 @@
 
 	/*Dialog*/
 	@media only screen and (max-width:769px){
-		.dialog {
-			left:5px!important;
-			width:90%;
-			right:1%;
+		.dialog, .dialog-mini {
+			left:1%!important;
+			right:1%!important;
 		}
 	}
 
