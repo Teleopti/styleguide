@@ -37,6 +37,9 @@
 	align-items: center;
 }
 
+.baseline{
+	align-items: baseline;
+}
 
 .align-row-baseline{
 	display: flex;
@@ -77,6 +80,7 @@
 //
 //Markup:
 //<div class="cursor-pointer">hover me</div>
+//<div class="locked">no interaction what so ever</div>
 //<div class="non-pointer">I cant be <a>clicked</a>, hovered or tabbed to</div>
 //
 //Styleguide 8.2
@@ -93,6 +97,13 @@
 		display: none;
 	}
 }
+
+.locked {
+	color: $text-color-muted !important;
+	cursor: not-allowed;
+	pointer-events: none;
+}
+
 
 // Showing and hiding content
 //
