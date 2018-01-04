@@ -6,13 +6,13 @@
 		right: 0;
 		bottom: 0;
 		left: 0;
-		z-index: 50;
+		z-index: 100;
 		background: $hover;
 	}
 
 	.dialog, .dialog-mini {
 		max-height: 85%!important;
-		z-index: 50;
+		z-index: 100;
 		position: fixed;
 		margin: 0;
 		top: 10%;
@@ -38,14 +38,6 @@
 			right:1%!important;
 		}
 	}
-
-	/*Mini dialog*/
-	@media only screen and (max-width:1200px){
-		.dialog-mini {
-			width:90%!important;
-		}
-	}
-
 
 	.modal-title{
 		padding-left:10px!important;
