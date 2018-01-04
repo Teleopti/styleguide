@@ -272,7 +272,7 @@ input:-ms-input-placeholder {
 //z index needs to be higher than 81
 .md-select-menu-container {
   background: $white !important;
-  z-index: 140;
+  z-index: 1000;
 
   .md-active {
     z-index: 150;

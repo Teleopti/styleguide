@@ -6,21 +6,25 @@
 		right: 0;
 		bottom: 0;
 		left: 0;
-		z-index: 50;
+		z-index: 100;
 		background: $hover;
 	}
 
 	.dialog, .dialog-mini {
-		width: 60%;
-		z-index: 50;
-		position: relative;
-		top: -20px;
-		margin: 10% auto;
+		max-height: 85%!important;
+		z-index: 100;
+		position: fixed;
+		margin: 0;
+		top: 10%;
+		left: 15%;
+		right: 15%;
+		width: auto!important;
 		background: $white;
 	}
 
 	.dialog-mini {
-		width: 25%;
+		left: 30%;
+		right: 30%;
 	}
 
 	.tabbed-panel > md-content{
@@ -29,20 +33,11 @@
 
 	/*Dialog*/
 	@media only screen and (max-width:769px){
-		.dialog {
-			left:5px!important;
-			width:90%;
-			right:1%;
+		.dialog, .dialog-mini {
+			left:1%!important;
+			right:1%!important;
 		}
 	}
-
-	/*Mini dialog*/
-	@media only screen and (max-width:1200px){
-		.dialog-mini {
-			width:90%!important;
-		}
-	}
-
 
 	.modal-title{
 		padding-left:10px!important;
