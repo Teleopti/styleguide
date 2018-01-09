@@ -1,0 +1,33 @@
+<div class="wfm-block">
+	<label for="treeFilterId" class="input-prepend">
+	<i class="mdi mdi-filter-outline">
+	<md-tooltip>Filter tree</md-tooltip></i>
+	<input type="text" ng-model="treeFilter" id="treeFilterId" placeholder="Tree filter"/>
+	</label>
+</div>
+
+<div class="tree">
+	<div ui-tree data-drag-enabled="false">
+		<ol ui-tree-nodes="" ng-model="treeDemos" class="tree-line" toggle-focus>
+			<li ng-repeat="item in treeDemos | filter:treeFilter" ui-tree-node ng-include=" 'item_renderer.html' "></li>
+		</ol>
+	</div>
+</div>
+
+<script type="text/ng-template" id="item_renderer.html">
+	<div class="tree-toggle-group">
+		<div class="toggle-handle" ng-class="{open: item.show}" ng-click="item.show = !item.show">
+			<i ng-show="item.categories.length > 0" class="mdi mdi-chevron-right"></i>
+		</div>
+		<div ui-tree-handle ng-class="{selected: item.selected}" ng-click="item.selected=!item.selected">
+			<span ng-bind="item.name"></span>
+			<span class="tree-line-right"><i class="mdi mdi-check"></i></span>
+		</div>
+	</div>
+
+	<ol ui-tree-nodes="" ng-model="item.categories" ng-show="item.show">
+		<li  ng-repeat="item in item.categories | filter:treeFilter" ui-tree-node ng-include=" 'item_renderer.html' ">
+			test
+		</li>
+	</ol>
+</script>

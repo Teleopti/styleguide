@@ -33,7 +33,6 @@
     'wfm.btnGroup',
     'wfm.popup',
     'wfm.card-panel',
-    'wfm.treePicker',
     'gridshore.c3js.chart'
   ]).config(['$translateProvider', 'tmhDynamicLocaleProvider', function ($translateProvider, tmhDynamicLocaleProvider) {
     $translateProvider
@@ -55,174 +54,12 @@
 
     /* Dummy data*/
     $scope.demos = [{ id: '1' }, { id: '2' }, { id: '3' }, { id: '4' }];
-    $scope.option = {
-      NodeDisplayName: "label",
-      NodeChildrenName: "nodes",
-      NodeSelectedMark: "selected"
-    };
-    $scope.option2 = {
-      NodeDisplayName: "label",
-      NodeChildrenName: "nodes",
-      NodeSelectedMark: "selected",
-      NodeSemiSelected: "semiSelected",
-    };
-    $scope.option3 = {
-      NodeDisplayName: "label",
-      NodeChildrenName: "nodes",
-      NodeSelectedMark: "selected",
-      NodeSemiSelected: "semiSelected",
-      RootSelectUnique: true
-    };
-    var treeDemos = data = {
-      nodes: [
-        {
-          label: 'parent1',
-          id: '1',
-          selected: false,
-          nodes: [
-            {
-              label: 'child1',
-              id: '2',
-              selected: false,
-              nodes: [
-                {
-                  label: 'grandchild1',
-                  id: '3',
-                  selected: false,
-                  nodes: [
-                    {
-                      label: 'child1',
-                      id: '12',
-                      selected: true,
-                      nodes: [
-                        {
-                          label: 'grandchild1',
-                          id: '13',
-                          selected: true,
-                          nodes: []
-                        }
-                      ]
-                    },
-                    {
-                      label: 'child1',
-                      id: '22',
-                      selected: false,
-                      nodes: [
-                        {
-                          label: 'grandchild2',
-                          id: '23',
-                          selected: false,
-                          nodes: []
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          label: 'parent2',
-          id: '4',
-          selected: false,
-          nodes: [
-            {
-              label: 'child1',
-              id: '5',
-              selected: false,
-              nodes: [
-                {
-                  label: 'grandchild1',
-                  id: '6',
-                  selected: false,
-                  nodes: []
-                }
-              ]
-            },
-            {
-              label: 'child2',
-              id: '7',
-              selected: false,
-              nodes: [
-                {
-                  label: 'grandchild2',
-                  id: '8',
-                  selected: false,
-                  nodes: []
-                }
-              ]
-            },
-            {
-              label: 'child3',
-              id: '7',
-              selected: false,
-              nodes: [
-                {
-                  label: 'grandchild1',
-                  id: '8',
-                  selected: false,
-                  nodes: []
-                },
-                {
-                  label: 'grandchild2',
-                  id: '8',
-                  selected: false,
-                  nodes: []
-                },
-                {
-                  label: 'grandchild3',
-                  id: '8',
-                  selected: false,
-                  nodes: []
-                },
-                {
-                  label: 'grandchild4',
-                  id: '8',
-                  selected: false,
-                  nodes: []
-                },
-                {
-                  label: 'grandchild5',
-                  id: '8',
-                  selected: false,
-                  nodes: []
-                }
-              ]
-            },
-            {
-              label: 'child4',
-              id: '7',
-              selected: false,
-              nodes: [
-                {
-                  label: 'grandchild2',
-                  id: '8',
-                  selected: false,
-                  nodes: []
-                }
-              ]
-            },
-            {
-              label: 'child5',
-              id: '7',
-              selected: false,
-              nodes: [
-                {
-                  label: 'grandchild2',
-                  id: '8',
-                  selected: false,
-                  nodes: []
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    };
-    $scope.treeDemos1 = angular.copy(treeDemos);
-    $scope.treeDemos2 = angular.copy(treeDemos);
-    $scope.treeDemos3 = angular.copy(treeDemos);
+    $scope.treeDemos = [
+      {
+        categories: [{ name: 'item 1' }, { name: 'item 2' }, { name: 'item 3' }, { name: 'item 2' }],
+        name: 'First Group',
+      },
+      { categories: [{ name: 'item 1' }, { name: 'item 3' }], name: 'Second Group' }, { categories: [], name: 'Third Group' }];
 
     /* Code for Grid */
     var data = [];
