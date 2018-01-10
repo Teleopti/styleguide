@@ -55,7 +55,7 @@
 
     /* Dummy data*/
     $scope.demos = [{ id: '1' }, { id: '2' }, { id: '3' }, { id: '4' }];
-    
+
     //data for tree
     $scope.option = {
       NodeDisplayName: "label",
@@ -96,27 +96,13 @@
                       label: 'child1',
                       id: '12',
                       selected: true,
-                      nodes: [
-                        {
-                          label: 'grandchild1',
-                          id: '13',
-                          selected: true,
-                          nodes: []
-                        }
-                      ]
+                      nodes: []
                     },
                     {
                       label: 'child1',
                       id: '22',
                       selected: false,
-                      nodes: [
-                        {
-                          label: 'grandchild2',
-                          id: '23',
-                          selected: false,
-                          nodes: []
-                        }
-                      ]
+                      nodes: []
                     }
                   ]
                 }
@@ -191,32 +177,6 @@
                   nodes: []
                 }
               ]
-            },
-            {
-              label: 'child4',
-              id: '7',
-              selected: false,
-              nodes: [
-                {
-                  label: 'grandchild2',
-                  id: '8',
-                  selected: false,
-                  nodes: []
-                }
-              ]
-            },
-            {
-              label: 'child5',
-              id: '7',
-              selected: false,
-              nodes: [
-                {
-                  label: 'grandchild2',
-                  id: '8',
-                  selected: false,
-                  nodes: []
-                }
-              ]
             }
           ]
         }
@@ -225,6 +185,8 @@
     $scope.treeDemos1 = angular.copy(treeDemos);
     $scope.treeDemos2 = angular.copy(treeDemos);
     $scope.treeDemos3 = angular.copy(treeDemos);
+
+    //old tree demo data
     $scope.treeDemos = [
       {
         categories: [{ name: 'item 1' }, { name: 'item 2' }, { name: 'item 3' }, { name: 'item 2' }],
@@ -318,7 +280,7 @@
 
     /*code for old card list*/
     $scope.items = [{title: 'mdi-chart-bar', bool: true}, {title: 'mdi-chart-bar', bool: false}, {title: 'mdi-chart-bar', bool: true}];
-    
+
 
     /*Code for tabs*/
     $scope.selectedIndex = 0;

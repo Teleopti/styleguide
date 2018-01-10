@@ -215,7 +215,6 @@
 //		</wfm-card>
 //	</wfm-card-list>
 //
-//Styleguide 4.14
 //
 
 // Card list (multiple)
@@ -245,7 +244,6 @@
 //		</wfm-card>
 //	</wfm-card-list>
 //
-//Styleguide 4.15
 //
 
 // Card list (open by default)
@@ -255,7 +253,6 @@
 //Markup: cardlist_default.hbs
 //
 //
-//Styleguide 4.16
 //
 
 
@@ -329,10 +326,17 @@ md-card{
 }
 
 
-// Card list New (multiple open) 
+// Card list (multiple open)
 //
-// The card is a simpler version of the panel. The header part is used for display title. The content part could contains any type of html elements.
+// The card list consists of expandable panels-like cards. The header part is used for displaying a title and other indicators. The content part could contains any type of html elements.
 // By default, card list items support open multiple cards at the same time.
+//<table class="wfm-table">
+//<tr><th>Attribute Name</th><th>Usage</th><th>Required</th></tr>
+//<tr><td>pre-open</td><td>Bind to a repeated card that should be open.</td><td>false</td></tr>
+//<tr><td>open</td><td>can be set to 'single' to open one card at a time, closing previously open ones</td><td>false</td></tr>
+//<tr><td>color</td><td>Bind a object that defines colors on all cards, can include linear gradient to indicate order or scale</td><td>false</td></tr>
+//<tr><td>color-condition</td><td>Options for what color goes on what card</td><td>false</td></tr>
+//</table>
 //
 //Markup:
 //<card-panel-list>
@@ -354,13 +358,12 @@ md-card{
 //</card-panel>
 //</card-panel-list>
 //
-//Styleguide 4.17
+//Styleguide 4.14
 //
 
-// Card list New (pre-open) 
+// Card list (pre-open)
 //
-// The card is a simpler version of the panel. The header part is used for display title. The content part could contains any type of html elements.
-// By using attribute 'pre-open', card list items will pre-open while the view is ready. 
+// By using attribute 'pre-open', selected list items will pre-open on load.
 //
 //Markup:
 //<card-panel-list>
@@ -382,13 +385,12 @@ md-card{
 //</card-panel>
 //</card-panel-list>
 //
-//Styleguide 4.18
+//Styleguide 4.15
 //
 
-// Card list New (single open) 
+// Card list (single open)
 //
-// The card is a simpler version of the panel. The header part is used for display title. The content part could contains any type of html elements.
-// By using attribute 'open="single"', card list items only allow open one card by one time. 
+// By using attribute 'open="single"', the card list only allows one card to be open at a time.
 //
 //Markup:
 //<card-panel-list>
@@ -410,13 +412,12 @@ md-card{
 //</card-panel>
 //</card-panel-list>
 //
-//Styleguide 4.19
+//Styleguide 4.16
 //
 
-// Card list New (simple color bar) 
+// Card list (simple color bar)
 //
-// The card is a simpler version of the panel. The header part is used for display title. The content part could contains any type of html elements.
-// By using attribute 'color', header part of card list items will contains simple color bar on the left. 
+// By using attribute 'color', header part of card list items will contain a simple color bar on the left.
 //
 // <div class="jsprewrap">
 //   <div class="ksscopy kss-style" ng-click="showJs['cardDemo1'] = !showJs['cardDemo1']">
@@ -431,7 +432,7 @@ md-card{
 //
 //          $scope.simpleColor = {
 //            render: 'class',
-//            className: 'brown' 
+//            className: 'brown'
 //           }
 //
 //          css code example:
@@ -464,13 +465,12 @@ md-card{
 //</card-panel>
 //</card-panel-list>
 //
-//Styleguide 4.20
+//Styleguide 4.17
 //
 
-// Card list New (special simple color bar) 
+// Card list (special simple color bar)
 //
-// The card is a simpler version of the panel. The header part is used for display title. The content part could contains any type of html elements.
-// By using attribute 'color' and 'color-condition', header part of card list items will contains simple color bar on the left by matching condition. 
+// By using a combination of attributes 'color' and 'color-condition', header part of the card list items will contain simple color bars on the left by matching condition.
 //
 // <div class="jsprewrap">
 //   <div class="ksscopy kss-style" ng-click="showJs['cardDemo2'] = !showJs['cardDemo2']">
@@ -526,13 +526,12 @@ md-card{
 //</card-panel>
 //</card-panel-list>
 //
-//Styleguide 4.21
+//Styleguide 4.18
 //
 
-// Card list New (linear color bar) 
+// Card list (linear color bar)
 //
-// The card is a simpler version of the panel. The header part is used for display title. The content part could contains any type of html elements.
-// By using attribute 'color', header part of card list items will contains simple color bar on the left by matching condition. 
+// By using attribute 'color', header part of card list items will contains simple color bar on the left by matching condition.
 //
 // <div class="jsprewrap">
 //   <div class="ksscopy kss-style" ng-click="showJs['cardDemo3'] = !showJs['cardDemo3']">
@@ -575,7 +574,7 @@ md-card{
 //</card-panel>
 //</card-panel-list>
 //
-//Styleguide 4.22
+//Styleguide 4.19
 //
 
 
