@@ -33,6 +33,7 @@
     'wfm.btnGroup',
     'wfm.popup',
     'wfm.treePicker',
+    'wfm.card-panel',
     'gridshore.c3js.chart'
   ]).config(['$translateProvider', 'tmhDynamicLocaleProvider', function ($translateProvider, tmhDynamicLocaleProvider) {
     $translateProvider
@@ -54,6 +55,8 @@
 
     /* Dummy data*/
     $scope.demos = [{ id: '1' }, { id: '2' }, { id: '3' }, { id: '4' }];
+    
+    //data for tree
     $scope.option = {
       NodeDisplayName: "label",
       NodeChildrenName: "nodes",
@@ -222,6 +225,12 @@
     $scope.treeDemos1 = angular.copy(treeDemos);
     $scope.treeDemos2 = angular.copy(treeDemos);
     $scope.treeDemos3 = angular.copy(treeDemos);
+    $scope.treeDemos = [
+      {
+        categories: [{ name: 'item 1' }, { name: 'item 2' }, { name: 'item 3' }, { name: 'item 2' }],
+        name: 'First Group',
+      },
+      { categories: [{ name: 'item 1' }, { name: 'item 3' }], name: 'Second Group' }, { categories: [], name: 'Third Group' }];
 
     /* Code for Grid */
     var data = [];
@@ -281,6 +290,35 @@
         enabled: true,
       },
     });
+
+    /*code for card list*/
+    $scope.items = [{ title: 'mdi-chart-bar', bool: true }, { title: 'mdi-chart-bar', bool: false }, { title: 'mdi-chart-bar', bool: true }];
+    $scope.cardListItems = [{
+      Color: 'color1',
+      Selected: false,
+    }, {
+      Color: 'color2',
+      Selected: true,
+    }, {
+      Color: 'color3',
+      Selected: false,
+    }];
+    $scope.simpleColor = {
+      render: 'class',
+      className: 'brown'
+    }
+    $scope.simpleColor2 = {
+      render: 'condition',
+      condition: { 'color1': 'brown', 'color2': 'orange', 'color3': 'purple' }
+    }
+    $scope.simpleColor3 = {
+      render: 'linear',
+      rgba: 'rgba(156, 39, 176, 1)'
+    }
+
+    /*code for old card list*/
+    $scope.items = [{title: 'mdi-chart-bar', bool: true}, {title: 'mdi-chart-bar', bool: false}, {title: 'mdi-chart-bar', bool: true}];
+    
 
     /*Code for tabs*/
     $scope.selectedIndex = 0;
@@ -356,10 +394,23 @@
       render: 'linear',
       rgba: 'rgba(156, 39, 176, 1)'
     }
+    /*Code for notices*/
+    $scope.displaySuccessNew = function () {
+      NoticeService.success('Success: User is saved successfully.', 5000, true);
+    };
 
-    /*code for card list*/
-    $scope.items = [{title: 'mdi-chart-bar', bool: true}, {title: 'mdi-chart-bar', bool: false}, {title: 'mdi-chart-bar', bool: true}];
-    
+    $scope.displayInfoNew = function () {
+      NoticeService.info('Info: A user logged out.', 5000, true);
+    };
+
+    $scope.displayWarningNew = function () {
+      NoticeService.warning('Warning: Press refresh as the data was changed by another user.', 5000, true);
+    };
+
+    $scope.displayErrorNew = function () {
+      NoticeService.error('Error: Something exploded so fix it.', 5000, true);
+    };
+
     /*code for working hours picker*/
     $scope.workingHours = [];
 
