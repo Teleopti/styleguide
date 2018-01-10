@@ -32,6 +32,7 @@
     'wfm.badge',
     'wfm.btnGroup',
     'wfm.popup',
+    'wfm.calendarPicker',
     'gridshore.c3js.chart'
   ]).config(['$translateProvider', 'tmhDynamicLocaleProvider', function($translateProvider, tmhDynamicLocaleProvider) {
     $translateProvider

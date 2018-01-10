@@ -941,3 +941,164 @@ wfm-multiple-search-input{
 //Markup: multiple-search.hbs
 //
 //Styleguide 4.5
+
+//new date range picker 
+
+wfm-calendar-picker {
+	display: inline-block;
+	background-color: $white;
+	padding: 0;
+	border: 1px solid $gray026;
+}
+
+wfm-calendar-picker-header {
+	min-height: 35px;
+	.notice-info {
+		background-color: $blue-100 !important;
+	}
+
+	.card-context {
+		margin: 0;
+	}
+}
+
+wfm-calendar-picker-body > .date-info-wrapper {
+	min-height: 230px;
+	min-width: 230px;
+	padding: 0;
+	overflow: hidden;
+
+	@media screen and (max-width:768px){
+		min-height: 0;
+		min-width: 0;
+	}
+
+	.disabled {
+		opacity: 0.5;
+		pointer-events: none;
+		background-color: $gray087  !important;
+		color: $white;
+	}
+
+	.single-select-mode {
+		height:100% !important;
+	}
+
+	.select-date-info-wrapper {
+		height: 50%;
+		background-color: $gray012;
+		border-bottom: 1px $white  solid;
+		padding: 10px;
+		position: relative;
+		@media screen and (max-width:768px){
+			min-height: 80px;
+		}
+	}
+
+	.clear-select-date-grow-out{
+		display: table;
+		position: absolute;
+		height: 100%;
+		background-color: $gray026  ;
+		width: 20%;
+		top: 0;
+		right: 0;
+		transition: $transition-timing;
+		transform-origin: right center;
+		transform: translateX(103%);
+		cursor: pointer;
+		visibility: hidden;
+		opacity: 0;
+
+		i {
+			display: table-cell;
+			vertical-align: middle;
+			text-align: center;
+			margin: 45px auto;
+			color: $text-color-standard;
+		}
+	}
+
+	.select-date-info-wrapper:hover .clear-select-date-grow-out{
+		transform: translateX(0);
+		visibility: visible;
+		opacity: 1;
+	}
+}
+
+wfm-calendar-picker-body > .date-info-calendar-wrapper{
+	background: $white;
+	z-index: 5;
+	flex-basis: auto;
+
+	b, strong {
+		font-size: x-large;
+	}
+
+	.in-date-range button{
+		background-color:$blue-100 !important;
+	}
+
+	.uib-daypicker:focus, *:focus{
+		outline:none!important;
+	}
+
+	button.btn-default {
+		border:none;
+		box-shadow:none;
+		background-color: $white;
+		color: $text-color-standard;
+	}
+
+	tbody button.btn-info.active {
+		background-color: $blue-500 !important;
+		color: $white !important;
+	}
+
+	.uib-datepicker{
+		min-height: 248px;
+		max-width: 260px;
+		overflow: hidden;
+
+		.uib-monthpicker, .uib-yearpicker {
+			table {
+				margin: 0 auto;
+			}
+
+			tbody button.btn-default:hover, button.btn-default.active{
+				background-color: $blue-100 !important;
+				.text-info{
+					color: $text-color-standard;
+				}
+			}
+		}
+	}
+}
+
+// Date picker (New)
+//
+// The datepicker is based on bootstraps datepicker and all we do is wrap it and apply some special classes to make it more compatible with material design.
+//
+// <div class="jsprewrap">
+//   <div class="ksscopy kss-style" ng-click="showJs['cardDemo1'] = !showJs['cardDemo1']">
+//       <span ng-hide="showJs['cardDemo1']">Show</span>
+//      <span ng-show="showJs['cardDemo1']">Hide</span>
+//     JavaScript
+//     <i class="mdi mdi-code-tags pull-right"></i>
+//   </div>
+//   <div class="animate-show" ng-show="showJs['cardDemo1']">
+//     <code>
+//       <pre class="prettyprint linenums lang-js">
+// 
+//          example js
+//
+//       </pre>
+//     </code>
+//   </div>
+// </div>
+//
+//Markup:
+//<wfm-calendar-picker ng-model="vm.data" show-week="true" single-date-picker></wfm-calendar-picker>
+//
+//Styleguide 2.10
+//
