@@ -32,6 +32,7 @@
     'wfm.badge',
     'wfm.btnGroup',
     'wfm.popup',
+    'wfm.treePicker',
     'wfm.card-panel',
     'gridshore.c3js.chart'
   ]).config(['$translateProvider', 'tmhDynamicLocaleProvider', function ($translateProvider, tmhDynamicLocaleProvider) {
@@ -54,6 +55,176 @@
 
     /* Dummy data*/
     $scope.demos = [{ id: '1' }, { id: '2' }, { id: '3' }, { id: '4' }];
+    
+    //data for tree
+    $scope.option = {
+      NodeDisplayName: "label",
+      NodeChildrenName: "nodes",
+      NodeSelectedMark: "selected"
+    };
+    $scope.option2 = {
+      NodeDisplayName: "label",
+      NodeChildrenName: "nodes",
+      NodeSelectedMark: "selected",
+      NodeSemiSelected: "semiSelected",
+    };
+    $scope.option3 = {
+      NodeDisplayName: "label",
+      NodeChildrenName: "nodes",
+      NodeSelectedMark: "selected",
+      NodeSemiSelected: "semiSelected",
+      RootSelectUnique: true
+    };
+    var treeDemos = data = {
+      nodes: [
+        {
+          label: 'parent1',
+          id: '1',
+          selected: false,
+          nodes: [
+            {
+              label: 'child1',
+              id: '2',
+              selected: false,
+              nodes: [
+                {
+                  label: 'grandchild1',
+                  id: '3',
+                  selected: false,
+                  nodes: [
+                    {
+                      label: 'child1',
+                      id: '12',
+                      selected: true,
+                      nodes: [
+                        {
+                          label: 'grandchild1',
+                          id: '13',
+                          selected: true,
+                          nodes: []
+                        }
+                      ]
+                    },
+                    {
+                      label: 'child1',
+                      id: '22',
+                      selected: false,
+                      nodes: [
+                        {
+                          label: 'grandchild2',
+                          id: '23',
+                          selected: false,
+                          nodes: []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          label: 'parent2',
+          id: '4',
+          selected: false,
+          nodes: [
+            {
+              label: 'child1',
+              id: '5',
+              selected: false,
+              nodes: [
+                {
+                  label: 'grandchild1',
+                  id: '6',
+                  selected: false,
+                  nodes: []
+                }
+              ]
+            },
+            {
+              label: 'child2',
+              id: '7',
+              selected: false,
+              nodes: [
+                {
+                  label: 'grandchild2',
+                  id: '8',
+                  selected: false,
+                  nodes: []
+                }
+              ]
+            },
+            {
+              label: 'child3',
+              id: '7',
+              selected: false,
+              nodes: [
+                {
+                  label: 'grandchild1',
+                  id: '8',
+                  selected: false,
+                  nodes: []
+                },
+                {
+                  label: 'grandchild2',
+                  id: '8',
+                  selected: false,
+                  nodes: []
+                },
+                {
+                  label: 'grandchild3',
+                  id: '8',
+                  selected: false,
+                  nodes: []
+                },
+                {
+                  label: 'grandchild4',
+                  id: '8',
+                  selected: false,
+                  nodes: []
+                },
+                {
+                  label: 'grandchild5',
+                  id: '8',
+                  selected: false,
+                  nodes: []
+                }
+              ]
+            },
+            {
+              label: 'child4',
+              id: '7',
+              selected: false,
+              nodes: [
+                {
+                  label: 'grandchild2',
+                  id: '8',
+                  selected: false,
+                  nodes: []
+                }
+              ]
+            },
+            {
+              label: 'child5',
+              id: '7',
+              selected: false,
+              nodes: [
+                {
+                  label: 'grandchild2',
+                  id: '8',
+                  selected: false,
+                  nodes: []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    };
+    $scope.treeDemos1 = angular.copy(treeDemos);
+    $scope.treeDemos2 = angular.copy(treeDemos);
+    $scope.treeDemos3 = angular.copy(treeDemos);
     $scope.treeDemos = [
       {
         categories: [{ name: 'item 1' }, { name: 'item 2' }, { name: 'item 3' }, { name: 'item 2' }],
@@ -119,6 +290,35 @@
         enabled: true,
       },
     });
+
+    /*code for card list*/
+    $scope.items = [{ title: 'mdi-chart-bar', bool: true }, { title: 'mdi-chart-bar', bool: false }, { title: 'mdi-chart-bar', bool: true }];
+    $scope.cardListItems = [{
+      Color: 'color1',
+      Selected: false,
+    }, {
+      Color: 'color2',
+      Selected: true,
+    }, {
+      Color: 'color3',
+      Selected: false,
+    }];
+    $scope.simpleColor = {
+      render: 'class',
+      className: 'brown'
+    }
+    $scope.simpleColor2 = {
+      render: 'condition',
+      condition: { 'color1': 'brown', 'color2': 'orange', 'color3': 'purple' }
+    }
+    $scope.simpleColor3 = {
+      render: 'linear',
+      rgba: 'rgba(156, 39, 176, 1)'
+    }
+
+    /*code for old card list*/
+    $scope.items = [{title: 'mdi-chart-bar', bool: true}, {title: 'mdi-chart-bar', bool: false}, {title: 'mdi-chart-bar', bool: true}];
+    
 
     /*Code for tabs*/
     $scope.selectedIndex = 0;
