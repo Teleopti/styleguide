@@ -215,7 +215,6 @@
 //		</wfm-card>
 //	</wfm-card-list>
 //
-//Styleguide 4.14
 //
 
 // Card list (multiple)
@@ -245,7 +244,6 @@
 //		</wfm-card>
 //	</wfm-card-list>
 //
-//Styleguide 4.15
 //
 
 // Card list (open by default)
@@ -255,7 +253,6 @@
 //Markup: cardlist_default.hbs
 //
 //
-//Styleguide 4.16
 //
 
 
@@ -326,4 +323,297 @@ md-card{
 .wfm-card-content {
   padding: 10px 16px;
   background-color: $white;
+}
+
+
+// Card list (multiple open)
+//
+// The card list consists of expandable panels-like cards. The header part is used for displaying a title and other indicators. The content part could contains any type of html elements.
+// By default, card list items support open multiple cards at the same time.
+//<table class="wfm-table">
+//<tr><th>Attribute Name</th><th>Usage</th><th>Required</th></tr>
+//<tr><td>pre-open</td><td>Bind to a repeated card that should be open.</td><td>false</td></tr>
+//<tr><td>open</td><td>can be set to 'single' to open one card at a time, closing previously open ones</td><td>false</td></tr>
+//<tr><td>color</td><td>Bind a object that defines colors on all cards, can include linear gradient to indicate order or scale</td><td>false</td></tr>
+//<tr><td>color-condition</td><td>Options for what color goes on what card</td><td>false</td></tr>
+//</table>
+//
+//Markup:
+//<card-panel-list>
+//<card-panel ng-repeat="item in cardListItems" id="$index">
+//    <card-panel-header>
+//        <b>Single card title</b>
+//    </card-panel-header>
+//    <card-panel-content>
+//      <div class="panel">
+//	 			<div class="con-row demo-outline">
+//	    		<div class="con-flex">Content</div>
+//	 			</div>
+//	  		<div class="con-footer">
+//		 			<button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+//	    		<button class="wfm-btn wfm-btn-invis-primary">Options</button>
+//	  		</div>
+//			</div>
+//   </card-panel-content>
+//</card-panel>
+//</card-panel-list>
+//
+//Styleguide 4.14
+//
+
+// Card list (pre-open)
+//
+// By using attribute 'pre-open', selected list items will pre-open on load.
+//
+//Markup:
+//<card-panel-list>
+//<card-panel ng-repeat="item in cardListItems" pre-open="item.Selected" id="$index">
+//    <card-panel-header>
+//        <b>Single card title</b>
+//    </card-panel-header>
+//    <card-panel-content>
+//      <div class="panel">
+//	 			<div class="con-row demo-outline">
+//	    		<div class="con-flex">Content</div>
+//	 			</div>
+//	  		<div class="con-footer">
+//		 			<button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+//	    		<button class="wfm-btn wfm-btn-invis-primary">Options</button>
+//	  		</div>
+//			</div>
+//   </card-panel-content>
+//</card-panel>
+//</card-panel-list>
+//
+//Styleguide 4.15
+//
+
+// Card list (single open)
+//
+// By using attribute 'open="single"', the card list only allows one card to be open at a time.
+//
+//Markup:
+//<card-panel-list>
+//<card-panel ng-repeat="item in cardListItems" open="single" id="$index">
+//    <card-panel-header>
+//        <b>Single card title</b>
+//    </card-panel-header>
+//    <card-panel-content>
+//      <div class="panel">
+//	 			<div class="con-row demo-outline">
+//	    		<div class="con-flex">Content</div>
+//	 			</div>
+//	  		<div class="con-footer">
+//		 			<button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+//	    		<button class="wfm-btn wfm-btn-invis-primary">Options</button>
+//	  		</div>
+//			</div>
+//   </card-panel-content>
+//</card-panel>
+//</card-panel-list>
+//
+//Styleguide 4.16
+//
+
+// Card list (simple color bar)
+//
+// By using attribute 'color', header part of card list items will contain a simple color bar on the left.
+//
+// <div class="jsprewrap">
+//   <div class="ksscopy kss-style" ng-click="showJs['cardDemo1'] = !showJs['cardDemo1']">
+//       <span ng-hide="showJs['cardDemo1']">Show</span>
+//      <span ng-show="showJs['cardDemo1']">Hide</span>
+//     JavaScript
+//     <i class="mdi mdi-code-tags pull-right"></i>
+//   </div>
+//   <div class="animate-show" ng-show="showJs['cardDemo1']">
+//     <code>
+//       <pre class="prettyprint linenums lang-js">
+//
+//          $scope.simpleColor = {
+//            render: 'class',
+//            className: 'brown'
+//           }
+//
+//          css code example:
+//          .brown {
+//             border-color: $brown-100;
+//           }
+//
+//       </pre>
+//     </code>
+//   </div>
+// </div>
+//
+//Markup:
+//<card-panel-list>
+//<card-panel ng-repeat="item in cardListItems" color="simpleColor" id="$index">
+//    <card-panel-header>
+//        <b>Single card title</b>
+//    </card-panel-header>
+//    <card-panel-content>
+//      <div class="panel">
+//	 			<div class="con-row demo-outline">
+//	    		<div class="con-flex">Content</div>
+//	 			</div>
+//	  		<div class="con-footer">
+//		 			<button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+//	    		<button class="wfm-btn wfm-btn-invis-primary">Options</button>
+//	  		</div>
+//			</div>
+//   </card-panel-content>
+//</card-panel>
+//</card-panel-list>
+//
+//Styleguide 4.17
+//
+
+// Card list (special simple color bar)
+//
+// By using a combination of attributes 'color' and 'color-condition', header part of the card list items will contain simple color bars on the left by matching condition.
+//
+// <div class="jsprewrap">
+//   <div class="ksscopy kss-style" ng-click="showJs['cardDemo2'] = !showJs['cardDemo2']">
+//       <span ng-hide="showJs['cardDemo2']">Show</span>
+//      <span ng-show="showJs['cardDemo2']">Hide</span>
+//     JavaScript
+//     <i class="mdi mdi-code-tags pull-right"></i>
+//   </div>
+//   <div class="animate-show" ng-show="showJs['cardDemo2']">
+//     <code>
+//       <pre class="prettyprint linenums lang-js">
+//
+//          $scope.simpleColor2 = {
+//            render: 'condition',
+//            condition: { 'color1': 'brown', 'color2': 'orange', 'color3': 'purple' }
+//           }
+//
+//          css code example:
+//          .brown {
+//             border-color: $brown-100;
+//           }
+//
+//          .purple {
+//             border-color: $purple-300;
+//           }
+//
+//          .orange {
+//             border-color: $orange-400;
+//           }
+//
+//       </pre>
+//     </code>
+//   </div>
+// </div>
+//
+//Markup:
+//<card-panel-list>
+//<card-panel ng-repeat="item in cardListItems" color="simpleColor2" color-condition="item.Color" id="$index">
+//    <card-panel-header>
+//        <b>Single card title</b>
+//    </card-panel-header>
+//    <card-panel-content>
+//      <div class="panel">
+//	 			<div class="con-row demo-outline">
+//	    		<div class="con-flex">Content</div>
+//	 			</div>
+//	  		<div class="con-footer">
+//		 			<button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+//	    		<button class="wfm-btn wfm-btn-invis-primary">Options</button>
+//	  		</div>
+//			</div>
+//   </card-panel-content>
+//</card-panel>
+//</card-panel-list>
+//
+//Styleguide 4.18
+//
+
+// Card list (linear color bar)
+//
+// By using attribute 'color', header part of card list items will contains simple color bar on the left by matching condition.
+//
+// <div class="jsprewrap">
+//   <div class="ksscopy kss-style" ng-click="showJs['cardDemo3'] = !showJs['cardDemo3']">
+//       <span ng-hide="showJs['cardDemo3']">Show</span>
+//      <span ng-show="showJs['cardDemo3']">Hide</span>
+//     JavaScript
+//     <i class="mdi mdi-code-tags pull-right"></i>
+//   </div>
+//   <div class="animate-show" ng-show="showJs['cardDemo3']">
+//     <code>
+//       <pre class="prettyprint linenums lang-js">
+//
+//          $scope.simpleColor3 = {
+//           render: 'linear',
+//           rgba: 'rgba(156, 39, 176, 1)'
+//           }
+//
+//       </pre>
+//     </code>
+//   </div>
+// </div>
+//
+//Markup:
+//<card-panel-list>
+//<card-panel ng-repeat="item in cardListItems" color="simpleColor3" id="$index">
+//    <card-panel-header>
+//        <b>Single card title</b>
+//    </card-panel-header>
+//    <card-panel-content>
+//      <div class="panel">
+//	 			<div class="con-row demo-outline">
+//	    		<div class="con-flex">Content</div>
+//	 			</div>
+//	  		<div class="con-footer">
+//		 			<button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+//	    		<button class="wfm-btn wfm-btn-invis-primary">Options</button>
+//	  		</div>
+//			</div>
+//   </card-panel-content>
+//</card-panel>
+//</card-panel-list>
+//
+//Styleguide 4.19
+//
+
+
+card-panel {
+  display: block;
+}
+
+.card-panel-header-wrapper {
+  min-height: 44px;
+  line-height: 44px;
+  padding: 0 15px 0 5px;
+  border-left: 10px solid rgba(255, 255, 255, 0);
+}
+
+.card-panel-header-wrapper > card-panel-header {
+  display: flex;
+  margin: 0 10px;
+}
+
+card-panel-header .header-flex:nth-child(n) {
+  flex: 1;
+}
+
+.card-panel-content-wrapper {
+  border-top: 1px $gray012 solid;
+}
+
+.brown {
+  border-color: $brown-100;
+}
+
+.purple {
+  border-color: $purple-300;
+}
+
+.orange {
+  border-color: $orange-400;
+}
+
+.datepicker-popup .wfm-popup-wrap{
+ transition:none!important;
 }
