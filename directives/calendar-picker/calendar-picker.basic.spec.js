@@ -280,16 +280,93 @@ describe('CalendarPickerControllerBasicFeature', function () {
         expect(vm.dateRangeText.replace(/\s/g, '')).toEqual('1Week4Day');
     });
 
-    it('should be able to understand the interval length between 2018-01-31 to 2018-02-27 is one month', function () {
+    it('should be able to [handle February as special case] and understand the interval length between 2018-01-31 to 2018-02-27 is one month', function () {
         vm.resetStartDate();
         vm.resetEndDate();
         vm.pickDate = moment([2018, 0, 31]);
         vm.switchDate();
         vm.pickDate = moment([2018, 1, 27]);
         vm.switchDate();
-        var range = calendarView.getElementsByClassName('in-date-range');
 
-        expect(range.length).toEqual(28);
+        expect(vm.dateRangeText.replace(/\s/g, '')).toEqual('1Month');
+    });
+
+    it('should be able to [handle February as special case] and understand the interval length between 2018-01-28 to 2018-02-27 is one month', function () {
+        /*we dont care the case while the date is end of February since it was very rare and difficult to handle ex: 2018-01-29 to 2018-02-28 is not one month*/
+        vm.resetStartDate();
+        vm.resetEndDate();
+        vm.pickDate = moment([2018, 0, 28]);
+        vm.switchDate();
+        vm.pickDate = moment([2018, 1, 27]);
+        vm.switchDate();
+
+        expect(vm.dateRangeText.replace(/\s/g, '')).toEqual('1Month');
+    });
+
+    it('should be able to [handle February as special case] and understand the interval length between 2018-02-01 to 2018-02-28 is one month', function () {
+        vm.resetStartDate();
+        vm.resetEndDate();
+        vm.pickDate = moment([2018, 1, 1]);
+        vm.switchDate();
+        vm.pickDate = moment([2018, 1, 28]);
+        vm.switchDate();
+
+        expect(vm.dateRangeText.replace(/\s/g, '')).toEqual('1Month');
+    });
+
+    it('should be able to [handle February as special case] and understand the interval length between 2018-01-16 to 2018-02-15 is one month', function () {
+        vm.resetStartDate();
+        vm.resetEndDate();
+        vm.pickDate = moment([2018, 0, 16]);
+        vm.switchDate();
+        vm.pickDate = moment([2018, 1, 15]);
+        vm.switchDate();
+
+        expect(vm.dateRangeText.replace(/\s/g, '')).toEqual('1Month');
+    });
+
+    it('should be able to [handle February as special case] and understand the interval length between 2018-01-16 to 2018-04-15 is three month', function () {
+        vm.resetStartDate();
+        vm.resetEndDate();
+        vm.pickDate = moment([2018, 0, 16]);
+        vm.switchDate();
+        vm.pickDate = moment([2018, 3, 15]);
+        vm.switchDate();
+
+        expect(vm.dateRangeText.replace(/\s/g, '')).toEqual('3Month');
+    });
+
+    it('should be able to [handle February as special case in leap year] and understand the interval length between 2020-01-29 to 2020-02-28 is one month', function () {
+        /*we dont care the case while the date is end of February since it was very rare and difficult to handle ex: 2020-01-30 to 2010-02-29 is not one month*/
+        vm.resetStartDate();
+        vm.resetEndDate();
+        vm.pickDate = moment([2020, 0, 29]);
+        vm.switchDate();
+        vm.pickDate = moment([2020, 1, 28]);
+        vm.switchDate();
+
+        expect(vm.dateRangeText.replace(/\s/g, '')).toEqual('1Month');
+    });
+
+    it('should be able to [handle February as special case in leap year] and understand the interval length between 2020-01-31 to 2020-02-28 is one month', function () {
+        vm.resetStartDate();
+        vm.resetEndDate();
+        vm.pickDate = moment([2020, 0, 31]);
+        vm.switchDate();
+        vm.pickDate = moment([2020, 1, 28]);
+        vm.switchDate();
+
+        expect(vm.dateRangeText.replace(/\s/g, '')).toEqual('1Month');
+    });
+
+    it('should be able to [handle February as special case in leap year] and understand the interval length between 2020-02-01 to 2018-02-29 is one month', function () {
+        vm.resetStartDate();
+        vm.resetEndDate();
+        vm.pickDate = moment([2020, 1, 1]);
+        vm.switchDate();
+        vm.pickDate = moment([2020, 1, 29]);
+        vm.switchDate();
+
         expect(vm.dateRangeText.replace(/\s/g, '')).toEqual('1Month');
     });
 });
