@@ -34,6 +34,7 @@
     'wfm.popup',
     'wfm.treePicker',
     'wfm.card-panel',
+    'wfm.calendarPicker',
     'gridshore.c3js.chart'
   ]).config(['$translateProvider', 'tmhDynamicLocaleProvider', function ($translateProvider, tmhDynamicLocaleProvider) {
     $translateProvider
