@@ -34,6 +34,7 @@
     'wfm.popup',
     'wfm.treePicker',
     'wfm.card-panel',
+    'wfm.calendarPicker',
     'gridshore.c3js.chart'
   ]).config(['$translateProvider', 'tmhDynamicLocaleProvider', function ($translateProvider, tmhDynamicLocaleProvider) {
     $translateProvider
@@ -311,6 +312,36 @@
         return moment(end).diff(moment(start), 'days') <= 7;
       }
     }];
+    
+    /*Code for new date range picker*/
+    $scope.customValid = function (data) {
+      if (data.startDate - data.endDate > 0) {
+        return "[custom validate]: your startDate is later than your endDate";
+      }
+      if (data.startDate - data.endDate < 0) {
+        return "[custom validate]: your startDate is earlier than your endDate";
+      }
+    }
+    $scope.dateRange3 = {
+      startDate: new Date().setMonth(1),
+      endDate: new Date().setMonth(3)
+    }
+    $scope.dateRange4 = {
+      startDate: new Date().setMonth(1),
+      endDate: new Date().setMonth(3)
+    }
+    $scope.dateRange5 = {
+      startDate: null,
+      endDate: new Date()
+    }
+    $scope.dateRange6 = {
+      startDate: new Date(),
+      endDate: null
+    }
+    $scope.dateRange6 = {
+      startDate: new Date().setMonth(1),
+      endDate: new Date().setMonth(3)
+    }
 
     /*Code for time range picker*/
     $scope.timeRange = {

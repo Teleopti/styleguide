@@ -1,60 +1,3 @@
-// Date picker
-//
-//The datepicker is based on bootstraps datepicker and all we do is wrap it and apply some special classes  to make it more compatible with material design.
-//
-//Markup: <wfm-cultural-datepicker ng-model='dateForDatepicker'></wfm-cultural-datepicker>
-//
-//Styleguide 2.1
-//
-
-// Date range picker
-//
-//A directive for specifying a date-only period. It is composed from datepicker with added validation messages.
-//<table class="wfm-table">
-//<tr><th>Attribute Name</th><th>Usage</th><th>Required</th></tr>
-//<tr><td>ng-model</td><td>Bind to a js-object representing the date range. The object is composed by <code>startDate</code> and <code>endDate</code> key-value pairs</td><td>true</td></tr>
-//<tr><td>template-type</td><td>Declares whether to use <b>inline</b> or <b>popup</b> mode</td><td>false</td></tr>
-//<tr><td>invalid-order-message</td><td>Message shown if dates are in wrong order. Standard use is 'StartDateMustBeEqualToOrEarlierThanEndDate'</td><td>false</td></tr>
-//<tr><td>invalid-empty-message</td><td>Message shown if no dates are entered. Standard use is 'StartDateAndEndDateMustBeSet'</td><td>false</td></tr>
-//<tr><td>custom-validators</td><td>Define additional validations. The value should be an array of validator-definition objects, which should have <code>key</code>, <code>message</code>, and <code>validate</code> properties defined. The <code>validate</code> attribute must be a function that accepts <code>startDate</code> and <code>endDate</code> as input and returns a boolean to indicate validation result.</td><td>false</td></tr>
-//</table>
-//
-// <div class="jsprewrap">
-//   <div class="ksscopy kss-style" ng-click="showJs['datepicker1'] = !showJs['datepicker1']">
-//       <span ng-hide="showJs['datepicker1']">Show</span>
-//      <span ng-show="showJs['datepicker1']">Hide</span>
-//     JavaScript
-//     <i class="mdi mdi-code-tags pull-right"></i>
-//   </div>
-//   <div class="animate-show" ng-show="showJs['datepicker1']">
-//     <code>
-//       <pre class="prettyprint linenums lang-js">
-//
-// $scope.dateRange = {
-//	 startDate: new Date(),
-//	 endDate: new Date()
-// };
-// $scope.dateRangeTemplateType = 'inline';
-// $scope.dateRangeTemplateTypes = ['popup', 'inline'];
-// $scope.dateRangeCustomValidators = [{
-// 	key: 'lessThan7Days',
-// 	message: 'DateRangeMustBeLessThanSevenDays',
-// 	validate: function(start, end) {
-// 		return moment(end).diff(moment(start), 'days') <= 7;
-// 	}
-// }];
-//       </pre>
-//     </code>
-//   </div>
-// </div>
-//
-//
-//Markup: dateRangePicker.hbs
-//
-//Styleguide 2.2
-//
-
-
 /*Overrides bootstrap*/
 .wfm-datepicker-controllers-container
 {
@@ -226,3 +169,248 @@
 	top: 290px;
 	left: 0px;
 }
+
+// Single date picker
+//
+// The single date picker is based on bootstraps datepicker and use to take a single date easily.
+// To use the single date picker as pop-up style please wrap it into <a href=section-1.html#kssref-1-20>pop-up menu</a> (section 1.20). <br><br>
+// Click on the calendar icon (left top corner) to quickly display 'today' within calendar view.<br>
+// Hover and click on the selected date section to reset the selected date to empty. 
+//
+//Markup:
+//<h1>With week numbers</h1>
+//<wfm-calendar-picker ng-model="singleDate" show-week="true" single-date-picker></wfm-calendar-picker>
+//<h1>Withput week numbers</h1>
+//<wfm-calendar-picker ng-model="singleDate" show-week="false" single-date-picker></wfm-calendar-picker>
+//
+//Styleguide 2.1
+//
+
+// Date range picker
+//
+// The date range picker is based on bootstraps datepicker and all we do is wrap it and apply some special classes to make it more compatible with material design.
+// To use the date range picker as pop-up style please wrap it into pop-up menu (section 1.20). <br><br>
+// Click on the calendar icon (left top corner) to quickly display 'today' within calendar view.<br>
+// Hover and click on the selected date section to reset the selected date to empty.
+//
+//<table class="wfm-table">
+//<tr><th>Attribute Name</th><th>Usage</th><th>Required</th></tr>
+//<tr><td>ng-model</td><td>Bind to a js-object representing the date range. The object is composed by <code>startDate</code> and <code>endDate</code> key-value pairs. The date obejct default value is <code>null</code>./td><td>true</td></tr>
+//<tr><td>show-week</td><td>Bind to a Bool type <code>true</code> or <code>false</code> value to display week numbers on the side of calendar view. </td><td>false</td></tr>
+//<tr><td>interval-rule</td><td>select special interval rule to validate the date ranges by only <code>week</code> type or <code>month</code> type. </td><td>false</td></tr>
+//<tr><td>custom-validation-function</td><td>Define additional validations conditions by a binding function. The reture of custom validation functions should be a string type that display the validate error/warning information. It could be a translate key that support by $translate.</td><td>false</td></tr>
+//</table>
+//
+//Markup:
+//<h1>With week numbers</h1>
+//<wfm-calendar-picker show-week="true" ng-model="dateRange1"></wfm-calendar-picker>
+//<h1>Withput week numbers</h1>
+//<wfm-calendar-picker show-week="false" ng-model="dateRange1"></wfm-calendar-picker>
+//
+//Styleguide 2.2
+//
+
+// Date range picker with custom validation
+//
+// The datepicker is based on bootstraps datepicker and all we do is wrap it and apply some special classes to make it more compatible with material design.
+// To use the date range picker as pop-up style please wrap it into <a href=section-1.html#kssref-1-20>pop-up menu</a> (section 1.20). 
+// Define additional validation  conditions by a binding function. The return of custom validation functions should be a string type that display the validate error/warning information. It could be a translate key that support by $translate. <br><br>
+// Click on the calendar icon (left top corner) to quickly display 'today' within calendar view.<br>
+// Hover and click on the selected date section to reset the selected date to empty.  
+//
+// <div class="jsprewrap">
+//   <div class="ksscopy kss-style" ng-click="showJs['cardDemo1'] = !showJs['cardDemo1']">
+//       <span ng-hide="showJs['cardDemo1']">Show</span>
+//      <span ng-show="showJs['cardDemo1']">Hide</span>
+//     JavaScript
+//     <i class="mdi mdi-code-tags pull-right"></i>
+//   </div>
+//   <div class="animate-show" ng-show="showJs['cardDemo1']">
+//     <code>
+//       <pre class="prettyprint linenums lang-js">
+// 
+//          $scope.customValid = function (data) {
+//            if(data.startDate - data.endDate > 0) {
+//              return "[custom validate]: your startDate is later than your endDate"; 
+//            }
+//            if(data.startDate - data.endDate < 0) {
+//              return "[custom validate]: your startDate is earlier than your endDate"; 
+//            }   
+//          }
+//
+//       </pre>
+//     </code>
+//   </div>
+// </div>
+//
+//Markup:
+//<wfm-calendar-picker ng-model="dateRange2" show-week="false" custom-validate="customValid(dateRange2)"></wfm-calendar-picker>
+//
+//Styleguide 2.3
+//
+
+// Date range picker with only weeks/monthes interval
+//
+// The datepicker is based on bootstraps datepicker and all we do is wrap it and apply some special classes to make it more compatible with material design.
+// To use the date range picker as pop-up style please wrap it into pop-up menu (section 1.20). <br><br>
+// Click on the calendar icon (left top corner) to quickly display 'today' within calendar view.<br>
+// Hover and click on the selected date section to reset the selected date to empty. 
+//
+//Markup:
+//<h1>validate only exam with week interval</h1>
+//<wfm-calendar-picker ng-model="dateRange3" show-week="false" interval-rule="week"></wfm-calendar-picker>
+//<h1>validate only exam with month interval</h1>
+//<wfm-calendar-picker ng-model="dateRange4" show-week="false" interval-rule="month"></wfm-calendar-picker>
+//
+//Styleguide 2.4
+//
+
+// Date range picker with preselected date
+//
+// The datepicker is based on bootstraps datepicker and all we do is wrap it and apply some special classes to make it more compatible with material design.
+// To use the date range picker as pop-up style please wrap it into pop-up menu (section 1.20). <br><br>
+// Click on the calendar icon (left top corner) to quickly display 'today' within calendar view.<br>
+// Hover and click on the selected date section to reset the selected date to empty. 
+//
+//Markup:
+//<h1>Date range picker with disable selection on endDate</h1>
+//<wfm-calendar-picker ng-model="dateRange5" show-week="false" disable="end-date"></wfm-calendar-picker>
+//<h1>Date range picker with disable selection on startDate</h1>
+//<wfm-calendar-picker ng-model="dateRange6" show-week="false" disable="start-date"></wfm-calendar-picker>
+//
+//Styleguide 2.5
+//
+
+//new date range picker 
+
+wfm-calendar-picker {
+	display: inline-block;
+	background-color: $white;
+	padding: 0;
+	border: 1px solid $gray026;
+}
+
+wfm-calendar-picker-header {
+	min-height: 35px;
+	.notice-info {
+		background-color: $blue-100 !important;
+	}
+
+	.card-context {
+		margin: 0;
+	}
+}
+
+wfm-calendar-picker-body > .date-info-wrapper {
+	min-height: 230px;
+	min-width: 230px;
+	padding: 0;
+	overflow: hidden;
+
+	@media screen and (max-width:768px){
+		min-height: 0;
+		min-width: 0;
+	}
+
+	.disabled {
+		opacity: 0.5;
+		pointer-events: none;
+		background-color: $gray087  !important;
+		color: $white;
+	}
+
+	.single-select-mode {
+		height:100% !important;
+	}
+
+	.select-date-info-wrapper {
+		height: 50%;
+		background-color: $gray012;
+		border-bottom: 1px $white  solid;
+		padding: 10px;
+		position: relative;
+		@media screen and (max-width:768px){
+			min-height: 80px;
+		}
+	}
+
+	.clear-select-date-grow-out{
+		display: table;
+		position: absolute;
+		height: 100%;
+		background-color: $gray026  ;
+		width: 20%;
+		top: 0;
+		right: 0;
+		transition: $transition-timing;
+		transform-origin: right center;
+		transform: translateX(103%);
+		cursor: pointer;
+		visibility: hidden;
+		opacity: 0;
+
+		i {
+			display: table-cell;
+			vertical-align: middle;
+			text-align: center;
+			margin: 45px auto;
+			color: $text-color-standard;
+		}
+	}
+
+	.select-date-info-wrapper:hover .clear-select-date-grow-out{
+		transform: translateX(0);
+		visibility: visible;
+		opacity: 1;
+	}
+}
+
+wfm-calendar-picker-body > .date-info-calendar-wrapper{
+	background: $white;
+	z-index: 5;
+	flex-basis: auto;
+
+	b, strong {
+		font-size: x-large;
+	}
+
+	.in-date-range button{
+		background-color:$blue-100 !important;
+	}
+
+	.uib-daypicker:focus, *:focus{
+		outline:none!important;
+	}
+
+	button.btn-default {
+		border:none;
+		box-shadow:none;
+		background-color: $white;
+		color: $text-color-standard;
+	}
+
+	tbody button.btn-info.active {
+		background-color: $blue-500 !important;
+		color: $white !important;
+	}
+
+	.uib-datepicker{
+		min-height: 248px;
+		max-width: 260px;
+		overflow: hidden;
+
+		.uib-monthpicker, .uib-yearpicker {
+			table {
+				margin: 0 auto;
+			}
+
+			tbody button.btn-default:hover, button.btn-default.active{
+				background-color: $blue-100 !important;
+				.text-info{
+					color: $text-color-standard;
+				}
+			}
+		}
+	}
+}
+
