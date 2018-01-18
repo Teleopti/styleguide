@@ -84,7 +84,7 @@
                     vm.displayCalenderView = displayCalenderViewForDisableView;
                     break;
                 case 'all':
-                    vm.validate = validateDate;
+                    vm.validate = validateNoneDate;
                     vm.switchDate = undefined;
                     vm.displayCalenderView = displayCalenderViewForDisableView;
                     break;
@@ -158,6 +158,25 @@
             }
             if (!!$attrs.customValidate) {
                 return vm.dateRangeText = vm.customValidate();
+            }
+            if (vm.pickEndDate - vm.pickStartDate < 0) {
+                return vm.dateRangeText = 'ValidateEndDate';
+            }
+            return vm.dateRangeText = '';
+        }
+
+        function validateNoneDate() {
+            if (!vm.pickStartDate && !vm.pickEndDate) {
+                return vm.dateRangeText = 'NoStartAndEndDateToDisplay';
+            }
+            if (!!$attrs.customValidate) {
+                return vm.dateRangeText = vm.customValidate();
+            }
+            if (!vm.pickStartDate) {
+                return vm.dateRangeText = 'NoStartDateToDisplay';
+            }
+            if (!vm.pickEndDate) {
+                return vm.dateRangeText = 'NoEndToDisplay';
             }
             if (vm.pickEndDate - vm.pickStartDate < 0) {
                 return vm.dateRangeText = 'ValidateEndDate';
