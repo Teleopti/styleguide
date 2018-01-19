@@ -12,108 +12,235 @@
   <meta name="generator" content="kss-node">
   <meta name="viewport" content="width=device-width">
   <link type="text/css" rel="stylesheet" href="./public/kss.css"/>
-	<link type="text/css" rel="stylesheet" href="./dist/dependencies.min.css" />
+  <link type="text/css" rel="stylesheet" href="./dist/dependencies.min.css" />
   <link type="text/css" rel="stylesheet" href="./dist/main.min.css" />
   <script src="./dist/dependencies.min.js"></script>
-	<script src="./dist/templates.js"></script>
+  <script src="./dist/templates.js"></script>
   <script src="./dist/wfmdirectives.min.js"></script>
   <script src="./dist/main.min.js"></script>
   {{{styles}}}
 </head>
 <body id="kss-node" ng-view ng-controller="mainCtrl">
 
-<div class="kss-sidebar kss-style">
-  <header class="kss-header">
-    <img src="http://www.teleopti.com/system/images/teleopti_logo.png" alt="Teleopti logo" height="30px" style="vertical-align:bottom;">
-    <h1 class="kss-doc-title">Style Guide</h1>
+  {{#if homepage}}
+  {{else}}
+  <!-- <div tabindex=0 class="context-menu card-context sidebar-toggle material-depth-2" ng-click="hideSidebar = !hideSidebar">
+  <i class="mdi mdi-backburger"></i>
+  <md-tooltip>Options</md-tooltip>
+</div> -->
+<div class="kss-sidebar material-depth-2 kss-style" ng-class="{'kss-sidebar-hidden':hideSidebar}">
+  <header class="kss-header line-center">
+    <a href="index.html">
+      <img src="http://www.teleopti.com/system/images/teleopti_logo.png" alt="Teleopti logo" height="60px" style="vertical-align:bottom;">
+    </a>
   </header>
   <nav class="kss-nav">
     <ul class="kss-nav__menu">
-    {{#eachRoot}}
+      {{#eachRoot}}
       <li class="kss-nav__menu-item">
         <a href="section-{{referenceURI}}.html">
-          <span class="kss-nav__ref">{{#ifNumeric reference}}{{reference}}{{else}}{{autoincrement}}{{/ifNumeric}}</span
-          ><span class="kss-nav__name">{{header}}</span>
+          <i class="mdi" ng-class="getChapteIcon('{{header}}')"></i>
+          <span class="kss-nav__name">{{header}}</span>
         </a>
-      {{#ifReference ../rootName}}
+        {{#ifReference ../rootName}}
         <ul class="kss-nav__menu-child">
-        {{#eachSection reference}}
+          {{#eachSection reference}}
           {{#ifDepth 2}}
+          <a href="section-{{../../referenceURI}}.html#kssref-{{referenceURI}}">
             <li class="kss-nav__menu-item">
-              <a href="section-{{../../referenceURI}}.html#kssref-{{referenceURI}}">
-                <span class="kss-nav__ref">{{#ifNumeric reference}}{{reference}}{{else}}{{autoincrement}}{{/ifNumeric}}</span
+
+              <span class="kss-nav__ref">{{#ifNumeric reference}}{{reference}}{{else}}{{autoincrement}}{{/ifNumeric}}</span
                 ><span class="kss-nav__name">{{header}}</span>
-              </a>
-            </li>
-          {{/ifDepth}}
-        {{/eachSection}}
-        </ul>
-      {{/ifReference}}
-      </li>
-    {{/eachRoot}}
-    </ul>
-  </nav>
-</div>
-<article role="main" class="kss-main">
-{{#if homepage}}
-  <div id="kssref-0" class="kss-section kss-section--depth-0 kss-overview">
-    {{{homepage}}}
-  </div>
-{{else}}
 
-  {{!
-    Display each section, in order.
-
-    The "root" element comes first in this loop, and can be detected using
-    the "#ifDepth 1" block as seen below.
-  }}
-  {{#eachSection rootName}}
-    {{#ifDepth 1}}
-      <div     id="kssref-{{referenceURI}}" class="kss-section kss-section--depth-{{depth}}">
-    {{else}}
-      <section id="kssref-{{referenceURI}}" class="kss-section kss-section--depth-{{depth}}">
-    {{/ifDepth}}
-
-    <div class="kss-style">
-      <h{{depth}} class="kss-title kss-title--level-{{depth}}">
-        <a class="kss-title__permalink">
-          <span class="kss-title__ref">{{#ifNumeric reference}}{{reference}}{{else}}{{autoincrement}}{{/ifNumeric}}</span
-          >{{header}}
-        </a>
-      </h{{depth}}>
-
-    {{#if parameters}}
-      <ul class="kss-parameters">
-      {{#eachParameter}}
-        <li class="kss-parameters__item">
-          <code class="kss-parameters__name">{{name}}</code>
-          <div class="kss-parameters__description">{{{description}}}</div>
+              </li>
+            </a>
+            {{/ifDepth}}
+            {{/eachSection}}
+          </ul>
+          {{/ifReference}}
         </li>
-      {{/eachParameter}}
+        {{/eachRoot}}
       </ul>
-    {{/if}}
+      <br/>
+    </nav>
+  </div>
+  {{/if}}
 
-    {{#if description}}
-      <div class="kss-description">
-        {{{description}}}
-      </div>
-    {{/if}}
-    </div>
+  <article role="main">
+    {{#if homepage}}
+    <div ng-cloak id="kssref-0" class="kss-overview">
 
-    {{#if markup}}
-      <div class="kss-modifier__wrapper">
-        <div class="kss-modifier__heading kss-style">
-          Example{{#if modifiers}}s{{/if}}
+      <style media="screen">
+      .con-flex{border:none!important}.styleguide-hero{background:#09F;height:40vh}.styleguide-hero h1{font-size:300%;color:#fff;margin:3rem 0!important;text-shadow:0 2px 5px rgba(0,0,0,.26)}.search-result-wrapper{z-index:100;position:relative}#kss-node{padding:0}.homepage-grid{flex-wrap:wrap}.homepage-grid>.homepage-card{min-width:30%;margin:1%}.homepage-card-spacer{height:100px;position:relative;background:url(https://www.toptal.com/designers/subtlepatterns/patterns/seigaiha.png)}.homepage-card-spacer:hover>i{margin-top:-5px}.homepage-card-spacer>i{transition:1s margin ease-in-out;position:absolute;left:0;right:0;top:40%;text-align:center;transform-origin:center;transform:scale(2)}a{text-decoration:none!important;color:rgba(0,0,0,.85)}
+      </style>
+
+      <div class="con-row styleguide-hero">
+        <div class="con-flex"></div>
+        <div class="con-flex x3">
+          <div class="line-center text-white">
+            <h1>Teleopti styleguide</h1>
+            <p>Start exploring by searching for things like panel, buttons and chips.</p>
+            <p>Or navigate to a chapter down below.</p>
+          </div>
+
+          <div class="panel material-depth-1">
+            <div class="con-row">
+              <div class="con-flex">
+                <input autofocus  autocomplete="off" type="text" ng-model="search.Name" placeholder="Search styleguide">
+                {{#eachRoot}}
+                {{#eachSection reference}}
+                {{#ifDepth 2}}
+                <div ng-init="addItemToList('section-{{../../referenceURI}}.html#kssref-{{referenceURI}}', '{{header}}')"></div>
+                {{/ifDepth}}
+                {{/eachSection}}
+                {{/eachRoot}}
+              </div>
+            </div>
+            <div class="con-row search-result-wrapper">
+              <ul class="wfm-list" style="width:100%;" ng-if="search.Name.length>0" ng-cloak>
+                <div ng-repeat="searchItem in menuItems | filter:search as results" ng-bind-html="searchItem.Link"></div>
+                <a ng-hide="results.length" href="https://github.com/Teleopti/styleguide/issues">
+                  <li>Thats not in the styleguide yet! If you want it to be you can click here and add it to our to-do list.</li>
+                </a>
+              </ul>
+            </div>
+          </div>
+
         </div>
-      {{#if modifiers}}
+        <div class="con-flex"></div>
+      </div>
+
+
+      <div class="con-row">
+        <div class="con-flex"></div>
+        <div class="con-flex x3">
+          <div class="con-row">
+            <div class="con-flex">
+              <h1 class="kss-title__permalink non-pointer">Chapters</h1>
+            </div>
+          </div>
+          <div class="con-row homepage-grid">
+
+            {{#eachRoot}}
+            <div class="con-flex homepage-card material-depth-1">
+              <a href="section-{{referenceURI}}.html">
+                <div class="con-row">
+                  <div class="con-flex homepage-card-spacer">
+                    <i class="mdi" ng-class="getChapteIcon('{{header}}')"></i>
+                  </div>
+                </div>
+                <div class="con-row">
+                  <div class="con-flex">
+                    <h2>{{header}}<h2>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              {{/eachRoot}}
+
+            </div>
+          </div>
+          <div class="con-flex"></div>
+        </div>
+      </div>
+    </article>
+    {{else}}
+    <article role="main" class="kss-main">
+      {{!
+        Display each section, in order.
+
+        The "root" element comes first in this loop, and can be detected using
+        the "#ifDepth 1" block as seen below.
+      }}
+      {{#eachSection rootName}}
+
+      {{#ifDepth 1}}
+      <div id="kssref-{{referenceURI}}" class="kss-section section-hero kss-section--depth-{{depth}}">
+        {{else}}
+        <section id="kssref-{{referenceURI}}" class="kss-section material-depth-1 kss-section--depth-{{depth}}">
+          {{/ifDepth}}
+
+          <div class="kss-style">
+            <h{{depth}} class="kss-title kss-title--level-{{depth}}">
+            <a class="kss-title__permalink">
+              {{header}}
+            </a>
+          </h{{depth}}>
+          <small class="kss-title__ref">{{#ifNumeric reference}}{{reference}} {{else}}{{autoincrement}}{{/ifNumeric}}</small>
+
+          {{#if parameters}}
+          <ul class="kss-parameters">
+            {{#eachParameter}}
+            <li class="kss-parameters__item">
+              <code class="kss-parameters__name">{{name}}</code>
+              <div class="kss-parameters__description">{{{description}}}</div>
+            </li>
+            {{/eachParameter}}
+          </ul>
+          {{/if}}
+
+          {{#if description}}
+          <div class="kss-description">
+            {{{description}}}
+          </div>
+          {{/if}}
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('{{header}}')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
+           <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
+              <span ng-bind="item.desc"></span></br>
+
+           </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+        {{#if markup}}
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['{{header}}'] = !markupShow['{{header}}']">
+            <span ng-hide="markupShow['{{header}}']">Show</span>
+            <span ng-show="markupShow['{{header}}']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['{{header}}']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                {{markup}}
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example{{#if modifiers}}s{{/if}}
+        </div> -->
+        {{#if modifiers}}
         <div class="kss-modifier__default-name kss-style">
           Default styling
         </div>
-      {{/if}}
+        {{/if}}
         <div class="kss-modifier__example">
           {{{markup}}}
         </div>
-      {{#eachModifier}}
+        {{#eachModifier}}
         <div class="kss-modifier__name kss-style">
           {{name}}
         </div>
@@ -123,38 +250,36 @@
         <div class="kss-modifier__example">
           {{{markup}}}
         </div>
-      {{/eachModifier}}
+        {{/eachModifier}}
       </div>
 
-      <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">{{markup}}</code></pre>
-      </div>
-    {{/if}}
 
-    {{#ifDepth 1}}
-      </div>
+      {{/if}}
+
+      {{#ifDepth 1}}
+    </div>
     {{else}}
-      </section>
-    {{/ifDepth}}
+  </section>
+  {{/ifDepth}}
   {{/eachSection}}
-{{/if}}
+  {{/if}}
 </article>
 
 <script src="public/kss.js"></script>
 <script src="public/prettify.js"></script>
 
 <script>
-  prettyPrint();
+prettyPrint();
 </script>
 
 {{{scripts}}}
 
 {{! This will only be included in the demo page. }}
 {{#if argv.xdemo}}
-  <footer class="kss-github">
-    <!-- https://github.com/blog/273-github-ribbons -->
-    <a href="https://github.com/kss-node/kss-node"><img src="public/github-fork--black.png" alt="Fork me on GitHub"></a>
-  </footer>
+<footer class="kss-github">
+  <!-- https://github.com/blog/273-github-ribbons -->
+  <a href="https://github.com/kss-node/kss-node"><img src="public/github-fork--black.png" alt="Fork me on GitHub"></a>
+</footer>
 {{/if}}
 
 <!-- Automatically generated using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->

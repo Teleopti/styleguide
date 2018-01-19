@@ -5,7 +5,6 @@
     function wfmCardDirectiveController() {
         /* jshint validthis: true */
         var vm = this;
-
         vm.isSelected = function() {
             return vm.parentVm.isSelectedCard(vm);
         };
@@ -30,7 +29,9 @@
             controller: 'wfmCardCtrl',
             controllerAs: 'vm',
             bindToController: true,
-            scope: {},
+            scope: {
+                openByDefault: '=open'
+            },
             template: getWfmCardTemplate(),
             transclude: true,
             require: ['wfmCard', '^wfmCardList'],
@@ -42,6 +43,9 @@
                 var parentVm = ctrl[1];
                 vm.parentVm = parentVm;
 
+                if (vm.openByDefault) {
+                    vm.select();
+                }
                 transcludeFn(function(clone) {
 
                     angular.forEach(clone, function(cloneEl) {

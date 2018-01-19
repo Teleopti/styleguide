@@ -1,4 +1,4 @@
-//Time Range Picker
+//Time range Picker
 //
 //A directive for managing time range. The time range is represented by any object that have <code>startTime</code> and <code>endTime</code> keys, each with a js Date object as value. The range can be overnight if <code>disable-next-day</code> is set to false. In that case, a <code>+ 1</code> sign will be shown to indicate the end time is at the second day.
 //The pickers are self-adjusted to the user's time-format setting, i.e. meridian will be used for 12-h format and disabled for 24-h format with correct meridian texts.
@@ -16,7 +16,7 @@
 //    <time-range-picker ng-model="timeRange" disable-next-day="disableNextDay"></time-range-picker>
 //  </div>
 //
-//Styleguide 2.4
+//Styleguide 2.7
 //
 
 .wfm-time-range-picker-wrap {
@@ -46,10 +46,13 @@
       margin-left: 2px;
       margin-right: 2px;
     }
+    .md-ink-ripple{
+        color: $text-color-standard!important;
+    }
   }
 
   .has-error > input {
-    border:2px solid #F44336;
+    border:2px solid $red-600;
   }
 
   .error-msg-container {

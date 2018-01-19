@@ -12,7 +12,7 @@
 
 	md-next-button{
 		padding-right: 18%;
-		background: $blue-100;
+		background: $secondary;
 	}
 
 	.md-ripple-container{
@@ -86,7 +86,7 @@ md-content.md-default-theme {
 	}
 
  .label:hover, .tab-group input[type=radio]:checked + .label{
-	background-color:$blue-500;
+	background-color:$primary;
 }
 
 .tabbed-panel{
@@ -100,7 +100,7 @@ md-content.md-default-theme {
 
   md-tabs-wrapper{
     padding-top: 1px;
-    background:$blue-100;
+    background:$secondary;
     border-width: 0 !important;
     border-style: none!important;
   }

@@ -1,31 +1,3 @@
-// Notifications
-//
-// Notifications are more global and general compared to notices, they also last longer. Eventually they can function more like a actions archive.
-//
-//Markup:
-//	<ul class="notification-list wfm-simple-list">
-//		<li>
-//			<i class="mdi mdi-alert-circle"></i>
-//			<b>Forecast</b>
-//			<span class="pull-right">16:18</span>
-//			<div class="subtext">Done without errors</div>
-//		</li>
-//		<li>
-//			<i class="mdi mdi-alert-circle"></i>
-//			<b>Forecast</b>
-//			<span class="pull-right">13:37</span>
-//			<div class="subtext">Done without errors</div>
-//		</li>
-//		<li>
-//			<i class="mdi mdi-alert-circle"></i>
-//			<b>Forecast</b>
-//			<span class="pull-right">11:11</span>
-//			<div class="subtext">Done without errors</div>
-//		</li>
-//	</ul>
-//
-//Styleguide 1.11
-//
 
 .notification-list{
 
