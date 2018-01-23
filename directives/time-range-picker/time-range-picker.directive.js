@@ -1,35 +1,61 @@
-(function() {
+(function () {
 
     'use strict';
 
-    angular.module('wfm.timerangepicker', [])
-           .directive('timepickerWrap', ['$locale', timepickerWrap])
-           .directive('timeRangePicker', ['$filter', timeRangePicker]);
+    angular.module('wfm.timerangepicker', ['pascalprecht.translate'])
+        .directive('timepickerWrap', ['$locale', timepickerWrap])
+        .directive('timeRangePicker', ['$filter', timeRangePicker]);
 
     var defaultTemplate = 'directives/time-range-picker/time-range-picker.tpl.html';
 
     function timeRangePicker($filter) {
         return {
-            templateUrl: function(element, attrs) {
+            templateUrl: function (element, attrs) {
                 return attrs.templateUrl || defaultTemplate;
             },
             scope: {
-                disableNextDay: '=?'
+                disableNextDay: '=?',
+                maxHoursRange: '=?'
             },
-            controller: ['$scope', '$element', timeRangePickerCtrl],
+            controller: ['$scope', '$element', '$translate', timeRangePickerCtrl],
             require: ['ngModel', 'timeRangePicker'],
             transclude: true,
             link: postlink
         };
 
-        function timeRangePickerCtrl($scope, $element) {
+        function timeRangePickerCtrl($scope, $element, $translate) {
 
             /* jshint validthis: true */
 
             var vm = this;
             $element.addClass('wfm-time-range-picker-wrap');
 
+            String.prototype.format = function (args) {
+                var result = this;
+                if (arguments.length > 0) {
+                    if (arguments.length === 1 && typeof (args) === 'object') {
+                        for (var key in args) {
+                            if (args[key] != undefined) {
+                                var reg = new RegExp('({' + key + '})', 'g');
+                                result = result.replace(reg, args[key]);
+                            }
+                        }
+                    }
+                    else {
+                        for (var i = 0; i < arguments.length; i++) {
+                            if (arguments[i] != undefined) {
+                                var reg = new RegExp('({)' + i + '(})', 'g');
+                                result = result.replace(reg, arguments[i]);
+                            }
+                        }
+                    }
+                }
+                return result;
+            }
+
             $scope.toggleNextDay = toggleNextDay;
+            //$scope.invalidTimeRange = 'The period cannot exceed 24 hours.'; //$translate('InvalidHoursRange');
+            $scope.invalidTimeRange = $translate.instant('InvalidHoursRange').format($scope.maxHoursRange);
 
             vm.mutateMoment = mutateMoment;
             vm.sameDate = sameDate;
@@ -62,6 +88,7 @@
             ngModel.$formatters.push(formatModel);
             ngModel.$render = render;
             ngModel.$validators.order = validateCorrectOrder;
+            ngModel.$validators.range = validateRange;
 
             function formatModel(modelValue) {
                 if (!modelValue) {
@@ -106,6 +133,14 @@
                     return true;
                 }
                 return modelValue.startTime <= modelValue.endTime;
+            }
+
+            function validateRange(modelValue, viewValue) {
+                if (modelValue === undefined || scope.maxHoursRange === undefined || scope.maxHoursRange === '') {
+                    return true;
+                }
+
+                return modelValue.endTime - modelValue.startTime < parseInt(scope.maxHoursRange) * 1000 * 60 * 60;
             }
 
             function makeViewValue(startTime, endTime, nextDay) {

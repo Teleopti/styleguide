@@ -1,10 +1,11 @@
 <div class="con-row">
-	<div><!--No need for a con-flex here, its in the directive-->
+	<div>
+		<!--No need for a con-flex here, its in the directive-->
 		<button type="button" class="wfm-fab mini" ng-click="addEmptyWorkingPeriod()">
 			<i class="mdi mdi-plus"></i>
 			<md-tooltip>{{'AddEmptyPeriod' | translate}}</md-tooltip>
 		</button>
-		<time-range-picker ng-model="newWorkingPeriod" disable-next-day="disableNextDay"></time-range-picker>
+		<time-range-picker ng-model="newWorkingPeriod" max-hours-range="maxHoursRange" disable-next-day="disableNextDay"></time-range-picker>
 	</div>
 </div>
 
@@ -15,7 +16,7 @@
 		</div>
 		<div class="con-flex working-hours-day" ng-repeat="WeekDay in WorkingPeriod.WeekDaySelections">
 			<md-checkbox ng-model="WeekDay.Checked" aria-label="Checkbox" ng-click="enforceRadioBehavior($parent.$index, WeekDay.WeekDay)">
-					<span translate>{{WeekDay | showWeekdays}}</span>
+				<span translate>{{WeekDay | showWeekdays}}</span>
 			</md-checkbox>
 		</div>
 		<div class="con-flex working-hours-action">
