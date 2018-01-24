@@ -30,32 +30,13 @@
             var vm = this;
             $element.addClass('wfm-time-range-picker-wrap');
 
-            String.prototype.format = function (args) {
-                var result = this;
-                if (arguments.length > 0) {
-                    if (arguments.length === 1 && typeof (args) === 'object') {
-                        for (var key in args) {
-                            if (args[key] != undefined) {
-                                var reg = new RegExp('({' + key + '})', 'g');
-                                result = result.replace(reg, args[key]);
-                            }
-                        }
-                    }
-                    else {
-                        for (var i = 0; i < arguments.length; i++) {
-                            if (arguments[i] != undefined) {
-                                var reg = new RegExp('({)' + i + '(})', 'g');
-                                result = result.replace(reg, arguments[i]);
-                            }
-                        }
-                    }
-                }
-                return result;
+            function format(target, arg) {
+                return target.replace('{0}', arg);
             }
 
             $scope.toggleNextDay = toggleNextDay;
             //$scope.invalidTimeRange = 'The period cannot exceed 24 hours.'; //$translate('InvalidHoursRange');
-            $scope.invalidTimeRange = $translate.instant('InvalidHoursRange').format($scope.maxHoursRange);
+            $scope.invalidTimeRange = format($translate.instant('InvalidHoursRange'), $scope.maxHoursRange);
 
             vm.mutateMoment = mutateMoment;
             vm.sameDate = sameDate;
