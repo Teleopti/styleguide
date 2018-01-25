@@ -255,7 +255,7 @@
                 return selectStartDate();
             }
             if (betweenToStart > 0 && betweenToEnd < 0) {
-                if (Math.abs(betweenToStart) >= Math.abs(betweenToEnd)){
+                if (Math.abs(betweenToStart) >= Math.abs(betweenToEnd)) {
                     return selectEndDate();
                 }
                 return selectStartDate();
