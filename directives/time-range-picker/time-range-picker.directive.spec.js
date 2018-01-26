@@ -1,6 +1,6 @@
 'use strict';
 describe('time-range-picker directive', function () {
-    var elementCompileFn, $templateCache, $compile, $translate, element,
+    var elementCompileFn, elementCompileWithHoursLimitFn, $templateCache, $compile, $translate, element,
         scope;
 
     beforeEach(module('styleguide.templates'));
@@ -32,6 +32,10 @@ describe('time-range-picker directive', function () {
         elementCompileFn = function () {
             return $compile('<time-range-picker ng-model="timeRange"></time-range-picker>');
         };
+
+        elementCompileWithHoursLimitFn = function () {
+            return $compile('<time-range-picker max-hours-range="3" ng-model="timeRange"></time-range-picker>');
+        }
     }));
 
     it('Directive compilation should work', function () {
@@ -72,6 +76,21 @@ describe('time-range-picker directive', function () {
 
         expect(element.hasClass('ng-invalid')).toBeTruthy();
         expect(element.hasClass('ng-invalid-order')).toBeTruthy();
+    });
+
+    it('Should show error when time range is larger than max-hours-range', function () {
+        scope.timeRange.startTime = moment({
+            hour: 2,
+            minute: 30
+        }).toDate();
+        scope.timeRange.endTime = moment({
+            hour: 10,
+            minute: 30
+        }).toDate();
+
+        var element = elementCompileWithHoursLimitFn()(scope);
+        scope.$apply();
+        expect(element.hasClass('ng-invalid-range')).toBeTruthy();
     });
 
     it('Should not show error when end-time is on the next day', function () {
