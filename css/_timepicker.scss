@@ -7,13 +7,14 @@
 //<tr><th>Attribute Name</th><th>Usage</th><th>Required</th></tr>
 //<tr><td>ng-model</td><td>Bind to time range object</td><td>true</td></tr>
 //<tr><td>disable-next-day</td><td>Disable next-day switch</td><td>false</td></tr>
+//<tr><td>max-hours-range</td><td>Max hours that allowed for the time range </td><td>false</td></tr>
 //<tr><td>template-url</td><td>Use a custom template</td><td>false</td></tr>
 //</table>
 //</br>
 //
 //Markup:
 //  <div class="con-row">
-//    <time-range-picker ng-model="timeRange" disable-next-day="disableNextDay"></time-range-picker>
+//    <time-range-picker ng-model="timeRange" disable-next-day="disableNextDay" max-hours-range="24"></time-range-picker>
 //  </div>
 //
 //Styleguide 2.7
@@ -68,6 +69,9 @@
       display: block !important;
     }
     &.ng-invalid-parse .error-msg-container.ng-invalid-parse {
+      display: block !important;
+    }
+    &.ng-invalid-range .error-msg-container.ng-invalid-range {
       display: block !important;
     }
   }
