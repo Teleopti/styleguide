@@ -248,10 +248,10 @@
         function autoSelectDate() {
             var betweenToStart = moment(vm.pickDate).diff(vm.pickStartDate, 'day');
             var betweenToEnd = moment(vm.pickDate).diff(vm.pickEndDate, 'day');
-            if (betweenToStart > 0 && betweenToEnd >= 0 || betweenToStart == 6) {
+            if (betweenToStart == 0 || betweenToStart == 6 || (betweenToStart > 0 && betweenToEnd > 0)) {
                 return selectEndDate();
             }
-            if (betweenToStart <= 0 && betweenToEnd < 0) {
+            if (betweenToEnd == 0 || (betweenToStart < 0 && betweenToEnd < 0)) {
                 return selectStartDate();
             }
             if (betweenToStart > 0 && betweenToEnd < 0) {

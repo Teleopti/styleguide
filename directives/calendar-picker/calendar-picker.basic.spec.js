@@ -266,6 +266,27 @@ describe('CalendarPickerControllerBasicFeature', function () {
         expect(vm.dateRangeText.replace(/\s/g, '')).toEqual('1Week2Day');
     });
 
+    it('should be able to auto update new start date while new pick date is equal to end date', function () {
+        vm.pickDate = moment(fakeToday).add(preSetLength - 1, 'day').toDate();
+        vm.switchDate();
+        console.log(vm)
+        var range = calendarView.getElementsByClassName('in-date-range');
+
+        expect(vm.pickStartDate).toEqual(vm.pickEndDate);
+        expect(range.length).toEqual(1);
+        expect(vm.dateRangeText.replace(/\s/g, '')).toEqual('1Day');
+    });
+
+    it('should be able to auto update new end date while new pick date is equal to start date', function () {
+        vm.pickDate = moment(fakeToday);
+        vm.switchDate();
+        var range = calendarView.getElementsByClassName('in-date-range');
+
+        expect(vm.pickStartDate).toEqual(vm.pickEndDate);
+        expect(range.length).toEqual(1);
+        expect(vm.dateRangeText.replace(/\s/g, '')).toEqual('1Day');
+    });
+
     it('should be able to auto update new end date while new pick date is near to original end date', function () {
         vm.pickDate = moment(fakeToday).add((preSetLength / 2 + 3), 'day').toDate();
         vm.switchDate();
