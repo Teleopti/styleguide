@@ -100,6 +100,7 @@ table{
 //Big table
 //
 //The big table is used to give data more space and actions. Check out the <a href="http://ui-grid.info/docs/#/tutorial">documentation</a> to see all available functions.
+//Remember to translate the table menu items using ui-i18n
 //
 // <div class="jsprewrap">
 //   <div class="ksscopy kss-style" ng-click="showJs['bigTable'] = !showJs['bigTable']">
@@ -119,6 +120,7 @@ table{
 //				data[i]['j' + j] = j;
 //		}
 //}
+//$scope.gridLang = 'en';
 //$scope.gridOptions = {
 //		exporterCsvFilename: 'myFile.csv',
 //    exporterOlderExcelCompatibility: true,
