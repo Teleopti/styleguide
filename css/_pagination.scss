@@ -33,11 +33,20 @@
 //Styleguide 2.9
 //
 
+.pull-pagination {
+  text-align: right;
+}
+
+.pagination,
+.pagination ul {
+  margin: 0;
+}
+
 .pagination li {
   display: inline-block;
   padding: 10px;
   cursor: pointer;
-  vertical-align: text-top;
+  vertical-align: middle;
   background-color: $white;
   &.disabled {
     cursor: not-allowed;
@@ -53,12 +62,4 @@
       color: $secondary;
       text-decoration: none;
     }
-}
-
-.pagination{
-	margin-top:10px;
-}
-
-.pull-pagination{
-  text-align: right;
 }
