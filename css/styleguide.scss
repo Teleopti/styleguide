@@ -250,8 +250,6 @@
 //<div class="spacer material-depth-1">
 //	<p class="spacer material-depth-1"> Stacked </p>
 //</div>
-//<div class="spacer material-depth-1 raise"> Elevate on hover </div>
-//<div class="spacer material-depth-1 ng-cloak reveal-material" ng-click="dissapear=true" ng-class="{'hide-material':dissapear}"> Animated layer</div>
 //
 //Styleguide 1.1
 //
@@ -299,14 +297,6 @@
 // In general, the smaller and more separate something is, the more saturated it can be to grab attention.
 // By providing common color variables we can have different themes and still keep a consistent feeling.
 // In the example below you can see how the colors are represented in different themes. You can also see the preferred text color for that color.
-// There are some predefined colors for standard text that will adapt to the theme automatically:
-//  <table class="wfm-table">
-//    <thead><tr><th>Variable</th><th>Description</th></tr></thead>
-//    <tbody>
-//      <tr><td>$text-color-standard</td><td>Standard color used in panels</td></tr>
-//      <tr><td>$text-color-muted</td><td>Slightly muted color for use on disabled/secondary text</td></tr>
-//    </tbody>
-//  </table>
 //
 //Styleguide 3
 //
@@ -599,18 +589,26 @@
 //In case you want to guide the user through a series of steps you can use a wizard panel.
 //
 //
-//<div class="jsprewrap">
-//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
-//	<div ng-show="showjs">
-//		<code><pre>
+// <div class="jsprewrap">
+//   <div class="ksscopy kss-style" ng-click="showJs['wiz'] = !showJs['wiz']">
+//       <span ng-hide="showJs['wiz']">Show</span>
+//      <span ng-show="showJs['wiz']">Hide</span>
+//     JavaScript
+//     <i class="mdi mdi-code-tags pull-right"></i>
+//   </div>
+//   <div class="animate-show" ng-show="showJs['wiz']">
+//     <code>
+//       <pre class="prettyprint linenums lang-js">
+//
 //$scope.selectedIndex = 0;
 //$scope.nextTab = function() {
 //  var index = ($scope.selectedIndex === 50) ? 0 : $scope.selectedIndex + 1;
 //  $scope.selectedIndex = index;
 //};
-//		</pre></code>
-//	</div>
-//</div>
+//       </pre>
+//     </code>
+//   </div>
+// </div>
 //
 //Markup:
 //<div class="panel material-depth-1">
@@ -687,19 +685,27 @@
 
 //Basic Form panel
 //
-//<div class="jsprewrap">
-//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
-//	<div ng-show="showjs">
-//		<code><pre>
+// <div class="jsprewrap">
+//   <div class="ksscopy kss-style" ng-click="showJs['form2'] = !showJs['form2']">
+//       <span ng-hide="showJs['form2']">Show</span>
+//      <span ng-show="showJs['form2']">Hide</span>
+//     JavaScript
+//     <i class="mdi mdi-code-tags pull-right"></i>
+//   </div>
+//   <div class="animate-show" ng-show="showJs['form2']">
+//     <code>
+//       <pre class="prettyprint linenums lang-js">
+//
 //$scope.reset = function(form) {
 //  if (form) {
 //    form.$setPristine();
 //    form.$setUntouched();
 //  }
 //};
-//		</pre></code>
-//	</div>
-//</div>
+//       </pre>
+//     </code>
+//   </div>
+// </div>
 //
 //Markup: form_panel.hbs
 //
@@ -710,19 +716,27 @@
 //
 //Dividing the inputs into different sub-categories using headers can make the structure more clear.
 //
-//<div class="jsprewrap">
-//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
-//	<div ng-show="showjs">
-//		<code><pre>
+// <div class="jsprewrap">
+//   <div class="ksscopy kss-style" ng-click="showJs['form3'] = !showJs['form3']">
+//       <span ng-hide="showJs['form3']">Show</span>
+//      <span ng-show="showJs['form3']">Hide</span>
+//     JavaScript
+//     <i class="mdi mdi-code-tags pull-right"></i>
+//   </div>
+//   <div class="animate-show" ng-show="showJs['form3']">
+//     <code>
+//       <pre class="prettyprint linenums lang-js">
+//
 //$scope.reset = function(form) {
 //  if (form) {
 //    form.$setPristine();
 //    form.$setUntouched();
 //  }
 //};
-//		</pre></code>
-//	</div>
-//</div>
+//       </pre>
+//     </code>
+//   </div>
+// </div>
 //
 // Markup: form2_panel.hbs
 //
@@ -733,19 +747,27 @@
 //
 //The layout inside the form can be changed to give more space to certain parts, just remember to structure the inputs in a logical way.
 //
-//<div class="jsprewrap">
-//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
-//	<div ng-show="showjs">
-//		<code><pre>
+// <div class="jsprewrap">
+//   <div class="ksscopy kss-style" ng-click="showJs['form4'] = !showJs['form4']">
+//       <span ng-hide="showJs['form4']">Show</span>
+//      <span ng-show="showJs['form4']">Hide</span>
+//     JavaScript
+//     <i class="mdi mdi-code-tags pull-right"></i>
+//   </div>
+//   <div class="animate-show" ng-show="showJs['form4']">
+//     <code>
+//       <pre class="prettyprint linenums lang-js">
+//
 //$scope.reset = function(form) {
 //  if (form) {
 //    form.$setPristine();
 //    form.$setUntouched();
 //  }
 //};
-//		</pre></code>
-//	</div>
-//</div>
+//       </pre>
+//     </code>
+//   </div>
+// </div>
 //
 // Markup: form3_panel.hbs
 //
@@ -771,10 +793,17 @@
 //
 //Note: "config" cannot be used as a child state name.
 //
-//<div class="jsprewrap">
-//	<div ng-cloak ng-click="showjs = !showjs" class="ksscopy">Example</div>
-//	<div ng-show="showjs">
-//		<code><pre>
+// <div class="jsprewrap">
+//   <div class="ksscopy kss-style" ng-click="showJs['states'] = !showJs['states']">
+//       <span ng-hide="showJs['states']">Show</span>
+//      <span ng-show="showJs['states']">Hide</span>
+//     JavaScript
+//     <i class="mdi mdi-code-tags pull-right"></i>
+//   </div>
+//   <div class="animate-show" ng-show="showJs['states']">
+//     <code>
+//       <pre class="prettyprint linenums lang-js">
+//
 // function stateConfig($stateProvider) {
 //   $stateProvider.state('example',
 //   {
@@ -795,9 +824,10 @@
 //     controller: 'ExampleSecondViewController'
 //   })
 // }
-//		</pre></code>
-//	</div>
-//</div>
+//       </pre>
+//     </code>
+//   </div>
+// </div>
 //
 //Styleguide 9.1
 
@@ -817,48 +847,24 @@
 //Resources
 //
 //Here you can find some links to go further in JS, CSS and UX best practices
+//We also provide some links to tools and libs that have been used to create this styleguide for future reference
 //
 //Styleguide 10
 //
 //
 
-//Urls
+//Links
 //
-// <ul class="wfm-simple-list">
-// 	<li>
-// 		<a href="https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md">Angular styleguide - John Papa</a>
-// 		<div class="subtext">The code style we strive to follow in our JS</div>
-// 	</li>
-// 	<li>
-// 		<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference">Css quick reference - MDN</a>
-// 		<div class="subtext">Good for looking up CSS properties and syntax</div>
-// 	</li>
-// 	<li>
-// 		<a href="https://caniuse.com/">Can i use?</a>
-// 		<div class="subtext">CSS reference across all browsers</div>
-// 	</li>
-// 	<li>
-// 		<a href="http://philipwalton.com/articles/css-architecture/">Css architecture - Philip Walton</a>
-// 		<div class="subtext">Article by a Google engineer on how to build good CSS</div>
-// 	</li>
-// 	<li>
-// 		<a href="https://www.behance.net/gallery/47810259/2017-Design-Trends-Guide">Design trends 2017</a>
-// 		<div class="subtext">A compilation of design trends in 2017 @ Behance</div>
-// 	</li>
-// 	<li>
-// 		<a href="http://axbom.com/slaying-5-ux-myths-good-mankind/">UX myths - Per Axbom</a>
-// 		<div class="subtext">Common pitfalls in UX thinking</div>
-// 	</li>
-// 	<li>
-// 		<a href="http://styleguides.io/">Styleguides</a>
-// 		<div class="subtext">A collection of styleguides for reference</div>
-// 	</li>
-// </ul>
 //
 //Styleguide 10.1
 
 html{
   overflow-y: auto!important;
+  background: rgb(235, 235, 235)!important;
+}
+
+body{
+  background: transparent!important;
 }
 
 .spacer {
@@ -869,36 +875,102 @@ html{
   background: white;
 }
 
-.jsprewrap{
-  width: 98%;
-  margin: 0 auto;
-  cursor:pointer;
-}
-
 .con-flex,.form-input-wrap, .con-fluid-flex{
   border:1px dashed $gray026;
 }
 
 .ksscopy{
-  margin: -10px -10px 10px -10px;
   padding: 10px;
-  border: 1px solid #ccc;
-  background-color: #eee;
+  border-bottom: 1px solid #ccc;
   font-weight: bold;
+  cursor: pointer;
+  background: rgba(0,0,0,0.06);
+}
+
+.kss-modifier__wrapper{
+  border: none!important;
 }
 
 /*template styles*/
 .kss-sidebar {
   position:fixed!important;
 }
-
+.sidebar-toggle{
+  position: fixed!important;
+  top: 20px;
+  left: 0px;
+  z-index: 100;
+  background: white!important;
+}
+#kss-node .kss-sidebar {
+  background: white;
+  top: 0;
+  left: 0;
+  z-index:90;
+  max-height: 100%;
+  overflow-y: auto;
+  padding: 0;
+}
+.kss-sidebar-hidden{
+  visibility: hidden;
+}
 #kss-node .kss-title__permalink {
   font-size: 30px;
   font-weight: normal;
 }
+.kss-header{
+  margin: 0!important;
+  padding: 1rem;
+}
 
-#kss-node .kss-section {
-  max-width: 80%;
+.kss-nav__menu-item {
+  padding: 0.5rem;
+  a {
+    color: $text-color-standard!important;
+  }
+}
+
+.kss-nav__menu > .kss-nav__menu-item {
+  padding: 0;
+  & > a {
+    display: block;
+    height: 100%;
+    padding: 0.5rem;
+  }
+  & > a:hover {
+    background: $gray012;
+  }
+}
+
+.kss-nav__menu-child{
+  background: $gray012;
+  .kss-nav__menu-item:hover{
+  background: $gray012!important;
+  }
+
+}
+
+.section-hero{
+  background: $primary!important;
+  outline: 420px solid $primary;
+  z-index: -1;
+  position: relative;
+
+  .kss-style{
+    color: white!important;
+
+    a{
+      color: white!important;
+    }
+
+    h1{
+      text-shadow: 0 2px 5px rgba(0,0,0,.26);
+    }
+
+    .kss-title__ref{
+      display: none!important;
+    }
+  }
 }
 
 .kss-style code {
@@ -910,23 +982,28 @@ html{
 #kss-node ol.linenums li {
   border:none;
 }
-
-#kss-node .kss-sidebar {
+#kss-node .kss-section{
+  max-width: 100%;
   background: white;
-  top: 0;
-  z-index:9;
-  max-height: 100%;
-  overflow-y: auto;
+  padding: 0.5rem;
+  margin-bottom: 2rem!important;
 }
-
 @media screen and (min-width: 769px){
   #kss-node .kss-sidebar {
     background: white;
     top: 0;
+    bottom: 0;
     z-index:9;
     max-height: 100%;
     overflow-y: auto;
   }
+  #kss-node .kss-section {
+    max-width: 98%;
+  }
+}
+
+li.L0 > span:nth-child(1){
+  display: none!important;
 }
 
 .styleguide-break{
@@ -950,16 +1027,33 @@ md-tooltip {
 .darktheme-background {
   background: #303030 !important;
   color: rgba(255,255,255,0.87)!important;
+  overflow-x: hidden;
+
+  article{
+    color: #d1d1d1;
+  }
 }
+
+
 
 .classictheme-background {
   background: $gray012 !important;
   color: $text-color-standard;
+  overflow-x: hidden;
 }
 
 
 //Color swatches
+.swatch{
+  transform-origin: center;
+  transform: scale(0.9);
+}
 .swatch-list {
+  .spacer{
+    width: 100%;
+    height: 100px;
+    background: transparent!important;
+  }
 
   .blue-500-swatch {
     background:$blue-500!important;
@@ -1225,18 +1319,32 @@ md-tooltip {
 
   li{
     position:relative;
-    width: 100px;
-    height: 100px;
+    height: 250px;
+    text-align: left;
 
-    .white-color-text{
-      color:$white;
-    }
-
-    p{
+    article{
       left:0;
       right:0;
       bottom:0;
       position:absolute;
+      background: $white;
+      height: 100px;
+      padding: 10px;
     }
   }
 }
+
+//for fix the style of date range picker due to the boostrap version
+.date-info-calendar-wrapper {
+  .wfm-datepicker .btn{
+    border-radius: 0;
+    font-size: 12px;
+    padding: 5px 8px;
+    outline: 0!important;
+    line-height: 1.5;
+  }
+}
+
+wfm-calendar-picker-body>.date-info-wrapper .select-date-info-wrapper {
+    height: 42.5%!important;
+  }

@@ -50,7 +50,7 @@ table{
 
 .wfm-table th, .wfm-table-header {
   color: $text-color-standard;
-  background-color: $blue-100;
+  background-color: $secondary;
   text-align: left;
 
 }
@@ -92,7 +92,7 @@ table{
 	th:first-child,td:first-child{
 	  color: $text-color-standard;
 	  font-weight:600;
-	  background-color: $blue-100;
+	  background-color: $secondary;
 	}
 }
 
@@ -101,10 +101,17 @@ table{
 //
 //The big table is used to give data more space and actions. Check out the <a href="http://ui-grid.info/docs/#/tutorial">documentation</a> to see all available functions.
 //
-//<div class="jsprewrap">
-//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
-//	<div ng-show="showjs">
-//		<code><pre>
+// <div class="jsprewrap">
+//   <div class="ksscopy kss-style" ng-click="showJs['bigTable'] = !showJs['bigTable']">
+//       <span ng-hide="showJs['bigTable']">Show</span>
+//      <span ng-show="showJs['bigTable']">Hide</span>
+//     JavaScript
+//     <i class="mdi mdi-code-tags pull-right"></i>
+//   </div>
+//   <div class="animate-show" ng-show="showJs['bigTable']">
+//     <code>
+//       <pre class="prettyprint linenums lang-js">
+//
 //var data = [];
 //for (var i = 0; i < 100; i++) {
 //		data[i] = {};
@@ -124,9 +131,10 @@ table{
 //		data: data,
 //};
 //$scope.gridOptions.enableGridMenu = true;
-//		</pre></code>
-//	</div>
-//</div>
+//       </pre>
+//     </code>
+//   </div>
+// </div>
 //
 // Markup: bigtables.hbs
 //
@@ -145,13 +153,13 @@ table{
 	 float:none;}
 
 	 &:hover{
-		 background-color: $blue-300;
+		 background-color: $hover;
 		 cursor: pointer;
 	 }
 }
 
 .ui-grid-header-canvas{
-	background:$blue-100;
+	background:$secondary;
 }
 
 .ui-grid{
@@ -195,7 +203,7 @@ table{
 }
 
 .ui-grid-menu .ui-grid-menu-inner ul li button.ui-grid-menu-item-active{
-	background:$green-100!important;
+	background:$highlight!important;
 }
 
 .ui-grid-icon-up-dir:before,
@@ -229,7 +237,7 @@ table{
     width: 18px;
     border-radius: 2px;
     content: " ";
-    transition: background-color .20s ease-in-out;
+    transition: $transition-timing;
     cursor: pointer;
 		overflow: hidden;
 }
@@ -237,7 +245,7 @@ table{
 .ui-grid-all-selected.ui-grid-icon-ok:before,
 .ui-grid-row-selected .ui-grid-icon-ok:before,
 .ui-grid-menu-item > .ui-grid-icon-ok:before {
-	background-color: $blue-300;
+	background-color: $secondary;
 	content: "✓"!important;
 	text-align: center;
 	color: #fff;
@@ -319,7 +327,7 @@ table{
 }*/
 
 .ui-grid-row-selected > [ui-grid-row] > .ui-grid-cell{
-	background-color: $green-100!important;
+	background-color: $highlight!important;
 }
 
 .ui-grid-pinned-container.ui-grid-pinned-container-left .ui-grid-cell:last-child{
@@ -336,7 +344,7 @@ table{
 }
 
 .big-table-wrapper table tbody tr {
-	border-bottom: 1px solid $gray012!important;
+	border-bottom: 1px solid $hover!important;
 }
 .table>tbody>tr>td{
 	border-top:none;
