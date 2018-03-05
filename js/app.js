@@ -56,27 +56,32 @@
 
     /* Dummy data*/
     $scope.demos = [{ id: '1' }, { id: '2' }, { id: '3' }, { id: '4' }];
-
-    //data for tree
-    $scope.option = {
+    $scope.treeOption = {
       NodeDisplayName: "label",
       NodeChildrenName: "nodes",
       NodeSelectedMark: "selected"
     };
-    $scope.option2 = {
+    $scope.treeOption2 = {
       NodeDisplayName: "label",
       NodeChildrenName: "nodes",
       NodeSelectedMark: "selected",
-      NodeSemiSelected: "semiSelected",
+      NodeSemiSelected: "semiSelected"
     };
-    $scope.option3 = {
+    $scope.treeOption3 = {
       NodeDisplayName: "label",
       NodeChildrenName: "nodes",
       NodeSelectedMark: "selected",
       NodeSemiSelected: "semiSelected",
       RootSelectUnique: true
     };
-    var treeDemos = data = {
+    $scope.treeOption4 = {
+      NodeDisplayName: "label",
+      NodeChildrenName: "nodes",
+      NodeSelectedMark: "selected",
+      NodeSemiSelected: "semiSelected",
+      DisplayTreeFilter: true
+    };
+    var treeDemos = {
       nodes: [
         {
           label: 'parent1',
@@ -186,6 +191,7 @@
     $scope.treeDemos1 = angular.copy(treeDemos);
     $scope.treeDemos2 = angular.copy(treeDemos);
     $scope.treeDemos3 = angular.copy(treeDemos);
+    $scope.treeDemos4 = angular.copy(treeDemos);
 
     //old tree demo data
     $scope.treeDemos = [
