@@ -41,6 +41,19 @@
 //Styleguide 6.1
 //
 
+//Translations
+//
+//To support all manner of languages we use <a href="https://github.com/angular-translate/angular-translate">angular-translate</a>.
+//It allows us to translate in templates using {&nbsp;{'Key'|translate}&nbsp;} or $translate.instant('Key') when translating from JavaScript.
+//The format of these are important for us to be able to keep track of what keys are in use.
+//
+// <b>Jalaali</b></br>
+// To show dates in the Jalaali format use this filter: {&nbsp;{DateObj | persianDate:'fullDate'}&nbsp;}.
+//
+//Styleguide 6.2
+//
+
+
 h1,h2,h3,h4,h5,h6{
 	margin-top:10px!important;
 	margin-bottom:10px!important;
