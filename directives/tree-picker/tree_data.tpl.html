@@ -1,7 +1,7 @@
 <div class="tree">
   <label for="TreePickerFilter" class="input-prepend" ng-if="vm.displayTreeFilter">
     <i class="mdi mdi-filter-outline"></i>
-    <input type="text" id="TreePickerFilter" name="TreePickerFilter" ng-model="vm.search" placeholder="{{'Filter' | translate}}"
+    <input type="text" id="TreePickerFilter" name="TreePickerFilter" autocomplete="off" ng-model="vm.search" placeholder="{{'Filter' | translate}}"
     />
     <tree-filter search="vm.search"></tree-filter>
   </label>
@@ -16,7 +16,7 @@
     </div>
     <div class="tree-handle-wrapper" ng-class="{'selected-true': node[vm.nodeSelectedMark], 'semi-true': node[vm.nodeSemiSelected]}" ng-click="vm.selectNode(this)" ng-bind="node[vm.nodeDisplayName]"></div>
   </div>
-  <ol ng-model="node"> 
+  <ol ng-model="node">
     <li node-id="$index" class="tree-child hidden" ng-repeat="node in node[vm.nodeChildrenName]" ng-include="'tree_child_renderer.html'" ></li>
   </ol>
 </script>
