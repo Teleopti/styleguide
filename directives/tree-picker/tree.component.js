@@ -142,6 +142,7 @@
             var check = angular.equals(vm.ngModel.$modelValue, vm.data);
             if (!check) {
                 vm.data = vm.ngModel.$modelValue;
+                vm.search = null;
                 $timeout(function () {
                     var selectedItems = $element[0].getElementsByClassName('selected-true');
                     for (var index = 0; index < selectedItems.length; index++) {
