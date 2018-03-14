@@ -97,7 +97,7 @@
 //		</div>
 //		<div class="modal-actions">
 //			<aside>
-//				<button class="wfm-btn wfm-btn-invis-primary">Apply</button>
+//				<button class="wfm-btn wfm-btn-invis-primary" ng-click="toggleModal()">Ok</button>
 //			</aside>
 //		</div>
 //	</modal-dialog>
@@ -125,8 +125,8 @@
 //					</div>
 //					<div class="modal-actions">
 //						<aside>
-//							<button ng-click="confirmModal1=false" class="wfm-btn wfm-btn-invis-default">Cancel</button>
-//							<button ng-click="confirmModal1=false" class="wfm-btn wfm-btn-invis-primary">Apply</button>
+//							<button ng-click="confirmModal1=false" class="wfm-btn wfm-btn-invis-default">Yes</button>
+//							<button ng-click="confirmModal1=false" class="wfm-btn wfm-btn-invis-primary">No</button>
 //						</aside>
 //					</div>
 //				</div>
