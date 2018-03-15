@@ -1,4 +1,4 @@
-﻿@import './classicvariables';
+@import './classicvariables';
 
 //Overview
 //
@@ -19,7 +19,7 @@
 // <div class="subtext">Keep the number of clicks in mind when building a view. </div>
 // </li>
 // <li><b>Scalability</b>
-// <div class="subtext">Conceder how things works with any number of data items, from S to XL</div>
+// <div class="subtext">Consider how things works with any number of data items, from S to XL</div>
 // </li>
 // <li><b>Help the user</b>
 // <div class="subtext">"Nature doesn't like empty space, and neither do users".
@@ -53,14 +53,6 @@
 // </ul>
 //
 // Styleguide 0.1
-//
-
-// Code style
-//
-// More info here soon.
-// <a href="https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md">Until then...</a>
-//
-//Styleguide 0.2
 //
 
 .borderless{
@@ -178,7 +170,7 @@
 //  	</div>
 //  </div>
 //
-//Styleguide 0.3
+//Styleguide 0.2
 //
 
 //Basic layout
@@ -258,8 +250,6 @@
 //<div class="spacer material-depth-1">
 //	<p class="spacer material-depth-1"> Stacked </p>
 //</div>
-//<div class="spacer material-depth-1 raise"> Elevate on hover </div>
-//<div class="spacer material-depth-1 ng-cloak reveal-material" ng-click="dissapear=true" ng-class="{'hide-material':dissapear}"> Animated layer</div>
 //
 //Styleguide 1.1
 //
@@ -291,7 +281,7 @@
 // 	</tbody>
 // </table>
 //
-//Styleguide 1.1.1
+//Styleguide 1.2
 //
 
 //Components
@@ -307,14 +297,6 @@
 // In general, the smaller and more separate something is, the more saturated it can be to grab attention.
 // By providing common color variables we can have different themes and still keep a consistent feeling.
 // In the example below you can see how the colors are represented in different themes. You can also see the preferred text color for that color.
-// There are some predefined colors for standard text that will adapt to the theme automatically:
-//  <table class="wfm-table">
-//    <thead><tr><th>Variable</th><th>Description</th></tr></thead>
-//    <tbody>
-//      <tr><td>$text-color-standard</td><td>Standard color used in panels</td></tr>
-//      <tr><td>$text-color-muted</td><td>Slightly muted color for use on disabled/secondary text</td></tr>
-//    </tbody>
-//  </table>
 //
 //Styleguide 3
 //
@@ -339,7 +321,8 @@
 
 //Layout
 //
-//The layout consists of the flex grid. Since the grid is adapting to the number of items inside it but does not wrap, be careful not to use too many in one row. If many are needed, conceder using a tabbed container, a card-grid or spreading them out over several rows.
+//The default layout grid is a flex-row that splits its width evenly among the number of flex-items inside it (i.e one flex-item will take 100%, two flex-items will take 50%, four flex-items will take 25% and so on). The default layout will keep its flex-items in a row until the screen gets small enough that it gives each flex-item 100% width;
+//
 //<table class="wfm-table">
 //	<thead>
 //		<tr>
@@ -401,6 +384,35 @@
 //
 //
 
+//Fluid layout
+//
+// A fluid layout will wrap the flex-items into columns instead of dividing the width evenly depending on the number.
+// It is important to remember that if the items have different height, the tallest item will set the height for the whole row.
+//
+//Markup:
+//<div class="con-fluid-row">
+//<div class="con-fluid-flex" ng-repeat="item in bigList">
+// (<span ng-bind="item.id"></span>) Default to 1/3
+//</div>
+//</div>
+//
+//Styleguide 4.2
+//
+
+//Fluid layout (dense)
+//
+//A more dense version of the fluid layout for smaller elements.
+//
+//Markup:
+//<div class="con-fluid-row dense">
+//<div class="con-fluid-flex" ng-repeat="item in bigList">
+// (<span ng-bind="item.id"></span>) Default to 1/5
+//</div>
+//</div>
+//
+//Styleguide 4.3
+//
+
 //Panel
 //
 //The panel is the main container and the most versatile. It can house most elements and can be configured in a number of layouts.
@@ -434,7 +446,7 @@
 //  </div>
 //
 //
-//Styleguide 4.2
+//Styleguide 4.4
 
 //Tabbed panel
 //
@@ -514,9 +526,9 @@
 //  </div>
 //
 //
-//Styleguide 4.3
+//Styleguide 4.7
 
-//Tabbed panel with badges
+//Tabbed panel (badges)
 //
 //Adding a <a href="section-1.html#kssref-1-20">badge</a> to the tab label or the context menu icon give the user more information on what can be hidden inside the tab and draw attention to specific tabs.
 //
@@ -570,25 +582,33 @@
 //</div>
 //
 //
-//Styleguide 4.3.1
+//Styleguide 4.8
 
 //Wizard panel
 //
 //In case you want to guide the user through a series of steps you can use a wizard panel.
 //
 //
-//<div class="jsprewrap">
-//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
-//	<div ng-show="showjs">
-//		<code><pre>
+// <div class="jsprewrap">
+//   <div class="ksscopy kss-style" ng-click="showJs['wiz'] = !showJs['wiz']">
+//       <span ng-hide="showJs['wiz']">Show</span>
+//      <span ng-show="showJs['wiz']">Hide</span>
+//     JavaScript
+//     <i class="mdi mdi-code-tags pull-right"></i>
+//   </div>
+//   <div class="animate-show" ng-show="showJs['wiz']">
+//     <code>
+//       <pre class="prettyprint linenums lang-js">
+//
 //$scope.selectedIndex = 0;
 //$scope.nextTab = function() {
 //  var index = ($scope.selectedIndex === 50) ? 0 : $scope.selectedIndex + 1;
 //  $scope.selectedIndex = index;
 //};
-//		</pre></code>
-//	</div>
-//</div>
+//       </pre>
+//     </code>
+//   </div>
+// </div>
 //
 //Markup:
 //<div class="panel material-depth-1">
@@ -650,7 +670,7 @@
 //</div>
 //
 //
-//Styleguide 4.3.2
+//Styleguide 4.9
 
 //Form layout
 //
@@ -662,103 +682,189 @@
 //
 //If your view only contains a wfm-form, consider using our autofocus directive on the first text/number input to get the user started and possibly a floating action button as a submit.
 //
-//
-//Styleguide 4.4.0
 
 //Basic Form panel
 //
-//<div class="jsprewrap">
-//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
-//	<div ng-show="showjs">
-//		<code><pre>
+// <div class="jsprewrap">
+//   <div class="ksscopy kss-style" ng-click="showJs['form2'] = !showJs['form2']">
+//       <span ng-hide="showJs['form2']">Show</span>
+//      <span ng-show="showJs['form2']">Hide</span>
+//     JavaScript
+//     <i class="mdi mdi-code-tags pull-right"></i>
+//   </div>
+//   <div class="animate-show" ng-show="showJs['form2']">
+//     <code>
+//       <pre class="prettyprint linenums lang-js">
+//
 //$scope.reset = function(form) {
 //  if (form) {
 //    form.$setPristine();
 //    form.$setUntouched();
 //  }
 //};
-//		</pre></code>
-//	</div>
-//</div>
+//       </pre>
+//     </code>
+//   </div>
+// </div>
 //
 //Markup: form_panel.hbs
 //
 //
-//Styleguide 4.4.1
+//Styleguide 4.10
 
 //Devided Form panel
 //
 //Dividing the inputs into different sub-categories using headers can make the structure more clear.
 //
-//<div class="jsprewrap">
-//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
-//	<div ng-show="showjs">
-//		<code><pre>
+// <div class="jsprewrap">
+//   <div class="ksscopy kss-style" ng-click="showJs['form3'] = !showJs['form3']">
+//       <span ng-hide="showJs['form3']">Show</span>
+//      <span ng-show="showJs['form3']">Hide</span>
+//     JavaScript
+//     <i class="mdi mdi-code-tags pull-right"></i>
+//   </div>
+//   <div class="animate-show" ng-show="showJs['form3']">
+//     <code>
+//       <pre class="prettyprint linenums lang-js">
+//
 //$scope.reset = function(form) {
 //  if (form) {
 //    form.$setPristine();
 //    form.$setUntouched();
 //  }
 //};
-//		</pre></code>
-//	</div>
-//</div>
+//       </pre>
+//     </code>
+//   </div>
+// </div>
 //
 // Markup: form2_panel.hbs
 //
 //
-//Styleguide 4.4.2
+//Styleguide 4.11
 
 //Split Form panel
 //
 //The layout inside the form can be changed to give more space to certain parts, just remember to structure the inputs in a logical way.
 //
-//<div class="jsprewrap">
-//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
-//	<div ng-show="showjs">
-//		<code><pre>
+// <div class="jsprewrap">
+//   <div class="ksscopy kss-style" ng-click="showJs['form4'] = !showJs['form4']">
+//       <span ng-hide="showJs['form4']">Show</span>
+//      <span ng-show="showJs['form4']">Hide</span>
+//     JavaScript
+//     <i class="mdi mdi-code-tags pull-right"></i>
+//   </div>
+//   <div class="animate-show" ng-show="showJs['form4']">
+//     <code>
+//       <pre class="prettyprint linenums lang-js">
+//
 //$scope.reset = function(form) {
 //  if (form) {
 //    form.$setPristine();
 //    form.$setUntouched();
 //  }
 //};
-//		</pre></code>
-//	</div>
-//</div>
+//       </pre>
+//     </code>
+//   </div>
+// </div>
 //
 // Markup: form3_panel.hbs
 //
 //
-//Styleguide 4.4.3
+//Styleguide 4.12
 
-
-//Resources
-//
-//Here you can find some links to go further in CSS best practices
+//Naming and best practice
 //
 //Styleguide 9
 //
 //
 
-//Urls
+//States
 //
-// https://developer.mozilla.org/en-US/docs/Web/CSS
+//Setting the state correctly is important due to our online help, since the online help link is based on the state.
+//When a state changes, it will result in a new online help link which may cause customers to meet an empty page if this has not been handled in the online help.
+//Therefore, avoid creating temporary or hidden states as much as possible.
+//Talk to Lina if changing states or adding new ones.
 //
-// http://philipwalton.com/articles/css-architecture/
+//When creating a new state, name it using "spinal-case".
 //
-// http://styleguides.io/
+//When working to replace an existing state, name the new state "state-name-new" until its ready. When it is, replace it with "state-name".
 //
-// http://alistapart.com/article/creating-style-guides
+//Note: "config" cannot be used as a child state name.
 //
-// http://axbom.com/slaying-5-ux-myths-good-mankind/
+// <div class="jsprewrap">
+//   <div class="ksscopy kss-style" ng-click="showJs['states'] = !showJs['states']">
+//       <span ng-hide="showJs['states']">Show</span>
+//      <span ng-show="showJs['states']">Hide</span>
+//     JavaScript
+//     <i class="mdi mdi-code-tags pull-right"></i>
+//   </div>
+//   <div class="animate-show" ng-show="showJs['states']">
+//     <code>
+//       <pre class="prettyprint linenums lang-js">
 //
-// https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md
+// function stateConfig($stateProvider) {
+//   $stateProvider.state('example',
+//   {
+//     url: '/example',
+//     templateUrl: 'app/example/example.html',
+//     controller: 'ExampleController'
+//   })
+//   .state('example.child',
+//   {
+//     url: '/child',
+//     templateUrl: 'app/example/example-child.html',
+//     controller: 'ExampleChildController'
+//   })
+//   .state('example.another-view',
+//   {
+//     url: '/another-view',
+//     templateUrl: 'app/example/another-view.html',
+//     controller: 'ExampleSecondViewController'
+//   })
+// }
+//       </pre>
+//     </code>
+//   </div>
+// </div>
 //
 //Styleguide 9.1
 
+//Translations
+//
+// Add translation keys to the resource file and provide the string and a description.
+// If you need to change the string on a previously added key, please choose one of the following options:
+//<br/>
+// Remove the key completely (in all translation files as well) and add a new key
+// <b>OR</b>
+// Change the string for the original key, and delete all previous translation of that key
+// </ul>
+//
+//Styleguide 9.2
+//
+
+//Resources
+//
+//Here you can find some links to go further in JS, CSS and UX best practices
+//We also provide some links to tools and libs that have been used to create this styleguide for future reference
+//
+//Styleguide 10
+//
+//
+
+//Links
+//
+//
+//Styleguide 10.1
+
 html{
   overflow-y: auto!important;
+  background: rgb(235, 235, 235)!important;
+}
+
+body{
+  background: transparent!important;
 }
 
 .spacer {
@@ -767,376 +873,478 @@ html{
   text-align:center;
   display: inline-block;
   background: white;
-  }
-
-.jsprewrap{
-  width: 98%;
-  margin: 0 auto;
-  cursor:pointer;
 }
 
-.con-flex,.form-input-wrap{
+.con-flex,.form-input-wrap, .con-fluid-flex{
   border:1px dashed $gray026;
 }
 
 .ksscopy{
-  margin: -10px -10px 10px -10px;
   padding: 10px;
-  border: 1px solid #ccc;
-  background-color: #eee;
+  border-bottom: 1px solid #ccc;
   font-weight: bold;
+  cursor: pointer;
+  background: rgba(0,0,0,0.06);
+}
+
+.kss-modifier__wrapper{
+  border: none!important;
 }
 
 /*template styles*/
 .kss-sidebar {
-	position:fixed!important;
+  position:fixed!important;
 }
-
-#kss-node .kss-title__permalink {
-    font-size: 30px;
-    font-weight: normal;
+.sidebar-toggle{
+  position: fixed!important;
+  top: 20px;
+  left: 0px;
+  z-index: 100;
+  background: white!important;
 }
-
-#kss-node .kss-section {
-	max-width: 80%;
-}
-
-.kss-style code {
-	font-size: 12px;
-	line-height: 14px !important;
-	font-family: Menlo,Monaco,"Andale Mono","lucida console","Courier New",monospace;
-}
-
-#kss-node ol.linenums li {
-	border:none;
-}
-
 #kss-node .kss-sidebar {
   background: white;
   top: 0;
-  z-index:9;
+  left: 0;
+  z-index:90;
   max-height: 100%;
   overflow-y: auto;
+  padding: 0;
+}
+.kss-sidebar-hidden{
+  visibility: hidden;
+}
+#kss-node .kss-title__permalink {
+  font-size: 30px;
+  font-weight: normal;
+}
+.kss-header{
+  margin: 0!important;
+  padding: 1rem;
 }
 
+.kss-nav__menu-item {
+  padding: 0.5rem;
+  a {
+    color: $text-color-standard!important;
+  }
+}
+
+.kss-nav__menu > .kss-nav__menu-item {
+  padding: 0;
+  & > a {
+    display: block;
+    height: 100%;
+    padding: 0.5rem;
+  }
+  & > a:hover {
+    background: $gray012;
+  }
+}
+
+.kss-nav__menu-child{
+  background: $gray012;
+  .kss-nav__menu-item:hover{
+  background: $gray012!important;
+  }
+
+}
+
+.section-hero{
+  background: $primary!important;
+  outline: 420px solid $primary;
+  z-index: -1;
+  position: relative;
+
+  .kss-style{
+    color: white!important;
+
+    a{
+      color: white!important;
+    }
+
+    h1{
+      text-shadow: 0 2px 5px rgba(0,0,0,.26);
+    }
+
+    .kss-title__ref{
+      display: none!important;
+    }
+  }
+}
+
+.kss-style code {
+  font-size: 12px;
+  line-height: 14px !important;
+  font-family: Menlo,Monaco,"Andale Mono","lucida console","Courier New",monospace;
+}
+
+#kss-node ol.linenums li {
+  border:none;
+}
+#kss-node .kss-section{
+  max-width: 100%;
+  background: white;
+  padding: 0.5rem;
+  margin-bottom: 2rem!important;
+}
 @media screen and (min-width: 769px){
-	#kss-node .kss-sidebar {
-	  background: white;
-	  top: 0;
-	  z-index:9;
-	  max-height: 100%;
-	  overflow-y: auto;
-	}
+  #kss-node .kss-sidebar {
+    background: white;
+    top: 0;
+    bottom: 0;
+    z-index:9;
+    max-height: 100%;
+    overflow-y: auto;
+  }
+  #kss-node .kss-section {
+    max-width: 98%;
+  }
+}
+
+li.L0 > span:nth-child(1){
+  display: none!important;
 }
 
 .styleguide-break{
-	background-color:$orange-400;
-	color:$gray087;
-	padding:$full-padding;
+  background-color:$orange-400;
+  color:$gray087;
+  padding:$full-padding;
 
-	span:before{
-		content:"This element does not exist in material design. ";
-	}
+  span:before{
+    content:"This element does not exist in material design. ";
+  }
 }
 
 .angular-req span:before{
-	content:"This element require additional angular directives. "!important;
+  content:"This element require additional angular directives. "!important;
 }
 
 md-tooltip {
-    position: fixed;
+  position: fixed;
 }
 
 .darktheme-background {
-    background: #303030 !important;
-    color: rgba(255,255,255,0.87)!important;
+  background: #303030 !important;
+  color: rgba(255,255,255,0.87)!important;
+  overflow-x: hidden;
+
+  article{
+    color: #d1d1d1;
+  }
 }
 
+
+
 .classictheme-background {
-    background: $gray012 !important;
-    color: $text-color-standard;
+  background: $gray012 !important;
+  color: $text-color-standard;
+  overflow-x: hidden;
 }
 
 
 //Color swatches
+.swatch{
+  transform-origin: center;
+  transform: scale(0.9);
+}
 .swatch-list {
-
-	.blue-500-swatch {
-			background:$blue-500!important;
-      p{
-        color:white;
-      }
-	}
-	.blue-300-swatch {
-			background:$blue-300!important;
-	}
-	.blue-100-swatch {
-			background:$blue-100!important;
-	}
-
-	.green-500-swatch {
-		background:$green-500!important;
-	}
-	.green-300-swatch {
-		background:$green-300!important;
-	}
-	.green-100-swatch {
-		background:$green-100!important;
-	}
-
-	.purple-100-swatch {
-		background:$purple-100!important;
-	}
-	.purple-300-swatch {
-		background:$purple-300!important;
-    p{
-      color:white;
-    }
-	}
-	.purple-500-swatch {
-		background:$purple-500!important;
-    p{
-      color:white;
-    }
-	}
-
-	.brown-100-swatch {
-		background:$brown-100!important;
-	}
-	.brown-300-swatch {
-		background:$brown-300!important;
-    p{
-      color:white;
-    }
-	}
-	.brown-500-swatch {
-		background:$brown-500!important;
-    p{
-      color:white;
-    }
-	}
-
-	.teal-100-swatch {
-		background:$teal-100!important;
-	}
-	.teal-300-swatch {
-		background:$teal-300!important;
-	}
-	.teal-500-swatch {
-		background:$teal-500!important;
-    p{
-      color:white;
-    }
-	}
-
-	.pink-500-swatch {
-		background:$pink-500!important;
-    p{
-      color:white;
-    }
-	}
-	.pink-300-swatch {
-		background:$pink-300!important;
-    p{
-      color:white;
-    }
-	}
-	.pink-100-swatch {
-		background:$pink-100!important;
-	}
-
-	.orange-400-swatch {
-			background:$orange-400!important;
-	}
-	.orange-500-swatch {
-			background:$orange-500!important;
-	}
-	.orange-600-swatch {
-			background:$orange-600!important;
-	}
-	.red-800-swatch {
-			background:$red-800!important;
-      p{
-        color:white;
-      }
-	}
-	.red-700-swatch {
-			background:#EF5350!important;
-	}
-	.red-600-swatch {
-			background:$red-600!important;
-	}
-	.gray-054-swatch {
-			background:$gray054!important;
-      p{
-        color:white;
-      }
-	}
-	.gray-300-swatch {
-			background:$gray-300!important;
-	}
-	.gray-012-swatch {
-			background:$gray012!important;
-	}
-	.gray-026-swatch {
-			background:$gray026!important;
-	}
-	.gray-087-swatch {
-			background:$gray087!important;
-	}
-	.gray-100-swatch {
-			background:$gray100!important;
-	}
-  .gray-500-swatch {
-      background:$gray-500!important;
+  .spacer{
+    width: 100%;
+    height: 100px;
+    background: transparent!important;
   }
-	.white-swatch {
-			background:$white!important;
-	}
+
+  .blue-500-swatch {
+    background:$blue-500!important;
+    p{
+      color:white;
+    }
+  }
+  .blue-300-swatch {
+    background:$blue-300!important;
+  }
+  .blue-100-swatch {
+    background:$blue-100!important;
+  }
+
+  .green-500-swatch {
+    background:$green-500!important;
+  }
+  .green-300-swatch {
+    background:$green-300!important;
+  }
+  .green-100-swatch {
+    background:$green-100!important;
+  }
+
+  .purple-100-swatch {
+    background:$purple-100!important;
+  }
+  .purple-300-swatch {
+    background:$purple-300!important;
+    p{
+      color:white;
+    }
+  }
+  .purple-500-swatch {
+    background:$purple-500!important;
+    p{
+      color:white;
+    }
+  }
+
+  .brown-100-swatch {
+    background:$brown-100!important;
+  }
+  .brown-300-swatch {
+    background:$brown-300!important;
+    p{
+      color:white;
+    }
+  }
+  .brown-500-swatch {
+    background:$brown-500!important;
+    p{
+      color:white;
+    }
+  }
+
+  .teal-100-swatch {
+    background:$teal-100!important;
+  }
+  .teal-300-swatch {
+    background:$teal-300!important;
+  }
+  .teal-500-swatch {
+    background:$teal-500!important;
+    p{
+      color:white;
+    }
+  }
+
+  .pink-500-swatch {
+    background:$pink-500!important;
+    p{
+      color:white;
+    }
+  }
+  .pink-300-swatch {
+    background:$pink-300!important;
+    p{
+      color:white;
+    }
+  }
+  .pink-100-swatch {
+    background:$pink-100!important;
+  }
+
+  .orange-400-swatch {
+    background:$orange-400!important;
+  }
+  .orange-500-swatch {
+    background:$orange-500!important;
+  }
+  .orange-600-swatch {
+    background:$orange-600!important;
+  }
+  .red-800-swatch {
+    background:$red-800!important;
+    p{
+      color:white;
+    }
+  }
+  .red-700-swatch {
+    background:#EF5350!important;
+  }
+  .red-600-swatch {
+    background:$red-600!important;
+  }
+  .gray-054-swatch {
+    background:$gray054!important;
+    p{
+      color:white;
+    }
+  }
+  .gray-300-swatch {
+    background:$gray-300!important;
+  }
+  .gray-012-swatch {
+    background:$gray012!important;
+  }
+  .gray-026-swatch {
+    background:$gray026!important;
+  }
+  .gray-087-swatch {
+    background:$gray087!important;
+  }
+  .gray-100-swatch {
+    background:$gray100!important;
+  }
+  .gray-500-swatch {
+    background:$gray-500!important;
+  }
+  .white-swatch {
+    background:$white!important;
+  }
 
   //dark theme starts here
 
   .blue-500-swatch-dark {
-			background: #0a84d6!important;
-	}
-	.blue-300-swatch-dark {
-			background: #136fac!important;
-	}
-	.blue-100-swatch-dark {
-			background:#1d5a83 !important;
-	}
-
-	.green-500-swatch-dark {
-		background:#84ad32!important;
-	}
-	.green-300-swatch-dark {
-		background:#6f8e32 !important;
-	}
-	.green-100-swatch-dark {
-		background:#627b32!important;
-	}
-
-	.purple-100-swatch-dark {
-		background:#9C27B0!important;
-	}
-	.purple-300-swatch-dark {
-		background:#BA68C8!important;
-	}
-	.purple-500-swatch-dark {
-		background:#E1BEE7!important;
-    p{
-      color:$text-color-standard!important;
-    }
-	}
-
-	.brown-100-swatch-dark {
-		background:#795548!important;
-	}
-	.brown-300-swatch-dark {
-		background:#A1887F!important;
-    p{
-      color:$text-color-standard!important;
-    }
-	}
-	.brown-500-swatch-dark {
-		background: #D7CCC8!important;
-    p{
-      color:$text-color-standard!important;
-    }
-	}
-
-	.teal-100-swatch-dark {
-		background: #009688 !important;
-	}
-	.teal-300-swatch-dark {
-		background:#4DB6AC !important;
-    p{
-      color:$text-color-standard!important;
-    }
-	}
-	.teal-500-swatch-dark {
-		background:#B2DFDB!important;
-    p{
-      color:$text-color-standard!important;
-    }
-	}
-
-	.pink-500-swatch-dark {
-		background: #F8BBD0!important;
-    p{
-      color:$text-color-standard!important;
-    }
-	}
-	.pink-300-swatch-dark {
-		background: #F06292!important;
-	}
-	.pink-100-swatch-dark {
-		background:#E91E63!important;
-	}
-
-	.orange-400-swatch-dark {
-			background:#c27c36!important;
-	}
-	.orange-500-swatch-dark {
-			background:#d68636!important;
-	}
-	.orange-600-swatch-dark {
-			background: #ea9036 !important;
-	}
-	.red-800-swatch-dark {
-			background:#ee8f7d!important;
-      p{
-        color:$text-color-standard!important;
-      }
-	}
-	.red-700-swatch-dark {
-			background:#EF5350!important;
-	}
-	.red-600-swatch-dark {
-			background:#ca3333!important;
-	}
-	.gray-054-swatch-dark {
-			background: rgba(107, 107, 107, 1)!important;
-	}
-	.gray-300-swatch-dark {
-			background:#555555!important;
-	}
-	.gray-012-swatch-dark {
-			background:#303030!important;
-	}
-	.gray-026-swatch-dark {
-			background: rgba(0,0,0,0.26)!important;
-	}
-	.gray-087-swatch-dark {
-			background: #d1d1d1!important;
-      p{
-        color:$text-color-standard!important;
-      }
-	}
-	.gray-100-swatch-dark {
-			background:#9E9E9E!important;
-	}
-  .gray-500-swatch-dark {
-      background:#9E9E9E!important;
+    background: #0a84d6!important;
   }
-	.white-swatch-dark {
-			background: #424242!important;
-	}
+  .blue-300-swatch-dark {
+    background: #136fac!important;
+  }
+  .blue-100-swatch-dark {
+    background:#1d5a83 !important;
+  }
 
-	li{
-		position:relative;
-		width: 100px;
-		height: 100px;
+  .green-500-swatch-dark {
+    background:#84ad32!important;
+  }
+  .green-300-swatch-dark {
+    background:#6f8e32 !important;
+  }
+  .green-100-swatch-dark {
+    background:#627b32!important;
+  }
 
-		.white-color-text{
-			color:$white;
-		}
+  .purple-100-swatch-dark {
+    background:#9C27B0!important;
+  }
+  .purple-300-swatch-dark {
+    background:#BA68C8!important;
+  }
+  .purple-500-swatch-dark {
+    background:#E1BEE7!important;
+    p{
+      color:$text-color-standard!important;
+    }
+  }
 
-		p{
-			left:0;
-			right:0;
-			bottom:0;
-			position:absolute;
-		}
-	}
+  .brown-100-swatch-dark {
+    background:#795548!important;
+  }
+  .brown-300-swatch-dark {
+    background:#A1887F!important;
+    p{
+      color:$text-color-standard!important;
+    }
+  }
+  .brown-500-swatch-dark {
+    background: #D7CCC8!important;
+    p{
+      color:$text-color-standard!important;
+    }
+  }
+
+  .teal-100-swatch-dark {
+    background: #009688 !important;
+  }
+  .teal-300-swatch-dark {
+    background:#4DB6AC !important;
+    p{
+      color:$text-color-standard!important;
+    }
+  }
+  .teal-500-swatch-dark {
+    background:#B2DFDB!important;
+    p{
+      color:$text-color-standard!important;
+    }
+  }
+
+  .pink-500-swatch-dark {
+    background: #F8BBD0!important;
+    p{
+      color:$text-color-standard!important;
+    }
+  }
+  .pink-300-swatch-dark {
+    background: #F06292!important;
+  }
+  .pink-100-swatch-dark {
+    background:#E91E63!important;
+  }
+
+  .orange-400-swatch-dark {
+    background:#c27c36!important;
+  }
+  .orange-500-swatch-dark {
+    background:#d68636!important;
+  }
+  .orange-600-swatch-dark {
+    background: #ea9036 !important;
+  }
+  .red-800-swatch-dark {
+    background:#ee8f7d!important;
+    p{
+      color:$text-color-standard!important;
+    }
+  }
+  .red-700-swatch-dark {
+    background:#EF5350!important;
+  }
+  .red-600-swatch-dark {
+    background:#ca3333!important;
+  }
+  .gray-054-swatch-dark {
+    background: rgba(107, 107, 107, 1)!important;
+  }
+  .gray-300-swatch-dark {
+    background:#555555!important;
+  }
+  .gray-012-swatch-dark {
+    background:#303030!important;
+  }
+  .gray-026-swatch-dark {
+    background: rgba(0,0,0,0.26)!important;
+  }
+  .gray-087-swatch-dark {
+    background: #d1d1d1!important;
+    p{
+      color:$text-color-standard!important;
+    }
+  }
+  .gray-100-swatch-dark {
+    background:#9E9E9E!important;
+  }
+  .gray-500-swatch-dark {
+    background:#9E9E9E!important;
+  }
+  .white-swatch-dark {
+    background: #424242!important;
+  }
+
+  li{
+    position:relative;
+    height: 250px;
+    text-align: left;
+
+    article{
+      left:0;
+      right:0;
+      bottom:0;
+      position:absolute;
+      background: $white;
+      height: 100px;
+      padding: 10px;
+    }
+  }
 }
+
+//for fix the style of date range picker due to the boostrap version
+.date-info-calendar-wrapper {
+  .wfm-datepicker .btn{
+    border-radius: 0;
+    font-size: 12px;
+    padding: 5px 8px;
+    outline: 0!important;
+    line-height: 1.5;
+  }
+}
+
+wfm-calendar-picker-body>.date-info-wrapper .select-date-info-wrapper {
+    height: 42.5%!important;
+  }

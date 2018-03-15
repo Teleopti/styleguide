@@ -1,35 +1,42 @@
-(function() {
+(function () {
 
     'use strict';
 
-    angular.module('wfm.timerangepicker', [])
-           .directive('timepickerWrap', ['$locale', timepickerWrap])
-           .directive('timeRangePicker', ['$filter', timeRangePicker]);
+    angular.module('wfm.timerangepicker', ['pascalprecht.translate'])
+        .directive('timepickerWrap', ['$locale', timepickerWrap])
+        .directive('timeRangePicker', ['$filter', timeRangePicker]);
 
     var defaultTemplate = 'directives/time-range-picker/time-range-picker.tpl.html';
 
     function timeRangePicker($filter) {
         return {
-            templateUrl: function(element, attrs) {
+            templateUrl: function (element, attrs) {
                 return attrs.templateUrl || defaultTemplate;
             },
             scope: {
-                disableNextDay: '=?'
+                disableNextDay: '=?',
+                maxHoursRange: '=?'
             },
-            controller: ['$scope', '$element', timeRangePickerCtrl],
+            controller: ['$scope', '$element', '$translate', timeRangePickerCtrl],
             require: ['ngModel', 'timeRangePicker'],
             transclude: true,
             link: postlink
         };
 
-        function timeRangePickerCtrl($scope, $element) {
+        function timeRangePickerCtrl($scope, $element, $translate) {
 
             /* jshint validthis: true */
 
             var vm = this;
             $element.addClass('wfm-time-range-picker-wrap');
 
+            function format(target, arg) {
+                return target.replace('{0}', arg);
+            }
+
             $scope.toggleNextDay = toggleNextDay;
+            //$scope.invalidTimeRange = 'The period cannot exceed 24 hours.'; //$translate('InvalidHoursRange');
+            $scope.invalidTimeRange = format($translate.instant('InvalidHoursRange'), $scope.maxHoursRange);
 
             vm.mutateMoment = mutateMoment;
             vm.sameDate = sameDate;
@@ -62,6 +69,7 @@
             ngModel.$formatters.push(formatModel);
             ngModel.$render = render;
             ngModel.$validators.order = validateCorrectOrder;
+            ngModel.$validators.range = validateRange;
 
             function formatModel(modelValue) {
                 if (!modelValue) {
@@ -106,6 +114,14 @@
                     return true;
                 }
                 return modelValue.startTime <= modelValue.endTime;
+            }
+
+            function validateRange(modelValue, viewValue) {
+                if (modelValue === undefined || scope.maxHoursRange === undefined || scope.maxHoursRange === '') {
+                    return true;
+                }
+
+                return modelValue.endTime - modelValue.startTime < parseInt(scope.maxHoursRange) * 1000 * 60 * 60;
             }
 
             function makeViewValue(startTime, endTime, nextDay) {

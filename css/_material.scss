@@ -4,9 +4,8 @@ outline: -webkit-focus-ring-color auto 0;
 
 body{
 	background-color: $gray012;
-	color:$gray087;
+	color:$text-color-standard;
   font-size: $standard-font-size!important;
-	overflow-x: hidden;
 	font-family: Calibri,Segoe,Segoe UI,Arial,sans-serif!important;
 
 	a:focus, a:hover{
@@ -35,7 +34,7 @@ dd {
 
 .raise{
 	cursor:pointer;
-	transition: 0.2s all ease-in-out;
+	transition: $transition-timing;
 }
 
 .raise:hover{
@@ -171,4 +170,32 @@ dd {
 .flex-column {
 	display: flex;
 	flex-direction: column;
+}
+
+.con-fluid-row {
+  display: grid;
+  grid-gap: 0px;
+  grid-template-columns: repeat(auto-fill, minmax(33%, auto));
+}
+.con-fluid-flex{
+  padding: $full-padding;
+	.panel{
+		margin-bottom: 0!important;
+	}
+}
+
+.dense{
+  grid-template-columns: repeat(auto-fill, minmax(19%, auto));
+}
+
+@media screen and (max-width: 960px) {
+  .con-fluid-row{
+    grid-template-columns: repeat(auto-fill, minmax(49%, auto))!important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .con-fluid-row{
+    grid-template-columns: repeat(auto-fill, minmax(100%, auto))!important;
+  }
 }

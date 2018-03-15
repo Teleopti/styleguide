@@ -102,8 +102,8 @@ module.exports = function (grunt) {
                     'node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js',
                     'node_modules/angular-translate/dist/angular-translate.min.js',
                     'node_modules/angular-dynamic-locale/dist/tmhDynamicLocale.js',
-                    'node_modules/angular-moment/angular-moment.min.js',
                     'node_modules/moment/min/moment-with-locales.min.js',
+                    'node_modules/angular-moment/angular-moment.min.js',
                     'vendor/angular-bootstrap-persian-datepicker-master/persiandate.js',
                     'vendor/angular-bootstrap-persian-datepicker-master/persian-datepicker-tpls.js',
                     'vendor/ui-bootstrap-custom-build/datepicker.directive.ext.js',
@@ -111,7 +111,8 @@ module.exports = function (grunt) {
                     'vendor/d3/d3.min.js',
                     'vendor/c3/c3.min.js',
                     'vendor/c3/c3-angular.min.js',
-                    'vendor/ui-grid/uigrid.disable-animation.directive.js'
+                    'vendor/ui-grid/uigrid.disable-animation.directive.js',
+                    'vendor/ui-grid/ui-grid.fix.js'
                 ],
                 dest: 'styleguide/dist/dependencies.min.js'
             },

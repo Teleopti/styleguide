@@ -13,7 +13,7 @@
 //Markup:
 //	<work-picker working-hours="model" over-night-switch="true" time-format-switch="true">
 //
-//Styleguide 2.7
+//Styleguide 2.10
 //
 
 .working-hour-picker{
@@ -23,18 +23,18 @@
 		background: rgba(0,0,0,0.1);
 	}
 	.mini-active{
-		background: $blue-300;
+		background: $secondary;
 		color:$white;
 		box-shadow: 0 8px 17px 0 rgba(0,0,0,.2);
 	}
 	.mini-success{
-		background: $green-100;
+		background: $highlight;
 		color:$text-color-standard;
 		box-shadow: 0 8px 17px 0 rgba(0,0,0,.2);
 	}
 	.work-day{
 		opacity: 1;
-		transition: all 0.5s cubic-bezier(.25,.8,.25,1);
+		transition: $transition-timing;
 	}
 	.inactive-work-day{
 		opacity: 0;
@@ -72,13 +72,20 @@
 	}
 }
 
-//old work hour picker
-.working-hours-radio{
-  margin-top: $full-padding;
-  display: flex;
-  display: -ms-flexbox;
-}
+//Old working-hours-picker
+.working-hours-row {
+	border-top: 1px solid $hover;
 
-.working-hours-row{
-	border-top: 1px solid $gray012;
+	.working-hours-period, .working-hours-day, .working-hours-action {
+		align-self: center;
+	}
+
+	.working-hours-period {
+		flex-grow: 2;
+	}
+
+	.working-hours-action {
+		flex-grow: 1.5;
+	}
+
 }

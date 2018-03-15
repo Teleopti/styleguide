@@ -1,1 +1,6 @@
-<span class="wfm-badge material-depth-1 grow-out" ng-class="$ctrl.status"  ng-if="$ctrl.badgeModel>0">{{$ctrl.badgeModel}}</span>
+<span class="wfm-badge material-depth-1 grow-out" ng-class="$ctrl.status" ng-show="$ctrl.badgeModel>0 || $ctrl.showEmpty">
+  <p id="pulse-element"></p>
+  <span class="wfm-badge-content" ng-if="$ctrl.badgeModel>0" >
+    {{$ctrl.badgeModel}}
+  </span>
+</span>

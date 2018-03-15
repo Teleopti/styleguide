@@ -40,7 +40,11 @@
                 }
             };
 
-            $rootScope.wfmNotices.push(notice);
+            var removeIndex = $rootScope.wfmNotices.map(function(item) { return item.content; }).indexOf(notice.content);
+            if (removeIndex == -1) {
+                $rootScope.wfmNotices.push(notice);
+            }
+
             return {
                 destroy: notice.destroy
             };

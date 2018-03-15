@@ -1,4 +1,4 @@
-describe('wfm-multiple-search-input directive', function() {
+describe('wfm-multiple-search-input directive', function () {
     var element, scope, vm;
 
     beforeEach(function () {
@@ -15,7 +15,7 @@ describe('wfm-multiple-search-input directive', function() {
 
     beforeEach(inject(function (_$compile_, _$rootScope_) {
         scope = _$rootScope_.$new();
-        var elementCompile = _$compile_('<wfm-multiple-search-input title="\'Filter people\'" search-options="searchOptions" search-callback="searchKeyword"></wfm-multiple-search-input>');
+        var elementCompile = _$compile_('<wfm-multiple-search-input search-title="\'Filter people\'" search-options="searchOptions" search-callback="searchKeyword"></wfm-multiple-search-input>');
         element = elementCompile(scope);
         scope.searchOptions = {
             keyword: '',
@@ -32,13 +32,13 @@ describe('wfm-multiple-search-input directive', function() {
         }
     }));
 
-    it('should display search fields', function() {
+    it('should display search fields', function () {
         vm.showAdvancedSearchOption = true;
         scope.$apply();
         var inputs = element.find('form').find('input');
         expect(inputs.length).toBe(scope.searchOptions.searchFields.length);
     });
-    it('should synchronize the term expression to search fields accordingly', function() {
+    it('should synchronize the term expression to search fields accordingly', function () {
         vm.showAdvancedSearchOption = true;
         scope.searchOptions.keyword = 'FirstName:Ash;LastName:Bcd';
         vm.validateSearchKeywordChanged();
@@ -46,7 +46,7 @@ describe('wfm-multiple-search-input directive', function() {
         expect(vm.advancedSearchForm['FirstName']).toBe('Ash');
         expect(vm.advancedSearchForm['LastName']).toBe('Bcd');
     });
-    it('should not synchronize the term expression with wrong field key to search fields accordingly', function() {
+    it('should not synchronize the term expression with wrong field key to search fields accordingly', function () {
         vm.showAdvancedSearchOption = true;
         scope.searchOptions.keyword = 'First name:Ash;Last name:Bcd';
         vm.validateSearchKeywordChanged();
@@ -71,6 +71,44 @@ describe('wfm-multiple-search-input directive', function() {
         expect(vm.searchOptions.searchKeywordChanged).toBe(true);
         expect(scope.searchOptions.keyword).toBe(searchExpression);
         expect(scope.searchOptions.keyword).toBe('FirstName: Ash22; LastName: Bcd');
+    });
+
+    it('shoulde invoke search callback by pressing Enter', function () {
+        var searchExpression;
+        scope.searchOptions.keyword = 'Ashley Bill';
+        scope.searchKeyword = function (expression) {
+            searchExpression = expression;
+        };
+        scope.$apply();
+
+        vm.searchTextChange();
+
+        var keyupEvent = {
+            which: 13
+        };
+        vm.searchTextInputKeyup(keyupEvent);
+
+        expect(vm.showAdvancedSearchOption).toBe(false);
+        expect(vm.searchOptions.searchKeywordChanged).toBe(true);
+        expect(scope.searchOptions.keyword).toBe(searchExpression);
+        expect(scope.searchOptions.keyword).toBe('Ashley Bill');
+    });
+
+    it('shoulde invoke search callback by clicking search icon', function () {
+        var searchExpression;
+        scope.searchOptions.keyword = 'Ashley Bill';
+        scope.searchKeyword = function (expression) {
+            searchExpression = expression;
+        };
+        scope.$apply();
+
+        vm.searchTextChange();
+        vm.searchIconClickFn();
+
+        expect(vm.showAdvancedSearchOption).toBe(false);
+        expect(vm.searchOptions.searchKeywordChanged).toBe(true);
+        expect(scope.searchOptions.keyword).toBe(searchExpression);
+        expect(scope.searchOptions.keyword).toBe('Ashley Bill');
     });
 
     it('should parse terms correctly by search with option', inject(function () {
@@ -115,5 +153,14 @@ describe('wfm-multiple-search-input directive', function() {
 
         expect(vm.advancedSearchForm.FirstName).toEqual('John King');
         expect(vm.advancedSearchForm.Organization).toEqual(undefined);
+    }));
+
+    it('should clear the advanced search field and simple search input when click clear button', inject(function () {
+        vm.searchOptions.keyword = 'FirstName: Ashley Smith; Organization: London Shenzhen';
+        vm.validateSearchKeywordChanged();
+        vm.clearSearch();
+        expect(!!vm.searchOptions.keyword).toEqual(false);
+        expect(!!vm.advancedSearchForm.FirstName).toEqual(false);
+        expect(!!vm.advancedSearchForm.Organization).toEqual(false);
     }));
 });
