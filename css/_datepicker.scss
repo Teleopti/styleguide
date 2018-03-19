@@ -292,9 +292,6 @@ wfm-calendar-picker {
 
 wfm-calendar-picker-header {
 	min-height: 35px;
-	.notice-info {
-		background-color: $blue-100 !important;
-	}
 
 	.card-context {
 		margin: 0;
@@ -399,13 +396,41 @@ wfm-calendar-picker-body > .date-info-calendar-wrapper{
 		max-width: 260px;
 		overflow: hidden;
 
+		.btn-default {
+			border-radius: 0;
+		}
+
+		thead button.btn-default.pull-left,
+		thead button.btn-default.pull-right {
+			padding: 15px 10px;
+		}
+
+		thead button.btn-default i:hover:before{
+			box-shadow: none;
+			background: none;
+		}
+
+		thead button.btn-default:hover,
+		tbody button.btn-default:hover {
+			background-color: $secondary !important;
+		}
+
 		.uib-monthpicker, .uib-yearpicker {
 			table {
 				margin: 0 auto;
 			}
 
-			tbody button.btn-default:hover, button.btn-default.active{
-				background-color: $blue-100 !important;
+			thead th {
+				padding: 0;
+			}
+
+			tbody button.btn-default {
+				padding: 15px 10px;
+			}
+
+			button.btn-default.active {
+				background-color: $secondary !important;
+
 				.text-info{
 					color: $text-color-standard;
 				}
