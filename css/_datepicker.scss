@@ -175,7 +175,7 @@
 // The single date picker is based on bootstraps datepicker and use to take a single date easily.
 // To use the single date picker as pop-up style please wrap it into <a href=section-1.html#kssref-1-20>pop-up menu</a> (section 1.20). <br><br>
 // Click on the calendar icon (left top corner) to quickly display 'today' within calendar view.<br>
-// Hover and click on the selected date section to reset the selected date to empty. 
+// Hover and click on the selected date section to reset the selected date to empty.
 //
 //Markup:
 //<h1>With week numbers</h1>
@@ -198,7 +198,7 @@
 //<tr><td>ng-model</td><td>Bind to a js-object representing the date range. The object is composed by <code>startDate</code> and <code>endDate</code> key-value pairs. The date obejct default value is <code>null</code>./td><td>true</td></tr>
 //<tr><td>show-week</td><td>Bind to a Bool type <code>true</code> or <code>false</code> value to display week numbers on the side of calendar view. </td><td>false</td></tr>
 //<tr><td>interval-rule</td><td>select special interval rule to validate the date ranges by only <code>week</code> type or <code>month</code> type. </td><td>false</td></tr>
-//<tr><td>custom-validation-function</td><td>Define additional validations conditions by a binding function. The reture of custom validation functions should be a string type that display the validate error/warning information. It could be a translate key that support by $translate.</td><td>false</td></tr>
+//<tr><td>custom-validation-function</td><td>Define additional validations conditions by a binding function. The reture of custom validation functions should be a $translated resource key string type that display the validate error/warning information.</td><td>false</td></tr>
 //</table>
 //
 //Markup:
@@ -213,10 +213,10 @@
 // Date range picker with custom validation
 //
 // The datepicker is based on bootstraps datepicker and all we do is wrap it and apply some special classes to make it more compatible with material design.
-// To use the date range picker as pop-up style please wrap it into <a href=section-1.html#kssref-1-20>pop-up menu</a> (section 1.20). 
+// To use the date range picker as pop-up style please wrap it into <a href=section-1.html#kssref-1-20>pop-up menu</a> (section 1.20).
 // Define additional validation  conditions by a binding function. The return of custom validation functions should be a string type that display the validate error/warning information. It could be a translate key that support by $translate. <br><br>
 // Click on the calendar icon (left top corner) to quickly display 'today' within calendar view.<br>
-// Hover and click on the selected date section to reset the selected date to empty.  
+// Hover and click on the selected date section to reset the selected date to empty.
 //
 // <div class="jsprewrap">
 //   <div class="ksscopy kss-style" ng-click="showJs['cardDemo1'] = !showJs['cardDemo1']">
@@ -228,14 +228,14 @@
 //   <div class="animate-show" ng-show="showJs['cardDemo1']">
 //     <code>
 //       <pre class="prettyprint linenums lang-js">
-// 
+//
 //          $scope.customValid = function (data) {
 //            if(data.startDate - data.endDate > 0) {
-//              return "[custom validate]: your startDate is later than your endDate"; 
+//              return "[custom validate]: your startDate is later than your endDate";
 //            }
 //            if(data.startDate - data.endDate < 0) {
-//              return "[custom validate]: your startDate is earlier than your endDate"; 
-//            }   
+//              return "[custom validate]: your startDate is earlier than your endDate";
+//            }
 //          }
 //
 //       </pre>
@@ -254,7 +254,7 @@
 // The datepicker is based on bootstraps datepicker and all we do is wrap it and apply some special classes to make it more compatible with material design.
 // To use the date range picker as pop-up style please wrap it into pop-up menu (section 1.20). <br><br>
 // Click on the calendar icon (left top corner) to quickly display 'today' within calendar view.<br>
-// Hover and click on the selected date section to reset the selected date to empty. 
+// Hover and click on the selected date section to reset the selected date to empty.
 //
 //Markup:
 //<h1>validate only exam with week interval</h1>
@@ -270,7 +270,7 @@
 // The datepicker is based on bootstraps datepicker and all we do is wrap it and apply some special classes to make it more compatible with material design.
 // To use the date range picker as pop-up style please wrap it into pop-up menu (section 1.20). <br><br>
 // Click on the calendar icon (left top corner) to quickly display 'today' within calendar view.<br>
-// Hover and click on the selected date section to reset the selected date to empty. 
+// Hover and click on the selected date section to reset the selected date to empty.
 //
 //Markup:
 //<h1>Date range picker with disable selection on endDate</h1>
@@ -281,7 +281,7 @@
 //Styleguide 2.5
 //
 
-//new date range picker 
+//new date range picker
 
 wfm-calendar-picker {
 	display: inline-block;
@@ -413,4 +413,3 @@ wfm-calendar-picker-body > .date-info-calendar-wrapper{
 		}
 	}
 }
-

@@ -12,12 +12,12 @@
 					<div class="full-padding">
 						<input autocomplete="off" ng-if="vm.searchOptions.searchFields[$index]" id="criteria-{{vm.searchOptions.searchFields[$index]}}"
 						 class="con-flex advanced-search-field" type="text" ng-keyup="vm.onSearchFieldInputKeyUp($event)" placeholder="{{'PersonFinderField'+ vm.searchOptions.searchFields[$index]|translate}}"
-						 ng-model="vm.advancedSearchForm[vm.searchOptions.searchFields[$index]]" />
+						 ng-model="vm.advancedSearchForm[vm.searchOptions.searchFields[$index]]" maxlength="500"/>
 					</div>
 					<div class="full-padding">
 						<input autocomplete="off" ng-if="vm.searchOptions.searchFields[$index + 1]" id="criteria-{{vm.searchOptions.searchFields[$index + 1]}}"
 						 class="con-flex advanced-search-field" type="text" ng-keyup="vm.onSearchFieldInputKeyUp($event)" placeholder="{{'PersonFinderField'+ vm.searchOptions.searchFields[$index + 1]|translate}}"
-						 ng-model="vm.advancedSearchForm[vm.searchOptions.searchFields[$index + 1]]" />
+						 ng-model="vm.advancedSearchForm[vm.searchOptions.searchFields[$index + 1]]" maxlength="500"/>
 					</div>
 				</div>
 				<div class="con-footer">

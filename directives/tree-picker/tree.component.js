@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('wfm.treePicker', [])
+        .module('wfm.treePicker', ['pascalprecht.translate'])
         .component('treeDataOne', {
             templateUrl: 'directives/tree-picker/tree_data.tpl.html',
             require: {
@@ -25,12 +25,21 @@
                 option: '='
             }
         })
+        .component('treeFilter', {
+            controller: 'TreeFilterController',
+            controllerAs: 'vm',
+            bindings: {
+                search: '<'
+            }
+        })
         .controller('TreeDataOneController', TreeDataOneController)
         .controller('TreeDataTwoController', TreeDataTwoController)
+        .controller('TreeFilterController', TreeFilterController)
         .directive('treeAnimate', treeAnimate);
 
     TreeDataOneController.$inject = ['$element', '$timeout'];
     TreeDataTwoController.$inject = ['$element', '$timeout', '$attrs'];
+    TreeFilterController.$inject = ['$element'];
 
     function TreeDataOneController($element, $timeout) {
         var vm = this;
@@ -40,6 +49,7 @@
         vm.nodeDisplayName = 'name';
         vm.nodeChildrenName = 'children';
         vm.nodeSelectedMark = 'mark';
+        vm.displayTreeFilter = false;
         vm.selectNode = selectNode;
 
         vm.$onInit = fetchSetting;
@@ -49,6 +59,7 @@
                 vm.nodeDisplayName = vm.option.NodeDisplayName ? vm.option.NodeDisplayName : 'name';
                 vm.nodeChildrenName = vm.option.NodeChildrenName ? vm.option.NodeChildrenName : 'children';
                 vm.nodeSelectedMark = vm.option.NodeSelectedMark ? vm.option.NodeSelectedMark : 'mark';
+                vm.displayTreeFilter = vm.option.DisplayTreeFilter ? vm.option.DisplayTreeFilter : false;
             }
             vm.ngModel.$viewChangeListeners.push(onChange);
             vm.ngModel.$render = onChange;
@@ -108,6 +119,7 @@
         vm.nodeDisplayName = 'name';
         vm.nodeChildrenName = 'children';
         vm.nodeSelectedMark = 'mark';
+        vm.displayTreeFilter = false;
         vm.selectNode = selectNode;
 
         vm.$onInit = fetchSetting;
@@ -117,7 +129,8 @@
                 vm.nodeDisplayName = vm.option.NodeDisplayName ? vm.option.NodeDisplayName : 'name';
                 vm.nodeChildrenName = vm.option.NodeChildrenName ? vm.option.NodeChildrenName : 'children';
                 vm.nodeSelectedMark = vm.option.NodeSelectedMark ? vm.option.NodeSelectedMark : 'mark';
-                vm.NodeSemiSelected = vm.option.NodeSemiSelected ? vm.option.NodeSemiSelected : 'semiSelected';
+                vm.nodeSemiSelected = vm.option.nodeSemiSelected ? vm.option.nodeSemiSelected : 'semiSelected';
+                vm.displayTreeFilter = vm.option.DisplayTreeFilter ? vm.option.DisplayTreeFilter : false;
                 rootSelectUnique = vm.option.RootSelectUnique ? vm.option.RootSelectUnique : false;
             }
             vm.ngModel.$viewChangeListeners.push(onChange);
@@ -129,6 +142,7 @@
             var check = angular.equals(vm.ngModel.$modelValue, vm.data);
             if (!check) {
                 vm.data = vm.ngModel.$modelValue;
+                vm.search = null;
                 $timeout(function () {
                     var selectedItems = $element[0].getElementsByClassName('selected-true');
                     for (var index = 0; index < selectedItems.length; index++) {
@@ -175,7 +189,7 @@
         }
 
         function resetSemiState(item) {
-            return item.$parent.node[vm.NodeSemiSelected] = false;
+            return item.$parent.node[vm.nodeSemiSelected] = false;
         }
 
         function updateNgModelDateForTreePicker() {
@@ -191,7 +205,7 @@
         function setChildrenNodesSelectState(children, state) {
             children.forEach(function (child) {
                 child[vm.nodeSelectedMark] = state;
-                child[vm.NodeSemiSelected] = false;
+                child[vm.nodeSemiSelected] = false;
                 if (child[vm.nodeChildrenName] && child[vm.nodeChildrenName].length !== 0) {
                     return setChildrenNodesSelectState(child[vm.nodeChildrenName], state);
                 }
@@ -202,7 +216,7 @@
             var checkAll = siblingsHasAllSelected(data.node[vm.nodeChildrenName]);
             var checkSemi = siblingsHasSemiSelected(data.node[vm.nodeChildrenName]);
             data.node[vm.nodeSelectedMark] = checkAll;
-            data.node[vm.NodeSemiSelected] = !checkAll && checkSemi;
+            data.node[vm.nodeSemiSelected] = !checkAll && checkSemi;
             if (data.$parent.$parent.node) {
                 return setParentNodesSelectState(data.$parent.$parent);
             }
@@ -210,8 +224,8 @@
 
         function siblingsHasSemiSelected(siblings) {
             return siblings.some(function (item) {
-                if (item[vm.nodeSelectedMark] || item[vm.NodeSemiSelected]) {
-                    return item[vm.nodeSelectedMark] == true || item[vm.NodeSemiSelected] == true;
+                if (item[vm.nodeSelectedMark] || item[vm.nodeSemiSelected]) {
+                    return item[vm.nodeSelectedMark] == true || item[vm.nodeSemiSelected] == true;
                 }
                 return false;
             })
@@ -241,10 +255,102 @@
             item.forEach(function (child, i) {
                 if (i !== index) {
                     item[i][vm.nodeSelectedMark] = false;
-                    item[i][vm.NodeSemiSelected] = false;
+                    item[i][vm.nodeSemiSelected] = false;
                     setChildrenNodesSelectState(child[vm.nodeChildrenName], false);
                 }
             });
+        }
+    }
+
+    function TreeFilterController($element) {
+        var vm = this;
+        var searchString = '';
+        var parentsElement = $element[0].parentNode.parentNode;
+
+        vm.$onChanges = function (changesObj) {
+            searchString = !changesObj.search.currentValue ? '' : changesObj.search.currentValue;
+            catchFilterChange();
+        }
+
+        function catchFilterChange() {
+            if (searchString.length == 0) {
+                resetTree();
+            } else {
+                hideAllNodes();
+                displayMatchNodes();
+            }
+        }
+
+        function resetTree() {
+            var selectedItems = parentsElement.getElementsByTagName('li');
+            for (var index = 0; index < selectedItems.length; index++) {
+                if (selectedItems[index].classList.contains('tree-child')) {
+                    selectedItems[index].classList.add('hidden');
+                }
+                selectedItems[index].classList.remove('filter-hidden');
+                resetExtendIcon(selectedItems[index]);
+            }
+            return;
+        }
+
+        function resetExtendIcon(item) {
+            var icon = item.children[0].childNodes[1].children[0];
+            if (icon.classList.contains('mdi-chevron-down')) {
+                icon.classList.add('mdi-chevron-right');
+                icon.classList.remove('mdi-chevron-down');
+            }
+            return;
+        }
+
+        function hideAllNodes() {
+            var selectedItems = parentsElement.getElementsByTagName('li');
+            for (var index = 0; index < selectedItems.length; index++) {
+                selectedItems[index].classList.add('filter-hidden');
+                if (selectedItems[index].classList.contains('hidden')) {
+                    selectedItems[index].classList.remove('hidden');
+                }
+            }
+            return;
+        }
+
+        function displayMatchNodes() {
+            var selectedItems = parentsElement.getElementsByClassName('tree-handle-wrapper');
+            var noCaseSensitiveSearchString = new RegExp(searchString, 'i');
+            for (var index = 0; index < selectedItems.length; index++) {
+                if (selectedItems[index].textContent.match(noCaseSensitiveSearchString)) {
+                    selectedItems[index].parentNode.parentNode.classList.remove('filter-hidden');
+                    removeFilterHiddenForChildNodes(selectedItems[index].parentNode.parentNode);
+                    displayMatchNodesParents(selectedItems[index].parentNode.parentNode);
+                }
+            }
+            return;
+        }
+
+        function removeFilterHiddenForChildNodes(matechedNode) {
+            var selectedItems = matechedNode.getElementsByTagName('li');
+            for (var index = 0; index < selectedItems.length; index++) {
+                selectedItems[index].classList.remove('filter-hidden');
+                displayExtendIconForMatchNodesParents(matechedNode);
+            }
+            return;
+        }
+
+        function displayMatchNodesParents(matechedNode) {
+            if (matechedNode.parentNode.parentNode.classList.contains('filter-hidden')) {
+                matechedNode.parentNode.parentNode.classList.remove('filter-hidden');
+                displayExtendIconForMatchNodesParents(matechedNode.parentNode.parentNode);
+                displayMatchNodesParents(matechedNode.parentNode.parentNode);
+            }
+            return;
+        }
+
+        function displayExtendIconForMatchNodesParents(matechedNode) {
+            var icon = matechedNode.getElementsByClassName('mdi-chevron-right')[0];
+            if (!!icon) {
+                icon.classList.add('mdi-chevron-down');
+                icon.classList.remove('mdi-chevron-right');
+            }
+            return;
         }
     }
 

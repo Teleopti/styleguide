@@ -19,7 +19,7 @@
 //     <code>
 //       <pre class="prettyprint linenums lang-js">
 //
-//          $scope.option = {
+//          $scope.treeOption = {
 //           NodeDisplayName: "label",
 //           NodeChildrenName: "nodes",
 //           NodeSelectedMark: "selected"
@@ -30,8 +30,8 @@
 //   </div>
 // </div>
 //
-// Markup:
-//<tree-data-one ng-model="treeDemos1" option="option"></tree-data-one>
+// Markup: 
+//<tree-data-one ng-model="treeDemos1" option="treeOption"></tree-data-one>
 //
 //Styleguide 5.1
 
@@ -52,7 +52,7 @@
 //     <code>
 //       <pre class="prettyprint linenums lang-js">
 //
-//          $scope.option2 = {
+//          $scope.treeOption2 = {
 //           NodeDisplayName: "label",
 //           NodeChildrenName: "nodes",
 //           NodeSelectedMark: "selected",
@@ -64,8 +64,8 @@
 //   </div>
 // </div>
 //
-// Markup:
-//<tree-data-two ng-model="treeDemos2" option="option2"></tree-data-two>
+// Markup: 
+//<tree-data-two ng-model="treeDemos2" option="treeOption2"></tree-data-two>
 //
 //Styleguide 5.2
 
@@ -84,7 +84,7 @@
 //     <code>
 //       <pre class="prettyprint linenums lang-js">
 //
-//          $scope.option3 = {
+//          $scope.treeOption3 = {
 //           NodeDisplayName: "label",
 //           NodeChildrenName: "nodes",
 //           NodeSelectedMark: "selected",
@@ -97,10 +97,43 @@
 //   </div>
 // </div>
 //
-// Markup:
-//<tree-data-two ng-model="treeDemos3" option="option3"></tree-data-two>
+// Markup: 
+//<tree-data-two ng-model="treeDemos3" option="treeOption3"></tree-data-two>
 //
 //Styleguide 5.3
+
+//Tree Picker Filter
+//
+//Tree picker filter is a general filter for all types of tree picker and it uses for filter site/team within a organization by input keyword.
+//
+// <div class="jsprewrap">
+//   <div class="ksscopy kss-style" ng-click="showJs['treeDemo4'] = !showJs['treeDemo4']">
+//       <span ng-hide="showJs['treeDemo4']">Show</span>
+//      <span ng-show="showJs['treeDemo4']">Hide</span>
+//     JavaScript
+//     <i class="mdi mdi-code-tags pull-right"></i>
+//   </div>
+//   <div class="animate-show" ng-show="showJs['treeDemo4']">
+//     <code>
+//       <pre class="prettyprint linenums lang-js">
+//
+//          $scope.treeOption4 = {
+//           NodeDisplayName: "label",
+//           NodeChildrenName: "nodes",
+//           NodeSelectedMark: "selected",
+//           NodeSemiSelected: "semiSelected",
+//           DisplayTreeFilter: true
+//           };
+//
+//       </pre>
+//     </code>
+//   </div>
+// </div>
+//
+// Markup: 
+//<tree-data-two ng-model="treeDemos4" option="treeOption4"></tree-data-two>
+//
+//Styleguide 5.4
 
 tree-data-one, tree-data-two, tree-data-three {
 	.tree-toggle-group{
@@ -149,6 +182,10 @@ tree-data-one, tree-data-two, tree-data-three {
 
 	.tree li{
 		border:none;
+	}
+
+	.filter-hidden {
+		display: none;
 	}
 }
 

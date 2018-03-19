@@ -56,27 +56,32 @@
 
     /* Dummy data*/
     $scope.demos = [{ id: '1' }, { id: '2' }, { id: '3' }, { id: '4' }];
-
-    //data for tree
-    $scope.option = {
+    $scope.treeOption = {
       NodeDisplayName: "label",
       NodeChildrenName: "nodes",
       NodeSelectedMark: "selected"
     };
-    $scope.option2 = {
+    $scope.treeOption2 = {
       NodeDisplayName: "label",
       NodeChildrenName: "nodes",
       NodeSelectedMark: "selected",
-      NodeSemiSelected: "semiSelected",
+      NodeSemiSelected: "semiSelected"
     };
-    $scope.option3 = {
+    $scope.treeOption3 = {
       NodeDisplayName: "label",
       NodeChildrenName: "nodes",
       NodeSelectedMark: "selected",
       NodeSemiSelected: "semiSelected",
       RootSelectUnique: true
     };
-    var treeDemos = data = {
+    $scope.treeOption4 = {
+      NodeDisplayName: "label",
+      NodeChildrenName: "nodes",
+      NodeSelectedMark: "selected",
+      NodeSemiSelected: "semiSelected",
+      DisplayTreeFilter: true
+    };
+    var treeDemos = {
       nodes: [
         {
           label: 'parent1',
@@ -186,6 +191,7 @@
     $scope.treeDemos1 = angular.copy(treeDemos);
     $scope.treeDemos2 = angular.copy(treeDemos);
     $scope.treeDemos3 = angular.copy(treeDemos);
+    $scope.treeDemos4 = angular.copy(treeDemos);
 
     //old tree demo data
     $scope.treeDemos = [
@@ -312,7 +318,7 @@
         return moment(end).diff(moment(start), 'days') <= 7;
       }
     }];
-    
+
     /*Code for new date range picker*/
     $scope.customValid = function (data) {
       if (data.startDate - data.endDate > 0) {
@@ -425,6 +431,30 @@
       {
         Id: 'ABC',
         Name: 'skill2'
+      },
+      {
+        Id: 'XYZ1',
+        Name: 'skill3'
+      },
+      {
+        Id: 'ABC2',
+        Name: 'skill4'
+      },
+      {
+        Id: 'XYZ3',
+        Name: 'skill5'
+      },
+      {
+        Id: 'ABC4',
+        Name: 'skill6'
+      },
+      {
+        Id: 'XYZ5',
+        Name: 'skill7'
+      },
+      {
+        Id: 'ABC6',
+        Name: 'skill8'
       }
     ];
     $scope.mockedSkillGroups = [
@@ -449,10 +479,14 @@
         ]
       }
     ];
-    $scope.preselected = { skillIds: ['XYZ'] };
-    $scope.output = function (selectedItem) {
+    
+    $scope.preselectedSkill = { skillIds: ['XYZ1'] };
+    $scope.preselectedSkillGroup = { skillAreaId: ['XYZ'] };
+
+    $scope.output = function(selectedItem) {
       $scope.filterOutput = selectedItem;
-    }
+    };
+
 
     /*code for rightPanel*/
     $scope.rightPanelOptions = {

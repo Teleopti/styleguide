@@ -353,7 +353,7 @@ md-select {
 //    </tr>
 //    <tr>
 //      <td>preselected</td>
-//      <td>Send in a item to be preselected on load</td>
+//      <td>Send the id of a skill that should be preselected on load</td>
 //    </tr>
 //	</tbody>
 //</table>
@@ -367,8 +367,8 @@ md-select {
 //   <div class="animate-show" ng-show="showJs['skillPicker']">
 //     <code>
 //       <pre class="prettyprint linenums lang-js">
-//
-//vm.mockSkills = [
+// &nbsp;
+// $scope.mockSkills = [
 //  {
 //    Id: 'XYZ',
 //    Name: 'skill1'
@@ -376,9 +376,34 @@ md-select {
 //  {
 //    Id: 'ABC',
 //    Name: 'skill2'
+//  },
+//  {
+//    Id: 'XYZ1',
+//    Name: 'skill3'
+//  },
+//  {
+//    Id: 'ABC2',
+//    Name: 'skill4'
+//  },
+//  {
+//    Id: 'XYZ3',
+//    Name: 'skill5'
+//  },
+//  {
+//    Id: 'ABC4',
+//    Name: 'skill6'
+//  },
+//  {
+//    Id: 'XYZ5',
+//    Name: 'skill7'
+//  },
+//  {
+//    Id: 'ABC6',
+//    Name: 'skill8'
 //  }
 //];
-//vm.mockedSkillGroups = [
+//
+//$scope.mockedSkillGroups = [
 //  {
 //    Name: 'SkillArea1',
 //    Id: '123',
@@ -400,11 +425,12 @@ md-select {
 //    ]
 //  }
 //];
-//vm.preselectedSkill = {skillIds: ['XYZ']};
-//vm.preselectedSkillGroup = {skillAreaId: ['XYZ']};
-//$scope.output = function (selectedItem){
-//   $scope.filterOutput = selectedItem;
-//}
+//
+//$scope.preselectedSkill = { skillIds: ['XYZ1'] };
+//$scope.preselectedSkillGroup = { skillAreaId: ['XYZ'] };
+//
+//$scope.output = function(selectedItem) {
+//  $scope.filterOutput = selectedItem;
 //};
 //       </pre>
 //     </code>
@@ -412,7 +438,7 @@ md-select {
 // </div>
 //
 // Markup:
-//<skill-picker skills="mockSkills" skill-areas="mockedSkillGroups" item-to-return="output" preselected-item="preselected"></skill-picker>
+//<skill-picker skills="mockSkills" skill-areas="mockedSkillGroups" item-to-return="output" preselected-item="preselectedSkill"></skill-picker>
 //<p ng-if="filterOutput">Selected skill/group: <span ng-bind="filterOutput.Name"></span></p>
 //
 //Styleguide 2.13
