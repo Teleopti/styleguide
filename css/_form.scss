@@ -524,9 +524,10 @@ md-autocomplete[disabled]:not([md-floating-label]),
   background: $hover!important;
 }
 
-.md-virtual-repeat-container.md-autocomplete-suggestions-container { //for IE: clear buttom cause item list dont open
-  height: 225.5px !important;
-}
+// fix for IE: clear buttom cause item list dont open
+// .md-virtual-repeat-container.md-autocomplete-suggestions-container { 
+//   height: 225.5px !important;
+// }
 
 // Radio button
 //
