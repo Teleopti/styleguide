@@ -2,7 +2,7 @@
     <div class="con-flex" ng-class="{'notice-warning':!vm.isValid, 'notice-info':vm.isValid}">
         <div tabindex=0 class="context-menu card-context" ng-click="vm.hightLightToday()">
             <i class="mdi mdi-calendar-range"></i>
-            <md-tooltip>Display Today</md-tooltip>
+            <md-tooltip>{{'SelectToday' | translate}}</md-tooltip>
         </div>
         <span ng-if="vm.dateRangeText.length > 0">{{vm.dateRangeText | translate}}</span>
     </div>

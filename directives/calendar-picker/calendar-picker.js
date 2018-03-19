@@ -9,7 +9,7 @@
                 var templates = {
                     'jalaali': 'directives/calendar-picker/calendar-picker.jalaali.template.tpl.html',
                     'gregorian': 'directives/calendar-picker/calendar-picker.gregorian.template.tpl.html'
-                }
+                };
                 return templates[dateFormat];
             }],
             require: {
@@ -192,7 +192,7 @@
                 return vm.dateRangeText = vm.customValidate();
             }
             if (vm.pickEndDate - vm.pickStartDate <= 0) {
-                return vm.dateRangeText = 'ValidateEndDate';
+                return vm.dateRangeText = 'InvalidEndDate';
             }
             return vm.dateRangeText = '';
         }
@@ -205,7 +205,7 @@
                 return vm.dateRangeText = vm.customValidate();
             }
             if (vm.pickEndDate - vm.pickStartDate <= 0) {
-                return vm.dateRangeText = 'ValidateStartDate';
+                return vm.dateRangeText = 'InvalidStartDate';
             }
             return vm.dateRangeText = '';
         }
