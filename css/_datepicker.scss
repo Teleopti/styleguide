@@ -392,9 +392,13 @@ wfm-calendar-picker-body > .date-info-calendar-wrapper{
 	}
 
 	.uib-datepicker{
-		min-height: 248px;
-		max-width: 260px;
+		height: 260px;
+		width: 260px;
 		overflow: hidden;
+
+		.wfm-datepicker {
+			margin: 0 auto;
+		}
 
 		.btn-default {
 			border-radius: 0;
@@ -413,6 +417,10 @@ wfm-calendar-picker-body > .date-info-calendar-wrapper{
 		thead button.btn-default:hover,
 		tbody button.btn-default:hover {
 			background-color: $secondary !important;
+		}
+
+		.uib-monthpicker, .uib-yearpicker, .uib-daypicker {
+			height: 100%;
 		}
 
 		.uib-monthpicker, .uib-yearpicker {
