@@ -73,7 +73,7 @@ describe('skillPickerComponent', function () {
 
         expect(ctrl.selectedSkill).toEqual(null);
         expect(ctrl.selectedSkillArea).toEqual(ctrl.skillAreas[0]);
-        expect(ctrl.itemToReturn).toHaveBeenCalledWith(ctrl.skillAreas[0]);
+        expect(ctrl.itemToReturn).toHaveBeenCalledWith({selectedItem:ctrl.skillAreas[0]});
     });
 
     it('should be able to clear skill input', function () {
@@ -90,7 +90,7 @@ describe('skillPickerComponent', function () {
         ctrl.selectSkill(undefined);
 
         expect(ctrl.selectedSkill).toEqual(null);
-        expect(ctrl.itemToReturn).toHaveBeenCalledWith(undefined);
+        expect(ctrl.itemToReturn).toHaveBeenCalledWith({selectedItem:undefined});
     });
 
     it('should be able to clear skillArea input', function () {
@@ -107,7 +107,7 @@ describe('skillPickerComponent', function () {
         ctrl.selectSkillArea(undefined);
 
         expect(ctrl.selectedSkillArea).toEqual(null);
-        expect(ctrl.itemToReturn).toHaveBeenCalledWith(undefined);
+        expect(ctrl.itemToReturn).toHaveBeenCalledWith({selectedItem:undefined});
     });
 
     xit('should have preselected skill', function () {
