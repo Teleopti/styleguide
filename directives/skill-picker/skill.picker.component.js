@@ -9,7 +9,7 @@
             bindings: {
                 skills: '<',
                 skillAreas: '<',
-                itemToReturn: '&',
+                itemToReturn: '=',
                 preselectedItem: '<'
             },
         });
@@ -30,25 +30,21 @@
         }
 
         ctrl.selectSkill = function (skill) {
-            var returnedSkill;
             if (skill !== undefined) {
                 ctrl.selectedSkillArea = null;
-                returnedSkill = skill;
+                ctrl.itemToReturn(skill);
             } else if (ctrl.selectedSkillArea === null && ctrl.selectedSkill === null) {
-                returnedSkill = undefined;
+                ctrl.itemToReturn(undefined);
             }
-            ctrl.itemToReturn && ctrl.itemToReturn({selectedItem:returnedSkill});
         }
 
         ctrl.selectSkillArea = function (skillArea) {
-            var returnedValue;
             if (skillArea !== undefined) {
                 ctrl.selectedSkill = null;
-                returnedValue = skillArea;
+                ctrl.itemToReturn(skillArea);
             } else if (ctrl.selectedSkill === null && ctrl.selectedSkillArea === null) {
-                returnedValue = undefined;
+                ctrl.itemToReturn(undefined);
             }
-            ctrl.itemToReturn && ctrl.itemToReturn({selectedItem:returnedValue});
         }
 
         function setPreselected() {
