@@ -318,7 +318,7 @@
         return moment(end).diff(moment(start), 'days') <= 7;
       }
     }];
-    
+
     /*Code for new date range picker*/
     $scope.customValid = function (data) {
       if (data.startDate - data.endDate > 0) {
@@ -431,6 +431,30 @@
       {
         Id: 'ABC',
         Name: 'skill2'
+      },
+      {
+        Id: 'XYZ1',
+        Name: 'skill3'
+      },
+      {
+        Id: 'ABC2',
+        Name: 'skill4'
+      },
+      {
+        Id: 'XYZ3',
+        Name: 'skill5'
+      },
+      {
+        Id: 'ABC4',
+        Name: 'skill6'
+      },
+      {
+        Id: 'XYZ5',
+        Name: 'skill7'
+      },
+      {
+        Id: 'ABC6',
+        Name: 'skill8'
       }
     ];
     $scope.mockedSkillGroups = [
@@ -455,10 +479,14 @@
         ]
       }
     ];
-    $scope.preselected = { skillIds: ['XYZ'] };
-    $scope.output = function (selectedItem) {
+    
+    $scope.preselectedSkill = { skillIds: ['XYZ1'] };
+    $scope.preselectedSkillGroup = { skillAreaId: ['XYZ'] };
+
+    $scope.output = function(selectedItem) {
       $scope.filterOutput = selectedItem;
-    }
+    };
+
 
     /*code for rightPanel*/
     $scope.rightPanelOptions = {
