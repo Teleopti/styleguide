@@ -35,6 +35,6 @@
         </div>
     </div>
     <div class="con-flex date-info-calendar-wrapper">
-        <div uib-datepicker ng-model="vm.pickDate" ng-class="{'non-pointer':vm.disable === 'all'}" ng-change="vm.switchDate()" datepicker-options="vm.options"></div>
+        <div uib-datepicker ng-model="vm.pickDate" ng-class="{'non-pointer':vm.disable === 'all', 'show-week-numbers': vm.showWeek, 'hide-week-numbers': !vm.showWeek}" ng-change="vm.switchDate()" datepicker-options="vm.options"></div>
     </div>
 </wfm-calendar-picker-body>

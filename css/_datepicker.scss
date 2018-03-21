@@ -300,7 +300,7 @@ wfm-calendar-picker-header {
 
 wfm-calendar-picker-body > .date-info-wrapper {
 	height: 270px;
-	min-width: 230px;
+	min-width: 200px;
 	padding: 0;
 	overflow: hidden;
 	display: flex;
@@ -390,7 +390,7 @@ wfm-calendar-picker-body > .date-info-calendar-wrapper{
 	flex-basis: auto;
 
 	b, strong {
-		font-size: x-large;
+		font-size: large;
 	}
 
 	.in-date-range button{
@@ -413,9 +413,22 @@ wfm-calendar-picker-body > .date-info-calendar-wrapper{
 		color: $white !important;
 	}
 
+	//For fixing flicker issue of datepicker
+	.show-week-numbers {
+		table tbody tr td:nth-child(n+9) {
+			display: none;
+		}
+	}
+
+	.hide-week-numbers {
+		table tbody tr td:nth-child(n+8) {
+			display: none;
+		}
+	}
+
 	.uib-datepicker{
 		height: 260px;
-		width: 260px;
+		width: 250px;
 		overflow: hidden;
 
 		.wfm-datepicker {
@@ -428,6 +441,10 @@ wfm-calendar-picker-body > .date-info-calendar-wrapper{
 			padding: 5px 8px;
 			outline: none !important;
 			line-height: 1.5;
+		}
+
+		thead tr th:nth-child(2) button.btn-default {
+			padding: 5px 0;
 		}
 
 		thead button.btn-default.pull-left,
