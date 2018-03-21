@@ -174,7 +174,7 @@
 //
 // The single date picker is based on Bootstrap's datepicker and use to take a single date easily.
 // To use the single date picker as pop-up style please wrap it into a <a href=section-1.html#kssref-1-20>pop-up menu</a> (section 1.20). <br><br>
-// Click on the calendar icon (left top corner) to quickly display 'today' within calendar view.<br>
+// Click on the calendar icon (left top corner) to quickly select 'today' within calendar view.<br>
 // Hover and click on the selected date section to reset the selected date to empty.
 //
 //Markup:
@@ -253,7 +253,7 @@
 //
 // The datepicker is based on Bootstrap's datepicker and all we do is wrapping it and applying some special classes to make it more compatible with material design.
 // To use the date range picker as pop-up style please wrap it into a <a href=section-1.html#kssref-1-20>pop-up menu</a> (section 1.20). <br><br>
-// Click on the calendar icon (left top corner) to quickly display 'today' within calendar view.<br>
+// Click on the calendar icon (left top corner) to quickly select 'today' within calendar view.<br>
 // Hover and click on the selected date section to reset the selected date to empty.
 //
 //Markup:
@@ -299,13 +299,16 @@ wfm-calendar-picker-header {
 }
 
 wfm-calendar-picker-body > .date-info-wrapper {
-	min-height: 230px;
+	height: 270px;
 	min-width: 230px;
 	padding: 0;
 	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 
-	@media screen and (max-width:768px){
-		min-height: 0;
+	@media screen and (max-width: 768px){
+		height: auto;
 		min-width: 0;
 	}
 
@@ -316,6 +319,14 @@ wfm-calendar-picker-body > .date-info-wrapper {
 		color: $white;
 	}
 
+	hr {
+		height: 1px;
+		margin: 0;
+		padding: 0;
+		border: none;
+		background: $white;
+	}
+
 	.single-select-mode {
 		height:100% !important;
 	}
@@ -323,26 +334,31 @@ wfm-calendar-picker-body > .date-info-wrapper {
 	.select-date-info-wrapper {
 		height: 50%;
 		background-color: $gray012;
-		border-bottom: 1px $white  solid;
+		border: 2px transparent solid;
 		padding: 10px;
 		position: relative;
+		flex-grow: 1;
+
 		@media screen and (max-width:768px){
 			min-height: 80px;
 		}
+	}
+
+	.selecting-date {
+		border-color: $secondary;
 	}
 
 	.clear-select-date-grow-out{
 		display: table;
 		position: absolute;
 		height: 100%;
-		background-color: $gray026  ;
+		background-color: $gray026;
 		width: 20%;
 		top: 0;
 		right: 0;
 		transition: $transition-timing;
 		transform-origin: right center;
-		transform: translateX(103%);
-		cursor: pointer;
+		transform: translateX(100%);
 		visibility: hidden;
 		opacity: 0;
 
@@ -350,7 +366,6 @@ wfm-calendar-picker-body > .date-info-wrapper {
 			display: table-cell;
 			vertical-align: middle;
 			text-align: center;
-			margin: 45px auto;
 			color: $text-color-standard;
 		}
 	}
@@ -359,6 +374,13 @@ wfm-calendar-picker-body > .date-info-wrapper {
 		transform: translateX(0);
 		visibility: visible;
 		opacity: 1;
+	}
+
+	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
+		//For fixing close icon tranform issue on IE10+
+		.select-date-info-wrapper:hover .clear-select-date-grow-out{
+			transform: translateX(-60%);
+		}
 	}
 }
 
@@ -372,11 +394,11 @@ wfm-calendar-picker-body > .date-info-calendar-wrapper{
 	}
 
 	.in-date-range button{
-		background-color:$blue-100 !important;
+		background-color: $blue-100 !important;
 	}
 
 	.uib-daypicker:focus, *:focus{
-		outline:none!important;
+		outline: none!important;
 	}
 
 	button.btn-default {
@@ -387,7 +409,7 @@ wfm-calendar-picker-body > .date-info-calendar-wrapper{
 	}
 
 	tbody button.btn-info.active {
-		background-color: $blue-500 !important;
+		background-color: $secondary !important;
 		color: $white !important;
 	}
 
@@ -402,6 +424,10 @@ wfm-calendar-picker-body > .date-info-calendar-wrapper{
 
 		.btn-default {
 			border-radius: 0;
+			font-size: 12px;
+			padding: 5px 8px;
+			outline: none !important;
+			line-height: 1.5;
 		}
 
 		thead button.btn-default.pull-left,

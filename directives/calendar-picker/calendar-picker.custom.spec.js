@@ -84,7 +84,7 @@ describe('CalendarPickerControllerCustomFeature', function () {
 
         expect(vm.pickStartDate).toEqual(data.startDate);
         expect(vm.pickEndDate).toEqual(data.endDate);
-        expect(vm.dateRangeText.replace(/\s/g, '')).toEqual('5Week1Day');
+        expect(vm.dateRangeText.replace(/\s/g, '')).toEqual('5Weeks1Days');
     });
 
     it('should be able to disable modify a prefix start date and only allow update end date', function () {
@@ -134,7 +134,7 @@ describe('CalendarPickerControllerCustomFeature', function () {
         expect(vm.pickStartDate).not.toEqual(data.startDate);
         expect(vm.pickStartDate).toEqual(null);
         expect(range.length).not.toEqual(preSetLength);
-        expect(range.length).toEqual(0);
+        expect(range.length).toEqual(1);
     });
 
     it('should be able to display weeks number on calendar view', function () {

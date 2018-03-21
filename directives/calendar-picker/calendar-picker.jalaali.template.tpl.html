@@ -1,34 +1,35 @@
 <wfm-calendar-picker-header class="con-row between-date-info-wrapper">
     <div class="con-flex" ng-class="{'notice-warning':!vm.isValid, 'notice-info':vm.isValid}">
-        <div tabindex=0 class="context-menu card-context" ng-click="vm.hightLightToday()">
+        <div tabindex=0 class="context-menu card-context" ng-click="vm.selectToday()">
             <i class="mdi mdi-calendar-range"></i>
             <md-tooltip>{{'SelectToday' | translate}}</md-tooltip>
         </div>
-        <span ng-if="vm.dateRangeText.length > 0">{{vm.dateRangeText | translate}}</span>
+        <span ng-if="vm.dateRangeText.length > 0">{{vm.dateRangeText}}</span>
     </div>
 </wfm-calendar-picker-header>
 <wfm-calendar-picker-body class="con-row">
     <div class="con-flex date-info-wrapper" ng-if="vm.singleDatePicker == undefined">
-        <div class="select-date-info-wrapper pointer" ng-class="{'disabled': vm.disable=='start-date' || vm.disable=='all'}" ng-click="vm.resetStartDate()">
+        <div class="select-date-info-wrapper pointer" ng-class="{'disabled': vm.disable=='start-date' || vm.disable=='all', 'selecting-date': vm.isPickingStartDate}" ng-click="vm.startToSelectStartDate()">
             <span class="date-info-label" translate>From</span>
             <h1 class="date-info jallali-start-date">{{vm.pickStartDate | persianDate:'fullDate'}}</h1>
-            <div class="clear-select-date-grow-out">
+            <div class="clear-select-date-grow-out" ng-click="vm.resetStartDate()">
                 <i class="mdi mdi-close"></i>
             </div>
         </div>
-        <div class="select-date-info-wrapper pointer" ng-class="{'disabled': vm.disable=='end-date' || vm.disable=='all'}" ng-click="vm.resetEndDate()">
+        <hr />
+        <div class="select-date-info-wrapper pointer" ng-class="{'disabled': vm.disable=='end-date' || vm.disable=='all', 'selecting-date': vm.isPickingEndDate}" ng-click="vm.startToSelectEndDate()">
             <span class="date-info-label" translate>To</span>
             <h1 class="date-info jallali-end-date">{{vm.pickEndDate | persianDate:'fullDate'}}</h1>
-            <div class="clear-select-date-grow-out">
+            <div class="clear-select-date-grow-out" ng-click="vm.resetEndDate()">
                 <i class="mdi mdi-close"></i>
             </div>
         </div>
     </div>
     <div class="con-flex date-info-wrapper" ng-if="vm.singleDatePicker !== undefined">
-        <div class="select-date-info-wrapper single-select-mode pointer" ng-click="vm.resetDate()">
+        <div class="select-date-info-wrapper single-select-mode pointer" ng-class="{'selecting-date': vm.isPickingSingleDate}">
             <span class="date-info-label" translate>SelectedDate</span>
             <h1 class="date-info">{{vm.pickDate | persianDate:'fullDate'}}</h1>
-            <div class="clear-select-date-grow-out">
+            <div class="clear-select-date-grow-out" ng-click="vm.resetDate()">
                 <i class="mdi mdi-close"></i>
             </div>
         </div>
