@@ -33,7 +33,6 @@
         var vm = this;
 
         vm.isValid = true;
-        vm.pickDate = new Date();
         vm.pickStartDate = null;
         vm.pickEndDate = null;
         vm.isPickingStartDate = false;
@@ -51,21 +50,19 @@
         vm.startToSelectEndDate = startToSelectEndDate;
 
         vm.options = {
-            customClass: renderRangeDate,
+            customClass: renderDatesInRange,
             showWeeks: vm.showWeek
         };
 
         vm.$onInit = function () {
             switch (vm.singleDatePicker) {
-                default:
-                    vm.ngModel.$viewChangeListeners.push(onChangeForSingleDatePicker);
-                    vm.ngModel.$render = onChangeForSingleDatePicker;
-                    initSingleDatePicker();
-                    break;
                 case undefined:
                     vm.ngModel.$viewChangeListeners.push(onChangeForDateRangePicker);
                     vm.ngModel.$render = onChangeForDateRangePicker;
                     initDateRangePicker();
+                    break;
+                default:
+                    initSingleDatePicker();
                     break;
             }
         };
@@ -75,17 +72,14 @@
             vm.switchDate = selectSingleDate;
             vm.validate = validateSingleDate;
             vm.isPickingSingleDate = true;
+
+            vm.pickDate = vm.ngModel.$modelValue || new Date();
+
             return;
         }
 
         function initDateRangePicker() {
             switch (vm.disable) {
-                default:
-                    vm.validate = validateStartAndEndDate;
-                    vm.switchDate = switchDateForDateRangePicker;
-                    vm.displayCalenderView = displayCalenderViewDefault;
-                    vm.isPickingStartDate = true;
-                    break;
                 case 'start-date':
                     vm.validate = validateEndDate;
                     vm.switchDate = selectEndDate;
@@ -102,6 +96,13 @@
                     vm.validate = validateNoneDate;
                     vm.switchDate = undefined;
                     vm.displayCalenderView = displayCalenderViewForDisableView;
+                    break;
+                default:
+                    vm.validate = validateStartAndEndDate;
+                    vm.switchDate = switchDateForDateRangePicker;
+                    vm.displayCalenderView = displayCalenderViewDefault;
+                    vm.isPickingStartDate = true;
+                    vm.pickDate = vm.ngModel.$modelValue.startDate || new Date();
                     break;
             }
             vm.isValid = !vm.validate();
@@ -150,10 +151,6 @@
             }
             var d = new Date(inputDate).setHours(0, 0, 0, 0);
             return new Date(d);
-        }
-
-        function onChangeForSingleDatePicker() {
-            return vm.pickDate = !vm.ngModel.$modelValue ? new Date() : vm.ngModel.$modelValue;
         }
 
         function displayCalenderViewForDisableView(oldVal, newVal) {
@@ -260,14 +257,16 @@
 
         function resetStartDate() {
             vm.pickStartDate = null;
-            vm.pickDate = vm.pickStartDate;
+            vm.pickDate = vm.ngModel.$modelValue.startDate || new Date();
+
             updateNgModelDateForDateRangePicker();
             return vm.isValid = !vm.validate();
         }
 
         function resetEndDate() {
             vm.pickEndDate = null;
-            vm.pickDate = vm.pickEndDate;
+            vm.pickDate = vm.ngModel.$modelValue.endDate || new Date();
+
             updateNgModelDateForDateRangePicker();
             return vm.isValid = !vm.validate();
         }
@@ -411,7 +410,7 @@
             var keys = Object.keys(dateRangeText);
             for (var i = 0; i < keys.length; i++) {
                 if (dateRangeText[keys[i]] > 0) {
-                    text += dateRangeText[keys[i]] + keys[i] + '   ';
+                    text += dateRangeText[keys[i]] + $translate.instant(keys[i]) + '   ';
                 }
             }
             return text;
@@ -442,7 +441,7 @@
             });
         }
 
-        function renderRangeDate(data) {
+        function renderDatesInRange(data) {
             var date = data.date,
                 mode = data.mode;
 
@@ -460,7 +459,6 @@
                     return 'in-date-range';
                 }
             }
-            return '';
         }
     }
 })();

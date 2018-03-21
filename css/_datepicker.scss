@@ -195,7 +195,7 @@
 //
 //<table class="wfm-table">
 //<tr><th>Attribute Name</th><th>Usage</th><th>Required</th></tr>
-//<tr><td>ng-model</td><td>Bind to a js-object representing the date range. The object is composed by <code>startDate</code> and <code>endDate</code> key-value pairs. The date obejct default value is <code>null</code>./td><td>true</td></tr>
+//<tr><td>ng-model</td><td>Bind to a js-object representing the date range. The object is composed by <code>startDate</code> and <code>endDate</code> key-value pairs. The date obejct default value is <code>null</code>.</td><td>true</td></tr>
 //<tr><td>show-week</td><td>Bind to a Bool type <code>true</code> or <code>false</code> value to display week numbers on the side of calendar view. </td><td>false</td></tr>
 //<tr><td>interval-rule</td><td>select special interval rule to validate the date ranges by only <code>week</code> type or <code>month</code> type. </td><td>false</td></tr>
 //<tr><td>custom-validation-function</td><td>Define additional validations conditions by a binding function. The return of custom validation functions should be a $translated resource key string type that displays the validation errors/warning information.</td><td>false</td></tr>

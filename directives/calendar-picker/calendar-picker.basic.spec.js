@@ -29,7 +29,7 @@ describe('CalendarPickerControllerBasicFeature', function () {
         data = {
             startDate: moment(fakeToday).toDate(),
             endDate: moment(fakeToday).add(preSetLength - 1, 'day').toDate()
-        }
+        };
 
         $rootScope.data = data;
 
