@@ -9,17 +9,21 @@
 </wfm-calendar-picker-header>
 <wfm-calendar-picker-body class="con-row">
     <div class="con-flex date-info-wrapper" ng-if="vm.singleDatePicker == undefined">
-        <div class="select-date-info-wrapper pointer" ng-class="{'disabled': vm.disable=='start-date' || vm.disable=='all', 'selecting-date': vm.isPickingStartDate}" ng-click="vm.startToSelectStartDate()">
-            <span class="date-info-label" translate>From</span>
-            <h1 class="date-info jallali-start-date">{{vm.pickStartDate | persianDate:'fullDate'}}</h1>
+        <div class="select-date-info-wrapper pointer" ng-class="{'disabled': vm.disable=='start-date' || vm.disable=='all', 'selecting-date': vm.isPickingStartDate}">
+            <div class="select-date-info-inner" ng-click="vm.startToSelectStartDate()">
+                <span class="date-info-label" translate>From</span>
+                <h1 class="date-info jallali-start-date">{{vm.pickStartDate | persianDate:'fullDate'}}</h1>
+            </div>
             <div class="clear-select-date-grow-out" ng-click="vm.resetStartDate()">
                 <i class="mdi mdi-close"></i>
             </div>
         </div>
         <hr />
-        <div class="select-date-info-wrapper pointer" ng-class="{'disabled': vm.disable=='end-date' || vm.disable=='all', 'selecting-date': vm.isPickingEndDate}" ng-click="vm.startToSelectEndDate()">
-            <span class="date-info-label" translate>To</span>
-            <h1 class="date-info jallali-end-date">{{vm.pickEndDate | persianDate:'fullDate'}}</h1>
+        <div class="select-date-info-wrapper pointer" ng-class="{'disabled': vm.disable=='end-date' || vm.disable=='all', 'selecting-date': vm.isPickingEndDate}">
+            <div class="select-date-info-inner" ng-click="vm.startToSelectEndDate()">
+                <span class="date-info-label" translate>To</span>
+                <h1 class="date-info jallali-end-date">{{vm.pickEndDate | persianDate:'fullDate'}}</h1>
+            </div>
             <div class="clear-select-date-grow-out" ng-click="vm.resetEndDate()">
                 <i class="mdi mdi-close"></i>
             </div>
@@ -27,14 +31,16 @@
     </div>
     <div class="con-flex date-info-wrapper" ng-if="vm.singleDatePicker !== undefined">
         <div class="select-date-info-wrapper single-select-mode pointer" ng-class="{'selecting-date': vm.isPickingSingleDate}">
-            <span class="date-info-label" translate>SelectedDate</span>
-            <h1 class="date-info">{{vm.pickDate | persianDate:'fullDate'}}</h1>
+            <div class="select-date-info-inner">
+                <span class="date-info-label" translate>SelectedDate</span>
+                <h1 class="date-info">{{vm.pickDate | persianDate:'fullDate'}}</h1>
+            </div>
             <div class="clear-select-date-grow-out" ng-click="vm.resetDate()">
                 <i class="mdi mdi-close"></i>
             </div>
         </div>
     </div>
     <div class="con-flex date-info-calendar-wrapper">
-        <persian-datepicker ng-model="vm.pickDate" ng-class="{'non-pointer':vm.disable === 'all', 'show-week-numbers': vm.showWeek, 'hide-week-numbers': !vm.showWeek}" ng-change="vm.switchDate()" show-weeks="vm.showWeek" custom-class="vm.options.customClass()"></persian-datepicker>
+        <persian-datepicker ng-model="vm.pickDate" ng-class="{'non-pointer':vm.disable === 'all', 'show-week-numbers': vm.options.showWeeks, 'hide-week-numbers': !vm.options.showWeeks}" ng-change="vm.switchDate()" show-weeks="vm.showWeek" custom-class="vm.options.customClass()"></persian-datepicker>
     </div>
 </wfm-calendar-picker-body>
