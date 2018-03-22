@@ -450,14 +450,26 @@
             }
 
             if (mode === 'day') {
+                var classStr = '';
+
                 var inStartAndEndRange = moment(date).isSameOrAfter(vm.pickStartDate, 'day') && moment(date).isSameOrBefore(vm.pickEndDate, 'day');
 
                 var isStartDate = moment(date).isSame(vm.pickStartDate, 'day');
                 var isEndDate = moment(date).isSame(vm.pickEndDate, 'day');
 
                 if (isStartDate || isEndDate || inStartAndEndRange) {
-                    return 'in-date-range';
+                    classStr += ' in-date-range';
                 }
+
+                if (isStartDate) {
+                    classStr += ' start-date-cell';
+                }
+
+                if (isEndDate) {
+                    classStr += ' end-date-cell';
+                }
+
+                return classStr;
             }
         }
     }
