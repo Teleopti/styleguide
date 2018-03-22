@@ -300,7 +300,6 @@ wfm-calendar-picker-header {
 }
 
 wfm-calendar-picker-body > .date-info-wrapper {
-	height: 270px;
 	min-width: 200px;
 	padding: 0;
 	overflow: hidden;
@@ -352,7 +351,7 @@ wfm-calendar-picker-body > .date-info-wrapper {
 	}
 
 	.selecting-date {
-		border-color: $secondary;
+		border-color: $blue-100;
 	}
 
 	.clear-select-date-grow-out{
@@ -409,7 +408,8 @@ wfm-calendar-picker-body > .date-info-calendar-wrapper {
 	}
 
 	table {
-		border-spacing: 2px !important;
+		height: 100%;
+		border-spacing: 1px !important;
 		border-collapse: separate !important;
 	}
 
@@ -439,8 +439,6 @@ wfm-calendar-picker-body > .date-info-calendar-wrapper {
 	}
 
 	.uib-datepicker {
-		height: 260px;
-		width: 255px;
 		overflow: hidden;
 
 		.wfm-datepicker {
