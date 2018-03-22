@@ -300,6 +300,7 @@ wfm-calendar-picker-header {
 }
 
 wfm-calendar-picker-body > .date-info-wrapper {
+	height: 280px;
 	min-width: 200px;
 	padding: 0;
 	overflow: hidden;
@@ -418,6 +419,11 @@ wfm-calendar-picker-body > .date-info-calendar-wrapper {
 		box-shadow: none;
 		background-color: $white;
 		color: $text-color-standard;
+		border-radius: 0;
+		font-size: 12px;
+		padding: 5px 8px;
+		outline: none !important;
+		line-height: 1.5;
 	}
 
 	tbody button.btn-info.active {
@@ -438,20 +444,16 @@ wfm-calendar-picker-body > .date-info-calendar-wrapper {
 		}
 	}
 
-	.uib-datepicker {
+	.uib-datepicker, & > div:first-child {
+		width: 266px;
+		height: 270px;
 		overflow: hidden;
 
 		.wfm-datepicker {
 			margin: 0 auto;
 		}
 
-		.btn-default {
-			border-radius: 0;
-			font-size: 12px;
-			padding: 5px 8px;
-			outline: none !important;
-			line-height: 1.5;
-		}
+		
 
 		thead tr th:nth-child(2) button.btn-default {
 			padding: 5px 0;
@@ -465,6 +467,10 @@ wfm-calendar-picker-body > .date-info-calendar-wrapper {
 		thead button.btn-default i:hover:before {
 			box-shadow: none;
 			background: none;
+		}
+
+		tbody td {
+			padding: 1px;
 		}
 
 		tbody td.current-date-cell button{
@@ -505,6 +511,10 @@ wfm-calendar-picker-body > .date-info-calendar-wrapper {
 
 			tbody button.btn-default {
 				padding: 15px 10px;
+			}
+
+			.btn-default {
+				font-size: 14px;
 			}
 
 			button.btn-default.active {
