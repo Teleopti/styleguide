@@ -110,7 +110,7 @@
 
         function setDefaultFocus() {
             $timeout(function() {
-                if (vm.ngModel.$modelValue.startDate && !vm.ngModel.$modelValue.endDate) {
+                if ((vm.ngModel.$modelValue && vm.ngModel.$modelValue.startDate) && (vm.ngModel.$modelValue && !vm.ngModel.$modelValue.endDate)) {
                     vm.isPickingEndDate = true;
                 } else {
                     vm.isPickingStartDate = true;
