@@ -174,11 +174,11 @@
         }
 
         function displayCalenderViewDefault(oldVal, newVal) {
-            if (!!(newVal[0] - oldVal[0])) {
-                vm.pickDate = vm.pickStartDate;
-            }
             if (!!(newVal[1] - oldVal[1])) {
                 vm.pickDate = vm.pickEndDate;
+            }
+            if (!!(newVal[0] - oldVal[0])) {
+                vm.pickDate = vm.pickStartDate;
             }
             return displayDateRange(vm.pickStartDate, vm.pickEndDate);
         }
