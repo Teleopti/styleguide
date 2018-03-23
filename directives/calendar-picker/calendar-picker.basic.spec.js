@@ -135,7 +135,7 @@ describe('CalendarPickerControllerBasicFeature', function () {
         expect(moment(vm.pickEndDate).isSame(moment([2020, 1, 3]))).toBeTruthy();
     });
 
-    it('should set it to start date when picked end date is earlier than start date', function () {
+    it('should reset start date when picked end date is earlier than start date', function () {
         vm.resetStartAndEndDate();
 
         vm.startToSelectStartDate();
@@ -146,7 +146,8 @@ describe('CalendarPickerControllerBasicFeature', function () {
         vm.pickDate = moment([2020, 1, 1]);
         vm.switchDate();
 
-        expect(moment(vm.pickStartDate).isSame(moment([2020,1,1]))).toBeTruthy();
+        expect(vm.pickStartDate).toBeFalsy();
+        expect(moment(vm.pickEndDate).isSame(moment([2020, 1, 1]))).toBeTruthy();
     });
 
     it('should reset end date when picked start date is later than end date', function () {

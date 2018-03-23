@@ -339,12 +339,11 @@
 
         function selectEndDate() {
             if (vm.pickStartDate && vm.pickDate - vm.pickStartDate < 0) {
-                vm.pickStartDate = vm.pickDate;
-                vm.pickEndDate = null;
-            } else {
-                vm.pickEndDate = vm.pickDate;
-                startToSelectStartDate();
+                vm.pickStartDate = null;
             }
+
+            vm.pickEndDate = vm.pickDate;
+            startToSelectStartDate();
 
             updateNgModelDateForDateRangePicker();
 
