@@ -341,6 +341,7 @@ wfm-calendar-picker-body > .date-info-wrapper {
 		position: relative;
 		flex-grow: 1;
 		display: flex;
+		text-align: left;
 
 		@media screen and (max-width:768px){
 			min-height: 80px;
