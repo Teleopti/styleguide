@@ -430,9 +430,16 @@ wfm-calendar-picker-body > .date-info-calendar-wrapper {
 		line-height: 1.5;
 	}
 
-	tbody button.btn-info.active {
+	.btn-info.active {
+		background: transparent !important;
+		color: $text-color-standard;
+		font-weight: bold;
+	}
+
+	tbody .in-date-range button.btn-info.active {
 		background-color: $secondary !important;
 		color: $white !important;
+		font-weight: normal;
 	}
 
 	//For fixing flicker issue of uib-datepicker
@@ -456,8 +463,6 @@ wfm-calendar-picker-body > .date-info-calendar-wrapper {
 		.wfm-datepicker {
 			margin: 0 auto;
 		}
-
-		
 
 		thead tr th:nth-child(2) button.btn-default {
 			padding: 5px 0;
