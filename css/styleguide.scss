@@ -1333,18 +1333,3 @@ md-tooltip {
     }
   }
 }
-
-//for fix the style of date range picker due to the boostrap version
-.date-info-calendar-wrapper {
-  .wfm-datepicker .btn{
-    border-radius: 0;
-    font-size: 12px;
-    padding: 5px 8px;
-    outline: 0!important;
-    line-height: 1.5;
-  }
-}
-
-wfm-calendar-picker-body>.date-info-wrapper .select-date-info-wrapper {
-    height: 42.5%!important;
-  }

@@ -30,7 +30,7 @@ describe('CalendarPickerControllerCustomFeature', function () {
         data = {
             startDate: moment(fakeToday).toDate(),
             endDate: moment(fakeToday).add(preSetLength - 1, 'day').toDate()
-        }
+        };
 
         $rootScope.data = data;
         $rootScope.customValid = function (data) {
@@ -84,10 +84,10 @@ describe('CalendarPickerControllerCustomFeature', function () {
 
         expect(vm.pickStartDate).toEqual(data.startDate);
         expect(vm.pickEndDate).toEqual(data.endDate);
-        expect(vm.dateRangeText.replace(/\s/g, '')).toEqual('5Week1Day');
+        expect(vm.dateRangeText.replace(/\s/g, '')).toEqual('5Weeks1Days');
     });
 
-    it('should be able to disable modify a prefix start date and only allow update end date', function () {
+    it('should be able to only allow update end date with a readonly preselected start date', function () {
         pickerWithPresetDateRange = setupPicker('ng-model="data" disable="start-date"');
         vm = pickerWithPresetDateRange.find('wfm-calendar-picker-header').scope().vm;
         vm.pickDate = moment(fakeToday).add((preSetLength / 2 - 10), 'day').toDate();
@@ -98,7 +98,7 @@ describe('CalendarPickerControllerCustomFeature', function () {
         expect(vm.pickEndDate).toEqual(vm.pickDate);
     });
 
-    it('should be able to disable modify a prefix start date and while end date is reset date range view should reset', function () {
+    it('should be able to reset end date with a readonly preselected start date', function () {
         pickerWithPresetDateRange = setupPicker('ng-model="data" disable="start-date"');
         vm = pickerWithPresetDateRange.find('wfm-calendar-picker-header').scope().vm;
         calendarView = pickerWithPresetDateRange.find('table')[0];
@@ -112,7 +112,7 @@ describe('CalendarPickerControllerCustomFeature', function () {
         expect(range.length).toEqual(0);
     });
 
-    it('should be able to disable modify a prefix end date', function () {
+    it('should be able to disable modifying a readonly preselected end date', function () {
         pickerWithPresetDateRange = setupPicker('ng-model="data" disable="end-date"');
         vm = pickerWithPresetDateRange.find('wfm-calendar-picker-header').scope().vm;
         vm.pickDate = moment(fakeToday).add((preSetLength / 2 - 10), 'day').toDate();
@@ -123,18 +123,26 @@ describe('CalendarPickerControllerCustomFeature', function () {
         expect(vm.pickStartDate).toEqual(vm.pickDate);
     });
 
-    it('should be able to disable modify a prefix end date and while start date is reset date range view should reset', function () {
+    it('should be able to modify start date with a readonly preselected end date', function () {
+        var fakeData = {
+            startDate: moment(fakeToday).toDate(),
+            endDate: moment(fakeToday).add(1, 'day').toDate()
+        };
+
+        $rootScope.data = fakeData;
+
         pickerWithPresetDateRange = setupPicker('ng-model="data" disable="end-date"');
         vm = pickerWithPresetDateRange.find('wfm-calendar-picker-header').scope().vm;
         calendarView = pickerWithPresetDateRange.find('table')[0];
+
         vm.resetStartDate();
         var range = calendarView.getElementsByClassName('in-date-range');
 
-        expect(vm.pickEndDate).toEqual(data.endDate);
-        expect(vm.pickStartDate).not.toEqual(data.startDate);
+        expect(vm.pickEndDate).toEqual(fakeData.endDate);
+        expect(vm.pickStartDate).not.toEqual(fakeData.startDate);
         expect(vm.pickStartDate).toEqual(null);
         expect(range.length).not.toEqual(preSetLength);
-        expect(range.length).toEqual(0);
+        expect(range.length).toEqual(1);
     });
 
     it('should be able to display weeks number on calendar view', function () {

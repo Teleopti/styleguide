@@ -29,7 +29,7 @@ describe('CalendarPickerControllerBasicFeature', function () {
         data = {
             startDate: moment(fakeToday).toDate(),
             endDate: moment(fakeToday).add(preSetLength - 1, 'day').toDate()
-        }
+        };
 
         $rootScope.data = data;
 
@@ -97,35 +97,105 @@ describe('CalendarPickerControllerBasicFeature', function () {
         expect(vm.pickEndDate).toEqual(null);
     });
 
-    it('should be able to reset the display of date range on calendar view while start date is set to null', function () {
+    it('should keep end date when picked start date is earlier than previous start date', function () {
+        vm.resetStartAndEndDate();
+
+        vm.startToSelectStartDate();
+        vm.pickDate = moment([2020, 1, 2]);
+        vm.switchDate();
+
+        vm.startToSelectEndDate();
+        vm.pickDate = moment([2020, 1, 3]);
+        vm.switchDate();
+
+        vm.startToSelectStartDate();
+        vm.pickDate = moment([2020, 1, 1]);
+        vm.switchDate();
+
+        expect(moment(vm.pickStartDate).isSame(moment([2020, 1, 1]))).toBeTruthy();
+        expect(moment(vm.pickEndDate).isSame(moment([2020, 1, 3]))).toBeTruthy();
+    });
+
+    it('should keep start date when picked end date is later than previous end date', function () {
+        vm.resetStartAndEndDate();
+
+        vm.startToSelectStartDate();
+        vm.pickDate = moment([2020, 1, 1]);
+        vm.switchDate();
+
+        vm.startToSelectEndDate();
+        vm.pickDate = moment([2020, 1, 2]);
+        vm.switchDate();
+
+        vm.startToSelectEndDate();
+        vm.pickDate = moment([2020, 1, 3]);
+        vm.switchDate();
+
+        expect(moment(vm.pickStartDate).isSame(moment([2020, 1, 1]))).toBeTruthy();
+        expect(moment(vm.pickEndDate).isSame(moment([2020, 1, 3]))).toBeTruthy();
+    });
+
+    it('should reset start date when picked end date is earlier than start date', function () {
+        vm.resetStartAndEndDate();
+
+        vm.startToSelectStartDate();
+        vm.pickDate = moment([2020, 1, 2]);
+        vm.switchDate();
+
+        vm.startToSelectEndDate();
+        vm.pickDate = moment([2020, 1, 1]);
+        vm.switchDate();
+
+        expect(vm.pickStartDate).toBeFalsy();
+        expect(moment(vm.pickEndDate).isSame(moment([2020, 1, 1]))).toBeTruthy();
+    });
+
+    it('should reset end date when picked start date is later than end date', function () {
+        vm.resetStartAndEndDate();
+
+        vm.startToSelectStartDate();
+        vm.pickDate = moment([2020, 1, 2]);
+        vm.switchDate();
+
+        vm.startToSelectEndDate();
+        vm.pickDate = moment([2020, 1, 1]);
+        vm.switchDate();
+
+        vm.startToSelectStartDate();
+        vm.pickDate = moment([2020, 1, 3]);
+        vm.switchDate();
+
+        expect(moment(vm.pickStartDate).isSame(moment([2020, 1, 3]))).toBeTruthy();
+        expect(vm.pickEndDate).toBeFalsy();
+    });
+
+    it('should be able to show selected end date on calendar view while start date is set to null', function () {
         vm.resetStartDate();
         var range = calendarView.getElementsByClassName('in-date-range');
 
         expect(vm.pickStartDate).toEqual(null);
         expect(vm.pickEndDate).not.toEqual(null);
         expect(range.length).not.toEqual(preSetLength);
-        expect(range.length).toEqual(0);
+        expect(range.length).toEqual(1);
     });
 
-    it('should be able to reset the display of date range on calendar view while end date is set to null', function () {
+    it('should be able to show selected start date on calendar view while end date is set to null', function () {
         vm.resetEndDate();
         var range = calendarView.getElementsByClassName('in-date-range');
 
         expect(vm.pickEndDate).toEqual(null);
         expect(vm.pickStartDate).not.toEqual(null);
         expect(range.length).not.toEqual(preSetLength);
-        expect(range.length).toEqual(0);
+        expect(range.length).toEqual(1);
     });
 
-    it('should be able to reset the display of date range on calendar view while start date and end date are both set to null', function () {
+    it('should be able to reset to default day of date range on calendar view while start date and end date are both set to null', function () {
         vm.resetStartDate();
         vm.resetEndDate();
-        var range = calendarView.getElementsByClassName('in-date-range');
 
         expect(vm.pickEndDate).toEqual(null);
         expect(vm.pickStartDate).toEqual(null);
-        expect(range.length).not.toEqual(preSetLength);
-        expect(range.length).toEqual(0);
+        expect(moment(vm.pickDate).isSame(new Date(), 'day')).toEqual(true);
     });
 
     it('should be able to display date range on calendar view while start date and end date are not null', function () {
@@ -174,6 +244,7 @@ describe('CalendarPickerControllerBasicFeature', function () {
     it('should be able to update the display of date range on calendar view while end date is reset and update', function () {
         var moveDays = 3;
         vm.resetEndDate();
+        vm.startToSelectEndDate();
         vm.pickDate = moment(fakeToday).add(preSetLength + moveDays - 1, 'day');
         vm.switchDate();
 
@@ -197,197 +268,149 @@ describe('CalendarPickerControllerBasicFeature', function () {
     });
 
     it('should be able to auto update new start date after both start date and end date are set to none', function () {
-        vm.resetStartDate();
-        vm.resetEndDate();
-        vm.pickDate = moment(fakeToday).add((preSetLength / 2 - 2), 'day').toDate();
+        vm.resetStartAndEndDate();
+
+        vm.startToSelectStartDate();
+        var length = (preSetLength / 2 - 2);
+        vm.pickDate = moment(fakeToday).add(length, 'day').toDate();
         vm.switchDate();
-        var range = calendarView.getElementsByClassName('in-date-range');
 
         expect(vm.pickEndDate).toEqual(null);
         expect(vm.pickStartDate).not.toEqual(null);
-        expect(vm.pickStartDate).toEqual(vm.pickDate);
-        expect(range.length).not.toEqual(preSetLength);
-        expect(range.length).toEqual(0);
-    });
-
-    it('should be able to auto update new start date while new pick date is near to original start date', function () {
-        vm.pickDate = moment(fakeToday).add((preSetLength / 2 - 2), 'day').toDate();
-        vm.switchDate();
-        var range = calendarView.getElementsByClassName('in-date-range');
-
-        expect(vm.pickStartDate).not.toEqual(null);
-        expect(vm.pickStartDate).not.toEqual(data.startDate);
-        expect(vm.pickStartDate).toEqual(vm.pickDate);
-        expect(vm.pickEndDate).not.toEqual(null);
-        expect(vm.pickEndDate).toEqual(data.endDate);
-        expect(range.length).toEqual(preSetLength / 2 + 2);
-        expect(vm.dateRangeText.replace(/\s/g, '')).toEqual('1Week2Day');
-    });
-
-    it('should be able to auto update new end date while new pick date is near to original end date', function () {
-        vm.pickDate = moment(fakeToday).add((preSetLength / 2 + 3), 'day').toDate();
-        vm.switchDate();
-        var range = calendarView.getElementsByClassName('in-date-range');
-
-        expect(vm.pickEndDate).not.toEqual(null);
-        expect(vm.pickEndDate).not.toEqual(data.endDate);
-        expect(vm.pickEndDate).toEqual(vm.pickDate);
-        expect(vm.pickStartDate).not.toEqual(null);
-        expect(vm.pickStartDate).toEqual(data.startDate);
-        expect(range.length).toEqual(preSetLength / 2 + 4);
-        expect(vm.dateRangeText.replace(/\s/g, '')).toEqual('1Week4Day');
-    });
-
-    it('should be able to auto update new end date while new pick date is the middle date between the original start date and end date', function () {
-        vm.pickDate = moment(fakeToday).add((preSetLength / 2 - 1), 'day').toDate();
-        vm.switchDate();
-        var range = calendarView.getElementsByClassName('in-date-range');
-
-        expect(vm.pickEndDate).not.toEqual(null);
-        expect(vm.pickEndDate).not.toEqual(data.endDate);
-        expect(vm.pickEndDate).toEqual(vm.pickDate);
-        expect(vm.pickStartDate).not.toEqual(null);
-        expect(vm.pickStartDate).toEqual(data.startDate);
-        expect(range.length).toEqual(preSetLength / 2);
-        expect(vm.dateRangeText.replace(/\s/g, '')).toEqual('1Week');
-    });
-
-    it('should be able to auto update new start date while new pick date is near to original start date', function () {
-        vm.pickDate = moment(fakeToday).add((preSetLength / 2 - 2), 'day').toDate();
-        vm.switchDate();
-        var range = calendarView.getElementsByClassName('in-date-range');
-
-        expect(vm.pickStartDate).not.toEqual(null);
-        expect(vm.pickStartDate).not.toEqual(data.startDate);
-        expect(vm.pickStartDate).toEqual(vm.pickDate);
-        expect(vm.pickEndDate).not.toEqual(null);
-        expect(vm.pickEndDate).toEqual(data.endDate);
-        expect(range.length).toEqual(preSetLength / 2 + 2);
-        expect(vm.dateRangeText.replace(/\s/g, '')).toEqual('1Week2Day');
+        expect(moment(vm.pickStartDate).isSame(moment(fakeToday).add(length, 'day'), 'day')).toBeTruthy();
+        expect(vm.pickDate).toBeFalsy();
     });
 
     it('should be able to auto update new start date while new pick date is equal to end date', function () {
+        vm.startToSelectStartDate();
         vm.pickDate = moment(fakeToday).add(preSetLength - 1, 'day').toDate();
         vm.switchDate();
-        console.log(vm)
         var range = calendarView.getElementsByClassName('in-date-range');
 
         expect(vm.pickStartDate).toEqual(vm.pickEndDate);
         expect(range.length).toEqual(1);
-        expect(vm.dateRangeText.replace(/\s/g, '')).toEqual('1Day');
+        expect(vm.dateRangeText.replace(/\s/g, '')).toEqual('1Days');
     });
 
     it('should be able to auto update new end date while new pick date is equal to start date', function () {
+        vm.startToSelectEndDate();
         vm.pickDate = moment(fakeToday);
         vm.switchDate();
         var range = calendarView.getElementsByClassName('in-date-range');
 
         expect(vm.pickStartDate).toEqual(vm.pickEndDate);
         expect(range.length).toEqual(1);
-        expect(vm.dateRangeText.replace(/\s/g, '')).toEqual('1Day');
-    });
-
-    it('should be able to auto update new end date while new pick date is near to original end date', function () {
-        vm.pickDate = moment(fakeToday).add((preSetLength / 2 + 3), 'day').toDate();
-        vm.switchDate();
-        var range = calendarView.getElementsByClassName('in-date-range');
-
-        expect(vm.pickEndDate).not.toEqual(null);
-        expect(vm.pickEndDate).not.toEqual(data.endDate);
-        expect(vm.pickEndDate).toEqual(vm.pickDate);
-        expect(vm.pickStartDate).not.toEqual(null);
-        expect(vm.pickStartDate).toEqual(data.startDate);
-        expect(range.length).toEqual(preSetLength / 2 + 4);
-        expect(vm.dateRangeText.replace(/\s/g, '')).toEqual('1Week4Day');
+        expect(vm.dateRangeText.replace(/\s/g, '')).toEqual('1Days');
     });
 
     it('should be able to [handle February as special case] and understand the interval length between 2018-01-31 to 2018-02-27 is one month', function () {
-        vm.resetStartDate();
-        vm.resetEndDate();
+        vm.resetStartAndEndDate();
+
+        vm.startToSelectStartDate();
         vm.pickDate = moment([2018, 0, 31]);
         vm.switchDate();
+
+        vm.startToSelectEndDate();
         vm.pickDate = moment([2018, 1, 27]);
         vm.switchDate();
 
-        expect(vm.dateRangeText.replace(/\s/g, '')).toEqual('1Month');
+        expect(vm.dateRangeText.replace(/\s/g, '')).toEqual('1Months');
     });
 
     it('should be able to [handle February as special case] and understand the interval length between 2018-01-28 to 2018-02-27 is one month', function () {
         /*we dont care the case while the date is end of February since it was very rare and difficult to handle ex: 2018-01-29 to 2018-02-28 is not one month*/
-        vm.resetStartDate();
-        vm.resetEndDate();
+        vm.resetStartAndEndDate();
+        vm.startToSelectStartDate();
         vm.pickDate = moment([2018, 0, 28]);
         vm.switchDate();
+
+        vm.startToSelectEndDate();
         vm.pickDate = moment([2018, 1, 27]);
         vm.switchDate();
 
-        expect(vm.dateRangeText.replace(/\s/g, '')).toEqual('1Month');
+        expect(vm.dateRangeText.replace(/\s/g, '')).toEqual('1Months');
     });
 
     it('should be able to [handle February as special case] and understand the interval length between 2018-02-01 to 2018-02-28 is one month', function () {
-        vm.resetStartDate();
-        vm.resetEndDate();
+        vm.resetStartAndEndDate();
+        vm.startToSelectStartDate();
         vm.pickDate = moment([2018, 1, 1]);
         vm.switchDate();
+
+        vm.startToSelectEndDate();
         vm.pickDate = moment([2018, 1, 28]);
         vm.switchDate();
 
-        expect(vm.dateRangeText.replace(/\s/g, '')).toEqual('1Month');
+        expect(vm.dateRangeText.replace(/\s/g, '')).toEqual('1Months');
     });
 
     it('should be able to [handle February as special case] and understand the interval length between 2018-01-16 to 2018-02-15 is one month', function () {
-        vm.resetStartDate();
-        vm.resetEndDate();
+        vm.resetStartAndEndDate();
+        vm.startToSelectStartDate();
         vm.pickDate = moment([2018, 0, 16]);
         vm.switchDate();
+
+        vm.startToSelectEndDate();
         vm.pickDate = moment([2018, 1, 15]);
         vm.switchDate();
 
-        expect(vm.dateRangeText.replace(/\s/g, '')).toEqual('1Month');
+        expect(vm.dateRangeText.replace(/\s/g, '')).toEqual('1Months');
     });
 
     it('should be able to [handle February as special case] and understand the interval length between 2018-01-16 to 2018-04-15 is three month', function () {
-        vm.resetStartDate();
-        vm.resetEndDate();
+        vm.resetStartAndEndDate();
+
+        vm.startToSelectStartDate();
         vm.pickDate = moment([2018, 0, 16]);
         vm.switchDate();
+
+        vm.startToSelectEndDate();
         vm.pickDate = moment([2018, 3, 15]);
         vm.switchDate();
 
-        expect(vm.dateRangeText.replace(/\s/g, '')).toEqual('3Month');
+        expect(vm.dateRangeText.replace(/\s/g, '')).toEqual('3Months');
     });
 
     it('should be able to [handle February as special case in leap year] and understand the interval length between 2020-01-29 to 2020-02-28 is one month', function () {
         /*we dont care the case while the date is end of February since it was very rare and difficult to handle ex: 2020-01-30 to 2010-02-29 is not one month*/
-        vm.resetStartDate();
-        vm.resetEndDate();
+        vm.resetStartAndEndDate();
+
+        vm.startToSelectStartDate();
         vm.pickDate = moment([2020, 0, 29]);
         vm.switchDate();
+
+        vm.startToSelectEndDate();
         vm.pickDate = moment([2020, 1, 28]);
         vm.switchDate();
 
-        expect(vm.dateRangeText.replace(/\s/g, '')).toEqual('1Month');
+        expect(vm.dateRangeText.replace(/\s/g, '')).toEqual('1Months');
     });
 
     it('should be able to [handle February as special case in leap year] and understand the interval length between 2020-01-31 to 2020-02-28 is one month', function () {
-        vm.resetStartDate();
-        vm.resetEndDate();
+        vm.resetStartAndEndDate();
+
+        vm.startToSelectStartDate();
         vm.pickDate = moment([2020, 0, 31]);
         vm.switchDate();
+
+        vm.startToSelectEndDate();
         vm.pickDate = moment([2020, 1, 28]);
         vm.switchDate();
 
-        expect(vm.dateRangeText.replace(/\s/g, '')).toEqual('1Month');
+        expect(vm.dateRangeText.replace(/\s/g, '')).toEqual('1Months');
     });
 
     it('should be able to [handle February as special case in leap year] and understand the interval length between 2020-02-01 to 2018-02-29 is one month', function () {
-        vm.resetStartDate();
-        vm.resetEndDate();
+        vm.resetStartAndEndDate();
+
+        vm.startToSelectStartDate();
         vm.pickDate = moment([2020, 1, 1]);
         vm.switchDate();
+
+        vm.startToSelectEndDate();
         vm.pickDate = moment([2020, 1, 29]);
         vm.switchDate();
 
-        expect(vm.dateRangeText.replace(/\s/g, '')).toEqual('1Month');
+        expect(vm.dateRangeText.replace(/\s/g, '')).toEqual('1Months');
     });
 });
