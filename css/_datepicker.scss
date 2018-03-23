@@ -335,7 +335,8 @@ wfm-calendar-picker-body > .date-info-wrapper {
 	.select-date-info-wrapper {
 		height: 50%;
 		background-color: $gray012;
-		border: 2px transparent solid;
+		border-right: 1px $gray012 solid;
+		border-left: 4px transparent solid;
 		padding: 10px;
 		position: relative;
 		flex-grow: 1;
@@ -352,7 +353,9 @@ wfm-calendar-picker-body > .date-info-wrapper {
 	}
 
 	.selecting-date {
-		border-color: $blue-100;
+		border-left-color: $secondary;
+		background: $white;
+		transition: all linear 0.3s;
 	}
 
 	.clear-select-date-grow-out{
