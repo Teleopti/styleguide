@@ -100,12 +100,22 @@
                     vm.validate = validateStartAndEndDate;
                     vm.switchDate = switchDateForDateRangePicker;
                     vm.displayCalenderView = displayCalenderViewDefault;
-                    vm.isPickingStartDate = true;
                     vm.pickDate = vm.ngModel.$modelValue.startDate || new Date();
+                    setDefaultFocus();
                     break;
             }
             vm.isValid = !vm.validate();
             return;
+        }
+
+        function setDefaultFocus() {
+            $timeout(function() {
+                if (vm.ngModel.$modelValue.startDate && !vm.ngModel.$modelValue.endDate) {
+                    vm.isPickingEndDate = true;
+                } else {
+                    vm.isPickingStartDate = true;
+                }
+            }, 10);
         }
 
         function selectToday() {
