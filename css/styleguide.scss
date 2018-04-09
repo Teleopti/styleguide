@@ -1333,3 +1333,6 @@ md-tooltip {
     }
   }
 }
+.searchItem:focus > li{
+	background:$secondary;
+}
