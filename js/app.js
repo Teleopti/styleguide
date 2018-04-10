@@ -502,7 +502,7 @@
     $scope.menuItems = [];
     $scope.addItemToList = function (url, header) {
       var item = {
-        Link: '<a href="' + url + '"><li>' + header + '</li></a>',
+        Link: '<a class="searchItem" tabindex="0" arrow href="' + url + '"><li>' + header + '</li></a>',
         Name: header
       }
       if ($scope.menuItems.indexOf(item) == -1) {
