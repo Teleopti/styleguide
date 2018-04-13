@@ -2,53 +2,55 @@
 
 Take a look to the [styleguide here](http://teleopti.github.io/styleguide/styleguide/index.html)
 
+For development purposes you can run the small server in /devserver folder by using npm start.
+The server runs on [http://localhost:3000](http://localhost:3000)
+
 ## How to contribute
+
 First, fork the project and create a new branch on the fork.
 
 To be able to generate the styleguide you need to install the dependencies:
 
-		npm install
+    	npm install
 
 To generate it:
 
-		grunt dist or npm run dist
+    	grunt dist or npm run dist
 
 You can also use the watch task. The styleguide is generated after each scss change:
 
-		grunt or npm start
+    	grunt or npm start
 
 Then, run a local instance (via visual studio for example). The local styleguide is accessible by the url [mylocalserver]/styleguide/styleguide
 
-
 ### Submit your contribution:
 
-* create a pull request from your branch to Teleopti/master.
-
+*   create a pull request from your branch to Teleopti/master.
 
 ## Atom packages for this project
 
 If you use Atom you can install those packages to help you following the guidelines
 
-* jscs-fixer
+*   jscs-fixer
 
-* jshint
+*   jshint
 
-* linter-jscs
- 
+*   linter-jscs
+
 ## How to release
 
-* Upgrade the version number in package.json
+*   Upgrade the version number in package.json
 
-* Go to https://github.com/Teleopti/styleguide/releases
+*   Go to https://github.com/Teleopti/styleguide/releases
 
-* Click on "Draft a new release"
+*   Click on "Draft a new release"
 
-* The tag version should be "v"+the new version number (like v1.1.21)
+*   The tag version should be "v"+the new version number (like v1.1.21)
 
-* The target should be the commit with the version upgrade
+*   The target should be the commit with the version upgrade
 
-* Title should be "v"+the new version number (like v1.1.21)
+*   Title should be "v"+the new version number (like v1.1.21)
 
-* And you can write some details about the release
+*   And you can write some details about the release
 
-* Click on "Publish release"
+*   Click on "Publish release"
