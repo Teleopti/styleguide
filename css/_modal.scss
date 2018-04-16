@@ -66,7 +66,7 @@
 //
 // A modal is launched above the main view and stays there until the user has taken action. It can be quickly dismissed by clicking outside it or on the close icon (this should be treated as a cancel).
 //
-// Note: In all modals and panels the footer links should be buttons, not  &lt;a/&gt; tags.
+// Note: In all modals, dialogs and panels the footer links should be buttons, not  &lt;a/&gt; tags.
 //
 // <div class="jsprewrap">
 //   <div class="ksscopy kss-style" ng-click="showJs['modal1'] = !showJs['modal1']">
@@ -105,11 +105,11 @@
 //Styleguide 1.23
 //
 
-//Modal (mini)
+//Dialog
 //
-// The mini modal is used for confirmation. As opposed to the regular modal it cant be dissmissed without taking an action.
+// The dialog is used for confirmation. As opposed to the modal it can not be dissmissed without taking an action.
 //
-// Note: In all modals and panels the footer links should be buttons, not  &lt;a/&gt; tags.
+// Note: In all modals, dialogs and panels the footer links should be buttons, not  &lt;a/&gt; tags.
 //
 //Note: Recomended translated text { {'AreYouSureYouWantToDelete' | translate} }
 //
