@@ -1,4 +1,4 @@
-//Typography
+// Headers
 //
 //Our standard font-family is 14px Calibri ('Calibri,Segoe,Segoe UI,Arial,sans-serif). Avoid introducing other font types or sizes as this may lead to issues with layout or translation.
 //
@@ -8,7 +8,7 @@
 //<h3>Text header</h3>
 //<p>Plain text</p>
 //
-//Styleguide 1.10
+//Styleguide 1.18
 //
 
 //Language
@@ -20,6 +20,9 @@
 //
 
 //How we use words
+//
+//These are some of the thinking applied to words and writing.
+//When in doubt, check the <a href="https://material.io/guidelines/style/writing.html">material design writing guidelines</a>  
 //
 //<table class="wfm-table">
 //<thead><tr><th>Do</th><th>Don't</th><th>Distinction</th></tr></thead>
@@ -40,6 +43,20 @@
 //
 //Styleguide 6.1
 //
+
+//Translations
+//
+//To support all manner of languages we use <a href="https://github.com/angular-translate/angular-translate">angular-translate</a>.
+//It allows us to translate in templates using {&nbsp;{'Key'|translate}&nbsp;} or $translate.instant('Key') when translating from JavaScript.
+//Keys used in this styleguide should be referenced in the styleguide_translation_keys.html file in the project root.
+//The format of these are important for us to be able to keep track of what keys are in use.
+//
+// <b>Jalaali</b></br>
+// To show dates in the Jalaali format use this filter: {&nbsp;{DateObj | persianDate:'fullDate'}&nbsp;}.
+//
+//Styleguide 6.2
+//
+
 
 h1,h2,h3,h4,h5,h6{
 	margin-top:10px!important;

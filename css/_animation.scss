@@ -4,8 +4,8 @@
 
 .animate-show.ng-hide-add.ng-hide-add-active,
 .animate-show.ng-hide-remove.ng-hide-remove-active {
-  -webkit-transition: all ease 0.5s;
-  transition: all ease 0.5s;
+  -webkit-transition: $transition-timing;
+  transition: $transition-timing;
 }
 
 .animate-show.ng-hide {
@@ -15,24 +15,24 @@
 
 .reveal-material {
     cursor: pointer;
-    animation:grow 0.5s;
-    animation-timing-function:ease-out;
+    animation:grow 300ms;
+    animation-timing-function:cubic-bezier(.33,.11,.02,.99);
     animation-play-state:running;
-    -webkit-animation:grow 1s;
+    -webkit-animation:grow 300ms;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
-    -webkit-animation-timing-function:ease-out;
+    -webkit-animation-timing-function:cubic-bezier(.33,.11,.02,.99);
     -webkit-animation-play-state:running;
 }
 
 .hide-material {
-    animation:shrink 0.5s;
-    animation-timing-function:ease-out;
+    animation:shrink 300ms;
+    animation-timing-function:cubic-bezier(.33,.11,.02,.99);
     animation-play-state:running;
-    -webkit-animation:shrink 0.5s;
+    -webkit-animation:shrink 300ms;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
-    -webkit-animation-timing-function:ease-out;
+    -webkit-animation-timing-function:cubic-bezier(.33,.11,.02,.99);
     -webkit-animation-play-state:running;
 }
 

@@ -3,28 +3,193 @@
 //Styleguide 5
 //
 
-//Tree element
+//Tree type one - function picker
 //
-//A tree structure is used to show relations between different items. Selected items are marked with a checkmark and a background along with a left side border. Each tree line has a right align span child that could show an icon if the line is selected.
-//Please note thet the "ng-bind" span should be replaced with the normal angular binding.
+//Tree type one is a special tree picker, it allows parent nodes to be selected independently from their children.
+//This tree type structure is used to show relations between different items. Selected items are marked with a full checkmark '✓'.
 //
-//<div class="jsprewrap">
-//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
-//	<div ng-show="showjs">
-//		<code><pre>
-//$scope.treeDemos =   [
-//		{categories: [{name: 'item 1'}, {name: 'item 2'}, {name: 'item 3'}, {name: 'item 2'}], name: 'First Group',},
-//		{categories: [{name: 'item 1'}, {name: 'item 3'}], name: 'Second Group'}, {categories: [], name: 'Third Group'}
-//];
-//		</pre></code>
-//	</div>
-//</div>
+// <div class="jsprewrap">
+//   <div class="ksscopy kss-style" ng-click="showJs['treeDemo1'] = !showJs['treeDemo1']">
+//       <span ng-hide="showJs['treeDemo1']">Show</span>
+//      <span ng-show="showJs['treeDemo1']">Hide</span>
+//     JavaScript
+//     <i class="mdi mdi-code-tags pull-right"></i>
+//   </div>
+//   <div class="animate-show" ng-show="showJs['treeDemo1']">
+//     <code>
+//       <pre class="prettyprint linenums lang-js">
 //
-//  Markup: tree.hbs
+//          $scope.treeOption = {
+//           NodeDisplayName: "label",
+//           NodeChildrenName: "nodes",
+//           NodeSelectedMark: "selected"
+//           };
+//
+//       </pre>
+//     </code>
+//   </div>
+// </div>
+//
+// Markup: 
+//<tree-data-one ng-model="treeDemos1" option="treeOption"></tree-data-one>
 //
 //Styleguide 5.1
 
+//Tree type two - organization picker
+//
+//Tree type two is a general tree structure using parent-child relation.
+//This tree type structure is used to show relations between different items. Selected items are marked with a full checkmark '✓' or semi-checkmark '-'.
+//If parent item contains one child item it is marked as selected as well as its parent with semi-checkmark. if all child items are selected, the parent item will mark with full checkmark.
+//
+// <div class="jsprewrap">
+//   <div class="ksscopy kss-style" ng-click="showJs['treeDemo2'] = !showJs['treeDemo2']">
+//       <span ng-hide="showJs['treeDemo2']">Show</span>
+//      <span ng-show="showJs['treeDemo2']">Hide</span>
+//     JavaScript
+//     <i class="mdi mdi-code-tags pull-right"></i>
+//   </div>
+//   <div class="animate-show" ng-show="showJs['treeDemo2']">
+//     <code>
+//       <pre class="prettyprint linenums lang-js">
+//
+//          $scope.treeOption2 = {
+//           NodeDisplayName: "label",
+//           NodeChildrenName: "nodes",
+//           NodeSelectedMark: "selected",
+//           NodeSemiSelected: "semiSelected"
+//           };
+//
+//       </pre>
+//     </code>
+//   </div>
+// </div>
+//
+// Markup: 
+//<tree-data-two ng-model="treeDemos2" option="treeOption2"></tree-data-two>
+//
+//Styleguide 5.2
 
+//Tree type two - organization picker(unique root)
+//
+//If the tree data has several first level parents (as root in this description), selection is only allowed for one of them at a time.
+//
+// <div class="jsprewrap">
+//   <div class="ksscopy kss-style" ng-click="showJs['treeDemo3'] = !showJs['treeDemo3']">
+//       <span ng-hide="showJs['treeDemo3']">Show</span>
+//      <span ng-show="showJs['treeDemo3']">Hide</span>
+//     JavaScript
+//     <i class="mdi mdi-code-tags pull-right"></i>
+//   </div>
+//   <div class="animate-show" ng-show="showJs['treeDemo3']">
+//     <code>
+//       <pre class="prettyprint linenums lang-js">
+//
+//          $scope.treeOption3 = {
+//           NodeDisplayName: "label",
+//           NodeChildrenName: "nodes",
+//           NodeSelectedMark: "selected",
+//           NodeSemiSelected: "semiSelected",
+//           RootSelectUnique: true
+//           };
+//
+//       </pre>
+//     </code>
+//   </div>
+// </div>
+//
+// Markup: 
+//<tree-data-two ng-model="treeDemos3" option="treeOption3"></tree-data-two>
+//
+//Styleguide 5.3
+
+//Tree Picker Filter
+//
+//Tree picker filter is a general filter for all types of tree picker and it uses for filter site/team within a organization by input keyword.
+//
+// <div class="jsprewrap">
+//   <div class="ksscopy kss-style" ng-click="showJs['treeDemo4'] = !showJs['treeDemo4']">
+//       <span ng-hide="showJs['treeDemo4']">Show</span>
+//      <span ng-show="showJs['treeDemo4']">Hide</span>
+//     JavaScript
+//     <i class="mdi mdi-code-tags pull-right"></i>
+//   </div>
+//   <div class="animate-show" ng-show="showJs['treeDemo4']">
+//     <code>
+//       <pre class="prettyprint linenums lang-js">
+//
+//          $scope.treeOption4 = {
+//           NodeDisplayName: "label",
+//           NodeChildrenName: "nodes",
+//           NodeSelectedMark: "selected",
+//           NodeSemiSelected: "semiSelected",
+//           DisplayTreeFilter: true
+//           };
+//
+//       </pre>
+//     </code>
+//   </div>
+// </div>
+//
+// Markup: 
+//<tree-data-two ng-model="treeDemos4" option="treeOption4"></tree-data-two>
+//
+//Styleguide 5.4
+
+tree-data-one, tree-data-two, tree-data-three {
+	.tree-toggle-group{
+		padding:5px;
+		align-items: center;
+		border: 1px dotted $gray012;
+		border-top: none;
+	}
+
+	.tree-handle-wrapper{
+		cursor:pointer;
+		position:relative;
+		margin-left: 3rem;
+	}
+
+	.selected-true{
+		background: transparent;
+	}
+
+	.tree-handle-wrapper:before{
+		position: absolute;
+		width: 20px;
+		height: 20px;
+		left:-3rem;
+		border-radius: 2px;
+		transition: background-color .2s ease-in-out;
+		cursor: pointer;
+		background-color: $hover;
+		content: "";
+		text-align: center;
+		color: $white;
+	}
+
+	.selected-true.tree-handle-wrapper:before{
+		background-color: $secondary;
+		content: "✓";
+		color: $text-color-standard;
+		text-align: center;
+	}
+
+	.semi-true.tree-handle-wrapper:before{
+		background-color: $highlight !important;
+		content: "─" !important;
+		color: $text-color-standard;
+	}
+
+	.tree li{
+		border:none;
+	}
+
+	.filter-hidden {
+		display: none;
+	}
+}
+
+//old tree css
 .tree {
 	max-height: 800px;
 	overflow-y: auto;
@@ -63,14 +228,14 @@
 	border-left: 3px solid transparent;
 
 	&:hover {
-		background-color: $gray-300;
+		background-color: $hover;
 	}
 }
 
 .angular-ui-tree-handle.selected {
 	padding-left: 5px;
-	border-left: 3px solid $pink-500;
-	background-color: $green-100;
+	border-left: 3px solid $hover;
+	background-color: $highlight;
 }
 
 .angular-ui-tree-handle.selected.ng-hide {

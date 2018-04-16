@@ -1,3 +1,11 @@
+
+// quick colors
+$primary: #0099FF;
+$secondary: #66c2ff;
+$highlight: #99d6ff;
+$hover: rgba(0,0,0,0.16);
+
+// base colors
 $blue-500: #0099FF; /*Teleopti blue*/
 $blue-300: #66c2ff; //#64b5f6;
 $blue-100: #99d6ff; //#BBDEFB;
@@ -45,6 +53,6 @@ $text-color-muted:$gray026;
 
 $full-padding: 5px; /*sets wfm-block*/
 $half-padding: 3px;
-$transition-timing: all 0.5s ease-in-out;
+$transition-timing: 300ms all cubic-bezier(.33,.11,.02,.99);
 $standard-font-size:14px;
 $sm-font-size:12px;

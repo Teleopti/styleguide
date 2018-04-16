@@ -6,21 +6,25 @@
 		right: 0;
 		bottom: 0;
 		left: 0;
-		z-index: 50;
-		background: $gray026;
+		z-index: 100;
+		background: rgba(0,0,0,.16);
 	}
 
 	.dialog, .dialog-mini {
-		width: 60%;
-		z-index: 50;
-		position: relative;
-		top: -20px;
-		margin: 10% auto;
+		max-height: 85%!important;
+		z-index: 100;
+		position: fixed;
+		margin: 0;
+		top: 10%;
+		left: 15%;
+		right: 15%;
+		width: auto!important;
 		background: $white;
 	}
 
 	.dialog-mini {
-		width: 25%;
+		left: 30%;
+		right: 30%;
 	}
 
 	.tabbed-panel > md-content{
@@ -29,20 +33,11 @@
 
 	/*Dialog*/
 	@media only screen and (max-width:769px){
-		.dialog {
-			left:5px!important;
-			width:90%;
-			right:1%;
+		.dialog, .dialog-mini {
+			left:1%!important;
+			right:1%!important;
 		}
 	}
-
-	/*Mini dialog*/
-	@media only screen and (max-width:1200px){
-		.dialog-mini {
-			width:90%!important;
-		}
-	}
-
 
 	.modal-title{
 		padding-left:10px!important;
@@ -73,17 +68,25 @@
 //
 // Note: In all modals and panels the footer links should be buttons, not  &lt;a/&gt; tags.
 //
-//<div class="jsprewrap">
-//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
-//	<div ng-show="showjs">
-//		<code><pre>
-//    	$scope.modalShown = false;
-//    	$scope.toggleModal = function() {
-//      	$scope.modalShown = !$scope.modalShown;
-//    	};
-//		</pre></code>
-//	</div>
-//</div>
+// <div class="jsprewrap">
+//   <div class="ksscopy kss-style" ng-click="showJs['modal1'] = !showJs['modal1']">
+//       <span ng-hide="showJs['modal1']">Show</span>
+//      <span ng-show="showJs['modal1']">Hide</span>
+//     JavaScript
+//     <i class="mdi mdi-code-tags pull-right"></i>
+//   </div>
+//   <div class="animate-show" ng-show="showJs['modal1']">
+//     <code>
+//       <pre class="prettyprint linenums lang-js">
+//
+// $scope.modalShown = false;
+// $scope.toggleModal = function() {
+// 	$scope.modalShown = !$scope.modalShown;
+// };
+//       </pre>
+//     </code>
+//   </div>
+// </div>
 //
 //Markup:
 //	<button ng-click='toggleModal()' class="wfm-btn wfm-btn-default">Open modal</button>
@@ -94,15 +97,15 @@
 //		</div>
 //		<div class="modal-actions">
 //			<aside>
-//				<button class="wfm-btn wfm-btn-invis-primary">Apply</button>
+//				<button class="wfm-btn wfm-btn-invis-primary" ng-click="toggleModal()">Ok</button>
 //			</aside>
 //		</div>
 //	</modal-dialog>
 //
-//Styleguide 1.14.0
+//Styleguide 1.23
 //
 
-//Mini Confirmation modal
+//Modal (mini)
 //
 // The mini modal is used for confirmation. As opposed to the regular modal it cant be dissmissed without taking an action.
 //
@@ -122,8 +125,8 @@
 //					</div>
 //					<div class="modal-actions">
 //						<aside>
-//							<button ng-click="confirmModal1=false" class="wfm-btn wfm-btn-invis-default">Cancel</button>
-//							<button ng-click="confirmModal1=false" class="wfm-btn wfm-btn-invis-primary">Apply</button>
+//							<button ng-click="confirmModal1=false" class="wfm-btn wfm-btn-invis-default">Yes</button>
+//							<button ng-click="confirmModal1=false" class="wfm-btn wfm-btn-invis-primary">No</button>
 //						</aside>
 //					</div>
 //				</div>
@@ -131,7 +134,7 @@
 //		</div>
 //	</div>
 //
-//Styleguide 1.14.1
+//Styleguide 1.24
 //
 
 .click-modal{

@@ -1,8 +1,5 @@
-//Menus
-//
-//Styleguide 1.12.0
 
-// Context menus
+// Context menu
 //
 //A content menu contains only a list of actions, to keep them manageable, try to limit the number of actions displayed within to a maximum of 5.
 //Additionally a context menu can not trigger another context menu from within itself.
@@ -91,7 +88,7 @@
 //  	</span>
 //  </div>
 //
-//Styleguide 1.12.1
+//Styleguide 1.19
 //
 .card-context{
   border: none;
@@ -101,21 +98,21 @@
   line-height:16px!important;
   text-align:center;
   border-radius: 50%!important;
-  transition: all 0.2s ease-in-out;
+  transition: $transition-timing;
   text-decoration:none!important;
 }
 
 .card-context:hover{
-  background: $gray012;
+  background: $hover;
 }
 
 .card-context:focus{
   @extend .material-depth-2;
-  background: $gray012;
+  background: $hover;
 }
 
 .active-context{
-  background: $gray012;
+  background: $highlight;
 }
 
 .active-context i{
@@ -149,7 +146,7 @@
   }
 
   ul{
-    color:$gray087;
+    color:$text-color-standard;
     text-align:left!important;
   }
 
@@ -211,14 +208,14 @@
 //  </div>
 //</wfm-popup>
 //
-//Styleguide 1.12.2
+//Styleguide 1.20
 //
 
 .wfm-popup-wrap{
   position: absolute;
 
   .popup-panel{
-    z-index: 51;
+    z-index: 101;
   }
 
   .modalbg{

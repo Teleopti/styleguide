@@ -1,4 +1,4 @@
-// Tables
+// Table
 //
 // Tables are used to give a overview of data, however, following the <a href="index.html" >Main concepts</a> of the styleguide, only relevant data should be displayed. In the cases where that is not possible, please use infinite scrolling or pagination to keep the page lightweight.
 // If a table does take time to be loaded, a spinner should be displayed during this time to indicate to the user that it will take some time and that the table is not broken.
@@ -8,11 +8,6 @@
 //
 //Cells containing numbers are right aligned using the 'number-cell' class to differentiate them from text content.</br>
 //If you need to display bigger forms of data or need more complex actions such as importing/exporting, multi select or the ability to hide columns - take a look at the Big table.
-//
-//Styleguide 1.15
-//
-
-// Default table
 //
 //Markup:
 //	<table class="wfm-table">
@@ -34,7 +29,7 @@
 //		</tbody>
 //	</table>
 //
-//Styleguide 1.15.1
+//Styleguide 1.25
 //
 
 table{
@@ -55,7 +50,7 @@ table{
 
 .wfm-table th, .wfm-table-header {
   color: $text-color-standard;
-  background-color: $blue-100;
+  background-color: $secondary;
   text-align: left;
 
 }
@@ -90,26 +85,34 @@ table{
 //		</tbody>
 //	</table>
 //
-//Styleguide 1.15.2
+//Styleguide 1.26
 //
 
 .wfm-table-multi{
 	th:first-child,td:first-child{
 	  color: $text-color-standard;
 	  font-weight:600;
-	  background-color: $blue-100;
+	  background-color: $secondary;
 	}
 }
 
 
-//Big tables
+//Big table
 //
 //The big table is used to give data more space and actions. Check out the <a href="http://ui-grid.info/docs/#/tutorial">documentation</a> to see all available functions.
+//Remember to translate the table menu items using ui-i18n
 //
-//<div class="jsprewrap">
-//	<div ng-click="showjs = !showjs" class="ksscopy">JavaScript</div>
-//	<div ng-show="showjs">
-//		<code><pre>
+// <div class="jsprewrap">
+//   <div class="ksscopy kss-style" ng-click="showJs['bigTable'] = !showJs['bigTable']">
+//       <span ng-hide="showJs['bigTable']">Show</span>
+//      <span ng-show="showJs['bigTable']">Hide</span>
+//     JavaScript
+//     <i class="mdi mdi-code-tags pull-right"></i>
+//   </div>
+//   <div class="animate-show" ng-show="showJs['bigTable']">
+//     <code>
+//       <pre class="prettyprint linenums lang-js">
+//
 //var data = [];
 //for (var i = 0; i < 100; i++) {
 //		data[i] = {};
@@ -117,8 +120,11 @@ table{
 //				data[i]['j' + j] = j;
 //		}
 //}
+//$scope.gridLang = 'en';
 //$scope.gridOptions = {
+//
 //		exporterCsvFilename: 'myFile.csv',
+//		exporterOlderExcelCompatibility: true,
 //		exporterMenuPdf: false,
 //		enableSelectAll: true,
 //		enableFullRowSelection: true,
@@ -128,13 +134,14 @@ table{
 //		data: data,
 //};
 //$scope.gridOptions.enableGridMenu = true;
-//		</pre></code>
-//	</div>
-//</div>
+//       </pre>
+//     </code>
+//   </div>
+// </div>
 //
 // Markup: bigtables.hbs
 //
-//Styleguide 1.15.3
+//Styleguide 1.27
 
 .myGrid {
      width: 100%;
@@ -149,13 +156,13 @@ table{
 	 float:none;}
 
 	 &:hover{
-		 background-color: $blue-300;
+		 background-color: $hover;
 		 cursor: pointer;
 	 }
 }
 
 .ui-grid-header-canvas{
-	background:$blue-100;
+	background:$secondary;
 }
 
 .ui-grid{
@@ -199,7 +206,7 @@ table{
 }
 
 .ui-grid-menu .ui-grid-menu-inner ul li button.ui-grid-menu-item-active{
-	background:$green-100!important;
+	background:$highlight!important;
 }
 
 .ui-grid-icon-up-dir:before,
@@ -233,7 +240,7 @@ table{
     width: 18px;
     border-radius: 2px;
     content: " ";
-    transition: background-color .20s ease-in-out;
+    transition: $transition-timing;
     cursor: pointer;
 		overflow: hidden;
 }
@@ -241,7 +248,7 @@ table{
 .ui-grid-all-selected.ui-grid-icon-ok:before,
 .ui-grid-row-selected .ui-grid-icon-ok:before,
 .ui-grid-menu-item > .ui-grid-icon-ok:before {
-	background-color: $blue-300;
+	background-color: $secondary;
 	content: "✓"!important;
 	text-align: center;
 	color: #fff;
@@ -323,7 +330,7 @@ table{
 }*/
 
 .ui-grid-row-selected > [ui-grid-row] > .ui-grid-cell{
-	background-color: $green-100!important;
+	background-color: $highlight!important;
 }
 
 .ui-grid-pinned-container.ui-grid-pinned-container-left .ui-grid-cell:last-child{
@@ -340,7 +347,7 @@ table{
 }
 
 .big-table-wrapper table tbody tr {
-	border-bottom: 1px solid $gray012!important;
+	border-bottom: 1px solid $hover!important;
 }
 .table>tbody>tr>td{
 	border-top:none;
