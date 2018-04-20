@@ -8,6 +8,7 @@
   "scripts": {
     "test": "grunt test",
     "start": "grunt",
+    "devServer": "http-server styleguide -p 3000 -c-1",
     "dist": "grunt dist",
     "kss": "./node_modules/.bin/kss-node css styleguide css/styleguide.md --template kss-template --verbose",
     "styleguide": "nucleus --config config.nucleus.json"
@@ -47,6 +48,7 @@
     "grunt-sass": "2.0.0",
     "grunt-sass-lint": "0.2.2",
     "grunt-shell": "2.1.0",
+    "http-server": "0.11.1",
     "jasmine-core": "2.5.2",
     "karma": "1.5.0",
     "karma-chrome-launcher": "2.0.0",
