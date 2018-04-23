@@ -334,7 +334,6 @@ describe('CalendarPickerControllerBasicFeature', function () {
     it('should be able to [handle February as special case] and understand the interval length between 2018-01-31 to 2018-02-27 is one month', function () {
         vm.resetStartAndEndDate();
 
-        
         vm.startToSelectStartDate();
         vm.pickDate = moment([2018, 0, 31]);
         vm.switchDate();

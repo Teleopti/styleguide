@@ -321,11 +321,8 @@
 
     /*Code for new date range picker*/
     $scope.customValid = function (data) {
-      if (data.startDate - data.endDate > 0) {
-        return "[custom validate]: your startDate is later than your endDate";
-      }
-      if (data.startDate - data.endDate < 0) {
-        return "[custom validate]: your startDate is earlier than your endDate";
+      if(moment(data.endDate).diff(moment(data.startDate), 'days') > 7) {
+        return "[custom validation]: your end date is 7 days later than your start date";
       }
     }
     $scope.dateRange3 = {
