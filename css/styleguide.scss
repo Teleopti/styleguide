@@ -55,12 +55,12 @@
 // Styleguide 0.1
 //
 
-.borderless{
-  border:none!important;
+.borderless {
+    border: none !important;
 
-  b{
-    display: block;
-  }
+    b {
+        display: block;
+    }
 }
 
 // Getting started
@@ -858,478 +858,479 @@
 //
 //Styleguide 10.1
 
-html{
-  overflow-y: auto!important;
-  background: rgb(235, 235, 235)!important;
+html {
+    overflow-y: auto !important;
+    background: rgb(235, 235, 235) !important;
 }
 
-body{
-  background: transparent!important;
+body {
+    background: transparent !important;
 }
 
 .spacer {
-  margin: 25px;
-  padding: 15px;
-  text-align:center;
-  display: inline-block;
-  background: white;
+    margin: 25px;
+    padding: 15px;
+    text-align: center;
+    display: inline-block;
+    background: white;
 }
 
-.con-flex,.form-input-wrap, .con-fluid-flex{
-  border:1px dashed $gray026;
+.con-flex,
+.form-input-wrap,
+.con-fluid-flex {
+    border: 1px dashed $gray026;
 }
 
-.ksscopy{
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
-  font-weight: bold;
-  cursor: pointer;
-  background: rgba(0,0,0,0.06);
+.ksscopy {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    font-weight: bold;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.06);
 }
 
-.kss-modifier__wrapper{
-  border: none!important;
+.kss-modifier__wrapper {
+    border: none !important;
 }
 
 /*template styles*/
 .kss-sidebar {
-  position:fixed!important;
+    position: fixed !important;
 }
-.sidebar-toggle{
-  position: fixed!important;
-  top: 20px;
-  left: 0px;
-  z-index: 100;
-  background: white!important;
+.sidebar-toggle {
+    position: fixed !important;
+    top: 20px;
+    left: 0px;
+    z-index: 100;
+    background: white !important;
 }
 #kss-node .kss-sidebar {
-  background: white;
-  top: 0;
-  left: 0;
-  z-index:90;
-  max-height: 100%;
-  overflow-y: auto;
-  padding: 0;
+    background: white;
+    top: 0;
+    left: 0;
+    z-index: 90;
+    max-height: 100%;
+    overflow-y: auto;
+    padding: 0;
 }
-.kss-sidebar-hidden{
-  visibility: hidden;
+.kss-sidebar-hidden {
+    visibility: hidden;
 }
 #kss-node .kss-title__permalink {
-  font-size: 30px;
-  font-weight: normal;
+    font-size: 30px;
+    font-weight: normal;
 }
-.kss-header{
-  margin: 0!important;
-  padding: 1rem;
+.kss-header {
+    margin: 0 !important;
+    padding: 1rem;
 }
 
 .kss-nav__menu-item {
-  padding: 0.5rem;
-  a {
-    color: $text-color-standard!important;
-  }
+    padding: 0.5rem;
+    a {
+        color: $text-color-standard !important;
+    }
 }
 
 .kss-nav__menu > .kss-nav__menu-item {
-  padding: 0;
-  & > a {
-    display: block;
-    height: 100%;
-    padding: 0.5rem;
-  }
-  & > a:hover {
+    padding: 0;
+    & > a {
+        display: block;
+        height: 100%;
+        padding: 0.5rem;
+    }
+    & > a:hover {
+        background: $gray012;
+    }
+}
+
+.kss-nav__menu-child {
     background: $gray012;
-  }
+    .kss-nav__menu-item:hover {
+        background: $gray012 !important;
+    }
 }
 
-.kss-nav__menu-child{
-  background: $gray012;
-  .kss-nav__menu-item:hover{
-  background: $gray012!important;
-  }
+.section-hero {
+    background: $primary !important;
+    outline: 420px solid $primary;
+    z-index: -1;
+    position: relative;
 
-}
+    .kss-style {
+        color: white !important;
 
-.section-hero{
-  background: $primary!important;
-  outline: 420px solid $primary;
-  z-index: -1;
-  position: relative;
+        a {
+            color: white !important;
+        }
 
-  .kss-style{
-    color: white!important;
+        h1 {
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+        }
 
-    a{
-      color: white!important;
+        .kss-title__ref {
+            display: none !important;
+        }
     }
-
-    h1{
-      text-shadow: 0 2px 5px rgba(0,0,0,.26);
-    }
-
-    .kss-title__ref{
-      display: none!important;
-    }
-  }
 }
 
 .kss-style code {
-  font-size: 12px;
-  line-height: 14px !important;
-  font-family: Menlo,Monaco,"Andale Mono","lucida console","Courier New",monospace;
+    font-size: 12px;
+    line-height: 14px !important;
+    font-family: Menlo, Monaco, 'Andale Mono', 'lucida console', 'Courier New', monospace;
 }
 
 #kss-node ol.linenums li {
-  border:none;
+    border: none;
 }
-#kss-node .kss-section{
-  max-width: 100%;
-  background: white;
-  padding: 0.5rem;
-  margin-bottom: 2rem!important;
-}
-@media screen and (min-width: 769px){
-  #kss-node .kss-sidebar {
+#kss-node .kss-section {
+    max-width: 100%;
     background: white;
-    top: 0;
-    bottom: 0;
-    z-index:9;
-    max-height: 100%;
-    overflow-y: auto;
-  }
-  #kss-node .kss-section {
-    max-width: 98%;
-  }
+    padding: 0.5rem;
+    margin-bottom: 2rem !important;
+}
+@media screen and (min-width: 769px) {
+    #kss-node .kss-sidebar {
+        background: white;
+        top: 0;
+        bottom: 0;
+        z-index: 9;
+        max-height: 100%;
+        overflow-y: auto;
+    }
+    #kss-node .kss-section {
+        max-width: 98%;
+    }
 }
 
-li.L0 > span:nth-child(1){
-  display: none!important;
+// li.L0 > span:nth-child(1) {
+//     display: none !important;
+// }
+
+.styleguide-break {
+    background-color: $orange-400;
+    color: $gray087;
+    padding: $full-padding;
+
+    span:before {
+        content: 'This element does not exist in material design. ';
+    }
 }
 
-.styleguide-break{
-  background-color:$orange-400;
-  color:$gray087;
-  padding:$full-padding;
-
-  span:before{
-    content:"This element does not exist in material design. ";
-  }
-}
-
-.angular-req span:before{
-  content:"This element require additional angular directives. "!important;
+.angular-req span:before {
+    content: 'This element require additional angular directives. ' !important;
 }
 
 md-tooltip {
-  position: fixed;
+    position: fixed;
 }
 
 .darktheme-background {
-  background: #303030 !important;
-  color: rgba(255,255,255,0.87)!important;
-  overflow-x: hidden;
+    background: #303030 !important;
+    color: rgba(255, 255, 255, 0.87) !important;
+    overflow-x: hidden;
 
-  article{
-    color: #d1d1d1;
-  }
+    article {
+        color: #d1d1d1;
+    }
 }
-
-
 
 .classictheme-background {
-  background: $gray012 !important;
-  color: $text-color-standard;
-  overflow-x: hidden;
+    background: $gray012 !important;
+    color: $text-color-standard;
+    overflow-x: hidden;
 }
-
 
 //Color swatches
-.swatch{
-  transform-origin: center;
-  transform: scale(0.9);
+.swatch {
+    transform-origin: center;
+    transform: scale(0.9);
 }
 .swatch-list {
-  .spacer{
-    width: 100%;
-    height: 100px;
-    background: transparent!important;
-  }
+    .spacer {
+        width: 100%;
+        height: 100px;
+        background: transparent !important;
+    }
 
-  .blue-500-swatch {
-    background:$blue-500!important;
-    p{
-      color:white;
+    .blue-500-swatch {
+        background: $blue-500 !important;
+        p {
+            color: white;
+        }
     }
-  }
-  .blue-300-swatch {
-    background:$blue-300!important;
-  }
-  .blue-100-swatch {
-    background:$blue-100!important;
-  }
+    .blue-300-swatch {
+        background: $blue-300 !important;
+    }
+    .blue-100-swatch {
+        background: $blue-100 !important;
+    }
 
-  .green-500-swatch {
-    background:$green-500!important;
-  }
-  .green-300-swatch {
-    background:$green-300!important;
-  }
-  .green-100-swatch {
-    background:$green-100!important;
-  }
+    .green-500-swatch {
+        background: $green-500 !important;
+    }
+    .green-300-swatch {
+        background: $green-300 !important;
+    }
+    .green-100-swatch {
+        background: $green-100 !important;
+    }
 
-  .purple-100-swatch {
-    background:$purple-100!important;
-  }
-  .purple-300-swatch {
-    background:$purple-300!important;
-    p{
-      color:white;
+    .purple-100-swatch {
+        background: $purple-100 !important;
     }
-  }
-  .purple-500-swatch {
-    background:$purple-500!important;
-    p{
-      color:white;
+    .purple-300-swatch {
+        background: $purple-300 !important;
+        p {
+            color: white;
+        }
     }
-  }
+    .purple-500-swatch {
+        background: $purple-500 !important;
+        p {
+            color: white;
+        }
+    }
 
-  .brown-100-swatch {
-    background:$brown-100!important;
-  }
-  .brown-300-swatch {
-    background:$brown-300!important;
-    p{
-      color:white;
+    .brown-100-swatch {
+        background: $brown-100 !important;
     }
-  }
-  .brown-500-swatch {
-    background:$brown-500!important;
-    p{
-      color:white;
+    .brown-300-swatch {
+        background: $brown-300 !important;
+        p {
+            color: white;
+        }
     }
-  }
+    .brown-500-swatch {
+        background: $brown-500 !important;
+        p {
+            color: white;
+        }
+    }
 
-  .teal-100-swatch {
-    background:$teal-100!important;
-  }
-  .teal-300-swatch {
-    background:$teal-300!important;
-  }
-  .teal-500-swatch {
-    background:$teal-500!important;
-    p{
-      color:white;
+    .teal-100-swatch {
+        background: $teal-100 !important;
     }
-  }
+    .teal-300-swatch {
+        background: $teal-300 !important;
+    }
+    .teal-500-swatch {
+        background: $teal-500 !important;
+        p {
+            color: white;
+        }
+    }
 
-  .pink-500-swatch {
-    background:$pink-500!important;
-    p{
-      color:white;
+    .pink-500-swatch {
+        background: $pink-500 !important;
+        p {
+            color: white;
+        }
     }
-  }
-  .pink-300-swatch {
-    background:$pink-300!important;
-    p{
-      color:white;
+    .pink-300-swatch {
+        background: $pink-300 !important;
+        p {
+            color: white;
+        }
     }
-  }
-  .pink-100-swatch {
-    background:$pink-100!important;
-  }
+    .pink-100-swatch {
+        background: $pink-100 !important;
+    }
 
-  .orange-400-swatch {
-    background:$orange-400!important;
-  }
-  .orange-500-swatch {
-    background:$orange-500!important;
-  }
-  .orange-600-swatch {
-    background:$orange-600!important;
-  }
-  .red-800-swatch {
-    background:$red-800!important;
-    p{
-      color:white;
+    .orange-400-swatch {
+        background: $orange-400 !important;
     }
-  }
-  .red-700-swatch {
-    background:#EF5350!important;
-  }
-  .red-600-swatch {
-    background:$red-600!important;
-  }
-  .gray-054-swatch {
-    background:$gray054!important;
-    p{
-      color:white;
+    .orange-500-swatch {
+        background: $orange-500 !important;
     }
-  }
-  .gray-300-swatch {
-    background:$gray-300!important;
-  }
-  .gray-012-swatch {
-    background:$gray012!important;
-  }
-  .gray-026-swatch {
-    background:$gray026!important;
-  }
-  .gray-087-swatch {
-    background:$gray087!important;
-  }
-  .gray-100-swatch {
-    background:$gray100!important;
-  }
-  .gray-500-swatch {
-    background:$gray-500!important;
-  }
-  .white-swatch {
-    background:$white!important;
-  }
+    .orange-600-swatch {
+        background: $orange-600 !important;
+    }
+    .red-800-swatch {
+        background: $red-800 !important;
+        p {
+            color: white;
+        }
+    }
+    .red-700-swatch {
+        background: #ef5350 !important;
+    }
+    .red-600-swatch {
+        background: $red-600 !important;
+    }
+    .gray-054-swatch {
+        background: $gray054 !important;
+        p {
+            color: white;
+        }
+    }
+    .gray-300-swatch {
+        background: $gray-300 !important;
+    }
+    .gray-012-swatch {
+        background: $gray012 !important;
+    }
+    .gray-026-swatch {
+        background: $gray026 !important;
+    }
+    .gray-087-swatch {
+        background: $gray087 !important;
+    }
+    .gray-100-swatch {
+        background: $gray100 !important;
+    }
+    .gray-500-swatch {
+        background: $gray-500 !important;
+    }
+    .white-swatch {
+        background: $white !important;
+    }
 
-  //dark theme starts here
+    //dark theme starts here
 
-  .blue-500-swatch-dark {
-    background: #0a84d6!important;
-  }
-  .blue-300-swatch-dark {
-    background: #136fac!important;
-  }
-  .blue-100-swatch-dark {
-    background:#1d5a83 !important;
-  }
+    .blue-500-swatch-dark {
+        background: #0a84d6 !important;
+    }
+    .blue-300-swatch-dark {
+        background: #136fac !important;
+    }
+    .blue-100-swatch-dark {
+        background: #1d5a83 !important;
+    }
 
-  .green-500-swatch-dark {
-    background:#84ad32!important;
-  }
-  .green-300-swatch-dark {
-    background:#6f8e32 !important;
-  }
-  .green-100-swatch-dark {
-    background:#627b32!important;
-  }
+    .green-500-swatch-dark {
+        background: #84ad32 !important;
+    }
+    .green-300-swatch-dark {
+        background: #6f8e32 !important;
+    }
+    .green-100-swatch-dark {
+        background: #627b32 !important;
+    }
 
-  .purple-100-swatch-dark {
-    background:#9C27B0!important;
-  }
-  .purple-300-swatch-dark {
-    background:#BA68C8!important;
-  }
-  .purple-500-swatch-dark {
-    background:#E1BEE7!important;
-    p{
-      color:$text-color-standard!important;
+    .purple-100-swatch-dark {
+        background: #9c27b0 !important;
     }
-  }
+    .purple-300-swatch-dark {
+        background: #ba68c8 !important;
+    }
+    .purple-500-swatch-dark {
+        background: #e1bee7 !important;
+        p {
+            color: $text-color-standard !important;
+        }
+    }
 
-  .brown-100-swatch-dark {
-    background:#795548!important;
-  }
-  .brown-300-swatch-dark {
-    background:#A1887F!important;
-    p{
-      color:$text-color-standard!important;
+    .brown-100-swatch-dark {
+        background: #795548 !important;
     }
-  }
-  .brown-500-swatch-dark {
-    background: #D7CCC8!important;
-    p{
-      color:$text-color-standard!important;
+    .brown-300-swatch-dark {
+        background: #a1887f !important;
+        p {
+            color: $text-color-standard !important;
+        }
     }
-  }
+    .brown-500-swatch-dark {
+        background: #d7ccc8 !important;
+        p {
+            color: $text-color-standard !important;
+        }
+    }
 
-  .teal-100-swatch-dark {
-    background: #009688 !important;
-  }
-  .teal-300-swatch-dark {
-    background:#4DB6AC !important;
-    p{
-      color:$text-color-standard!important;
+    .teal-100-swatch-dark {
+        background: #009688 !important;
     }
-  }
-  .teal-500-swatch-dark {
-    background:#B2DFDB!important;
-    p{
-      color:$text-color-standard!important;
+    .teal-300-swatch-dark {
+        background: #4db6ac !important;
+        p {
+            color: $text-color-standard !important;
+        }
     }
-  }
+    .teal-500-swatch-dark {
+        background: #b2dfdb !important;
+        p {
+            color: $text-color-standard !important;
+        }
+    }
 
-  .pink-500-swatch-dark {
-    background: #F8BBD0!important;
-    p{
-      color:$text-color-standard!important;
+    .pink-500-swatch-dark {
+        background: #f8bbd0 !important;
+        p {
+            color: $text-color-standard !important;
+        }
     }
-  }
-  .pink-300-swatch-dark {
-    background: #F06292!important;
-  }
-  .pink-100-swatch-dark {
-    background:#E91E63!important;
-  }
+    .pink-300-swatch-dark {
+        background: #f06292 !important;
+    }
+    .pink-100-swatch-dark {
+        background: #e91e63 !important;
+    }
 
-  .orange-400-swatch-dark {
-    background:#c27c36!important;
-  }
-  .orange-500-swatch-dark {
-    background:#d68636!important;
-  }
-  .orange-600-swatch-dark {
-    background: #ea9036 !important;
-  }
-  .red-800-swatch-dark {
-    background:#ee8f7d!important;
-    p{
-      color:$text-color-standard!important;
+    .orange-400-swatch-dark {
+        background: #c27c36 !important;
     }
-  }
-  .red-700-swatch-dark {
-    background:#EF5350!important;
-  }
-  .red-600-swatch-dark {
-    background:#ca3333!important;
-  }
-  .gray-054-swatch-dark {
-    background: rgba(107, 107, 107, 1)!important;
-  }
-  .gray-300-swatch-dark {
-    background:#555555!important;
-  }
-  .gray-012-swatch-dark {
-    background:#303030!important;
-  }
-  .gray-026-swatch-dark {
-    background: rgba(0,0,0,0.26)!important;
-  }
-  .gray-087-swatch-dark {
-    background: #d1d1d1!important;
-    p{
-      color:$text-color-standard!important;
+    .orange-500-swatch-dark {
+        background: #d68636 !important;
     }
-  }
-  .gray-100-swatch-dark {
-    background:#9E9E9E!important;
-  }
-  .gray-500-swatch-dark {
-    background:#9E9E9E!important;
-  }
-  .white-swatch-dark {
-    background: #424242!important;
-  }
+    .orange-600-swatch-dark {
+        background: #ea9036 !important;
+    }
+    .red-800-swatch-dark {
+        background: #ee8f7d !important;
+        p {
+            color: $text-color-standard !important;
+        }
+    }
+    .red-700-swatch-dark {
+        background: #ef5350 !important;
+    }
+    .red-600-swatch-dark {
+        background: #ca3333 !important;
+    }
+    .gray-054-swatch-dark {
+        background: rgba(107, 107, 107, 1) !important;
+    }
+    .gray-300-swatch-dark {
+        background: #555555 !important;
+    }
+    .gray-012-swatch-dark {
+        background: #303030 !important;
+    }
+    .gray-026-swatch-dark {
+        background: rgba(0, 0, 0, 0.26) !important;
+    }
+    .gray-087-swatch-dark {
+        background: #d1d1d1 !important;
+        p {
+            color: $text-color-standard !important;
+        }
+    }
+    .gray-100-swatch-dark {
+        background: #9e9e9e !important;
+    }
+    .gray-500-swatch-dark {
+        background: #9e9e9e !important;
+    }
+    .white-swatch-dark {
+        background: #424242 !important;
+    }
 
-  li{
-    position:relative;
-    height: 250px;
-    text-align: left;
+    li {
+        position: relative;
+        height: 250px;
+        text-align: left;
 
-    article{
-      left:0;
-      right:0;
-      bottom:0;
-      position:absolute;
-      background: $white;
-      height: 100px;
-      padding: 10px;
+        article {
+            left: 0;
+            right: 0;
+            bottom: 0;
+            position: absolute;
+            background: $white;
+            height: 100px;
+            padding: 10px;
+        }
     }
-  }
+}
+.searchItem:focus > li {
+    background: $secondary;
 }

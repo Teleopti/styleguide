@@ -31,7 +31,8 @@
 //      <tr><td><i class="mdi mdi-plus"></i> </td><td>mdi mdi-plus</td><td>Add new item </td></tr>
 //      <tr><td><i class="mdi mdi-content-copy"></i> </td><td>mdi mdi-content-copy</td><td>Duplicate the item </td></tr>
 //      <tr><td><i class="mdi mdi-pencil"></i> </td><td>mdi mdi-pencil</td><td>Edit the item </td></tr>
-//      <tr><td><i class="mdi mdi-delete"></i> </td><td>mdi mdi-delete</td><td>Remove the item </td></tr>
+//      <tr><td><i class="mdi mdi-delete"></i> </td><td>mdi mdi-delete</td><td>Delete the item </td></tr>
+//      <tr><td><i class="mdi mdi-close"></i> </td><td>mdi mdi-close</td><td>Remove the item </td></tr>
 //      <tr><td><i class="mdi mdi-magnify"></i> </td><td>mdi mdi-magnify</td><td>Indicate a search </td></tr>
 //      <tr><td><i class="mdi mdi-filter-outline"></i> </td><td>mdi mdi-filter-outline</td><td>Indicate a filter </td></tr>
 //      <tr><td><i class="mdi mdi-eye-off"></i> </td><td>mdi mdi-eye-off</td><td>Hide </td></tr>
@@ -81,9 +82,9 @@
 //
 
 .mdi:before {
-	font-size: 18px !important;
+    font-size: 18px !important;
 }
 
-.huge-icon::before{
-	font-size: 150px!important;
+.huge-icon::before {
+    font-size: 150px !important;
 }
