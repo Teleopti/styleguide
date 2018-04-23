@@ -41,6 +41,6 @@
         </div>
     </div>
     <div class="con-flex date-info-calendar-wrapper">
-        <persian-datepicker ng-model="vm.pickDate" ng-class="{'non-pointer':vm.disable === 'all', 'show-week-numbers': vm.options.showWeeks, 'hide-week-numbers': !vm.options.showWeeks}" ng-change="vm.switchDate()" show-weeks="vm.showWeek" custom-class="vm.options.customClass()"></persian-datepicker>
+        <persian-datepicker ng-model="vm.pickDate" ng-class="{'non-pointer':vm.disable === 'all', 'show-week-numbers': vm.options.showWeeks, 'hide-week-numbers': !vm.options.showWeeks, 'single-date-calendar': vm.singleDatePicker !== undefined}" ng-change="vm.switchDate()" show-weeks="vm.showWeek" custom-class="vm.options.customClass()"></persian-datepicker>
     </div>
 </wfm-calendar-picker-body>

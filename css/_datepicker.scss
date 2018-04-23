@@ -297,6 +297,11 @@ wfm-calendar-picker-header {
 	.card-context {
 		margin: 0;
 	}
+
+	.notice-info,
+	.notice-warning {
+		text-align: left;
+	}
 }
 
 wfm-calendar-picker-body > .date-info-wrapper {
@@ -435,6 +440,10 @@ wfm-calendar-picker-body > .date-info-calendar-wrapper {
 		background: transparent !important;
 		color: $text-color-standard;
 		font-weight: bold;
+	}
+
+	.single-date-calendar .btn-info.active {
+		background: $secondary !important;
 	}
 
 	tbody .in-date-range button.btn-info.active {

@@ -303,9 +303,38 @@ describe('CalendarPickerControllerBasicFeature', function () {
         expect(vm.dateRangeText.replace(/\s/g, '')).toEqual('1Days');
     });
 
+    it('should automatically set new start date to null after picked start date is later than end date in disabling end date selection mode', function () {
+        vm.resetStartAndEndDate();
+
+        vm.pickEndDate = data.endDate;
+        vm.disable = 'end-date';
+
+        vm.startToSelectStartDate();
+        vm.pickDate = moment(data.endDate).add(1, 'day').toDate();
+        vm.switchDate();
+
+        expect(vm.pickEndDate).toEqual(data.endDate);
+        expect(vm.pickStartDate).toEqual(null);
+    });
+
+    it('should automatically set new end date to null after picked end date is earlier than start date in disabling start date selection mode', function () {
+        vm.resetStartAndEndDate();
+
+        vm.pickStartDate = data.startDate;
+        vm.disable = 'start-date';
+
+        vm.startToSelectEndDate();
+        vm.pickDate = moment(data.startDate).add(-1, 'day').toDate();
+        vm.switchDate();
+
+        expect(vm.pickStartDate).toEqual(data.startDate);
+        expect(vm.pickEndDate).toEqual(null);
+    });
+
     it('should be able to [handle February as special case] and understand the interval length between 2018-01-31 to 2018-02-27 is one month', function () {
         vm.resetStartAndEndDate();
 
+        
         vm.startToSelectStartDate();
         vm.pickDate = moment([2018, 0, 31]);
         vm.switchDate();
