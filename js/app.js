@@ -541,14 +541,15 @@
                         return;
                     }
                     $scope.selectedSkill = skill;
+                    $scope.selectedSkillGroup = null;
                 };
 
                 $scope.clearSkillSelection = function() {
-                    //put extra actions on clear skill here
+                    $scope.selectedSkill = null;
                 };
 
                 $scope.clearSkillGroupSelection = function() {
-                    //put extra actions on clear skillgroup here
+                    $scope.selectedSkillGroup = null;
                 };
 
                 $scope.clickedSkillGroupInPicker = function(skillGroup) {

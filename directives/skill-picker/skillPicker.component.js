@@ -1,6 +1,6 @@
 (function() {
     angular.module('wfm.skillPicker', []).component('theSkillPicker', {
-        templateUrl: 'directives/skill-picker/skillPicker.html',
+        templateUrl: 'directives/skill-picker/skillPicker.tpl.html',
         controller: theComponent,
         bindings: {
             skills: '<', //The list of skills to display, each object should contain at least Name and Id.
@@ -62,14 +62,20 @@
 
         function setPreselected(changesObj) {
             if (angular.isDefined(changesObj.preselectedSkill) && changesObj.preselectedSkill !== null) {
-                if (changesObj.preselectedSkill.currentValue !== null) {
+                if (
+                    changesObj.preselectedSkill.currentValue !== null &&
+                    angular.isDefined(changesObj.preselectedSkill.currentValue)
+                ) {
                     ctrl.skillPickerText = changesObj.preselectedSkill.currentValue.Name;
                 } else {
                     ctrl.skillPickerText = '';
                 }
             }
             if (angular.isDefined(changesObj.preselectedSkillGroup) && changesObj.preselectedSkillGroup !== null) {
-                if (changesObj.preselectedSkillGroup.currentValue !== null) {
+                if (
+                    changesObj.preselectedSkillGroup.currentValue !== null &&
+                    angular.isDefined(changesObj.preselectedSkillGroup.currentValue)
+                ) {
                     ctrl.skillGroupPickerText = changesObj.preselectedSkillGroup.currentValue.Name;
                 } else {
                     ctrl.skillGroupPickerText = '';
