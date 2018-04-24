@@ -309,6 +309,8 @@ wfm-calendar-picker-body > .date-info-wrapper {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	position: relative;
+	background-color: $gray012;
 
 	@media screen and (max-width: 768px){
 		height: auto;
@@ -330,35 +332,55 @@ wfm-calendar-picker-body > .date-info-wrapper {
 		background: $white;
 	}
 
-	.single-select-mode {
-		height:100% !important;
-	}
-
 	.select-date-info-wrapper {
 		height: 50%;
-		background-color: $gray012;
+		background-color: transparent;
 		border-right: 1px $gray012 solid;
-		border-left: 4px transparent solid;
 		padding: 10px;
 		position: relative;
 		flex-grow: 1;
 		display: flex;
 		text-align: left;
-
+		
 		@media screen and (max-width:768px){
 			min-height: 80px;
 		}
 	}
 
+	.select-date-info-wrapper.single-select-mode {
+		height: 100%;
+	}
+
+	.selecting-date {
+		background-color: $white;
+	}
+	
 	.select-date-info-inner {
 		flex-grow: 1;
 		flex-basis: 100%;
 	}
 
-	.selecting-date {
-		border-left-color: $secondary;
-		background: $white;
-		transition: all linear 0.3s;
+	.date-info-label {
+		font-size: 1em;
+	}
+	
+	.transition-block {
+		border-left: 5px $secondary solid;
+		position: absolute;
+		top: 0;
+		height: 50%;
+		width: calc(100% - 5px);
+		background: white;
+	}
+
+	.transition-block.transit-to-start {
+		top: 0;
+		transition: top 1s ease-in-out;
+	}
+	
+	.transition-block.transit-to-end {
+		top: 50%;
+		transition: top 1s ease-in-out;
 	}
 
 	.clear-select-date-grow-out{
@@ -494,17 +516,17 @@ wfm-calendar-picker-body > .date-info-calendar-wrapper {
 		}
 
 		tbody td.selected-date-cell button{
-			border-radius: 5px;
+			border-radius: 6px;
 		}
 
 		tbody td.start-date-cell button {
-			border-top-left-radius: 5px;
-			border-bottom-left-radius: 5px;
+			border-top-left-radius: 6px;
+			border-bottom-left-radius: 6px;
 		}
 
 		tbody td.end-date-cell button {
-			border-top-right-radius: 5px;
-			border-bottom-right-radius: 5px;
+			border-top-right-radius: 6px;
+			border-bottom-right-radius: 6px;
 		}
 
 		thead button.btn-default:hover,

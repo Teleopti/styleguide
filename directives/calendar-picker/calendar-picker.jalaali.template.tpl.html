@@ -9,7 +9,8 @@
 </wfm-calendar-picker-header>
 <wfm-calendar-picker-body class="con-row">
     <div class="con-flex date-info-wrapper" ng-if="vm.singleDatePicker == undefined">
-        <div class="select-date-info-wrapper pointer" ng-class="{'disabled': vm.disable=='start-date' || vm.disable=='all', 'selecting-date': vm.isPickingStartDate}">
+        <div class="transition-block" ng-class="{'transit-to-start': vm.isPickingStartDate, 'transit-to-end': vm.isPickingEndDate}"></div>
+        <div class="select-date-info-wrapper pointer" ng-class="{'disabled': vm.disable=='start-date' || vm.disable=='all'}">
             <div class="select-date-info-inner" ng-click="vm.startToSelectStartDate()">
                 <span class="date-info-label" translate>From</span>
                 <h1 class="date-info jallali-start-date">{{vm.pickStartDate | persianDate:'fullDate'}}</h1>
@@ -19,7 +20,7 @@
             </div>
         </div>
         <hr />
-        <div class="select-date-info-wrapper pointer" ng-class="{'disabled': vm.disable=='end-date' || vm.disable=='all', 'selecting-date': vm.isPickingEndDate}">
+        <div class="select-date-info-wrapper pointer" ng-class="{'disabled': vm.disable=='end-date' || vm.disable=='all'}">
             <div class="select-date-info-inner" ng-click="vm.startToSelectEndDate()">
                 <span class="date-info-label" translate>To</span>
                 <h1 class="date-info jallali-end-date">{{vm.pickEndDate | persianDate:'fullDate'}}</h1>
