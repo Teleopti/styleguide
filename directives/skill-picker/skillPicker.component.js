@@ -1,5 +1,5 @@
 (function() {
-    angular.module('wfm.skillPicker').component('theSkillPicker', {
+    angular.module('wfm.skillPicker', []).component('theSkillPicker', {
         templateUrl: 'directives/skill-picker/skillPicker.html',
         controller: theComponent,
         bindings: {
@@ -14,9 +14,9 @@
         }
     });
 
-    theComponent.$inject = ['$translate', '$log'];
+    theComponent.$inject = ['$translate'];
 
-    function theComponent($translate, $log) {
+    function theComponent($translate) {
         var ctrl = this;
 
         ctrl.selectedSkill = '';
@@ -39,13 +39,17 @@
         ctrl.clearSkillSelection = function() {
             ctrl.skillPickerOpen = true;
             ctrl.skillPickerText = '';
-            if (angular.isDefined(ctrl.onClearSkillSelection)) ctrl.onClearSkillSelection();
+            if (angular.isDefined(ctrl.onClearSkillSelection)) {
+                ctrl.onClearSkillSelection();
+            }
         };
 
         ctrl.clearSkillGroupSelection = function() {
             ctrl.skillGroupPickerOpen = true;
             ctrl.skillGroupPickerText = '';
-            if (angular.isDefined(ctrl.onClearSkillGroupSelection)) ctrl.onClearSkillGroupSelection();
+            if (angular.isDefined(ctrl.onClearSkillGroupSelection)) {
+                ctrl.onClearSkillGroupSelection();
+            }
         };
 
         ctrl.$onChanges = function(changesObj) {
