@@ -338,32 +338,56 @@ md-select {
 // Skill picker
 //
 // The skill picker is used to switch between selected skills and selected skill groups.
-//<table class="wfm-table">
-//	<thead>
-//		<tr>
-//			<th>Attribute Name</th>
-//			<th>Usage</th>
-//		</tr>
-//	</thead>
-//	<tbody>
-//		<tr>
-//			<td>skills</td>
-//			<td>Model for binding skills</td>
-//		</tr>
-//		<tr>
-//			<td>skill-areas</td>
-//			<td>Model for binding skill groups</td>
-//		</tr>
-//    <tr>
-//      <td>item-to-return</td>
-//      <td>The currently selected item (skill or group) returned as a callback function</td>
-//    </tr>
-//    <tr>
-//      <td>preselected</td>
-//      <td>Send the id of a skill that should be preselected on load</td>
-//    </tr>
-//	</tbody>
-//</table>
+// <table class="wfm-table">
+//     <thead>
+//         <tr>
+//             <th>Attribute Name</th>
+//             <th>Usage</th>
+//         </tr>
+//     </thead>
+//     <tbody>
+//         <tr>
+//             <td>skills</td>
+//             <td>Model for binding skills. Array of skill objects</td>
+//         </tr>
+//         <tr>
+//             <td>skill-groups</td>
+//             <td>Model for binding skill groups. Array of skillgroup objects</td>
+//         </tr>
+//         <tr>
+//             <td>skill-picker-open</td>
+//             <td>Property for showing and hiding the drop-down with skills. Boolean. Optional</td>
+//         </tr>
+//         <tr>
+//             <td>skill-group-picker-open</td>
+//             <td>Property for showing and hiding the drop-down with skillgroups. Boolean. Optional</td>
+//         </tr>
+//         <tr>
+//             <td>on-skill-selected</td>
+//             <td>Callback function triggered when a skill is selected. The selected skill object as the only argument.</td>
+//         </tr>
+//         <tr>
+//             <td>on-skill-group-selected</td>
+//             <td>Callback function triggered when a skillgroup is selected. The selected skillgroup object as the only argument.</td>
+//         </tr>
+//         <tr>
+//             <td>preselected-skill</td>
+//             <td>Skill object to be displayed as the component loads</td>
+//         </tr>
+//         <tr>
+//             <td>preselected-skill-group</td>
+//             <td>Skillgroup object to be displayed as the component loads</td>
+//         </tr>
+//         <tr>
+//             <td>on-clear-skill-selection</td>
+//             <td>Callback function triggered when clearing the skill selection with x.</td>
+//         </tr>
+//         <tr>
+//             <td>on-clear-skill-group-selection</td>
+//             <td>Callback function triggered when clearing the skillgroup selection with x.</td>
+//         </tr>
+//     </tbody>
+// </table>
 // <div class="jsprewrap">
 //   <div class="ksscopy kss-style" ng-click="showJs['skillPicker'] = !showJs['skillPicker']">
 //       <span ng-hide="showJs['skillPicker']">Show</span>
