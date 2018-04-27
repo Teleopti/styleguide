@@ -56,6 +56,7 @@
     "karma-jasmine": "1.1.0",
     "karma-phantomjs-launcher": "1.0.2",
     "kss": "2.4.0",
+    "node-sass": "^4.9.0",
     "phantomjs-prebuilt": "2.1.14"
   },
   "homepage": "http://teleopti.github.io/styleguide/styleguide"
