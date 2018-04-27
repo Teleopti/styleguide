@@ -25,6 +25,7 @@
                         <li ng-click="$ctrl.skillSelected(skill)"
                             ng-repeat="skill in $ctrl.skills | filter:$ctrl.skillPickerText"
                             style="padding: 10px 0px; cursor: pointer">
+                            <i ng-class="$ctrl.getSkillIcon(skill)"></i>
                             {{skill.Name}}
                         </li>
                     </ul>

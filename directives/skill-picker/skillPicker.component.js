@@ -14,13 +14,14 @@
         }
     });
 
-    theComponent.$inject = ['$translate'];
+    theComponent.$inject = ['$translate', 'skillIconService'];
 
-    function theComponent($translate) {
+    function theComponent($translate, skillIconService) {
         var ctrl = this;
 
         ctrl.selectedSkill = '';
         ctrl.selectedSkillGroup = '';
+        ctrl.getSkillIcon = skillIconService.get;
 
         ctrl.skillSelected = function(skill) {
             ctrl.skillPickerOpen = false;
@@ -56,11 +57,10 @@
             setPreselected(changesObj);
         };
 
-        ctrl.$onInit = function() {
-            setPreselected();
-        };
-
         function setPreselected(changesObj) {
+            if (angular.isUndefined(changesObj)) {
+                return;
+            }
             if (angular.isDefined(changesObj.preselectedSkill) && changesObj.preselectedSkill !== null) {
                 if (
                     changesObj.preselectedSkill.currentValue !== null &&
