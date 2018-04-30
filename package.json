@@ -16,6 +16,7 @@
   "description": "Styleguide for Teleopti",
   "author": "Teleopti",
   "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "angular": "1.5.9",
     "angular-animate": "1.5.9",
