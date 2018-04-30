@@ -27,16 +27,6 @@ Then, run a local instance (via visual studio for example). The local styleguide
 
 *   create a pull request from your branch to Teleopti/master.
 
-## Atom packages for this project
-
-If you use Atom you can install those packages to help you following the guidelines
-
-*   jscs-fixer
-
-*   jshint
-
-*   linter-jscs
-
 ## How to release
 
 *   Upgrade the version number in package.json

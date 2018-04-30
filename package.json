@@ -10,12 +10,10 @@
     "start": "grunt",
     "devServer": "http-server styleguide -p 3000 -c-1",
     "dist": "grunt dist",
-    "kss": "./node_modules/.bin/kss-node css styleguide css/styleguide.md --template kss-template --verbose",
-    "styleguide": "nucleus --config config.nucleus.json"
+    "kss": "kss-node css styleguide css/styleguide.md --template kss-template --verbose"
   },
   "description": "Styleguide for Teleopti",
   "author": "Teleopti",
-  "license": "ISC",
   "license": "MIT",
   "dependencies": {
     "angular": "1.5.9",
@@ -41,13 +39,10 @@
     "grunt-contrib-concat": "1.0.1",
     "grunt-contrib-copy": "1.0.0",
     "grunt-contrib-cssmin": "2.0.0",
-    "grunt-contrib-jshint": "1.1.0",
     "grunt-contrib-uglify": "2.2.0",
     "grunt-contrib-watch": "1.0.0",
-    "grunt-jscs": "3.0.1",
     "grunt-karma": "2.0.0",
     "grunt-sass": "2.0.0",
-    "grunt-sass-lint": "0.2.2",
     "grunt-shell": "2.1.0",
     "http-server": "0.11.1",
     "jasmine-core": "2.5.2",
