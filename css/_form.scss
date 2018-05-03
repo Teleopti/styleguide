@@ -1,54 +1,58 @@
 label {
-  display: inline !important;
-  font-weight: normal;
+    display: inline !important;
+    font-weight: normal;
 }
 
-input[type='text'], [type='number'], input[type='password'], select{
-  border: none;
-  color: $text-color-standard;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background: none;
-  line-height: 1;
-  cursor: pointer;
-  height: 20px;
-  border-bottom: 1px solid $hover;
-
-  &:focus {
+input[type='text'],
+[type='number'],
+input[type='password'],
+select {
     border: none;
-    outline: none;
-    border-bottom: 1px solid $secondary;
-  }
+    color: $text-color-standard;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: none;
+    line-height: 1;
+    cursor: pointer;
+    height: 20px;
+    border-bottom: 1px solid $hover;
+
+    &:focus {
+        border: none;
+        outline: none;
+        border-bottom: 1px solid $secondary;
+    }
 }
 
-.wfm-form input, .wfm-form select{
-  margin:0!important;
+.wfm-form input,
+.wfm-form select {
+    margin: 0 !important;
 }
 
-textarea{
-  background-color: $white;
-  color:$text-color-standard;
-  resize:vertical;
-  width:100%;
+textarea {
+    background-color: $white;
+    color: $text-color-standard;
+    resize: vertical;
+    width: 100%;
 }
 
 input::-ms-clear {
-  display: none;
+    display: none;
 }
 
 select:after {
-  width: 0;
-  height: 0;
-  padding: 0;
-  content: '';
-  border-left: .25em solid transparent;
-  border-right: .25em solid transparent;
-  border-top: .375em solid red;
-  pointer-events: none;
+    width: 0;
+    height: 0;
+    padding: 0;
+    content: '';
+    border-left: 0.25em solid transparent;
+    border-right: 0.25em solid transparent;
+    border-top: 0.375em solid red;
+    pointer-events: none;
 }
 
 .md-ink-ripple:before {
-  background-color: transparent !important;
+    background-color: transparent !important;
 }
 
 // Input
@@ -85,36 +89,36 @@ select:after {
 //Styleguide 1.5
 //
 
-.input-icon i{
-  display: inline-flex;
-  display: -ms-inline-flexbox;
-  width:100%;
+.input-icon i {
+    display: inline-flex;
+    display: -ms-inline-flexbox;
+    width: 100%;
 }
-.input-icon input{
-  margin-left: 5px;
-  width: 100%;
-  font-style: normal!important;
+.input-icon input {
+    margin-left: 5px;
+    width: 100%;
+    font-style: normal !important;
 }
 
 /*Deprecated*/
 .input-prepend {
-  width: 100%;
+    width: 100%;
 
-  i {
-    display: inline-block;
-    width: 18px;
-    cursor: pointer;
-    color: $text-color-standard;
+    i {
+        display: inline-block;
+        width: 18px;
+        cursor: pointer;
+        color: $text-color-standard;
 
-    &:before {
-      vertical-align: sub;
+        &:before {
+            vertical-align: sub;
+        }
     }
-  }
 
-  input[type='text'] {
-    display: inline-block;
-    width: auto;
-  }
+    input[type='text'] {
+        display: inline-block;
+        width: auto;
+    }
 }
 
 // File upload
@@ -134,125 +138,127 @@ select:after {
 //
 
 .disableInputField {
-  display: inline-block;
-  background: none;
-  border: none;
-  outline: none;
-  width: 50%;
-  margin: 0;
-  text-overflow: ellipsis;
+    display: inline-block;
+    background: none;
+    border: none;
+    outline: none;
+    width: 50%;
+    margin: 0;
+    text-overflow: ellipsis;
 }
 
 .fileUpload {
-  position: relative;
-  overflow: hidden;
-  display: inline-block;
-  vertical-align: top;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: top;
 }
 
 .uploadBtn {
-  display: inline-block;
-  line-height: 22px;
-  cursor: pointer;
-  margin: 5px;
+    display: inline-block;
+    line-height: 22px;
+    cursor: pointer;
+    margin: 5px;
 }
 
 .fileUpload input.upload {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 0;
-  margin: 0;
-  padding: 0;
-  opacity: 0;
-  filter: alpha(opacity = 0);
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    filter: alpha(opacity = 0);
 }
 
 ::-webkit-input-placeholder {
-  /* WebKit browsers */
-  color: $text-color-muted;
+    /* WebKit browsers */
+    color: $text-color-muted;
 }
 
 :-moz-placeholder {
-  /* Mozilla Firefox 4 to 18 */
-  color: $text-color-muted;
-  opacity: 1;
+    /* Mozilla Firefox 4 to 18 */
+    color: $text-color-muted;
+    opacity: 1;
 }
 
 ::-moz-placeholder {
-  /* Mozilla Firefox 19+ */
-  color: $text-color-muted;
-  opacity: 1;
+    /* Mozilla Firefox 19+ */
+    color: $text-color-muted;
+    opacity: 1;
 }
 
 input:-ms-input-placeholder {
-  /* Internet Explorer 10+ */
-  color: $text-color-muted;
+    /* Internet Explorer 10+ */
+    color: $text-color-muted;
 }
 
 /*Form validation*/
 .wfm-form {
-  label {
-    cursor: pointer !important;
-    color: $text-color-standard;
-    display: inline-block !important;
-  }
+    label {
+        cursor: pointer !important;
+        color: $text-color-standard;
+        display: inline-block !important;
+    }
 
-  input, select {
-    max-width: 100%;
-    margin-right: 100%;
-  }
+    input,
+    select {
+        max-width: 100%;
+        margin-right: 100%;
+    }
 
-  input > .ng-invalid {
-    border-bottom: 5px solid red !important;
-  }
+    input > .ng-invalid {
+        border-bottom: 5px solid red !important;
+    }
 
-  input[type="text"],
-  input[type="number"],
-  input[type="password"],
-  input[type="email"] {
-    padding: 0 0 0 4px !important;
-  }
+    input[type='text'],
+    input[type='number'],
+    input[type='password'],
+    input[type='email'] {
+        padding: 0 0 0 4px !important;
+    }
 
-  select {
-    padding: 0 0 0 0;
-  }
+    select {
+        padding: 0 0 0 0;
+    }
 
-  .form-input-message {
-    opacity: 0;
-    height: 0;
-    transition: $transition-timing;
-  }
+    .form-input-message {
+        opacity: 0;
+        height: 0;
+        transition: $transition-timing;
+    }
 
-  .formInvalidInput {
-    opacity: 1;
-    height: auto;
-    color: red !important;
-  }
+    .formInvalidInput {
+        opacity: 1;
+        height: auto;
+        color: red !important;
+    }
 
-  .form-input-wrap {
-    padding: 10px 0;
-  }
+    .form-input-wrap {
+        padding: 10px 0;
+    }
 
-  .animate-input-message {
-    line-height: 20px;
-    height: auto;
-    opacity: 1;
-  }
+    .animate-input-message {
+        line-height: 20px;
+        height: auto;
+        opacity: 1;
+    }
 
-  .animate-input-message.ng-hide-add, .animate-input-message.ng-hide-remove {
-    transition: $transition-timing;
-  }
+    .animate-input-message.ng-hide-add,
+    .animate-input-message.ng-hide-remove {
+        transition: $transition-timing;
+    }
 
-  .animate-input-message.ng-hide {
-    line-height: 0;
-    height: 0;
-    opacity: 0;
-  }
+    .animate-input-message.ng-hide {
+        line-height: 0;
+        height: 0;
+        opacity: 0;
+    }
 }
 
-.form-panel{
-  overflow-x: hidden;
+.form-panel {
+    overflow-x: hidden;
 }
 
 // Select
@@ -271,92 +277,117 @@ input:-ms-input-placeholder {
 
 //z index needs to be higher than 81
 .md-select-menu-container {
-  background: $white !important;
-  z-index: 1000;
+    background: $white !important;
+    z-index: 1000;
 
-  .md-active {
-    z-index: 150;
-  }
+    .md-active {
+        z-index: 150;
+    }
 }
 
-md-select:not([disabled]):focus .md-select-value{
-  border: none;
-  outline: none;
-  padding-bottom: 1px;
-  border-bottom: 1px solid $hover;
+md-select:not([disabled]):focus .md-select-value {
+    border: none;
+    outline: none;
+    padding-bottom: 1px;
+    border-bottom: 1px solid $hover;
 }
 
-.md-select-value>span:not(.md-select-icon){
-  white-space: normal;
+.md-select-value > span:not(.md-select-icon) {
+    white-space: normal;
 }
 
-md-select-menu{
-  md-select:not([disabled]):focus .md-select-value,
-  md-option[selected],
-  md-content {
-    color: inherit!important;
-  }
-  md-option{
-    height: 30px;
-    color:$text-color-standard;
-  }
-  md-option:focus:not([disabled]):not([selected]),
-  md-option[selected], md-select-menu md-option[selected]:focus {
-    background: $secondary!important;
-  }
+md-select-menu {
+    md-select:not([disabled]):focus .md-select-value,
+    md-option[selected],
+    md-content {
+        color: inherit !important;
+    }
+    md-option {
+        height: 30px;
+        color: $text-color-standard;
+    }
+    md-option:focus:not([disabled]):not([selected]),
+    md-option[selected],
+    md-select-menu md-option[selected]:focus {
+        background: $secondary !important;
+    }
 }
 
 md-select {
-  margin: 0!important;
+    margin: 0 !important;
 
-  .md-select-label {
-    padding: 0;
-    height: 21px;
-  }
+    .md-select-label {
+        padding: 0;
+        height: 21px;
+    }
 
-  &:not([disabled]):focus .md-select-value {
-    color: inherit!important;
-  }
+    &:not([disabled]):focus .md-select-value {
+        color: inherit !important;
+    }
 }
 
-.inline-select{
-  margin-top:-5px!important;
-  margin-left: 5px!important;
+.inline-select {
+    margin-top: -5px !important;
+    margin-left: 5px !important;
 }
 
-.bu-select{
-  margin-top:-5px;
+.bu-select {
+    margin-top: -5px;
 }
 
 // Skill picker
 //
 // The skill picker is used to switch between selected skills and selected skill groups.
-//<table class="wfm-table">
-//	<thead>
-//		<tr>
-//			<th>Attribute Name</th>
-//			<th>Usage</th>
-//		</tr>
-//	</thead>
-//	<tbody>
-//		<tr>
-//			<td>skills</td>
-//			<td>Model for binding skills</td>
-//		</tr>
-//		<tr>
-//			<td>skill-areas</td>
-//			<td>Model for binding skill groups</td>
-//		</tr>
-//    <tr>
-//      <td>item-to-return</td>
-//      <td>The currently selected item (skill or group) returned as a callback function</td>
-//    </tr>
-//    <tr>
-//      <td>preselected</td>
-//      <td>Send the id of a skill that should be preselected on load</td>
-//    </tr>
-//	</tbody>
-//</table>
+// <table class="wfm-table">
+//     <thead>
+//         <tr>
+//             <th>Attribute Name</th>
+//             <th>Usage</th>
+//         </tr>
+//     </thead>
+//     <tbody>
+//         <tr>
+//             <td>skills</td>
+//             <td>Model for binding skills. Array of skill objects</td>
+//         </tr>
+//         <tr>
+//             <td>skill-groups</td>
+//             <td>Model for binding skill groups. Array of skillgroup objects</td>
+//         </tr>
+//         <tr>
+//             <td>skill-picker-open</td>
+//             <td>Property for showing and hiding the drop-down with skills. Boolean. Optional</td>
+//         </tr>
+//         <tr>
+//             <td>skill-group-picker-open</td>
+//             <td>Property for showing and hiding the drop-down with skillgroups. Boolean. Optional</td>
+//         </tr>
+//         <tr>
+//             <td>on-skill-selected</td>
+//             <td>Callback function triggered when a skill is selected. The selected skill object as the only argument.</td>
+//         </tr>
+//         <tr>
+//             <td>on-skill-group-selected</td>
+//             <td>Callback function triggered when a skillgroup is selected. The selected skillgroup object as the only argument.</td>
+//         </tr>
+//         <tr>
+//             <td>preselected-skill</td>
+//             <td>Skill object to be displayed as the component loads</td>
+//         </tr>
+//         <tr>
+//             <td>preselected-skill-group</td>
+//             <td>Skillgroup object to be displayed as the component loads</td>
+//         </tr>
+//         <tr>
+//             <td>on-clear-skill-selection</td>
+//             <td>Callback function triggered when clearing the skill selection with x.</td>
+//         </tr>
+//         <tr>
+//             <td>on-clear-skill-group-selection</td>
+//             <td>Callback function triggered when clearing the skillgroup selection with x.</td>
+//         </tr>
+//     </tbody>
+// </table>
 // <div class="jsprewrap">
 //   <div class="ksscopy kss-style" ng-click="showJs['skillPicker'] = !showJs['skillPicker']">
 //       <span ng-hide="showJs['skillPicker']">Show</span>
@@ -425,107 +456,113 @@ md-select {
 //    ]
 //  }
 //];
-//
-//$scope.preselectedSkill = { skillIds: ['XYZ1'] };
-//$scope.preselectedSkillGroup = { skillAreaId: ['XYZ'] };
-//
-//$scope.output = function(selectedItem) {
-//  $scope.filterOutput = selectedItem;
-//};
 //       </pre>
 //     </code>
 //   </div>
 // </div>
 //
 // Markup:
-//<skill-picker skills="mockSkills" skill-areas="mockedSkillGroups" item-to-return="output" preselected-item="preselectedSkill"></skill-picker>
-//<p ng-if="filterOutput">Selected skill/group: <span ng-bind="filterOutput.Name"></span></p>
+// <the-skill-picker class="con-flex"
+//      skills="mockSkills"
+//      skill-groups="mockedSkillGroups"
+//      skill-picker-open="skillPickerOpen"
+//      skill-group-picker-open="skillGroupPickerOpen"
+//      on-skill-selected="clickedSkillInPicker(skill)"
+//      on-skill-group-selected="clickedSkillGroupInPicker(skillGroup)"
+//      preselected-skill="selectedSkill"
+//      preselected-skill-group="selectedSkillGroup"
+//      on-clear-skill-selection="clearSkillSelection()"
+//      on-clear-skill-group-selection="clearSkillGroupSelection()">
+// </the-skill-picker>
+//<p ng-if="selectedSkill">Selected skill: <span ng-bind="selectedSkill.Name"></span></p>
+//<p ng-if="selectedSkillGroup">Selected skillgroup: <span ng-bind="selectedSkillGroup.Name"></span></p>
 //
 //Styleguide 2.13
 //
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  .hide-on-ie{
-    display: none!important;
-  }
+    .hide-on-ie {
+        display: none !important;
+    }
 
-  .ie-cross {
-    display: inline!important;
-    float: right;
-    margin-top: -20px;
-  }
+    .ie-cross {
+        display: inline !important;
+        float: right;
+        margin-top: -20px;
+    }
 }
 
-.ie-cross{
-  display: none;
-}
-
-md-autocomplete{
-  color: $text-color-standard;
-  background:transparent;
-  height: 30px;
-  border-bottom: 1px solid $hover;
-
-  input:not(.md-input){
-    padding: 0;
-  }
-
-  button:after{
+.ie-cross {
     display: none;
-  }
-
-  button md-icon {
-    transform: translate3d(-50%,-50%,0) scale(0.7);
-  }
 }
 
-.md-whiteframe-1dp, .md-whiteframe-z1{
-  box-shadow: none;
+md-autocomplete {
+    color: $text-color-standard;
+    background: transparent;
+    height: 30px;
+    border-bottom: 1px solid $hover;
+
+    input:not(.md-input) {
+        padding: 0;
+    }
+
+    button:after {
+        display: none;
+    }
+
+    button md-icon {
+        transform: translate3d(-50%, -50%, 0) scale(0.7);
+    }
 }
 
-.md-virtual-repeat-scroller{
-  background: $white;
+.md-whiteframe-1dp,
+.md-whiteframe-z1 {
+    box-shadow: none;
 }
 
-md-autocomplete-parent-scope{
-  color: $text-color-standard;
-}
-.md-autocomplete-suggestions >li {
-  color: $text-color-standard;
-
-  &:hover{
-    background:$hover!important;
-  }
+.md-virtual-repeat-scroller {
+    background: $white;
 }
 
-md-autocomplete[disabled]{
-  background:$hover;
+md-autocomplete-parent-scope {
+    color: $text-color-standard;
+}
+.md-autocomplete-suggestions > li {
+    color: $text-color-standard;
 
-  input{
-    cursor: not-allowed!important;
-  }
+    &:hover {
+        background: $hover !important;
+    }
+}
+
+md-autocomplete[disabled] {
+    background: $hover;
+
+    input {
+        cursor: not-allowed !important;
+    }
 }
 
 .wfm-form > md-autocomplete-wrap > input {
-  margin-right: 0!important;
+    margin-right: 0 !important;
 }
 
-.md-autocomplete-suggestions-container{
-  margin-bottom: $full-padding!important;
-  li .highlight{
-    color:$text-color-standard !important;
-    font-weight: bold;
-  }
+.md-autocomplete-suggestions-container {
+    margin-bottom: $full-padding !important;
+    li .highlight {
+        color: $text-color-standard !important;
+        font-weight: bold;
+    }
 }
 
 md-select-menu md-content md-option:not([disabled]):hover,
 md-autocomplete[disabled]:not([md-floating-label]),
 .md-autocomplete-suggestions-container li.selected {
-  background: $hover!important;
+    background: $hover !important;
 }
 
 // fix for IE: clear buttom cause item list dont open
-// .md-virtual-repeat-container.md-autocomplete-suggestions-container { 
+// .md-virtual-repeat-container.md-autocomplete-suggestions-container {
 //   height: 225.5px !important;
 // }
 
@@ -569,58 +606,57 @@ md-autocomplete[disabled]:not([md-floating-label]),
 //Styleguide 1.8
 //
 
-md-radio-group{
-  .md-off{
-    border: none!important;
-  }
-  .md-on {
-    transform: scale(1)!important;
-    background-color: transparent;
-  }
+md-radio-group {
+    .md-off {
+        border: none !important;
+    }
+    .md-on {
+        transform: scale(1) !important;
+        background-color: transparent;
+    }
 }
 md-radio-button {
-  margin: $full-padding 0;
-  .md-container:before {
-    background: $hover;
-  }
-  .md-container{
-    background: $hover;
-    border-radius: 50%;
-  }
+    margin: $full-padding 0;
+    .md-container:before {
+        background: $hover;
+    }
+    .md-container {
+        background: $hover;
+        border-radius: 50%;
+    }
 }
 md-radio-group .md-checked .md-on {
-  background-color: $secondary !important;
+    background-color: $secondary !important;
 }
 
+.wfm-radio {
+    //depricated, remove as soon as possible
+    @extend .wfm-block;
 
+    input[type='radio'] {
+        display: none;
+    }
 
-.wfm-radio { //depricated, remove as soon as possible
-  @extend .wfm-block;
+    .wfm-radio-toggle {
+        position: absolute;
+        background-color: $hover;
+        width: 20px;
+        height: 20px;
+        border-radius: 40px;
+        transition: $transition-timing;
+        cursor: pointer;
+    }
 
-  input[type='radio'] {
-    display: none;
-  }
+    input[type='radio']:checked ~ label .wfm-radio-toggle,
+    input[type='radio']:checked ~ .wfm-radio-toggle {
+        background-color: $secondary;
+    }
 
-  .wfm-radio-toggle {
-    position: absolute;
-    background-color: $hover;
-    width: 20px;
-    height: 20px;
-    border-radius: 40px;
-    transition: $transition-timing;
-    cursor: pointer;
-  }
-
-  input[type=radio]:checked ~ label .wfm-radio-toggle,
-  input[type=radio]:checked ~ .wfm-radio-toggle {
-    background-color: $secondary;
-  }
-
-  .wfm-radio-label {
-    margin-left: 20px + $full-padding;
-    white-space: nowrap;
-    cursor: pointer;
-  }
+    .wfm-radio-label {
+        margin-left: 20px + $full-padding;
+        white-space: nowrap;
+        cursor: pointer;
+    }
 }
 
 //Checkbox
@@ -656,64 +692,64 @@ md-radio-group .md-checked .md-on {
 //
 
 md-checkbox {
-  display: block;
-  margin: $full-padding 0;
-  .md-icon{
-    border-width: 0;
-    border-style: solid;
-    border-color: transparent;
-    border-radius: 0;
-    background-color: $hover;
-  }
-
-  &.md-checked .md-icon {
-    background-color: $secondary;
-    &:after {
-      border-color: $text-color-standard;
-      left: 7px;
-      top: 1px;
+    display: block;
+    margin: $full-padding 0;
+    .md-icon {
+        border-width: 0;
+        border-style: solid;
+        border-color: transparent;
+        border-radius: 0;
+        background-color: $hover;
     }
-  }
+
+    &.md-checked .md-icon {
+        background-color: $secondary;
+        &:after {
+            border-color: $text-color-standard;
+            left: 7px;
+            top: 1px;
+        }
+    }
 }
 
+.wfm-checkbox {
+    //Depricated remove as soon as possible
+    @extend .wfm-block;
 
-.wfm-checkbox { //Depricated remove as soon as possible
-  @extend .wfm-block;
+    input[type='checkbox'] {
+        display: none;
+    }
 
-  input[type='checkbox'] {
-    display: none;
-  }
+    .wfm-checkbox-toggle:after {
+        position: absolute;
+        background-color: $gray026;
+        width: 20px;
+        height: 20px;
+        float: right;
+        border-radius: 2px;
+        content: ' ';
+        transition: $transition-timing;
+        cursor: pointer;
+    }
 
-  .wfm-checkbox-toggle:after {
-    position: absolute;
-    background-color: $gray026;
-    width: 20px;
-    height: 20px;
-    float: right;
-    border-radius: 2px;
-    content: " ";
-    transition: $transition-timing;
-    cursor: pointer;
-  }
+    input[type='checkbox']:checked ~ label .wfm-checkbox-toggle:after,
+    input[type='checkbox']:checked ~ .wfm-checkbox-toggle:after {
+        background-color: $blue-300;
+        content: '✓';
+        text-align: center;
+        color: $white;
+    }
 
-  input[type=checkbox]:checked ~ label .wfm-checkbox-toggle:after,
-  input[type=checkbox]:checked ~ .wfm-checkbox-toggle:after {
-    background-color: $blue-300;
-    content: "✓";
-    text-align: center;
-    color: $white;
-  }
+    input[type='checkbox']:focus ~ label .wfm-checkbox-toggle:after,
+    input[type='checkbox']:focus ~ .wfm-checkbox-toggle:after {
+        @extend .material-trench-1;
+    }
 
-  input[type=checkbox]:focus ~ label .wfm-checkbox-toggle:after,
-  input[type=checkbox]:focus ~ .wfm-checkbox-toggle:after {
-    @extend .material-trench-1;
-  }
-
-  .wfm-checkbox-label {
-    margin-left: 20px + $full-padding;
-    white-space: nowrap;
-    cursor: pointer;
-  }
+    .wfm-checkbox-label {
+        margin-left: 20px + $full-padding;
+        white-space: nowrap;
+        cursor: pointer;
+    }
 }
 
 //Switch
@@ -729,75 +765,75 @@ md-checkbox {
 //Styleguide 1.10
 //
 md-switch {
-  .md-bar {
-    height: 18px;
-    top: 3px;
-    background-color: $hover;
-  }
-  &.md-checked {
     .md-bar {
-      background: $secondary;
+        height: 18px;
+        top: 3px;
+        background-color: $hover;
     }
-    .md-thumb {
-      background-color: $highlight;
+    &.md-checked {
+        .md-bar {
+            background: $secondary;
+        }
+        .md-thumb {
+            background-color: $highlight;
+        }
     }
-  }
 }
 
+.wfm-switch {
+    //depricated remove as soon as possible
+    position: relative;
+    height: 24px;
+    padding-top: 2px;
 
-.wfm-switch { //depricated remove as soon as possible
-  position: relative;
-  height: 24px;
-  padding-top: 2px;
+    label {
+        vertical-align: middle;
+    }
 
-  label {
-    vertical-align: middle;
-  }
+    input[type='checkbox'] {
+        opacity: 0;
+        height: 1px;
+        width: 1px;
+    }
 
-  input[type='checkbox'] {
-    opacity: 0;
-    height: 1px;
-    width: 1px;
-  }
+    .wfm-switch-toggle {
+        position: absolute;
+        background-color: $gray-300;
+        width: 48px;
+        height: 18px;
+        border-radius: 40px;
+        transition: $transition-timing;
+        margin: 2px 5px;
+        cursor: pointer;
+    }
 
-  .wfm-switch-toggle {
-    position: absolute;
-    background-color: $gray-300;
-    width: 48px;
-    height: 18px;
-    border-radius: 40px;
-    transition: $transition-timing;
-    margin: 2px 5px;
-    cursor: pointer;
-  }
+    .wfm-switch-toggle:after {
+        content: ' ';
+        display: block;
+        width: 12px;
+        height: 12px;
+        border-radius: 44px;
+        cursor: pointer;
+        position: absolute;
+        top: 3px;
+        z-index: 1;
+        left: 5px;
+        background-color: $white;
+        transition: $transition-timing;
+    }
 
-  .wfm-switch-toggle:after {
-    content: " ";
-    display: block;
-    width: 12px;
-    height: 12px;
-    border-radius: 44px;
-    cursor: pointer;
-    position: absolute;
-    top: 3px;
-    z-index: 1;
-    left: 5px;
-    background-color: $white;
-    transition: $transition-timing;
-  }
+    input[type='checkbox']:checked ~ label .wfm-switch-toggle {
+        background-color: $blue-300;
+    }
 
-  input[type=checkbox]:checked ~ label .wfm-switch-toggle {
-    background-color: $blue-300;
-  }
+    input[type='checkbox']:checked ~ label .wfm-switch-toggle:after {
+        left: 30px;
+    }
 
-  input[type=checkbox]:checked ~ label .wfm-switch-toggle:after {
-    left: 30px;
-  }
-
-  .wfm-switch-label {
-    white-space: nowrap;
-    cursor: pointer;
-  }
+    .wfm-switch-label {
+        white-space: nowrap;
+        cursor: pointer;
+    }
 }
 
 //Slider
@@ -812,45 +848,43 @@ md-switch {
 //Styleguide 1.17
 //
 
-md-slider[md-vertical] .md-sign:after{
-  border-left-color: $primary;
+md-slider[md-vertical] .md-sign:after {
+    border-left-color: $primary;
 }
 
-md-slider{
+md-slider {
+    .md-thumb {
+        transform: scale(0.7) !important;
+    }
 
-  .md-thumb{
-    transform: scale(0.7)!important;
-  }
+    .md-slider-content {
+        cursor: pointer;
+    }
 
-  .md-slider-content{
-    cursor: pointer;
-  }
+    .md-track-ticks {
+        opacity: 0;
+    }
 
-  .md-track-ticks{
-    opacity: 0;
-  }
+    .md-track.md-track-fill,
+    .md-thumb:after {
+        background-color: $secondary !important;
+        border-color: $secondary !important;
+    }
 
-  .md-track.md-track-fill,
-  .md-thumb:after{
-    background-color: $secondary!important;
-    border-color: $secondary!important;
-  }
+    .md-sign {
+        background-color: $primary;
+    }
+    .md-sign:after {
+        border-top-color: $primary;
+    }
 
-  .md-sign{
-    background-color:$primary;
-  }
-  .md-sign:after{
-    border-top-color: $primary;
-  }
+    .md-min .md-thumb:after {
+        background-color: $secondary;
+    }
 
-  .md-min .md-thumb:after{
-    background-color: $secondary;
-  }
-
-  .md-slider-wrapper:focus > .md-thumb{
-    background-color:red !important;
-  }
-
+    .md-slider-wrapper:focus > .md-thumb {
+        background-color: red !important;
+    }
 }
 
 //Numeric value
@@ -863,76 +897,75 @@ md-slider{
 //
 //Styleguide 2.12
 
-
-wfm-multiple-search-input{
-  display: inline-block;
-
-  .wfm-multiple-search-wrapper{
-    position: relative;
-    height: auto;
-  }
-
-  .advanced-input{
-    width: 200px;
-    text-overflow: ellipsis!important;
-    outline: none !important;
-  }
-
-  .search-icon {
+wfm-multiple-search-input {
     display: inline-block;
-    vertical-align: bottom;
-    &:focus{
-      outline: rgb(0, 153, 255) solid 1px;
+
+    .wfm-multiple-search-wrapper {
+        position: relative;
+        height: auto;
     }
-    &:not(:focus){
-      outline: none !important;
+
+    .advanced-input {
+        width: 200px;
+        text-overflow: ellipsis !important;
+        outline: none !important;
     }
-  }
 
-  .advanced-input-dropdown {
-    position: absolute;
-    z-index: 115;
-    top: 100%;
-    left: 0;
-    min-width: 313px;
-  }
-
-  .advanced-input-container {
-    position: absolute;
-    background-color: $white;
-    z-index: 15;
-    top: -11px;
-    left: 18px;
-  }
-
-  .expand-advanced-input {
-    max-width: 100%;
-    width: 200px !important;
-  }
-
-  .focusing-search {
-    color: $primary;
-  }
-
-  .focusing-search:before {
-    font-weight: bold;
-  }
-
-  input[type=text].advanced-search-field {
-    padding: 0 4px!important;
-  }
-
-  @media screen and (-ms-high-contrast:active), (-ms-high-contrast:none), (-ms-accelerator:true) {
-    .advanced-input-dropdown > .con-row {
-      display: block;
+    .search-icon {
+        display: inline-block;
+        vertical-align: bottom;
+        &:focus {
+            outline: rgb(0, 153, 255) solid 1px;
+        }
+        &:not(:focus) {
+            outline: none !important;
+        }
     }
-  }
 
-  @media screen and (max-width: 768px) {
-    .advanced-search-field {
-      width: calc(100% - 5px - 5px);
+    .advanced-input-dropdown {
+        position: absolute;
+        z-index: 115;
+        top: 100%;
+        left: 0;
+        min-width: 313px;
     }
-  }
+
+    .advanced-input-container {
+        position: absolute;
+        background-color: $white;
+        z-index: 15;
+        top: -11px;
+        left: 18px;
+    }
+
+    .expand-advanced-input {
+        max-width: 100%;
+        width: 200px !important;
+    }
+
+    .focusing-search {
+        color: $primary;
+    }
+
+    .focusing-search:before {
+        font-weight: bold;
+    }
+
+    input[type='text'].advanced-search-field {
+        padding: 0 4px !important;
+    }
+
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (-ms-accelerator: true) {
+        .advanced-input-dropdown > .con-row {
+            display: block;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .advanced-search-field {
+            width: calc(100% - 5px - 5px);
+        }
+    }
 }
 
 //Multiple search panel
