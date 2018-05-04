@@ -115,6 +115,17 @@ module.exports = function(grunt) {
             'styleguide/dist/main.min.js': 'js/*.js'
         },
         copy: {
+            locales: {
+                files: [
+                    // includes files within path
+                    {
+                        expand: true,
+                        cwd: './node_modules/angular-i18n/',
+                        src: ['angular-locale_*.js'],
+                        dest: 'styleguide/node_modules/angular-i18n/'
+                    }
+                ]
+            },
             sass: {
                 files: [
                     // includes files within path
