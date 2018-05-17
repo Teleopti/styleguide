@@ -29,6 +29,7 @@
             'wfm.multiplesearchinput',
             'wfm.rightPanel',
             'wfm.workPicker',
+            'wfm.skillPickerOld',
             'wfm.skillPicker',
             'wfm.badge',
             'wfm.btnGroup',
@@ -579,6 +580,71 @@
                         return;
                     }
                     $scope.selectedSkillGroup = skillGroup;
+                };
+
+                /*code for skillpicker old*/
+                $scope.mockSkillsOld = [
+                    {
+                        Id: 'XYZ',
+                        Name: 'skill1'
+                    },
+                    {
+                        Id: 'ABC',
+                        Name: 'skill2'
+                    },
+                    {
+                        Id: 'XYZ1',
+                        Name: 'skill3'
+                    },
+                    {
+                        Id: 'ABC2',
+                        Name: 'skill4'
+                    },
+                    {
+                        Id: 'XYZ3',
+                        Name: 'skill5'
+                    },
+                    {
+                        Id: 'ABC4',
+                        Name: 'skill6'
+                    },
+                    {
+                        Id: 'XYZ5',
+                        Name: 'skill7'
+                    },
+                    {
+                        Id: 'ABC6',
+                        Name: 'skill8'
+                    }
+                ];
+                $scope.mockedSkillGroupsOld = [
+                    {
+                        Name: 'SkillArea1',
+                        Id: '123',
+                        Skills: [
+                            {
+                                Id: 'XYZ',
+                                Name: 'skill1'
+                            }
+                        ]
+                    },
+                    {
+                        Name: 'SkillArea2',
+                        Id: '321',
+                        Skills: [
+                            {
+                                Id: 'ABC',
+                                Name: 'skill2'
+                            }
+                        ]
+                    }
+                ];
+
+                $scope.preselectedSkillOld = { skillIds: ['XYZ1'] };
+                $scope.preselectedSkillGroupOld = { skillAreaId: ['XYZ'] };
+
+                $scope.outputOld = function(selectedItem) {
+                    $scope.filterOutputOld = selectedItem;
                 };
 
                 /*code for rightPanel*/
