@@ -29,6 +29,7 @@
             'wfm.multiplesearchinput',
             'wfm.rightPanel',
             'wfm.workPicker',
+            'wfm.skillPickerOld',
             'wfm.skillPicker',
             'wfm.badge',
             'wfm.btnGroup',
@@ -475,35 +476,51 @@
                 $scope.mockSkills = [
                     {
                         Id: 'XYZ',
-                        Name: 'skill1'
+                        Name: 'skill1',
+                        SkillType: 'SkillTypeChat',
+                        DoDisplayData: true
                     },
                     {
                         Id: 'ABC',
-                        Name: 'skill2'
+                        Name: 'skill2',
+                        SkillType: 'SkillTypeEmail',
+                        DoDisplayData: true
                     },
                     {
                         Id: 'XYZ1',
-                        Name: 'skill3'
+                        Name: 'skill3',
+                        SkillType: 'SkillTypeInboundTelephony',
+                        DoDisplayData: true
                     },
                     {
                         Id: 'ABC2',
-                        Name: 'skill4'
+                        Name: 'skill4',
+                        SkillType: 'SkillTypeRetail',
+                        DoDisplayData: true
                     },
                     {
                         Id: 'XYZ3',
-                        Name: 'skill5'
+                        Name: 'skill5',
+                        SkillType: 'SkillTypeBackoffice',
+                        DoDisplayData: true
                     },
                     {
                         Id: 'ABC4',
-                        Name: 'skill6'
+                        Name: 'skill6',
+                        SkillType: 'SkillTypeProject',
+                        DoDisplayData: true
                     },
                     {
                         Id: 'XYZ5',
-                        Name: 'skill7'
+                        Name: 'skill7',
+                        SkillType: 'SkillTypeFax',
+                        DoDisplayData: true
                     },
                     {
                         Id: 'ABC6',
-                        Name: 'skill8'
+                        Name: 'skill8',
+                        SkillType: 'SkillTypeTime',
+                        DoDisplayData: true
                     }
                 ];
                 $scope.mockedSkillGroups = [
@@ -513,7 +530,9 @@
                         Skills: [
                             {
                                 Id: 'XYZ',
-                                Name: 'skill1'
+                                Name: 'skill1',
+                                SkillType: 'SkillTypeTime',
+                                DoDisplayData: true
                             }
                         ]
                     },
@@ -523,7 +542,9 @@
                         Skills: [
                             {
                                 Id: 'ABC',
-                                Name: 'skill2'
+                                Name: 'skill2',
+                                SkillType: '',
+                                DoDisplayData: true
                             }
                         ]
                     }
@@ -559,6 +580,71 @@
                         return;
                     }
                     $scope.selectedSkillGroup = skillGroup;
+                };
+
+                /*code for skillpicker old*/
+                $scope.mockSkillsOld = [
+                    {
+                        Id: 'XYZ',
+                        Name: 'skill1'
+                    },
+                    {
+                        Id: 'ABC',
+                        Name: 'skill2'
+                    },
+                    {
+                        Id: 'XYZ1',
+                        Name: 'skill3'
+                    },
+                    {
+                        Id: 'ABC2',
+                        Name: 'skill4'
+                    },
+                    {
+                        Id: 'XYZ3',
+                        Name: 'skill5'
+                    },
+                    {
+                        Id: 'ABC4',
+                        Name: 'skill6'
+                    },
+                    {
+                        Id: 'XYZ5',
+                        Name: 'skill7'
+                    },
+                    {
+                        Id: 'ABC6',
+                        Name: 'skill8'
+                    }
+                ];
+                $scope.mockedSkillGroupsOld = [
+                    {
+                        Name: 'SkillArea1',
+                        Id: '123',
+                        Skills: [
+                            {
+                                Id: 'XYZ',
+                                Name: 'skill1'
+                            }
+                        ]
+                    },
+                    {
+                        Name: 'SkillArea2',
+                        Id: '321',
+                        Skills: [
+                            {
+                                Id: 'ABC',
+                                Name: 'skill2'
+                            }
+                        ]
+                    }
+                ];
+
+                $scope.preselectedSkillOld = { skillIds: ['XYZ1'] };
+                $scope.preselectedSkillGroupOld = { skillAreaId: ['XYZ'] };
+
+                $scope.outputOld = function(selectedItem) {
+                    $scope.filterOutputOld = selectedItem;
                 };
 
                 /*code for rightPanel*/

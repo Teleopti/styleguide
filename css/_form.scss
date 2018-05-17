@@ -480,6 +480,65 @@ md-select {
 //Styleguide 2.13
 //
 
+// Skill picker - old
+//
+//This will be soon depricated, we are keeping it for now for backwards compatibility. Please use the new one.
+//The skill picker is used to switch between selected skills and selected skill groups.
+//<table class="wfm-table">
+//	<thead>
+//		<tr>
+//			<th>Attribute Name</th>
+//			<th>Usage</th>
+//		</tr>
+//	</thead>
+//	<tbody>
+//		<tr>
+//			<td>skills</td>
+//			<td>Model for binding skills</td>
+//		</tr>
+//		<tr>
+//			<td>skill-areas</td>
+//			<td>Model for binding skill groups</td>
+//		</tr>
+//    <tr>
+//      <td>item-to-return</td>
+//      <td>The currently selected item (skill or group) returned as a callback function</td>
+//    </tr>
+//    <tr>
+//      <td>preselected</td>
+//      <td>Send the id of a skill that should be preselected on load</td>
+//    </tr>
+//	</tbody>
+//</table>
+// <div class="jsprewrap">
+//   <div class="ksscopy kss-style" ng-click="showJs['skillPickerOld'] = !showJs['skillPickerOld']">
+//       <span ng-hide="showJs['skillPickerOld']">Show</span>
+//      <span ng-show="showJs['skillPickerOld']">Hide</span>
+//     JavaScript
+//     <i class="mdi mdi-code-tags pull-right"></i>
+//   </div>
+//   <div class="animate-show" ng-show="showJs['skillPickerOld']">
+//     <code>
+//       <pre class="prettyprint linenums lang-js">
+// &nbsp;
+//$scope.preselectedSkillOld = { skillIds: ['XYZ1'] };
+//$scope.preselectedSkillGroupOld = { skillAreaId: ['XYZ'] };
+//
+//$scope.outputOld = function(selectedItem) {
+//$scope.filterOutputOld = selectedItem;
+//};
+//       </pre>
+//     </code>
+//   </div>
+// </div>
+//
+// Markup:
+//<skill-picker skills="mockSkillsOld" skill-areas="mockedSkillGroupsOld" item-to-return="outputOld" preselected-item="preselectedSkillOld"></skill-picker>
+//<p ng-if="filterOutputOld">Selected skill/group: <span ng-bind="filterOutputOld.Name"></span></p>
+//
+//Styleguide 2.14
+//
+
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
     .hide-on-ie {
         display: none !important;
