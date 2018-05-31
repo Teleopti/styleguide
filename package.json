@@ -8,8 +8,8 @@
     "scripts": {
         "precommit": "pretty-quick --staged",
         "test": "grunt test",
-        "start": "grunt",
-        "devServer": "http-server styleguide -p 3000 -c-1",
+        "start": "grunt dist && npm run devServer | grunt",
+        "devServer": "http-server styleguide -p 3000 -c-1 -o http://localhost:3000/",
         "dist": "grunt dist",
         "kss": "kss-node css styleguide css/styleguide.md --template kss-template --verbose"
     },
