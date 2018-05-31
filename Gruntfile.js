@@ -1,23 +1,22 @@
-module.exports = function (grunt) {
-
+module.exports = function(grunt) {
     grunt.initConfig({
         sass: {
             dist: {
                 files: {
                     'css/main.css': 'css/main.scss',
                     'css/main_dark.css': 'css/main_dark.scss'
-                },
+                }
             },
             styleguide: {
                 files: {
-                    'css/styleguide.css': 'css/styleguide.scss',
-                },
-            },
+                    'css/styleguide.css': 'css/styleguide.scss'
+                }
+            }
         },
         watch: {
             styleguide: {
                 files: ['css/*.scss', 'css/*.hbs', 'css/*.md', 'directives/**/*.js', 'app.js'],
-                tasks: ['sass:styleguide', 'sass:dist', 'ngtemplates', 'shell', 'cssmin'],
+                tasks: ['sass:styleguide', 'sass:dist', 'ngtemplates', 'shell', 'cssmin']
             },
             watchAll: {
                 files: ['js/**', 'css/**.scss', 'directives/**', 'kss-template/**'],
@@ -31,22 +30,22 @@ module.exports = function (grunt) {
         cssmin: {
             options: {
                 shorthandCompacting: false,
-                roundingPrecision: -1,
+                roundingPrecision: -1
             },
             target: {
                 files: {
                     'styleguide/dist/main.min.css': 'css/main.css',
                     'styleguide/dist/main_dark.min.css': 'css/main_dark.css'
-                },
-            },
+                }
+            }
         },
         shell: {
             options: {
-                stderr: false,
+                stderr: false
             },
             target: {
-                command: 'npm run-script kss',
-            },
+                command: 'npm run-script kss'
+            }
         },
         karma: {
             styleguide: {
@@ -57,19 +56,6 @@ module.exports = function (grunt) {
                 singleRun: false
             }
         },
-        jshint: {
-            options: {
-                jshintrc: '.jshintrc' //http://jshint.com/docs/options/
-
-            },
-            all: ['Gruntfile.js', 'directives/**/*.js', 'app.js'],
-        },
-        jscs: {
-            src: ['Gruntfile.js', 'directives/**/*.js', 'app.js'],
-            options: {
-                config: '.jscsrc',
-            },
-        },
         ngtemplates: {
             'styleguide.templates': {
                 src: ['directives/**/*.tpl.html'],
@@ -78,12 +64,6 @@ module.exports = function (grunt) {
                     standalone: true
                 }
             }
-        },
-        sasslint: {
-            options: {
-                configFile: 'config/.sass-lint.yml',
-            },
-            target: ['location/*.scss']
         },
         concat: {
             distJs: {
@@ -108,9 +88,9 @@ module.exports = function (grunt) {
                     'vendor/angular-bootstrap-persian-datepicker-master/persian-datepicker-tpls.js',
                     'vendor/ui-bootstrap-custom-build/datepicker.directive.ext.js',
                     'vendor/ui-bootstrap-custom-build/timepicker.directive.ext.js',
-                    'vendor/d3/d3.min.js',
-                    'vendor/c3/c3.min.js',
-                    'vendor/c3/c3-angular.min.js',
+                    'node_modules/d3/d3.min.js',
+                    'node_modules/c3/c3.min.js',
+                    'node_modules/c3-angular/c3-angular.min.js',
                     'vendor/ui-grid/uigrid.disable-animation.directive.js',
                     'vendor/ui-grid/ui-grid.fix.js'
                 ],
@@ -118,28 +98,34 @@ module.exports = function (grunt) {
             },
             distCss: {
                 src: [
-                    'vendor/fonts.css',
                     'node_modules/angular-ui-tree/dist/angular-ui-tree.min.css',
                     'node_modules/angular-material/angular-material.min.css',
                     'node_modules/angular-resizable/angular-resizable.min.css',
                     'node_modules/angular-ui-grid/ui-grid.min.css',
-                    'vendor/c3/c3.min.css',
-                    'vendor/mdi/css/materialdesignicons.min.css',
+                    'node_modules/c3/c3.min.css',
+                    'node_modules/@mdi/font/css/materialdesignicons.min.css',
                     'css/styleguide.css',
                     'css/main.min.css'
                 ],
                 dest: 'styleguide/dist/dependencies.min.css'
             }
-
         },
         uglify: {
-            'styleguide/dist/wfmdirectives.min.js':
-            [
-                'directives/**/*.js', '!directives/**/*.spec.js'
-            ],
+            'styleguide/dist/wfmdirectives.min.js': ['directives/**/*.js', '!directives/**/*.spec.js'],
             'styleguide/dist/main.min.js': 'js/*.js'
         },
         copy: {
+            locales: {
+                files: [
+                    // includes files within path
+                    {
+                        expand: true,
+                        cwd: './node_modules/angular-i18n/',
+                        src: ['angular-locale_*.js'],
+                        dest: 'styleguide/node_modules/angular-i18n/'
+                    }
+                ]
+            },
             sass: {
                 files: [
                     // includes files within path
@@ -148,7 +134,7 @@ module.exports = function (grunt) {
                         cwd: './css/',
                         src: ['*.scss'],
                         dest: 'styleguide/sass/'
-                    },
+                    }
                 ]
             },
             fonts: {
@@ -156,11 +142,11 @@ module.exports = function (grunt) {
                     // includes files within path
                     {
                         expand: true,
-                        cwd: 'vendor/mdi/fonts/',
+                        cwd: 'node_modules/@mdi/font/fonts/',
                         src: ['**'],
                         dest: 'styleguide/fonts/'
-                    },
-                ],
+                    }
+                ]
             },
             uigrid: {
                 files: [
@@ -169,13 +155,14 @@ module.exports = function (grunt) {
                         expand: true,
                         cwd: 'fonts',
                         flatten: true,
-                        src: ['../node_modules/angular-ui-grid/ui-grid.woff',
+                        src: [
+                            '../node_modules/angular-ui-grid/ui-grid.woff',
                             '../node_modules/angular-ui-grid/ui-grid.ttf'
                         ],
                         dest: 'styleguide/dist/',
                         filter: 'isFile'
-                    },
-                ],
+                    }
+                ]
             }
         }
     });
@@ -187,14 +174,21 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-karma');
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-jscs');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-angular-templates');
 
     // Default task(s).
     grunt.registerTask('default', ['dist', 'watch:styleguide']);
     grunt.registerTask('test', ['karma:styleguide']);
-    grunt.registerTask('devTest', ['karma:continuous','watch:test']);
-    grunt.registerTask('dist', ['jscs', 'ngtemplates', 'sass:styleguide', 'sass:dist', 'shell', 'cssmin', 'concat', 'uglify', 'copy']); // this task is kind of package
+    grunt.registerTask('devTest', ['karma:continuous', 'watch:test']);
+    grunt.registerTask('dist', [
+        'ngtemplates',
+        'sass:styleguide',
+        'sass:dist',
+        'shell',
+        'cssmin',
+        'concat',
+        'uglify',
+        'copy'
+    ]); // this task is kind of package
 };
