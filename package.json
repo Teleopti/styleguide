@@ -1,6 +1,6 @@
 {
     "name": "teleopti-styleguide",
-    "version": "1.13.0",
+    "version": "1.13.1",
     "repository": {
         "type": "git",
         "url": "git://github.com/Teleopti/styleguide.git"
@@ -23,7 +23,7 @@
         "angular-aria": "1.5.9",
         "angular-dynamic-locale": "0.1.30",
         "angular-i18n": "1.4.5",
-        "angular-material": "1.1.4",
+        "angular-material": "1.1.9",
         "angular-moment": "0.8.3",
         "angular-resizable": "1.2.0",
         "angular-sanitize": "1.5.9",
@@ -44,7 +44,7 @@
         "angular-aria": ">=1.5.9",
         "angular-dynamic-locale": ">=0.1.30",
         "angular-i18n": ">=1.4.5",
-        "angular-material": ">=1.1.4",
+        "angular-material": ">=1.1.9",
         "angular-moment": ">=0.8.3",
         "angular-resizable": ">=1.2.0",
         "angular-sanitize": ">=1.5.9",
