@@ -324,6 +324,10 @@ md-select {
     &:not([disabled]):focus .md-select-value {
         color: inherit !important;
     }
+
+    .md-select-placeholder {
+        color: $text-color-muted;
+    }
 }
 
 .inline-select {
