@@ -325,7 +325,12 @@ md-select {
         color: inherit !important;
     }
 
-    .md-select-placeholder {
+    .md-select-value {
+        border-bottom-color: $text-color-muted;
+    }
+
+    .md-select-placeholder,
+    .md-select-icon {
         color: $text-color-muted;
     }
 }
