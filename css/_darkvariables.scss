@@ -1,7 +1,7 @@
-$primary:  #0a84d6;
+$primary: #0a84d6;
 $secondary: #136fac;
 $highlight: #1d5a83;
-$hover: rgba(255,255,255,0.16);
+$hover: rgba(255, 255, 255, 0.16);
 
 $blue-500: #0a84d6; /*light to dark in dark theme*/
 $blue-300: #136fac;
@@ -16,39 +16,39 @@ $green-300: #6f8e32;
 $green-100: #627b32;
 
 $red-800: #ee8f7d;
-$red-700: #EF5350;
+$red-700: #ef5350;
 $red-600: #ca3333;
 
-$purple-100:#9C27B0;
-$purple-300:#BA68C8;
-$purple-500:#E1BEE7;
+$purple-100: #9c27b0;
+$purple-300: #ba68c8;
+$purple-500: #e1bee7;
 
-$brown-100:#795548;
-$brown-300:#A1887F;
-$brown-500:#D7CCC8;
+$brown-100: #795548;
+$brown-300: #a1887f;
+$brown-500: #d7ccc8;
 
-$pink-500: #F8BBD0;
-$pink-300: #F06292;
-$pink-100: #E91E63;
+$pink-500: #f8bbd0;
+$pink-300: #f06292;
+$pink-100: #e91e63;
 
 $teal-500: #009688;
-$teal-300: #4DB6AC;
-$teal-100: #B2DFDB;
+$teal-300: #4db6ac;
+$teal-100: #b2dfdb;
 
-$gray-500: #9E9E9E;
+$gray-500: #9e9e9e;
 $gray-300: #555555;
 $gray-100: #c2e085;
-$gray012: #303030; //main Content
-$gray026: rgba(0,0,0,0.26);
+$gray012: rgba(0, 0, 0, 0.12); //main Content
+$gray026: rgba(0, 0, 0, 0.26);
 $gray054: rgba(107, 107, 107, 1);
 $gray087: #d1d1d1; //sidebar text
-$gray100: #9E9E9E;
+$gray100: #9e9e9e;
 $white: #424242; //sidebar background
-$text-color-standard:$gray087!important;
-$text-color-muted:$gray-500!important;
+$text-color-standard: $gray087 !important;
+$text-color-muted: $gray-500 !important;
 
 $full-padding: 5px; /*sets wfm-block*/
 $half-padding: 3px;
-$transition-timing: 300ms all cubic-bezier(.33,.11,.02,.99);
-$standard-font-size:14px;
-$sm-font-size:12px;
+$transition-timing: 300ms all cubic-bezier(0.33, 0.11, 0.02, 0.99);
+$standard-font-size: 14px;
+$sm-font-size: 12px;
