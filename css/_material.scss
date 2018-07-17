@@ -4,14 +4,14 @@
 
 body {
     color: $text-color-standard;
-    font-size: $standard-font-size !important;
-    font-family: Calibri, Segoe, Segoe UI, Arial, sans-serif !important;
+    font-size: $standard-font-size;
+    font-family: Calibri, Segoe, Segoe UI, Arial, sans-serif;
 
     a:focus,
     a:hover {
         text-decoration: none;
-        outline: none !important;
-        outline: 0px auto -webkit-focus-ring-color !important;
+        outline: none;
+        outline: 0px auto -webkit-focus-ring-color;
         outline-offset: 0px;
     }
 }
@@ -19,11 +19,11 @@ body {
 button,
 input,
 select {
-    font-family: Calibri, Segoe, Segoe UI, Arial, sans-serif !important;
+    font-family: Calibri, Segoe, Segoe UI, Arial, sans-serif;
 }
 
 dd {
-    margin-left: 40px !important;
+    margin-left: 40px;
 }
 
 .material-depth-1 {
