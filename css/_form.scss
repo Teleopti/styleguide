@@ -304,7 +304,7 @@ md-select-menu {
     }
     md-option {
         height: 30px;
-        color: $text-color-standard;
+        color: $text-color-standard !important;
     }
     md-option:focus:not([disabled]):not([selected]),
     md-option[selected],
