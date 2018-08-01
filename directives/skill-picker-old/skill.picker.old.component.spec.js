@@ -1,68 +1,68 @@
 'use strict';
 
-describe('skillPickerComponent', function () {
-    var
-    $componentController,
-    ctrl,
-    mockedSkills,
-    mockedSkillAreas,
-    mockedItemToReturn,
-    preselectedSkill,
-    preselectedSkillArea;
+describe('skillPickerOldComponent', function() {
+    var $componentController,
+        ctrl,
+        mockedSkills,
+        mockedSkillAreas,
+        mockedItemToReturn,
+        preselectedSkill,
+        preselectedSkillArea;
 
-    beforeEach(function () {
-        module('wfm.skillPicker');
+    beforeEach(function() {
+        module('wfm.skillPickerOld');
     });
 
-    beforeEach(inject(function (_$componentController_) {
-        $componentController = _$componentController_;
+    beforeEach(
+        inject(function(_$componentController_) {
+            $componentController = _$componentController_;
 
-        mockedSkills = [
-            {
-                Id: 'XYZ',
-                Name: 'skill1'
-            },
-            {
-                Id: 'ABC',
-                Name: 'skill2'
-            }
-        ];
+            mockedSkills = [
+                {
+                    Id: 'XYZ',
+                    Name: 'skill1'
+                },
+                {
+                    Id: 'ABC',
+                    Name: 'skill2'
+                }
+            ];
 
-        mockedSkillAreas = [
-            {
-                Name: 'SkillArea1',
-                Id: '123',
-                Skills: [
-                    {
-                        Id: 'XYZ',
-                        Name: 'skill1'
-                    }
-                ]
-            },
-            {
-                Name: 'SkillArea2',
-                Id: '321',
-                Skills: [
-                    {
-                        Id: 'ABC',
-                        Name: 'skill2'
-                    }
-                ]
-            }
-        ];
+            mockedSkillAreas = [
+                {
+                    Name: 'SkillArea1',
+                    Id: '123',
+                    Skills: [
+                        {
+                            Id: 'XYZ',
+                            Name: 'skill1'
+                        }
+                    ]
+                },
+                {
+                    Name: 'SkillArea2',
+                    Id: '321',
+                    Skills: [
+                        {
+                            Id: 'ABC',
+                            Name: 'skill2'
+                        }
+                    ]
+                }
+            ];
 
-        preselectedSkill = {skillIds: ['XYZ']};
-        preselectedSkillArea = {skillAreaId: '123'}
+            preselectedSkill = { skillIds: ['XYZ'] };
+            preselectedSkillArea = { skillAreaId: '123' };
 
-        mockedItemToReturn = function (item) { }
+            mockedItemToReturn = function(item) {};
+        })
+    );
 
-    }));
-
-    it('should clear first input when selecting other input', function () {
+    it('should clear first input when selecting other input', function() {
         ctrl = $componentController('skillPicker', null, {
             skills: mockedSkills,
             skillAreas: mockedSkillAreas,
-            itemToReturn: mockedItemToReturn,
+            itemToReturn: mockedItemToReturn
         });
         spyOn(ctrl, 'itemToReturn');
         ctrl.$onInit();
@@ -76,7 +76,7 @@ describe('skillPickerComponent', function () {
         expect(ctrl.itemToReturn).toHaveBeenCalledWith(ctrl.skillAreas[0]);
     });
 
-    it('should be able to clear skill input', function () {
+    it('should be able to clear skill input', function() {
         ctrl = $componentController('skillPicker', null, {
             skills: mockedSkills,
             skillAreas: mockedSkillAreas,
@@ -93,7 +93,7 @@ describe('skillPickerComponent', function () {
         expect(ctrl.itemToReturn).toHaveBeenCalledWith(undefined);
     });
 
-    it('should be able to clear skillArea input', function () {
+    it('should be able to clear skillArea input', function() {
         ctrl = $componentController('skillPicker', null, {
             skills: mockedSkills,
             skillAreas: mockedSkillAreas,
@@ -110,7 +110,7 @@ describe('skillPickerComponent', function () {
         expect(ctrl.itemToReturn).toHaveBeenCalledWith(undefined);
     });
 
-    xit('should have preselected skill', function () {
+    xit('should have preselected skill', function() {
         ctrl = $componentController('skillPicker', null, {
             skills: mockedSkills,
             skillAreas: mockedSkillAreas,
@@ -122,7 +122,7 @@ describe('skillPickerComponent', function () {
         expect(ctrl.selectedSkill).toEqual(mockedSkills[0]);
     });
 
-    xit('should have preselected skill area', function () {
+    xit('should have preselected skill area', function() {
         ctrl = $componentController('skillPicker', null, {
             skills: mockedSkills,
             skillAreas: mockedSkillAreas,

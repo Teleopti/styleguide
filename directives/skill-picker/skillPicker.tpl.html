@@ -1,0 +1,48 @@
+<div class="con-row">
+    <div class="con-flex">
+        <div class="wfm-form" outside-click="$ctrl.skillPickerOpen = false">
+            <div class="form-input-wrap">
+                <div style="position: relative">
+                    <input ng-click="$ctrl.skillPickerOpen = !$ctrl.skillPickerOpen" ng-keypress="$ctrl.skillPickerOpen=true" ng-model="$ctrl.skillPickerText"
+                        type="text" placeholder="{{'SelectSkill'|translate}}">
+                    <i class="mdi mdi-close pointer" ng-click="$ctrl.clearSkillSelection()" ng-show="$ctrl.skillPickerText" style="position: absolute; top: 0; right: 0;">
+                        <md-tooltip>{{'Clear'|translate}}</md-tooltip>
+                    </i>
+                </div>
+            </div>
+            <div style="position: relative">
+                <div class="wfm-dropdown-panel panel material-depth-1 full-padding" ng-show="$ctrl.skillPickerOpen" style="z-index: 999; position: absolute; width: 100%; overflow-y: scroll; max-height: 200px">
+                    <ul>
+                        <li ng-click="$ctrl.skillSelected(skill)" ng-repeat="skill in $ctrl.skills | filter:{Name:$ctrl.skillPickerText}" style="padding: 10px 0px; cursor: pointer">
+                            <i ng-class="$ctrl.getSkillIcon(skill)"></i>
+                            {{skill.Name}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="con-flex">
+        <div class="wfm-form" outside-click="$ctrl.skillGroupPickerOpen = false">
+            <div class="form-input-wrap">
+                <div style="position: relative">
+                    <input ng-click="$ctrl.skillGroupPickerOpen = !$ctrl.skillGroupPickerOpen" ng-keypress="$ctrl.skillGroupPickerOpen=true"
+                        ng-model="$ctrl.skillGroupPickerText" type="text" placeholder="{{'SelectSkillGroup'|translate}}">
+                    <i class="mdi mdi-close pointer" ng-click="$ctrl.clearSkillGroupSelection()" ng-show="$ctrl.skillGroupPickerText" style="position: absolute; top: 0; right: 0;">
+                        <md-tooltip>{{'Clear'|translate}}</md-tooltip>
+                    </i>
+                </div>
+            </div>
+            <div style="position: relative">
+                <div class="wfm-dropdown-panel panel material-depth-1 full-padding" ng-show="$ctrl.skillGroupPickerOpen" style="z-index: 999; position: absolute; width: 100%; overflow-y: scroll; max-height: 200px">
+                    <ul>
+                        <li ng-click="$ctrl.skillGroupSelected(skillGroup)" ng-repeat="skillGroup in $ctrl.skillGroups | filter:$ctrl.skillGroupPickerText"
+                            style="padding: 10px 0px; cursor: pointer">
+                            {{skillGroup.Name}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

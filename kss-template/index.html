@@ -3,7 +3,10 @@
 <!--[if IEMobile 7]>          <html class="no-js iem7" lang="en"> <![endif]-->
 <!--[if (IE 7)&(!IEMobile)]>  <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
 <!--[if IE 8]>                <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|(gt IEMobile 7)]><!--> <html class="no-js" lang="en" ng-app="styleguideApp"> <!--<![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!-->
+<html class="no-js" lang="en" ng-app="styleguideApp">
+<!--<![endif]-->
+
 <head>
   <meta charset="utf-8">
   <title>Teleopti WFM Living Style Guide</title>
@@ -11,51 +14,59 @@
   <meta name="description" content="Teleopti WFM Styleguide">
   <meta name="generator" content="kss-node">
   <meta name="viewport" content="width=device-width">
-  <link type="text/css" rel="stylesheet" href="./public/kss.css"/>
+  <link type="text/css" rel="stylesheet" href="./public/kss.css" />
   <link type="text/css" rel="stylesheet" href="./dist/dependencies.min.css" />
   <link type="text/css" rel="stylesheet" href="./dist/main.min.css" />
   <script src="./dist/dependencies.min.js"></script>
   <script src="./dist/templates.js"></script>
   <script src="./dist/wfmdirectives.min.js"></script>
-  <script src="./dist/main.min.js"></script>
-  {{{styles}}}
+  <script src="./dist/main.min.js"></script> {{{styles}}}
+
+  <style>
+    #ribbon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  </style>
 </head>
+
 <body id="kss-node" ng-view ng-controller="mainCtrl">
 
-  {{#if homepage}}
-  {{else}}
+  <a href="https://github.com/Teleopti/styleguide" id="ribbon">
+    <img src="public/github-fork--black.png" alt="fork on github">
+  </a>
+  {{#if homepage}} {{else}}
   <!-- <div tabindex=0 class="context-menu card-context sidebar-toggle material-depth-2" ng-click="hideSidebar = !hideSidebar">
   <i class="mdi mdi-backburger"></i>
   <md-tooltip>Options</md-tooltip>
 </div> -->
-<div class="kss-sidebar material-depth-2 kss-style" ng-class="{'kss-sidebar-hidden':hideSidebar}">
-  <header class="kss-header line-center">
-    <a href="index.html">
-      <img src="http://www.teleopti.com/system/images/teleopti_logo.png" alt="Teleopti logo" height="60px" style="vertical-align:bottom;">
-    </a>
-  </header>
-  <nav class="kss-nav">
-    <ul class="kss-nav__menu">
-      {{#eachRoot}}
-      <li class="kss-nav__menu-item">
-        <a href="section-{{referenceURI}}.html">
-          <i class="mdi" ng-class="getChapteIcon('{{header}}')"></i>
-          <span class="kss-nav__name">{{header}}</span>
-        </a>
-        {{#ifReference ../rootName}}
-        <ul class="kss-nav__menu-child">
-          {{#eachSection reference}}
-          {{#ifDepth 2}}
-          <a href="section-{{../../referenceURI}}.html#kssref-{{referenceURI}}">
-            <li class="kss-nav__menu-item">
+  <div class="kss-sidebar material-depth-2 kss-style" ng-class="{'kss-sidebar-hidden':hideSidebar}">
+    <header class="kss-header line-center">
+      <a href="index.html">
+        <img src="http://www.teleopti.com/system/images/teleopti_logo.png" alt="Teleopti logo" height="60px" style="vertical-align:bottom;">
+      </a>
+    </header>
+    <nav class="kss-nav">
+      <ul class="kss-nav__menu">
+        {{#eachRoot}}
+        <li class="kss-nav__menu-item">
+          <a href="section-{{referenceURI}}.html">
+            <i class="mdi" ng-class="getChapteIcon('{{header}}')"></i>
+            <span class="kss-nav__name">{{header}}</span>
+          </a>
+          {{#ifReference ../rootName}}
+          <ul class="kss-nav__menu-child">
+            {{#eachSection reference}} {{#ifDepth 2}}
+            <a href="section-{{../../referenceURI}}.html#kssref-{{referenceURI}}">
+              <li class="kss-nav__menu-item">
 
-              <span class="kss-nav__ref">{{#ifNumeric reference}}{{reference}}{{else}}{{autoincrement}}{{/ifNumeric}}</span
-                ><span class="kss-nav__name">{{header}}</span>
+                <span class="kss-nav__ref">{{#ifNumeric reference}}{{reference}}{{else}}{{autoincrement}}{{/ifNumeric}}</span>
+                <span class="kss-nav__name">{{header}}</span>
 
               </li>
             </a>
-            {{/ifDepth}}
-            {{/eachSection}}
+            {{/ifDepth}} {{/eachSection}}
           </ul>
           {{/ifReference}}
         </li>
@@ -71,7 +82,65 @@
     <div ng-cloak id="kssref-0" class="kss-overview">
 
       <style media="screen">
-      .con-flex{border:none!important}.styleguide-hero{background:#09F;height:40vh}.styleguide-hero h1{font-size:300%;color:#fff;margin:3rem 0!important;text-shadow:0 2px 5px rgba(0,0,0,.26)}.search-result-wrapper{z-index:100;position:relative}#kss-node{padding:0}.homepage-grid{flex-wrap:wrap}.homepage-grid>.homepage-card{min-width:30%;margin:1%}.homepage-card-spacer{height:100px;position:relative;background:url(https://www.toptal.com/designers/subtlepatterns/patterns/seigaiha.png)}.homepage-card-spacer:hover>i{margin-top:-5px}.homepage-card-spacer>i{transition:1s margin ease-in-out;position:absolute;left:0;right:0;top:40%;text-align:center;transform-origin:center;transform:scale(2)}a{text-decoration:none!important;color:rgba(0,0,0,.85)}
+        .con-flex {
+          border: none !important
+        }
+
+        .styleguide-hero {
+          background: #09F;
+          height: 40vh
+        }
+
+        .styleguide-hero h1 {
+          font-size: 300%;
+          color: #fff;
+          margin: 3rem 0 !important;
+          text-shadow: 0 2px 5px rgba(0, 0, 0, .26)
+        }
+
+        .search-result-wrapper {
+          z-index: 100;
+          position: relative
+        }
+
+        #kss-node {
+          padding: 0
+        }
+
+        .homepage-grid {
+          flex-wrap: wrap
+        }
+
+        .homepage-grid>.homepage-card {
+          min-width: 30%;
+          margin: 1%
+        }
+
+        .homepage-card-spacer {
+          height: 100px;
+          position: relative;
+          background: url(https://www.toptal.com/designers/subtlepatterns/patterns/seigaiha.png)
+        }
+
+        .homepage-card-spacer:hover>i {
+          margin-top: -5px
+        }
+
+        .homepage-card-spacer>i {
+          transition: 1s margin ease-in-out;
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 40%;
+          text-align: center;
+          transform-origin: center;
+          transform: scale(2)
+        }
+
+        a {
+          text-decoration: none !important;
+          color: rgba(0, 0, 0, .85)
+        }
       </style>
 
       <div class="con-row styleguide-hero">
@@ -86,14 +155,9 @@
           <div class="panel material-depth-1">
             <div class="con-row">
               <div class="con-flex">
-                <input autofocus  autocomplete="off" type="text" ng-model="search.Name" placeholder="Search styleguide">
-                {{#eachRoot}}
-                {{#eachSection reference}}
-                {{#ifDepth 2}}
+                <input autofocus autocomplete="off" type="text" ng-model="search.Name" placeholder="Search styleguide"> {{#eachRoot}} {{#eachSection reference}} {{#ifDepth 2}}
                 <div ng-init="addItemToList('section-{{../../referenceURI}}.html#kssref-{{referenceURI}}', '{{header}}')"></div>
-                {{/ifDepth}}
-                {{/eachSection}}
-                {{/eachRoot}}
+                {{/ifDepth}} {{/eachSection}} {{/eachRoot}}
               </div>
             </div>
             <div class="con-row search-result-wrapper">
@@ -131,37 +195,31 @@
                 </div>
                 <div class="con-row">
                   <div class="con-flex">
-                    <h2>{{header}}<h2>
-                    </div>
+                    <h2>{{header}}
+                      <h2>
                   </div>
-                </a>
-              </div>
-              {{/eachRoot}}
-
+                </div>
+              </a>
             </div>
+            {{/eachRoot}}
+
           </div>
-          <div class="con-flex"></div>
         </div>
+        <div class="con-flex"></div>
       </div>
-    </article>
-    {{else}}
-    <article role="main" class="kss-main">
-      {{!
-        Display each section, in order.
+    </div>
+  </article>
+  {{else}}
+  <article role="main" class="kss-main">
+    {{! Display each section, in order. The "root" element comes first in this loop, and can be detected using the "#ifDepth
+    1" block as seen below. }} {{#eachSection rootName}} {{#ifDepth 1}}
+    <div id="kssref-{{referenceURI}}" class="kss-section section-hero kss-section--depth-{{depth}}">
+      {{else}}
+      <section id="kssref-{{referenceURI}}" class="kss-section material-depth-1 kss-section--depth-{{depth}}">
+        {{/ifDepth}}
 
-        The "root" element comes first in this loop, and can be detected using
-        the "#ifDepth 1" block as seen below.
-      }}
-      {{#eachSection rootName}}
-
-      {{#ifDepth 1}}
-      <div id="kssref-{{referenceURI}}" class="kss-section section-hero kss-section--depth-{{depth}}">
-        {{else}}
-        <section id="kssref-{{referenceURI}}" class="kss-section material-depth-1 kss-section--depth-{{depth}}">
-          {{/ifDepth}}
-
-          <div class="kss-style">
-            <h{{depth}} class="kss-title kss-title--level-{{depth}}">
+        <div class="kss-style">
+          <h{{depth}} class="kss-title kss-title--level-{{depth}}">
             <a class="kss-title__permalink">
               {{header}}
             </a>
@@ -177,9 +235,7 @@
             </li>
             {{/eachParameter}}
           </ul>
-          {{/if}}
-
-          {{#if description}}
+          {{/if}} {{#if description}}
           <div class="kss-description">
             {{{description}}}
           </div>
@@ -201,12 +257,15 @@
             </div>
           </div>
 
-          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'" >
-           <div class="con-flex kss-style">
-              <b ng-bind-html="item.link"></b> - <small class="text-muted" ng-bind="item.category"></small></br>
-              <span ng-bind="item.desc"></span></br>
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
 
-           </div>
+            </div>
           </div>
         </div>
         <!--Only for resource page-->
@@ -232,56 +291,50 @@
           <!-- <div class="kss-modifier__heading kss-style">
           Example{{#if modifiers}}s{{/if}}
         </div> -->
-        {{#if modifiers}}
-        <div class="kss-modifier__default-name kss-style">
-          Default styling
+          {{#if modifiers}}
+          <div class="kss-modifier__default-name kss-style">
+            Default styling
+          </div>
+          {{/if}}
+          <div class="kss-modifier__example">
+            {{{markup}}}
+          </div>
+          {{#eachModifier}}
+          <div class="kss-modifier__name kss-style">
+            {{name}}
+          </div>
+          <div class="kss-modifier__description kss-style">
+            {{{description}}}
+          </div>
+          <div class="kss-modifier__example">
+            {{{markup}}}
+          </div>
+          {{/eachModifier}}
         </div>
-        {{/if}}
-        <div class="kss-modifier__example">
-          {{{markup}}}
-        </div>
-        {{#eachModifier}}
-        <div class="kss-modifier__name kss-style">
-          {{name}}
-        </div>
-        <div class="kss-modifier__description kss-style">
-          {{{description}}}
-        </div>
-        <div class="kss-modifier__example">
-          {{{markup}}}
-        </div>
-        {{/eachModifier}}
-      </div>
 
 
-      {{/if}}
-
-      {{#ifDepth 1}}
+        {{/if}} {{#ifDepth 1}}
     </div>
     {{else}}
-  </section>
-  {{/ifDepth}}
-  {{/eachSection}}
+    </section>
+    {{/ifDepth}} {{/eachSection}} {{/if}}
+  </article>
+
+  <script src="public/kss.js"></script>
+  <script src="public/prettify.js"></script>
+
+  <script>
+    prettyPrint();
+  </script> {{{scripts}}} {{! This will only be included in the demo page. }} {{#if argv.xdemo}}
+  <footer class="kss-github">
+    <!-- https://github.com/blog/273-github-ribbons -->
+    <a href="https://github.com/kss-node/kss-node">
+      <img src="public/github-fork--black.png" alt="Fork me on GitHub">
+    </a>
+  </footer>
   {{/if}}
-</article>
 
-<script src="public/kss.js"></script>
-<script src="public/prettify.js"></script>
-
-<script>
-prettyPrint();
-</script>
-
-{{{scripts}}}
-
-{{! This will only be included in the demo page. }}
-{{#if argv.xdemo}}
-<footer class="kss-github">
-  <!-- https://github.com/blog/273-github-ribbons -->
-  <a href="https://github.com/kss-node/kss-node"><img src="public/github-fork--black.png" alt="Fork me on GitHub"></a>
-</footer>
-{{/if}}
-
-<!-- Automatically generated using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
+  <!-- Automatically generated using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
 </body>
+
 </html>

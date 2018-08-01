@@ -3,7 +3,7 @@ language: node_js
 dist: trusty
 sudo: false
 node_js:
-  - "node" #latest stable
+  - "lts/*" #latest lts
 addons:
   apt:
     sources:
@@ -16,13 +16,12 @@ before_install:
   - 'if [ ! `which gcc-4.8` == "" ]; then export CXX=g++-4.8 && export CC=gcc-4.8; fi'
   - npm install -g grunt-cli
   - npm config set registry https://registry.npmjs.org/
-  - curl -o- -L https://yarnpkg.com/install.sh | bash #install yarn
-  - export PATH=$HOME/.yarn/bin:$PATH
-  - yarn config set registry https://registry.npmjs.org/
 cache:
-  yarn: true
+  directories:
+  - node_modules # NPM packages
+  - $HOME/.npm # npm caches
 install:
-  - yarn install --network-concurrency 8 #default is 15
+  - npm install --prefer-offline
 before_script: grunt dist --verbose
 script:
   - ./node_modules/.bin/karma start --single-run --browsers PhantomJS
