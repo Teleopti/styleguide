@@ -11,7 +11,8 @@
             scope: {
                 'templateType': '=?',
                 'customValidators': '=?',
-                'testStopUi': '@?'
+                'testStopUi': '@?',
+                'onPopUpClose': '&?'
             },
             controller: ['$scope', '$element', '$animate', 'CurrentUserInfo', dateRangePickerCtrl],
             require: ['ngModel', 'dateRangePicker'],
@@ -124,6 +125,7 @@
                     scrollMask[0].remove();
                 }
                 scope.displayCalendars = false;
+                scope.onPopUpClose && scope.onPopUpClose();
             }
 
             function buildValidator(validateStartAndEnd) {
