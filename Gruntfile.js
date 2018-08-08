@@ -88,9 +88,9 @@ module.exports = function(grunt) {
                     'vendor/angular-bootstrap-persian-datepicker-master/persian-datepicker-tpls.js',
                     'vendor/ui-bootstrap-custom-build/datepicker.directive.ext.js',
                     'vendor/ui-bootstrap-custom-build/timepicker.directive.ext.js',
-                    'node_modules/d3/d3.min.js',
-                    'node_modules/c3/c3.min.js',
-                    'node_modules/c3-angular/c3-angular.min.js',
+                    'vendor/d3/d3.min.js',
+                    'vendor/c3/c3.min.js',
+                    'vendor/c3/c3-angular.min.js',
                     'vendor/ui-grid/uigrid.disable-animation.directive.js',
                     'vendor/ui-grid/ui-grid.fix.js'
                 ],
@@ -98,12 +98,13 @@ module.exports = function(grunt) {
             },
             distCss: {
                 src: [
+                    'vendor/fonts.css',
                     'node_modules/angular-ui-tree/dist/angular-ui-tree.min.css',
                     'node_modules/angular-material/angular-material.min.css',
                     'node_modules/angular-resizable/angular-resizable.min.css',
                     'node_modules/angular-ui-grid/ui-grid.min.css',
-                    'node_modules/c3/c3.min.css',
-                    'node_modules/@mdi/font/css/materialdesignicons.min.css',
+                    'vendor/c3/c3.min.css',
+                    'vendor/mdi/css/materialdesignicons.min.css',
                     'css/styleguide.css',
                     'css/main.min.css'
                 ],
@@ -115,17 +116,6 @@ module.exports = function(grunt) {
             'styleguide/dist/main.min.js': 'js/*.js'
         },
         copy: {
-            locales: {
-                files: [
-                    // includes files within path
-                    {
-                        expand: true,
-                        cwd: './node_modules/angular-i18n/',
-                        src: ['angular-locale_*.js'],
-                        dest: 'styleguide/node_modules/angular-i18n/'
-                    }
-                ]
-            },
             sass: {
                 files: [
                     // includes files within path
@@ -142,7 +132,7 @@ module.exports = function(grunt) {
                     // includes files within path
                     {
                         expand: true,
-                        cwd: 'node_modules/@mdi/font/fonts/',
+                        cwd: 'vendor/mdi/fonts/',
                         src: ['**'],
                         dest: 'styleguide/fonts/'
                     }
