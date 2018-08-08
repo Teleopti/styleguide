@@ -60,6 +60,7 @@
         };
 
         ctrl.skillGroupSelected = function(skillGroup) {
+            if (skillGroup.Id === '-1') return;
             ctrl.skillGroupPickerText = skillGroup.Name;
             ctrl.skillGroupPickerOpen = false;
             ctrl.skillPickerText = '';

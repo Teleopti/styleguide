@@ -525,6 +525,11 @@
                 ];
                 $scope.mockedSkillGroups = [
                     {
+                        Name: 'No skillgroup found (test)',
+                        Id: '-1',
+                        Skills: []
+                    },
+                    {
                         Name: 'SkillArea1',
                         Id: '123',
                         Skills: [
