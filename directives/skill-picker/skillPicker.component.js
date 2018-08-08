@@ -53,6 +53,7 @@
         };
 
         ctrl.skillSelected = function(skill) {
+            if (skill.Id === '-1') return;
             ctrl.skillPickerOpen = false;
             ctrl.skillPickerText = skill.Name;
             ctrl.skillGroupPickerText = '';
