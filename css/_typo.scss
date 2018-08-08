@@ -22,7 +22,7 @@
 //How we use words
 //
 //These are some of the thinking applied to words and writing.
-//When in doubt, check the <a href="https://material.io/guidelines/style/writing.html">material design writing guidelines</a>  
+//When in doubt, check the <a href="https://material.io/guidelines/style/writing.html">material design writing guidelines</a>
 //
 //<table class="wfm-table">
 //<thead><tr><th>Do</th><th>Don't</th><th>Distinction</th></tr></thead>
@@ -57,27 +57,31 @@
 //Styleguide 6.2
 //
 
-
-h1,h2,h3,h4,h5,h6{
-	margin-top:10px!important;
-	margin-bottom:10px!important;
-  font-family: inherit;
-  font-weight: 500;
-  line-height: 1.1;
-  color: inherit;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
 }
 
-h1{
-	font-size: 18px;
+h1 {
+    font-size: 18px;
 }
 
-h2{
-	font-size: 16px;
+h2 {
+    font-size: 16px;
 }
 
-h3{
-	font-size: $standard-font-size;
-	font-weight: bold;
+h3 {
+    font-size: $standard-font-size;
+    font-weight: bold;
 }
 
 // Colors for text
@@ -95,23 +99,23 @@ h3{
 //
 
 .text-muted {
-	color: $gray054;
+    color: $gray054;
 }
 
 .text-success {
-	color: $green-300;
+    color: $green-300;
 }
 
 .text-warning {
-	color: $orange-600;
+    color: $orange-600;
 }
 
 .text-danger {
-	color: $red-600;
+    color: $red-600;
 }
 
-.text-white{
-	color:$white;
+.text-white {
+    color: $white;
 }
 
 // Other text helpers
@@ -126,15 +130,15 @@ h3{
 //Styleguide 8.5
 //
 .sm-font-size {
-	font-size: $sm-font-size !important;
+    font-size: $sm-font-size !important;
 }
 
 .full-padding {
     padding: $full-padding;
 }
 
-.padding-reset{
-	padding:0!important;
+.padding-reset {
+    padding: 0 !important;
 }
 
 .caps:first-letter {
@@ -142,8 +146,8 @@ h3{
 }
 
 .unselectable {
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
