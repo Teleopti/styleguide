@@ -32,33 +32,33 @@
 //Styleguide 1.25
 //
 
-table{
-	border-spacing: 0!important;
+table {
+    border-spacing: 0;
 }
 
 .wfm-table {
-	width: 100%;
-	text-align: left;
+    width: 100%;
+    text-align: left;
 }
 
-.wfm-table td, .wfm-table th {
-  border: 1px solid $gray012;
-  color: $text-color-standard;
-  padding: $full-padding;
-  background-color:$white;
+.wfm-table td,
+.wfm-table th {
+    border: 1px solid $gray012;
+    color: $text-color-standard;
+    padding: $full-padding;
+    background-color: $white;
 }
 
-.wfm-table th, .wfm-table-header {
-  color: $text-color-standard;
-  background-color: $secondary;
-  text-align: left;
-
+.wfm-table th,
+.wfm-table-header {
+    color: $text-color-standard;
+    background-color: $secondary;
+    text-align: left;
 }
 
 .wfm-table .number-cell {
-	text-align: right;
+    text-align: right;
 }
-
 
 // Two dimensional table
 //
@@ -88,14 +88,14 @@ table{
 //Styleguide 1.26
 //
 
-.wfm-table-multi{
-	th:first-child,td:first-child{
-	  color: $text-color-standard;
-	  font-weight:600;
-	  background-color: $secondary;
-	}
+.wfm-table-multi {
+    th:first-child,
+    td:first-child {
+        color: $text-color-standard;
+        font-weight: 600;
+        background-color: $secondary;
+    }
 }
-
 
 //Big table
 //
@@ -144,79 +144,79 @@ table{
 //Styleguide 1.27
 
 .myGrid {
-     width: 100%;
-  }
+    width: 100%;
+}
 
 /* Datagrid */
 .ui-grid-header-cell {
-	@extend .wfm-table-header;
-	border: none;
+    @extend .wfm-table-header;
+    border: none;
 
-	 i{text-align:right;
-	 float:none;}
+    i {
+        text-align: right;
+        float: none;
+    }
 
-	 &:hover{
-		 background-color: $hover;
-		 cursor: pointer;
-	 }
+    &:hover {
+        background-color: $hover;
+        cursor: pointer;
+    }
 }
 
-.ui-grid-header-canvas{
-	background:$secondary;
+.ui-grid-header-canvas {
+    background: $secondary;
 }
 
-.ui-grid{
-	border: none;
+.ui-grid {
+    border: none;
 }
 
-.big-table-wrapper{
-	h4 span{
-		float:right;
-		margin-right:16px;
+.big-table-wrapper {
+    h4 span {
+        float: right;
+        margin-right: 16px;
 
-		i{
-			cursor:pointer;
-		}
-	}
+        i {
+            cursor: pointer;
+        }
+    }
 }
 
 /*icons*/
 
-
-.ui-grid-header-cell:last-child .ui-grid-column-resizer.right{
-	border:none!important;
+.ui-grid-header-cell:last-child .ui-grid-column-resizer.right {
+    border: none !important;
 }
 
 .ui-grid-menu-items li i,
-.ui-grid-icon-angle-down:before{
-	vertical-align: sub!important;
+.ui-grid-icon-angle-down:before {
+    vertical-align: sub !important;
 }
 
-.ui-grid-icon-angle-down:before{
-	content: "≡";
+.ui-grid-icon-angle-down:before {
+    content: '≡';
 }
 
-.ui-grid-icon-menu::before{
-	content: "᎒";
-	vertical-align: sub!important;
+.ui-grid-icon-menu::before {
+    content: '᎒';
+    vertical-align: sub !important;
 }
 
-.ui-grid-menu-button .ui-grid-menu .ui-grid-menu-mid{
-	overflow:auto;
+.ui-grid-menu-button .ui-grid-menu .ui-grid-menu-mid {
+    overflow: auto;
 }
 
-.ui-grid-menu .ui-grid-menu-inner ul li button.ui-grid-menu-item-active{
-	background:$highlight!important;
+.ui-grid-menu .ui-grid-menu-inner ul li button.ui-grid-menu-item-active {
+    background: $highlight !important;
 }
 
 .ui-grid-icon-up-dir:before,
 .ui-grid-icon-sort-alt-up:before {
-    content: "↑"!important;
+    content: '↑' !important;
 }
 .ui-grid-icon-down-dir:before,
-.ui-grid-icon-sort-alt-down:before
- {
-    content: "↓"!important;
+.ui-grid-icon-sort-alt-down:before {
+    content: '↓' !important;
 }
 
 // .ui-grid-icon-menu::before {
@@ -234,94 +234,94 @@ table{
 
 .ui-grid-icon-ok:before,
 .ui-grid-menu-item > .ui-grid-icon-cancel:before {
-    content: ''!important;
+    content: '' !important;
     background-color: $gray026;
     height: 18px;
     width: 18px;
     border-radius: 2px;
-    content: " ";
+    content: ' ';
     transition: $transition-timing;
     cursor: pointer;
-		overflow: hidden;
+    overflow: hidden;
 }
 
 .ui-grid-all-selected.ui-grid-icon-ok:before,
 .ui-grid-row-selected .ui-grid-icon-ok:before,
 .ui-grid-menu-item > .ui-grid-icon-ok:before {
-	background-color: $secondary;
-	content: "✓"!important;
-	text-align: center;
-	color: #fff;
+    background-color: $secondary;
+    content: '✓' !important;
+    text-align: center;
+    color: #fff;
 }
 
 .ui-grid-viewport.ng-isolate-scope {
-  overflow-x: auto!important;
+    overflow-x: auto !important;
 }
 
-.ui-grid-top-panel{
-	background:$white;
-	color:$gray054;
+.ui-grid-top-panel {
+    background: $white;
+    color: $gray054;
 }
 
-.ui-grid-header{
-	border: none;
+.ui-grid-header {
+    border: none;
 }
 
 .ui-grid-row .ui-grid-cell {
-	border: none;
-	background-color: $white !important;
-	border-bottom: 1px solid $gray-300;
+    border: none;
+    background-color: $white !important;
+    border-bottom: 1px solid $gray-300;
 }
 .ui-grid-header-cell .ui-grid-vertical-bar {
-	display: none;
-	text-align:left;
+    display: none;
+    text-align: left;
 }
 
 .ui-grid-menu-items {
-	@extend .wfm-list;
-	box-shadow:none !important;
-	li:hover{
-		box-shadow:none;
-	}
+    @extend .wfm-list;
+    box-shadow: none !important;
+    li:hover {
+        box-shadow: none;
+    }
 }
 .ui-grid-menu .ui-grid-menu-inner ul li,
 .ui-grid-menu .ui-grid-menu-inner ul li:hover,
-.ui-grid-menu .ui-grid-menu-inner ul li.ui-grid-menu-item-active{
-	box-shadow:none;
-	border:none;
+.ui-grid-menu .ui-grid-menu-inner ul li.ui-grid-menu-item-active {
+    box-shadow: none;
+    border: none;
 }
 
-.ui-grid-selection-row-header-buttons{
-	color: $text-color-standard;
-	opacity: 1!important;
+.ui-grid-selection-row-header-buttons {
+    color: $text-color-standard;
+    opacity: 1 !important;
 }
 
-.ui-grid-menu-button{
-	background: transparent;
-	border:none;
+.ui-grid-menu-button {
+    background: transparent;
+    border: none;
 }
 
-.ui-grid-menu-button .ui-grid-menu .ui-grid-menu-mid{
-	overflow-x:auto;
+.ui-grid-menu-button .ui-grid-menu .ui-grid-menu-mid {
+    overflow-x: auto;
 }
 
-.ui-grid-menu .ui-grid-menu-inner .ui-grid-menu-close-button{
-	display: none;
+.ui-grid-menu .ui-grid-menu-inner .ui-grid-menu-close-button {
+    display: none;
 }
 
 .ui-grid-menu .ui-grid-menu-inner ul li button,
 .ui-grid-menu .ui-grid-menu-inner ul li button:hover,
 .ui-grid-menu .ui-grid-menu-inner ul li button:focus,
-.ui-grid-menu .ui-grid-menu-inner ul li button.ui-grid-menu-item-active{
-	box-shadow: none!important;
+.ui-grid-menu .ui-grid-menu-inner ul li button.ui-grid-menu-item-active {
+    box-shadow: none !important;
 }
 
-.ui-grid-row-selected::before{
-	color: $text-color-standard;
+.ui-grid-row-selected::before {
+    color: $text-color-standard;
 }
 
-.big-table-wrapper{
-	background-color:$white;
+.big-table-wrapper {
+    background-color: $white;
 }
 
 /*zebra stripe
@@ -329,28 +329,28 @@ table{
 	background-color: $gray012!important;
 }*/
 
-.ui-grid-row-selected > [ui-grid-row] > .ui-grid-cell{
-	background-color: $highlight!important;
+.ui-grid-row-selected > [ui-grid-row] > .ui-grid-cell {
+    background-color: $highlight !important;
 }
 
-.ui-grid-pinned-container.ui-grid-pinned-container-left .ui-grid-cell:last-child{
-	border-color:$gray-300!important;
-	border-right:none!important;
+.ui-grid-pinned-container.ui-grid-pinned-container-left .ui-grid-cell:last-child {
+    border-color: $gray-300 !important;
+    border-right: none !important;
 }
 
-.big-table-footer-actions{
-	text-align:right;
+.big-table-footer-actions {
+    text-align: right;
 }
 
-.ui-grid-pinned-container.ui-grid-pinned-container-left .ui-grid-header-cell:last-child{
-	border-right: none;
+.ui-grid-pinned-container.ui-grid-pinned-container-left .ui-grid-header-cell:last-child {
+    border-right: none;
 }
 
 .big-table-wrapper table tbody tr {
-	border-bottom: 1px solid $hover!important;
+    border-bottom: 1px solid $hover !important;
 }
-.table>tbody>tr>td{
-	border-top:none;
+.table > tbody > tr > td {
+    border-top: none;
 }
 
 //Temp fix for bug #40330.
@@ -358,5 +358,5 @@ table{
 //                     https://github.com/angular-ui/ui-grid/issues/4548
 //Delete this when the issue is fixed.
 .ui-grid-cell.ui-grid-disable-selection.ui-grid-row-header-cell {
-	pointer-events: initial;
+    pointer-events: initial;
 }
