@@ -1,17 +1,18 @@
 (function() {
-
     'use strict';
 
-    angular.module('wfm.daterangepicker', ['styleguide.templates', 'persianDate', 'wfm.helpingDirectives'])
+    angular
+        .module('wfm.daterangepicker', ['styleguide.templates', 'persianDate', 'wfm.helpingDirectives'])
         .directive('dateRangePicker', ['$locale', '$filter', '$parse', dateRangePicker]);
 
     function dateRangePicker($locale, $filter, $parse) {
         return {
             templateUrl: 'directives/date-range-picker/date-range-picker.tpl.html',
             scope: {
-                'templateType': '=?',
-                'customValidators': '=?',
-                'testStopUi': '@?'
+                templateType: '=?',
+                customValidators: '=?',
+                testStopUi: '@?',
+                onPopUpClose: '&?'
             },
             controller: ['$scope', '$element', '$animate', 'CurrentUserInfo', dateRangePickerCtrl],
             require: ['ngModel', 'dateRangePicker'],
@@ -58,19 +59,20 @@
             };
 
             scope.defaultValidators = [
-              {
-                key: 'order',
-                message: attrs.invalidOrderMessage || 'StartDateMustBeEqualToOrEarlierThanEndDate',
-                validate: _validateStartAndEndByOrder
-            },
-              {
-                key: 'parse',
-                message: attrs.invalidEmptyMessage || 'StartDateAndEndDateMustBeSet'
-            }
+                {
+                    key: 'order',
+                    message: attrs.invalidOrderMessage || 'StartDateMustBeEqualToOrEarlierThanEndDate',
+                    validate: _validateStartAndEndByOrder
+                },
+                {
+                    key: 'parse',
+                    message: attrs.invalidEmptyMessage || 'StartDateAndEndDateMustBeSet'
+                }
             ];
 
             scope.validators = scope.defaultValidators.concat(
-                scope.customValidators && angular.isArray(scope.customValidators) ? scope.customValidators : []);
+                scope.customValidators && angular.isArray(scope.customValidators) ? scope.customValidators : []
+            );
 
             angular.forEach(scope.validators, function(v) {
                 ngModelCtrl.$validators[v.key] = buildValidator(v.validate);
@@ -79,30 +81,39 @@
             ngModelCtrl.$parsers.push(parseView);
             ngModelCtrl.$render = render;
 
-            scope.$watchCollection(function() {
-                if (!scope.startDate || !scope.endDate)  {
-                    return [null, null];
+            scope.$watchCollection(
+                function() {
+                    if (!scope.startDate || !scope.endDate) {
+                        return [null, null];
+                    }
+                    return [
+                        $filter('date')(scope.startDate, 'yyyy-MM-dd'),
+                        $filter('date')(scope.endDate, 'yyyy-MM-dd')
+                    ];
+                },
+                function(v) {
+                    if (scope.testStopUi) {
+                        return;
+                    }
+                    updateViewModelFromUi();
+                    hidePopup();
+                    refreshDatepickers();
                 }
-                return [
-                  $filter('date')(scope.startDate, 'yyyy-MM-dd'),
-                  $filter('date')(scope.endDate, 'yyyy-MM-dd')
-                ];
-            }, function(v) {
+            );
 
-                if (scope.testStopUi) {return;}
-                updateViewModelFromUi();
-                hidePopup();
-                refreshDatepickers();
-            });
-
-            scope.$watch(function() {
-                if (scope.dropDownState) {
-                    return scope.dropDownState.showStartDatePicker && scope.dropDownState.showEndDatePicker;
+            scope.$watch(
+                function() {
+                    if (scope.dropDownState) {
+                        return scope.dropDownState.showStartDatePicker && scope.dropDownState.showEndDatePicker;
+                    }
+                    return null;
+                },
+                function(v) {
+                    if (v !== null) {
+                        scope.dropDownState.showAllDatePickers = v;
+                    }
                 }
-                return null;
-            }, function(v) {
-                if (v !== null) {scope.dropDownState.showAllDatePickers = v;}
-            });
+            );
 
             function displayError(errorKey) {
                 return ngModelCtrl.$error && ngModelCtrl.$error[errorKey];
@@ -124,10 +135,11 @@
                     scrollMask[0].remove();
                 }
                 scope.displayCalendars = false;
+                scope.onPopUpClose && scope.onPopUpClose();
             }
 
             function buildValidator(validateStartAndEnd) {
-                return function (modelValue, viewValue) {
+                return function(modelValue, viewValue) {
                     if (modelValue === undefined) {
                         return true;
                     }
@@ -187,7 +199,9 @@
             }
 
             function refreshDatepickers() {
-                if (!scope.startDate || !scope.endDate) {return;}
+                if (!scope.startDate || !scope.endDate) {
+                    return;
+                }
                 scope.startDate = moment(scope.startDate).toDate();
                 scope.endDate = moment(scope.endDate).toDate();
             }
@@ -210,19 +224,17 @@
         }
 
         function popupSetup(scope) {
-
             scope.dropDownState = {
-                showAllDatePickers : false,
+                showAllDatePickers: false,
                 showStartDatePicker: false,
                 showEndDatePicker: false
             };
 
-            scope.onClickShowAllDates = function () {
+            scope.onClickShowAllDates = function() {
                 if (!scope.dropDownState.showAllDatePickers) {
                     scope.dropDownState.showStartDatePicker = scope.dropDownState.showEndDatePicker = scope.dropDownState.showAllDatePickers = true;
                 }
             };
         }
     }
-
 })();
