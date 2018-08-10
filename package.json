@@ -1,6 +1,6 @@
 {
     "name": "teleopti-styleguide",
-    "version": "1.12.11",
+    "version": "1.13.0",
     "repository": {
         "type": "git",
         "url": "git://github.com/Teleopti/styleguide.git"
