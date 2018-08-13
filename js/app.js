@@ -475,6 +475,12 @@
                 /*code for skillpicker*/
                 $scope.mockSkills = [
                     {
+                        Id: '-1',
+                        Name: 'no skills (test)',
+                        SkillType: 'SkillTypeChat',
+                        DoDisplayData: true
+                    },
+                    {
                         Id: 'XYZ',
                         Name: 'skill1',
                         SkillType: 'SkillTypeChat',
@@ -524,6 +530,11 @@
                     }
                 ];
                 $scope.mockedSkillGroups = [
+                    {
+                        Name: 'No skillgroup found (test)',
+                        Id: '-1',
+                        Skills: []
+                    },
                     {
                         Name: 'SkillArea1',
                         Id: '123',
