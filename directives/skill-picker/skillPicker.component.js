@@ -53,6 +53,7 @@
         };
 
         ctrl.skillSelected = function(skill) {
+            if (skill.Id.toString() === '-1') return;
             ctrl.skillPickerOpen = false;
             ctrl.skillPickerText = skill.Name;
             ctrl.skillGroupPickerText = '';
@@ -60,6 +61,7 @@
         };
 
         ctrl.skillGroupSelected = function(skillGroup) {
+            if (skillGroup.Id.toString() === '-1') return;
             ctrl.skillGroupPickerText = skillGroup.Name;
             ctrl.skillGroupPickerOpen = false;
             ctrl.skillPickerText = '';

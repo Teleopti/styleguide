@@ -1,5 +1,5 @@
 label {
-    display: inline !important;
+    display: inline;
     font-weight: normal;
 }
 
@@ -304,7 +304,7 @@ md-select-menu {
     }
     md-option {
         height: 30px;
-        color: $text-color-standard;
+        color: $text-color-standard !important;
     }
     md-option:focus:not([disabled]):not([selected]),
     md-option[selected],
@@ -323,6 +323,15 @@ md-select {
 
     &:not([disabled]):focus .md-select-value {
         color: inherit !important;
+    }
+
+    .md-select-value {
+        border-bottom-color: $text-color-muted;
+    }
+
+    .md-select-placeholder,
+    .md-select-icon {
+        color: $text-color-muted;
     }
 }
 
@@ -401,40 +410,67 @@ md-select {
 // &nbsp;
 // $scope.mockSkills = [
 //  {
+// 	  Id: '-1',
+// 	  Name: 'no skills (test)',
+// 	  SkillType: 'SkillTypeChat',
+// 	  DoDisplayData: true
+//  },
+//  {
 //    Id: 'XYZ',
-//    Name: 'skill1'
+//    Name: 'skill1',
+//    SkillType: 'SkillTypeChat',
+//    DoDisplayData: true
 //  },
 //  {
 //    Id: 'ABC',
-//    Name: 'skill2'
+//    Name: 'skill2',
+//    SkillType: 'SkillTypeEmail',
+//    DoDisplayData: true
 //  },
 //  {
 //    Id: 'XYZ1',
-//    Name: 'skill3'
+//    Name: 'skill3',
+//    SkillType: 'SkillTypeInboundTelephony',
+//    DoDisplayData: true
 //  },
 //  {
 //    Id: 'ABC2',
-//    Name: 'skill4'
+//    Name: 'skill4',
+//    SkillType: 'SkillTypeRetail',
+//    DoDisplayData: true
 //  },
 //  {
 //    Id: 'XYZ3',
-//    Name: 'skill5'
+//    Name: 'skill5',
+//    SkillType: 'SkillTypeBackoffice',
+//    DoDisplayData: true
 //  },
 //  {
 //    Id: 'ABC4',
-//    Name: 'skill6'
+//    Name: 'skill6',
+//    SkillType: 'SkillTypeProject',
+//    DoDisplayData: true
 //  },
 //  {
 //    Id: 'XYZ5',
-//    Name: 'skill7'
+//    Name: 'skill7',
+//    SkillType: 'SkillTypeFax',
+//    DoDisplayData: true
 //  },
 //  {
 //    Id: 'ABC6',
-//    Name: 'skill8'
+//    Name: 'skill8',
+//    SkillType: 'SkillTypeTime',
+//    DoDisplayData: true
 //  }
 //];
 //
 //$scope.mockedSkillGroups = [
+//  {
+//    Name: 'No skillgroup found (test)',
+//    Id: '-1',
+//    Skills: []
+//  },
 //  {
 //    Name: 'SkillArea1',
 //    Id: '123',
