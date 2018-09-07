@@ -52,7 +52,7 @@ table {
 .wfm-table th,
 .wfm-table-header {
     color: $text-color-standard;
-    background-color: $secondary;
+    background-color: $gray-300;
     text-align: left;
 }
 
@@ -93,7 +93,7 @@ table {
     td:first-child {
         color: $text-color-standard;
         font-weight: 600;
-        background-color: $secondary;
+        background-color: $gray-300;
     }
 }
 
@@ -164,7 +164,7 @@ table {
 }
 
 .ui-grid-header-canvas {
-    background: $secondary;
+    background: $gray-300;
 }
 
 .ui-grid {
