@@ -782,18 +782,16 @@ md-checkbox {
     display: block;
     margin: $full-padding 0;
     .md-icon {
-        border-width: 0;
-        border-style: solid;
-        border-color: transparent;
-        border-radius: 0;
-        background-color: $hover;
+        border: 1px solid $gray-500;
+        border-radius: 4px;
+        background-color: $white;
     }
 
     &.md-checked .md-icon {
-        background-color: $secondary;
+        background-color: $primary;
         &:after {
-            border-color: $text-color-standard;
-            left: 7px;
+            border-color: $white;
+            left: 6px;
             top: 1px;
         }
     }
@@ -809,11 +807,12 @@ md-checkbox {
 
     .wfm-checkbox-toggle:after {
         position: absolute;
-        background-color: $gray026;
+        background-color: $white;
+        border: 1px solid $gray-500;
         width: 20px;
         height: 20px;
         float: right;
-        border-radius: 2px;
+        border-radius: 4px;
         content: ' ';
         transition: $transition-timing;
         cursor: pointer;
@@ -821,7 +820,8 @@ md-checkbox {
 
     input[type='checkbox']:checked ~ label .wfm-checkbox-toggle:after,
     input[type='checkbox']:checked ~ .wfm-checkbox-toggle:after {
-        background-color: $blue-300;
+        background-color: $primary;
+        border-color: $primary;
         content: '✓';
         text-align: center;
         color: $white;
