@@ -235,11 +235,12 @@ table {
 .ui-grid-icon-ok:before,
 .ui-grid-menu-item > .ui-grid-icon-cancel:before {
     content: '' !important;
-    background-color: $gray026;
+    border: 1px solid $gray-500;
+    border-radius: 4px;
+    background-color: $white;
+    padding-top: 1px;
     height: 18px;
     width: 18px;
-    border-radius: 2px;
-    content: ' ';
     transition: $transition-timing;
     cursor: pointer;
     overflow: hidden;
@@ -248,10 +249,12 @@ table {
 .ui-grid-all-selected.ui-grid-icon-ok:before,
 .ui-grid-row-selected .ui-grid-icon-ok:before,
 .ui-grid-menu-item > .ui-grid-icon-ok:before {
-    background-color: $secondary;
+    background-color: $primary;
+    border-color: $primary;
     content: '✓' !important;
     text-align: center;
-    color: #fff;
+    color: $white;
+    font-size: 120%;
 }
 
 .ui-grid-viewport.ng-isolate-scope {

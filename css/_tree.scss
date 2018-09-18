@@ -30,7 +30,7 @@
 //   </div>
 // </div>
 //
-// Markup: 
+// Markup:
 //<tree-data-one ng-model="treeDemos1" option="treeOption"></tree-data-one>
 //
 //Styleguide 5.1
@@ -64,7 +64,7 @@
 //   </div>
 // </div>
 //
-// Markup: 
+// Markup:
 //<tree-data-two ng-model="treeDemos2" option="treeOption2"></tree-data-two>
 //
 //Styleguide 5.2
@@ -97,7 +97,7 @@
 //   </div>
 // </div>
 //
-// Markup: 
+// Markup:
 //<tree-data-two ng-model="treeDemos3" option="treeOption3"></tree-data-two>
 //
 //Styleguide 5.3
@@ -130,142 +130,147 @@
 //   </div>
 // </div>
 //
-// Markup: 
+// Markup:
 //<tree-data-two ng-model="treeDemos4" option="treeOption4"></tree-data-two>
 //
 //Styleguide 5.4
 
-tree-data-one, tree-data-two, tree-data-three {
-	.tree-toggle-group{
-		padding:5px;
-		align-items: center;
-		border: 1px dotted $gray012;
-		border-top: none;
-	}
+tree-data-one,
+tree-data-two,
+tree-data-three {
+    .tree-toggle-group {
+        padding: 5px;
+        align-items: center;
+        border: 1px dotted $gray012;
+        border-top: none;
+    }
 
-	.tree-handle-wrapper{
-		cursor:pointer;
-		position:relative;
-		margin-left: 3rem;
-	}
+    .tree-handle-wrapper {
+        cursor: pointer;
+        position: relative;
+        margin-left: 3rem;
+    }
 
-	.selected-true{
-		background: transparent;
-	}
+    .selected-true {
+        background: transparent;
+    }
 
-	.tree-handle-wrapper:before{
-		position: absolute;
-		width: 20px;
-		height: 20px;
-		left:-3rem;
-		border-radius: 2px;
-		transition: background-color .2s ease-in-out;
-		cursor: pointer;
-		background-color: $hover;
-		content: "";
-		text-align: center;
-		color: $white;
-	}
+    .tree-handle-wrapper:before {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        left: -3rem;
+        border-radius: 4px;
+        transition: background-color 0.2s ease-in-out;
+        cursor: pointer;
+        background-color: $white;
+        border: 1px solid $gray-500;
+        content: '';
+        text-align: center;
+        color: $white;
+    }
 
-	.selected-true.tree-handle-wrapper:before{
-		background-color: $secondary;
-		content: "✓";
-		color: $text-color-standard;
-		text-align: center;
-	}
+    .selected-true.tree-handle-wrapper:before,
+    .semi-true.tree-handle-wrapper:before {
+        background-color: $primary;
+        border-color: $primary;
+        color: $white;
+        text-align: center;
+    }
 
-	.semi-true.tree-handle-wrapper:before{
-		background-color: $highlight !important;
-		content: "─" !important;
-		color: $text-color-standard;
-	}
+    .selected-true.tree-handle-wrapper:before {
+        content: '✓';
+    }
 
-	.tree li{
-		border:none;
-	}
+    .semi-true.tree-handle-wrapper:before {
+        content: '─' !important;
+    }
 
-	.filter-hidden {
-		display: none;
-	}
+    .tree li {
+        border: none;
+    }
+
+    .filter-hidden {
+        display: none;
+    }
 }
 
 //old tree css
 .tree {
-	max-height: 800px;
-	overflow-y: auto;
-	vertical-align: middle;
+    max-height: 800px;
+    overflow-y: auto;
+    vertical-align: middle;
 
+    ol {
+        list-style: none;
+    }
 
-	ol {
-		list-style: none;
-	}
-
-	li{
-		border-top: 1px solid $gray012;
-	}
+    li {
+        border-top: 1px solid $gray012;
+    }
 }
 
 .angular-ui-tree-handle .tree-line-right {
-	opacity:1;
-	float:right;
-	text-align: center;
-	color: $text-color-standard;
+    opacity: 1;
+    float: right;
+    text-align: center;
+    color: $text-color-standard;
 
-	i{
-		opacity:0;
-	}
+    i {
+        opacity: 0;
+    }
 }
 
-.angular-ui-tree-handle.selected span i{
-	opacity:1;
+.angular-ui-tree-handle.selected span i {
+    opacity: 1;
 }
 
 .angular-ui-tree-handle {
-	@extend .wfm-block;
-	cursor: pointer;
-	font-weight: 500;
-	transition: $transition-timing;
-	border-left: 3px solid transparent;
+    @extend .wfm-block;
+    cursor: pointer;
+    font-weight: 500;
+    transition: $transition-timing;
+    border-left: 3px solid transparent;
 
-	&:hover {
-		background-color: $hover;
-	}
+    &:hover {
+        background-color: $hover;
+    }
 }
 
 .angular-ui-tree-handle.selected {
-	padding-left: 5px;
-	border-left: 3px solid $hover;
-	background-color: $highlight;
+    padding-left: 5px;
+    border-left: 3px solid $hover;
+    background-color: $highlight;
 }
 
 .angular-ui-tree-handle.selected.ng-hide {
-	display:block!important;
-	line-height:inherit;
+    display: block !important;
+    line-height: inherit;
 }
 
 .angular-ui-tree-handle.ng-hide {
-	line-height:0;
+    line-height: 0;
 }
 
 .toggle-handle {
-	display: inline-block;
-	width: 25px;
-	height: 25px;
-	cursor: pointer;
-	margin-right: 5px;
-	padding-top: 4px;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    margin-right: 5px;
+    padding-top: 4px;
 }
 
 .toggle-handle.open i {
-	transition: $transition-timing;
-	transform: rotate(90deg);
+    transition: $transition-timing;
+    transform: rotate(90deg);
 }
 
-.tree-toggle-group{
-	display:flex;
-	display: -ms-flexbox;
+.tree-toggle-group {
+    display: flex;
+    display: -ms-flexbox;
 }
 
-.tree-handle-wrapper{
-	width:100%;
+.tree-handle-wrapper {
+    width: 100%;
 }
