@@ -825,6 +825,7 @@ md-checkbox {
         content: '✓';
         text-align: center;
         color: $white;
+        font-size: 120%;
     }
 
     input[type='checkbox']:focus ~ label .wfm-checkbox-toggle:after,

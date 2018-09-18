@@ -2,7 +2,7 @@
 
 Take a look to the [styleguide here](http://teleopti.github.io/styleguide/styleguide/index.html)
 
-For development purposes you can run the small server in /devserver folder by using npm start.
+For development purposes you can run the small server in /devserver folder by using `npm devServer`.
 The server runs on [http://localhost:3000](http://localhost:3000)
 
 ## How to contribute
