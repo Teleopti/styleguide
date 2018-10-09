@@ -1,46 +1,20 @@
 # Teleopti styleguide [![Build Status](https://travis-ci.org/Teleopti/styleguide.svg?branch=master)](https://travis-ci.org/Teleopti/styleguide)
 
-Take a look to the [styleguide here](http://teleopti.github.io/styleguide/styleguide/index.html)
+# Development
 
-For development purposes you can run the small server in /devserver folder by using `npm run devServer`.
-The server runs on [http://localhost:3000](http://localhost:3000)
+1.  `npm ci` or `npm install` to install dependencies
+2.  `npm start` to build and watch
+3.  `npm run devServer` to mount styleguide on [http://localhost:3000](http://localhost:3000)
 
-## How to contribute
+Submit a _pull request_ with your improvements.
 
-First, fork the project and create a new branch on the fork.
+# Deploy release to npm & github pages
 
-To be able to generate the styleguide you need to install the dependencies:
+1.  Bump suitable [semver](https://semver.org/) version in [package.json](./package.json)
+    *   Preferably submit and merge a pull request with the version change
+2.  Tag the commit
+    *   Tag with `v1.5.0` if the version is `1.5.0`
+3.  Push the tag to master
+    *   `git push origin v1.5.0`
 
-    	npm install
-
-To generate it:
-
-    	grunt dist or npm run dist
-
-You can also use the watch task. The styleguide is generated after each scss change:
-
-    	grunt or npm start
-
-Then, run a local instance (via visual studio for example). The local styleguide is accessible by the url [mylocalserver]/styleguide/styleguide
-
-### Submit your contribution:
-
-*   create a pull request from your branch to Teleopti/master.
-
-## How to release
-
-*   Upgrade the version number in package.json
-
-*   Go to https://github.com/Teleopti/styleguide/releases
-
-*   Click on "Draft a new release"
-
-*   The tag version should be "v"+the new version number (like v1.1.21)
-
-*   The target should be the commit with the version upgrade
-
-*   Title should be "v"+the new version number (like v1.1.21)
-
-*   And you can write some details about the release
-
-*   Click on "Publish release"
+If you have any mentionable changes then [draft a new GitHub release](https://github.com/Teleopti/styleguide/releases/new) with the same tag and a list of changes.
