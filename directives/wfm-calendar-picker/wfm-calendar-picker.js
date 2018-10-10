@@ -7,11 +7,12 @@
 			templateUrl: [
 				'CurrentUserInfo',
 				function(CurrentUserInfo) {
+					console.log(CurrentUserInfo.CurrentUserInfo().DateFormatLocale, 'CurrentUserInfo');
 					var dateFormat =
 						CurrentUserInfo.CurrentUserInfo().DateFormatLocale === 'fa-IR' ? 'jalaali' : 'gregorian';
 					var templates = {
-						jalaali: 'directives/calendar-picker/calendar-picker.jalaali.template.tpl.html',
-						gregorian: 'directives/calendar-picker/calendar-picker.gregorian.template.tpl.html'
+						jalaali: 'directives/wfm-calendar-picker/wfm-calendar-picker.jalaali.template.tpl.html',
+						gregorian: 'directives/wfm-calendar-picker/wfm-calendar-picker.gregorian.template.tpl.html'
 					};
 					return templates[dateFormat];
 				}
@@ -19,7 +20,7 @@
 			require: {
 				ngModel: 'ngModel'
 			},
-			controller: 'DateRangeController',
+			controller: 'WfmCalendarPickerController',
 			controllerAs: 'vm',
 			bindings: {
 				showWeek: '<',
@@ -29,11 +30,11 @@
 				customValidate: '&'
 			}
 		})
-		.controller('DateRangeController', DateRangeController);
+		.controller('WfmCalendarPickerController', WfmCalendarPickerController);
 
-	DateRangeController.$inject = ['$scope', '$element', '$attrs', '$timeout', '$translate'];
+	WfmCalendarPickerController.$inject = ['$attrs', '$timeout', '$translate'];
 
-	function DateRangeController($scope, $element, $attrs, $timeout, $translate) {
+	function WfmCalendarPickerController($attrs, $timeout, $translate) {
 		var vm = this;
 
 		vm.isValid = true;

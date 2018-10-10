@@ -21,6 +21,7 @@ describe('CalendarPickerControllerCustomFeature', function() {
 			'December'
 		],
 		preSetLength = 36,
+		pickerWithPresetDateRange,
 		calendarView,
 		fakeToday = new Date(2018, 0, 1),
 		data;
