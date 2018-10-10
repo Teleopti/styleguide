@@ -1,6 +1,4 @@
-(function () {
-    'use strict';
-    angular.module('wfm.calendarPicker', [
-        'pascalprecht.translate'
-    ]);
+(function() {
+	'use strict';
+	angular.module('wfm.calendarPicker', ['pascalprecht.translate']);
 })();
