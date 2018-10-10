@@ -1,4 +1,4 @@
-<wfm-calendar-picker-header class="con-row between-date-info-wrapper">
+<wfm-date-range-picker-header class="con-row between-date-info-wrapper">
 	<div class="con-flex" ng-class="{'notice-warning':!vm.isValid, 'notice-info':vm.isValid}">
 		<div tabindex=0 class="context-menu card-context" ng-click="vm.selectToday()">
 			<i class="mdi mdi-calendar-range"></i>
@@ -6,8 +6,8 @@
 		</div>
 		<span ng-if="vm.dateRangeText.length > 0">{{vm.dateRangeText}}</span>
 	</div>
-</wfm-calendar-picker-header>
-<wfm-calendar-picker-body class="con-row">
+</wfm-date-range-picker-header>
+<wfm-date-range-picker-body class="con-row">
 	<div class="con-flex date-info-wrapper" ng-if="vm.singleDatePicker == undefined">
 		<div class="transition-block" ng-class="{'transit-to-start': vm.isPickingStartDate, 'transit-to-end': vm.isPickingEndDate}"></div>
 		<div class="select-date-info-wrapper pointer" ng-class="{'disabled': vm.disable=='start-date' || vm.disable=='all'}">
@@ -45,4 +45,4 @@
 		<persian-datepicker ng-model="vm.pickDate" ng-class="{'non-pointer':vm.disable === 'all', 'show-week-numbers': vm.options.showWeeks, 'hide-week-numbers': !vm.options.showWeeks, 'single-date-calendar': vm.singleDatePicker !== undefined}"
 		 ng-change="vm.switchDate()" show-weeks="vm.showWeek" custom-class="vm.options.customClass()"></persian-datepicker>
 	</div>
-</wfm-calendar-picker-body>
+</wfm-date-range-picker-body>

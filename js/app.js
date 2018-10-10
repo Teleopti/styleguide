@@ -35,7 +35,7 @@
 			'wfm.popup',
 			'wfm.treePicker',
 			'wfm.card-panel',
-			'wfm.calendarPicker',
+			'wfm.datePicker',
 			'gridshore.c3js.chart'
 		])
 		.config([

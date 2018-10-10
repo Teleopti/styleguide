@@ -2,20 +2,20 @@
 	'use strict';
 
 	angular
-		.module('wfm.calendarPicker')
-		.component('wfmCalendarPicker', {
+		.module('wfm.datePicker')
+		.component('wfmDateRangePicker', {
 			templateUrl: [
 				'CurrentUserInfo',
 				function(CurrentUserInfo) {
 					if (CurrentUserInfo.CurrentUserInfo().DateFormatLocale === 'fa-IR')
-						return 'directives/wfm-calendar-picker/wfm-calendar-picker.jalaali.template.tpl.html';
-					else return 'directives/wfm-calendar-picker/wfm-calendar-picker.gregorian.template.tpl.html';
+						return 'directives/wfm-date-range-picker/wfm-date-range-picker.jalaali.tpl.html';
+					else return 'directives/wfm-date-range-picker/wfm-date-range-picker.gregorian.tpl.html';
 				}
 			],
 			require: {
 				ngModel: 'ngModel'
 			},
-			controller: 'WfmCalendarPickerController',
+			controller: 'wfmDateRangePickerController',
 			controllerAs: 'vm',
 			bindings: {
 				showWeek: '<',
@@ -25,11 +25,11 @@
 				customValidate: '&'
 			}
 		})
-		.controller('WfmCalendarPickerController', WfmCalendarPickerController);
+		.controller('wfmDateRangePickerController', wfmDateRangePickerController);
 
-	WfmCalendarPickerController.$inject = ['$attrs', '$timeout', '$translate'];
+	wfmDateRangePickerController.$inject = ['$attrs', '$timeout', '$translate'];
 
-	function WfmCalendarPickerController($attrs, $timeout, $translate) {
+	function wfmDateRangePickerController($attrs, $timeout, $translate) {
 		var vm = this;
 
 		vm.isValid = true;
