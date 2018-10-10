@@ -1,9 +1,9 @@
 (function() {
     'use strict';
-    angular.module('wfm.workingHoursPicker').service('workingHoursService', [
+    angular.module('wfm.workHourPicker').service('workHourService', [
         '$locale',
         function() {
-            this.createEmptyWorkingPeriod = function(startTime, endTime) {
+            this.createEmptyWorkPeriod = function(startTime, endTime) {
                 var weekdaySelections = [];
                 var startDow = moment.localeData()._week ? moment.localeData()._week.dow : 0;
                 // ToDo: Verify the first day of week from $locale.
@@ -23,38 +23,38 @@
         }
     ]);
 
-    angular.module('wfm.workingHoursPicker').directive('workingHoursPicker', [
+    angular.module('wfm.workHourPicker').directive('workHourPicker', [
         '$q',
         '$translate',
         '$filter',
         '$locale',
-        'workingHoursService',
+        'workHourService',
         'xeditable',
         'ui.bootstrap',
-        function($q, $translate, $filter, $locale, workingHoursPickerService) {
+        function($q, $translate, $filter, $locale, workHourPickerService) {
             return {
                 restrict: 'E',
                 scope: {
-                    workingHours: '=',
+                    workHour: '=',
                     disableNextDay: '=?',
                     maxHoursRange: '=?'
                 },
-                templateUrl: 'directives/workinghourspicker/working-hours-picker.tpl.html',
+                templateUrl: 'directives/workhourpicker/work-hour-picker.tpl.html',
                 link: postLink
             };
 
             function postLink(scope) {
                 scope.enforceRadioBehavior = enforceRadioBehavior;
-                scope.addEmptyWorkingPeriod = addEmptyWorkingPeriod;
-                scope.removeWorkingPeriod = removeWorkingPeriod;
+                scope.addEmptyWorkPeriod = addEmptyWorkPeriod;
+                scope.removeWorkPeriod = removeWorkPeriod;
                 scope.getTimerangeDisplay = getTimerangeDisplay;
                 scope.toggleAllChecks = toggleAllChecks;
-                scope.newWorkingPeriod = {
+                scope.newWorkPeriod = {
                     startTime: new Date(2016, 0, 1, 8),
                     endTime: new Date(2016, 0, 1, 17)
                 };
 
-                var weekDays = workingHoursPickerService.createEmptyWorkingPeriod().WeekDaySelections;
+                var weekDays = workHourPickerService.createEmptyWorkPeriod().WeekDaySelections;
                 var translations = [];
                 var i;
                 for (i = 0; i < weekDays.length; i++) {
@@ -69,16 +69,16 @@
                 });
 
                 function toggleAllChecks(index) {
-                    var isToggleOff = scope.workingHours[index].WeekDaySelections.every(function(x) {
+                    var isToggleOff = scope.workHour[index].WeekDaySelections.every(function(x) {
                         return x.Checked;
                     });
 
                     if (isToggleOff) {
-                        angular.forEach(scope.workingHours[index].WeekDaySelections, function(d) {
+                        angular.forEach(scope.workHour[index].WeekDaySelections, function(d) {
                             d.Checked = false;
                         });
                     } else {
-                        angular.forEach(scope.workingHours[index].WeekDaySelections, function(d) {
+                        angular.forEach(scope.workHour[index].WeekDaySelections, function(d) {
                             d.Checked = true;
                             enforceRadioBehavior(index, d.WeekDay);
                         });
@@ -86,30 +86,27 @@
                 }
 
                 function enforceRadioBehavior(refIndex, weekDay) {
-                    clearConflictWorkingHourSelection(scope.workingHours, refIndex, weekDay);
+                    clearConflictWorkHourSelection(scope.workHour, refIndex, weekDay);
                 }
 
-                function addEmptyWorkingPeriod() {
-                    var startTime = scope.newWorkingPeriod.startTime,
-                        endTime = scope.newWorkingPeriod.endTime;
-                    scope.workingHours.push(
-                        workingHoursPickerService.createEmptyWorkingPeriod(
-                            angular.copy(startTime),
-                            angular.copy(endTime)
-                        )
+                function addEmptyWorkPeriod() {
+                    var startTime = scope.newWorkPeriod.startTime,
+                        endTime = scope.newWorkPeriod.endTime;
+                    scope.workHour.push(
+                        workHourPickerService.createEmptyWorkPeriod(angular.copy(startTime), angular.copy(endTime))
                     );
                 }
 
-                function removeWorkingPeriod(index) {
-                    scope.workingHours.splice(index, 1);
+                function removeWorkPeriod(index) {
+                    scope.workHour.splice(index, 1);
                 }
 
-                function clearConflictWorkingHourSelection(workingHours, refIndex, weekDay) {
-                    angular.forEach(workingHours, function(workingHour, i) {
+                function clearConflictWorkHourSelection(workHour, refIndex, weekDay) {
+                    angular.forEach(workHour, function(workHour, i) {
                         if (i === refIndex) {
                             return;
                         }
-                        angular.forEach(workingHour.WeekDaySelections, function(d) {
+                        angular.forEach(workHour.WeekDaySelections, function(d) {
                             if (weekDay === d.WeekDay) {
                                 d.Checked = false;
                             }

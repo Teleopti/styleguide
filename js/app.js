@@ -20,7 +20,7 @@
             'wfm.cardList',
             'wfm.timerangepicker',
             'wfm.daterangepicker',
-            'wfm.workinghourspicker',
+            'wfm.workingHoursPicker',
             'ngAnimate',
             'wfm.pagination',
             'wfm.modal',
