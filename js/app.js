@@ -16,7 +16,6 @@
 			'ui.bootstrap.tpls',
 			'angularMoment',
 			'ui.bootstrap.persian.datepicker',
-			'wfm.culturalDatepicker',
 			'wfm.cardList',
 			'wfm.timerangepicker',
 			'wfm.daterangepicker',
