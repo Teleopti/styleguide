@@ -17,7 +17,7 @@
 	z-index: 40;
 }
 
-.wfm-date-range-picker .modal-box .modalbg {
+.date-range-picker .modal-box .modalbg {
 	background: transparent;
 }
 
@@ -115,7 +115,7 @@
 	}
 }
 
-.wfm-date-range-picker-wrap {
+.date-range-picker-wrap {
 	.pin-down {
 		background-color: $hover;
 		@extend .material-depth-1;
