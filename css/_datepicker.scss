@@ -1,6 +1,5 @@
 /*Overrides bootstrap*/
-.wfm-datepicker-controllers-container
-{
+.wfm-datepicker-controllers-container {
 	display: flex;
 	display: -ms-flexbox;
 	justify-content: flex-start;
@@ -18,11 +17,11 @@
 	z-index: 40;
 }
 
-.wfm-date-range-picker .modal-box .modalbg{
+.date-range-picker .modal-box .modalbg {
 	background: transparent;
 }
 
-.modal-box .wfm-datepicker-popup-row{
+.modal-box .wfm-datepicker-popup-row {
 	z-index: 50;
 }
 
@@ -33,17 +32,12 @@
 .wfm-datepicker-wrap {
 	@extend .material-depth-1;
 	margin: $full-padding;
-	display:inline-block;
-	background-color:$white;
-	min-height:270px;
+	display: inline-block;
+	background-color: $white;
+	min-height: 270px;
 }
 
-.wfm-cultural-datepicker-container {
-	display:inline-block;
-	min-height:290px;
-}
-
-.glyphicon{
+.glyphicon {
 	display: inline-block;
 	font: normal normal normal 24px/1 MaterialDesignIcons;
 	font-size: 16px;
@@ -53,34 +47,34 @@
 	transform: translate(0, 0);
 }
 
-.glyphicon:hover:before{
+.glyphicon:hover:before {
 	box-shadow: 0px 0px 0px 5px $hover;
-	background:$hover;
+	background: $hover;
 	border-radius: 1px;
 }
 
 .glyphicon-chevron-left:before {
-	content: "«"!important;
+	content: '«' !important;
 }
 .glyphicon-chevron-right:before {
-	content: "»"!important;
+	content: '»' !important;
 }
 
-.wfm-datepicker{
-	padding:5px;
+.wfm-datepicker {
+	padding: 5px;
 
 	table th {
 		border-color: transparent;
 	}
 
 	.btn-default {
-		border-color: transparent!important;
-		color:$text-color-standard;
-		background:$white;
+		border-color: transparent !important;
+		color: $text-color-standard;
+		background: $white;
 	}
 
 	.btn-info.active {
-		background-color: $secondary!important;
+		background-color: $secondary !important;
 		color: $white;
 	}
 
@@ -90,10 +84,11 @@
 
 	.btn {
 		border-radius: 0;
-		outline: none!important;
+		outline: none !important;
 	}
 
-	.btn.active, .btn:active {
+	.btn.active,
+	.btn:active {
 		background-image: none;
 		outline: 0;
 		-webkit-box-shadow: none;
@@ -110,28 +105,27 @@
 		color: inherit;
 	}
 
-	.range > button{
-		background-color:$highlight;
+	.range > button {
+		background-color: $highlight;
 	}
 }
 
-.wfm-date-range-picker-wrap {
-
+.date-range-picker-wrap {
 	.pin-down {
 		background-color: $hover;
 		@extend .material-depth-1;
 	}
 
-	.popup-control{
+	.popup-control {
 		height: 18px;
 		width: 18px;
 	}
 
-	.popup-control:hover{
+	.popup-control:hover {
 		background-color: $hover;
 	}
 
-	&.ng-invalid .popup-control .mdi-calendar{
+	&.ng-invalid .popup-control .mdi-calendar {
 		color: $red-800;
 	}
 
@@ -144,12 +138,12 @@
 	}
 }
 
-.dropdown-menu{
+.dropdown-menu {
 	text-align: center;
 	background-color: $white;
 }
 
-.popup-control{
+.popup-control {
 	box-sizing: initial;
 }
 
@@ -312,7 +306,7 @@ wfm-calendar-picker-body > .date-info-wrapper {
 	position: relative;
 	background-color: $gray012;
 
-	@media screen and (max-width: 768px){
+	@media screen and (max-width: 768px) {
 		height: auto;
 		min-width: 0;
 	}
@@ -320,7 +314,7 @@ wfm-calendar-picker-body > .date-info-wrapper {
 	.disabled {
 		opacity: 0.5;
 		pointer-events: none;
-		background-color: $gray087  !important;
+		background-color: $gray087 !important;
 		color: $white;
 	}
 
@@ -341,8 +335,8 @@ wfm-calendar-picker-body > .date-info-wrapper {
 		flex-grow: 1;
 		display: flex;
 		text-align: left;
-		
-		@media screen and (max-width:768px){
+
+		@media screen and (max-width: 768px) {
 			min-height: 80px;
 		}
 	}
@@ -354,7 +348,7 @@ wfm-calendar-picker-body > .date-info-wrapper {
 	.selecting-date {
 		background-color: $white;
 	}
-	
+
 	.select-date-info-inner {
 		flex-grow: 1;
 		flex-basis: 100%;
@@ -363,7 +357,7 @@ wfm-calendar-picker-body > .date-info-wrapper {
 	.date-info-label {
 		font-size: 1em;
 	}
-	
+
 	.transition-block {
 		border-left: 5px $secondary solid;
 		position: absolute;
@@ -377,13 +371,13 @@ wfm-calendar-picker-body > .date-info-wrapper {
 		top: 0;
 		transition: top 1s ease-in-out;
 	}
-	
+
 	.transition-block.transit-to-end {
 		top: 50%;
 		transition: top 1s ease-in-out;
 	}
 
-	.clear-select-date-grow-out{
+	.clear-select-date-grow-out {
 		display: table;
 		position: absolute;
 		height: 100%;
@@ -405,15 +399,15 @@ wfm-calendar-picker-body > .date-info-wrapper {
 		}
 	}
 
-	.select-date-info-wrapper:hover .clear-select-date-grow-out{
+	.select-date-info-wrapper:hover .clear-select-date-grow-out {
 		transform: translateX(0);
 		visibility: visible;
 		opacity: 1;
 	}
 
-	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
+	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
 		//For fixing close icon tranform issue on IE10+
-		.select-date-info-wrapper:hover .clear-select-date-grow-out{
+		.select-date-info-wrapper:hover .clear-select-date-grow-out {
 			transform: translateX(-60%);
 		}
 	}
@@ -424,16 +418,18 @@ wfm-calendar-picker-body > .date-info-calendar-wrapper {
 	z-index: 5;
 	flex-basis: auto;
 
-	b, strong {
+	b,
+	strong {
 		font-size: large;
 	}
 
-	.in-date-range button{
+	.in-date-range button {
 		background-color: $blue-100 !important;
 	}
 
-	.uib-daypicker:focus, *:focus{
-		outline: none!important;
+	.uib-daypicker:focus,
+	*:focus {
+		outline: none !important;
 	}
 
 	table {
@@ -473,18 +469,19 @@ wfm-calendar-picker-body > .date-info-calendar-wrapper {
 
 	//For fixing flicker issue of uib-datepicker
 	.uib-datepicker.show-week-numbers {
-		table tbody tr td:nth-child(n+9) {
+		table tbody tr td:nth-child(n + 9) {
 			display: none;
 		}
 	}
 
 	.uib-datepicker.hide-week-numbers {
-		table tbody tr td:nth-child(n+8) {
+		table tbody tr td:nth-child(n + 8) {
 			display: none;
 		}
 	}
 
-	.uib-datepicker, & > div:first-child {
+	.uib-datepicker,
+	& > div:first-child {
 		width: 266px;
 		height: 270px;
 		overflow: hidden;
@@ -511,11 +508,11 @@ wfm-calendar-picker-body > .date-info-calendar-wrapper {
 			padding: 1px;
 		}
 
-		tbody td.current-date-cell button{
+		tbody td.current-date-cell button {
 			font-weight: bold;
 		}
 
-		tbody td.selected-date-cell button{
+		tbody td.selected-date-cell button {
 			border-radius: 6px;
 		}
 
@@ -534,11 +531,14 @@ wfm-calendar-picker-body > .date-info-calendar-wrapper {
 			background-color: $secondary !important;
 		}
 
-		.uib-monthpicker, .uib-yearpicker, .uib-daypicker {
+		.uib-monthpicker,
+		.uib-yearpicker,
+		.uib-daypicker {
 			height: 100%;
 		}
 
-		.uib-monthpicker, .uib-yearpicker {
+		.uib-monthpicker,
+		.uib-yearpicker {
 			table {
 				margin: 0 auto;
 			}
@@ -558,7 +558,7 @@ wfm-calendar-picker-body > .date-info-calendar-wrapper {
 			button.btn-default.active {
 				background-color: $secondary !important;
 
-				.text-info{
+				.text-info {
 					color: $text-color-standard;
 				}
 			}
