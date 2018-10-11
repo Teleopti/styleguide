@@ -29,7 +29,7 @@ describe('Wfm date range picker custom', function() {
 	beforeEach(function() {
 		module(
 			'styleguide.templates',
-			'wfm.datePicker',
+			'wfm.dateRangePicker',
 			'angularMoment',
 			'ui.bootstrap',
 			'ui.bootstrap.persian.datepicker'

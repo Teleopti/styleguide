@@ -36,6 +36,7 @@
 			'wfm.treePicker',
 			'wfm.card-panel',
 			'wfm.datePicker',
+			'wfm.dateRangePicker',
 			'gridshore.c3js.chart'
 		])
 		.config([
@@ -361,7 +362,17 @@
 					}
 				];
 
-				/*Code for new date range picker*/
+				/*Code for new wfm-date-picker*/
+				$scope.singleDate = new Date();
+				$scope.singleDate2 = new Date();
+				$scope.singleDate3 = new Date();
+				$scope.customValidateForDatePicker = function(date) {
+					if (moment(date).diff(moment(), 'days') < 0) {
+						return '[custom validation]: can not select dates before today';
+					}
+				};
+
+				/*Code for new wfm-date-range-picker*/
 				$scope.customValid = function(data) {
 					if (moment(data.endDate).diff(moment(data.startDate), 'days') > 7) {
 						return '[custom validation]: your end date is 7 days later than your start date';
