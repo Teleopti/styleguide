@@ -1,4 +1,4 @@
-describe('CalendarPickerControllerCustomFeature', function() {
+describe('Wfm date range picker custom', function() {
 	var vm,
 		$controller,
 		$compile,
@@ -29,7 +29,7 @@ describe('CalendarPickerControllerCustomFeature', function() {
 	beforeEach(function() {
 		module(
 			'styleguide.templates',
-			'wfm.calendarPicker',
+			'wfm.dateRangePicker',
 			'angularMoment',
 			'ui.bootstrap',
 			'ui.bootstrap.persian.datepicker'
@@ -70,7 +70,7 @@ describe('CalendarPickerControllerCustomFeature', function() {
 
 	function setupPicker(attrs, scope, optCompileOpts) {
 		var el;
-		var template = '' + '<wfm-calendar-picker ' + (attrs || '') + '>' + '</wfm-calendar-picker>';
+		var template = '' + '<wfm-date-range-picker ' + (attrs || '') + '>' + '</wfm-date-range-picker>';
 
 		el = $compile(template)(scope || $rootScope);
 
@@ -90,7 +90,7 @@ describe('CalendarPickerControllerCustomFeature', function() {
 
 	it('should be able to pass custom validate function', function() {
 		pickerWithPresetDateRange = setupPicker('ng-model="data" custom-validate="customValid(data)"');
-		vm = pickerWithPresetDateRange.find('wfm-calendar-picker-header').scope().vm;
+		vm = pickerWithPresetDateRange.find('wfm-date-range-picker-header').scope().vm;
 
 		expect(vm.pickStartDate).toEqual(data.startDate);
 		expect(vm.pickEndDate).toEqual(data.endDate);
@@ -99,7 +99,7 @@ describe('CalendarPickerControllerCustomFeature', function() {
 
 	it('should be able to validate interval by weeks', function() {
 		pickerWithPresetDateRange = setupPicker('ng-model="data" interval-rule="week"');
-		vm = pickerWithPresetDateRange.find('wfm-calendar-picker-header').scope().vm;
+		vm = pickerWithPresetDateRange.find('wfm-date-range-picker-header').scope().vm;
 
 		expect(vm.pickStartDate).toEqual(data.startDate);
 		expect(vm.pickEndDate).toEqual(data.endDate);
@@ -108,7 +108,7 @@ describe('CalendarPickerControllerCustomFeature', function() {
 
 	it('should be able to only allow update end date with a readonly preselected start date', function() {
 		pickerWithPresetDateRange = setupPicker('ng-model="data" disable="start-date"');
-		vm = pickerWithPresetDateRange.find('wfm-calendar-picker-header').scope().vm;
+		vm = pickerWithPresetDateRange.find('wfm-date-range-picker-header').scope().vm;
 		vm.pickDate = moment(fakeToday)
 			.add(preSetLength / 2 - 10, 'day')
 			.toDate();
@@ -121,7 +121,7 @@ describe('CalendarPickerControllerCustomFeature', function() {
 
 	it('should be able to reset end date with a readonly preselected start date', function() {
 		pickerWithPresetDateRange = setupPicker('ng-model="data" disable="start-date"');
-		vm = pickerWithPresetDateRange.find('wfm-calendar-picker-header').scope().vm;
+		vm = pickerWithPresetDateRange.find('wfm-date-range-picker-header').scope().vm;
 		calendarView = pickerWithPresetDateRange.find('table')[0];
 		vm.resetEndDate();
 		var range = calendarView.getElementsByClassName('in-date-range');
@@ -135,7 +135,7 @@ describe('CalendarPickerControllerCustomFeature', function() {
 
 	it('should be able to disable modifying a readonly preselected end date', function() {
 		pickerWithPresetDateRange = setupPicker('ng-model="data" disable="end-date"');
-		vm = pickerWithPresetDateRange.find('wfm-calendar-picker-header').scope().vm;
+		vm = pickerWithPresetDateRange.find('wfm-date-range-picker-header').scope().vm;
 		vm.pickDate = moment(fakeToday)
 			.add(preSetLength / 2 - 10, 'day')
 			.toDate();
@@ -157,7 +157,7 @@ describe('CalendarPickerControllerCustomFeature', function() {
 		$rootScope.data = fakeData;
 
 		pickerWithPresetDateRange = setupPicker('ng-model="data" disable="end-date"');
-		vm = pickerWithPresetDateRange.find('wfm-calendar-picker-header').scope().vm;
+		vm = pickerWithPresetDateRange.find('wfm-date-range-picker-header').scope().vm;
 		calendarView = pickerWithPresetDateRange.find('table')[0];
 
 		vm.resetStartDate();
@@ -172,7 +172,7 @@ describe('CalendarPickerControllerCustomFeature', function() {
 
 	it('should be able to display weeks number on calendar view', function() {
 		pickerWithPresetDateRange = setupPicker('ng-model="data" show-week="true"');
-		vm = pickerWithPresetDateRange.find('wfm-calendar-picker-header').scope().vm;
+		vm = pickerWithPresetDateRange.find('wfm-date-range-picker-header').scope().vm;
 		calendarView = pickerWithPresetDateRange.find('table')[0];
 		var weekNumber = calendarView.getElementsByClassName('text-center h6');
 
@@ -181,7 +181,7 @@ describe('CalendarPickerControllerCustomFeature', function() {
 
 	it('should be able to disable weeks number on calendar view', function() {
 		pickerWithPresetDateRange = setupPicker('ng-model="data" show-week="false"');
-		vm = pickerWithPresetDateRange.find('wfm-calendar-picker-header').scope().vm;
+		vm = pickerWithPresetDateRange.find('wfm-date-range-picker-header').scope().vm;
 		calendarView = pickerWithPresetDateRange.find('table')[0];
 		var weekNumber = calendarView.getElementsByClassName('text-center h6');
 
@@ -190,7 +190,7 @@ describe('CalendarPickerControllerCustomFeature', function() {
 
 	it('should be able to switch to single day picker mode', function() {
 		pickerWithPresetDateRange = setupPicker('ng-model="data2" single-date-picker');
-		vm = pickerWithPresetDateRange.find('wfm-calendar-picker-header').scope().vm;
+		vm = pickerWithPresetDateRange.find('wfm-date-range-picker-header').scope().vm;
 		calendarView = pickerWithPresetDateRange.find('table')[0];
 
 		$timeout(function() {
@@ -203,7 +203,7 @@ describe('CalendarPickerControllerCustomFeature', function() {
 
 	it('should be able to pick date while is on single day picker mode', function() {
 		pickerWithPresetDateRange = setupPicker('ng-model="data2" single-date-picker');
-		vm = pickerWithPresetDateRange.find('wfm-calendar-picker-header').scope().vm;
+		vm = pickerWithPresetDateRange.find('wfm-date-range-picker-header').scope().vm;
 		calendarView = pickerWithPresetDateRange.find('table')[0];
 		vm.pickDate = moment(fakeToday)
 			.add(5, 'day')

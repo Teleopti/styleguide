@@ -1,4 +1,4 @@
-describe('CalendarPickerControllerBasicFeature', function() {
+describe('Wfm date range picker basics', function() {
 	var vm,
 		$controller,
 		$compile,
@@ -28,7 +28,7 @@ describe('CalendarPickerControllerBasicFeature', function() {
 	beforeEach(function() {
 		module(
 			'styleguide.templates',
-			'wfm.calendarPicker',
+			'wfm.dateRangePicker',
 			'angularMoment',
 			'ui.bootstrap',
 			'ui.bootstrap.persian.datepicker'
@@ -55,7 +55,7 @@ describe('CalendarPickerControllerBasicFeature', function() {
 		$rootScope.data = data;
 
 		pickerWithPresetDateRange = setupPicker('ng-model="data"');
-		vm = pickerWithPresetDateRange.find('wfm-calendar-picker-header').scope().vm;
+		vm = pickerWithPresetDateRange.find('wfm-date-range-picker-header').scope().vm;
 		calendarView = pickerWithPresetDateRange.find('table')[0];
 	});
 
@@ -70,7 +70,7 @@ describe('CalendarPickerControllerBasicFeature', function() {
 
 	function setupPicker(attrs, scope, optCompileOpts) {
 		var el;
-		var template = '' + '<wfm-calendar-picker ' + (attrs || '') + '>' + '</wfm-calendar-picker>';
+		var template = '' + '<wfm-date-range-picker ' + (attrs || '') + '>' + '</wfm-date-range-picker>';
 
 		el = $compile(template)(scope || $rootScope);
 

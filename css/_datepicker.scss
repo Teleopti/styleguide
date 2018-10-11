@@ -171,12 +171,36 @@
 // To use the single date picker as pop-up style please wrap it into a <a href=section-1.html#kssref-1-20>pop-up menu</a> (section 1.20). <br><br>
 // Click on the calendar icon (left top corner) to quickly select 'today' within calendar view.<br>
 // Hover and click on the selected date section to reset the selected date to empty.
+// <div class="jsprewrap">
+//   <div class="ksscopy kss-style" ng-click="showJs['cardDemo1'] = !showJs['cardDemo1']">
+//       <span ng-hide="showJs['cardDemo1']">Show</span>
+//      <span ng-show="showJs['cardDemo1']">Hide</span>
+//     JavaScript
+//     <i class="mdi mdi-code-tags pull-right"></i>
+//   </div>
+//   <div class="animate-show" ng-show="showJs['cardDemo1']">
+//     <code>
+//       <pre class="prettyprint linenums lang-js">
+//
+//          $scope.customValidateForDatePicker = function (date) {
+//            if(moment(date).diff(moment(), 'days') < 0) {
+//              return "[custom validation]: can not select dates before today";
+//            }
+//          }
+//
+//       </pre>
+//     </code>
+//   </div>
+// </div>
+//
 //
 //Markup:
 //<h1>With week numbers</h1>
-//<wfm-calendar-picker ng-model="singleDate" show-week="true" single-date-picker></wfm-calendar-picker>
+//<wfm-date-picker ng-model="singleDate" show-week="true"></wfm-date-picker>
 //<h1>Without week numbers</h1>
-//<wfm-calendar-picker ng-model="singleDate2" show-week="false" single-date-picker></wfm-calendar-picker>
+//<wfm-date-picker ng-model="singleDate2" show-week="false"></wfm-date-picker>
+//<h1>With custom validation: can not select dates before today</h1>
+//<wfm-date-picker ng-model="singleDate3" show-week="true" custom-validate="customValidateForDatePicker(singleDate3)"></wfm-date-picker>
 //
 //Styleguide 2.1
 //
@@ -198,9 +222,9 @@
 //
 //Markup:
 //<h1>With week numbers</h1>
-//<wfm-calendar-picker show-week="true" ng-model="dateRange1"></wfm-calendar-picker>
+//<wfm-date-range-picker show-week="true" ng-model="dateRange1"></wfm-date-range-picker>
 //<h1>Without week numbers</h1>
-//<wfm-calendar-picker show-week="false" ng-model="dateRange2"></wfm-calendar-picker>
+//<wfm-date-range-picker show-week="false" ng-model="dateRange2"></wfm-date-range-picker>
 //
 //Styleguide 2.2
 //
@@ -236,7 +260,7 @@
 // </div>
 //
 //Markup:
-//<wfm-calendar-picker ng-model="anotherDateRange" show-week="false" custom-validate="customValid(anotherDateRange)"></wfm-calendar-picker>
+//<wfm-date-range-picker ng-model="anotherDateRange" show-week="false" custom-validate="customValid(anotherDateRange)"></wfm-date-range-picker>
 //
 //Styleguide 2.3
 //
@@ -250,9 +274,9 @@
 //
 //Markup:
 //<h1>validate only exam with week interval</h1>
-//<wfm-calendar-picker ng-model="dateRange3" show-week="false" interval-rule="week"></wfm-calendar-picker>
+//<wfm-date-range-picker ng-model="dateRange3" show-week="false" interval-rule="week"></wfm-date-range-picker>
 //<h1>validate only exam with month interval</h1>
-//<wfm-calendar-picker ng-model="dateRange4" show-week="false" interval-rule="month"></wfm-calendar-picker>
+//<wfm-date-range-picker ng-model="dateRange4" show-week="false" interval-rule="month"></wfm-date-range-picker>
 //
 //Styleguide 2.4
 //
@@ -266,23 +290,25 @@
 //
 //Markup:
 //<h1>Date range picker with disabling endDate selection. </h1>
-//<wfm-calendar-picker ng-model="dateRange5" show-week="false" disable="end-date"></wfm-calendar-picker>
+//<wfm-date-range-picker ng-model="dateRange5" show-week="false" disable="end-date"></wfm-date-range-picker>
 //<h1>Date range picker with disabling startDate selection. </h1>
-//<wfm-calendar-picker ng-model="dateRange6" show-week="false" disable="start-date"></wfm-calendar-picker>
+//<wfm-date-range-picker ng-model="dateRange6" show-week="false" disable="start-date"></wfm-date-range-picker>
 //
 //Styleguide 2.5
 //
 
 //new date range picker
 
-wfm-calendar-picker {
+wfm-date-picker,
+wfm-date-range-picker {
 	display: inline-block;
 	background-color: $white;
 	padding: 0;
 	border: 1px solid $gray026;
 }
 
-wfm-calendar-picker-header {
+wfm-date-picker-header,
+wfm-date-range-picker-header {
 	min-height: 35px;
 
 	.card-context {
@@ -295,7 +321,8 @@ wfm-calendar-picker-header {
 	}
 }
 
-wfm-calendar-picker-body > .date-info-wrapper {
+wfm-date-picker-body > .date-info-wrapper,
+wfm-date-range-picker-body > .date-info-wrapper {
 	height: 280px;
 	min-width: 200px;
 	padding: 0;
@@ -413,7 +440,8 @@ wfm-calendar-picker-body > .date-info-wrapper {
 	}
 }
 
-wfm-calendar-picker-body > .date-info-calendar-wrapper {
+wfm-date-picker-body > .date-info-calendar-wrapper,
+wfm-date-range-picker-body > .date-info-calendar-wrapper {
 	background: $white;
 	z-index: 5;
 	flex-basis: auto;
@@ -461,7 +489,8 @@ wfm-calendar-picker-body > .date-info-calendar-wrapper {
 		background: $secondary !important;
 	}
 
-	tbody .in-date-range button.btn-info.active {
+	tbody .selected-date-cell button.btn-info,
+	tbody .in-date-range button.btn-info {
 		background-color: $secondary !important;
 		color: $white !important;
 		font-weight: normal;
@@ -514,6 +543,7 @@ wfm-calendar-picker-body > .date-info-calendar-wrapper {
 
 		tbody td.selected-date-cell button {
 			border-radius: 6px;
+			background-color: $secondary !important;
 		}
 
 		tbody td.start-date-cell button {
@@ -528,6 +558,7 @@ wfm-calendar-picker-body > .date-info-calendar-wrapper {
 
 		thead button.btn-default:hover,
 		tbody button.btn-default:hover {
+			border-radius: 6px;
 			background-color: $secondary !important;
 		}
 

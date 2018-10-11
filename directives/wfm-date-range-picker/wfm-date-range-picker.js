@@ -2,34 +2,33 @@
 	'use strict';
 
 	angular
-		.module('wfm.calendarPicker')
-		.component('wfmCalendarPicker', {
+		.module('wfm.dateRangePicker')
+		.component('wfmDateRangePicker', {
 			templateUrl: [
 				'CurrentUserInfo',
 				function(CurrentUserInfo) {
 					if (CurrentUserInfo.CurrentUserInfo().DateFormatLocale === 'fa-IR')
-						return 'directives/wfm-calendar-picker/wfm-calendar-picker.jalaali.template.tpl.html';
-					else return 'directives/wfm-calendar-picker/wfm-calendar-picker.gregorian.template.tpl.html';
+						return 'directives/wfm-date-range-picker/wfm-date-range-picker.jalaali.tpl.html';
+					return 'directives/wfm-date-range-picker/wfm-date-range-picker.gregorian.tpl.html';
 				}
 			],
 			require: {
 				ngModel: 'ngModel'
 			},
-			controller: 'WfmCalendarPickerController',
+			controller: 'wfmDateRangePickerController',
 			controllerAs: 'vm',
 			bindings: {
 				showWeek: '<',
 				disable: '@',
 				intervalRule: '@',
-				singleDatePicker: '@',
 				customValidate: '&'
 			}
 		})
-		.controller('WfmCalendarPickerController', WfmCalendarPickerController);
+		.controller('wfmDateRangePickerController', wfmDateRangePickerController);
 
-	WfmCalendarPickerController.$inject = ['$attrs', '$timeout', '$translate'];
+	wfmDateRangePickerController.$inject = ['$attrs', '$timeout', '$translate'];
 
-	function WfmCalendarPickerController($attrs, $timeout, $translate) {
+	function wfmDateRangePickerController($attrs, $timeout, $translate) {
 		var vm = this;
 
 		vm.isValid = true;
@@ -37,17 +36,8 @@
 		vm.pickEndDate = null;
 		vm.isPickingStartDate = false;
 		vm.isPickingEndDate = false;
-		vm.isPickingSingleDate = false;
 
 		vm.validate = undefined;
-		vm.resetDate = resetDate;
-		vm.resetStartDate = resetStartDate;
-		vm.resetEndDate = resetEndDate;
-		vm.resetStartAndEndDate = resetStartAndEndDate;
-
-		vm.selectToday = selectToday;
-		vm.startToSelectStartDate = startToSelectStartDate;
-		vm.startToSelectEndDate = startToSelectEndDate;
 
 		vm.options = {
 			customClass: renderDatesInRange,
@@ -55,27 +45,91 @@
 		};
 
 		vm.$onInit = function() {
-			switch (vm.singleDatePicker) {
-				case undefined:
-					vm.ngModel.$viewChangeListeners.push(onChangeForDateRangePicker);
-					vm.ngModel.$render = onChangeForDateRangePicker;
-					initDateRangePicker();
-					break;
-				default:
-					initSingleDatePicker();
-					break;
-			}
+			vm.ngModel.$viewChangeListeners.push(onChangeForDateRangePicker);
+			vm.ngModel.$render = onChangeForDateRangePicker;
+			initDateRangePicker();
 		};
 
-		function initSingleDatePicker() {
-			vm.switchDate = selectSingleDate;
-			vm.validate = validateSingleDate;
-			vm.isPickingSingleDate = true;
+		vm.resetDate = function() {
+			vm.pickDate = null;
+			return vm.ngModel.$setViewValue(vm.pickDate);
+		};
 
-			vm.pickDate = vm.ngModel.$modelValue || new Date();
+		vm.resetStartDate = function() {
+			vm.pickStartDate = null;
+			vm.pickDate = null;
 
-			return;
-		}
+			if (!vm.pickStartDate && !vm.pickEndDate) {
+				vm.pickDate = new Date();
+				focusStartDate();
+			} else if (vm.pickEndDate) {
+				focusStartDate();
+			}
+
+			updateNgModelDateForDateRangePicker();
+			return (vm.isValid = !vm.validate());
+		};
+
+		vm.resetEndDate = function() {
+			vm.pickEndDate = null;
+			vm.pickDate = null;
+
+			if (!vm.pickStartDate && !vm.pickEndDate) {
+				vm.pickDate = new Date();
+				focusStartDate();
+			} else if (vm.pickStartDate) {
+				focusEndDate();
+			}
+
+			updateNgModelDateForDateRangePicker();
+			return (vm.isValid = !vm.validate());
+		};
+
+		vm.resetStartAndEndDate = function() {
+			vm.pickStartDate = null;
+			vm.pickEndDate = null;
+			vm.pickDate = null;
+
+			updateNgModelDateForDateRangePicker();
+			return (vm.isValid = !vm.validate());
+		};
+
+		vm.selectToday = function() {
+			vm.pickDate = resetHoursToMidnight(new Date());
+
+			if (vm.isPickingStartDate) {
+				vm.pickStartDate = vm.pickDate;
+				return selectStartDate();
+			}
+
+			if (vm.isPickingEndDate) {
+				vm.pickEndDate = vm.pickDate;
+				return selectEndDate();
+			}
+			return (vm.isValid = !vm.validate());
+		};
+
+		vm.startToSelectStartDate = function() {
+			if (vm.disable == 'start-date' || vm.disable == 'all') {
+				return;
+			}
+			focusStartDate();
+			vm.pickDate = vm.pickStartDate;
+			updateNgModelDateForDateRangePicker();
+
+			return (vm.isValid = !vm.validate());
+		};
+
+		vm.startToSelectEndDate = function() {
+			if (vm.disable == 'end-date' || vm.disable == 'all') {
+				return;
+			}
+			focusEndDate();
+			vm.pickDate = vm.pickEndDate;
+			updateNgModelDateForDateRangePicker();
+
+			return (vm.isValid = !vm.validate());
+		};
 
 		function initDateRangePicker() {
 			switch (vm.disable) {
@@ -122,26 +176,6 @@
 			}, 10);
 		}
 
-		function selectToday() {
-			vm.pickDate = resetHoursToMidnight(new Date());
-
-			if (vm.isPickingStartDate) {
-				vm.pickStartDate = vm.pickDate;
-				return selectStartDate();
-			}
-
-			if (vm.isPickingEndDate) {
-				vm.pickEndDate = vm.pickDate;
-				return selectEndDate();
-			}
-
-			if (vm.isPickingSingleDate) {
-				vm.ngModel.$setViewValue(vm.pickDate);
-			}
-
-			return (vm.isValid = !vm.validate());
-		}
-
 		function onChangeForDateRangePicker() {
 			var oldVal = [angular.copy(vm.pickStartDate), angular.copy(vm.pickEndDate)];
 			var newVal = fetchNgModelDateForDateRangePicker();
@@ -185,16 +219,6 @@
 				vm.pickDate = vm.pickStartDate;
 			}
 			return displayDateRange(vm.pickStartDate, vm.pickEndDate);
-		}
-
-		function validateSingleDate() {
-			if (!vm.pickDate) {
-				return (vm.dateRangeText = $translate.instant('SelectADate'));
-			}
-			if (!!$attrs.customValidate) {
-				return (vm.dateRangeText = vm.customValidate());
-			}
-			return (vm.dateRangeText = '');
 		}
 
 		function validateStartAndEndDate() {
@@ -249,50 +273,6 @@
 			return (vm.dateRangeText = '');
 		}
 
-		function resetDate() {
-			vm.pickDate = null;
-			return vm.ngModel.$setViewValue(vm.pickDate);
-		}
-
-		function resetStartDate() {
-			vm.pickStartDate = null;
-			vm.pickDate = null;
-
-			if (!vm.pickStartDate && !vm.pickEndDate) {
-				vm.pickDate = new Date();
-				focusStartDate();
-			} else if (vm.pickEndDate) {
-				focusStartDate();
-			}
-
-			updateNgModelDateForDateRangePicker();
-			return (vm.isValid = !vm.validate());
-		}
-
-		function resetEndDate() {
-			vm.pickEndDate = null;
-			vm.pickDate = null;
-
-			if (!vm.pickStartDate && !vm.pickEndDate) {
-				vm.pickDate = new Date();
-				focusStartDate();
-			} else if (vm.pickStartDate) {
-				focusEndDate();
-			}
-
-			updateNgModelDateForDateRangePicker();
-			return (vm.isValid = !vm.validate());
-		}
-
-		function resetStartAndEndDate() {
-			vm.pickStartDate = null;
-			vm.pickEndDate = null;
-			vm.pickDate = null;
-
-			updateNgModelDateForDateRangePicker();
-			return (vm.isValid = !vm.validate());
-		}
-
 		function focusStartDate() {
 			vm.isPickingStartDate = true;
 			vm.isPickingEndDate = false;
@@ -301,32 +281,6 @@
 		function focusEndDate() {
 			vm.isPickingStartDate = false;
 			vm.isPickingEndDate = true;
-		}
-
-		function startToSelectStartDate() {
-			if (vm.disable == 'start-date' || vm.disable == 'all') {
-				return;
-			}
-			focusStartDate();
-			vm.pickDate = vm.pickStartDate;
-			updateNgModelDateForDateRangePicker();
-
-			return (vm.isValid = !vm.validate());
-		}
-
-		function startToSelectEndDate() {
-			if (vm.disable == 'end-date' || vm.disable == 'all') {
-				return;
-			}
-			focusEndDate();
-			vm.pickDate = vm.pickEndDate;
-			updateNgModelDateForDateRangePicker();
-
-			return (vm.isValid = !vm.validate());
-		}
-
-		function selectSingleDate() {
-			return vm.ngModel.$setViewValue(vm.pickDate);
 		}
 
 		function selectStartDate() {
@@ -340,7 +294,7 @@
 				}
 			}
 
-			startToSelectEndDate();
+			vm.startToSelectEndDate();
 			updateNgModelDateForDateRangePicker();
 
 			return displayDateRange(vm.pickStartDate, vm.pickEndDate);
@@ -357,8 +311,7 @@
 				}
 			}
 
-			startToSelectStartDate();
-
+			vm.startToSelectStartDate();
 			updateNgModelDateForDateRangePicker();
 
 			return displayDateRange(vm.pickStartDate, vm.pickEndDate);
@@ -368,7 +321,6 @@
 			if (vm.isPickingStartDate) {
 				return selectStartDate();
 			}
-
 			if (vm.isPickingEndDate) {
 				return selectEndDate();
 			}
@@ -496,18 +448,6 @@
 		function renderDatesInRange(data) {
 			var date = data.date,
 				mode = data.mode;
-
-			if (vm.isPickingSingleDate) {
-				var classStr = '';
-
-				if (moment(date).isSame(vm.pickDate, 'day')) {
-					classStr += ' selected-date-cell';
-				}
-				if (isCurrentDate(date)) {
-					classStr += ' current-date-cell';
-				}
-				return classStr;
-			}
 
 			if (!vm.pickStartDate && !vm.pickEndDate) {
 				return '';
