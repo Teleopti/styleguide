@@ -15,7 +15,14 @@ module.exports = function(grunt) {
 		},
 		watch: {
 			styleguide: {
-				files: ['css/*.scss', 'css/*.hbs', 'css/*.md', 'directives/**/*.js', 'app.js'],
+				files: [
+					'css/*.scss',
+					'css/*.hbs',
+					'css/*.md',
+					'directives/**/*.tpl.html',
+					'directives/**/*.js',
+					'app.js'
+				],
 				tasks: ['sass:styleguide', 'sass:dist', 'ngtemplates', 'shell', 'cssmin']
 			},
 			watchAll: {
