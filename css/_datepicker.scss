@@ -181,18 +181,15 @@
 //   <div class="animate-show" ng-show="showJs['cardDemo1']">
 //     <code>
 //       <pre class="prettyprint linenums lang-js">
-//
 //          $scope.customValidateForDatePicker = function (date) {
 //            if(moment(date).diff(moment(), 'days') < 0) {
 //              return "[custom validation]: can not select dates before today";
 //            }
 //          }
-//
 //       </pre>
 //     </code>
 //   </div>
 // </div>
-//
 //
 //Markup:
 //<h1>With week numbers</h1>
@@ -201,6 +198,8 @@
 //<wfm-date-picker ng-model="singleDate2" show-week="false"></wfm-date-picker>
 //<h1>With custom validation: can not select dates before today</h1>
 //<wfm-date-picker ng-model="singleDate3" show-week="true" custom-validate="customValidateForDatePicker(singleDate3)"></wfm-date-picker>
+//<h1>Popup date picker</h1>
+//<wfm-date-picker ng-model="singleDate4" show-week="true" popup-mode="true"></wfm-date-picker>
 //
 //Styleguide 2.1
 //
@@ -301,10 +300,33 @@
 
 wfm-date-picker,
 wfm-date-range-picker {
+	position: relative;
 	display: inline-block;
-	background-color: $white;
-	padding: 0;
-	border: 1px solid $gray026;
+
+	.wfm-calendar-datepicker-text {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		line-height: 1;
+		cursor: pointer;
+		margin: 5px;
+
+		& > * {
+			padding: 5px;
+			margin: 0;
+		}
+	}
+
+	& > wfm-popup {
+		position: absolute;
+		z-index: 1000;
+		background-color: $white;
+
+		& > div {
+			padding: 0;
+			border: 1px solid $gray026;
+		}
+	}
 }
 
 wfm-date-picker-header,
@@ -587,6 +609,7 @@ wfm-date-range-picker-body > .date-info-calendar-wrapper {
 			}
 
 			button.btn-default.active {
+				border-radius: 6px;
 				background-color: $secondary !important;
 
 				.text-info {

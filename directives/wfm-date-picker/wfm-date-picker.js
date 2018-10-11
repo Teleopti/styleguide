@@ -21,7 +21,8 @@
 				showWeek: '<',
 				disable: '@',
 				customValidate: '&',
-				onDateChange: '&?'
+				onDateChange: '&?',
+				popupMode: '<?'
 			}
 		})
 		.controller('wfmDatePickerController', wfmDatePickerController);
@@ -33,6 +34,7 @@
 
 		vm.isValid = true;
 		vm.dateValiationText = '';
+		vm.isShowingDatePicker = false;
 
 		vm.options = {
 			customClass: renderDatesInRange,
@@ -48,7 +50,6 @@
 
 		vm.switchDate = function() {
 			vm.ngModel.$setViewValue(vm.pickDate);
-
 			validatePickDate();
 		};
 
@@ -57,9 +58,26 @@
 			return vm.ngModel.$setViewValue(vm.pickDate);
 		};
 
+		vm.toggleDatePicker = function(event) {
+			event && event.preventDefault();
+			event && event.stopPropagation();
+			vm.isShowingDatePicker = !vm.isShowingDatePicker;
+		};
+
+		vm.gotoPreviousDate = function() {
+			vm.pickDate = moment(vm.pickDate).add(-1, 'days');
+			vm.switchDate();
+		};
+
+		vm.gotoNextDate = function() {
+			vm.pickDate = moment(vm.pickDate).add(1, 'days');
+			vm.switchDate();
+		};
+
 		vm.selectToday = function() {
 			vm.pickDate = resetHoursToMidnight(new Date());
-			vm.ngModel.$setViewValue(vm.pickDate);
+
+			vm.switchDate();
 		};
 
 		function onChangeForDatePicker() {

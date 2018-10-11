@@ -366,6 +366,7 @@
 				$scope.singleDate = new Date();
 				$scope.singleDate2 = new Date();
 				$scope.singleDate3 = new Date();
+				$scope.singleDate4 = new Date();
 				$scope.customValidateForDatePicker = function(date) {
 					if (moment(date).diff(moment(), 'days') < 0) {
 						return '[custom validation]: can not select dates before today';
