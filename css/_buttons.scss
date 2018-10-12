@@ -164,7 +164,8 @@
 	border: 1px solid $gray012;
 
 	&:hover {
-		background-color: $hover;
+		color: $primary;
+		border-color: $primary;
 	}
 }
 
@@ -174,7 +175,8 @@
 	border: 1px solid $primary;
 
 	&:hover {
-		background-color: $hover;
+		background-color: $secondary;
+		border-color: $secondary;
 	}
 }
 
