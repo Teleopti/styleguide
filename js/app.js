@@ -18,7 +18,7 @@
 			'ui.bootstrap.persian.datepicker',
 			'wfm.cardList',
 			'wfm.timerangepicker',
-			'wfm.daterangepicker',
+			'wfm.oldDateRangePicker',
 			'wfm.workingHoursPicker',
 			'ngAnimate',
 			'wfm.pagination',
