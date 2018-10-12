@@ -160,7 +160,8 @@
 
 .wfm-btn-invis-default {
 	color: $text-color-standard;
-	background-color: transparent;
+	background-color: $white;
+	border: 1px solid $gray012;
 
 	&:hover {
 		background-color: $hover;
@@ -168,8 +169,9 @@
 }
 
 .wfm-btn-invis-primary {
-	color: $primary;
-	background-color: transparent;
+	color: $white;
+	background-color: $primary;
+	border: 1px solid $primary;
 
 	&:hover {
 		background-color: $hover;
@@ -200,7 +202,8 @@
 .wfm-btn-invis-primary[disabled],
 .wfm-btn-invis-disabled {
 	color: $text-color-muted;
-	background-color: transparent;
+	background-color: $gray-300;
+	border: 1px solid $gray012;
 
 	&:hover {
 		cursor: not-allowed;
@@ -212,7 +215,7 @@
 .wfm-btn-primary-disabled,
 .context-menu[disabled] {
 	color: $text-color-muted;
-	background-color: $hover;
+	background-color: $gray-300;
 	box-shadow: none;
 
 	&:hover {
