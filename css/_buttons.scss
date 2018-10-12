@@ -116,24 +116,23 @@
 //Styleguide 1.15
 //
 
-.context-loading{
-	border-top: 3px solid $gray012!important;
-	border-right: 3px solid $gray012!important;
-	border-bottom: 3px solid $gray012!important;
-	border-left: 3px solid $secondary!important;
+.context-loading {
+	border-top: 3px solid $gray012 !important;
+	border-right: 3px solid $gray012 !important;
+	border-bottom: 3px solid $gray012 !important;
+	border-left: 3px solid $secondary !important;
 	animation: rotate 1s;
 	animation-iteration-count: infinite;
-	animation-timing-function:ease-in-out;
-	animation-play-state:running;
+	animation-timing-function: ease-in-out;
+	animation-play-state: running;
 	animation-fill-mode: forwards;
-	box-shadow: none!important;
-	margin:0;
-	margin:0!important;
+	box-shadow: none !important;
+	margin: 0;
+	margin: 0 !important;
 	transition: none;
 	transform: rotate(0deg) scale(0.85);
 
-
-	i{
+	i {
 		opacity: 0;
 	}
 }
@@ -147,30 +146,34 @@
 }
 
 .wfm-btn {
+	display: inline-block;
+	line-height: 32px;
 	border: none;
-	padding: $full-padding*2;
+	padding: 0 15px;
 	margin: $full-padding;
 	cursor: pointer;
-	border-radius: $half-padding;
+	border-radius: 4px;
 	transition: $transition-timing;
-	text-decoration:none!important;
-	text-transform: uppercase;
+	text-decoration: none;
+	text-transform: none;
 }
 
 .wfm-btn-invis-default {
 	color: $text-color-standard;
-	background-color: transparent;
+	background-color: $white;
+	border: 1px solid $gray012;
 
-	&:hover{
+	&:hover {
 		background-color: $hover;
 	}
 }
 
 .wfm-btn-invis-primary {
-	color: $secondary;
-	background-color: transparent;
+	color: $white;
+	background-color: $primary;
+	border: 1px solid $primary;
 
-	&:hover{
+	&:hover {
 		background-color: $hover;
 	}
 }
@@ -180,17 +183,17 @@
 	background-color: $white;
 	@extend .material-depth-1;
 
-	&:hover{
+	&:hover {
 		@extend .material-depth-2;
 	}
 }
 
 .wfm-btn-primary {
-	color: $text-color-standard;
-	background-color: $secondary;
+	color: $white;
+	background-color: $primary;
 	@extend .material-depth-1;
 
-	&:hover{
+	&:hover {
 		@extend .material-depth-2;
 	}
 }
@@ -199,9 +202,10 @@
 .wfm-btn-invis-primary[disabled],
 .wfm-btn-invis-disabled {
 	color: $text-color-muted;
-	background-color: transparent;
+	background-color: $gray-300;
+	border: 1px solid $gray012;
 
-	&:hover{
+	&:hover {
 		cursor: not-allowed;
 	}
 }
@@ -209,12 +213,12 @@
 .wfm-btn-default[disabled],
 .wfm-btn-primary[disabled],
 .wfm-btn-primary-disabled,
-.context-menu[disabled]{
+.context-menu[disabled] {
 	color: $text-color-muted;
-	background-color: $hover;
+	background-color: $gray-300;
 	box-shadow: none;
 
-	&:hover{
+	&:hover {
 		cursor: not-allowed;
 		box-shadow: none;
 	}
@@ -222,58 +226,57 @@
 
 .wfm-fab {
 	border: none;
-	margin:$full-padding;
+	margin: $full-padding;
 	cursor: pointer;
-	padding:15px;
-	line-height:16px!important;
-	background-color:$secondary;
-	color:$text-color-standard;
-	text-align:center;
+	padding: 15px;
+	line-height: 16px !important;
+	background-color: $secondary;
+	color: $text-color-standard;
+	text-align: center;
 	border-radius: 50%;
 	transition: $transition-timing;
-	text-decoration:none!important;
+	text-decoration: none !important;
 
-	&.mini{
-		padding: 8px!important;
+	&.mini {
+		padding: 8px !important;
 		max-height: 34px;
 	}
 
-	&:hover{
+	&:hover {
 		@extend .material-depth-2;
 	}
 }
 
-.wfm-fab.success{
+.wfm-fab.success {
 	background-color: $green-100;
-	color:$gray087;
+	color: $gray087;
 }
-.wfm-fab.info{
+.wfm-fab.info {
 	background-color: $purple-500;
-	color:$white;
+	color: $white;
 }
 
 .grow-out {
-	animation:grow 600ms;
-	animation-timing-function:cubic-bezier(.33,.11,.02,.99);
-	animation-play-state:running;
-	-webkit-animation:grow 600ms;
+	animation: grow 600ms;
+	animation-timing-function: cubic-bezier(0.33, 0.11, 0.02, 0.99);
+	animation-play-state: running;
+	-webkit-animation: grow 600ms;
 	-webkit-animation-fill-mode: forwards;
 	animation-fill-mode: forwards;
-	-webkit-animation-timing-function:cubic-bezier(.33,.11,.02,.99);
-	-webkit-animation-play-state:running;
+	-webkit-animation-timing-function: cubic-bezier(0.33, 0.11, 0.02, 0.99);
+	-webkit-animation-play-state: running;
 }
 
 .shrink-in {
-	animation:shrink 600ms;
-	animation-timing-function:cubic-bezier(.33,.11,.02,.99);
-	animation-play-state:running;
-	-webkit-animation:shrink 600ms;
+	animation: shrink 600ms;
+	animation-timing-function: cubic-bezier(0.33, 0.11, 0.02, 0.99);
+	animation-play-state: running;
+	-webkit-animation: shrink 600ms;
 	-webkit-animation-fill-mode: forwards;
 	animation-fill-mode: forwards;
-	-webkit-animation-timing-function:cubic-bezier(.33,.11,.02,.99);
-	-webkit-animation-play-state:running;
+	-webkit-animation-timing-function: cubic-bezier(0.33, 0.11, 0.02, 0.99);
+	-webkit-animation-play-state: running;
 }
-
 
 // Button group
 //
@@ -319,20 +322,20 @@
 //Styleguide 1.16
 //
 
-.wfm-btn-group{
+.wfm-btn-group {
 	display: inline-block;
 	margin: $full-padding;
-	.wfm-btn{
-		margin: 0!important;
+	.wfm-btn {
+		margin: 0 !important;
 		box-shadow: none;
 		border-radius: 0;
 	}
-	.first{
-		border-top-left-radius: 3px;
-		border-bottom-left-radius: 3px;
+	.first {
+		border-top-left-radius: 4px;
+		border-bottom-left-radius: 4px;
 	}
-	.last{
-		border-top-right-radius: 3px;
-		border-bottom-right-radius: 3px;
+	.last {
+		border-top-right-radius: 4px;
+		border-bottom-right-radius: 4px;
 	}
 }
