@@ -12,9 +12,9 @@ select {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	background: none;
-	line-height: 1;
+	line-height: 32px;
 	cursor: pointer;
-	height: 22px;
+	height: 32px;
 	padding: 4px 11px;
 	border-radius: 4px;
 
@@ -211,22 +211,10 @@ input:-ms-input-placeholder {
 	input,
 	select {
 		max-width: 100%;
-		margin-right: 100%;
 	}
 
 	input > .ng-invalid {
 		border-bottom: 5px solid red !important;
-	}
-
-	input[type='text'],
-	input[type='number'],
-	input[type='password'],
-	input[type='email'] {
-		padding: 0 0 0 4px !important;
-	}
-
-	select {
-		padding: 0 0 0 0;
 	}
 
 	.form-input-message {
@@ -292,16 +280,7 @@ input:-ms-input-placeholder {
 }
 
 md-select:not([disabled]) .md-select-value {
-	border: 1px solid $hover;
-	color: $text-color-standard;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	background: none;
-	line-height: 1;
 	cursor: pointer;
-	height: 22px;
-	padding: 4px 11px;
-	border-radius: 4px;
 }
 
 md-select:not([disabled]):focus .md-select-value {
@@ -309,6 +288,16 @@ md-select:not([disabled]):focus .md-select-value {
 	border: 1px solid $primary;
 	box-shadow: 0 0 0 2px rgba($primary, 0.2);
 	padding: 4px 11px;
+}
+
+md-select[disabled] .md-select-value {
+	color: $text-color-muted;
+	background-color: $gray-300;
+	border: 1px solid $gray012;
+
+	&:hover {
+		cursor: not-allowed;
+	}
 }
 
 .md-select-value > span:not(.md-select-icon) {
@@ -344,8 +333,21 @@ md-select {
 		color: inherit !important;
 	}
 
+	.md-select-value.md-select-placeholder {
+		padding: 4px 11px;
+	}
+
 	.md-select-value {
-		border-color: $text-color-muted;
+		box-sizing: border-box;
+		border: 1px solid $hover;
+		color: $text-color-standard;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		background: none;
+		line-height: 32px;
+		height: 32px;
+		padding: 4px 11px;
+		border-radius: 4px;
 	}
 
 	.md-select-placeholder,
