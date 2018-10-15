@@ -14,13 +14,13 @@
   <meta name="description" content="Teleopti WFM Styleguide">
   <meta name="generator" content="kss-node">
   <meta name="viewport" content="width=device-width">
-  <link type="text/css" rel="stylesheet" href="./public/kss.css" />
-  <link type="text/css" rel="stylesheet" href="./dist/dependencies.min.css" />
-  <link type="text/css" rel="stylesheet" href="./dist/main.min.css" />
-  <script src="./dist/dependencies.min.js"></script>
-  <script src="./dist/templates.js"></script>
-  <script src="./dist/wfmdirectives.min.js"></script>
-  <script src="./dist/main.min.js"></script> {{{styles}}}
+  <link type="text/css" rel="stylesheet" href="public/kss.css" />
+  <link type="text/css" rel="stylesheet" href="dependencies.min.css" />
+  <link type="text/css" rel="stylesheet" href="css/main.min.css" />
+  <script src="dependencies.min.js"></script>
+  <script src="js/templates.js"></script>
+  <script src="js/wfmdirectives.min.js"></script>
+  <script src="main.min.js"></script> {{{styles}}}
 
   <style>
     #ribbon {
@@ -75,7 +75,7 @@
         </li>
         {{/eachRoot}}
       </ul>
-      <br/>
+      <br />
     </nav>
   </div>
   {{/if}}
@@ -158,7 +158,8 @@
           <div class="panel material-depth-1">
             <div class="con-row">
               <div class="con-flex">
-                <input autofocus autocomplete="off" type="text" ng-model="search.Name" placeholder="Search styleguide"> {{#eachRoot}} {{#eachSection reference}} {{#ifDepth 2}}
+                <input autofocus autocomplete="off" type="text" ng-model="search.Name" placeholder="Search styleguide">
+                {{#eachRoot}} {{#eachSection reference}} {{#ifDepth 2}}
                 <div ng-init="addItemToList('section-{{../../referenceURI}}.html#kssref-{{referenceURI}}', '{{header}}')"></div>
                 {{/ifDepth}} {{/eachSection}} {{/eachRoot}}
               </div>
@@ -167,7 +168,8 @@
               <ul class="wfm-list" style="width:100%;" ng-if="search.Name.length>0" ng-cloak>
                 <div ng-repeat="searchItem in menuItems | filter:search as results" ng-bind-html="searchItem.Link"></div>
                 <a ng-hide="results.length" href="https://github.com/Teleopti/styleguide/issues">
-                  <li>Thats not in the styleguide yet! If you want it to be you can click here and add it to our to-do list.</li>
+                  <li>Thats not in the styleguide yet! If you want it to be you can click here and add it to our to-do
+                    list.</li>
                 </a>
               </ul>
             </div>
@@ -214,7 +216,8 @@
   </article>
   {{else}}
   <article role="main" class="kss-main">
-    {{! Display each section, in order. The "root" element comes first in this loop, and can be detected using the "#ifDepth
+    {{! Display each section, in order. The "root" element comes first in this loop, and can be detected using the
+    "#ifDepth
     1" block as seen below. }} {{#eachSection rootName}} {{#ifDepth 1}}
     <div id="kssref-{{referenceURI}}" class="kss-section section-hero kss-section--depth-{{depth}}">
       {{else}}
@@ -222,11 +225,11 @@
         {{/ifDepth}}
 
         <div class="kss-style">
-          <h{{depth}} class="kss-title kss-title--level-{{depth}}">
+          <h {{depth}} class="kss-title kss-title--level-{{depth}}">
             <a class="kss-title__permalink">
               {{header}}
             </a>
-          </h{{depth}}>
+          </h {{depth}}>
           <small class="kss-title__ref">{{#ifNumeric reference}}{{reference}} {{else}}{{autoincrement}}{{/ifNumeric}}</small>
 
           {{#if parameters}}

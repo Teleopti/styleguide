@@ -1,6 +1,6 @@
 {
 	"name": "teleopti-styleguide",
-	"version": "1.23.2",
+	"version": "1.24.0",
 	"repository": {
 		"type": "git",
 		"url": "git://github.com/Teleopti/styleguide.git"
@@ -9,9 +9,9 @@
 		"precommit": "pretty-quick --staged",
 		"test": "grunt test",
 		"start": "grunt",
-		"devServer": "http-server styleguide -p 3000 -c-1",
+		"devServer": "http-server dist -p 3000 -c-1",
 		"dist": "grunt dist",
-		"kss": "kss-node css styleguide css/styleguide.md --template kss-template --verbose"
+		"kss": "kss-node src/css dist/ src/css/styleguide.md --template kss-template --verbose"
 	},
 	"description": "Styleguide for Teleopti",
 	"author": "Teleopti",
