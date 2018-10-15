@@ -12,7 +12,7 @@ module.exports = function(config) {
 
 		// list of files / patterns to load in the browser
 		files: [
-			'styleguide/dist/dependencies.min.js',
+			'dist/dependencies.min.js',
 			'node_modules/angular-mocks/angular-mocks.js',
 			{
 				pattern: 'node_modules/angular-i18n/angular-locale_*.js',
@@ -20,8 +20,8 @@ module.exports = function(config) {
 				included: false,
 				served: true
 			},
-			'styleguide/dist/templates.js',
-			'directives/**/*.js'
+			'dist/js/templates.js',
+			'src/directives/**/*.js'
 		],
 
 		// list of files to exclude
