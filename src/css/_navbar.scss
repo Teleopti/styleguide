@@ -1,0 +1,314 @@
+﻿//View headers
+//
+//A view header should be the first element in your view to help orientate the user. If needed you can add a global floating action button (fab) to it. If you do, add the class 'with-fab' to the header.
+//It can also have a description, if so, add the class 'with-desc' and a descriptive text in a p tag.
+//
+//Note: The view header is a uniqe element in the view and not part of any other panel or element.
+//
+//Markup:
+//<h3>With fab and description</h3>
+//	<div class="view-header with-fab with-desc">
+//		<div class="view-title">
+//			<h1><i class="mdi mdi-account"></i> First header title</h1>
+//			<p>Optional description of the view goes here.</p>
+//		</div>
+//		<div class="fab-wrapper">
+//			<button class="wfm-fab  material-depth-1"><i class="mdi mdi-plus"></i>
+//				<md-tooltip>Add something</md-tooltip>
+//			</button>
+//		</div>
+//	</div>
+//<h3>With only fab</h3>
+//	<div class="view-header with-fab">
+//		<div class="view-title">
+//			<h1><i class="mdi mdi-account"></i> Second header title</h1>
+//		</div>
+//		<div class="fab-wrapper">
+//			<button class="wfm-fab  material-depth-1"><i class="mdi mdi-plus"></i>
+//				<md-tooltip>Add something</md-tooltip>
+//			</button>
+//		</div>
+//	</div>
+//<h3>Without fab and desc</h3>
+//	<div class="view-header">
+//		<div class="view-title">
+//			<h1><i class="mdi mdi-account"></i> Third header title</h1>
+//		</div>
+//	</div>
+//
+//Styleguide 1.3
+//
+
+.view-header {
+	width: 100%;
+	display: inline-flex;
+	display: -ms-inline-flexbox;
+}
+.view-title {
+	width: 90%;
+}
+
+.with-fab {
+	padding-bottom: 15px;
+}
+
+.with-desc {
+	padding-bottom: 0;
+}
+
+.fab-wrapper {
+	width: 10%;
+	z-index: 20;
+
+	.wfm-fab {
+		margin-top: -3px;
+		position: relative;
+	}
+}
+
+.head-actions {
+	float: right;
+	margin-top: -10px;
+}
+
+.sub-header {
+	padding: $full-padding;
+	padding-top: $full-padding * 2;
+	color: $text-color-standard;
+	margin-bottom: $full-padding;
+
+	h2 {
+		margin: 0 !important;
+	}
+}
+
+.bottom-header {
+	padding: $full-padding;
+	background-color: $blue-100;
+	color: $text-color-standard;
+	border-bottom: 1px solid $gray012;
+}
+
+.sidenav-header {
+	padding: $full-padding * 2 $full-padding !important;
+	background-color: $white;
+	color: $text-color-standard;
+	border-bottom: 1px solid $gray012;
+	overflow: hidden;
+	position: relative;
+	display: flex;
+	display: -ms-flexbox;
+
+	&:hover {
+		background: $gray012;
+	}
+}
+
+.toolbar {
+	margin-bottom: $full-padding;
+}
+
+.navbar {
+	background-color: $blue-500;
+	border-radius: 0;
+	border: none;
+	margin-bottom: 0;
+
+	a {
+		text-decoration: none;
+		display: inline-block;
+	}
+
+	i {
+		color: $white;
+	}
+
+	.brand {
+		color: $white !important;
+		font-weight: bold;
+		font-size: 18px;
+		cursor: pointer;
+		margin-left: 35px;
+	}
+
+	.content {
+		height: 22px;
+		padding: 15px;
+		line-height: 20px;
+		width: 98%;
+		box-sizing: content-box !important;
+	}
+
+	.wfm-container {
+		padding-left: $full-padding;
+	}
+
+	i {
+		color: $white;
+		vertical-align: middle;
+	}
+
+	.navbar-search {
+		background: $white;
+		padding: 10px;
+	}
+
+	.card-context {
+		margin: 5px 0;
+	}
+}
+
+.result-icon i {
+	color: white !important;
+	padding: 0px !important;
+	margin: 0px !important;
+}
+
+.navbar-left {
+	float: none !important;
+	margin-left: $full-padding;
+	line-height: 25px;
+	max-height: 35px;
+}
+
+.navbar-right {
+	font-size: $standard-font-size !important;
+	float: right;
+	margin-right: 0;
+
+	input[type='text'] {
+		line-height: initial !important;
+	}
+
+	button {
+		padding: 0 0 !important;
+	}
+}
+
+/*search*/
+.global-search {
+	font-size: $standard-font-size !important;
+	padding-left: 5px;
+	width: 13rem;
+	transition: $transition-timing;
+
+	&:focus {
+		width: 27rem;
+	}
+}
+
+.search-results {
+	position: relative;
+	width: auto;
+	font-size: $standard-font-size;
+	display: block;
+	max-height: 75%;
+	overflow-y: auto;
+	margin: 5px 23px;
+	background: $white;
+	-webkit-transition: 0.5s all 0.5s ease-in;
+	-moz-transition: 0.5s all 0.5s ease-in;
+	-ms-transition: 0.5s all 0.5s ease-in;
+	-o-transition: 0.5s all 0.5s ease-in;
+	transition: 0.5s all 0.5s ease-in;
+	opacity: 1;
+}
+
+.global-search:not(:focus) ~ .search-results {
+	-webkit-transition: all 0s;
+	-moz-transition: all 0s;
+	-ms-transition: all 0s;
+	-o-transition: all 0s;
+	transition: all 0s;
+	opacity: 0;
+}
+
+.nav-context-menu {
+	position: relative;
+	cursor: pointer;
+	background: transparent;
+	border: none;
+
+	[class*='context-menu-'] {
+		transition: $transition-timing;
+		@extend .material-depth-2;
+		position: absolute;
+		opacity: 0;
+		visibility: hidden;
+		min-width: 200px;
+	}
+
+	&:focus {
+		box-shadow: none !important;
+
+		[class*='context-menu-'] {
+			visibility: visible;
+			opacity: 1;
+			z-index: 10;
+		}
+
+		i {
+			color: $gray054 !important;
+		}
+	}
+
+	.context-content {
+		color: $gray087;
+		padding: $full-padding;
+		text-align: left !important;
+		background: $white;
+		min-width: 300px;
+		box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2) !important;
+		text-transform: initial;
+
+		p,
+		li {
+			font-size: $standard-font-size !important;
+		}
+
+		.description {
+			padding-left: 5px;
+		}
+
+		footer {
+			text-align: right;
+		}
+	}
+
+	.arrow-up {
+		width: 0;
+		height: 0;
+		float: right;
+		margin-top: -15px !important;
+		border-left: 12px solid transparent;
+		border-right: 12px solid transparent;
+		border-bottom: 15px solid white;
+	}
+
+	.nav-context-menu-left {
+		top: 100%;
+		right: 100%;
+		margin: 20px -22px 0 0;
+		text-transform: lowercase;
+
+		&:before {
+			left: 100%;
+			margin-top: $full-padding * 2;
+		}
+	}
+}
+
+.notification-ticker {
+	color: white;
+	font-size: 50%;
+	background: orange;
+	border-radius: 5px;
+	margin-top: -40px;
+	padding: -1px 1px 0 0;
+	z-index: 55;
+	text-align: center;
+}
+
+.nav-item-wrap {
+	text-decoration: none !important;
+}
