@@ -2,7 +2,7 @@ describe('date-range-picker directive', function() {
 	var elementCompile, scope, $rootScope, $compile;
 
 	beforeEach(function() {
-		module('wfm.daterangepicker');
+		module('wfm.oldDateRangePicker');
 	});
 
 	beforeEach(

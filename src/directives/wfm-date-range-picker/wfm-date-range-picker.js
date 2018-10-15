@@ -18,10 +18,12 @@
 			controller: 'wfmDateRangePickerController',
 			controllerAs: 'vm',
 			bindings: {
-				showWeek: '<',
-				disable: '@',
-				intervalRule: '@',
-				customValidate: '&'
+				showWeek: '<?',
+				disable: '@?',
+				intervalRule: '@?',
+				customValidate: '&?',
+				onDateChange: '&?',
+				popupMode: '<?'
 			}
 		})
 		.controller('wfmDateRangePickerController', wfmDateRangePickerController);
@@ -36,6 +38,7 @@
 		vm.pickEndDate = null;
 		vm.isPickingStartDate = false;
 		vm.isPickingEndDate = false;
+		vm.isShowingDatePicker = false;
 
 		vm.validate = undefined;
 
@@ -48,6 +51,22 @@
 			vm.ngModel.$viewChangeListeners.push(onChangeForDateRangePicker);
 			vm.ngModel.$render = onChangeForDateRangePicker;
 			initDateRangePicker();
+		};
+
+		vm.toggleDatePicker = function(event) {
+			event && event.preventDefault();
+			event && event.stopPropagation();
+			vm.isShowingDatePicker = !vm.isShowingDatePicker;
+		};
+
+		vm.gotoPreviousDate = function() {
+			vm.pickDate = moment(vm.pickDate).add(-1, 'days');
+			vm.switchDate();
+		};
+
+		vm.gotoNextDate = function() {
+			vm.pickDate = moment(vm.pickDate).add(1, 'days');
+			vm.switchDate();
 		};
 
 		vm.resetDate = function() {
@@ -179,7 +198,9 @@
 		function onChangeForDateRangePicker() {
 			var oldVal = [angular.copy(vm.pickStartDate), angular.copy(vm.pickEndDate)];
 			var newVal = fetchNgModelDateForDateRangePicker();
-			return vm.displayCalenderView(oldVal, newVal);
+			vm.displayCalenderView(oldVal, newVal);
+
+			vm.onDateChange && vm.onDateChange({ startDate: vm.pickStartDate, endDate: vm.pickEndDate });
 		}
 
 		function fetchNgModelDateForDateRangePicker() {
