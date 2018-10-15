@@ -156,11 +156,6 @@
 	transition: $transition-timing;
 	text-decoration: none;
 	text-transform: none;
-
-	&.wfm-btn-sm {
-		line-height: 1;
-		padding: 4px;
-	}
 }
 
 .wfm-btn-invis-default {
@@ -332,7 +327,6 @@
 .wfm-btn-group {
 	display: inline-block;
 	margin: $full-padding;
-	border-radius: 4px;
 	.wfm-btn {
 		margin: 0 !important;
 		box-shadow: none;
