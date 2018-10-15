@@ -168,7 +168,7 @@
 	background-color: $white;
 	border: 1px solid $gray012;
 
-	&:hover {
+	&:not([disabled]):hover {
 		color: $primary;
 		border-color: $primary;
 	}
@@ -179,7 +179,7 @@
 	background-color: $primary;
 	border: 1px solid $primary;
 
-	&:hover {
+	&:not([disabled]):hover {
 		background-color: $secondary;
 		border-color: $secondary;
 	}
