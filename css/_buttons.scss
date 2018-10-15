@@ -147,6 +147,7 @@
 
 .wfm-btn {
 	display: inline-block;
+	height: 32px;
 	line-height: 32px;
 	border: none;
 	padding: 0 15px;
@@ -156,6 +157,15 @@
 	transition: $transition-timing;
 	text-decoration: none;
 	text-transform: none;
+
+	&.wfm-btn-sm {
+		line-height: 1;
+		padding: 5px;
+	}
+
+	> .mdi {
+		line-height: 1;
+	}
 }
 
 .wfm-btn-invis-default {
