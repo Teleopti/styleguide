@@ -147,6 +147,7 @@
 
 .wfm-btn {
 	display: inline-block;
+	height: 32px;
 	line-height: 32px;
 	border: none;
 	padding: 0 15px;
@@ -159,7 +160,11 @@
 
 	&.wfm-btn-sm {
 		line-height: 1;
-		padding: 4px;
+		padding: 5px;
+	}
+
+	> .mdi {
+		line-height: 1;
 	}
 }
 
