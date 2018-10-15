@@ -20,10 +20,10 @@ describe('Wfm date range picker basics', function() {
 			'December'
 		],
 		preSetLength = 14,
-		pickerWithPresetDateRange,
-		calendarView,
+		calendarViewElement,
+		selectedDateRangeElement,
 		fakeToday = new Date(2018, 0, 1),
-		data;
+		dateRange;
 
 	beforeEach(function() {
 		module(
@@ -44,19 +44,6 @@ describe('Wfm date range picker basics', function() {
 			$compile = _$compile_;
 			$rootScope = _$rootScope_;
 		});
-
-		data = {
-			startDate: moment(fakeToday).toDate(),
-			endDate: moment(fakeToday)
-				.add(preSetLength - 1, 'day')
-				.toDate()
-		};
-
-		$rootScope.data = data;
-
-		pickerWithPresetDateRange = setupPicker('ng-model="data"');
-		vm = pickerWithPresetDateRange.find('wfm-date-range-picker-header').scope().vm;
-		calendarView = pickerWithPresetDateRange.find('table')[0];
 	});
 
 	afterEach(function() {
@@ -68,16 +55,28 @@ describe('Wfm date range picker basics', function() {
 		attachedElements = [];
 	});
 
-	function setupPicker(attrs, scope, optCompileOpts) {
-		var el;
-		var template = '' + '<wfm-date-range-picker ' + (attrs || '') + '>' + '</wfm-date-range-picker>';
+	function setupPicker(template) {
+		dateRange = {
+			startDate: moment(fakeToday).toDate(),
+			endDate: moment(fakeToday)
+				.add(preSetLength - 1, 'day')
+				.toDate()
+		};
 
-		el = $compile(template)(scope || $rootScope);
+		$rootScope.dateRange = dateRange;
+		$rootScope.customValidateForDateRangePicker = function(dateRange) {
+			if (moment(dateRange.endDate).diff(moment(dateRange.startDate), 'days') > 7) {
+				return '[custom validation]: your end date is 7 days later than your start date';
+			}
+		};
 
+		var element = $compile(template)($rootScope);
 		$rootScope.$digest();
-		attachedElements.push(el);
+		attachedElements.push(element);
 
-		return el;
+		vm = element.find('wfm-date-range-picker-header').scope().vm;
+		selectedDateRangeElement = element[0].getElementsByClassName('wfm-datepicker-text')[0];
+		calendarViewElement = element.find('table')[0];
 	}
 
 	function FakeCurrentUserInfo() {
@@ -89,11 +88,15 @@ describe('Wfm date range picker basics', function() {
 	}
 
 	it('should be able to prepare data form other controller to component while picker was init', function() {
-		expect(vm.pickStartDate).toEqual(data.startDate);
-		expect(vm.pickEndDate).toEqual(data.endDate);
+		setupPicker('<wfm-date-range-picker ng-model="dateRange"></wfm-date-range-picker>');
+
+		expect(vm.pickStartDate).toEqual(dateRange.startDate);
+		expect(vm.pickEndDate).toEqual(dateRange.endDate);
 	});
 
 	it('should reset hours, minutes and seconds to 0 for selected date', function() {
+		setupPicker('<wfm-date-range-picker ng-model="dateRange"></wfm-date-range-picker>');
+
 		expect(vm.pickStartDate.getHours()).toEqual(0);
 		expect(vm.pickStartDate.getMinutes()).toEqual(0);
 		expect(vm.pickStartDate.getSeconds()).toEqual(0);
@@ -103,20 +106,26 @@ describe('Wfm date range picker basics', function() {
 	});
 
 	it('should be able to reset startDate from component', function() {
+		setupPicker('<wfm-date-range-picker ng-model="dateRange"></wfm-date-range-picker>');
+
 		vm.resetStartDate();
 
 		expect(vm.pickStartDate).toEqual(null);
-		expect(vm.pickEndDate).toEqual(data.endDate);
+		expect(vm.pickEndDate).toEqual(dateRange.endDate);
 	});
 
 	it('should be able to reset endDate from component', function() {
+		setupPicker('<wfm-date-range-picker ng-model="dateRange"></wfm-date-range-picker>');
+
 		vm.resetEndDate();
 
-		expect(vm.pickStartDate).toEqual(data.startDate);
+		expect(vm.pickStartDate).toEqual(dateRange.startDate);
 		expect(vm.pickEndDate).toEqual(null);
 	});
 
 	it('should keep end date when picked start date is earlier than previous start date', function() {
+		setupPicker('<wfm-date-range-picker ng-model="dateRange"></wfm-date-range-picker>');
+
 		vm.resetStartAndEndDate();
 
 		vm.startToSelectStartDate();
@@ -136,6 +145,8 @@ describe('Wfm date range picker basics', function() {
 	});
 
 	it('should keep start date when picked end date is later than previous end date', function() {
+		setupPicker('<wfm-date-range-picker ng-model="dateRange"></wfm-date-range-picker>');
+
 		vm.resetStartAndEndDate();
 
 		vm.startToSelectStartDate();
@@ -155,6 +166,8 @@ describe('Wfm date range picker basics', function() {
 	});
 
 	it('should reset start date when picked end date is earlier than start date', function() {
+		setupPicker('<wfm-date-range-picker ng-model="dateRange"></wfm-date-range-picker>');
+
 		vm.resetStartAndEndDate();
 
 		vm.startToSelectStartDate();
@@ -170,6 +183,8 @@ describe('Wfm date range picker basics', function() {
 	});
 
 	it('should reset end date when picked start date is later than end date', function() {
+		setupPicker('<wfm-date-range-picker ng-model="dateRange"></wfm-date-range-picker>');
+
 		vm.resetStartAndEndDate();
 
 		vm.startToSelectStartDate();
@@ -189,8 +204,10 @@ describe('Wfm date range picker basics', function() {
 	});
 
 	it('should be able to show selected end date on calendar view while start date is set to null', function() {
+		setupPicker('<wfm-date-range-picker ng-model="dateRange"></wfm-date-range-picker>');
+
 		vm.resetStartDate();
-		var range = calendarView.getElementsByClassName('in-date-range');
+		var range = calendarViewElement.getElementsByClassName('in-date-range');
 
 		expect(vm.pickStartDate).toEqual(null);
 		expect(vm.pickEndDate).not.toEqual(null);
@@ -199,8 +216,10 @@ describe('Wfm date range picker basics', function() {
 	});
 
 	it('should be able to show selected start date on calendar view while end date is set to null', function() {
+		setupPicker('<wfm-date-range-picker ng-model="dateRange"></wfm-date-range-picker>');
+
 		vm.resetEndDate();
-		var range = calendarView.getElementsByClassName('in-date-range');
+		var range = calendarViewElement.getElementsByClassName('in-date-range');
 
 		expect(vm.pickEndDate).toEqual(null);
 		expect(vm.pickStartDate).not.toEqual(null);
@@ -209,6 +228,8 @@ describe('Wfm date range picker basics', function() {
 	});
 
 	it('should be able to reset to default day of date range on calendar view while start date and end date are both set to null', function() {
+		setupPicker('<wfm-date-range-picker ng-model="dateRange"></wfm-date-range-picker>');
+
 		vm.resetStartDate();
 		vm.resetEndDate();
 
@@ -218,12 +239,14 @@ describe('Wfm date range picker basics', function() {
 	});
 
 	it('should be able to display date range on calendar view while start date and end date are not null', function() {
+		setupPicker('<wfm-date-range-picker ng-model="dateRange"></wfm-date-range-picker>');
+
 		var month = monthNames[vm.pickStartDate.getMonth()];
 		var year = vm.pickStartDate.getFullYear();
 		var startDay = vm.pickStartDate.getDate();
 		var endDay = vm.pickEndDate.getDate();
-		var monthOnCalendar = calendarView.getElementsByTagName('strong')[0].innerHTML;
-		var range = calendarView.getElementsByClassName('in-date-range');
+		var monthOnCalendar = calendarViewElement.getElementsByTagName('strong')[0].innerHTML;
+		var range = calendarViewElement.getElementsByClassName('in-date-range');
 		var rangeStartDate = Math.floor(range[0].getElementsByTagName('span')[0].innerHTML);
 		var rangeEndDate = Math.floor(range[range.length - 1].getElementsByTagName('span')[0].innerHTML);
 
@@ -236,6 +259,8 @@ describe('Wfm date range picker basics', function() {
 	});
 
 	it('should be able to update the display of date range on calendar view while start date is reset and update', function() {
+		setupPicker('<wfm-date-range-picker ng-model="dateRange"></wfm-date-range-picker>');
+
 		var moveDays = 3;
 		vm.resetStartDate();
 		vm.pickDate = moment(fakeToday).add(moveDays, 'day');
@@ -245,15 +270,15 @@ describe('Wfm date range picker basics', function() {
 		var year = vm.pickStartDate.getFullYear();
 		var startDay = vm.pickStartDate.getDate();
 		var endDay = vm.pickEndDate.getDate();
-		var monthOnCalendar = calendarView.getElementsByTagName('strong')[0].innerHTML;
-		var range = calendarView.getElementsByClassName('in-date-range');
+		var monthOnCalendar = calendarViewElement.getElementsByTagName('strong')[0].innerHTML;
+		var range = calendarViewElement.getElementsByClassName('in-date-range');
 		var rangeStartDate = Math.floor(range[0].getElementsByTagName('span')[0].innerHTML);
 		var rangeEndDate = Math.floor(range[range.length - 1].getElementsByTagName('span')[0].innerHTML);
 
 		expect(vm.pickStartDate).not.toEqual(null);
-		expect(vm.pickStartDate).not.toEqual(data.startDate);
+		expect(vm.pickStartDate).not.toEqual(dateRange.startDate);
 		expect(vm.pickEndDate).not.toEqual(null);
-		expect(vm.pickEndDate).toEqual(data.endDate);
+		expect(vm.pickEndDate).toEqual(dateRange.endDate);
 		expect(monthOnCalendar).toEqual(month + ' ' + year);
 		expect(range.length).toEqual(preSetLength - moveDays);
 		expect(rangeStartDate).toEqual(startDay);
@@ -261,6 +286,8 @@ describe('Wfm date range picker basics', function() {
 	});
 
 	it('should be able to update the display of date range on calendar view while end date is reset and update', function() {
+		setupPicker('<wfm-date-range-picker ng-model="dateRange"></wfm-date-range-picker>');
+
 		var moveDays = 3;
 		vm.resetEndDate();
 		vm.startToSelectEndDate();
@@ -271,15 +298,15 @@ describe('Wfm date range picker basics', function() {
 		var year = vm.pickStartDate.getFullYear();
 		var startDay = vm.pickStartDate.getDate();
 		var endDay = vm.pickEndDate.getDate();
-		var monthOnCalendar = calendarView.getElementsByTagName('strong')[0].innerHTML;
-		var range = calendarView.getElementsByClassName('in-date-range');
+		var monthOnCalendar = calendarViewElement.getElementsByTagName('strong')[0].innerHTML;
+		var range = calendarViewElement.getElementsByClassName('in-date-range');
 		var rangeStartDate = Math.floor(range[0].getElementsByTagName('span')[0].innerHTML);
 		var rangeEndDate = Math.floor(range[range.length - 1].getElementsByTagName('span')[0].innerHTML);
 
 		expect(vm.pickStartDate).not.toEqual(null);
-		expect(vm.pickStartDate).toEqual(data.startDate);
+		expect(vm.pickStartDate).toEqual(dateRange.startDate);
 		expect(vm.pickEndDate).not.toEqual(null);
-		expect(vm.pickEndDate).not.toEqual(data.endDate);
+		expect(vm.pickEndDate).not.toEqual(dateRange.endDate);
 		expect(monthOnCalendar).toEqual(month + ' ' + year);
 		expect(range.length).toEqual(preSetLength + moveDays);
 		expect(rangeStartDate).toEqual(startDay);
@@ -287,6 +314,8 @@ describe('Wfm date range picker basics', function() {
 	});
 
 	it('should be able to auto update new start date after both start date and end date are set to none', function() {
+		setupPicker('<wfm-date-range-picker ng-model="dateRange"></wfm-date-range-picker>');
+
 		vm.resetStartAndEndDate();
 
 		vm.startToSelectStartDate();
@@ -303,12 +332,14 @@ describe('Wfm date range picker basics', function() {
 	});
 
 	it('should be able to auto update new start date while new pick date is equal to end date', function() {
+		setupPicker('<wfm-date-range-picker ng-model="dateRange"></wfm-date-range-picker>');
+
 		vm.startToSelectStartDate();
 		vm.pickDate = moment(fakeToday)
 			.add(preSetLength - 1, 'day')
 			.toDate();
 		vm.switchDate();
-		var range = calendarView.getElementsByClassName('in-date-range');
+		var range = calendarViewElement.getElementsByClassName('in-date-range');
 
 		expect(vm.pickStartDate).toEqual(vm.pickEndDate);
 		expect(range.length).toEqual(1);
@@ -316,10 +347,12 @@ describe('Wfm date range picker basics', function() {
 	});
 
 	it('should be able to auto update new end date while new pick date is equal to start date', function() {
+		setupPicker('<wfm-date-range-picker ng-model="dateRange"></wfm-date-range-picker>');
+
 		vm.startToSelectEndDate();
 		vm.pickDate = moment(fakeToday);
 		vm.switchDate();
-		var range = calendarView.getElementsByClassName('in-date-range');
+		var range = calendarViewElement.getElementsByClassName('in-date-range');
 
 		expect(vm.pickStartDate).toEqual(vm.pickEndDate);
 		expect(range.length).toEqual(1);
@@ -327,38 +360,44 @@ describe('Wfm date range picker basics', function() {
 	});
 
 	it('should automatically set new start date to null after picked start date is later than end date in disabling end date selection mode', function() {
+		setupPicker('<wfm-date-range-picker ng-model="dateRange"></wfm-date-range-picker>');
+
 		vm.resetStartAndEndDate();
 
-		vm.pickEndDate = data.endDate;
+		vm.pickEndDate = dateRange.endDate;
 		vm.disable = 'end-date';
 
 		vm.startToSelectStartDate();
-		vm.pickDate = moment(data.endDate)
+		vm.pickDate = moment(dateRange.endDate)
 			.add(1, 'day')
 			.toDate();
 		vm.switchDate();
 
-		expect(vm.pickEndDate).toEqual(data.endDate);
+		expect(vm.pickEndDate).toEqual(dateRange.endDate);
 		expect(vm.pickStartDate).toEqual(null);
 	});
 
 	it('should automatically set new end date to null after picked end date is earlier than start date in disabling start date selection mode', function() {
+		setupPicker('<wfm-date-range-picker ng-model="dateRange"></wfm-date-range-picker>');
+
 		vm.resetStartAndEndDate();
 
-		vm.pickStartDate = data.startDate;
+		vm.pickStartDate = dateRange.startDate;
 		vm.disable = 'start-date';
 
 		vm.startToSelectEndDate();
-		vm.pickDate = moment(data.startDate)
+		vm.pickDate = moment(dateRange.startDate)
 			.add(-1, 'day')
 			.toDate();
 		vm.switchDate();
 
-		expect(vm.pickStartDate).toEqual(data.startDate);
+		expect(vm.pickStartDate).toEqual(dateRange.startDate);
 		expect(vm.pickEndDate).toEqual(null);
 	});
 
 	it('should be able to [handle February as special case] and understand the interval length between 2018-01-31 to 2018-02-27 is one month', function() {
+		setupPicker('<wfm-date-range-picker ng-model="dateRange"></wfm-date-range-picker>');
+
 		vm.resetStartAndEndDate();
 
 		vm.startToSelectStartDate();
@@ -373,6 +412,8 @@ describe('Wfm date range picker basics', function() {
 	});
 
 	it('should be able to [handle February as special case] and understand the interval length between 2018-01-28 to 2018-02-27 is one month', function() {
+		setupPicker('<wfm-date-range-picker ng-model="dateRange"></wfm-date-range-picker>');
+
 		/*we dont care the case while the date is end of February since it was very rare and difficult to handle ex: 2018-01-29 to 2018-02-28 is not one month*/
 		vm.resetStartAndEndDate();
 		vm.startToSelectStartDate();
@@ -387,6 +428,8 @@ describe('Wfm date range picker basics', function() {
 	});
 
 	it('should be able to [handle February as special case] and understand the interval length between 2018-02-01 to 2018-02-28 is one month', function() {
+		setupPicker('<wfm-date-range-picker ng-model="dateRange"></wfm-date-range-picker>');
+
 		vm.resetStartAndEndDate();
 		vm.startToSelectStartDate();
 		vm.pickDate = moment([2018, 1, 1]);
@@ -400,6 +443,8 @@ describe('Wfm date range picker basics', function() {
 	});
 
 	it('should be able to [handle February as special case] and understand the interval length between 2018-01-16 to 2018-02-15 is one month', function() {
+		setupPicker('<wfm-date-range-picker ng-model="dateRange"></wfm-date-range-picker>');
+
 		vm.resetStartAndEndDate();
 		vm.startToSelectStartDate();
 		vm.pickDate = moment([2018, 0, 16]);
@@ -413,6 +458,8 @@ describe('Wfm date range picker basics', function() {
 	});
 
 	it('should be able to [handle February as special case] and understand the interval length between 2018-01-16 to 2018-04-15 is three month', function() {
+		setupPicker('<wfm-date-range-picker ng-model="dateRange"></wfm-date-range-picker>');
+
 		vm.resetStartAndEndDate();
 
 		vm.startToSelectStartDate();
@@ -427,6 +474,8 @@ describe('Wfm date range picker basics', function() {
 	});
 
 	it('should be able to [handle February as special case in leap year] and understand the interval length between 2020-01-29 to 2020-02-28 is one month', function() {
+		setupPicker('<wfm-date-range-picker ng-model="dateRange"></wfm-date-range-picker>');
+
 		/*we dont care the case while the date is end of February since it was very rare and difficult to handle ex: 2020-01-30 to 2010-02-29 is not one month*/
 		vm.resetStartAndEndDate();
 
@@ -442,6 +491,8 @@ describe('Wfm date range picker basics', function() {
 	});
 
 	it('should be able to [handle February as special case in leap year] and understand the interval length between 2020-01-31 to 2020-02-28 is one month', function() {
+		setupPicker('<wfm-date-range-picker ng-model="dateRange"></wfm-date-range-picker>');
+
 		vm.resetStartAndEndDate();
 
 		vm.startToSelectStartDate();
@@ -456,6 +507,8 @@ describe('Wfm date range picker basics', function() {
 	});
 
 	it('should be able to [handle February as special case in leap year] and understand the interval length between 2020-02-01 to 2018-02-29 is one month', function() {
+		setupPicker('<wfm-date-range-picker ng-model="dateRange"></wfm-date-range-picker>');
+
 		vm.resetStartAndEndDate();
 
 		vm.startToSelectStartDate();
@@ -467,5 +520,40 @@ describe('Wfm date range picker basics', function() {
 		vm.switchDate();
 
 		expect(vm.dateRangeText.replace(/\s/g, '')).toEqual('1Months');
+	});
+
+	it('should be able to validate date range', function() {
+		setupPicker(
+			'<wfm-date-range-picker ng-model="dateRange" custom-validate="customValidateForDateRangePicker(dateRange)"></wfm-date-range-picker>'
+		);
+
+		vm.resetStartAndEndDate();
+
+		vm.startToSelectStartDate();
+		vm.pickDate = moment('2018-01-01');
+		vm.switchDate();
+
+		vm.startToSelectEndDate();
+		vm.pickDate = moment('2018-01-09');
+		vm.switchDate();
+
+		expect(vm.dateRangeText).toEqual('[custom validation]: your end date is 7 days later than your start date');
+	});
+
+	it('should show select date range for popup date range picker', function() {
+		setupPicker('<wfm-date-range-picker ng-model="dateRange" popup-mode="true"></wfm-date-range-picker>');
+
+		vm.resetStartAndEndDate();
+
+		vm.startToSelectStartDate();
+		vm.pickDate = moment('2018-01-01');
+		vm.switchDate();
+
+		vm.startToSelectEndDate();
+		vm.pickDate = moment('2018-01-09');
+		vm.switchDate();
+
+		expect(selectedDateRangeElement.innerHTML.indexOf('From: January 1, 2018') > -1).toEqual(true);
+		expect(selectedDateRangeElement.innerHTML.indexOf('To: January 9, 2018') > -1).toEqual(true);
 	});
 });
