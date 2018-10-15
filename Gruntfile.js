@@ -19,18 +19,18 @@ module.exports = function(grunt) {
 					'css/*.scss',
 					'css/*.hbs',
 					'css/*.md',
-					'directives/**/*.tpl.html',
-					'directives/**/*.js',
+					'src/directives/**/*.tpl.html',
+					'src/directives/**/*.js',
 					'app.js'
 				],
 				tasks: ['sass:styleguide', 'sass:dist', 'ngtemplates', 'shell', 'cssmin']
 			},
 			watchAll: {
-				files: ['js/**', 'css/**.scss', 'directives/**', 'kss-template/**'],
+				files: ['js/**', 'css/**.scss', 'src/directives/**', 'kss-template/**'],
 				tasks: ['sass:styleguide', 'sass:dist', 'ngtemplates', 'shell', 'cssmin']
 			},
 			test: {
-				files: ['directives/**/*.spec.js'],
+				files: ['src/directives/**/*.spec.js'],
 				tasks: ['uglify', 'karma:continuous']
 			}
 		},
@@ -65,7 +65,7 @@ module.exports = function(grunt) {
 		},
 		ngtemplates: {
 			'styleguide.templates': {
-				src: ['directives/**/*.tpl.html'],
+				src: ['src/directives/**/*.tpl.html'],
 				dest: 'styleguide/dist/templates.js',
 				options: {
 					standalone: true
@@ -118,7 +118,7 @@ module.exports = function(grunt) {
 			}
 		},
 		uglify: {
-			'styleguide/dist/wfmdirectives.min.js': ['directives/**/*.js', '!directives/**/*.spec.js'],
+			'styleguide/dist/wfmdirectives.min.js': ['src/directives/**/*.js', '!src/directives/**/*.spec.js'],
 			'styleguide/dist/main.min.js': 'js/*.js'
 		},
 		copy: {
