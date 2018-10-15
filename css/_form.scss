@@ -344,8 +344,7 @@ md-select {
 		-webkit-appearance: none;
 		-moz-appearance: none;
 		background: none;
-		line-height: 32px;
-		height: 32px;
+		min-height: 32px;
 		padding: 4px 11px;
 		border-radius: 4px;
 	}
@@ -613,10 +612,16 @@ md-select {
 }
 
 md-autocomplete {
+	border: 1px solid $hover;
 	color: $text-color-standard;
-	background: transparent;
-	height: 30px;
-	border-bottom: 1px solid $hover;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background: none;
+	line-height: 32px;
+	cursor: pointer;
+	height: 32px;
+	padding: 4px 11px;
+	border-radius: 4px;
 
 	input:not(.md-input) {
 		padding: 0;
