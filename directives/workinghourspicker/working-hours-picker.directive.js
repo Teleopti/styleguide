@@ -29,6 +29,8 @@
         '$filter',
         '$locale',
         'workingHoursService',
+        'xeditable',
+        'ui.bootstrap',
         function($q, $translate, $filter, $locale, workingHoursPickerService) {
             return {
                 restrict: 'E',

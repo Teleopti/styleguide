@@ -18,7 +18,7 @@
 			'ui.bootstrap.persian.datepicker',
 			'wfm.cardList',
 			'wfm.timerangepicker',
-			'wfm.oldDateRangePicker',
+			'wfm.daterangepicker',
 			'wfm.workingHoursPicker',
 			'ngAnimate',
 			'wfm.pagination',
@@ -349,10 +349,6 @@
 				$scope.dateRange = {
 					startDate: new Date(),
 					endDate: new Date()
-				};
-				$scope.popupDateRange1 = {
-					startDate: new Date('2018-10-01'),
-					endDate: new Date('2018-10-10')
 				};
 				$scope.dateRangeTemplateType = 'inline';
 				$scope.dateRangeTemplateTypes = ['popup', 'inline'];

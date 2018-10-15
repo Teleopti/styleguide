@@ -18,9 +18,9 @@
 			controller: 'wfmDatePickerController',
 			controllerAs: 'vm',
 			bindings: {
-				showWeek: '<?',
-				disable: '@?',
-				customValidate: '&?',
+				showWeek: '<',
+				disable: '@',
+				customValidate: '&',
 				onDateChange: '&?',
 				popupMode: '<?'
 			}

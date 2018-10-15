@@ -19,6 +19,7 @@ describe('wfm-date-picker basics', function() {
 			'November',
 			'December'
 		],
+		pickerWithPresetDate,
 		calendarViewElement,
 		fakeToday = moment('2018-01-01');
 
@@ -64,8 +65,9 @@ describe('wfm-date-picker basics', function() {
 		$rootScope.$digest();
 		attachedElements.push(element);
 
-		vm = element.find('wfm-date-picker-header').scope().vm;
-		calendarViewElement = element.find('table')[0];
+		pickerWithPresetDate = element;
+		vm = pickerWithPresetDate.find('wfm-date-picker-header').scope().vm;
+		calendarViewElement = pickerWithPresetDate.find('table')[0];
 	}
 
 	function FakeCurrentUserInfo() {
