@@ -184,7 +184,7 @@
 	background-color: $primary;
 	border: 1px solid $primary;
 
-	&:not([disabled]):hover {
+	&:not([disabled]):not(.wfm-btn-invis-disabled):hover {
 		background-color: $secondary;
 		border-color: $secondary;
 	}
