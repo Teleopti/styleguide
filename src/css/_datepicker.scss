@@ -302,6 +302,7 @@ wfm-date-picker,
 wfm-date-range-picker {
 	position: relative;
 	display: inline-block;
+	z-index: 1000;
 
 	.wfm-calendar-datepicker-text {
 		display: flex;
@@ -326,7 +327,6 @@ wfm-date-range-picker {
 
 	& > wfm-popup {
 		position: absolute;
-		z-index: 1000;
 		background-color: $white;
 
 		& > div {
