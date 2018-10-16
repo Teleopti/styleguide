@@ -1,0 +1,86 @@
+<div ng-if="vm.popupMode">
+	<div class="wfm-datepicker-text" ng-click="vm.toggleDatePicker($event)">
+		<span><i class="mdi mdi-calendar-range"></i></span>
+		<span class="wfm-datepicker-text-from">{{'From' | translate}}: {{vm.pickStartDate | amDateFormat:'LL'}}</span>
+		<span class="wfm-datepicker-text-to">{{'To' | translate}}: {{vm.pickEndDate | amDateFormat:'LL'}}</span>
+	</div>
+	<wfm-popup show="vm.isShowingDatePicker">
+		<wfm-date-range-picker-header class="con-row between-date-info-wrapper">
+			<div class="con-flex" ng-class="{'notice-warning':!vm.isValid, 'notice-info':vm.isValid}">
+				<div tabindex=0 class="context-menu card-context" ng-click="vm.selectToday()">
+					<i class="mdi mdi-calendar-range"></i>
+					<md-tooltip>{{'SelectToday' | translate}}</md-tooltip>
+				</div>
+				<span ng-if="vm.dateRangeText.length > 0">{{vm.dateRangeText}}</span>
+			</div>
+		</wfm-date-range-picker-header>
+		<wfm-date-range-picker-body class="con-row">
+			<div class="con-flex date-info-wrapper">
+				<div class="transition-block" ng-class="{'transit-to-start': vm.isPickingStartDate, 'transit-to-end': vm.isPickingEndDate}"></div>
+				<div class="select-date-info-wrapper pointer" ng-class="{'disabled': vm.disable=='start-date' || vm.disable=='all'}">
+					<div class="select-date-info-inner" ng-click="vm.startToSelectStartDate()">
+						<span class="date-info-label" translate>From</span>
+						<h1 class="date-info">{{vm.pickStartDate | amDateFormat:'LL'}}</h1>
+					</div>
+					<div class="clear-select-date-grow-out" ng-click="vm.resetStartDate()">
+						<i class="mdi mdi-close"></i>
+					</div>
+				</div>
+				<hr />
+				<div class="select-date-info-wrapper pointer" ng-class="{'disabled': vm.disable=='end-date' || vm.disable=='all'}">
+					<div class="select-date-info-inner" ng-click="vm.startToSelectEndDate()">
+						<span class="date-info-label" translate>To</span>
+						<h1 class="date-info">{{vm.pickEndDate | amDateFormat:'LL'}}</h1>
+					</div>
+					<div class="clear-select-date-grow-out" ng-click="vm.resetEndDate()">
+						<i class="mdi mdi-close"></i>
+					</div>
+				</div>
+			</div>
+			<div class="con-flex date-info-calendar-wrapper">
+				<div uib-datepicker ng-model="vm.pickDate" ng-class="{'non-pointer':vm.disable === 'all', 'show-week-numbers': vm.options.showWeeks, 'hide-week-numbers': !vm.options.showWeeks}"
+				 ng-change="vm.switchDate()" datepicker-options="vm.options"></div>
+			</div>
+		</wfm-date-range-picker-body>
+	</wfm-popup>
+</div>
+
+<div ng-if="!vm.popupMode">
+	<wfm-date-range-picker-header class="con-row between-date-info-wrapper">
+		<div class="con-flex" ng-class="{'notice-warning':!vm.isValid, 'notice-info':vm.isValid}">
+			<div tabindex=0 class="context-menu card-context" ng-click="vm.selectToday()">
+				<i class="mdi mdi-calendar-range"></i>
+				<md-tooltip>{{'SelectToday' | translate}}</md-tooltip>
+			</div>
+			<span ng-if="vm.dateRangeText.length > 0">{{vm.dateRangeText}}</span>
+		</div>
+	</wfm-date-range-picker-header>
+	<wfm-date-range-picker-body class="con-row">
+		<div class="con-flex date-info-wrapper">
+			<div class="transition-block" ng-class="{'transit-to-start': vm.isPickingStartDate, 'transit-to-end': vm.isPickingEndDate}"></div>
+			<div class="select-date-info-wrapper pointer" ng-class="{'disabled': vm.disable=='start-date' || vm.disable=='all'}">
+				<div class="select-date-info-inner" ng-click="vm.startToSelectStartDate()">
+					<span class="date-info-label" translate>From</span>
+					<h1 class="date-info">{{vm.pickStartDate | amDateFormat:'LL'}}</h1>
+				</div>
+				<div class="clear-select-date-grow-out" ng-click="vm.resetStartDate()">
+					<i class="mdi mdi-close"></i>
+				</div>
+			</div>
+			<hr />
+			<div class="select-date-info-wrapper pointer" ng-class="{'disabled': vm.disable=='end-date' || vm.disable=='all'}">
+				<div class="select-date-info-inner" ng-click="vm.startToSelectEndDate()">
+					<span class="date-info-label" translate>To</span>
+					<h1 class="date-info">{{vm.pickEndDate | amDateFormat:'LL'}}</h1>
+				</div>
+				<div class="clear-select-date-grow-out" ng-click="vm.resetEndDate()">
+					<i class="mdi mdi-close"></i>
+				</div>
+			</div>
+		</div>
+		<div class="con-flex date-info-calendar-wrapper">
+			<div uib-datepicker ng-model="vm.pickDate" ng-class="{'non-pointer':vm.disable === 'all', 'show-week-numbers': vm.options.showWeeks, 'hide-week-numbers': !vm.options.showWeeks}"
+			 ng-change="vm.switchDate()" datepicker-options="vm.options"></div>
+		</div>
+	</wfm-date-range-picker-body>
+</div>

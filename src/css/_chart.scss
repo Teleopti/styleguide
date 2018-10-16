@@ -1,0 +1,96 @@
+// Line chart
+//
+//A chart used to present complex data. We use <a href="http://c3js.org/gettingstarted.html">default C3</a> or the <a href="http://jettro.github.io/c3-angular-directive/#download">C3 chart directive</a> to get nice features like legends, zoom and period selection.
+//
+//Note: Column-values in the directive should be replaced with a variable to keep the html clean.
+// <div class="jsprewrap">
+//   <div class="ksscopy kss-style" ng-click="showJs['chart'] = !showJs['chart']">
+//       <span ng-hide="showJs['chart']">Show</span>
+//      <span ng-show="showJs['chart']">Hide</span>
+//     JavaScript
+//     <i class="mdi mdi-code-tags pull-right"></i>
+//   </div>
+//   <div class="animate-show" ng-show="showJs['chart']">
+//     <code>
+//       <pre class="prettyprint linenums lang-js">
+//         c3.generate({
+//       		bindto: '#myChart',
+//       		data: {
+//       				columns: [
+//       					['data1', 30, 200, 100, 400, 150, 250],
+//       					['data2', 20, 180, 240, 100, 190, 0],
+//       				],
+//       				selection: {
+//       						enabled: true,
+//       				},
+//       		},
+//       		zoom: {
+//       				enabled: true,
+//       		},
+//         });
+//       </pre>
+//     </code>
+//   </div>
+// </div>
+//
+//Markup:
+//	<h3>Bind to chart with zoom and select</h3>
+//	<div class="wfm-chart" id="myChart"></div>
+//	<h3>c3 directive</h3>
+//	<c3chart class="wfm-chart" bindto-id="chart2">
+//		<chart-column column-id="data 1"
+//		column-name="Data 1"
+//		column-color="#EF5350"
+//		column-values="30,200,100,400,150,250"
+//		column-type="line"/>
+//		<chart-column column-id="data 2"
+//		column-name="Data 2"
+//		column-color="#BA68C8"
+//		column-values="50,20,10,40,15,25"
+//		column-type="line"/>
+//	</c3chart>
+//
+//Styleguide 2.6
+//
+
+body > .c3 > svg {
+	position: absolute;
+	z-index: -10;
+	top: 0;
+	height: 0px !important;
+}
+
+.wfm-chart {
+	background-color: $white;
+
+	.c3-tooltip td > span {
+		margin-left: 10px;
+		margin-top: 5px;
+		border: 1px solid white;
+	}
+
+	.c3-tooltip td,
+	.c3-tooltip th {
+		color: white;
+		background-color: $gray054 !important;
+	}
+
+	.c3-brush .extent {
+		stroke: $primary !important;
+		fill: $primary !important;
+	}
+
+	g.tick line {
+		display: none;
+	}
+
+	.c3-selected-circle {
+		fill: $white;
+	}
+
+	.c3-axis,
+	.c3-axis-x,
+	.c3-legend-item {
+		fill: $text-color-standard;
+	}
+}

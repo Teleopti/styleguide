@@ -3,34 +3,34 @@ module.exports = function(grunt) {
 		sass: {
 			dist: {
 				files: {
-					'css/main.css': 'css/main.scss',
-					'css/main_dark.css': 'css/main_dark.scss'
+					'dist/css/main.css': 'src/css/main.scss',
+					'dist/css/main_dark.css': 'src/css/main_dark.scss'
 				}
 			},
 			styleguide: {
 				files: {
-					'css/styleguide.css': 'css/styleguide.scss'
+					'dist/css/styleguide.css': 'src/css/styleguide.scss'
 				}
 			}
 		},
 		watch: {
 			styleguide: {
 				files: [
-					'css/*.scss',
-					'css/*.hbs',
-					'css/*.md',
-					'directives/**/*.tpl.html',
-					'directives/**/*.js',
-					'app.js'
+					'src/css/*.scss',
+					'src/css/*.hbs',
+					'src/css/*.md',
+					'src/directives/**/*.tpl.html',
+					'src/directives/**/*.js',
+					'src/js/app.js'
 				],
 				tasks: ['sass:styleguide', 'sass:dist', 'ngtemplates', 'shell', 'cssmin']
 			},
 			watchAll: {
-				files: ['js/**', 'css/**.scss', 'directives/**', 'kss-template/**'],
+				files: ['src/js/**', 'src/css/**.scss', 'src/directives/**', 'kss-template/**'],
 				tasks: ['sass:styleguide', 'sass:dist', 'ngtemplates', 'shell', 'cssmin']
 			},
 			test: {
-				files: ['directives/**/*.spec.js'],
+				files: ['src/directives/**/*.spec.js'],
 				tasks: ['uglify', 'karma:continuous']
 			}
 		},
@@ -41,8 +41,8 @@ module.exports = function(grunt) {
 			},
 			target: {
 				files: {
-					'styleguide/dist/main.min.css': 'css/main.css',
-					'styleguide/dist/main_dark.min.css': 'css/main_dark.css'
+					'dist/css/main.min.css': 'dist/css/main.css',
+					'dist/css/main_dark.min.css': 'dist/css/main_dark.css'
 				}
 			}
 		},
@@ -51,7 +51,7 @@ module.exports = function(grunt) {
 				stderr: false
 			},
 			target: {
-				command: 'npm run-script kss'
+				command: 'npm run kss'
 			}
 		},
 		karma: {
@@ -65,8 +65,9 @@ module.exports = function(grunt) {
 		},
 		ngtemplates: {
 			'styleguide.templates': {
+				cwd: 'src/',
 				src: ['directives/**/*.tpl.html'],
-				dest: 'styleguide/dist/templates.js',
+				dest: 'dist/js/templates.js',
 				options: {
 					standalone: true
 				}
@@ -101,7 +102,7 @@ module.exports = function(grunt) {
 					'vendor/ui-grid/uigrid.disable-animation.directive.js',
 					'vendor/ui-grid/ui-grid.fix.js'
 				],
-				dest: 'styleguide/dist/dependencies.min.js'
+				dest: 'dist/dependencies.min.js'
 			},
 			distCss: {
 				src: [
@@ -111,15 +112,15 @@ module.exports = function(grunt) {
 					'node_modules/angular-ui-grid/ui-grid.min.css',
 					'node_modules/c3/c3.min.css',
 					'node_modules/@mdi/font/css/materialdesignicons.min.css',
-					'css/styleguide.css',
-					'css/main.min.css'
+					'dist/css/styleguide.css',
+					'dist/css/main.min.css'
 				],
-				dest: 'styleguide/dist/dependencies.min.css'
+				dest: 'dist/dependencies.min.css'
 			}
 		},
 		uglify: {
-			'styleguide/dist/wfmdirectives.min.js': ['directives/**/*.js', '!directives/**/*.spec.js'],
-			'styleguide/dist/main.min.js': 'js/*.js'
+			'dist/js/wfmdirectives.min.js': ['src/directives/**/*.js', '!src/directives/**/*.spec.js'],
+			'dist/main.min.js': 'src/js/*.js'
 		},
 		copy: {
 			locales: {
@@ -129,18 +130,7 @@ module.exports = function(grunt) {
 						expand: true,
 						cwd: './node_modules/angular-i18n/',
 						src: ['angular-locale_*.js'],
-						dest: 'styleguide/node_modules/angular-i18n/'
-					}
-				]
-			},
-			sass: {
-				files: [
-					// includes files within path
-					{
-						expand: true,
-						cwd: './css/',
-						src: ['*.scss'],
-						dest: 'styleguide/sass/'
+						dest: 'dist/node_modules/angular-i18n/'
 					}
 				]
 			},
@@ -151,7 +141,7 @@ module.exports = function(grunt) {
 						expand: true,
 						cwd: 'node_modules/@mdi/font/fonts/',
 						src: ['**'],
-						dest: 'styleguide/fonts/'
+						dest: 'dist/fonts/'
 					}
 				]
 			},
@@ -166,7 +156,7 @@ module.exports = function(grunt) {
 							'../node_modules/angular-ui-grid/ui-grid.woff',
 							'../node_modules/angular-ui-grid/ui-grid.ttf'
 						],
-						dest: 'styleguide/dist/',
+						dest: 'dist/',
 						filter: 'isFile'
 					}
 				]
