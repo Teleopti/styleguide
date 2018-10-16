@@ -184,7 +184,7 @@
 	background-color: $primary;
 	border: 1px solid $primary;
 
-	&:not([disabled]):hover {
+	&:not([disabled]):not(.wfm-btn-invis-disabled):hover {
 		background-color: $secondary;
 		border-color: $secondary;
 	}
@@ -343,11 +343,21 @@
 		margin: 0 !important;
 		box-shadow: none;
 		border-radius: 0;
+		border-left: none;
+	}
+
+	.wfm-btn-default:not(.wfm-btn-primary):hover {
+		color: $primary;
+	}
+
+	.wfm-btn-invis-default:not(.first):hover {
+		box-shadow: -1px 0 0 0 $primary;
 	}
 
 	.first {
 		border-top-left-radius: 4px;
 		border-bottom-left-radius: 4px;
+		border-left: 1px solid $gray012;
 	}
 
 	.last {
