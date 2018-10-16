@@ -302,8 +302,9 @@ wfm-date-picker,
 wfm-date-range-picker {
 	position: relative;
 	display: inline-block;
+	z-index: 1000;
 
-	.wfm-calendar-datepicker-text {
+	.wfm-datepicker-text {
 		display: flex;
 		align-items: center;
 		justify-content: space-around;
@@ -314,12 +315,18 @@ wfm-date-range-picker {
 		& > * {
 			padding: 5px;
 			margin: 0;
+			cursor: pointer;
+		}
+		.wfm-datepicker-text-date,
+		.wfm-datepicker-text-from,
+		.wfm-datepicker-text-to {
+			min-width: 60px;
+			text-align: center;
 		}
 	}
 
 	& > wfm-popup {
 		position: absolute;
-		z-index: 1000;
 		background-color: $white;
 
 		& > div {
