@@ -1,12 +1,15 @@
 (function() {
 	'use strict';
+
 	angular.module('wfm.workingHoursPicker').service('workingHoursService', [
 		'$locale',
-		function() {
+		function($locale) {
 			this.createEmptyWorkingPeriod = function(startTime, endTime) {
 				var weekdaySelections = [];
 				var startDow = moment.localeData()._week ? moment.localeData()._week.dow : 0;
 				// ToDo: Verify the first day of week from $locale.
+				//	$locale.DATETIME_FORMATS.FIRSTDAYOFWEEK;
+
 				for (var i = 0; i < 7; i++) {
 					var curDow = (startDow + i) % 7;
 					weekdaySelections.push({
@@ -41,7 +44,7 @@
 				link: postLink
 			};
 
-			function postLink(scope) {
+			function postLink(scope, elem, attrs) {
 				scope.enforceRadioBehavior = enforceRadioBehavior;
 				scope.addEmptyWorkingPeriod = addEmptyWorkingPeriod;
 				scope.removeWorkingPeriod = removeWorkingPeriod;
