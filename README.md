@@ -6,9 +6,15 @@
 3.  `npm ci` or `npm install` to install dependencies
 4.  `npm start` to build and watch
 5.  `npm run devServer` to mount styleguide on [http://localhost:3000](http://localhost:3000)
-6.  Make your changes with test covered
-7.  Copy the generated files to `WFM\node_modules\teleopti-styleguide` and verfiy the changes on WFM
+6.  Make your changes with test covered (**important!**)
+7.  Copy the generated files to `WFM\node_modules\teleopti-styleguide` and verfiy the changes on WFM (**important!**)
 8.  Submit a _pull request_ from your repo to => Teleopti/styleguide main repo with your improvements.
+
+# Sync your repo with latest Teleopti/styleguide
+1.  `git remote add upstream https://github.com/Teleopti/styleguide.git`
+2.  `git fetch upstream` (please make sure you have commit your local changes before running this)
+3.  `git merge upstream/master`
+4.  `git push`
 
 # Deploy release to npm & github pages
 
