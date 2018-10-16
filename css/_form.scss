@@ -11,7 +11,7 @@ select {
 	color: $text-color-standard;
 	-webkit-appearance: none;
 	-moz-appearance: none;
-	background: none;
+	background: $white;
 	line-height: 32px;
 	cursor: pointer;
 	height: 32px;
@@ -343,7 +343,7 @@ md-select {
 		color: $text-color-standard;
 		-webkit-appearance: none;
 		-moz-appearance: none;
-		background: none;
+		background: $white;
 		min-height: 32px;
 		padding: 4px 11px;
 		border-radius: 4px;
@@ -616,7 +616,7 @@ md-autocomplete {
 	color: $text-color-standard;
 	-webkit-appearance: none;
 	-moz-appearance: none;
-	background: none;
+	background: $white;
 	line-height: 32px;
 	cursor: pointer;
 	height: 32px;
