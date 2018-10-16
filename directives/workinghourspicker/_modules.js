@@ -1,4 +1,5 @@
 (function() {
-    'use strict';
-    angular.module('wfm.workingHoursPicker', ['wfm.timerangepicker', 'pascalprecht.translate']);
+	'use strict';
+
+	angular.module('wfm.workingHoursPicker', ['wfm.timerangepicker', 'pascalprecht.translate']);
 })();
