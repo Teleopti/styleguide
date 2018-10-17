@@ -224,6 +224,8 @@
 //<wfm-date-range-picker show-week="true" ng-model="dateRange1"></wfm-date-range-picker>
 //<h1>Without week numbers</h1>
 //<wfm-date-range-picker show-week="false" ng-model="dateRange2"></wfm-date-range-picker>
+//<h1>Pop up date range picker</h1>
+//<wfm-date-range-picker show-week="false" ng-model="popupDateRange1" popup-mode="true"></wfm-date-range-picker>
 //
 //Styleguide 2.2
 //
@@ -306,8 +308,9 @@ wfm-date-range-picker {
 
 	.wfm-datepicker-text {
 		display: flex;
+		flex-wrap: wrap;
 		align-items: center;
-		justify-content: space-around;
+		justify-content: flex-start;
 		line-height: 1;
 		cursor: pointer;
 		margin: 5px;
@@ -322,6 +325,7 @@ wfm-date-range-picker {
 		.wfm-datepicker-text-to {
 			min-width: 60px;
 			text-align: center;
+			white-space: nowrap;
 		}
 	}
 
@@ -425,12 +429,12 @@ wfm-date-range-picker-body > .date-info-wrapper {
 
 	.transition-block.transit-to-start {
 		top: 0;
-		transition: top 1s ease-in-out;
+		transition: top 0.5s ease-in-out;
 	}
 
 	.transition-block.transit-to-end {
 		top: 50%;
-		transition: top 1s ease-in-out;
+		transition: top 0.5s ease-in-out;
 	}
 
 	.clear-select-date-grow-out {
