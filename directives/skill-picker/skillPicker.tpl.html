@@ -5,7 +5,7 @@
                 <div style="position: relative">
                     <input ng-click="$ctrl.skillPickerOpen = !$ctrl.skillPickerOpen" ng-keypress="$ctrl.skillPickerOpen=true" ng-model="$ctrl.skillPickerText"
                         type="text" placeholder="{{'SelectSkill'|translate}}">
-                    <i class="mdi mdi-close pointer" ng-click="$ctrl.clearSkillSelection()" ng-show="$ctrl.skillPickerText" style="position: absolute; top: 0; right: 0;">
+                    <i class="mdi mdi-close pointer" ng-click="$ctrl.clearSkillSelection()" ng-show="$ctrl.skillPickerText" style="position: absolute; top: 3px; right: 10px;">
                         <md-tooltip>{{'Clear'|translate}}</md-tooltip>
                     </i>
                 </div>
@@ -28,7 +28,7 @@
                 <div style="position: relative">
                     <input ng-click="$ctrl.skillGroupPickerOpen = !$ctrl.skillGroupPickerOpen" ng-keypress="$ctrl.skillGroupPickerOpen=true"
                         ng-model="$ctrl.skillGroupPickerText" type="text" placeholder="{{'SelectSkillGroup'|translate}}">
-                    <i class="mdi mdi-close pointer" ng-click="$ctrl.clearSkillGroupSelection()" ng-show="$ctrl.skillGroupPickerText" style="position: absolute; top: 0; right: 0;">
+                    <i class="mdi mdi-close pointer" ng-click="$ctrl.clearSkillGroupSelection()" ng-show="$ctrl.skillGroupPickerText" style="position: absolute; top: 3px; right: 10px;">
                         <md-tooltip>{{'Clear'|translate}}</md-tooltip>
                     </i>
                 </div>
