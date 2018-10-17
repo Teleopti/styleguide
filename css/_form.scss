@@ -622,17 +622,27 @@ md-autocomplete {
 	height: 32px;
 	padding: 4px 11px;
 	border-radius: 4px;
-
+	
 	input:not(.md-input) {
 		padding: 0;
+		height: 22px;
 	}
-
+	
 	button:after {
 		display: none;
 	}
-
+	
 	button md-icon {
 		transform: translate3d(-50%, -50%, 0) scale(0.7);
+	}
+	
+	md-autocomplete-wrap {
+		height: auto;
+	
+		&.md-show-clear-button button {
+			height: auto;
+			width: auto;
+		}
 	}
 }
 
@@ -663,6 +673,7 @@ md-autocomplete[disabled] {
 		cursor: not-allowed !important;
 	}
 }
+
 
 .wfm-form > md-autocomplete-wrap > input {
 	margin-right: 0 !important;
