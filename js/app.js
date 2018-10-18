@@ -27,7 +27,6 @@
 			'wfm.notice',
 			'wfm.multiplesearchinput',
 			'wfm.rightPanel',
-			'wfm.workPicker',
 			'wfm.skillPickerOld',
 			'wfm.skillPicker',
 			'wfm.badge',
