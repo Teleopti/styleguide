@@ -74,7 +74,7 @@
 
 //Old working-hours-picker
 .working-hours-row {
-	border-top: 1px solid $hover;
+	border-bottom: 1px solid $hover;
 
 	.working-hours-period, .working-hours-day, .working-hours-action {
 		align-self: center;
@@ -88,4 +88,10 @@
 		flex-grow: 1.5;
 	}
 
+}
+
+.working-hours-picker-container {
+	display: inline-flex;
+	align-items: center;
+	margin-top: 10px;
 }

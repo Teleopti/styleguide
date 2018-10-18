@@ -6,7 +6,7 @@
 		<span ng-click="vm.toggleDatePicker($event)">
 			<i class="mdi mdi-calendar-range"></i>
 		</span>
-		<span ng-click="vm.toggleDatePicker($event)">{{vm.pickDate | amDateFormat:'L'}}</span>
+		<span ng-click="vm.toggleDatePicker($event)" class="wfm-datepicker-text-date">{{vm.pickDate | amDateFormat:'L'}}</span>
 		<button type="button" class="wfm-btn wfm-btn-invis-primary wfm-btn-sm" ng-click="vm.gotoNextDate()">
 			<i class="mdi mdi-chevron-double-right"></i>
 		</button>
