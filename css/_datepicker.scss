@@ -75,7 +75,7 @@
 
 	.btn-info.active {
 		background-color: $secondary !important;
-		color: $white;
+		color: $btn-white;
 	}
 
 	tbody > tr > td.text-center.h6 {
@@ -525,7 +525,7 @@ wfm-date-range-picker-body > .date-info-calendar-wrapper {
 	tbody .selected-date-cell button.btn-info,
 	tbody .in-date-range button.btn-info {
 		background-color: $secondary !important;
-		color: $white !important;
+		color: $btn-white !important;
 		font-weight: normal;
 	}
 

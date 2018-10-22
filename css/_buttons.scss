@@ -180,12 +180,12 @@
 }
 
 .wfm-btn-invis-primary {
-	color: $white;
+	color: $btn-white;
 	background-color: $primary;
 	border: 1px solid $primary;
 
 	&:not([disabled]):not(.wfm-btn-invis-disabled):hover {
-		color: $white;
+		color: $btn-white;
 		background-color: $secondary;
 		border-color: $secondary;
 	}
@@ -202,7 +202,7 @@
 }
 
 .wfm-btn-primary {
-	color: $white;
+	color: $btn-white;
 	background-color: $primary;
 	@extend .material-depth-1;
 
@@ -266,7 +266,7 @@
 }
 .wfm-fab.info {
 	background-color: $purple-500;
-	color: $white;
+	color: $btn-white;
 }
 
 .grow-out {
