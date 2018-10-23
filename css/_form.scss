@@ -622,23 +622,23 @@ md-autocomplete {
 	height: 32px;
 	padding: 4px 11px;
 	border-radius: 4px;
-	
+
 	input:not(.md-input) {
 		padding: 0;
 		height: 22px;
 	}
-	
+
 	button:after {
 		display: none;
 	}
-	
+
 	button md-icon {
 		transform: translate3d(-50%, -50%, 0) scale(0.7);
 	}
-	
+
 	md-autocomplete-wrap {
 		height: auto;
-	
+
 		&.md-show-clear-button button {
 			height: auto;
 			width: auto;
@@ -673,7 +673,6 @@ md-autocomplete[disabled] {
 		cursor: not-allowed !important;
 	}
 }
-
 
 .wfm-form > md-autocomplete-wrap > input {
 	margin-right: 0 !important;
@@ -1029,23 +1028,15 @@ wfm-multiple-search-input {
 	.wfm-multiple-search-wrapper {
 		position: relative;
 		height: auto;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 	}
 
 	.advanced-input {
 		width: 200px;
 		text-overflow: ellipsis !important;
 		outline: none !important;
-	}
-
-	.search-icon {
-		display: inline-block;
-		vertical-align: bottom;
-		&:focus {
-			outline: rgb(0, 153, 255) solid 1px;
-		}
-		&:not(:focus) {
-			outline: none !important;
-		}
 	}
 
 	.advanced-input-dropdown {
@@ -1067,6 +1058,25 @@ wfm-multiple-search-input {
 	.expand-advanced-input {
 		max-width: 100%;
 		width: 200px !important;
+	}
+
+	.search-button {
+		margin: 2px;
+		padding: 5px;
+		border-radius: 4px;
+
+		&:hover {
+			background: $gray-300;
+		}
+
+		.search-icon {
+			display: inline-block;
+			vertical-align: bottom;
+			outline: none;
+		}
+		.mdi:before {
+			font-weight: bold;
+		}
 	}
 
 	.focusing-search {
