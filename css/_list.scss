@@ -138,24 +138,6 @@ ul {
     margin-left: 30px;
 }
 
-@media (min-width: 600px) {
-    .list-item-container {
-        max-width: 100%;
-    }
-}
-
-@media (max-width: 599px) {
-    .list-item-container {
-        max-width: 12em;
-    }
-}
-
-@media (max-width: 450px) {
-    .list-item-container {
-        max-width: 5em;
-    }
-}
-
 .wfm-list {
     padding-left: 0px;
     list-style: none;
@@ -213,7 +195,7 @@ ul {
     margin-top: -8px;
     transition: $transition-timing;
     padding-top: 8px;
-    background-color: $hover;
+    background-color: $secondary;
     z-index: 30;
     border-bottom: 8px solid transparent;
 
@@ -227,6 +209,10 @@ ul {
         padding-top: 2px;
         font-size: 18px;
         margin: 0 5px;
+
+        &:hover {
+            color: $btn-white;
+        }
     }
 
     p {
