@@ -148,7 +148,6 @@
 .wfm-btn {
 	display: inline-block;
 	height: 32px;
-	line-height: 32px;
 	border: none;
 	padding: 0 15px;
 	margin: $full-padding;
@@ -164,8 +163,13 @@
 	}
 
 	> .mdi {
-		line-height: 1;
+		line-height: 0;
+		vertical-align: middle;
 	}
+}
+
+a.wfm-btn, div.wfm-btn {
+	line-height: 30px;
 }
 
 .wfm-btn-invis-default {
