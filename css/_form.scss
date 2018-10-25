@@ -6,13 +6,13 @@ label {
 input[type='text'],
 [type='number'],
 input[type='password'],
-select {
+select, md-autocomplete {
 	border: 1px solid $hover;
 	color: $text-color-standard;
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	background: $white;
-	line-height: 32px;
+	line-height: 1;
 	cursor: pointer;
 	height: 32px;
 	padding: 4px 11px;
@@ -608,20 +608,16 @@ md-select {
 }
 
 md-autocomplete {
-	border: 1px solid $hover;
-	color: $text-color-standard;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	background: $white;
-	line-height: 32px;
-	cursor: pointer;
-	height: 32px;
-	padding: 4px 11px;
-	border-radius: 4px;
+	// Style is set in top of document together with inputs and selects
 
 	input:not(.md-input) {
 		padding: 0;
 		height: 22px;
+		line-height: 1;
+	}
+
+	input:not(.md-input):focus {
+		outline: none;
 	}
 
 	button:after {
@@ -639,6 +635,12 @@ md-autocomplete {
 			height: auto;
 			width: auto;
 		}
+	}
+
+	&:focus-within {
+		outline: none;
+		border-color: $primary;
+		box-shadow: 0 0 0 2px rgba($primary, 0.2);
 	}
 }
 
