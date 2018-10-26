@@ -1,0 +1,1731 @@
+<!DOCTYPE html>
+<!--[if lte IE 6]>            <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IEMobile 7]>          <html class="no-js iem7" lang="en"> <![endif]-->
+<!--[if (IE 7)&(!IEMobile)]>  <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>                <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!-->
+<html class="no-js" lang="en" ng-app="styleguideApp">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <title>Teleopti WFM Living Style Guide</title>
+
+  <meta name="description" content="Teleopti WFM Styleguide">
+  <meta name="generator" content="kss-node">
+  <meta name="viewport" content="width=device-width">
+  <link type="text/css" rel="stylesheet" href="./public/kss.css" />
+  <link type="text/css" rel="stylesheet" href="./dist/dependencies.min.css" />
+  <link type="text/css" rel="stylesheet" href="./dist/main.min.css" />
+  <script src="./dist/dependencies.min.js"></script>
+  <script src="./dist/templates.js"></script>
+  <script src="./dist/wfmdirectives.min.js"></script>
+  <script src="./dist/main.min.js"></script> 
+
+  <style>
+    #ribbon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    input {
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+
+<body id="kss-node" ng-view ng-controller="mainCtrl">
+
+  <a href="https://github.com/Teleopti/styleguide" id="ribbon">
+    <img src="public/github-fork--black.png" alt="fork on github">
+  </a>
+  
+  <!-- <div tabindex=0 class="context-menu card-context sidebar-toggle material-depth-2" ng-click="hideSidebar = !hideSidebar">
+  <i class="mdi mdi-backburger"></i>
+  <md-tooltip>Options</md-tooltip>
+</div> -->
+  <div class="kss-sidebar material-depth-2 kss-style" ng-class="{'kss-sidebar-hidden':hideSidebar}">
+    <header class="kss-header line-center">
+      <a href="index.html">
+        <img src="http://www.teleopti.com/system/images/teleopti_logo.png" alt="Teleopti logo" height="60px" style="vertical-align:bottom;">
+      </a>
+    </header>
+    <nav class="kss-nav">
+      <ul class="kss-nav__menu">
+        <li class="kss-nav__menu-item">
+          <a href="section-0.html">
+            <i class="mdi" ng-class="getChapteIcon('Overview')"></i>
+            <span class="kss-nav__name">Overview</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-1.html">
+            <i class="mdi" ng-class="getChapteIcon('Elements')"></i>
+            <span class="kss-nav__name">Elements</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-2.html">
+            <i class="mdi" ng-class="getChapteIcon('Components')"></i>
+            <span class="kss-nav__name">Components</span>
+          </a>
+          <ul class="kss-nav__menu-child">
+               
+            <a href="section-2.html#kssref-2-1">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">2.1</span>
+                <span class="kss-nav__name">Single date picker</span>
+
+              </li>
+            </a>
+              
+            <a href="section-2.html#kssref-2-2">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">2.2</span>
+                <span class="kss-nav__name">Date range picker</span>
+
+              </li>
+            </a>
+              
+            <a href="section-2.html#kssref-2-3">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">2.3</span>
+                <span class="kss-nav__name">Date range picker with custom validation</span>
+
+              </li>
+            </a>
+              
+            <a href="section-2.html#kssref-2-4">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">2.4</span>
+                <span class="kss-nav__name">Date range picker with only weeks/monthes interval</span>
+
+              </li>
+            </a>
+              
+            <a href="section-2.html#kssref-2-5">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">2.5</span>
+                <span class="kss-nav__name">Date range picker with preselected date</span>
+
+              </li>
+            </a>
+              
+            <a href="section-2.html#kssref-2-6">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">2.6</span>
+                <span class="kss-nav__name">Line chart</span>
+
+              </li>
+            </a>
+              
+            <a href="section-2.html#kssref-2-7">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">2.7</span>
+                <span class="kss-nav__name">Time range Picker</span>
+
+              </li>
+            </a>
+              
+            <a href="section-2.html#kssref-2-9">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">2.9</span>
+                <span class="kss-nav__name">Pagination</span>
+
+              </li>
+            </a>
+              
+            <a href="section-2.html#kssref-2-10">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">2.10</span>
+                <span class="kss-nav__name">Working hours picker</span>
+
+              </li>
+            </a>
+              
+            <a href="section-2.html#kssref-2-11">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">2.11</span>
+                <span class="kss-nav__name">Notices</span>
+
+              </li>
+            </a>
+              
+            <a href="section-2.html#kssref-2-12">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">2.12</span>
+                <span class="kss-nav__name">Numeric value</span>
+
+              </li>
+            </a>
+              
+            <a href="section-2.html#kssref-2-13">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">2.13</span>
+                <span class="kss-nav__name">Skill picker</span>
+
+              </li>
+            </a>
+              
+            <a href="section-2.html#kssref-2-14">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">2.14</span>
+                <span class="kss-nav__name">Skill picker - old</span>
+
+              </li>
+            </a>
+             
+          </ul>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-3.html">
+            <i class="mdi" ng-class="getChapteIcon('Colors')"></i>
+            <span class="kss-nav__name">Colors</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-4.html">
+            <i class="mdi" ng-class="getChapteIcon('Containers')"></i>
+            <span class="kss-nav__name">Containers</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-5.html">
+            <i class="mdi" ng-class="getChapteIcon('Tree')"></i>
+            <span class="kss-nav__name">Tree</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-6.html">
+            <i class="mdi" ng-class="getChapteIcon('Language')"></i>
+            <span class="kss-nav__name">Language</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-7.html">
+            <i class="mdi" ng-class="getChapteIcon('Icons')"></i>
+            <span class="kss-nav__name">Icons</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-8.html">
+            <i class="mdi" ng-class="getChapteIcon('Helper classes')"></i>
+            <span class="kss-nav__name">Helper classes</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-9.html">
+            <i class="mdi" ng-class="getChapteIcon('Naming and best practice')"></i>
+            <span class="kss-nav__name">Naming and best practice</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-10.html">
+            <i class="mdi" ng-class="getChapteIcon('Resources')"></i>
+            <span class="kss-nav__name">Resources</span>
+          </a>
+        </li>
+      </ul>
+      <br/>
+    </nav>
+  </div>
+
+  <article role="main">
+  <article role="main" class="kss-main">
+      
+    <div id="kssref-2" class="kss-section section-hero kss-section--depth-1">
+
+        <div class="kss-style">
+          <h1 class="kss-title kss-title--level-1">
+            <a class="kss-title__permalink">
+              Components
+            </a>
+          </h1>
+          <small class="kss-title__ref">2 </small>
+
+ 
+          <div class="kss-description">
+            <p>This chapter details the use of more javascript heavy components and directives. Most of these need some configuration from the js side to make them work.</p>
+
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Components')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+ 
+    </div>
+        <section id="kssref-2-1" class="kss-section material-depth-1 kss-section--depth-2">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Single date picker
+            </a>
+          </h2>
+          <small class="kss-title__ref">2.1 </small>
+
+ 
+          <div class="kss-description">
+            <p>The single date picker is based on Bootstrap&#39;s datepicker and use to take a single date easily.
+To use the single date picker as pop-up style please wrap it into a <a href=section-1.html#kssref-1-20>pop-up menu</a> (section 1.20). <br><br>
+Click on the calendar icon (left top corner) to quickly select &#39;today&#39; within calendar view.<br>
+Hover and click on the selected date section to reset the selected date to empty.</p>
+<div class="jsprewrap">
+  <div class="ksscopy kss-style" ng-click="showJs['cardDemo1'] = !showJs['cardDemo1']">
+      <span ng-hide="showJs['cardDemo1']">Show</span>
+     <span ng-show="showJs['cardDemo1']">Hide</span>
+    JavaScript
+    <i class="mdi mdi-code-tags pull-right"></i>
+  </div>
+  <div class="animate-show" ng-show="showJs['cardDemo1']">
+    <code>
+      <pre class="prettyprint linenums lang-js">
+         $scope.customValidateForDatePicker = function (date) {
+           if(moment(date).diff(moment(), &#39;days&#39;) &lt; 0) {
+             return &quot;[custom validation]: can not select dates before today&quot;;
+           }
+         }
+      </pre>
+    </code>
+  </div>
+</div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Single date picker')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Single date picker'] = !markupShow['Single date picker']">
+            <span ng-hide="markupShow['Single date picker']">Show</span>
+            <span ng-show="markupShow['Single date picker']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Single date picker']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;h1&gt;With week numbers&lt;/h1&gt;
+&lt;wfm-date-picker ng-model=&quot;singleDate&quot; show-week=&quot;true&quot;&gt;&lt;/wfm-date-picker&gt;
+&lt;h1&gt;Without week numbers&lt;/h1&gt;
+&lt;wfm-date-picker ng-model=&quot;singleDate2&quot; show-week=&quot;false&quot;&gt;&lt;/wfm-date-picker&gt;
+&lt;h1&gt;With custom validation: can not select dates before today&lt;/h1&gt;
+&lt;wfm-date-picker ng-model=&quot;singleDate3&quot; show-week=&quot;true&quot; custom-validate=&quot;customValidateForDatePicker(singleDate3)&quot;&gt;&lt;/wfm-date-picker&gt;
+&lt;h1&gt;Popup date picker&lt;/h1&gt;
+&lt;wfm-date-picker ng-model=&quot;singleDate4&quot; show-week=&quot;true&quot; popup-mode=&quot;true&quot;&gt;&lt;/wfm-date-picker&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+          <div class="kss-modifier__example">
+            <h1>With week numbers</h1>
+<wfm-date-picker ng-model="singleDate" show-week="true"></wfm-date-picker>
+<h1>Without week numbers</h1>
+<wfm-date-picker ng-model="singleDate2" show-week="false"></wfm-date-picker>
+<h1>With custom validation: can not select dates before today</h1>
+<wfm-date-picker ng-model="singleDate3" show-week="true" custom-validate="customValidateForDatePicker(singleDate3)"></wfm-date-picker>
+<h1>Popup date picker</h1>
+<wfm-date-picker ng-model="singleDate4" show-week="true" popup-mode="true"></wfm-date-picker>
+          </div>
+        </div>
+
+
+             </section>
+            <section id="kssref-2-2" class="kss-section material-depth-1 kss-section--depth-2">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Date range picker
+            </a>
+          </h2>
+          <small class="kss-title__ref">2.2 </small>
+
+ 
+          <div class="kss-description">
+            <p>The date range picker is based on Bootstrap&#39;s datepicker and all we do is wrapping it and applying some special classes to make it more compatible with material design.
+To use the date range picker as pop-up style please wrap it into a <a href=section-1.html#kssref-1-20>pop-up menu</a> (section 1.20). <br><br>
+Click on the calendar icon (left top corner) to quickly select &#39;today&#39; within calendar view.<br>
+Hover and click on the selected date section to reset the selected date to empty.</p>
+<table class="wfm-table">
+<tr><th>Attribute Name</th><th>Usage</th><th>Required</th></tr>
+<tr><td>ng-model</td><td>Bind to a js-object representing the date range. The object is composed by <code>startDate</code> and <code>endDate</code> key-value pairs. The date obejct default value is <code>null</code>.</td><td>true</td></tr>
+<tr><td>show-week</td><td>Bind to a Bool type <code>true</code> or <code>false</code> value to display week numbers on the side of calendar view. </td><td>false</td></tr>
+<tr><td>interval-rule</td><td>select special interval rule to validate the date ranges by only <code>week</code> type or <code>month</code> type. </td><td>false</td></tr>
+<tr><td>custom-validation-function</td><td>Define additional validations conditions by a binding function. The return of custom validation functions should be a $translated resource key string type that displays the validation errors/warning information.</td><td>false</td></tr>
+</table>
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Date range picker')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Date range picker'] = !markupShow['Date range picker']">
+            <span ng-hide="markupShow['Date range picker']">Show</span>
+            <span ng-show="markupShow['Date range picker']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Date range picker']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;h1&gt;With week numbers&lt;/h1&gt;
+&lt;wfm-date-range-picker show-week=&quot;true&quot; ng-model=&quot;dateRange1&quot;&gt;&lt;/wfm-date-range-picker&gt;
+&lt;h1&gt;Without week numbers&lt;/h1&gt;
+&lt;wfm-date-range-picker show-week=&quot;false&quot; ng-model=&quot;dateRange2&quot;&gt;&lt;/wfm-date-range-picker&gt;
+&lt;h1&gt;Pop up date range picker&lt;/h1&gt;
+&lt;wfm-date-range-picker show-week=&quot;false&quot; ng-model=&quot;popupDateRange1&quot; popup-mode=&quot;true&quot;&gt;&lt;/wfm-date-range-picker&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+          <div class="kss-modifier__example">
+            <h1>With week numbers</h1>
+<wfm-date-range-picker show-week="true" ng-model="dateRange1"></wfm-date-range-picker>
+<h1>Without week numbers</h1>
+<wfm-date-range-picker show-week="false" ng-model="dateRange2"></wfm-date-range-picker>
+<h1>Pop up date range picker</h1>
+<wfm-date-range-picker show-week="false" ng-model="popupDateRange1" popup-mode="true"></wfm-date-range-picker>
+          </div>
+        </div>
+
+
+             </section>
+            <section id="kssref-2-3" class="kss-section material-depth-1 kss-section--depth-2">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Date range picker with custom validation
+            </a>
+          </h2>
+          <small class="kss-title__ref">2.3 </small>
+
+ 
+          <div class="kss-description">
+            <p>The date range picker is based on Bootstrap&#39;s datepicker and all we do is wrapping it and applying some special classes to make it more compatible with material design.
+To use the date range picker as pop-up style please wrap it into a <a href=section-1.html#kssref-1-20>pop-up menu</a> (section 1.20).
+Define additional validations by a binding function. The return of custom validation function should be a string that displays the validation errors/warning information. It could be a translate key supported by $translate. <br><br>
+Click on the calendar icon (left top corner) to quickly select &#39;today&#39; within calendar view.<br>
+Hover and click on the selected date section to reset the selected date to empty.</p>
+<div class="jsprewrap">
+  <div class="ksscopy kss-style" ng-click="showJs['cardDemo1'] = !showJs['cardDemo1']">
+      <span ng-hide="showJs['cardDemo1']">Show</span>
+     <span ng-show="showJs['cardDemo1']">Hide</span>
+    JavaScript
+    <i class="mdi mdi-code-tags pull-right"></i>
+  </div>
+  <div class="animate-show" ng-show="showJs['cardDemo1']">
+    <code>
+      <pre class="prettyprint linenums lang-js">
+
+         $scope.customValid = function (data) {
+           if(moment(data.endDate).diff(moment(data.startDate), &#39;days&#39;) &gt; 7) {
+             return &quot;[custom validation]: your end date is 7 days later than your start date&quot;;
+           }
+         }
+
+      </pre>
+    </code>
+  </div>
+</div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Date range picker with custom validation')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Date range picker with custom validation'] = !markupShow['Date range picker with custom validation']">
+            <span ng-hide="markupShow['Date range picker with custom validation']">Show</span>
+            <span ng-show="markupShow['Date range picker with custom validation']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Date range picker with custom validation']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;wfm-date-range-picker ng-model=&quot;anotherDateRange&quot; show-week=&quot;false&quot; custom-validate=&quot;customValid(anotherDateRange)&quot;&gt;&lt;/wfm-date-range-picker&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+          <div class="kss-modifier__example">
+            <wfm-date-range-picker ng-model="anotherDateRange" show-week="false" custom-validate="customValid(anotherDateRange)"></wfm-date-range-picker>
+          </div>
+        </div>
+
+
+             </section>
+            <section id="kssref-2-4" class="kss-section material-depth-1 kss-section--depth-2">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Date range picker with only weeks/monthes interval
+            </a>
+          </h2>
+          <small class="kss-title__ref">2.4 </small>
+
+ 
+          <div class="kss-description">
+            <p>The datepicker is based on Bootstrap&#39;s datepicker and all we do is wrapping it and applying some special classes to make it more compatible with material design.
+To use the date range picker as pop-up style please wrap it into a <a href=section-1.html#kssref-1-20>pop-up menu</a> (section 1.20). <br><br>
+Click on the calendar icon (left top corner) to quickly select &#39;today&#39; within calendar view.<br>
+Hover and click on the selected date section to reset the selected date to empty.</p>
+
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Date range picker with only weeks/monthes interval')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Date range picker with only weeks/monthes interval'] = !markupShow['Date range picker with only weeks/monthes interval']">
+            <span ng-hide="markupShow['Date range picker with only weeks/monthes interval']">Show</span>
+            <span ng-show="markupShow['Date range picker with only weeks/monthes interval']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Date range picker with only weeks/monthes interval']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;h1&gt;validate only exam with week interval&lt;/h1&gt;
+&lt;wfm-date-range-picker ng-model=&quot;dateRange3&quot; show-week=&quot;false&quot; interval-rule=&quot;week&quot;&gt;&lt;/wfm-date-range-picker&gt;
+&lt;h1&gt;validate only exam with month interval&lt;/h1&gt;
+&lt;wfm-date-range-picker ng-model=&quot;dateRange4&quot; show-week=&quot;false&quot; interval-rule=&quot;month&quot;&gt;&lt;/wfm-date-range-picker&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+          <div class="kss-modifier__example">
+            <h1>validate only exam with week interval</h1>
+<wfm-date-range-picker ng-model="dateRange3" show-week="false" interval-rule="week"></wfm-date-range-picker>
+<h1>validate only exam with month interval</h1>
+<wfm-date-range-picker ng-model="dateRange4" show-week="false" interval-rule="month"></wfm-date-range-picker>
+          </div>
+        </div>
+
+
+             </section>
+            <section id="kssref-2-5" class="kss-section material-depth-1 kss-section--depth-2">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Date range picker with preselected date
+            </a>
+          </h2>
+          <small class="kss-title__ref">2.5 </small>
+
+ 
+          <div class="kss-description">
+            <p>The datepicker is based on Bootstrap&#39;s datepicker and all we do is wrap it and apply some special classes to make it more compatible with material design.
+To use the date range picker as pop-up style please wrap it into a <a href=section-1.html#kssref-1-20>pop-up menu</a> (section 1.20). <br><br>
+Click on the calendar icon (left top corner) to quickly select &#39;today&#39; within calendar view.<br>
+Hover and click on the selected date section to reset the selected date to empty.</p>
+
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Date range picker with preselected date')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Date range picker with preselected date'] = !markupShow['Date range picker with preselected date']">
+            <span ng-hide="markupShow['Date range picker with preselected date']">Show</span>
+            <span ng-show="markupShow['Date range picker with preselected date']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Date range picker with preselected date']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;h1&gt;Date range picker with disabling endDate selection. &lt;/h1&gt;
+&lt;wfm-date-range-picker ng-model=&quot;dateRange5&quot; show-week=&quot;false&quot; disable=&quot;end-date&quot;&gt;&lt;/wfm-date-range-picker&gt;
+&lt;h1&gt;Date range picker with disabling startDate selection. &lt;/h1&gt;
+&lt;wfm-date-range-picker ng-model=&quot;dateRange6&quot; show-week=&quot;false&quot; disable=&quot;start-date&quot;&gt;&lt;/wfm-date-range-picker&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+          <div class="kss-modifier__example">
+            <h1>Date range picker with disabling endDate selection. </h1>
+<wfm-date-range-picker ng-model="dateRange5" show-week="false" disable="end-date"></wfm-date-range-picker>
+<h1>Date range picker with disabling startDate selection. </h1>
+<wfm-date-range-picker ng-model="dateRange6" show-week="false" disable="start-date"></wfm-date-range-picker>
+          </div>
+        </div>
+
+
+             </section>
+            <section id="kssref-2-6" class="kss-section material-depth-1 kss-section--depth-2">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Line chart
+            </a>
+          </h2>
+          <small class="kss-title__ref">2.6 </small>
+
+ 
+          <div class="kss-description">
+            <p>A chart used to present complex data. We use <a href="http://c3js.org/gettingstarted.html">default C3</a> or the <a href="http://jettro.github.io/c3-angular-directive/#download">C3 chart directive</a> to get nice features like legends, zoom and period selection.</p>
+<p>Note: Column-values in the directive should be replaced with a variable to keep the html clean.</p>
+<div class="jsprewrap">
+  <div class="ksscopy kss-style" ng-click="showJs['chart'] = !showJs['chart']">
+      <span ng-hide="showJs['chart']">Show</span>
+     <span ng-show="showJs['chart']">Hide</span>
+    JavaScript
+    <i class="mdi mdi-code-tags pull-right"></i>
+  </div>
+  <div class="animate-show" ng-show="showJs['chart']">
+    <code>
+      <pre class="prettyprint linenums lang-js">
+        c3.generate({
+              bindto: &#39;#myChart&#39;,
+              data: {
+                      columns: [
+                          [&#39;data1&#39;, 30, 200, 100, 400, 150, 250],
+                          [&#39;data2&#39;, 20, 180, 240, 100, 190, 0],
+                      ],
+                      selection: {
+                              enabled: true,
+                      },
+              },
+              zoom: {
+                      enabled: true,
+              },
+        });
+      </pre>
+    </code>
+  </div>
+</div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Line chart')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Line chart'] = !markupShow['Line chart']">
+            <span ng-hide="markupShow['Line chart']">Show</span>
+            <span ng-show="markupShow['Line chart']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Line chart']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;h3&gt;Bind to chart with zoom and select&lt;/h3&gt;
+&lt;div class=&quot;wfm-chart&quot; id=&quot;myChart&quot;&gt;&lt;/div&gt;
+&lt;h3&gt;c3 directive&lt;/h3&gt;
+&lt;c3chart class=&quot;wfm-chart&quot; bindto-id=&quot;chart2&quot;&gt;
+	&lt;chart-column column-id=&quot;data 1&quot;
+	column-name=&quot;Data 1&quot;
+	column-color=&quot;#EF5350&quot;
+	column-values=&quot;30,200,100,400,150,250&quot;
+	column-type=&quot;line&quot;/&gt;
+	&lt;chart-column column-id=&quot;data 2&quot;
+	column-name=&quot;Data 2&quot;
+	column-color=&quot;#BA68C8&quot;
+	column-values=&quot;50,20,10,40,15,25&quot;
+	column-type=&quot;line&quot;/&gt;
+&lt;/c3chart&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+          <div class="kss-modifier__example">
+            <h3>Bind to chart with zoom and select</h3>
+<div class="wfm-chart" id="myChart"></div>
+<h3>c3 directive</h3>
+<c3chart class="wfm-chart" bindto-id="chart2">
+	<chart-column column-id="data 1"
+	column-name="Data 1"
+	column-color="#EF5350"
+	column-values="30,200,100,400,150,250"
+	column-type="line"/>
+	<chart-column column-id="data 2"
+	column-name="Data 2"
+	column-color="#BA68C8"
+	column-values="50,20,10,40,15,25"
+	column-type="line"/>
+</c3chart>
+          </div>
+        </div>
+
+
+             </section>
+            <section id="kssref-2-7" class="kss-section material-depth-1 kss-section--depth-2">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Time range Picker
+            </a>
+          </h2>
+          <small class="kss-title__ref">2.7 </small>
+
+ 
+          <div class="kss-description">
+            <p>A directive for managing time range. The time range is represented by any object that have <code>startTime</code> and <code>endTime</code> keys, each with a js Date object as value. The range can be overnight if <code>disable-next-day</code> is set to false. In that case, a <code>+ 1</code> sign will be shown to indicate the end time is at the second day.
+The pickers are self-adjusted to the user&#39;s time-format setting, i.e. meridian will be used for 12-h format and disabled for 24-h format with correct meridian texts.</p>
+<p><table class="wfm-table"></p>
+<p><tr><th>Attribute Name</th><th>Usage</th><th>Required</th></tr></p>
+<p><tr><td>ng-model</td><td>Bind to time range object</td><td>true</td></tr></p>
+<p><tr><td>disable-next-day</td><td>Disable next-day switch</td><td>false</td></tr></p>
+<p><tr><td>max-hours-range</td><td>Max hours that allowed for the time range </td><td>false</td></tr></p>
+<p><tr><td>template-url</td><td>Use a custom template</td><td>false</td></tr>
+</table>
+</br></p>
+
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Time range Picker')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Time range Picker'] = !markupShow['Time range Picker']">
+            <span ng-hide="markupShow['Time range Picker']">Show</span>
+            <span ng-show="markupShow['Time range Picker']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Time range Picker']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                 &lt;div class=&quot;con-row&quot;&gt;
+   &lt;time-range-picker ng-model=&quot;timeRange&quot; disable-next-day=&quot;disableNextDay&quot; max-hours-range=&quot;24&quot;&gt;&lt;/time-range-picker&gt;
+ &lt;/div&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+          <div class="kss-modifier__example">
+             <div class="con-row">
+   <time-range-picker ng-model="timeRange" disable-next-day="disableNextDay" max-hours-range="24"></time-range-picker>
+ </div>
+          </div>
+        </div>
+
+
+             </section>
+            <section id="kssref-2-9" class="kss-section material-depth-1 kss-section--depth-2">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Pagination
+            </a>
+          </h2>
+          <small class="kss-title__ref">2.9 </small>
+
+ 
+          <div class="kss-description">
+            <p>Pagination is a directive which displays a list of availale pages and provides the properties for outer scope to set the pagination options and get data for the given page number.</p>
+<table class="wfm-table">
+<tr><th>Attribute Name</th><th>Description</th><th>Required</th></tr>
+<tr><td>pagination-options</td><td>configurations about the pagination, it contains two properties. &quot;pageNumber&quot; is the current page number; &quot;totalPages&quot; is hwo many pages it sets.</td><td>true</td></tr>
+<tr><td>get-data-for-page-callback</td><td>this is the function which is used by the directive to call to get the data for a given page number.</td><td>true</td></tr>
+</table>
+
+<div class="jsprewrap">
+  <div class="ksscopy kss-style" ng-click="showJs['pagination'] = !showJs['pagination']">
+      <span ng-hide="showJs['pagination']">Show</span>
+     <span ng-show="showJs['pagination']">Hide</span>
+    JavaScript
+    <i class="mdi mdi-code-tags pull-right"></i>
+  </div>
+  <div class="animate-show" ng-show="showJs['pagination']">
+    <code>
+      <pre class="prettyprint linenums lang-js">
+
+$scope.paginationOptions = {pageNumber: 1, totalPages: 7};
+$scope.getPageData = function(pageIndex) {
+   angular.log(pageIndex);
+};
+      </pre>
+    </code>
+  </div>
+</div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Pagination')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Pagination'] = !markupShow['Pagination']">
+            <span ng-hide="markupShow['Pagination']">Show</span>
+            <span ng-show="markupShow['Pagination']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Pagination']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;wfm-pagination class=&quot;pull-pagination&quot; pagination-options=&quot;paginationOptions&quot; get-data-for-page-callback=&quot;getPageData&quot;&gt;&lt;/wfm-pagination&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+          <div class="kss-modifier__example">
+            <wfm-pagination class="pull-pagination" pagination-options="paginationOptions" get-data-for-page-callback="getPageData"></wfm-pagination>
+          </div>
+        </div>
+
+
+             </section>
+            <section id="kssref-2-10" class="kss-section material-depth-1 kss-section--depth-2">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Working hours picker
+            </a>
+          </h2>
+          <small class="kss-title__ref">2.10 </small>
+
+ 
+          <div class="kss-description">
+            <p>A directive for specifying the week day and time range. It is built taking the time range picker as a dependency.</p>
+<p><table class="wfm-table"></p>
+<p><tr><th>Attribute Name</th><th>Usage</th><th>Required</th></tr></p>
+<p><tr><td>working-hours</td><td>The model</td><td>true</td></tr></p>
+<p><tr><td>over-night-switch</td><td>Allow next-day switch</td><td>false</td></tr></p>
+<p><tr><td>time-format-switch</td><td>Allow user to change between 24h/12h format</td><td>false</td></tr>
+</table>
+</br></p>
+
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Working hours picker')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Working hours picker'] = !markupShow['Working hours picker']">
+            <span ng-hide="markupShow['Working hours picker']">Show</span>
+            <span ng-show="markupShow['Working hours picker']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Working hours picker']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;work-picker working-hours=&quot;model&quot; over-night-switch=&quot;true&quot; time-format-switch=&quot;true&quot;&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+          <div class="kss-modifier__example">
+            <work-picker working-hours="model" over-night-switch="true" time-format-switch="true">
+          </div>
+        </div>
+
+
+             </section>
+            <section id="kssref-2-11" class="kss-section material-depth-1 kss-section--depth-2">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Notices
+            </a>
+          </h2>
+          <small class="kss-title__ref">2.11 </small>
+
+ 
+          <div class="kss-description">
+            <p>Notices are temporary alerts that should quickly show up and disappear when appropriate.
+They can indicate to the user that an event or action has taken place or that something is stopping the current action.
+There are several different markers to make the type of notice easy to spot:</p>
+<ul class="wfm-simple-list"><li class="text-success"><b>Success: </b>Indicates successful action.</li>
+<li><b>Info: </b>Gives hints and information.</li>
+<li class="text-warning"><b>Warning: </b>Alerts that something has to be done before they can continue.</li>
+<li class="text-danger"><b>Error: </b>Should be triggered when something goes wrong in the background.</li></ul>
+
+<p>A notice should either self-destruct on state change, when timeout is up or be dismissable to free up space. The Notice service methods take 3 arguments: content, timeToLive and destroyOnStateChange.
+When creating a new notice you will get a notice object. You can destroy the notice by calling notice.destroy().</p>
+<div class="jsprewrap">
+  <div class="ksscopy kss-style" ng-click="showJs['notice'] = !showJs['notice']">
+      <span ng-hide="showJs['notice']">Show</span>
+     <span ng-show="showJs['notice']">Hide</span>
+    JavaScript
+    <i class="mdi mdi-code-tags pull-right"></i>
+  </div>
+  <div class="animate-show" ng-show="showJs['notice']">
+    <code>
+      <pre class="prettyprint linenums lang-js">
+
+$scope.displaySuccess = function() {
+    NoticeService.success(message, 5000, true);
+};
+      </pre>
+    </code>
+  </div>
+</div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Notices')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Notices'] = !markupShow['Notices']">
+            <span ng-hide="markupShow['Notices']">Show</span>
+            <span ng-show="markupShow['Notices']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Notices']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                
+&lt;!-- Some examples of how triggering a notice --&gt;
+&lt;button class=&quot;wfm-btn wfm-btn-default&quot; ng-click=&quot;displaySuccessNew();&quot;&gt;Trigger success&lt;/button&gt;
+&lt;button class=&quot;wfm-btn wfm-btn-default&quot; ng-click=&quot;displayInfoNew();&quot;&gt;Trigger info&lt;/button&gt;
+&lt;button class=&quot;wfm-btn wfm-btn-default&quot; ng-click=&quot;displayWarningNew();&quot;&gt;Trigger warning&lt;/button&gt;
+&lt;button class=&quot;wfm-btn wfm-btn-default&quot; ng-click=&quot;displayErrorNew();&quot;&gt;Trigger error&lt;/button&gt;
+
+&lt;!-- The code below is included by default in our index.html. NO NEED TO REPEAT IT--&gt;
+&lt;wfm-notice notices=&quot;wfmNotices&quot;&gt;&lt;/wfm-notice&gt;
+
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+          <div class="kss-modifier__example">
+            
+<!-- Some examples of how triggering a notice -->
+<button class="wfm-btn wfm-btn-default" ng-click="displaySuccessNew();">Trigger success</button>
+<button class="wfm-btn wfm-btn-default" ng-click="displayInfoNew();">Trigger info</button>
+<button class="wfm-btn wfm-btn-default" ng-click="displayWarningNew();">Trigger warning</button>
+<button class="wfm-btn wfm-btn-default" ng-click="displayErrorNew();">Trigger error</button>
+
+<!-- The code below is included by default in our index.html. NO NEED TO REPEAT IT-->
+<wfm-notice notices="wfmNotices"></wfm-notice>
+
+          </div>
+        </div>
+
+
+             </section>
+            <section id="kssref-2-12" class="kss-section material-depth-1 kss-section--depth-2">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Numeric value
+            </a>
+          </h2>
+          <small class="kss-title__ref">2.12 </small>
+
+ 
+          <div class="kss-description">
+            <p>A directive for making an input[text] behave like an input[number].
+Locale-aware number strings (e.g. 1.234,01 in Swedish) entered directly into the input field are accepted as text and parsed manually with the correct ng-locale (using the correct group separator and decimal separator).
+The directive accepts the &quot;float-number&quot; tag attribute. Without it the input will only accept integer values.</p>
+
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Numeric value')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Numeric value'] = !markupShow['Numeric value']">
+            <span ng-hide="markupShow['Numeric value']">Show</span>
+            <span ng-show="markupShow['Numeric value']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Numeric value']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                  &lt;form name=&quot;form&quot; class=&quot;wfm-form&quot;&gt;
+      &lt;label&gt;Localized number: &lt;input type=&quot;text&quot; ng-model=&quot;numericValueInput&quot; name=&quot;Example&quot; placeholder=&quot;0 ~ 1000000&quot; numeric-value min=&quot;0&quot; max=&quot;1000000&quot;/&gt;&lt;/label&gt;
+      &lt;p&gt;
+            Integer: &lt;span ng-bind=&quot;numericValueInputResult&quot;&gt;&lt;/span&gt;
+      &lt;/p&gt;
+      &lt;label&gt;Localized float-number: &lt;input type=&quot;text&quot; ng-model=&quot;numericValueFloatInput&quot; name=&quot;Example&quot; placeholder=&quot;0 ~ 1000000&quot; numeric-value float-number min=&quot;0&quot; max=&quot;1000000&quot;/&gt;&lt;/label&gt;
+      &lt;p&gt;
+            Float number: &lt;span ng-bind=&quot;numericValueFloatInputResult&quot;&gt;&lt;/span&gt;
+      &lt;/p&gt;
+  &lt;/form&gt;
+  
+        
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+          <div class="kss-modifier__example">
+              <form name="form" class="wfm-form">
+      <label>Localized number: <input type="text" ng-model="numericValueInput" name="Example" placeholder="0 ~ 1000000" numeric-value min="0" max="1000000"/></label>
+      <p>
+            Integer: <span ng-bind="numericValueInputResult"></span>
+      </p>
+      <label>Localized float-number: <input type="text" ng-model="numericValueFloatInput" name="Example" placeholder="0 ~ 1000000" numeric-value float-number min="0" max="1000000"/></label>
+      <p>
+            Float number: <span ng-bind="numericValueFloatInputResult"></span>
+      </p>
+  </form>
+  
+        
+          </div>
+        </div>
+
+
+             </section>
+            <section id="kssref-2-13" class="kss-section material-depth-1 kss-section--depth-2">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Skill picker
+            </a>
+          </h2>
+          <small class="kss-title__ref">2.13 </small>
+
+ 
+          <div class="kss-description">
+            <p>The skill picker is used to switch between selected skills and selected skill groups.</p>
+<p><table class="wfm-table">
+    <thead>
+        <tr>
+            <th>Attribute Name</th>
+            <th>Usage</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>skills</td>
+            <td>Model for binding skills. Array of skill objects</td>
+        </tr>
+        <tr>
+            <td>skill-groups</td>
+            <td>Model for binding skill groups. Array of skillgroup objects</td>
+        </tr>
+        <tr>
+            <td>skill-picker-open</td>
+            <td>Property for showing and hiding the drop-down with skills. Boolean. Optional</td>
+        </tr>
+        <tr>
+            <td>skill-group-picker-open</td>
+            <td>Property for showing and hiding the drop-down with skillgroups. Boolean. Optional</td>
+        </tr>
+        <tr>
+            <td>on-skill-selected</td>
+            <td>Callback function triggered when a skill is selected. The selected skill object as the only argument.</td>
+        </tr>
+        <tr>
+            <td>on-skill-group-selected</td>
+            <td>Callback function triggered when a skillgroup is selected. The selected skillgroup object as the only argument.</td>
+        </tr>
+        <tr>
+            <td>preselected-skill</td>
+            <td>Skill object to be displayed as the component loads</td>
+        </tr>
+        <tr>
+            <td>preselected-skill-group</td>
+            <td>Skillgroup object to be displayed as the component loads</td>
+        </tr>
+        <tr>
+            <td>on-clear-skill-selection</td>
+            <td>Callback function triggered when clearing the skill selection with x.</td>
+        </tr>
+        <tr>
+            <td>on-clear-skill-group-selection</td>
+            <td>Callback function triggered when clearing the skillgroup selection with x.</td>
+        </tr>
+    </tbody>
+</table></p>
+<div class="jsprewrap">
+  <div class="ksscopy kss-style" ng-click="showJs['skillPicker'] = !showJs['skillPicker']">
+      <span ng-hide="showJs['skillPicker']">Show</span>
+     <span ng-show="showJs['skillPicker']">Hide</span>
+    JavaScript
+    <i class="mdi mdi-code-tags pull-right"></i>
+  </div>
+  <div class="animate-show" ng-show="showJs['skillPicker']">
+    <code>
+      <pre class="prettyprint linenums lang-js">
+&nbsp;
+$scope.mockSkills = [
+ {
+      Id: &#39;-1&#39;,
+      Name: &#39;no skills (test)&#39;,
+      SkillType: &#39;SkillTypeChat&#39;,
+      DoDisplayData: true
+ },
+ {
+   Id: &#39;XYZ&#39;,
+   Name: &#39;skill1&#39;,
+   SkillType: &#39;SkillTypeChat&#39;,
+   DoDisplayData: true
+ },
+ {
+   Id: &#39;ABC&#39;,
+   Name: &#39;skill2&#39;,
+   SkillType: &#39;SkillTypeEmail&#39;,
+   DoDisplayData: true
+ },
+ {
+   Id: &#39;XYZ1&#39;,
+   Name: &#39;skill3&#39;,
+   SkillType: &#39;SkillTypeInboundTelephony&#39;,
+   DoDisplayData: true
+ },
+ {
+   Id: &#39;ABC2&#39;,
+   Name: &#39;skill4&#39;,
+   SkillType: &#39;SkillTypeRetail&#39;,
+   DoDisplayData: true
+ },
+ {
+   Id: &#39;XYZ3&#39;,
+   Name: &#39;skill5&#39;,
+   SkillType: &#39;SkillTypeBackoffice&#39;,
+   DoDisplayData: true
+ },
+ {
+   Id: &#39;ABC4&#39;,
+   Name: &#39;skill6&#39;,
+   SkillType: &#39;SkillTypeProject&#39;,
+   DoDisplayData: true
+ },
+ {
+   Id: &#39;XYZ5&#39;,
+   Name: &#39;skill7&#39;,
+   SkillType: &#39;SkillTypeFax&#39;,
+   DoDisplayData: true
+ },
+ {
+   Id: &#39;ABC6&#39;,
+   Name: &#39;skill8&#39;,
+   SkillType: &#39;SkillTypeTime&#39;,
+   DoDisplayData: true
+ }
+];
+
+$scope.mockedSkillGroups = [
+ {
+   Name: &#39;No skillgroup found (test)&#39;,
+   Id: &#39;-1&#39;,
+   Skills: []
+ },
+ {
+   Name: &#39;SkillArea1&#39;,
+   Id: &#39;123&#39;,
+   Skills: [
+     {
+       Id: &#39;XYZ&#39;,
+       Name: &#39;skill1&#39;
+     }
+   ]
+ },
+ {
+   Name: &#39;SkillArea2&#39;,
+   Id: &#39;321&#39;,
+   Skills: [
+     {
+       Id: &#39;ABC&#39;,
+       Name: &#39;skill2&#39;
+     }
+   ]
+ }
+];
+      </pre>
+    </code>
+  </div>
+</div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Skill picker')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Skill picker'] = !markupShow['Skill picker']">
+            <span ng-hide="markupShow['Skill picker']">Show</span>
+            <span ng-show="markupShow['Skill picker']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Skill picker']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;the-skill-picker class=&quot;con-flex&quot;
+     skills=&quot;mockSkills&quot;
+     skill-groups=&quot;mockedSkillGroups&quot;
+     skill-picker-open=&quot;skillPickerOpen&quot;
+     skill-group-picker-open=&quot;skillGroupPickerOpen&quot;
+     on-skill-selected=&quot;clickedSkillInPicker(skill)&quot;
+     on-skill-group-selected=&quot;clickedSkillGroupInPicker(skillGroup)&quot;
+     preselected-skill=&quot;selectedSkill&quot;
+     preselected-skill-group=&quot;selectedSkillGroup&quot;
+     on-clear-skill-selection=&quot;clearSkillSelection()&quot;
+     on-clear-skill-group-selection=&quot;clearSkillGroupSelection()&quot;&gt;
+&lt;/the-skill-picker&gt;
+&lt;p ng-if=&quot;selectedSkill&quot;&gt;Selected skill: &lt;span ng-bind=&quot;selectedSkill.Name&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p ng-if=&quot;selectedSkillGroup&quot;&gt;Selected skillgroup: &lt;span ng-bind=&quot;selectedSkillGroup.Name&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+          <div class="kss-modifier__example">
+            <the-skill-picker class="con-flex"
+     skills="mockSkills"
+     skill-groups="mockedSkillGroups"
+     skill-picker-open="skillPickerOpen"
+     skill-group-picker-open="skillGroupPickerOpen"
+     on-skill-selected="clickedSkillInPicker(skill)"
+     on-skill-group-selected="clickedSkillGroupInPicker(skillGroup)"
+     preselected-skill="selectedSkill"
+     preselected-skill-group="selectedSkillGroup"
+     on-clear-skill-selection="clearSkillSelection()"
+     on-clear-skill-group-selection="clearSkillGroupSelection()">
+</the-skill-picker>
+<p ng-if="selectedSkill">Selected skill: <span ng-bind="selectedSkill.Name"></span></p>
+<p ng-if="selectedSkillGroup">Selected skillgroup: <span ng-bind="selectedSkillGroup.Name"></span></p>
+          </div>
+        </div>
+
+
+             </section>
+            <section id="kssref-2-14" class="kss-section material-depth-1 kss-section--depth-2">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Skill picker - old
+            </a>
+          </h2>
+          <small class="kss-title__ref">2.14 </small>
+
+ 
+          <div class="kss-description">
+            <p>This will be soon depricated, we are keeping it for now for backwards compatibility. Please use the new one.
+The skill picker is used to switch between selected skills and selected skill groups.</p>
+<p><table class="wfm-table"></p>
+<p><thead>
+    <tr>
+        <th>Attribute Name</th>
+        <th>Usage</th>
+    </tr>
+</thead></p>
+<p><tbody>
+    <tr>
+        <td>skills</td>
+        <td>Model for binding skills</td>
+    </tr>
+    <tr>
+        <td>skill-areas</td>
+        <td>Model for binding skill groups</td>
+    </tr>
+   <tr>
+     <td>item-to-return</td>
+     <td>The currently selected item (skill or group) returned as a callback function</td>
+   </tr>
+   <tr>
+     <td>preselected</td>
+     <td>Send the id of a skill that should be preselected on load</td>
+   </tr>
+</tbody>
+</table></p>
+<div class="jsprewrap">
+  <div class="ksscopy kss-style" ng-click="showJs['skillPickerOld'] = !showJs['skillPickerOld']">
+      <span ng-hide="showJs['skillPickerOld']">Show</span>
+     <span ng-show="showJs['skillPickerOld']">Hide</span>
+    JavaScript
+    <i class="mdi mdi-code-tags pull-right"></i>
+  </div>
+  <div class="animate-show" ng-show="showJs['skillPickerOld']">
+    <code>
+      <pre class="prettyprint linenums lang-js">
+&nbsp;
+$scope.preselectedSkillOld = { skillIds: [&#39;XYZ1&#39;] };
+$scope.preselectedSkillGroupOld = { skillAreaId: [&#39;XYZ&#39;] };
+
+$scope.outputOld = function(selectedItem) {
+$scope.filterOutputOld = selectedItem;
+};
+      </pre>
+    </code>
+  </div>
+</div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Skill picker - old')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Skill picker - old'] = !markupShow['Skill picker - old']">
+            <span ng-hide="markupShow['Skill picker - old']">Show</span>
+            <span ng-show="markupShow['Skill picker - old']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Skill picker - old']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;skill-picker skills=&quot;mockSkillsOld&quot; skill-areas=&quot;mockedSkillGroupsOld&quot; item-to-return=&quot;outputOld&quot; preselected-item=&quot;preselectedSkillOld&quot;&gt;&lt;/skill-picker&gt;
+&lt;p ng-if=&quot;filterOutputOld&quot;&gt;Selected skill/group: &lt;span ng-bind=&quot;filterOutputOld.Name&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+          <div class="kss-modifier__example">
+            <skill-picker skills="mockSkillsOld" skill-areas="mockedSkillGroupsOld" item-to-return="outputOld" preselected-item="preselectedSkillOld"></skill-picker>
+<p ng-if="filterOutputOld">Selected skill/group: <span ng-bind="filterOutputOld.Name"></span></p>
+          </div>
+        </div>
+
+
+             </section>
+      
+  </article>
+
+  <script src="public/kss.js"></script>
+  <script src="public/prettify.js"></script>
+
+  <script>
+    prettyPrint();
+  </script>   
+  <!-- Automatically generated using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
+</body>
+
+</html>

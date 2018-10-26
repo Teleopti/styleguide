@@ -1,0 +1,55 @@
+.animate-show {
+  opacity: 1;
+}
+
+.animate-show.ng-hide-add.ng-hide-add-active,
+.animate-show.ng-hide-remove.ng-hide-remove-active {
+  -webkit-transition: $transition-timing;
+  transition: $transition-timing;
+}
+
+.animate-show.ng-hide {
+  opacity: 0;
+  margin-top: -$full-padding;
+}
+
+.reveal-material {
+    cursor: pointer;
+    animation:grow 300ms;
+    animation-timing-function:cubic-bezier(.33,.11,.02,.99);
+    animation-play-state:running;
+    -webkit-animation:grow 300ms;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-timing-function:cubic-bezier(.33,.11,.02,.99);
+    -webkit-animation-play-state:running;
+}
+
+.hide-material {
+    animation:shrink 300ms;
+    animation-timing-function:cubic-bezier(.33,.11,.02,.99);
+    animation-play-state:running;
+    -webkit-animation:shrink 300ms;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-timing-function:cubic-bezier(.33,.11,.02,.99);
+    -webkit-animation-play-state:running;
+}
+
+@keyframes grow {
+    from {
+        transform: scale(0,0);
+    }
+    to {
+        transform: scale(1,1);
+    }
+}
+
+@keyframes shrink {
+    from {
+			  transform: scale(1,1);
+    }
+    to {
+				transform: scale(0,0);display: none!important;visibility: hidden!important;
+    }
+}

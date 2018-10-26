@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<!--[if lte IE 6]>            <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IEMobile 7]>          <html class="no-js iem7" lang="en"> <![endif]-->
+<!--[if (IE 7)&(!IEMobile)]>  <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>                <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!-->
+<html class="no-js" lang="en" ng-app="styleguideApp">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <title>Teleopti WFM Living Style Guide</title>
+
+  <meta name="description" content="Teleopti WFM Styleguide">
+  <meta name="generator" content="kss-node">
+  <meta name="viewport" content="width=device-width">
+  <link type="text/css" rel="stylesheet" href="./public/kss.css" />
+  <link type="text/css" rel="stylesheet" href="./dist/dependencies.min.css" />
+  <link type="text/css" rel="stylesheet" href="./dist/main.min.css" />
+  <script src="./dist/dependencies.min.js"></script>
+  <script src="./dist/templates.js"></script>
+  <script src="./dist/wfmdirectives.min.js"></script>
+  <script src="./dist/main.min.js"></script> 
+
+  <style>
+    #ribbon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    input {
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+
+<body id="kss-node" ng-view ng-controller="mainCtrl">
+
+  <a href="https://github.com/Teleopti/styleguide" id="ribbon">
+    <img src="public/github-fork--black.png" alt="fork on github">
+  </a>
+  
+  <!-- <div tabindex=0 class="context-menu card-context sidebar-toggle material-depth-2" ng-click="hideSidebar = !hideSidebar">
+  <i class="mdi mdi-backburger"></i>
+  <md-tooltip>Options</md-tooltip>
+</div> -->
+  <div class="kss-sidebar material-depth-2 kss-style" ng-class="{'kss-sidebar-hidden':hideSidebar}">
+    <header class="kss-header line-center">
+      <a href="index.html">
+        <img src="http://www.teleopti.com/system/images/teleopti_logo.png" alt="Teleopti logo" height="60px" style="vertical-align:bottom;">
+      </a>
+    </header>
+    <nav class="kss-nav">
+      <ul class="kss-nav__menu">
+        <li class="kss-nav__menu-item">
+          <a href="section-0.html">
+            <i class="mdi" ng-class="getChapteIcon('Overview')"></i>
+            <span class="kss-nav__name">Overview</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-1.html">
+            <i class="mdi" ng-class="getChapteIcon('Elements')"></i>
+            <span class="kss-nav__name">Elements</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-2.html">
+            <i class="mdi" ng-class="getChapteIcon('Components')"></i>
+            <span class="kss-nav__name">Components</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-3.html">
+            <i class="mdi" ng-class="getChapteIcon('Colors')"></i>
+            <span class="kss-nav__name">Colors</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-4.html">
+            <i class="mdi" ng-class="getChapteIcon('Containers')"></i>
+            <span class="kss-nav__name">Containers</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-5.html">
+            <i class="mdi" ng-class="getChapteIcon('Tree')"></i>
+            <span class="kss-nav__name">Tree</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-6.html">
+            <i class="mdi" ng-class="getChapteIcon('Language')"></i>
+            <span class="kss-nav__name">Language</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-7.html">
+            <i class="mdi" ng-class="getChapteIcon('Icons')"></i>
+            <span class="kss-nav__name">Icons</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-8.html">
+            <i class="mdi" ng-class="getChapteIcon('Helper classes')"></i>
+            <span class="kss-nav__name">Helper classes</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-9.html">
+            <i class="mdi" ng-class="getChapteIcon('Naming and best practice')"></i>
+            <span class="kss-nav__name">Naming and best practice</span>
+          </a>
+          <ul class="kss-nav__menu-child">
+               
+            <a href="section-9.html#kssref-9-1">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">9.1</span>
+                <span class="kss-nav__name">States</span>
+
+              </li>
+            </a>
+              
+            <a href="section-9.html#kssref-9-2">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">9.2</span>
+                <span class="kss-nav__name">Translations</span>
+
+              </li>
+            </a>
+             
+          </ul>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-10.html">
+            <i class="mdi" ng-class="getChapteIcon('Resources')"></i>
+            <span class="kss-nav__name">Resources</span>
+          </a>
+        </li>
+      </ul>
+      <br/>
+    </nav>
+  </div>
+
+  <article role="main">
+  <article role="main" class="kss-main">
+      
+    <div id="kssref-9" class="kss-section section-hero kss-section--depth-1">
+
+        <div class="kss-style">
+          <h1 class="kss-title kss-title--level-1">
+            <a class="kss-title__permalink">
+              Naming and best practice
+            </a>
+          </h1>
+          <small class="kss-title__ref">9 </small>
+
+         </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Naming and best practice')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+ 
+    </div>
+        <section id="kssref-9-1" class="kss-section material-depth-1 kss-section--depth-2">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              States
+            </a>
+          </h2>
+          <small class="kss-title__ref">9.1 </small>
+
+ 
+          <div class="kss-description">
+            <p>Setting the state correctly is important due to our online help, since the online help link is based on the state.
+When a state changes, it will result in a new online help link which may cause customers to meet an empty page if this has not been handled in the online help.
+Therefore, avoid creating temporary or hidden states as much as possible.
+Talk to Lina if changing states or adding new ones.</p>
+<p>When creating a new state, name it using &quot;spinal-case&quot;.</p>
+<p>When working to replace an existing state, name the new state &quot;state-name-new&quot; until its ready. When it is, replace it with &quot;state-name&quot;.</p>
+<p>Note: &quot;config&quot; cannot be used as a child state name.</p>
+<div class="jsprewrap">
+  <div class="ksscopy kss-style" ng-click="showJs['states'] = !showJs['states']">
+      <span ng-hide="showJs['states']">Show</span>
+     <span ng-show="showJs['states']">Hide</span>
+    JavaScript
+    <i class="mdi mdi-code-tags pull-right"></i>
+  </div>
+  <div class="animate-show" ng-show="showJs['states']">
+    <code>
+      <pre class="prettyprint linenums lang-js">
+
+function stateConfig($stateProvider) {
+  $stateProvider.state(&#39;example&#39;,
+  {
+    url: &#39;/example&#39;,
+    templateUrl: &#39;app/example/example.html&#39;,
+    controller: &#39;ExampleController&#39;
+  })
+  .state(&#39;example.child&#39;,
+  {
+    url: &#39;/child&#39;,
+    templateUrl: &#39;app/example/example-child.html&#39;,
+    controller: &#39;ExampleChildController&#39;
+  })
+  .state(&#39;example.another-view&#39;,
+  {
+    url: &#39;/another-view&#39;,
+    templateUrl: &#39;app/example/another-view.html&#39;,
+    controller: &#39;ExampleSecondViewController&#39;
+  })
+}
+      </pre>
+    </code>
+  </div>
+</div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('States')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+     </section>
+            <section id="kssref-9-2" class="kss-section material-depth-1 kss-section--depth-2">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Translations
+            </a>
+          </h2>
+          <small class="kss-title__ref">9.2 </small>
+
+ 
+          <div class="kss-description">
+            <p>Add translation keys to the resource file and provide the string and a description.
+If you need to change the string on a previously added key, please choose one of the following options:
+<br/>
+Remove the key completely (in all translation files as well) and add a new key
+<b>OR</b>
+Change the string for the original key, and delete all previous translation of that key
+</ul></p>
+
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Translations')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+     </section>
+      
+  </article>
+
+  <script src="public/kss.js"></script>
+  <script src="public/prettify.js"></script>
+
+  <script>
+    prettyPrint();
+  </script>   
+  <!-- Automatically generated using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
+</body>
+
+</html>

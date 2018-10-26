@@ -1,0 +1,39 @@
+
+.wfm-accordion{
+	list-style:none;
+	padding: 0;
+}
+
+.wfm-accordion-head{
+	width: 100%;
+	padding: 5px;
+	background-color:$secondary;
+	color: $text-color-standard;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+	cursor:pointer;
+}
+
+.wfm-accordion-head i{
+	float:right;
+	transition:$transition-timing;
+}
+
+.wfm-accordion-content{
+	@extend .wfm-block;
+	@extend .animate-show;
+}
+
+.wfm-accordion-subheader{
+	@extend .wfm-block;
+	background-color: $secondary;
+	color: $text-color-standard;
+}
+
+.sidenav-header.accordion-head, .bottom-header.accordion-head {
+	list-style: none;
+	cursor:pointer;
+}
+
+.toggle-icon-open{
+	transform:rotate(90deg);
+}

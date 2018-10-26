@@ -1,0 +1,118 @@
+
+//Color shorthand
+//
+// These colors should be used as default when building new components
+// <table class="wfm-table">
+// <thead>
+// <tr>
+// <th>Variable</th>
+// <th>Uses</th>
+// </tr>
+// </thead>
+// <tbody>
+// <tr>
+// <td>$primary</td>
+// <td>Used for navbars, primary actions and backgrounds </td>
+// </tr>
+// <tr>
+// <td>$secondary</td>
+// <td>Used for headers and passive elements</td>
+// </tr>
+// <tr>
+// <td>$highlight</td>
+// <td>Used for selected and active elements</td>
+// </tr>
+// <tr>
+// <td>$hover</td>
+// <td>Used for hover backgrounds or inactive elements</td>
+// </tr>
+// </tbody>
+// </table>
+// <p>There are some predefined colors for standard text that will adapt to the theme automatically:</p>
+//  <table class="wfm-table">
+//    <thead><tr><th>Variable</th><th>Description</th></tr></thead>
+//    <tbody>
+//      <tr><td>$text-color-standard</td><td>Standard color used in panels</td></tr>
+//      <tr><td>$text-color-muted</td><td>Slightly muted color for use on disabled/secondary text</td></tr>
+//    </tbody>
+//  </table>
+//
+//Styleguide 3.1
+//
+
+
+//Main colors
+//
+//  <div class="panel material-depth-1">
+//     <div class="wfm-slide-tabs tabbed-panel">
+//       <div class="head-actions panel-menu">
+//         <div tabindex=0 class="context-menu card-context">
+//         </div>
+//       </div>
+//       <md-content class="md-padding">
+//         <md-tabs md-dynamic-height md-border-bottom >
+//           <md-tab label="Classic Colors">
+//             <md-content class="md-padding classictheme-background">
+//               <div class="con-row">
+//                 <div class="con-flex">
+//                  <div class="con-fluid-row swatch-list">
+//                    <div class="con-fluid-flex" style="border:none" ng-repeat="swatch in classicSwatches">
+//                      <div class="card panel swatch">
+//                        <div ng-class="swatch.Class">
+//                          <div class="spacer"></div>
+//                        </div>
+//                        <div class="card-footer con-row">
+//                          <div class="con-flex">
+//                            <article>
+//                              <b ng-bind="swatch.Variable"></b></br>
+//                              Used for <span ng-bind="swatch.Use"></span></br>
+//                              Code: <span ng-bind="swatch.Color"></span> </br>
+//                              Text color: <span ng-bind="swatch.TextColor"></span>
+//                            </article>
+//                          </div>
+//                        </div>
+//                      </div>
+//                    </div>
+//                   </div>
+//               </div>
+//             </md-content>
+//           </md-tab>
+//           <md-tab label="Dark Theme Colors">
+//             <md-content class="md-padding darktheme-background" >
+//               <div class="con-row">
+//                 <div class="con-flex">
+//                  <div class="con-fluid-row swatch-list">
+//                    <div class="con-fluid-flex" style="border:none" ng-repeat="swatch in classicSwatches">
+//                      <div class="card panel swatch">
+//                        <div ng-class="swatch.DarkClass">
+//                          <div class="spacer"></div>
+//                        </div>
+//                        <div class="card-footer con-row" style="background:#424242">
+//                          <div class="con-flex">
+//                            <article>
+//                              <b ng-bind="swatch.Variable"></b></br>
+//                              Used for <span ng-bind="swatch.Use"></span></br>
+//                              Code: <span ng-bind="swatch.DarkColor"></span> </br>
+//                              Text color: <span ng-bind="swatch.DarkTextColor"></span>
+//                            </article>
+//                          </div>
+//                        </div>
+//                      </div>
+//                    </div>
+//                   </div>
+//               </div>
+//           </md-content>
+//           </md-tab>
+//         </md-tabs>
+//      </md-content>
+//   </div>
+// </div>
+//
+//Styleguide 3.2
+//
+
+$full-padding: 5px; /*sets wfm-block*/
+$half-padding: 3px;
+$transition-timing: 300ms all cubic-bezier(.33,.11,.02,.99);
+$standard-font-size:14px;
+$sm-font-size:12px;

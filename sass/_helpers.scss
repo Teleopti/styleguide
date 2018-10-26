@@ -1,0 +1,149 @@
+//Helper classes
+//
+//Styleguide 8
+//
+//
+
+// Position
+//
+//Markup:
+//<div class="pull-right">.pull-right</div>
+//<div class="pull-left">.pull-left</div>
+//<div class="line-right">.line-right</div>
+//<div class="line-center">.line-center</div>
+//<div class="inline-flex">.inline-flex</div>
+// <div class="align-row-center">
+// .vertical center
+// </div>
+// <div class="align-row-baseline">
+// .vertical baseline
+// </div>
+//<div class="margin-center">.margin-center</div>
+//<div class="align-bottom-flex">.align-bottom-flex</div>
+//<div>
+//		<div class="inline-block">.inline-block 1 </div>
+//		<div class="inline-block">.inline-block 2 </div>
+//		<div class="inline-block">.inline-block 3 </div>
+//</div>
+//<div class="relative">.relative
+//		<div class="absolute">.absolute</div>
+//</div>
+//
+//Styleguide 8.1
+//
+
+.align-row-center{
+	display: flex;
+	align-items: center;
+}
+
+.baseline{
+	align-items: baseline;
+}
+
+.align-row-baseline{
+	display: flex;
+	align-items: baseline;
+}
+
+.line-right{
+	text-align:right;
+}
+
+.line-center{
+	text-align: center;
+}
+
+.relative{
+	position: relative;
+}
+
+.absolute{
+	position: absolute;
+}
+
+.inline-block{
+	display: inline-block;
+}
+
+.inline-flex{
+	display: inline-flex!important;
+	display: -ms-inline-flexbox!important;
+}
+
+.margin-center{
+	margin: 0 auto;
+}
+
+
+// Cursor types
+//
+//Markup:
+//<div class="cursor-pointer">hover me</div>
+//<div class="locked">no interaction what so ever</div>
+//<div class="non-pointer">I cant be <a>clicked</a>, hovered or tabbed to</div>
+//
+//Styleguide 8.2
+//
+
+.cursor-pointer,.pointer{
+  cursor: pointer;
+}
+
+.non-pointer{
+	pointer-events: none;
+
+	&:focus{
+		display: none;
+	}
+}
+
+.locked {
+	color: $text-color-muted !important;
+	cursor: not-allowed;
+	pointer-events: none;
+}
+
+
+// Showing and hiding content
+//
+//Markup:
+//<div class="show">displayed</div>
+//<div class="hidden">hidden</div>
+//<div class="invisible">invisible</div>
+//<div class="block">display block</div>
+//<div class="relative">relative</div>
+//
+//Styleguide 8.3
+//
+.show {
+  display: block !important;
+}
+.hidden {
+  display: none !important;
+}
+.invisible {
+  visibility: hidden;
+}
+.block{
+	display: block!important;
+}
+
+//Animations
+//
+//Markup:
+// <!-- Add material depth on hover -->
+//<div class="spacer material-depth-1 raise"> Hover to raise</div>
+//<br/>
+// <!-- Load element with a growing effect -->
+//<div class="spacer material-depth-1 grow-out"> Grows out from center</div>
+//<br/>
+// <!-- Hide element with a zooming effect -->
+//<div class="spacer material-depth-1" ng-click="dissapear=true" ng-class="{'reveal-material':dissapear}"> Click to dissapear</div>
+//<br/>
+// <!-- Load element with a fade effect when using ng-show -->
+//<p ng-click="showMaterial = !showMaterial">trigger animation 1</p>
+//<div class="spacer material-depth-1 animate-show" ng-show="showMaterial"> Fade in</div>
+//
+//Styleguide 8.6
+//

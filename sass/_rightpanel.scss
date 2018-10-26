@@ -1,0 +1,170 @@
+// Panel with sidebar
+//
+//The sub header of a regular panel can be repaced to provide a sidebar within the panel.
+//
+// <div class="jsprewrap">
+//   <div class="ksscopy kss-style" ng-click="showJs['sidebar'] = !showJs['sidebar']">
+//       <span ng-hide="showJs['sidebar']">Show</span>
+//      <span ng-show="showJs['sidebar']">Hide</span>
+//     JavaScript
+//     <i class="mdi mdi-code-tags pull-right"></i>
+//   </div>
+//   <div class="animate-show" ng-show="showJs['sidebar']">
+//     <code>
+//       <pre class="prettyprint linenums lang-js">
+//
+//$scope.rightPanelOptions = {
+//		panelState: false,
+//		sidePanelTitle: 'Side panel title',
+//		showCloseButton: true,
+//		showResizer: true,
+//		showBackdrop: true,
+//		showPopupButton: true
+//};
+//       </pre>
+//     </code>
+//   </div>
+// </div>
+//
+// Markup:
+//<div class="panel material-depth-1">
+//  <div class="sub-header">
+//    <h2>Panel with sidebar</h2>
+//		<wfm-right-panel panel-options="rightPanelOptions">
+//		  <div class="con-row">
+//		    <div class="con-flex">content</div>
+//		    </div>
+//		  <div class="con-footer">
+//		    <button class="wfm-btn wfm-btn-invis-default">Action</button>
+//		  </div>
+//		</wfm-right-panel>
+//  </div>
+//  <div class="con-row">
+//	  <div class="con-flex">Content</div>
+//  </div>
+//  <div class="con-footer">
+//	  <button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+//	  <button class="wfm-btn wfm-btn-invis-primary">Options</button>
+//  </div>
+//</div>
+//
+//Styleguide 4.6
+//
+@keyframes widthChange5 {
+	0% {
+		width: 0px;
+		background: $white;
+	}
+	80% {
+		width: 0px;
+		background: $gray012;
+	}
+	100% {
+		width: 5px;
+		background: $gray-300;
+	}
+}
+@keyframes widthChange7 {
+	0% {
+		width: 0px;
+	}
+	80% {
+		width: 0px;
+	}
+	100% {
+		width: 7px;
+	}
+}
+wfm-right-panel {
+	z-index: 1;
+	float: right;
+
+	.open-right-panel, .close-right-panel {
+		z-index: 1;
+	}
+	wfm-right-panel .sub-header {
+		padding: 10px 5px;
+		border-bottom: 1px solid $gray012;
+	}
+	.wfm-right-panel {
+		background: $white;
+	}
+	.wfm-right-panel .panel-menu{
+		position: absolute;
+		top: 8px;
+		right: 8px;
+		z-index: 10;
+	}
+	wfm-right-panel .resizable .rg-left {
+		width: 5px;
+		z-index: 2;
+		margin-left: 0;
+		margin: 0;
+		left: -5px;
+		height: 100%;
+		background: #E0E0E0;
+		animation: widthChange5 450ms;
+		-webkit-animation: widthChange5 450ms;
+	}
+	.resizable {
+		position: absolute;
+		right: 0;
+		width: auto;
+		min-width: 310px;
+		max-width: 80%;
+		top: 0;
+		bottom: 0;
+		z-index: 60;
+		background: $white;
+		overflow: visible !important;
+
+		.rg-left {
+			width: 5px;
+			z-index: 2;
+			margin-left: 0;
+			margin: 0;
+			left: -5px;
+			height: 100%;
+			background: $gray-300;
+			animation: widthChange5 450ms;
+			-webkit-animation: widthChange5 450ms;
+
+			span {
+				margin-left: 6px;
+				z-index: 1;
+				animation: widthChange7 450ms;
+				-webkit-animation: widthChange7 450ms;
+			}
+			.sidenav-header .chevron {
+				margin: 0;
+				padding: 0px 5px 0px 5px;
+			}
+			.sidenav-header .chevron:hover {
+				cursor: pointer;
+			}
+		}
+		.md-sidenav-backdrop {
+			display: none;
+		}
+	}
+	md-sidenav {
+		max-width: none;
+		overflow: hidden;
+		width: 100%;
+		z-index: 1;
+	}
+	.sidenav-header {
+		.chevron {
+			cursor: pointer;
+		}
+	}
+	.panel-content {
+		position: absolute;
+		top: 41px;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		overflow: auto;
+		padding-left: 5px;
+	}
+}

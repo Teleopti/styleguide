@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<!--[if lte IE 6]>            <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IEMobile 7]>          <html class="no-js iem7" lang="en"> <![endif]-->
+<!--[if (IE 7)&(!IEMobile)]>  <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>                <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!-->
+<html class="no-js" lang="en" ng-app="styleguideApp">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <title>Teleopti WFM Living Style Guide</title>
+
+  <meta name="description" content="Teleopti WFM Styleguide">
+  <meta name="generator" content="kss-node">
+  <meta name="viewport" content="width=device-width">
+  <link type="text/css" rel="stylesheet" href="./public/kss.css" />
+  <link type="text/css" rel="stylesheet" href="./dist/dependencies.min.css" />
+  <link type="text/css" rel="stylesheet" href="./dist/main.min.css" />
+  <script src="./dist/dependencies.min.js"></script>
+  <script src="./dist/templates.js"></script>
+  <script src="./dist/wfmdirectives.min.js"></script>
+  <script src="./dist/main.min.js"></script> 
+
+  <style>
+    #ribbon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    input {
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+
+<body id="kss-node" ng-view ng-controller="mainCtrl">
+
+  <a href="https://github.com/Teleopti/styleguide" id="ribbon">
+    <img src="public/github-fork--black.png" alt="fork on github">
+  </a>
+  
+  <!-- <div tabindex=0 class="context-menu card-context sidebar-toggle material-depth-2" ng-click="hideSidebar = !hideSidebar">
+  <i class="mdi mdi-backburger"></i>
+  <md-tooltip>Options</md-tooltip>
+</div> -->
+  <div class="kss-sidebar material-depth-2 kss-style" ng-class="{'kss-sidebar-hidden':hideSidebar}">
+    <header class="kss-header line-center">
+      <a href="index.html">
+        <img src="http://www.teleopti.com/system/images/teleopti_logo.png" alt="Teleopti logo" height="60px" style="vertical-align:bottom;">
+      </a>
+    </header>
+    <nav class="kss-nav">
+      <ul class="kss-nav__menu">
+        <li class="kss-nav__menu-item">
+          <a href="section-0.html">
+            <i class="mdi" ng-class="getChapteIcon('Overview')"></i>
+            <span class="kss-nav__name">Overview</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-1.html">
+            <i class="mdi" ng-class="getChapteIcon('Elements')"></i>
+            <span class="kss-nav__name">Elements</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-2.html">
+            <i class="mdi" ng-class="getChapteIcon('Components')"></i>
+            <span class="kss-nav__name">Components</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-3.html">
+            <i class="mdi" ng-class="getChapteIcon('Colors')"></i>
+            <span class="kss-nav__name">Colors</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-4.html">
+            <i class="mdi" ng-class="getChapteIcon('Containers')"></i>
+            <span class="kss-nav__name">Containers</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-5.html">
+            <i class="mdi" ng-class="getChapteIcon('Tree')"></i>
+            <span class="kss-nav__name">Tree</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-6.html">
+            <i class="mdi" ng-class="getChapteIcon('Language')"></i>
+            <span class="kss-nav__name">Language</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-7.html">
+            <i class="mdi" ng-class="getChapteIcon('Icons')"></i>
+            <span class="kss-nav__name">Icons</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-8.html">
+            <i class="mdi" ng-class="getChapteIcon('Helper classes')"></i>
+            <span class="kss-nav__name">Helper classes</span>
+          </a>
+          <ul class="kss-nav__menu-child">
+               
+            <a href="section-8.html#kssref-8-1">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">8.1</span>
+                <span class="kss-nav__name">Position</span>
+
+              </li>
+            </a>
+              
+            <a href="section-8.html#kssref-8-2">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">8.2</span>
+                <span class="kss-nav__name">Cursor types</span>
+
+              </li>
+            </a>
+              
+            <a href="section-8.html#kssref-8-3">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">8.3</span>
+                <span class="kss-nav__name">Showing and hiding content</span>
+
+              </li>
+            </a>
+              
+            <a href="section-8.html#kssref-8-4">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">8.4</span>
+                <span class="kss-nav__name">Colors for text</span>
+
+              </li>
+            </a>
+              
+            <a href="section-8.html#kssref-8-5">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">8.5</span>
+                <span class="kss-nav__name">Other text helpers</span>
+
+              </li>
+            </a>
+              
+            <a href="section-8.html#kssref-8-6">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">8.6</span>
+                <span class="kss-nav__name">Animations</span>
+
+              </li>
+            </a>
+             
+          </ul>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-9.html">
+            <i class="mdi" ng-class="getChapteIcon('Naming and best practice')"></i>
+            <span class="kss-nav__name">Naming and best practice</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-10.html">
+            <i class="mdi" ng-class="getChapteIcon('Resources')"></i>
+            <span class="kss-nav__name">Resources</span>
+          </a>
+        </li>
+      </ul>
+      <br/>
+    </nav>
+  </div>
+
+  <article role="main">
+  <article role="main" class="kss-main">
+      
+    <div id="kssref-8" class="kss-section section-hero kss-section--depth-1">
+
+        <div class="kss-style">
+          <h1 class="kss-title kss-title--level-1">
+            <a class="kss-title__permalink">
+              Helper classes
+            </a>
+          </h1>
+          <small class="kss-title__ref">8 </small>
+
+         </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Helper classes')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+ 
+    </div>
+        <section id="kssref-8-1" class="kss-section material-depth-1 kss-section--depth-2">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Position
+            </a>
+          </h2>
+          <small class="kss-title__ref">8.1 </small>
+
+         </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Position')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Position'] = !markupShow['Position']">
+            <span ng-hide="markupShow['Position']">Show</span>
+            <span ng-show="markupShow['Position']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Position']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;div class=&quot;pull-right&quot;&gt;.pull-right&lt;/div&gt;
+&lt;div class=&quot;pull-left&quot;&gt;.pull-left&lt;/div&gt;
+&lt;div class=&quot;line-right&quot;&gt;.line-right&lt;/div&gt;
+&lt;div class=&quot;line-center&quot;&gt;.line-center&lt;/div&gt;
+&lt;div class=&quot;inline-flex&quot;&gt;.inline-flex&lt;/div&gt;
+&lt;div class=&quot;align-row-center&quot;&gt;
+.vertical center
+&lt;/div&gt;
+&lt;div class=&quot;align-row-baseline&quot;&gt;
+.vertical baseline
+&lt;/div&gt;
+&lt;div class=&quot;margin-center&quot;&gt;.margin-center&lt;/div&gt;
+&lt;div class=&quot;align-bottom-flex&quot;&gt;.align-bottom-flex&lt;/div&gt;
+&lt;div&gt;
+	&lt;div class=&quot;inline-block&quot;&gt;.inline-block 1 &lt;/div&gt;
+	&lt;div class=&quot;inline-block&quot;&gt;.inline-block 2 &lt;/div&gt;
+	&lt;div class=&quot;inline-block&quot;&gt;.inline-block 3 &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;relative&quot;&gt;.relative
+	&lt;div class=&quot;absolute&quot;&gt;.absolute&lt;/div&gt;
+&lt;/div&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+          <div class="kss-modifier__example">
+            <div class="pull-right">.pull-right</div>
+<div class="pull-left">.pull-left</div>
+<div class="line-right">.line-right</div>
+<div class="line-center">.line-center</div>
+<div class="inline-flex">.inline-flex</div>
+<div class="align-row-center">
+.vertical center
+</div>
+<div class="align-row-baseline">
+.vertical baseline
+</div>
+<div class="margin-center">.margin-center</div>
+<div class="align-bottom-flex">.align-bottom-flex</div>
+<div>
+	<div class="inline-block">.inline-block 1 </div>
+	<div class="inline-block">.inline-block 2 </div>
+	<div class="inline-block">.inline-block 3 </div>
+</div>
+<div class="relative">.relative
+	<div class="absolute">.absolute</div>
+</div>
+          </div>
+        </div>
+
+
+             </section>
+            <section id="kssref-8-2" class="kss-section material-depth-1 kss-section--depth-2">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Cursor types
+            </a>
+          </h2>
+          <small class="kss-title__ref">8.2 </small>
+
+         </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Cursor types')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Cursor types'] = !markupShow['Cursor types']">
+            <span ng-hide="markupShow['Cursor types']">Show</span>
+            <span ng-show="markupShow['Cursor types']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Cursor types']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;div class=&quot;cursor-pointer&quot;&gt;hover me&lt;/div&gt;
+&lt;div class=&quot;locked&quot;&gt;no interaction what so ever&lt;/div&gt;
+&lt;div class=&quot;non-pointer&quot;&gt;I cant be &lt;a&gt;clicked&lt;/a&gt;, hovered or tabbed to&lt;/div&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+          <div class="kss-modifier__example">
+            <div class="cursor-pointer">hover me</div>
+<div class="locked">no interaction what so ever</div>
+<div class="non-pointer">I cant be <a>clicked</a>, hovered or tabbed to</div>
+          </div>
+        </div>
+
+
+             </section>
+            <section id="kssref-8-3" class="kss-section material-depth-1 kss-section--depth-2">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Showing and hiding content
+            </a>
+          </h2>
+          <small class="kss-title__ref">8.3 </small>
+
+         </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Showing and hiding content')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Showing and hiding content'] = !markupShow['Showing and hiding content']">
+            <span ng-hide="markupShow['Showing and hiding content']">Show</span>
+            <span ng-show="markupShow['Showing and hiding content']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Showing and hiding content']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;div class=&quot;show&quot;&gt;displayed&lt;/div&gt;
+&lt;div class=&quot;hidden&quot;&gt;hidden&lt;/div&gt;
+&lt;div class=&quot;invisible&quot;&gt;invisible&lt;/div&gt;
+&lt;div class=&quot;block&quot;&gt;display block&lt;/div&gt;
+&lt;div class=&quot;relative&quot;&gt;relative&lt;/div&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+          <div class="kss-modifier__example">
+            <div class="show">displayed</div>
+<div class="hidden">hidden</div>
+<div class="invisible">invisible</div>
+<div class="block">display block</div>
+<div class="relative">relative</div>
+          </div>
+        </div>
+
+
+             </section>
+            <section id="kssref-8-4" class="kss-section material-depth-1 kss-section--depth-2">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Colors for text
+            </a>
+          </h2>
+          <small class="kss-title__ref">8.4 </small>
+
+ 
+          <div class="kss-description">
+            <p>Helper classes can be used if text needs to have a color association. Remember that this can cause problems for people who are color-blind so use with care.</p>
+
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Colors for text')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Colors for text'] = !markupShow['Colors for text']">
+            <span ng-hide="markupShow['Colors for text']">Show</span>
+            <span ng-show="markupShow['Colors for text']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Colors for text']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;p class=&quot;text-muted&quot;&gt;Fusce dapibus, tellus ac cursus commodo&lt;/p&gt;
+&lt;p class=&quot;text-success&quot;&gt;Fusce dapibus, tellus ac cursus commodo&lt;/p&gt;
+&lt;p class=&quot;text-warning&quot;&gt;Fusce dapibus, tellus ac cursus commodo&lt;/p&gt;
+&lt;p class=&quot;text-danger&quot;&gt;Fusce dapibus, tellus ac cursus commodo&lt;/p&gt;
+&lt;p class=&quot;text-white&quot;&gt;Fusce dapibus, tellus ac cursus commodo&lt;/p&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+          <div class="kss-modifier__example">
+            <p class="text-muted">Fusce dapibus, tellus ac cursus commodo</p>
+<p class="text-success">Fusce dapibus, tellus ac cursus commodo</p>
+<p class="text-warning">Fusce dapibus, tellus ac cursus commodo</p>
+<p class="text-danger">Fusce dapibus, tellus ac cursus commodo</p>
+<p class="text-white">Fusce dapibus, tellus ac cursus commodo</p>
+          </div>
+        </div>
+
+
+             </section>
+            <section id="kssref-8-5" class="kss-section material-depth-1 kss-section--depth-2">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Other text helpers
+            </a>
+          </h2>
+          <small class="kss-title__ref">8.5 </small>
+
+         </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Other text helpers')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Other text helpers'] = !markupShow['Other text helpers']">
+            <span ng-hide="markupShow['Other text helpers']">Show</span>
+            <span ng-show="markupShow['Other text helpers']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Other text helpers']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;p class=&quot;caps&quot;&gt;First letter is capitalized&lt;/p&gt;
+&lt;p class=&quot;sm-font-size&quot;&gt;small text&lt;/p&gt;
+&lt;p class=&quot;full-padding&quot;&gt;Padded&lt;/p&gt;
+&lt;p class=&quot;padding-reset&quot;&gt;remove padding&lt;/p&gt;
+&lt;p class=&quot;unselectable&quot;&gt;This text could not be selected&lt;/p&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+          <div class="kss-modifier__example">
+            <p class="caps">First letter is capitalized</p>
+<p class="sm-font-size">small text</p>
+<p class="full-padding">Padded</p>
+<p class="padding-reset">remove padding</p>
+<p class="unselectable">This text could not be selected</p>
+          </div>
+        </div>
+
+
+             </section>
+            <section id="kssref-8-6" class="kss-section material-depth-1 kss-section--depth-2">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Animations
+            </a>
+          </h2>
+          <small class="kss-title__ref">8.6 </small>
+
+         </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Animations')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Animations'] = !markupShow['Animations']">
+            <span ng-hide="markupShow['Animations']">Show</span>
+            <span ng-show="markupShow['Animations']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Animations']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;!-- Add material depth on hover --&gt;
+&lt;div class=&quot;spacer material-depth-1 raise&quot;&gt; Hover to raise&lt;/div&gt;
+&lt;br/&gt;
+&lt;!-- Load element with a growing effect --&gt;
+&lt;div class=&quot;spacer material-depth-1 grow-out&quot;&gt; Grows out from center&lt;/div&gt;
+&lt;br/&gt;
+&lt;!-- Hide element with a zooming effect --&gt;
+&lt;div class=&quot;spacer material-depth-1&quot; ng-click=&quot;dissapear=true&quot; ng-class=&quot;{&#x27;reveal-material&#x27;:dissapear}&quot;&gt; Click to dissapear&lt;/div&gt;
+&lt;br/&gt;
+&lt;!-- Load element with a fade effect when using ng-show --&gt;
+&lt;p ng-click=&quot;showMaterial = !showMaterial&quot;&gt;trigger animation 1&lt;/p&gt;
+&lt;div class=&quot;spacer material-depth-1 animate-show&quot; ng-show=&quot;showMaterial&quot;&gt; Fade in&lt;/div&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+          <div class="kss-modifier__example">
+            <!-- Add material depth on hover -->
+<div class="spacer material-depth-1 raise"> Hover to raise</div>
+<br/>
+<!-- Load element with a growing effect -->
+<div class="spacer material-depth-1 grow-out"> Grows out from center</div>
+<br/>
+<!-- Hide element with a zooming effect -->
+<div class="spacer material-depth-1" ng-click="dissapear=true" ng-class="{'reveal-material':dissapear}"> Click to dissapear</div>
+<br/>
+<!-- Load element with a fade effect when using ng-show -->
+<p ng-click="showMaterial = !showMaterial">trigger animation 1</p>
+<div class="spacer material-depth-1 animate-show" ng-show="showMaterial"> Fade in</div>
+          </div>
+        </div>
+
+
+             </section>
+      
+  </article>
+
+  <script src="public/kss.js"></script>
+  <script src="public/prettify.js"></script>
+
+  <script>
+    prettyPrint();
+  </script>   
+  <!-- Automatically generated using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
+</body>
+
+</html>

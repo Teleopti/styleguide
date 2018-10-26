@@ -1,0 +1,65 @@
+//Pagination
+//
+//Pagination is a directive which displays a list of availale pages and provides the properties for outer scope to set the pagination options and get data for the given page number.
+//<table class="wfm-table">
+//<tr><th>Attribute Name</th><th>Description</th><th>Required</th></tr>
+//<tr><td>pagination-options</td><td>configurations about the pagination, it contains two properties. "pageNumber" is the current page number; "totalPages" is hwo many pages it sets.</td><td>true</td></tr>
+//<tr><td>get-data-for-page-callback</td><td>this is the function which is used by the directive to call to get the data for a given page number.</td><td>true</td></tr>
+//</table>
+//
+// <div class="jsprewrap">
+//   <div class="ksscopy kss-style" ng-click="showJs['pagination'] = !showJs['pagination']">
+//       <span ng-hide="showJs['pagination']">Show</span>
+//      <span ng-show="showJs['pagination']">Hide</span>
+//     JavaScript
+//     <i class="mdi mdi-code-tags pull-right"></i>
+//   </div>
+//   <div class="animate-show" ng-show="showJs['pagination']">
+//     <code>
+//       <pre class="prettyprint linenums lang-js">
+//
+//$scope.paginationOptions = {pageNumber: 1, totalPages: 7};
+//$scope.getPageData = function(pageIndex) {
+//    angular.log(pageIndex);
+//};
+//       </pre>
+//     </code>
+//   </div>
+// </div>
+//
+//Markup:
+//<wfm-pagination class="pull-pagination" pagination-options="paginationOptions" get-data-for-page-callback="getPageData"></wfm-pagination>
+//
+//Styleguide 2.9
+//
+
+.pull-pagination {
+  text-align: right;
+}
+
+.pagination,
+.pagination ul {
+  margin: 0;
+}
+
+.pagination li {
+  display: inline-block;
+  padding: 10px;
+  cursor: pointer;
+  vertical-align: middle;
+  background-color: $white;
+  &.disabled {
+    cursor: not-allowed;
+    a {
+      pointer-events: none;
+      color: $gray026;
+    }
+  }
+  &.active {
+    background-color: $gray012;
+  }
+  & a{
+      color: $secondary;
+      text-decoration: none;
+    }
+}

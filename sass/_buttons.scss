@@ -1,0 +1,372 @@
+// Flat button
+//
+//When using buttons try helping the user understand what the action will do and what object it will effect. This can be done using good terms and tooltips.
+//For more details take a look at the <a href="http://www.google.com/design/spec/components/buttons.html#buttons-usage">material design buttons</a>
+//
+//The flat buttons are 'printed' on another pice of material and only show its area when hovered, it uses capital letters to differentiate it from a link.
+//
+//Note: A primary button is UNIQUE on a page and is for the MAIN action on that page.
+//
+//Markup:
+//<button class="wfm-btn wfm-btn-invis-default">Default</button>
+//<button class="wfm-btn wfm-btn-invis-primary">Primary</button>
+//<button class="wfm-btn wfm-btn-invis-disabled">Disabled</button>
+//<button class="wfm-btn wfm-btn-invis-default" disabled>Default disabled</button>
+//<button class="wfm-btn wfm-btn-invis-primary" disabled>Primary disabled</button>
+//
+//Styleguide 1.11
+//
+
+// Raised button
+//
+//The raised buttons is itself a pice of material and its area is always visible. Use raised buttons when there is no panel/area behind (around) the button.
+//
+//Markup:
+//<button class="wfm-btn wfm-btn-default">Default</button>
+//<button class="wfm-btn wfm-btn-primary">Primary</button>
+//<button class="wfm-btn wfm-btn-primary-disabled">Disabled</button>
+//<button class="wfm-btn wfm-btn-default" disabled>Default disabled</button>
+//<button class="wfm-btn wfm-btn-primary" disabled>Primary disabled</button>
+//
+//Styleguide 1.12
+//
+
+// Action button
+//
+//The action button functions similarly to the raised buttons except that are on the floating layer above the entire layout. They are also similar in that they are unique in each view, indicating the primary positive action. More about when to use it can be found in the <a href="http://www.google.com/design/spec/components/buttons.html#buttons-floating-action-button">google material guidelines.</a>
+// A action button is always located inside the view header.
+//
+//Markup:
+//	<button class="wfm-fab  material-depth-1"><i class="mdi mdi-account"></i>
+//		<md-tooltip>My account</md-tooltip>
+//	</button>
+//	<button class="wfm-fab  material-depth-1 info"><i class="mdi mdi-arrow-right"></i>
+//		<md-tooltip>Carry on</md-tooltip>
+//	</button>
+//	<button class="wfm-fab  material-depth-1 success"><i class="mdi mdi-plus"></i>
+//		<md-tooltip>Add a thing</md-tooltip>
+//	</button>
+//
+//Styleguide 1.13
+//
+
+// Action button (removing)
+//
+//The action button can not be disabled, rather it should simply not be displayed if unavailable.
+//It is possible to trigger the animations using ng-click and/or ng-class.
+//
+//These animations should only be applied to action buttons.
+//
+//Markup:
+//	<button class="wfm-fab grow-out  material-depth-1"><i class="mdi mdi-plus" ></i>
+//		<md-tooltip>I appear when needed</md-tooltip>
+//	</button>
+//	<button class="wfm-fab  material-depth-1" ng-class="{'shrink-in':animateIn === 'trigger1'}" ng-click="animateIn = 'trigger1'">
+//		<i class="mdi mdi-close"></i>
+//		<md-tooltip>Click me and im gone</md-tooltip>
+//	</button>
+//
+//Styleguide 1.14
+//
+
+// Icon button
+//
+// Icons can be used as buttons or toggles. In this case they should have a bigger trigger area, a cursor pointer and preferably a tooltip to explain its action.
+// They can also house a <a href=section-1.html#kssref-1-12>context menu.</a>
+// Using buttons, icons can be disabled.
+//
+//Markup:
+// <h3>Simple</h3>
+//	<div tabindex=0 class="context-menu card-context">
+//		<i class="mdi mdi-cake"></i>
+//		<md-tooltip>Options</md-tooltip>
+//	</div>
+// <h3>Color</h3>
+//	<button tabindex=0 class="context-menu card-context notice-info">
+//		<i class="mdi mdi-comment-outline"></i>
+//		<md-tooltip>info</md-tooltip>
+//	</button>
+//	<button tabindex=0 class="context-menu card-context notice-success">
+//		<i class="mdi mdi-comment-check-outline"></i>
+//		<md-tooltip>success</md-tooltip>
+//	</button>
+//	<button tabindex=0 class="context-menu card-context" disabled>
+//		<i class="mdi mdi-comment-remove-outline"></i>
+//		<md-tooltip>disabled</md-tooltip>
+//	</button>
+// <h3>Loading</h3>
+//	<div tabindex=0 class="context-menu card-context context-loading">
+//		<i class="mdi mdi-cake"></i>
+//		<md-tooltip>Options</md-tooltip>
+//	</div>
+// <h3>Toggle</h3>
+//	<div tabindex=0 class="context-menu card-context" ng-click="toggle = !toggle">
+//		<i class="mdi mdi-account" ng-class="{'mdi-account-outline':toggle}"></i>
+//		<md-tooltip>Toggle something</md-tooltip>
+//	</div>
+//	<div tabindex=0 class="context-menu card-context" ng-click="toggle2 = !toggle2" ng-class="{'notice-success':toggle2, 'notice-info':!toggle2}">
+//		<i class="mdi mdi-checkbox-blank-outline" ng-class="{'mdi-checkbox-marked':toggle2}"></i>
+//		<md-tooltip>Toggle something</md-tooltip>
+//	</div>
+//	<div tabindex=0 class="context-menu card-context" ng-click="loading()" ng-class="{'context-loading':waitAMoment}">
+//		<i class="mdi mdi-cake"></i>
+//		<md-tooltip>Options</md-tooltip>
+//	</div>
+//
+//Styleguide 1.15
+//
+
+.context-loading {
+	border-top: 3px solid $gray012 !important;
+	border-right: 3px solid $gray012 !important;
+	border-bottom: 3px solid $gray012 !important;
+	border-left: 3px solid $secondary !important;
+	animation: rotate 1s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+	animation-play-state: running;
+	animation-fill-mode: forwards;
+	box-shadow: none !important;
+	margin: 0;
+	margin: 0 !important;
+	transition: none;
+	transform: rotate(0deg) scale(0.85);
+
+	i {
+		opacity: 0;
+	}
+}
+@keyframes rotate {
+	from {
+		transform: rotate(0deg) scale(0.85);
+	}
+	to {
+		transform: rotate(360deg) scale(0.85);
+	}
+}
+
+.wfm-btn {
+	display: inline-block;
+	height: 32px;
+	border: none;
+	padding: 0 15px;
+	margin: $full-padding;
+	cursor: pointer;
+	border-radius: 4px;
+	transition: $transition-timing;
+	text-decoration: none;
+	text-transform: none;
+
+	&.wfm-btn-sm {
+		line-height: 1;
+		padding: 5px;
+	}
+
+	> .mdi {
+		line-height: 0;
+		vertical-align: middle;
+	}
+}
+
+a.wfm-btn, div.wfm-btn {
+	line-height: 30px;
+}
+
+.wfm-btn-invis-default {
+	color: $text-color-standard;
+	background-color: $white;
+	border: 1px solid $gray012;
+
+	&:not([disabled]):not(.wfm-btn-invis-disabled):hover {
+		color: $primary;
+		border-color: $primary;
+	}
+}
+
+.wfm-btn-invis-primary {
+	color: $btn-white;
+	background-color: $primary;
+	border: 1px solid $primary;
+
+	&:not([disabled]):not(.wfm-btn-invis-disabled):hover {
+		color: $btn-white;
+		background-color: $secondary;
+		border-color: $secondary;
+	}
+}
+
+.wfm-btn-default {
+	color: $text-color-standard;
+	background-color: $white;
+	@extend .material-depth-1;
+
+	&:hover {
+		@extend .material-depth-2;
+	}
+}
+
+.wfm-btn-primary {
+	color: $btn-white;
+	background-color: $primary;
+	@extend .material-depth-1;
+
+	&:hover {
+		@extend .material-depth-2;
+	}
+}
+
+.wfm-btn-invis-default[disabled],
+.wfm-btn-invis-primary[disabled],
+.wfm-btn-invis-disabled {
+	color: $text-color-muted;
+	background-color: $gray-300;
+	border: 1px solid $gray012;
+
+	&:hover {
+		cursor: not-allowed;
+	}
+}
+
+.wfm-btn-default[disabled],
+.wfm-btn-primary[disabled],
+.wfm-btn-primary-disabled,
+.context-menu[disabled] {
+	color: $text-color-muted;
+	background-color: $gray-300;
+	box-shadow: none;
+
+	&:hover {
+		cursor: not-allowed;
+		box-shadow: none;
+	}
+}
+
+.wfm-fab {
+	border: none;
+	margin: $full-padding;
+	cursor: pointer;
+	padding: 15px;
+	line-height: 16px !important;
+	background-color: $secondary;
+	color: $text-color-standard;
+	text-align: center;
+	border-radius: 50%;
+	transition: $transition-timing;
+	text-decoration: none !important;
+
+	&.mini {
+		padding: 8px !important;
+		max-height: 34px;
+	}
+
+	&:hover {
+		@extend .material-depth-2;
+	}
+}
+
+.wfm-fab.success {
+	background-color: $green-100;
+	color: $gray087;
+}
+.wfm-fab.info {
+	background-color: $purple-500;
+	color: $btn-white;
+}
+
+.grow-out {
+	animation: grow 600ms;
+	animation-timing-function: cubic-bezier(0.33, 0.11, 0.02, 0.99);
+	animation-play-state: running;
+	-webkit-animation: grow 600ms;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	-webkit-animation-timing-function: cubic-bezier(0.33, 0.11, 0.02, 0.99);
+	-webkit-animation-play-state: running;
+}
+
+.shrink-in {
+	animation: shrink 600ms;
+	animation-timing-function: cubic-bezier(0.33, 0.11, 0.02, 0.99);
+	animation-play-state: running;
+	-webkit-animation: shrink 600ms;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	-webkit-animation-timing-function: cubic-bezier(0.33, 0.11, 0.02, 0.99);
+	-webkit-animation-play-state: running;
+}
+
+// Button group
+//
+// A dynamic group of buttons that act in a radio way
+//<table class="wfm-table">
+//	<thead>
+//		<tr>
+//			<th>Attribute Name</th>
+//			<th>Usage</th>
+//		</tr>
+//	</thead>
+//	<tbody>
+//		<tr>
+//			<td>items</td>
+//			<td>Array of button labels</td>
+//		</tr>
+//		<tr>
+//			<td>selected</td>
+//			<td>Item to be selected</td>
+//		</tr>
+//    <tr>
+//      <td>output</td>
+//      <td>Callback function on item click</td>
+//    </tr>
+//    <tr>
+//      <td>btn-class</td>
+//      <td>Style for unselected item ('wfm-btn-default' / 'wfm-btn-invis-default')</td>
+//    </tr>
+//    <tr>
+//      <td>selection-class</td>
+//      <td>Style for selected item ('wfm-btn-primary' / 'wfm-btn-invis-primary')</td>
+//    </tr>
+//	</tbody>
+//</table>
+//
+//Markup:
+//<h3>Raised <span ng-bind="outputItem1"></span> </h3>
+//	<wfm-btn-group items="demoArr" selected="demoArr[1]" output="outputCallback1" btn-class="'wfm-btn-default'" selection-class="'wfm-btn-primary'"></wfm-btn-group>
+// <br/>
+//<h3>Flat <span ng-bind="outputItem2"></span> </h3>
+//	<wfm-btn-group items="demoArr" output="outputCallback2" btn-class="'wfm-btn-invis-default'" selection-class="'wfm-btn-invis-primary'"></wfm-btn-group>
+//
+//Styleguide 1.16
+//
+
+.wfm-btn-group {
+	display: inline-block;
+	margin: $full-padding;
+	border-radius: 4px;
+
+	.wfm-btn {
+		margin: 0 !important;
+		box-shadow: none;
+		border-radius: 0;
+		border-left: none;
+	}
+
+	.wfm-btn-default:not(.wfm-btn-primary):hover {
+		color: $primary;
+	}
+
+	.wfm-btn-invis-default:not(.first):hover {
+		box-shadow: -1px 0 0 0 $primary;
+	}
+
+	.first {
+		border-top-left-radius: 4px;
+		border-bottom-left-radius: 4px;
+		border-left: 1px solid $gray012;
+	}
+
+	.last {
+		border-top-right-radius: 4px;
+		border-bottom-right-radius: 4px;
+	}
+}

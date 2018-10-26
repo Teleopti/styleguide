@@ -1,0 +1,78 @@
+//Time range Picker
+//
+//A directive for managing time range. The time range is represented by any object that have <code>startTime</code> and <code>endTime</code> keys, each with a js Date object as value. The range can be overnight if <code>disable-next-day</code> is set to false. In that case, a <code>+ 1</code> sign will be shown to indicate the end time is at the second day.
+//The pickers are self-adjusted to the user's time-format setting, i.e. meridian will be used for 12-h format and disabled for 24-h format with correct meridian texts.
+//
+//<table class="wfm-table">
+//<tr><th>Attribute Name</th><th>Usage</th><th>Required</th></tr>
+//<tr><td>ng-model</td><td>Bind to time range object</td><td>true</td></tr>
+//<tr><td>disable-next-day</td><td>Disable next-day switch</td><td>false</td></tr>
+//<tr><td>max-hours-range</td><td>Max hours that allowed for the time range </td><td>false</td></tr>
+//<tr><td>template-url</td><td>Use a custom template</td><td>false</td></tr>
+//</table>
+//</br>
+//
+//Markup:
+//  <div class="con-row">
+//    <time-range-picker ng-model="timeRange" disable-next-day="disableNextDay" max-hours-range="24"></time-range-picker>
+//  </div>
+//
+//Styleguide 2.7
+//
+
+.wfm-time-range-picker-wrap {
+  position: relative;
+
+  button, input {
+    font-size: $standard-font-size;
+  }
+
+  timepicker-wrap > div{
+    margin-top: 3px;
+  }
+
+  .wfm-timepicker-wrap {
+    .md-button {
+      text-align: left!important;
+      min-width: auto!important;
+      margin: 0;
+      margin-right:$full-padding;
+      height: 25px;
+      line-height: 25px;
+      min-height: 25px;
+    }
+    input{
+      width:50px;
+      text-align:center;
+      margin-left: 2px;
+      margin-right: 2px;
+    }
+    .md-ink-ripple{
+        color: $text-color-standard!important;
+    }
+  }
+
+  .has-error > input {
+    border:2px solid $red-600;
+  }
+
+  .error-msg-container {
+    display: none;
+    z-index: 30;
+    width:360px;
+    margin-top: 10px;
+    position: absolute;
+  }
+
+  &.ng-invalid {
+    &.ng-invalid-order .error-msg-container.ng-invalid-order {
+      display: block !important;
+    }
+    &.ng-invalid-parse .error-msg-container.ng-invalid-parse {
+      display: block !important;
+    }
+    &.ng-invalid-range .error-msg-container.ng-invalid-range {
+      display: block !important;
+    }
+  }
+}

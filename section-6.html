@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<!--[if lte IE 6]>            <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IEMobile 7]>          <html class="no-js iem7" lang="en"> <![endif]-->
+<!--[if (IE 7)&(!IEMobile)]>  <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>                <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!-->
+<html class="no-js" lang="en" ng-app="styleguideApp">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <title>Teleopti WFM Living Style Guide</title>
+
+  <meta name="description" content="Teleopti WFM Styleguide">
+  <meta name="generator" content="kss-node">
+  <meta name="viewport" content="width=device-width">
+  <link type="text/css" rel="stylesheet" href="./public/kss.css" />
+  <link type="text/css" rel="stylesheet" href="./dist/dependencies.min.css" />
+  <link type="text/css" rel="stylesheet" href="./dist/main.min.css" />
+  <script src="./dist/dependencies.min.js"></script>
+  <script src="./dist/templates.js"></script>
+  <script src="./dist/wfmdirectives.min.js"></script>
+  <script src="./dist/main.min.js"></script> 
+
+  <style>
+    #ribbon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    input {
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+
+<body id="kss-node" ng-view ng-controller="mainCtrl">
+
+  <a href="https://github.com/Teleopti/styleguide" id="ribbon">
+    <img src="public/github-fork--black.png" alt="fork on github">
+  </a>
+  
+  <!-- <div tabindex=0 class="context-menu card-context sidebar-toggle material-depth-2" ng-click="hideSidebar = !hideSidebar">
+  <i class="mdi mdi-backburger"></i>
+  <md-tooltip>Options</md-tooltip>
+</div> -->
+  <div class="kss-sidebar material-depth-2 kss-style" ng-class="{'kss-sidebar-hidden':hideSidebar}">
+    <header class="kss-header line-center">
+      <a href="index.html">
+        <img src="http://www.teleopti.com/system/images/teleopti_logo.png" alt="Teleopti logo" height="60px" style="vertical-align:bottom;">
+      </a>
+    </header>
+    <nav class="kss-nav">
+      <ul class="kss-nav__menu">
+        <li class="kss-nav__menu-item">
+          <a href="section-0.html">
+            <i class="mdi" ng-class="getChapteIcon('Overview')"></i>
+            <span class="kss-nav__name">Overview</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-1.html">
+            <i class="mdi" ng-class="getChapteIcon('Elements')"></i>
+            <span class="kss-nav__name">Elements</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-2.html">
+            <i class="mdi" ng-class="getChapteIcon('Components')"></i>
+            <span class="kss-nav__name">Components</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-3.html">
+            <i class="mdi" ng-class="getChapteIcon('Colors')"></i>
+            <span class="kss-nav__name">Colors</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-4.html">
+            <i class="mdi" ng-class="getChapteIcon('Containers')"></i>
+            <span class="kss-nav__name">Containers</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-5.html">
+            <i class="mdi" ng-class="getChapteIcon('Tree')"></i>
+            <span class="kss-nav__name">Tree</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-6.html">
+            <i class="mdi" ng-class="getChapteIcon('Language')"></i>
+            <span class="kss-nav__name">Language</span>
+          </a>
+          <ul class="kss-nav__menu-child">
+               
+            <a href="section-6.html#kssref-6-1">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">6.1</span>
+                <span class="kss-nav__name">How we use words</span>
+
+              </li>
+            </a>
+              
+            <a href="section-6.html#kssref-6-2">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">6.2</span>
+                <span class="kss-nav__name">Translations</span>
+
+              </li>
+            </a>
+             
+          </ul>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-7.html">
+            <i class="mdi" ng-class="getChapteIcon('Icons')"></i>
+            <span class="kss-nav__name">Icons</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-8.html">
+            <i class="mdi" ng-class="getChapteIcon('Helper classes')"></i>
+            <span class="kss-nav__name">Helper classes</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-9.html">
+            <i class="mdi" ng-class="getChapteIcon('Naming and best practice')"></i>
+            <span class="kss-nav__name">Naming and best practice</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-10.html">
+            <i class="mdi" ng-class="getChapteIcon('Resources')"></i>
+            <span class="kss-nav__name">Resources</span>
+          </a>
+        </li>
+      </ul>
+      <br/>
+    </nav>
+  </div>
+
+  <article role="main">
+  <article role="main" class="kss-main">
+      
+    <div id="kssref-6" class="kss-section section-hero kss-section--depth-1">
+
+        <div class="kss-style">
+          <h1 class="kss-title kss-title--level-1">
+            <a class="kss-title__permalink">
+              Language
+            </a>
+          </h1>
+          <small class="kss-title__ref">6 </small>
+
+ 
+          <div class="kss-description">
+            <p>The way we adress the user must also be concistent. Feeling familiar can help the user make quicker actions, even in unfamiliar modules.
+By keeping common terms we also save translation resources.</p>
+
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Language')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+ 
+    </div>
+        <section id="kssref-6-1" class="kss-section material-depth-1 kss-section--depth-2">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              How we use words
+            </a>
+          </h2>
+          <small class="kss-title__ref">6.1 </small>
+
+ 
+          <div class="kss-description">
+            <p>These are some of the thinking applied to words and writing.
+When in doubt, check the <a href="https://material.io/guidelines/style/writing.html">material design writing guidelines</a></p>
+<table class="wfm-table">
+<thead><tr><th>Do</th><th>Don&#39;t</th><th>Distinction</th></tr></thead>
+<tbody>
+<tr><td>Add</td><td>New</td><td>Add sounds more positive.</td></tr>
+<tr><td>Search</td><td>Find</td><td>We can&#39;t promise the user we will find something.</td></tr>
+<tr><td>Manage</td><td>Handle</td><td>Manage sounds more positive.</td></tr>
+<tr><td>Edit</td><td>Modify</td><td>Edit is more commonly used.</td></tr>
+<tr><td>Refresh</td><td>Update</td><td>Refresh is more commonly used.</td></tr>
+<tr><td>OK</td><td>Agree</td><td>Use OK if needed but try to use something that describes the action better.</td></tr>
+<tr><td>Delete/ Remove/ Hide</td><td>Clear</td><td>Use delete for permanent actions, remove for non permanent actions and hide to hide for just that user.</td></tr>
+<tr><td>Select</td><td>Choose</td><td>Select sounds more positive, choose sounds limiting and demanding.</td></tr>
+<tr><td>Send/Apply/Save</td><td>Submit</td><td>Use send for actions that need further actions (a request for example), Use save for saving new or changed parameters, apply can be used where appropriate.</td></tr>
+<tr><td>Show</td><td>Display/view</td><td>Show sounds more positive and less formal.</td></tr>
+<tr><td>Cancel/Dismiss</td><td>-</td><td>Use cancel for cancelling actions. Use dismiss for removing information where no action from the user is required (like modals without actions).</td></tr>
+</tbody>
+</table>
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('How we use words')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+     </section>
+            <section id="kssref-6-2" class="kss-section material-depth-1 kss-section--depth-2">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Translations
+            </a>
+          </h2>
+          <small class="kss-title__ref">6.2 </small>
+
+ 
+          <div class="kss-description">
+            <p>To support all manner of languages we use <a href="https://github.com/angular-translate/angular-translate">angular-translate</a>.
+It allows us to translate in templates using {&nbsp;{&#39;Key&#39;|translate}&nbsp;} or $translate.instant(&#39;Key&#39;) when translating from JavaScript.
+Keys used in this styleguide should be referenced in the styleguide_translation_keys.html file in the project root.
+The format of these are important for us to be able to keep track of what keys are in use.</p>
+<p><b>Jalaali</b></br>
+To show dates in the Jalaali format use this filter: {&nbsp;{DateObj | persianDate:&#39;fullDate&#39;}&nbsp;}.</p>
+
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Translations')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+     </section>
+      
+  </article>
+
+  <script src="public/kss.js"></script>
+  <script src="public/prettify.js"></script>
+
+  <script>
+    prettyPrint();
+  </script>   
+  <!-- Automatically generated using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
+</body>
+
+</html>

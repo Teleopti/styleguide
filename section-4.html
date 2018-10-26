@@ -1,0 +1,3160 @@
+<!DOCTYPE html>
+<!--[if lte IE 6]>            <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IEMobile 7]>          <html class="no-js iem7" lang="en"> <![endif]-->
+<!--[if (IE 7)&(!IEMobile)]>  <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>                <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!-->
+<html class="no-js" lang="en" ng-app="styleguideApp">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <title>Teleopti WFM Living Style Guide</title>
+
+  <meta name="description" content="Teleopti WFM Styleguide">
+  <meta name="generator" content="kss-node">
+  <meta name="viewport" content="width=device-width">
+  <link type="text/css" rel="stylesheet" href="./public/kss.css" />
+  <link type="text/css" rel="stylesheet" href="./dist/dependencies.min.css" />
+  <link type="text/css" rel="stylesheet" href="./dist/main.min.css" />
+  <script src="./dist/dependencies.min.js"></script>
+  <script src="./dist/templates.js"></script>
+  <script src="./dist/wfmdirectives.min.js"></script>
+  <script src="./dist/main.min.js"></script> 
+
+  <style>
+    #ribbon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    input {
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+
+<body id="kss-node" ng-view ng-controller="mainCtrl">
+
+  <a href="https://github.com/Teleopti/styleguide" id="ribbon">
+    <img src="public/github-fork--black.png" alt="fork on github">
+  </a>
+  
+  <!-- <div tabindex=0 class="context-menu card-context sidebar-toggle material-depth-2" ng-click="hideSidebar = !hideSidebar">
+  <i class="mdi mdi-backburger"></i>
+  <md-tooltip>Options</md-tooltip>
+</div> -->
+  <div class="kss-sidebar material-depth-2 kss-style" ng-class="{'kss-sidebar-hidden':hideSidebar}">
+    <header class="kss-header line-center">
+      <a href="index.html">
+        <img src="http://www.teleopti.com/system/images/teleopti_logo.png" alt="Teleopti logo" height="60px" style="vertical-align:bottom;">
+      </a>
+    </header>
+    <nav class="kss-nav">
+      <ul class="kss-nav__menu">
+        <li class="kss-nav__menu-item">
+          <a href="section-0.html">
+            <i class="mdi" ng-class="getChapteIcon('Overview')"></i>
+            <span class="kss-nav__name">Overview</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-1.html">
+            <i class="mdi" ng-class="getChapteIcon('Elements')"></i>
+            <span class="kss-nav__name">Elements</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-2.html">
+            <i class="mdi" ng-class="getChapteIcon('Components')"></i>
+            <span class="kss-nav__name">Components</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-3.html">
+            <i class="mdi" ng-class="getChapteIcon('Colors')"></i>
+            <span class="kss-nav__name">Colors</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-4.html">
+            <i class="mdi" ng-class="getChapteIcon('Containers')"></i>
+            <span class="kss-nav__name">Containers</span>
+          </a>
+          <ul class="kss-nav__menu-child">
+               
+            <a href="section-4.html#kssref-4-1">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">4.1</span>
+                <span class="kss-nav__name">Layout</span>
+
+              </li>
+            </a>
+              
+            <a href="section-4.html#kssref-4-2">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">4.2</span>
+                <span class="kss-nav__name">Fluid layout</span>
+
+              </li>
+            </a>
+              
+            <a href="section-4.html#kssref-4-3">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">4.3</span>
+                <span class="kss-nav__name">Fluid layout (dense)</span>
+
+              </li>
+            </a>
+              
+            <a href="section-4.html#kssref-4-4">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">4.4</span>
+                <span class="kss-nav__name">Panel</span>
+
+              </li>
+            </a>
+              
+            <a href="section-4.html#kssref-4-5">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">4.5</span>
+                <span class="kss-nav__name">Multiple search panel</span>
+
+              </li>
+            </a>
+              
+            <a href="section-4.html#kssref-4-6">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">4.6</span>
+                <span class="kss-nav__name">Panel with sidebar</span>
+
+              </li>
+            </a>
+              
+            <a href="section-4.html#kssref-4-7">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">4.7</span>
+                <span class="kss-nav__name">Tabbed panel</span>
+
+              </li>
+            </a>
+              
+            <a href="section-4.html#kssref-4-8">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">4.8</span>
+                <span class="kss-nav__name">Tabbed panel (badges)</span>
+
+              </li>
+            </a>
+              
+            <a href="section-4.html#kssref-4-9">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">4.9</span>
+                <span class="kss-nav__name">Wizard panel</span>
+
+              </li>
+            </a>
+              
+            <a href="section-4.html#kssref-4-10">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">4.10</span>
+                <span class="kss-nav__name">Basic Form panel</span>
+
+              </li>
+            </a>
+              
+            <a href="section-4.html#kssref-4-11">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">4.11</span>
+                <span class="kss-nav__name">Devided Form panel</span>
+
+              </li>
+            </a>
+              
+            <a href="section-4.html#kssref-4-12">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">4.12</span>
+                <span class="kss-nav__name">Split Form panel</span>
+
+              </li>
+            </a>
+              
+            <a href="section-4.html#kssref-4-13">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">4.13</span>
+                <span class="kss-nav__name">Card</span>
+
+              </li>
+            </a>
+              
+            <a href="section-4.html#kssref-4-14">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">4.14</span>
+                <span class="kss-nav__name">Card list (multiple open)</span>
+
+              </li>
+            </a>
+              
+            <a href="section-4.html#kssref-4-15">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">4.15</span>
+                <span class="kss-nav__name">Card list (pre-open)</span>
+
+              </li>
+            </a>
+              
+            <a href="section-4.html#kssref-4-16">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">4.16</span>
+                <span class="kss-nav__name">Card list (single open)</span>
+
+              </li>
+            </a>
+              
+            <a href="section-4.html#kssref-4-17">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">4.17</span>
+                <span class="kss-nav__name">Card list (simple color bar)</span>
+
+              </li>
+            </a>
+              
+            <a href="section-4.html#kssref-4-18">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">4.18</span>
+                <span class="kss-nav__name">Card list (special simple color bar)</span>
+
+              </li>
+            </a>
+              
+            <a href="section-4.html#kssref-4-19">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">4.19</span>
+                <span class="kss-nav__name">Card list (linear color bar)</span>
+
+              </li>
+            </a>
+             
+          </ul>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-5.html">
+            <i class="mdi" ng-class="getChapteIcon('Tree')"></i>
+            <span class="kss-nav__name">Tree</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-6.html">
+            <i class="mdi" ng-class="getChapteIcon('Language')"></i>
+            <span class="kss-nav__name">Language</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-7.html">
+            <i class="mdi" ng-class="getChapteIcon('Icons')"></i>
+            <span class="kss-nav__name">Icons</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-8.html">
+            <i class="mdi" ng-class="getChapteIcon('Helper classes')"></i>
+            <span class="kss-nav__name">Helper classes</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-9.html">
+            <i class="mdi" ng-class="getChapteIcon('Naming and best practice')"></i>
+            <span class="kss-nav__name">Naming and best practice</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-10.html">
+            <i class="mdi" ng-class="getChapteIcon('Resources')"></i>
+            <span class="kss-nav__name">Resources</span>
+          </a>
+        </li>
+      </ul>
+      <br/>
+    </nav>
+  </div>
+
+  <article role="main">
+  <article role="main" class="kss-main">
+      
+    <div id="kssref-4" class="kss-section section-hero kss-section--depth-1">
+
+        <div class="kss-style">
+          <h1 class="kss-title kss-title--level-1">
+            <a class="kss-title__permalink">
+              Containers
+            </a>
+          </h1>
+          <small class="kss-title__ref">4 </small>
+
+ 
+          <div class="kss-description">
+            <p>Containers are responsible for shaping the layout and creates structure to the views.
+Almost everything described in the elements chapter should be housed inside a container.
+There are different kinds of containers that all have different applications, what they do however have in common is the ability to house flex grids and/or elements.
+When building a new view, start by picking one or several containers and a flex layout that fits with your views content.</p>
+<p> Note: Con-flex elements are marked by a dashed outline in the styleguide for structure and layout clarification, these should <b>not</b> be visible in the project.</p>
+<p> Note: Layout rows and flex elements can be nested if needed. However, avoid putting panels/containers inside other panels/containers.</p>
+<p> Note: In all modals and panels the footer links should be buttons, not  &lt;a/&gt; tags.</p>
+<input style="opacity:0;pointer-events:none;" autofocus>
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Containers')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+ 
+    </div>
+        <section id="kssref-4-1" class="kss-section material-depth-1 kss-section--depth-2">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Layout
+            </a>
+          </h2>
+          <small class="kss-title__ref">4.1 </small>
+
+ 
+          <div class="kss-description">
+            <p>The default layout grid is a flex-row that splits its width evenly among the number of flex-items inside it (i.e one flex-item will take 100%, two flex-items will take 50%, four flex-items will take 25% and so on). The default layout will keep its flex-items in a row until the screen gets small enough that it gives each flex-item 100% width;</p>
+<p><table class="wfm-table"></p>
+<p><thead>
+    <tr>
+        <th>Class</th>
+        <th>Description</th>
+    </tr>
+</thead></p>
+<p><tbody>
+    <tr>
+        <td>con-row</td>
+        <td>A flex container for con-flex boxes</td>
+    </tr>
+    <tr>
+        <td>con-flex</td>
+        <td>When inside a con-row it will divide its with with the number of con-flex siblings</td>
+    </tr>
+    <tr>
+        <td>x2</td>
+        <td>Will use the same space as two con-flex containers</td>
+    </tr>
+    <tr>
+        <td>x3</td>
+        <td>Will use the same space as three con-flex containers</td>
+    </tr>
+</tbody>
+</table>
+<br></p>
+
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Layout')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Layout'] = !markupShow['Layout']">
+            <span ng-hide="markupShow['Layout']">Show</span>
+            <span ng-show="markupShow['Layout']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Layout']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;div class=&quot;con-row&quot;&gt;
+   &lt;div class=&quot;con-flex&quot;&gt;100%&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;con-row&quot;&gt;
+   &lt;div class=&quot;con-flex&quot;&gt;50%&lt;/div&gt;
+   &lt;div class=&quot;con-flex&quot;&gt;50%&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;con-row&quot;&gt;
+   &lt;div class=&quot;con-flex&quot;&gt;33%&lt;/div&gt;
+   &lt;div class=&quot;con-flex&quot;&gt;33%&lt;/div&gt;
+   &lt;div class=&quot;con-flex&quot;&gt;33%&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;con-row&quot;&gt;
+   &lt;div class=&quot;con-flex&quot;&gt;25%&lt;/div&gt;
+   &lt;div class=&quot;con-flex&quot;&gt;25%&lt;/div&gt;
+   &lt;div class=&quot;con-flex&quot;&gt;25%&lt;/div&gt;
+   &lt;div class=&quot;con-flex&quot;&gt;25%&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;con-row&quot;&gt;
+   &lt;div class=&quot;con-flex x3&quot;&gt;75%&lt;/div&gt;
+   &lt;div class=&quot;con-flex&quot;&gt;25%&lt;/div&gt;
+&lt;/div&gt;
+ &lt;div class=&quot;con-row&quot;&gt;
+   &lt;div class=&quot;con-flex x2&quot;&gt;50%&lt;/div&gt;
+   &lt;div class=&quot;con-flex&quot;&gt;25%&lt;/div&gt;
+   &lt;div class=&quot;con-flex&quot;&gt;25%&lt;/div&gt;
+&lt;/div&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+          <div class="kss-modifier__example">
+            <div class="con-row">
+   <div class="con-flex">100%</div>
+</div>
+<div class="con-row">
+   <div class="con-flex">50%</div>
+   <div class="con-flex">50%</div>
+</div>
+<div class="con-row">
+   <div class="con-flex">33%</div>
+   <div class="con-flex">33%</div>
+   <div class="con-flex">33%</div>
+</div>
+<div class="con-row">
+   <div class="con-flex">25%</div>
+   <div class="con-flex">25%</div>
+   <div class="con-flex">25%</div>
+   <div class="con-flex">25%</div>
+</div>
+<div class="con-row">
+   <div class="con-flex x3">75%</div>
+   <div class="con-flex">25%</div>
+</div>
+ <div class="con-row">
+   <div class="con-flex x2">50%</div>
+   <div class="con-flex">25%</div>
+   <div class="con-flex">25%</div>
+</div>
+          </div>
+        </div>
+
+
+             </section>
+            <section id="kssref-4-2" class="kss-section material-depth-1 kss-section--depth-2">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Fluid layout
+            </a>
+          </h2>
+          <small class="kss-title__ref">4.2 </small>
+
+ 
+          <div class="kss-description">
+            <p>A fluid layout will wrap the flex-items into columns instead of dividing the width evenly depending on the number.
+It is important to remember that if the items have different height, the tallest item will set the height for the whole row.</p>
+
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Fluid layout')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Fluid layout'] = !markupShow['Fluid layout']">
+            <span ng-hide="markupShow['Fluid layout']">Show</span>
+            <span ng-show="markupShow['Fluid layout']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Fluid layout']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;div class=&quot;con-fluid-row&quot;&gt;
+&lt;div class=&quot;con-fluid-flex&quot; ng-repeat=&quot;item in bigList&quot;&gt;
+(&lt;span ng-bind=&quot;item.id&quot;&gt;&lt;/span&gt;) Default to 1/3
+&lt;/div&gt;
+&lt;/div&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+          <div class="kss-modifier__example">
+            <div class="con-fluid-row">
+<div class="con-fluid-flex" ng-repeat="item in bigList">
+(<span ng-bind="item.id"></span>) Default to 1/3
+</div>
+</div>
+          </div>
+        </div>
+
+
+             </section>
+            <section id="kssref-4-3" class="kss-section material-depth-1 kss-section--depth-2">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Fluid layout (dense)
+            </a>
+          </h2>
+          <small class="kss-title__ref">4.3 </small>
+
+ 
+          <div class="kss-description">
+            <p>A more dense version of the fluid layout for smaller elements.</p>
+
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Fluid layout (dense)')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Fluid layout (dense)'] = !markupShow['Fluid layout (dense)']">
+            <span ng-hide="markupShow['Fluid layout (dense)']">Show</span>
+            <span ng-show="markupShow['Fluid layout (dense)']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Fluid layout (dense)']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;div class=&quot;con-fluid-row dense&quot;&gt;
+&lt;div class=&quot;con-fluid-flex&quot; ng-repeat=&quot;item in bigList&quot;&gt;
+(&lt;span ng-bind=&quot;item.id&quot;&gt;&lt;/span&gt;) Default to 1/5
+&lt;/div&gt;
+&lt;/div&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+          <div class="kss-modifier__example">
+            <div class="con-fluid-row dense">
+<div class="con-fluid-flex" ng-repeat="item in bigList">
+(<span ng-bind="item.id"></span>) Default to 1/5
+</div>
+</div>
+          </div>
+        </div>
+
+
+             </section>
+            <section id="kssref-4-4" class="kss-section material-depth-1 kss-section--depth-2">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Panel
+            </a>
+          </h2>
+          <small class="kss-title__ref">4.4 </small>
+
+ 
+          <div class="kss-description">
+            <p>The panel is the main container and the most versatile. It can house most elements and can be configured in a number of layouts.
+If needed it can have a context menu or a footer for more actions. Since a panel is a raised piece of material, avoid using other raised elements on top of it, unless they are floating (like a action button or context menu)
+The panel can have a footer with a number of actions, try to keep this number as small as possible. The most important action should be to the far right and if it is the primary action it should have a wfm-btn-invis-primary class.</p>
+
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Panel')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Panel'] = !markupShow['Panel']">
+            <span ng-hide="markupShow['Panel']">Show</span>
+            <span ng-show="markupShow['Panel']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Panel']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                 &lt;div class=&quot;panel material-depth-1&quot;&gt;
+  &lt;div class=&quot;sub-header&quot;&gt;
+    &lt;h2&gt;Panel title&lt;/h2&gt;
+    &lt;div class=&quot;head-actions panel-menu&quot;&gt;
+      &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
+        &lt;i class=&quot;mdi mdi-dots-vertical&quot;&gt;&lt;/i&gt;
+        &lt;span class=&quot;context-menu-left&quot;&gt;
+          &lt;ul class=&quot;wfm-list&quot;&gt;
+            &lt;li&gt;Menu item 1&lt;/li&gt;
+            &lt;li&gt;Menu item 2&lt;/li&gt;
+            &lt;li&gt;Menu item 3&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+ &lt;div class=&quot;con-row&quot;&gt;
+    &lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
+ &lt;/div&gt;
+  &lt;div class=&quot;con-footer&quot;&gt;
+ 	 &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
+    &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
+  &lt;/div&gt;
+ &lt;/div&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+          <div class="kss-modifier__example">
+             <div class="panel material-depth-1">
+  <div class="sub-header">
+    <h2>Panel title</h2>
+    <div class="head-actions panel-menu">
+      <div tabindex=0 class="context-menu card-context">
+        <i class="mdi mdi-dots-vertical"></i>
+        <span class="context-menu-left">
+          <ul class="wfm-list">
+            <li>Menu item 1</li>
+            <li>Menu item 2</li>
+            <li>Menu item 3</li>
+          </ul>
+        </span>
+      </div>
+    </div>
+  </div>
+ <div class="con-row">
+    <div class="con-flex">Content</div>
+ </div>
+  <div class="con-footer">
+ 	 <button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+    <button class="wfm-btn wfm-btn-invis-primary">Options</button>
+  </div>
+ </div>
+          </div>
+        </div>
+
+
+             </section>
+            <section id="kssref-4-5" class="kss-section material-depth-1 kss-section--depth-2">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Multiple search panel
+            </a>
+          </h2>
+          <small class="kss-title__ref">4.5 </small>
+
+ 
+          <div class="kss-description">
+            <p>This Searchbar is placed inside the panel sub-header instead of a &lt;h2&gt; to provide advanced search capabilities in that panel.</p>
+<p>Note: The header text is translated in the project but the names of the inputs needs to be translated using $translate.instant() in the controller.</p>
+<div class="jsprewrap">
+  <div class="ksscopy kss-style" ng-click="showJs['advSearch'] = !showJs['advSearch']">
+      <span ng-hide="showJs['advSearch']">Show</span>
+     <span ng-show="showJs['advSearch']">Hide</span>
+    JavaScript
+    <i class="mdi mdi-code-tags pull-right"></i>
+  </div>
+  <div class="animate-show" ng-show="showJs['advSearch']">
+    <code>
+      <pre class="prettyprint linenums lang-js">
+
+$scope.searchOptions = {
+   keyword: &#39;&#39;,
+   searchKeywordChanged: false,
+   focusingSearch: false,
+   searchFields: [
+     &#39;option1&#39;,&#39;option2&#39;,&#39;option3&#39;,&#39;option4&#39;,&#39;option5&#39;,&#39;option6&#39;
+   ]
+};
+      </pre>
+    </code>
+  </div>
+</div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Multiple search panel')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Multiple search panel'] = !markupShow['Multiple search panel']">
+            <span ng-hide="markupShow['Multiple search panel']">Show</span>
+            <span ng-show="markupShow['Multiple search panel']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Multiple search panel']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;div class=&quot;panel material-depth-1&quot;&gt;
+  &lt;div class=&quot;sub-header&quot;&gt;
+    &lt;wfm-multiple-search-input search-title=&quot;&#x27;Search&#x27;&quot; search-options=&quot;searchOptions&quot; search-callback=&quot;searchKeyword&quot;&gt;&lt;/wfm-multiple-search-input&gt;
+    &lt;div class=&quot;head-actions panel-menu&quot;&gt;
+      &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
+        &lt;i class=&quot;mdi mdi-dots-vertical&quot;&gt;&lt;/i&gt;
+        &lt;span class=&quot;context-menu-left&quot;&gt;
+          &lt;ul class=&quot;wfm-list&quot;&gt;
+            &lt;li&gt;Menu item 1&lt;/li&gt;
+            &lt;li&gt;Menu item 2&lt;/li&gt;
+            &lt;li&gt;Menu item 3&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;con-row&quot;&gt;
+    &lt;div class=&quot;con-flex &quot;&gt;
+      Content
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;con-footer&quot;&gt;
+    &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
+    &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+          <div class="kss-modifier__example">
+            <div class="panel material-depth-1">
+  <div class="sub-header">
+    <wfm-multiple-search-input search-title="'Search'" search-options="searchOptions" search-callback="searchKeyword"></wfm-multiple-search-input>
+    <div class="head-actions panel-menu">
+      <div tabindex=0 class="context-menu card-context">
+        <i class="mdi mdi-dots-vertical"></i>
+        <span class="context-menu-left">
+          <ul class="wfm-list">
+            <li>Menu item 1</li>
+            <li>Menu item 2</li>
+            <li>Menu item 3</li>
+          </ul>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="con-row">
+    <div class="con-flex ">
+      Content
+    </div>
+  </div>
+  <div class="con-footer">
+    <button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+    <button class="wfm-btn wfm-btn-invis-primary">Options</button>
+  </div>
+</div>
+
+          </div>
+        </div>
+
+
+             </section>
+            <section id="kssref-4-6" class="kss-section material-depth-1 kss-section--depth-2">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Panel with sidebar
+            </a>
+          </h2>
+          <small class="kss-title__ref">4.6 </small>
+
+ 
+          <div class="kss-description">
+            <p>The sub header of a regular panel can be repaced to provide a sidebar within the panel.</p>
+<div class="jsprewrap">
+  <div class="ksscopy kss-style" ng-click="showJs['sidebar'] = !showJs['sidebar']">
+      <span ng-hide="showJs['sidebar']">Show</span>
+     <span ng-show="showJs['sidebar']">Hide</span>
+    JavaScript
+    <i class="mdi mdi-code-tags pull-right"></i>
+  </div>
+  <div class="animate-show" ng-show="showJs['sidebar']">
+    <code>
+      <pre class="prettyprint linenums lang-js">
+
+$scope.rightPanelOptions = {
+    panelState: false,
+    sidePanelTitle: &#39;Side panel title&#39;,
+    showCloseButton: true,
+    showResizer: true,
+    showBackdrop: true,
+    showPopupButton: true
+};
+      </pre>
+    </code>
+  </div>
+</div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Panel with sidebar')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Panel with sidebar'] = !markupShow['Panel with sidebar']">
+            <span ng-hide="markupShow['Panel with sidebar']">Show</span>
+            <span ng-show="markupShow['Panel with sidebar']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Panel with sidebar']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;div class=&quot;panel material-depth-1&quot;&gt;
+ &lt;div class=&quot;sub-header&quot;&gt;
+   &lt;h2&gt;Panel with sidebar&lt;/h2&gt;
+	&lt;wfm-right-panel panel-options=&quot;rightPanelOptions&quot;&gt;
+	  &lt;div class=&quot;con-row&quot;&gt;
+	    &lt;div class=&quot;con-flex&quot;&gt;content&lt;/div&gt;
+	    &lt;/div&gt;
+	  &lt;div class=&quot;con-footer&quot;&gt;
+	    &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Action&lt;/button&gt;
+	  &lt;/div&gt;
+	&lt;/wfm-right-panel&gt;
+ &lt;/div&gt;
+ &lt;div class=&quot;con-row&quot;&gt;
+  &lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class=&quot;con-footer&quot;&gt;
+  &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
+  &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+          <div class="kss-modifier__example">
+            <div class="panel material-depth-1">
+ <div class="sub-header">
+   <h2>Panel with sidebar</h2>
+	<wfm-right-panel panel-options="rightPanelOptions">
+	  <div class="con-row">
+	    <div class="con-flex">content</div>
+	    </div>
+	  <div class="con-footer">
+	    <button class="wfm-btn wfm-btn-invis-default">Action</button>
+	  </div>
+	</wfm-right-panel>
+ </div>
+ <div class="con-row">
+  <div class="con-flex">Content</div>
+ </div>
+ <div class="con-footer">
+  <button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+  <button class="wfm-btn wfm-btn-invis-primary">Options</button>
+ </div>
+</div>
+          </div>
+        </div>
+
+
+             </section>
+            <section id="kssref-4-7" class="kss-section material-depth-1 kss-section--depth-2">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Tabbed panel
+            </a>
+          </h2>
+          <small class="kss-title__ref">4.7 </small>
+
+ 
+          <div class="kss-description">
+            <p>When using tabbed panels, one important thing to remember is to order the tabs in a way that makes sense to the workflow.
+Also, avoid several tab panels close together to avoid confusion and maintain focus. For the same reason, modals can not be launched from within tabs.</p>
+
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Tabbed panel')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Tabbed panel'] = !markupShow['Tabbed panel']">
+            <span ng-hide="markupShow['Tabbed panel']">Show</span>
+            <span ng-show="markupShow['Tabbed panel']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Tabbed panel']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                 &lt;div class=&quot;panel material-depth-1&quot;&gt;
+   &lt;div class=&quot;wfm-slide-tabs tabbed-panel&quot;&gt;
+     &lt;div class=&quot;head-actions panel-menu&quot;&gt;
+       &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
+         &lt;i class=&quot;mdi mdi-dots-vertical&quot;&gt;&lt;/i&gt;
+         &lt;span class=&quot;context-menu-left&quot;&gt;
+           &lt;ul class=&quot;wfm-list&quot;&gt;
+             &lt;li&gt;Menu item 1&lt;/li&gt;
+             &lt;li&gt;Menu item 2&lt;/li&gt;
+             &lt;li&gt;Menu item 3&lt;/li&gt;
+           &lt;/ul&gt;
+         &lt;/span&gt;
+       &lt;/div&gt;
+     &lt;/div&gt;
+     &lt;md-content class=&quot;md-padding&quot;&gt;
+       &lt;md-tabs md-dynamic-height md-border-bottom &gt;
+         &lt;md-tab label=&quot;Tab title1&quot;&gt;
+           &lt;md-content class=&quot;md-padding&quot;&gt;
+             &lt;div class=&quot;con-row&quot;&gt;
+               &lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
+             &lt;/div&gt;
+             &lt;div class=&quot;con-footer&quot;&gt;
+               &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
+               &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
+             &lt;/div&gt;
+           &lt;/md-content&gt;
+         &lt;/md-tab&gt;
+         &lt;md-tab label=&quot;Tab title2&quot;&gt;
+           &lt;md-content class=&quot;md-padding&quot;&gt;
+             &lt;div class=&quot;con-row&quot;&gt;
+           &lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
+         &lt;/div&gt;
+         &lt;div class=&quot;con-footer&quot;&gt;
+           &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
+           &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
+         &lt;/div&gt;
+       &lt;/md-content&gt;
+     &lt;/md-tab&gt;
+     &lt;md-tab label=&quot;Tab title3&quot;&gt;
+       &lt;md-content class=&quot;md-padding&quot;&gt;
+         &lt;div class=&quot;con-row&quot;&gt;
+           &lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
+         &lt;/div&gt;
+         &lt;div class=&quot;con-footer&quot;&gt;
+           &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
+           &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
+         &lt;/div&gt;
+       &lt;/md-content&gt;
+     &lt;/md-tab&gt;
+     &lt;md-tab label=&quot;Tab title4&quot;&gt;
+       &lt;md-content class=&quot;md-padding&quot;&gt;
+         &lt;div class=&quot;con-row&quot;&gt;
+           &lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
+         &lt;/div&gt;
+         &lt;div class=&quot;con-row&quot;&gt;
+           &lt;div class=&quot;con-flex&quot;&gt;Things&lt;/div&gt;
+           &lt;div class=&quot;con-flex&quot;&gt;Things&lt;/div&gt;
+           &lt;div class=&quot;con-flex&quot;&gt;Things&lt;/div&gt;
+           &lt;div class=&quot;con-flex&quot;&gt;Things&lt;/div&gt;
+         &lt;/div&gt;
+         &lt;div class=&quot;con-footer&quot;&gt;
+           &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
+           &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
+         &lt;/div&gt;
+       &lt;/md-content&gt;
+     &lt;/md-tab&gt;
+   &lt;/md-tabs&gt;
+   &lt;/md-content&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+          <div class="kss-modifier__example">
+             <div class="panel material-depth-1">
+   <div class="wfm-slide-tabs tabbed-panel">
+     <div class="head-actions panel-menu">
+       <div tabindex=0 class="context-menu card-context">
+         <i class="mdi mdi-dots-vertical"></i>
+         <span class="context-menu-left">
+           <ul class="wfm-list">
+             <li>Menu item 1</li>
+             <li>Menu item 2</li>
+             <li>Menu item 3</li>
+           </ul>
+         </span>
+       </div>
+     </div>
+     <md-content class="md-padding">
+       <md-tabs md-dynamic-height md-border-bottom >
+         <md-tab label="Tab title1">
+           <md-content class="md-padding">
+             <div class="con-row">
+               <div class="con-flex">Content</div>
+             </div>
+             <div class="con-footer">
+               <button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+               <button class="wfm-btn wfm-btn-invis-primary">Options</button>
+             </div>
+           </md-content>
+         </md-tab>
+         <md-tab label="Tab title2">
+           <md-content class="md-padding">
+             <div class="con-row">
+           <div class="con-flex">Content</div>
+         </div>
+         <div class="con-footer">
+           <button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+           <button class="wfm-btn wfm-btn-invis-primary">Options</button>
+         </div>
+       </md-content>
+     </md-tab>
+     <md-tab label="Tab title3">
+       <md-content class="md-padding">
+         <div class="con-row">
+           <div class="con-flex">Content</div>
+         </div>
+         <div class="con-footer">
+           <button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+           <button class="wfm-btn wfm-btn-invis-primary">Options</button>
+         </div>
+       </md-content>
+     </md-tab>
+     <md-tab label="Tab title4">
+       <md-content class="md-padding">
+         <div class="con-row">
+           <div class="con-flex">Content</div>
+         </div>
+         <div class="con-row">
+           <div class="con-flex">Things</div>
+           <div class="con-flex">Things</div>
+           <div class="con-flex">Things</div>
+           <div class="con-flex">Things</div>
+         </div>
+         <div class="con-footer">
+           <button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+           <button class="wfm-btn wfm-btn-invis-primary">Options</button>
+         </div>
+       </md-content>
+     </md-tab>
+   </md-tabs>
+   </md-content>
+ </div>
+ </div>
+          </div>
+        </div>
+
+
+             </section>
+            <section id="kssref-4-8" class="kss-section material-depth-1 kss-section--depth-2">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Tabbed panel (badges)
+            </a>
+          </h2>
+          <small class="kss-title__ref">4.8 </small>
+
+ 
+          <div class="kss-description">
+            <p>Adding a <a href="section-1.html#kssref-1-20">badge</a> to the tab label or the context menu icon give the user more information on what can be hidden inside the tab and draw attention to specific tabs.</p>
+
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Tabbed panel (badges)')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Tabbed panel (badges)'] = !markupShow['Tabbed panel (badges)']">
+            <span ng-hide="markupShow['Tabbed panel (badges)']">Show</span>
+            <span ng-show="markupShow['Tabbed panel (badges)']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Tabbed panel (badges)']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;div class=&quot;panel material-depth-1&quot;&gt;
+&lt;div class=&quot;wfm-slide-tabs tabbed-panel&quot;&gt;
+   &lt;div class=&quot;head-actions panel-menu&quot;&gt;
+     &lt;div tabindex=0 class=&quot;context-menu card-context wfm-badge-wrapper&quot;&gt;
+       &lt;i class=&quot;mdi mdi-dots-vertical &quot;&gt;&lt;/i&gt;
+       &lt;wfm-badge badge-model=&quot;5&quot; status=&quot;&#x27;notice-error&#x27;&quot;&gt; &lt;/wfm-badge&gt;
+       &lt;md-tooltip&gt;Options&lt;/md-tooltip&gt;
+       &lt;span class=&quot;context-menu-left&quot;&gt;
+         &lt;ul class=&quot;wfm-list&quot;&gt;
+           &lt;li&gt;Menu item 1&lt;/li&gt;
+           &lt;li&gt;Menu item 2&lt;/li&gt;
+           &lt;li&gt;Menu item 3&lt;/li&gt;
+         &lt;/ul&gt;
+       &lt;/span&gt;
+     &lt;/div&gt;
+   &lt;/div&gt;
+ &lt;md-content class=&quot;md-padding&quot;&gt;
+   &lt;md-tabs md-dynamic-height md-border-bottom&gt;
+     &lt;md-tab label=&quot;Tab title1&quot;&gt;
+       &lt;md-content class=&quot;md-padding&quot;&gt;
+           &lt;div class=&quot;con-row&quot;&gt;
+             &lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
+           &lt;/div&gt;
+         &lt;div class=&quot;con-footer&quot;&gt;
+           &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
+         &lt;/div&gt;
+       &lt;/md-content&gt;
+     &lt;/md-tab&gt;
+      &lt;md-tab&gt;
+       &lt;md-tab-label class=&quot;wfm-badge-wrapper&quot;&gt;
+         Tab Title 2
+         &lt;wfm-badge badge-model=&quot;10&quot; status=&quot;&#x27;notice-success&#x27;&quot;&gt; &lt;/wfm-badge&gt;
+       &lt;/md-tab-label&gt;
+       &lt;md-tab-body class=&quot;md-padding&quot;&gt;
+         &lt;div class=&quot;con-row&quot;&gt;
+           &lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
+         &lt;/div&gt;
+         &lt;div class=&quot;con-footer&quot;&gt;
+           &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
+           &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
+         &lt;/div&gt;
+       &lt;/md-tab-body&gt;
+     &lt;/md-tab&gt;
+   &lt;/md-tabs&gt;
+ &lt;/md-content&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+          <div class="kss-modifier__example">
+            <div class="panel material-depth-1">
+<div class="wfm-slide-tabs tabbed-panel">
+   <div class="head-actions panel-menu">
+     <div tabindex=0 class="context-menu card-context wfm-badge-wrapper">
+       <i class="mdi mdi-dots-vertical "></i>
+       <wfm-badge badge-model="5" status="'notice-error'"> </wfm-badge>
+       <md-tooltip>Options</md-tooltip>
+       <span class="context-menu-left">
+         <ul class="wfm-list">
+           <li>Menu item 1</li>
+           <li>Menu item 2</li>
+           <li>Menu item 3</li>
+         </ul>
+       </span>
+     </div>
+   </div>
+ <md-content class="md-padding">
+   <md-tabs md-dynamic-height md-border-bottom>
+     <md-tab label="Tab title1">
+       <md-content class="md-padding">
+           <div class="con-row">
+             <div class="con-flex">Content</div>
+           </div>
+         <div class="con-footer">
+           <button class="wfm-btn wfm-btn-invis-primary">Options</button>
+         </div>
+       </md-content>
+     </md-tab>
+      <md-tab>
+       <md-tab-label class="wfm-badge-wrapper">
+         Tab Title 2
+         <wfm-badge badge-model="10" status="'notice-success'"> </wfm-badge>
+       </md-tab-label>
+       <md-tab-body class="md-padding">
+         <div class="con-row">
+           <div class="con-flex">Content</div>
+         </div>
+         <div class="con-footer">
+           <button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+           <button class="wfm-btn wfm-btn-invis-primary">Options</button>
+         </div>
+       </md-tab-body>
+     </md-tab>
+   </md-tabs>
+ </md-content>
+</div>
+</div>
+          </div>
+        </div>
+
+
+             </section>
+            <section id="kssref-4-9" class="kss-section material-depth-1 kss-section--depth-2">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Wizard panel
+            </a>
+          </h2>
+          <small class="kss-title__ref">4.9 </small>
+
+ 
+          <div class="kss-description">
+            <p>In case you want to guide the user through a series of steps you can use a wizard panel.</p>
+<div class="jsprewrap">
+  <div class="ksscopy kss-style" ng-click="showJs['wiz'] = !showJs['wiz']">
+      <span ng-hide="showJs['wiz']">Show</span>
+     <span ng-show="showJs['wiz']">Hide</span>
+    JavaScript
+    <i class="mdi mdi-code-tags pull-right"></i>
+  </div>
+  <div class="animate-show" ng-show="showJs['wiz']">
+    <code>
+      <pre class="prettyprint linenums lang-js">
+
+$scope.selectedIndex = 0;
+$scope.nextTab = function() {
+ var index = ($scope.selectedIndex === 50) ? 0 : $scope.selectedIndex + 1;
+ $scope.selectedIndex = index;
+};
+      </pre>
+    </code>
+  </div>
+</div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Wizard panel')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Wizard panel'] = !markupShow['Wizard panel']">
+            <span ng-hide="markupShow['Wizard panel']">Show</span>
+            <span ng-show="markupShow['Wizard panel']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Wizard panel']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;div class=&quot;panel material-depth-1&quot;&gt;
+&lt;div class=&quot;wfm-slide-tabs tabbed-panel&quot;&gt;
+   &lt;div class=&quot;head-actions panel-menu&quot;&gt;
+     &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
+       &lt;i class=&quot;mdi mdi-dots-vertical&quot;&gt;&lt;/i&gt;
+       &lt;span class=&quot;context-menu-left&quot;&gt;
+         &lt;ul class=&quot;wfm-list&quot;&gt;
+           &lt;li&gt;Menu item 1&lt;/li&gt;
+           &lt;li&gt;Menu item 2&lt;/li&gt;
+           &lt;li&gt;Menu item 3&lt;/li&gt;
+         &lt;/ul&gt;
+       &lt;/span&gt;
+     &lt;/div&gt;
+   &lt;/div&gt;
+ &lt;md-content class=&quot;md-padding&quot;&gt;
+   &lt;md-tabs md-dynamic-height md-border-bottom md-selected=&quot;selectedIndex&quot;&gt;
+     &lt;md-tab label=&quot;Tab title1&quot;&gt;
+       &lt;md-content class=&quot;md-padding&quot;&gt;
+           &lt;div class=&quot;con-row&quot;&gt;
+             &lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
+           &lt;/div&gt;
+         &lt;div class=&quot;con-footer&quot;&gt;
+           &lt;button class=&quot;wizard-step wfm-btn wfm-btn-invis-primary&quot; ng-click=&quot;nextTab()&quot;&gt;Next&lt;/button&gt;
+         &lt;/div&gt;
+       &lt;/md-content&gt;
+     &lt;/md-tab&gt;
+     &lt;md-tab label=&quot;Tab title2&quot;&gt;
+       &lt;md-content class=&quot;md-padding&quot;&gt;
+           &lt;div class=&quot;con-row&quot;&gt;
+             &lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
+           &lt;/div&gt;
+         &lt;div class=&quot;con-footer&quot;&gt;
+           &lt;button class=&quot;wizard-step wfm-btn wfm-btn-invis-primary&quot; ng-click=&quot;nextTab()&quot;&gt;Next&lt;/button&gt;
+         &lt;/div&gt;
+       &lt;/md-content&gt;
+     &lt;/md-tab&gt;
+     &lt;md-tab label=&quot;Tab title3&quot;&gt;
+       &lt;md-content class=&quot;md-padding&quot;&gt;
+           &lt;div class=&quot;con-row&quot;&gt;
+             &lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
+           &lt;/div&gt;
+         &lt;div class=&quot;con-footer&quot;&gt;
+           &lt;button class=&quot;wizard-step wfm-btn wfm-btn-invis-primary&quot; ng-click=&quot;nextTab()&quot;&gt;Next&lt;/button&gt;
+         &lt;/div&gt;
+       &lt;/md-content&gt;
+     &lt;/md-tab&gt;
+     &lt;md-tab label=&quot;Tab title4&quot;&gt;
+       &lt;md-content class=&quot;md-padding&quot;&gt;
+           &lt;div class=&quot;con-row&quot;&gt;
+             &lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
+           &lt;/div&gt;
+       &lt;/md-content&gt;
+     &lt;/md-tab&gt;
+   &lt;/md-tabs&gt;
+ &lt;/md-content&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+          <div class="kss-modifier__example">
+            <div class="panel material-depth-1">
+<div class="wfm-slide-tabs tabbed-panel">
+   <div class="head-actions panel-menu">
+     <div tabindex=0 class="context-menu card-context">
+       <i class="mdi mdi-dots-vertical"></i>
+       <span class="context-menu-left">
+         <ul class="wfm-list">
+           <li>Menu item 1</li>
+           <li>Menu item 2</li>
+           <li>Menu item 3</li>
+         </ul>
+       </span>
+     </div>
+   </div>
+ <md-content class="md-padding">
+   <md-tabs md-dynamic-height md-border-bottom md-selected="selectedIndex">
+     <md-tab label="Tab title1">
+       <md-content class="md-padding">
+           <div class="con-row">
+             <div class="con-flex">Content</div>
+           </div>
+         <div class="con-footer">
+           <button class="wizard-step wfm-btn wfm-btn-invis-primary" ng-click="nextTab()">Next</button>
+         </div>
+       </md-content>
+     </md-tab>
+     <md-tab label="Tab title2">
+       <md-content class="md-padding">
+           <div class="con-row">
+             <div class="con-flex">Content</div>
+           </div>
+         <div class="con-footer">
+           <button class="wizard-step wfm-btn wfm-btn-invis-primary" ng-click="nextTab()">Next</button>
+         </div>
+       </md-content>
+     </md-tab>
+     <md-tab label="Tab title3">
+       <md-content class="md-padding">
+           <div class="con-row">
+             <div class="con-flex">Content</div>
+           </div>
+         <div class="con-footer">
+           <button class="wizard-step wfm-btn wfm-btn-invis-primary" ng-click="nextTab()">Next</button>
+         </div>
+       </md-content>
+     </md-tab>
+     <md-tab label="Tab title4">
+       <md-content class="md-padding">
+           <div class="con-row">
+             <div class="con-flex">Content</div>
+           </div>
+       </md-content>
+     </md-tab>
+   </md-tabs>
+ </md-content>
+</div>
+</div>
+          </div>
+        </div>
+
+
+             </section>
+            <section id="kssref-4-10" class="kss-section material-depth-1 kss-section--depth-2">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Basic Form panel
+            </a>
+          </h2>
+          <small class="kss-title__ref">4.10 </small>
+
+ 
+          <div class="kss-description">
+            <div class="jsprewrap">
+  <div class="ksscopy kss-style" ng-click="showJs['form2'] = !showJs['form2']">
+      <span ng-hide="showJs['form2']">Show</span>
+     <span ng-show="showJs['form2']">Hide</span>
+    JavaScript
+    <i class="mdi mdi-code-tags pull-right"></i>
+  </div>
+  <div class="animate-show" ng-show="showJs['form2']">
+    <code>
+      <pre class="prettyprint linenums lang-js">
+
+$scope.reset = function(form) {
+ if (form) {
+   form.$setPristine();
+   form.$setUntouched();
+ }
+};
+      </pre>
+    </code>
+  </div>
+</div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Basic Form panel')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Basic Form panel'] = !markupShow['Basic Form panel']">
+            <span ng-hide="markupShow['Basic Form panel']">Show</span>
+            <span ng-show="markupShow['Basic Form panel']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Basic Form panel']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;div class=&quot;panel form-panel material-depth-1&quot;&gt;
+  &lt;div class=&quot;sub-header&quot;&gt;
+    &lt;h2&gt;Panel title&lt;/h2&gt;
+    &lt;div class=&quot;head-actions panel-menu&quot;&gt;
+      &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
+        &lt;i class=&quot;mdi mdi-dots-vertical&quot;&gt;&lt;/i&gt;
+        &lt;span class=&quot;context-menu-left&quot;&gt;
+          &lt;ul class=&quot;wfm-list&quot;&gt;
+            &lt;li&gt;Menu item 1&lt;/li&gt;
+            &lt;li&gt;Menu item 2&lt;/li&gt;
+            &lt;li&gt;Menu item 3&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;form name=&quot;form&quot; class=&quot;wfm-form&quot; novalidate&gt;
+    &lt;div class=&quot;con-row&quot;&gt;
+      &lt;div class=&quot;con-flex&quot;&gt;
+        &lt;div class=&quot;form-input-wrap&quot;&gt;
+          &lt;label for=&quot;nameId&quot;&gt;Name:&lt;/label&gt;
+          &lt;input type=&quot;text&quot; ng-model=&quot;form.input0&quot; placeholder=&quot;Name&quot; name=&quot;Name&quot; required=&quot;&quot; id=&quot;nameId&quot; autofocus/&gt;
+          &lt;div ng-cloak class=&quot;animate-show&quot; ng-show =&quot;form.$submitted || form.Name.$touched&quot;&gt;
+            &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:form.Name.$error.required}&quot;&gt;Name is required&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;form-input-wrap&quot;&gt;
+          &lt;label for=&quot;nameId&quot;&gt;Age:&lt;/label&gt;
+          &lt;input type=&quot;number&quot; ng-model=&quot;form.input1&quot; placeholder=&quot;Age&quot; name=&quot;Age&quot; required=&quot;&quot; id=&quot;nameId&quot;/&gt;
+          &lt;div ng-cloak class=&quot;animate-show&quot; ng-show =&quot;form.$submitted || form.Age.$touched&quot;&gt;
+            &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:form.Age.$error.required}&quot;&gt;Age is required&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;form-input-wrap&quot;&gt;
+          &lt;label for=&quot;nameId&quot;&gt;Password:&lt;/label&gt;
+          &lt;input type=&quot;password&quot; ng-model=&quot;form.input2&quot; placeholder=&quot;Password&quot; name=&quot;Password&quot; required=&quot;&quot; id=&quot;nameId&quot;/&gt;
+          &lt;div ng-cloak class=&quot;animate-show&quot; ng-show =&quot;form.$submitted || form.Password.$touched&quot;&gt;
+            &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:form.Password.$error.required}&quot;&gt;Password is required&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;form-input-wrap&quot;&gt;
+          &lt;label for=&quot;drop&quot;&gt;How many:&lt;/label&gt;
+          &lt;md-select ng-model=&quot;form.drop&quot; name=&quot;Drop&quot; id=&quot;drop&quot; required=&quot;&quot;&gt;
+            &lt;md-option ng-repeat=&quot;item in demos&quot; ng-value=&quot;item.id&quot;&gt;&lt;span ng-bind=&quot;item.id&quot;&gt;&lt;/span&gt;&lt;/md-option&gt;
+          &lt;/md-select&gt;
+          &lt;div ng-cloak class=&quot;animate-input-message&quot; ng-show=&quot;form.$submitted || form.Drop.$error.required.$touched&quot;&gt;
+            &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:form.Drop.$error.required}&quot;&gt;Pick at least one&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;con-footer&quot;&gt;
+      &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot; type=&quot;button&quot; ng-click=&quot;reset(form)&quot;&gt;&lt;md-tooltip&gt;Hide all errors&lt;/md-tooltip&gt;Clear&lt;/button&gt;
+      &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot; type=&quot;submit&quot; ng-click=&quot;update()&quot;&gt;&lt;md-tooltip&gt;Save input if valid&lt;/md-tooltip&gt;Submit&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;
+&lt;/div&gt;
+
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+          <div class="kss-modifier__example">
+            <div class="panel form-panel material-depth-1">
+  <div class="sub-header">
+    <h2>Panel title</h2>
+    <div class="head-actions panel-menu">
+      <div tabindex=0 class="context-menu card-context">
+        <i class="mdi mdi-dots-vertical"></i>
+        <span class="context-menu-left">
+          <ul class="wfm-list">
+            <li>Menu item 1</li>
+            <li>Menu item 2</li>
+            <li>Menu item 3</li>
+          </ul>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <form name="form" class="wfm-form" novalidate>
+    <div class="con-row">
+      <div class="con-flex">
+        <div class="form-input-wrap">
+          <label for="nameId">Name:</label>
+          <input type="text" ng-model="form.input0" placeholder="Name" name="Name" required="" id="nameId" autofocus/>
+          <div ng-cloak class="animate-show" ng-show ="form.$submitted || form.Name.$touched">
+            <div class="form-input-message" ng-class="{formInvalidInput:form.Name.$error.required}">Name is required</div>
+          </div>
+        </div>
+        <div class="form-input-wrap">
+          <label for="nameId">Age:</label>
+          <input type="number" ng-model="form.input1" placeholder="Age" name="Age" required="" id="nameId"/>
+          <div ng-cloak class="animate-show" ng-show ="form.$submitted || form.Age.$touched">
+            <div class="form-input-message" ng-class="{formInvalidInput:form.Age.$error.required}">Age is required</div>
+          </div>
+        </div>
+        <div class="form-input-wrap">
+          <label for="nameId">Password:</label>
+          <input type="password" ng-model="form.input2" placeholder="Password" name="Password" required="" id="nameId"/>
+          <div ng-cloak class="animate-show" ng-show ="form.$submitted || form.Password.$touched">
+            <div class="form-input-message" ng-class="{formInvalidInput:form.Password.$error.required}">Password is required</div>
+          </div>
+        </div>
+        <div class="form-input-wrap">
+          <label for="drop">How many:</label>
+          <md-select ng-model="form.drop" name="Drop" id="drop" required="">
+            <md-option ng-repeat="item in demos" ng-value="item.id"><span ng-bind="item.id"></span></md-option>
+          </md-select>
+          <div ng-cloak class="animate-input-message" ng-show="form.$submitted || form.Drop.$error.required.$touched">
+            <div class="form-input-message" ng-class="{formInvalidInput:form.Drop.$error.required}">Pick at least one</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="con-footer">
+      <button class="wfm-btn wfm-btn-invis-default" type="button" ng-click="reset(form)"><md-tooltip>Hide all errors</md-tooltip>Clear</button>
+      <button class="wfm-btn wfm-btn-invis-primary" type="submit" ng-click="update()"><md-tooltip>Save input if valid</md-tooltip>Submit</button>
+    </div>
+  </form>
+</div>
+
+          </div>
+        </div>
+
+
+             </section>
+            <section id="kssref-4-11" class="kss-section material-depth-1 kss-section--depth-2">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Devided Form panel
+            </a>
+          </h2>
+          <small class="kss-title__ref">4.11 </small>
+
+ 
+          <div class="kss-description">
+            <p>Dividing the inputs into different sub-categories using headers can make the structure more clear.</p>
+<div class="jsprewrap">
+  <div class="ksscopy kss-style" ng-click="showJs['form3'] = !showJs['form3']">
+      <span ng-hide="showJs['form3']">Show</span>
+     <span ng-show="showJs['form3']">Hide</span>
+    JavaScript
+    <i class="mdi mdi-code-tags pull-right"></i>
+  </div>
+  <div class="animate-show" ng-show="showJs['form3']">
+    <code>
+      <pre class="prettyprint linenums lang-js">
+
+$scope.reset = function(form) {
+ if (form) {
+   form.$setPristine();
+   form.$setUntouched();
+ }
+};
+      </pre>
+    </code>
+  </div>
+</div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Devided Form panel')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Devided Form panel'] = !markupShow['Devided Form panel']">
+            <span ng-hide="markupShow['Devided Form panel']">Show</span>
+            <span ng-show="markupShow['Devided Form panel']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Devided Form panel']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;div class=&quot;panel form-panel material-depth-1&quot;&gt;
+  &lt;div class=&quot;sub-header&quot;&gt;
+    &lt;h2&gt;Panel title&lt;/h2&gt;
+    &lt;div class=&quot;head-actions panel-menu&quot;&gt;
+      &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
+        &lt;i class=&quot;mdi mdi-dots-vertical&quot;&gt;&lt;/i&gt;
+        &lt;span class=&quot;context-menu-left&quot;&gt;
+          &lt;ul class=&quot;wfm-list&quot;&gt;
+            &lt;li&gt;Menu item 1&lt;/li&gt;
+            &lt;li&gt;Menu item 2&lt;/li&gt;
+            &lt;li&gt;Menu item 3&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;form name=&quot;devidedForm&quot; class=&quot;wfm-form&quot; novalidate&gt;
+    &lt;div class=&quot;con-row&quot;&gt;
+      &lt;div class=&quot;con-flex&quot;&gt;
+        &lt;h3&gt;Personal information&lt;/h3&gt;
+        &lt;div class=&quot;form-input-wrap&quot;&gt;
+          &lt;label for=&quot;firstNameId&quot;&gt;First Name:&lt;/label&gt;
+          &lt;input type=&quot;text&quot; ng-model=&quot;devidedForm.input0&quot; placeholder=&quot;Last name&quot; name=&quot;firstName&quot; required=&quot;&quot; id=&quot;firstNameId&quot; autofocus/&gt;
+          &lt;div ng-cloak class=&quot;animate-show&quot; ng-show =&quot;devidedForm.$submitted || devidedForm.firstName.$touched&quot;&gt;
+            &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:devidedForm.firstName.$error.required}&quot;&gt;First name is required&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;form-input-wrap&quot;&gt;
+          &lt;label for=&quot;lastNameId&quot;&gt;Last Name:&lt;/label&gt;
+          &lt;input type=&quot;text&quot; ng-model=&quot;devidedForm.input1&quot; placeholder=&quot;First name&quot; name=&quot;lastName&quot; required=&quot;&quot; id=&quot;lastNameId&quot; autofocus/&gt;
+          &lt;div ng-cloak class=&quot;animate-show&quot; ng-show =&quot;devidedForm.$submitted || devidedForm.lastName.$touched&quot;&gt;
+            &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:devidedForm.lastName.$error.required}&quot;&gt;Last name is required&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;h3&gt;Preferences&lt;/h3&gt;
+        &lt;div class=&quot;form-input-wrap&quot;&gt;
+          &lt;label&gt;Pick the best one:&lt;/label&gt;
+          &lt;md-radio-group ng-model=&quot;devidedForm.dessert&quot;&gt;
+            &lt;md-radio-button value=&quot;Option 1&quot; aria-label=&quot;radio&quot;&gt;Cake&lt;/md-radio-button&gt;
+            &lt;md-radio-button value=&quot;Option 2&quot; aria-label=&quot;radio&quot;&gt;Pie&lt;/md-radio-button&gt;
+            &lt;md-radio-button value=&quot;Option 3&quot; aria-label=&quot;radio&quot;&gt;Ice cream&lt;/md-radio-button&gt;
+          &lt;/md-radio-group&gt;
+          &lt;div ng-cloak class=&quot;animate-show&quot; ng-show =&quot;devidedForm.$submitted || devidedForm.dessert.$touched&quot;&gt;
+            &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:!devidedForm.dessert}&quot;&gt;At least one is required&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;con-footer&quot;&gt;
+      &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot; type=&quot;button&quot; ng-click=&quot;reset(devidedForm)&quot;&gt;&lt;md-tooltip&gt;Hide all errors&lt;/md-tooltip&gt;Clear&lt;/button&gt;
+      &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot; type=&quot;submit&quot; ng-click=&quot;update()&quot;&gt;&lt;md-tooltip&gt;Save input if valid&lt;/md-tooltip&gt;Submit&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;
+&lt;/div&gt;
+
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+          <div class="kss-modifier__example">
+            <div class="panel form-panel material-depth-1">
+  <div class="sub-header">
+    <h2>Panel title</h2>
+    <div class="head-actions panel-menu">
+      <div tabindex=0 class="context-menu card-context">
+        <i class="mdi mdi-dots-vertical"></i>
+        <span class="context-menu-left">
+          <ul class="wfm-list">
+            <li>Menu item 1</li>
+            <li>Menu item 2</li>
+            <li>Menu item 3</li>
+          </ul>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <form name="devidedForm" class="wfm-form" novalidate>
+    <div class="con-row">
+      <div class="con-flex">
+        <h3>Personal information</h3>
+        <div class="form-input-wrap">
+          <label for="firstNameId">First Name:</label>
+          <input type="text" ng-model="devidedForm.input0" placeholder="Last name" name="firstName" required="" id="firstNameId" autofocus/>
+          <div ng-cloak class="animate-show" ng-show ="devidedForm.$submitted || devidedForm.firstName.$touched">
+            <div class="form-input-message" ng-class="{formInvalidInput:devidedForm.firstName.$error.required}">First name is required</div>
+          </div>
+        </div>
+        <div class="form-input-wrap">
+          <label for="lastNameId">Last Name:</label>
+          <input type="text" ng-model="devidedForm.input1" placeholder="First name" name="lastName" required="" id="lastNameId" autofocus/>
+          <div ng-cloak class="animate-show" ng-show ="devidedForm.$submitted || devidedForm.lastName.$touched">
+            <div class="form-input-message" ng-class="{formInvalidInput:devidedForm.lastName.$error.required}">Last name is required</div>
+          </div>
+        </div>
+        <h3>Preferences</h3>
+        <div class="form-input-wrap">
+          <label>Pick the best one:</label>
+          <md-radio-group ng-model="devidedForm.dessert">
+            <md-radio-button value="Option 1" aria-label="radio">Cake</md-radio-button>
+            <md-radio-button value="Option 2" aria-label="radio">Pie</md-radio-button>
+            <md-radio-button value="Option 3" aria-label="radio">Ice cream</md-radio-button>
+          </md-radio-group>
+          <div ng-cloak class="animate-show" ng-show ="devidedForm.$submitted || devidedForm.dessert.$touched">
+            <div class="form-input-message" ng-class="{formInvalidInput:!devidedForm.dessert}">At least one is required</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="con-footer">
+      <button class="wfm-btn wfm-btn-invis-default" type="button" ng-click="reset(devidedForm)"><md-tooltip>Hide all errors</md-tooltip>Clear</button>
+      <button class="wfm-btn wfm-btn-invis-primary" type="submit" ng-click="update()"><md-tooltip>Save input if valid</md-tooltip>Submit</button>
+    </div>
+  </form>
+</div>
+
+          </div>
+        </div>
+
+
+             </section>
+            <section id="kssref-4-12" class="kss-section material-depth-1 kss-section--depth-2">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Split Form panel
+            </a>
+          </h2>
+          <small class="kss-title__ref">4.12 </small>
+
+ 
+          <div class="kss-description">
+            <p>The layout inside the form can be changed to give more space to certain parts, just remember to structure the inputs in a logical way.</p>
+<div class="jsprewrap">
+  <div class="ksscopy kss-style" ng-click="showJs['form4'] = !showJs['form4']">
+      <span ng-hide="showJs['form4']">Show</span>
+     <span ng-show="showJs['form4']">Hide</span>
+    JavaScript
+    <i class="mdi mdi-code-tags pull-right"></i>
+  </div>
+  <div class="animate-show" ng-show="showJs['form4']">
+    <code>
+      <pre class="prettyprint linenums lang-js">
+
+$scope.reset = function(form) {
+ if (form) {
+   form.$setPristine();
+   form.$setUntouched();
+ }
+};
+      </pre>
+    </code>
+  </div>
+</div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Split Form panel')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Split Form panel'] = !markupShow['Split Form panel']">
+            <span ng-hide="markupShow['Split Form panel']">Show</span>
+            <span ng-show="markupShow['Split Form panel']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Split Form panel']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;div class=&quot;panel form-panel material-depth-1&quot;&gt;
+  &lt;div class=&quot;sub-header&quot;&gt;
+    &lt;h2&gt;Panel title&lt;/h2&gt;
+    &lt;div class=&quot;head-actions panel-menu&quot;&gt;
+      &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
+        &lt;i class=&quot;mdi mdi-dots-vertical&quot;&gt;&lt;/i&gt;
+        &lt;span class=&quot;context-menu-left&quot;&gt;
+          &lt;ul class=&quot;wfm-list&quot;&gt;
+            &lt;li&gt;Menu item 1&lt;/li&gt;
+            &lt;li&gt;Menu item 2&lt;/li&gt;
+            &lt;li&gt;Menu item 3&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;form name=&quot;splitForm&quot; class=&quot;wfm-form&quot; novalidate&gt;
+    &lt;div class=&quot;con-row&quot;&gt;
+      &lt;div class=&quot;con-flex&quot;&gt;
+        &lt;div class=&quot;form-input-wrap&quot;&gt;
+          &lt;label for=&quot;nameId&quot;&gt;Name:&lt;/label&gt;
+          &lt;input type=&quot;text&quot; ng-model=&quot;splitForm.input0&quot; placeholder=&quot;Name&quot; name=&quot;Name&quot; required=&quot;&quot; id=&quot;nameId&quot; autofocus/&gt;
+          &lt;div ng-cloak class=&quot;animate-show&quot; ng-show =&quot;splitForm.$submitted || splitForm.Name.$touched&quot;&gt;
+            &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:splitForm.Name.$error.required}&quot;&gt;Name is required&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;form-input-wrap&quot;&gt;
+          &lt;label for=&quot;nameId&quot;&gt;Age:&lt;/label&gt;
+          &lt;input type=&quot;number&quot; ng-model=&quot;splitForm.input1&quot; placeholder=&quot;Age&quot; name=&quot;Age&quot; required=&quot;&quot; id=&quot;nameId&quot;/&gt;
+          &lt;div ng-cloak class=&quot;animate-show&quot; ng-show =&quot;splitForm.$submitted || splitForm.Age.$touched&quot;&gt;
+            &lt;div class=&quot;form-input-message&quot; ng-class=&quot;{formInvalidInput:splitForm.Age.$error.required}&quot;&gt;Age is required&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;con-flex x3&quot;&gt;
+        &lt;div class=&quot;form-input-wrap&quot;&gt;
+          &lt;label&gt;Group:&lt;/label&gt;
+          &lt;md-checkbox ng-model=&quot;splitForm.box1&quot; aria-label=&quot;Checkbox&quot;&gt;Option 1&lt;/md-checkbox&gt;
+          &lt;md-checkbox ng-model=&quot;splitForm.box2&quot; aria-label=&quot;Checkbox&quot;&gt;Option 2&lt;/md-checkbox&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;con-footer&quot;&gt;
+      &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot; type=&quot;button&quot; ng-click=&quot;reset(splitForm)&quot;&gt;&lt;md-tooltip&gt;Hide all errors&lt;/md-tooltip&gt;Clear&lt;/button&gt;
+      &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot; type=&quot;submit&quot; ng-click=&quot;update()&quot;&gt;&lt;md-tooltip&gt;Save input if valid&lt;/md-tooltip&gt;Submit&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;
+&lt;/div&gt;
+
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+          <div class="kss-modifier__example">
+            <div class="panel form-panel material-depth-1">
+  <div class="sub-header">
+    <h2>Panel title</h2>
+    <div class="head-actions panel-menu">
+      <div tabindex=0 class="context-menu card-context">
+        <i class="mdi mdi-dots-vertical"></i>
+        <span class="context-menu-left">
+          <ul class="wfm-list">
+            <li>Menu item 1</li>
+            <li>Menu item 2</li>
+            <li>Menu item 3</li>
+          </ul>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <form name="splitForm" class="wfm-form" novalidate>
+    <div class="con-row">
+      <div class="con-flex">
+        <div class="form-input-wrap">
+          <label for="nameId">Name:</label>
+          <input type="text" ng-model="splitForm.input0" placeholder="Name" name="Name" required="" id="nameId" autofocus/>
+          <div ng-cloak class="animate-show" ng-show ="splitForm.$submitted || splitForm.Name.$touched">
+            <div class="form-input-message" ng-class="{formInvalidInput:splitForm.Name.$error.required}">Name is required</div>
+          </div>
+        </div>
+        <div class="form-input-wrap">
+          <label for="nameId">Age:</label>
+          <input type="number" ng-model="splitForm.input1" placeholder="Age" name="Age" required="" id="nameId"/>
+          <div ng-cloak class="animate-show" ng-show ="splitForm.$submitted || splitForm.Age.$touched">
+            <div class="form-input-message" ng-class="{formInvalidInput:splitForm.Age.$error.required}">Age is required</div>
+          </div>
+        </div>
+      </div>
+      <div class="con-flex x3">
+        <div class="form-input-wrap">
+          <label>Group:</label>
+          <md-checkbox ng-model="splitForm.box1" aria-label="Checkbox">Option 1</md-checkbox>
+          <md-checkbox ng-model="splitForm.box2" aria-label="Checkbox">Option 2</md-checkbox>
+        </div>
+      </div>
+    </div>
+    <div class="con-footer">
+      <button class="wfm-btn wfm-btn-invis-default" type="button" ng-click="reset(splitForm)"><md-tooltip>Hide all errors</md-tooltip>Clear</button>
+      <button class="wfm-btn wfm-btn-invis-primary" type="submit" ng-click="update()"><md-tooltip>Save input if valid</md-tooltip>Submit</button>
+    </div>
+  </form>
+</div>
+
+          </div>
+        </div>
+
+
+             </section>
+            <section id="kssref-4-13" class="kss-section material-depth-1 kss-section--depth-2">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Card
+            </a>
+          </h2>
+          <small class="kss-title__ref">4.13 </small>
+
+ 
+          <div class="kss-description">
+            <p>The card is a simpler version of the panel with more direct actions available in the footer.
+The card can have different colors by applying notice-info, notice-warning, notice-error and notice-success classes to the card element.</p>
+
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Card')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Card'] = !markupShow['Card']">
+            <span ng-hide="markupShow['Card']">Show</span>
+            <span ng-show="markupShow['Card']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Card']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;div class=&quot;card panel material-depth-1&quot;&gt;
+   &lt;div class=&quot;sub-header&quot;&gt;
+     &lt;h2&gt;Card title&lt;/h2&gt;
+   &lt;/div&gt;
+ &lt;div class=&quot;con-row&quot;&gt;
+    &lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class=&quot;card-footer con-row&quot;&gt;
+   &lt;span class=&quot;con-flex card-footer-section&quot;&gt;
+     &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
+       &lt;i class=&quot;mdi mdi-duck&quot;&gt;&lt;/i&gt;
+     &lt;/div&gt;
+     &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
+       &lt;i class=&quot;mdi mdi-alert&quot;&gt;&lt;/i&gt;
+     &lt;/div&gt;
+     &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
+       &lt;i class=&quot;mdi mdi-settings&quot;&gt;&lt;/i&gt;
+     &lt;/div&gt;
+   &lt;/span&gt;
+   &lt;span class=&quot;con-flex line-right card-footer-section&quot;&gt;
+     &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Default&lt;/button&gt;
+     &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Primary&lt;/button&gt;
+   &lt;/span&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;With color:
+&lt;select ng-model=&quot;selectedClass&quot;&gt;
+&lt;option&gt;notice-success&lt;/option&gt;
+&lt;option&gt;notice-info&lt;/option&gt;
+&lt;option&gt;notice-error&lt;/option&gt;
+&lt;option&gt;notice-warning&lt;/option&gt;
+&lt;/select&gt;
+&lt;/h3&gt;
+&lt;div class=&quot;card panel material-depth-1&quot; ng-class=&quot;selectedClass&quot;&gt;
+   &lt;div class=&quot;sub-header&quot;&gt;
+     &lt;h2&gt;Colorful card title&lt;/h2&gt;
+   &lt;/div&gt;
+ &lt;div class=&quot;con-row&quot;&gt;
+    &lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class=&quot;card-footer con-row&quot;&gt;
+   &lt;span class=&quot;con-flex card-footer-section&quot;&gt;
+     &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
+       &lt;i class=&quot;mdi mdi-duck&quot;&gt;&lt;/i&gt;
+     &lt;/div&gt;
+     &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
+       &lt;i class=&quot;mdi mdi-alert&quot;&gt;&lt;/i&gt;
+     &lt;/div&gt;
+     &lt;div tabindex=0 class=&quot;context-menu card-context&quot;&gt;
+       &lt;i class=&quot;mdi mdi-settings&quot;&gt;&lt;/i&gt;
+     &lt;/div&gt;
+   &lt;/span&gt;
+   &lt;span class=&quot;con-flex line-right card-footer-section&quot;&gt;
+     &lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Default&lt;/button&gt;
+     &lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Primary&lt;/button&gt;
+   &lt;/span&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+          <div class="kss-modifier__example">
+            <div class="card panel material-depth-1">
+   <div class="sub-header">
+     <h2>Card title</h2>
+   </div>
+ <div class="con-row">
+    <div class="con-flex">Content</div>
+ </div>
+ <div class="card-footer con-row">
+   <span class="con-flex card-footer-section">
+     <div tabindex=0 class="context-menu card-context">
+       <i class="mdi mdi-duck"></i>
+     </div>
+     <div tabindex=0 class="context-menu card-context">
+       <i class="mdi mdi-alert"></i>
+     </div>
+     <div tabindex=0 class="context-menu card-context">
+       <i class="mdi mdi-settings"></i>
+     </div>
+   </span>
+   <span class="con-flex line-right card-footer-section">
+     <button class="wfm-btn wfm-btn-invis-default">Default</button>
+     <button class="wfm-btn wfm-btn-invis-primary">Primary</button>
+   </span>
+ </div>
+</div>
+<h3>With color:
+<select ng-model="selectedClass">
+<option>notice-success</option>
+<option>notice-info</option>
+<option>notice-error</option>
+<option>notice-warning</option>
+</select>
+</h3>
+<div class="card panel material-depth-1" ng-class="selectedClass">
+   <div class="sub-header">
+     <h2>Colorful card title</h2>
+   </div>
+ <div class="con-row">
+    <div class="con-flex">Content</div>
+ </div>
+ <div class="card-footer con-row">
+   <span class="con-flex card-footer-section">
+     <div tabindex=0 class="context-menu card-context">
+       <i class="mdi mdi-duck"></i>
+     </div>
+     <div tabindex=0 class="context-menu card-context">
+       <i class="mdi mdi-alert"></i>
+     </div>
+     <div tabindex=0 class="context-menu card-context">
+       <i class="mdi mdi-settings"></i>
+     </div>
+   </span>
+   <span class="con-flex line-right card-footer-section">
+     <button class="wfm-btn wfm-btn-invis-default">Default</button>
+     <button class="wfm-btn wfm-btn-invis-primary">Primary</button>
+   </span>
+ </div>
+</div>
+          </div>
+        </div>
+
+
+             </section>
+            <section id="kssref-4-14" class="kss-section material-depth-1 kss-section--depth-2">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Card list (multiple open)
+            </a>
+          </h2>
+          <small class="kss-title__ref">4.14 </small>
+
+ 
+          <div class="kss-description">
+            <p>The card list consists of expandable panels-like cards. The header part is used for displaying a title and other indicators. The content part could contains any type of html elements.
+By default, card list items support open multiple cards at the same time.</p>
+<table class="wfm-table">
+<tr><th>Attribute Name</th><th>Usage</th><th>Required</th></tr>
+<tr><td>pre-open</td><td>Bind to a repeated card that should be open.</td><td>false</td></tr>
+<tr><td>open</td><td>can be set to &#39;single&#39; to open one card at a time, closing previously open ones</td><td>false</td></tr>
+<tr><td>color</td><td>Bind a object that defines colors on all cards, can include linear gradient to indicate order or scale</td><td>false</td></tr>
+<tr><td>color-condition</td><td>Options for what color goes on what card</td><td>false</td></tr>
+</table>
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Card list (multiple open)')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Card list (multiple open)'] = !markupShow['Card list (multiple open)']">
+            <span ng-hide="markupShow['Card list (multiple open)']">Show</span>
+            <span ng-show="markupShow['Card list (multiple open)']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Card list (multiple open)']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;card-panel-list&gt;
+&lt;card-panel ng-repeat=&quot;item in cardListItems&quot; id=&quot;$index&quot;&gt;
+   &lt;card-panel-header&gt;
+       &lt;b&gt;Single card title&lt;/b&gt;
+   &lt;/card-panel-header&gt;
+   &lt;card-panel-content&gt;
+     &lt;div class=&quot;panel&quot;&gt;
+ 			&lt;div class=&quot;con-row demo-outline&quot;&gt;
+    		&lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
+ 			&lt;/div&gt;
+  		&lt;div class=&quot;con-footer&quot;&gt;
+	 			&lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
+    		&lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
+  		&lt;/div&gt;
+		&lt;/div&gt;
+  &lt;/card-panel-content&gt;
+&lt;/card-panel&gt;
+&lt;/card-panel-list&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+          <div class="kss-modifier__example">
+            <card-panel-list>
+<card-panel ng-repeat="item in cardListItems" id="$index">
+   <card-panel-header>
+       <b>Single card title</b>
+   </card-panel-header>
+   <card-panel-content>
+     <div class="panel">
+ 			<div class="con-row demo-outline">
+    		<div class="con-flex">Content</div>
+ 			</div>
+  		<div class="con-footer">
+	 			<button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+    		<button class="wfm-btn wfm-btn-invis-primary">Options</button>
+  		</div>
+		</div>
+  </card-panel-content>
+</card-panel>
+</card-panel-list>
+          </div>
+        </div>
+
+
+             </section>
+            <section id="kssref-4-15" class="kss-section material-depth-1 kss-section--depth-2">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Card list (pre-open)
+            </a>
+          </h2>
+          <small class="kss-title__ref">4.15 </small>
+
+ 
+          <div class="kss-description">
+            <p>By using attribute &#39;pre-open&#39;, selected list items will pre-open on load.</p>
+
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Card list (pre-open)')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Card list (pre-open)'] = !markupShow['Card list (pre-open)']">
+            <span ng-hide="markupShow['Card list (pre-open)']">Show</span>
+            <span ng-show="markupShow['Card list (pre-open)']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Card list (pre-open)']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;card-panel-list&gt;
+&lt;card-panel ng-repeat=&quot;item in cardListItems&quot; pre-open=&quot;item.Selected&quot; id=&quot;$index&quot;&gt;
+   &lt;card-panel-header&gt;
+       &lt;b&gt;Single card title&lt;/b&gt;
+   &lt;/card-panel-header&gt;
+   &lt;card-panel-content&gt;
+     &lt;div class=&quot;panel&quot;&gt;
+ 			&lt;div class=&quot;con-row demo-outline&quot;&gt;
+    		&lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
+ 			&lt;/div&gt;
+  		&lt;div class=&quot;con-footer&quot;&gt;
+	 			&lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
+    		&lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
+  		&lt;/div&gt;
+		&lt;/div&gt;
+  &lt;/card-panel-content&gt;
+&lt;/card-panel&gt;
+&lt;/card-panel-list&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+          <div class="kss-modifier__example">
+            <card-panel-list>
+<card-panel ng-repeat="item in cardListItems" pre-open="item.Selected" id="$index">
+   <card-panel-header>
+       <b>Single card title</b>
+   </card-panel-header>
+   <card-panel-content>
+     <div class="panel">
+ 			<div class="con-row demo-outline">
+    		<div class="con-flex">Content</div>
+ 			</div>
+  		<div class="con-footer">
+	 			<button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+    		<button class="wfm-btn wfm-btn-invis-primary">Options</button>
+  		</div>
+		</div>
+  </card-panel-content>
+</card-panel>
+</card-panel-list>
+          </div>
+        </div>
+
+
+             </section>
+            <section id="kssref-4-16" class="kss-section material-depth-1 kss-section--depth-2">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Card list (single open)
+            </a>
+          </h2>
+          <small class="kss-title__ref">4.16 </small>
+
+ 
+          <div class="kss-description">
+            <p>By using attribute &#39;open=&quot;single&quot;&#39;, the card list only allows one card to be open at a time.</p>
+
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Card list (single open)')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Card list (single open)'] = !markupShow['Card list (single open)']">
+            <span ng-hide="markupShow['Card list (single open)']">Show</span>
+            <span ng-show="markupShow['Card list (single open)']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Card list (single open)']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;card-panel-list&gt;
+&lt;card-panel ng-repeat=&quot;item in cardListItems&quot; open=&quot;single&quot; id=&quot;$index&quot;&gt;
+   &lt;card-panel-header&gt;
+       &lt;b&gt;Single card title&lt;/b&gt;
+   &lt;/card-panel-header&gt;
+   &lt;card-panel-content&gt;
+     &lt;div class=&quot;panel&quot;&gt;
+ 			&lt;div class=&quot;con-row demo-outline&quot;&gt;
+    		&lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
+ 			&lt;/div&gt;
+  		&lt;div class=&quot;con-footer&quot;&gt;
+	 			&lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
+    		&lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
+  		&lt;/div&gt;
+		&lt;/div&gt;
+  &lt;/card-panel-content&gt;
+&lt;/card-panel&gt;
+&lt;/card-panel-list&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+          <div class="kss-modifier__example">
+            <card-panel-list>
+<card-panel ng-repeat="item in cardListItems" open="single" id="$index">
+   <card-panel-header>
+       <b>Single card title</b>
+   </card-panel-header>
+   <card-panel-content>
+     <div class="panel">
+ 			<div class="con-row demo-outline">
+    		<div class="con-flex">Content</div>
+ 			</div>
+  		<div class="con-footer">
+	 			<button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+    		<button class="wfm-btn wfm-btn-invis-primary">Options</button>
+  		</div>
+		</div>
+  </card-panel-content>
+</card-panel>
+</card-panel-list>
+          </div>
+        </div>
+
+
+             </section>
+            <section id="kssref-4-17" class="kss-section material-depth-1 kss-section--depth-2">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Card list (simple color bar)
+            </a>
+          </h2>
+          <small class="kss-title__ref">4.17 </small>
+
+ 
+          <div class="kss-description">
+            <p>By using attribute &#39;color&#39;, header part of card list items will contain a simple color bar on the left.</p>
+<div class="jsprewrap">
+  <div class="ksscopy kss-style" ng-click="showJs['cardDemo1'] = !showJs['cardDemo1']">
+      <span ng-hide="showJs['cardDemo1']">Show</span>
+     <span ng-show="showJs['cardDemo1']">Hide</span>
+    JavaScript
+    <i class="mdi mdi-code-tags pull-right"></i>
+  </div>
+  <div class="animate-show" ng-show="showJs['cardDemo1']">
+    <code>
+      <pre class="prettyprint linenums lang-js">
+
+         $scope.simpleColor = {
+           render: &#39;class&#39;,
+           className: &#39;brown&#39;
+          }
+
+         css code example:
+         .brown {
+            border-color: $brown-100;
+          }
+
+      </pre>
+    </code>
+  </div>
+</div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Card list (simple color bar)')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Card list (simple color bar)'] = !markupShow['Card list (simple color bar)']">
+            <span ng-hide="markupShow['Card list (simple color bar)']">Show</span>
+            <span ng-show="markupShow['Card list (simple color bar)']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Card list (simple color bar)']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;card-panel-list&gt;
+&lt;card-panel ng-repeat=&quot;item in cardListItems&quot; color=&quot;simpleColor&quot; id=&quot;$index&quot;&gt;
+   &lt;card-panel-header&gt;
+       &lt;b&gt;Single card title&lt;/b&gt;
+   &lt;/card-panel-header&gt;
+   &lt;card-panel-content&gt;
+     &lt;div class=&quot;panel&quot;&gt;
+ 			&lt;div class=&quot;con-row demo-outline&quot;&gt;
+    		&lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
+ 			&lt;/div&gt;
+  		&lt;div class=&quot;con-footer&quot;&gt;
+	 			&lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
+    		&lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
+  		&lt;/div&gt;
+		&lt;/div&gt;
+  &lt;/card-panel-content&gt;
+&lt;/card-panel&gt;
+&lt;/card-panel-list&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+          <div class="kss-modifier__example">
+            <card-panel-list>
+<card-panel ng-repeat="item in cardListItems" color="simpleColor" id="$index">
+   <card-panel-header>
+       <b>Single card title</b>
+   </card-panel-header>
+   <card-panel-content>
+     <div class="panel">
+ 			<div class="con-row demo-outline">
+    		<div class="con-flex">Content</div>
+ 			</div>
+  		<div class="con-footer">
+	 			<button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+    		<button class="wfm-btn wfm-btn-invis-primary">Options</button>
+  		</div>
+		</div>
+  </card-panel-content>
+</card-panel>
+</card-panel-list>
+          </div>
+        </div>
+
+
+             </section>
+            <section id="kssref-4-18" class="kss-section material-depth-1 kss-section--depth-2">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Card list (special simple color bar)
+            </a>
+          </h2>
+          <small class="kss-title__ref">4.18 </small>
+
+ 
+          <div class="kss-description">
+            <p>By using a combination of attributes &#39;color&#39; and &#39;color-condition&#39;, header part of the card list items will contain simple color bars on the left by matching condition.</p>
+<div class="jsprewrap">
+  <div class="ksscopy kss-style" ng-click="showJs['cardDemo2'] = !showJs['cardDemo2']">
+      <span ng-hide="showJs['cardDemo2']">Show</span>
+     <span ng-show="showJs['cardDemo2']">Hide</span>
+    JavaScript
+    <i class="mdi mdi-code-tags pull-right"></i>
+  </div>
+  <div class="animate-show" ng-show="showJs['cardDemo2']">
+    <code>
+      <pre class="prettyprint linenums lang-js">
+
+         $scope.simpleColor2 = {
+           render: &#39;condition&#39;,
+           condition: { &#39;color1&#39;: &#39;brown&#39;, &#39;color2&#39;: &#39;orange&#39;, &#39;color3&#39;: &#39;purple&#39; }
+          }
+
+         css code example:
+         .brown {
+            border-color: $brown-100;
+          }
+
+         .purple {
+            border-color: $purple-300;
+          }
+
+         .orange {
+            border-color: $orange-400;
+          }
+
+      </pre>
+    </code>
+  </div>
+</div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Card list (special simple color bar)')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Card list (special simple color bar)'] = !markupShow['Card list (special simple color bar)']">
+            <span ng-hide="markupShow['Card list (special simple color bar)']">Show</span>
+            <span ng-show="markupShow['Card list (special simple color bar)']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Card list (special simple color bar)']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;card-panel-list&gt;
+&lt;card-panel ng-repeat=&quot;item in cardListItems&quot; color=&quot;simpleColor2&quot; color-condition=&quot;item.Color&quot; id=&quot;$index&quot;&gt;
+   &lt;card-panel-header&gt;
+       &lt;b&gt;Single card title&lt;/b&gt;
+   &lt;/card-panel-header&gt;
+   &lt;card-panel-content&gt;
+     &lt;div class=&quot;panel&quot;&gt;
+ 			&lt;div class=&quot;con-row demo-outline&quot;&gt;
+    		&lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
+ 			&lt;/div&gt;
+  		&lt;div class=&quot;con-footer&quot;&gt;
+	 			&lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
+    		&lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
+  		&lt;/div&gt;
+		&lt;/div&gt;
+  &lt;/card-panel-content&gt;
+&lt;/card-panel&gt;
+&lt;/card-panel-list&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+          <div class="kss-modifier__example">
+            <card-panel-list>
+<card-panel ng-repeat="item in cardListItems" color="simpleColor2" color-condition="item.Color" id="$index">
+   <card-panel-header>
+       <b>Single card title</b>
+   </card-panel-header>
+   <card-panel-content>
+     <div class="panel">
+ 			<div class="con-row demo-outline">
+    		<div class="con-flex">Content</div>
+ 			</div>
+  		<div class="con-footer">
+	 			<button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+    		<button class="wfm-btn wfm-btn-invis-primary">Options</button>
+  		</div>
+		</div>
+  </card-panel-content>
+</card-panel>
+</card-panel-list>
+          </div>
+        </div>
+
+
+             </section>
+            <section id="kssref-4-19" class="kss-section material-depth-1 kss-section--depth-2">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Card list (linear color bar)
+            </a>
+          </h2>
+          <small class="kss-title__ref">4.19 </small>
+
+ 
+          <div class="kss-description">
+            <p>By using attribute &#39;color&#39;, header part of card list items will contains simple color bar on the left by matching condition.</p>
+<div class="jsprewrap">
+  <div class="ksscopy kss-style" ng-click="showJs['cardDemo3'] = !showJs['cardDemo3']">
+      <span ng-hide="showJs['cardDemo3']">Show</span>
+     <span ng-show="showJs['cardDemo3']">Hide</span>
+    JavaScript
+    <i class="mdi mdi-code-tags pull-right"></i>
+  </div>
+  <div class="animate-show" ng-show="showJs['cardDemo3']">
+    <code>
+      <pre class="prettyprint linenums lang-js">
+
+         $scope.simpleColor3 = {
+          render: &#39;linear&#39;,
+          rgba: &#39;rgba(156, 39, 176, 1)&#39;
+          }
+
+      </pre>
+    </code>
+  </div>
+</div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Card list (linear color bar)')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Card list (linear color bar)'] = !markupShow['Card list (linear color bar)']">
+            <span ng-hide="markupShow['Card list (linear color bar)']">Show</span>
+            <span ng-show="markupShow['Card list (linear color bar)']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Card list (linear color bar)']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;card-panel-list&gt;
+&lt;card-panel ng-repeat=&quot;item in cardListItems&quot; color=&quot;simpleColor3&quot; id=&quot;$index&quot;&gt;
+   &lt;card-panel-header&gt;
+       &lt;b&gt;Single card title&lt;/b&gt;
+   &lt;/card-panel-header&gt;
+   &lt;card-panel-content&gt;
+     &lt;div class=&quot;panel&quot;&gt;
+ 			&lt;div class=&quot;con-row demo-outline&quot;&gt;
+    		&lt;div class=&quot;con-flex&quot;&gt;Content&lt;/div&gt;
+ 			&lt;/div&gt;
+  		&lt;div class=&quot;con-footer&quot;&gt;
+	 			&lt;button class=&quot;wfm-btn wfm-btn-invis-default&quot;&gt;Advanced&lt;/button&gt;
+    		&lt;button class=&quot;wfm-btn wfm-btn-invis-primary&quot;&gt;Options&lt;/button&gt;
+  		&lt;/div&gt;
+		&lt;/div&gt;
+  &lt;/card-panel-content&gt;
+&lt;/card-panel&gt;
+&lt;/card-panel-list&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+          <div class="kss-modifier__example">
+            <card-panel-list>
+<card-panel ng-repeat="item in cardListItems" color="simpleColor3" id="$index">
+   <card-panel-header>
+       <b>Single card title</b>
+   </card-panel-header>
+   <card-panel-content>
+     <div class="panel">
+ 			<div class="con-row demo-outline">
+    		<div class="con-flex">Content</div>
+ 			</div>
+  		<div class="con-footer">
+	 			<button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+    		<button class="wfm-btn wfm-btn-invis-primary">Options</button>
+  		</div>
+		</div>
+  </card-panel-content>
+</card-panel>
+</card-panel-list>
+          </div>
+        </div>
+
+
+             </section>
+      
+  </article>
+
+  <script src="public/kss.js"></script>
+  <script src="public/prettify.js"></script>
+
+  <script>
+    prettyPrint();
+  </script>   
+  <!-- Automatically generated using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
+</body>
+
+</html>

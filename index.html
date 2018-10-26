@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<!--[if lte IE 6]>            <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IEMobile 7]>          <html class="no-js iem7" lang="en"> <![endif]-->
+<!--[if (IE 7)&(!IEMobile)]>  <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>                <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!-->
+<html class="no-js" lang="en" ng-app="styleguideApp">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <title>Teleopti WFM Living Style Guide</title>
+
+  <meta name="description" content="Teleopti WFM Styleguide">
+  <meta name="generator" content="kss-node">
+  <meta name="viewport" content="width=device-width">
+  <link type="text/css" rel="stylesheet" href="./public/kss.css" />
+  <link type="text/css" rel="stylesheet" href="./dist/dependencies.min.css" />
+  <link type="text/css" rel="stylesheet" href="./dist/main.min.css" />
+  <script src="./dist/dependencies.min.js"></script>
+  <script src="./dist/templates.js"></script>
+  <script src="./dist/wfmdirectives.min.js"></script>
+  <script src="./dist/main.min.js"></script> 
+
+  <style>
+    #ribbon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    input {
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+
+<body id="kss-node" ng-view ng-controller="mainCtrl">
+
+  <a href="https://github.com/Teleopti/styleguide" id="ribbon">
+    <img src="public/github-fork--black.png" alt="fork on github">
+  </a>
+   
+  <article role="main">
+    <div ng-cloak id="kssref-0" class="kss-overview">
+
+      <style media="screen">
+        .con-flex {
+          border: none !important
+        }
+
+        .styleguide-hero {
+          background: #09F;
+          height: 40vh
+        }
+
+        .styleguide-hero h1 {
+          font-size: 300%;
+          color: #fff;
+          margin: 3rem 0 !important;
+          text-shadow: 0 2px 5px rgba(0, 0, 0, .26)
+        }
+
+        .search-result-wrapper {
+          z-index: 100;
+          position: relative
+        }
+
+        #kss-node {
+          padding: 0
+        }
+
+        .homepage-grid {
+          flex-wrap: wrap
+        }
+
+        .homepage-grid>.homepage-card {
+          min-width: 30%;
+          margin: 1%
+        }
+
+        .homepage-card-spacer {
+          height: 100px;
+          position: relative;
+          background: url(https://www.toptal.com/designers/subtlepatterns/patterns/seigaiha.png)
+        }
+
+        .homepage-card-spacer:hover>i {
+          margin-top: -5px
+        }
+
+        .homepage-card-spacer>i {
+          transition: 1s margin ease-in-out;
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 40%;
+          text-align: center;
+          transform-origin: center;
+          transform: scale(2)
+        }
+
+        a {
+          text-decoration: none !important;
+          color: rgba(0, 0, 0, .85)
+        }
+      </style>
+
+      <div class="con-row styleguide-hero">
+        <div class="con-flex"></div>
+        <div class="con-flex x3">
+          <div class="line-center text-white">
+            <h1>Teleopti styleguide</h1>
+            <p>Start exploring by searching for things like panel, buttons and chips.</p>
+            <p>Or navigate to a chapter down below.</p>
+          </div>
+
+          <div class="panel material-depth-1">
+            <div class="con-row">
+              <div class="con-flex">
+                <input autofocus autocomplete="off" type="text" ng-model="search.Name" placeholder="Search styleguide">     
+                <div ng-init="addItemToList('section-0.html#kssref-0-1', 'Main concepts')"></div>
+                  
+                <div ng-init="addItemToList('section-0.html#kssref-0-2', 'Getting started')"></div>
+                        
+                <div ng-init="addItemToList('section-1.html#kssref-1-1', 'Depth')"></div>
+                  
+                <div ng-init="addItemToList('section-1.html#kssref-1-2', 'Z Index')"></div>
+                  
+                <div ng-init="addItemToList('section-1.html#kssref-1-3', 'View headers')"></div>
+                  
+                <div ng-init="addItemToList('section-1.html#kssref-1-4', 'Input')"></div>
+                  
+                <div ng-init="addItemToList('section-1.html#kssref-1-5', 'Input with prepend')"></div>
+                  
+                <div ng-init="addItemToList('section-1.html#kssref-1-6', 'File upload')"></div>
+                  
+                <div ng-init="addItemToList('section-1.html#kssref-1-7', 'Select')"></div>
+                  
+                <div ng-init="addItemToList('section-1.html#kssref-1-8', 'Radio button')"></div>
+                  
+                <div ng-init="addItemToList('section-1.html#kssref-1-9', 'Checkbox')"></div>
+                  
+                <div ng-init="addItemToList('section-1.html#kssref-1-10', 'Switch')"></div>
+                  
+                <div ng-init="addItemToList('section-1.html#kssref-1-11', 'Flat button')"></div>
+                  
+                <div ng-init="addItemToList('section-1.html#kssref-1-12', 'Raised button')"></div>
+                  
+                <div ng-init="addItemToList('section-1.html#kssref-1-13', 'Action button')"></div>
+                  
+                <div ng-init="addItemToList('section-1.html#kssref-1-14', 'Action button (removing)')"></div>
+                  
+                <div ng-init="addItemToList('section-1.html#kssref-1-15', 'Icon button')"></div>
+                  
+                <div ng-init="addItemToList('section-1.html#kssref-1-16', 'Button group')"></div>
+                  
+                <div ng-init="addItemToList('section-1.html#kssref-1-17', 'Slider')"></div>
+                  
+                <div ng-init="addItemToList('section-1.html#kssref-1-18', 'Headers')"></div>
+                  
+                <div ng-init="addItemToList('section-1.html#kssref-1-19', 'Context menu')"></div>
+                  
+                <div ng-init="addItemToList('section-1.html#kssref-1-20', 'Pop-up menu')"></div>
+                  
+                <div ng-init="addItemToList('section-1.html#kssref-1-21', 'Simple list')"></div>
+                  
+                <div ng-init="addItemToList('section-1.html#kssref-1-22', 'Action list')"></div>
+                  
+                <div ng-init="addItemToList('section-1.html#kssref-1-23', 'Modal')"></div>
+                  
+                <div ng-init="addItemToList('section-1.html#kssref-1-24', 'Dialog')"></div>
+                  
+                <div ng-init="addItemToList('section-1.html#kssref-1-25', 'Table')"></div>
+                  
+                <div ng-init="addItemToList('section-1.html#kssref-1-26', 'Two dimensional table')"></div>
+                  
+                <div ng-init="addItemToList('section-1.html#kssref-1-27', 'Big table')"></div>
+                  
+                <div ng-init="addItemToList('section-1.html#kssref-1-28', 'Progress bar')"></div>
+                  
+                <div ng-init="addItemToList('section-1.html#kssref-1-29', 'Spinner')"></div>
+                  
+                <div ng-init="addItemToList('section-1.html#kssref-1-30', 'Tooltip')"></div>
+                  
+                <div ng-init="addItemToList('section-1.html#kssref-1-31', 'Chips')"></div>
+                  
+                <div ng-init="addItemToList('section-1.html#kssref-1-32', 'Chips with filter')"></div>
+                  
+                <div ng-init="addItemToList('section-1.html#kssref-1-33', 'Badge')"></div>
+                      
+                <div ng-init="addItemToList('section-2.html#kssref-2-1', 'Single date picker')"></div>
+                  
+                <div ng-init="addItemToList('section-2.html#kssref-2-2', 'Date range picker')"></div>
+                  
+                <div ng-init="addItemToList('section-2.html#kssref-2-3', 'Date range picker with custom validation')"></div>
+                  
+                <div ng-init="addItemToList('section-2.html#kssref-2-4', 'Date range picker with only weeks/monthes interval')"></div>
+                  
+                <div ng-init="addItemToList('section-2.html#kssref-2-5', 'Date range picker with preselected date')"></div>
+                  
+                <div ng-init="addItemToList('section-2.html#kssref-2-6', 'Line chart')"></div>
+                  
+                <div ng-init="addItemToList('section-2.html#kssref-2-7', 'Time range Picker')"></div>
+                  
+                <div ng-init="addItemToList('section-2.html#kssref-2-9', 'Pagination')"></div>
+                  
+                <div ng-init="addItemToList('section-2.html#kssref-2-10', 'Working hours picker')"></div>
+                  
+                <div ng-init="addItemToList('section-2.html#kssref-2-11', 'Notices')"></div>
+                  
+                <div ng-init="addItemToList('section-2.html#kssref-2-12', 'Numeric value')"></div>
+                  
+                <div ng-init="addItemToList('section-2.html#kssref-2-13', 'Skill picker')"></div>
+                  
+                <div ng-init="addItemToList('section-2.html#kssref-2-14', 'Skill picker - old')"></div>
+                      
+                <div ng-init="addItemToList('section-3.html#kssref-3-1', 'Color shorthand')"></div>
+                  
+                <div ng-init="addItemToList('section-3.html#kssref-3-2', 'Main colors')"></div>
+                      
+                <div ng-init="addItemToList('section-4.html#kssref-4-1', 'Layout')"></div>
+                  
+                <div ng-init="addItemToList('section-4.html#kssref-4-2', 'Fluid layout')"></div>
+                  
+                <div ng-init="addItemToList('section-4.html#kssref-4-3', 'Fluid layout (dense)')"></div>
+                  
+                <div ng-init="addItemToList('section-4.html#kssref-4-4', 'Panel')"></div>
+                  
+                <div ng-init="addItemToList('section-4.html#kssref-4-5', 'Multiple search panel')"></div>
+                  
+                <div ng-init="addItemToList('section-4.html#kssref-4-6', 'Panel with sidebar')"></div>
+                  
+                <div ng-init="addItemToList('section-4.html#kssref-4-7', 'Tabbed panel')"></div>
+                  
+                <div ng-init="addItemToList('section-4.html#kssref-4-8', 'Tabbed panel (badges)')"></div>
+                  
+                <div ng-init="addItemToList('section-4.html#kssref-4-9', 'Wizard panel')"></div>
+                  
+                <div ng-init="addItemToList('section-4.html#kssref-4-10', 'Basic Form panel')"></div>
+                  
+                <div ng-init="addItemToList('section-4.html#kssref-4-11', 'Devided Form panel')"></div>
+                  
+                <div ng-init="addItemToList('section-4.html#kssref-4-12', 'Split Form panel')"></div>
+                  
+                <div ng-init="addItemToList('section-4.html#kssref-4-13', 'Card')"></div>
+                  
+                <div ng-init="addItemToList('section-4.html#kssref-4-14', 'Card list (multiple open)')"></div>
+                  
+                <div ng-init="addItemToList('section-4.html#kssref-4-15', 'Card list (pre-open)')"></div>
+                  
+                <div ng-init="addItemToList('section-4.html#kssref-4-16', 'Card list (single open)')"></div>
+                  
+                <div ng-init="addItemToList('section-4.html#kssref-4-17', 'Card list (simple color bar)')"></div>
+                  
+                <div ng-init="addItemToList('section-4.html#kssref-4-18', 'Card list (special simple color bar)')"></div>
+                  
+                <div ng-init="addItemToList('section-4.html#kssref-4-19', 'Card list (linear color bar)')"></div>
+                      
+                <div ng-init="addItemToList('section-5.html#kssref-5-1', 'Tree type one - function picker')"></div>
+                  
+                <div ng-init="addItemToList('section-5.html#kssref-5-2', 'Tree type two - organization picker')"></div>
+                  
+                <div ng-init="addItemToList('section-5.html#kssref-5-3', 'Tree type two - organization picker(unique root)')"></div>
+                  
+                <div ng-init="addItemToList('section-5.html#kssref-5-4', 'Tree Picker Filter')"></div>
+                      
+                <div ng-init="addItemToList('section-6.html#kssref-6-1', 'How we use words')"></div>
+                  
+                <div ng-init="addItemToList('section-6.html#kssref-6-2', 'Translations')"></div>
+                      
+                <div ng-init="addItemToList('section-7.html#kssref-7-1', 'Quick symbol library')"></div>
+                  
+                <div ng-init="addItemToList('section-7.html#kssref-7-2', 'Huge icon')"></div>
+                      
+                <div ng-init="addItemToList('section-8.html#kssref-8-1', 'Position')"></div>
+                  
+                <div ng-init="addItemToList('section-8.html#kssref-8-2', 'Cursor types')"></div>
+                  
+                <div ng-init="addItemToList('section-8.html#kssref-8-3', 'Showing and hiding content')"></div>
+                  
+                <div ng-init="addItemToList('section-8.html#kssref-8-4', 'Colors for text')"></div>
+                  
+                <div ng-init="addItemToList('section-8.html#kssref-8-5', 'Other text helpers')"></div>
+                  
+                <div ng-init="addItemToList('section-8.html#kssref-8-6', 'Animations')"></div>
+                      
+                <div ng-init="addItemToList('section-9.html#kssref-9-1', 'States')"></div>
+                  
+                <div ng-init="addItemToList('section-9.html#kssref-9-2', 'Translations')"></div>
+                      
+                <div ng-init="addItemToList('section-10.html#kssref-10-1', 'Links')"></div>
+                  
+              </div>
+            </div>
+            <div class="con-row search-result-wrapper">
+              <ul class="wfm-list" style="width:100%;" ng-if="search.Name.length>0" ng-cloak>
+                <div ng-repeat="searchItem in menuItems | filter:search as results" ng-bind-html="searchItem.Link"></div>
+                <a ng-hide="results.length" href="https://github.com/Teleopti/styleguide/issues">
+                  <li>Thats not in the styleguide yet! If you want it to be you can click here and add it to our to-do list.</li>
+                </a>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+        <div class="con-flex"></div>
+      </div>
+
+
+      <div class="con-row">
+        <div class="con-flex"></div>
+        <div class="con-flex x3">
+          <div class="con-row">
+            <div class="con-flex">
+              <h1 class="kss-title__permalink non-pointer">Chapters</h1>
+            </div>
+          </div>
+          <div class="con-row homepage-grid">
+
+            <div class="con-flex homepage-card material-depth-1">
+              <a href="section-0.html" tabindex="-1">
+                <div class="con-row">
+                  <div class="con-flex homepage-card-spacer">
+                    <i class="mdi" ng-class="getChapteIcon('Overview')"></i>
+                  </div>
+                </div>
+                <div class="con-row">
+                  <div class="con-flex">
+                    <h2>Overview
+                      <h2>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="con-flex homepage-card material-depth-1">
+              <a href="section-1.html" tabindex="-1">
+                <div class="con-row">
+                  <div class="con-flex homepage-card-spacer">
+                    <i class="mdi" ng-class="getChapteIcon('Elements')"></i>
+                  </div>
+                </div>
+                <div class="con-row">
+                  <div class="con-flex">
+                    <h2>Elements
+                      <h2>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="con-flex homepage-card material-depth-1">
+              <a href="section-2.html" tabindex="-1">
+                <div class="con-row">
+                  <div class="con-flex homepage-card-spacer">
+                    <i class="mdi" ng-class="getChapteIcon('Components')"></i>
+                  </div>
+                </div>
+                <div class="con-row">
+                  <div class="con-flex">
+                    <h2>Components
+                      <h2>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="con-flex homepage-card material-depth-1">
+              <a href="section-3.html" tabindex="-1">
+                <div class="con-row">
+                  <div class="con-flex homepage-card-spacer">
+                    <i class="mdi" ng-class="getChapteIcon('Colors')"></i>
+                  </div>
+                </div>
+                <div class="con-row">
+                  <div class="con-flex">
+                    <h2>Colors
+                      <h2>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="con-flex homepage-card material-depth-1">
+              <a href="section-4.html" tabindex="-1">
+                <div class="con-row">
+                  <div class="con-flex homepage-card-spacer">
+                    <i class="mdi" ng-class="getChapteIcon('Containers')"></i>
+                  </div>
+                </div>
+                <div class="con-row">
+                  <div class="con-flex">
+                    <h2>Containers
+                      <h2>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="con-flex homepage-card material-depth-1">
+              <a href="section-5.html" tabindex="-1">
+                <div class="con-row">
+                  <div class="con-flex homepage-card-spacer">
+                    <i class="mdi" ng-class="getChapteIcon('Tree')"></i>
+                  </div>
+                </div>
+                <div class="con-row">
+                  <div class="con-flex">
+                    <h2>Tree
+                      <h2>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="con-flex homepage-card material-depth-1">
+              <a href="section-6.html" tabindex="-1">
+                <div class="con-row">
+                  <div class="con-flex homepage-card-spacer">
+                    <i class="mdi" ng-class="getChapteIcon('Language')"></i>
+                  </div>
+                </div>
+                <div class="con-row">
+                  <div class="con-flex">
+                    <h2>Language
+                      <h2>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="con-flex homepage-card material-depth-1">
+              <a href="section-7.html" tabindex="-1">
+                <div class="con-row">
+                  <div class="con-flex homepage-card-spacer">
+                    <i class="mdi" ng-class="getChapteIcon('Icons')"></i>
+                  </div>
+                </div>
+                <div class="con-row">
+                  <div class="con-flex">
+                    <h2>Icons
+                      <h2>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="con-flex homepage-card material-depth-1">
+              <a href="section-8.html" tabindex="-1">
+                <div class="con-row">
+                  <div class="con-flex homepage-card-spacer">
+                    <i class="mdi" ng-class="getChapteIcon('Helper classes')"></i>
+                  </div>
+                </div>
+                <div class="con-row">
+                  <div class="con-flex">
+                    <h2>Helper classes
+                      <h2>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="con-flex homepage-card material-depth-1">
+              <a href="section-9.html" tabindex="-1">
+                <div class="con-row">
+                  <div class="con-flex homepage-card-spacer">
+                    <i class="mdi" ng-class="getChapteIcon('Naming and best practice')"></i>
+                  </div>
+                </div>
+                <div class="con-row">
+                  <div class="con-flex">
+                    <h2>Naming and best practice
+                      <h2>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="con-flex homepage-card material-depth-1">
+              <a href="section-10.html" tabindex="-1">
+                <div class="con-row">
+                  <div class="con-flex homepage-card-spacer">
+                    <i class="mdi" ng-class="getChapteIcon('Resources')"></i>
+                  </div>
+                </div>
+                <div class="con-row">
+                  <div class="con-flex">
+                    <h2>Resources
+                      <h2>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+          </div>
+        </div>
+        <div class="con-flex"></div>
+      </div>
+    </div>
+  </article>
+
+  </article>
+
+  <script src="public/kss.js"></script>
+  <script src="public/prettify.js"></script>
+
+  <script>
+    prettyPrint();
+  </script>   
+  <!-- Automatically generated using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
+</body>
+
+</html>

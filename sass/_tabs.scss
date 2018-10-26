@@ -1,0 +1,120 @@
+.wfm-slide-tabs {
+    .md-active {
+        color: $gray087 !important;
+    }
+    md-ink-bar {
+        box-shadow: 0 -4px 5px 0 rgba(0, 0, 0, 0.26) !important;
+    }
+    md-tab-item:not([disabled]) {
+        color: $gray087 !important;
+    }
+
+    md-next-button {
+        padding-right: 18%;
+        background: $gray-300;
+    }
+
+    .md-ripple-container {
+        background-color: transparent !important;
+    }
+
+    .wizard-step {
+        float: right;
+    }
+
+    md-content {
+        color: $gray087;
+    }
+
+    md-tabs {
+        border-radius: 0;
+    }
+
+    md-tabs.md-default-theme md-tab.active {
+        color: $gray087 !important;
+    }
+
+    md-tab md-tab-label {
+        padding-bottom: 10px !important;
+    }
+
+    .md-header {
+        height: 30px !important;
+    }
+}
+
+.wfm-slide-tabs md-ink-bar {
+    top: 0 !important;
+    height: 36px;
+    z-index: -1;
+    background: $white;
+    @extend .material-depth-1;
+}
+
+md-tabs .md-tab.md-active,
+md-tabs .md-tab.md-focused {
+    color: $gray087;
+}
+
+md-content.md-default-theme {
+    background-color: $white !important;
+}
+
+.wfm-slide-tabs md-tabs .md-tab {
+    margin-top: -8px;
+}
+
+.wfm-slide-tabs md-tabs-wrapper {
+    height: 36px !important;
+}
+
+//modal
+@media (max-width: 599px) {
+    .modal-box .modalbg .dialog {
+        max-height: 90%;
+        overflow-y: auto !important;
+    }
+}
+
+@media (min-width: 600px) {
+    .modal-box .modalbg .dialog {
+        max-height: 70%;
+        overflow-y: auto !important;
+    }
+}
+
+.label:hover,
+.tab-group input[type='radio']:checked + .label {
+    background-color: $primary;
+}
+
+.tabbed-panel {
+    md-content,
+    md-padding {
+        padding: 0 !important;
+    }
+
+    .card-context {
+        margin: 0;
+    }
+
+    md-tabs-wrapper {
+        padding-top: 1px;
+        background: $gray-300;
+        border-width: 0 !important;
+        border-style: none !important;
+    }
+    .md-padding {
+        padding: 0 5px;
+    }
+
+    .head-actions {
+        margin-top: -8px;
+    }
+}
+
+.tabbed-panel-header {
+    .card-context {
+        margin-top: 15px;
+    }
+}

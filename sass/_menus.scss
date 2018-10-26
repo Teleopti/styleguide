@@ -1,0 +1,224 @@
+
+// Context menu
+//
+//A content menu contains only a list of actions, to keep them manageable, try to limit the number of actions displayed within to a maximum of 5.
+//Additionally a context menu can not trigger another context menu from within itself.
+//
+//Markup:
+//  <h3>Button menu trigger:</h3>
+//  <div tabindex=0 class="context-menu wfm-btn wfm-btn-default">
+//  	Place me on the left
+//  	<span class="context-menu-right">
+//  		<ul class="wfm-list">
+//  			<li><i class="mdi mdi-account"></i>Sign out</li>
+//  			<li><i class="mdi mdi-plus"></i>Add a new agent</li>
+//  			<li><i class="mdi mdi-alert"></i>Drop agents table</li>
+//  		</ul>
+//  	</span>
+//  </div>
+//  <div tabindex=0 class="context-menu wfm-btn wfm-btn-default">
+//  	place me in the middle
+//  	<span class="context-menu-bottom">
+//  		<ul class="wfm-list">
+//  			<li><i class="mdi mdi-account"></i>Sign out</li>
+//  			<li><i class="mdi mdi-plus"></i>Add a new agent</li>
+//  			<li><i class="mdi mdi-alert"></i>Drop agents table</li>
+//  		</ul>
+//  	</span>
+//  </div>
+//  <div tabindex=0 class="context-menu wfm-btn wfm-btn-default">
+//  	Place me on the right
+//  	<span class="context-menu-left">
+//  		<ul class="wfm-list">
+//  			<li><i class="mdi mdi-account"></i>Sign out</li>
+//  			<li><i class="mdi mdi-plus"></i>Add a new agent</li>
+//  			<li><i class="mdi mdi-alert"></i>Drop agents table</li>
+//  		</ul>
+//  	</span>
+//  </div>
+//  <h3>Icon menu trigger:</h3>
+//  <div tabindex=0 class="context-menu card-context">
+//  	<i class="mdi mdi-dots-vertical"></i>
+//  	<span class="context-menu-right">
+//  		<ul class="wfm-list">
+//  			<li><i class="mdi mdi-account"></i>Sign out</li>
+//  			<li><i class="mdi mdi-plus"></i>Add a new agent</li>
+//  			<li><i class="mdi mdi-alert"></i>Drop agents table</li>
+//  		</ul>
+//  	</span>
+//  </div>
+//  <div tabindex=0 class="context-menu card-context">
+//  	<i class="mdi mdi-dots-vertical"></i>
+//  	<span class="context-menu-bottom">
+//  		<ul class="wfm-list">
+//  			<li><i class="mdi mdi-account"></i>Sign out</li>
+//  			<li><i class="mdi mdi-plus"></i>Add a new agent</li>
+//  			<li><i class="mdi mdi-alert"></i>Drop agents table</li>
+//  		</ul>
+//  	</span>
+//  </div>
+//  <div tabindex=0 class="context-menu card-context">
+//  	<i class="mdi mdi-dots-vertical"></i>
+//  	<span class="context-menu-left">
+//  		<ul class="wfm-list">
+//  			<li><i class="mdi mdi-account"></i>Sign out</li>
+//  			<li><i class="mdi mdi-plus"></i>Add a new agent</li>
+//  			<li><i class="mdi mdi-alert"></i>Drop agents table</li>
+//  		</ul>
+//  	</span>
+//  </div>
+//  <h3>Menu with keyboard shortcuts:</h3>
+//  <div tabindex=0 class="context-menu card-context">
+//  	<i class="mdi mdi-dots-vertical"></i>
+//  	<span class="context-menu-right">
+//  		<ul class="wfm-list">
+//  			<li>
+//          <span class="pull-left">Select all</span>
+//          <span class="pull-right">Alt+A</span>
+//        </li>
+//  			<li>
+//          <span class="pull-left">Duplicate</span>
+//          <span class="pull-right">Ctrl+C</span>
+//        </li>
+//  			<li>
+//          <span class="pull-left">Navigate</span>
+//          <span class="pull-right">Shift+Down Arrow</span>
+//        </li>
+//  		</ul>
+//  	</span>
+//  </div>
+//
+//Styleguide 1.19
+//
+.card-context{
+  border: none;
+  margin:$full-padding;
+  cursor: pointer;
+  padding:8px;
+  line-height:16px!important;
+  text-align:center;
+  border-radius: 50%!important;
+  transition: $transition-timing;
+  text-decoration:none!important;
+}
+
+.card-context:hover{
+  background: $hover;
+}
+
+.card-context:focus{
+  @extend .material-depth-2;
+  background: $hover;
+}
+
+.active-context{
+  background: $highlight;
+}
+
+.active-context i{
+  color: $text-color-standard;
+}
+
+.context-menu {
+  @extend .unselectable;
+  position: relative;
+  cursor:pointer;
+  background:transparent;
+  border:none;
+  display: inline-block;
+
+  [class*="context-menu-"] {
+    transition: $transition-timing;
+    @extend .material-depth-2;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    min-width: 200px;
+  }
+
+  &:focus {
+    @extend .material-depth-2;
+    [class*="context-menu-"] {
+      visibility: visible;
+      opacity: 1;
+      z-index: 10;
+    }
+  }
+
+  ul{
+    color:$text-color-standard;
+    text-align:left!important;
+  }
+
+  .context-menu-right {
+    top: 100%;
+    left: 100%;
+    margin: -40px 0 0 $full-padding*2;
+    text-transform: initial;
+
+    &:before {
+      right: 100%;
+      margin-top: $full-padding*2;
+    }
+  }
+
+  .context-menu-bottom {
+    top: 100%;
+    left: 50%;
+    margin: $full-padding*2 0 0 -100px;
+    text-transform: initial;
+
+    &:before {
+      bottom: 100%; left: 50%;
+      margin-left: -$full-padding*2;
+    }
+  }
+
+  .context-menu-left {
+    top: 100%;
+    right: 100%;
+    margin: -40px $full-padding*2 0 0;
+    text-transform: initial;
+
+    &:before {
+      left: 100%;
+      margin-top: $full-padding*2;
+    }
+  }
+}
+
+// Pop-up menu
+//
+//A popup menu is similar to a context menu but can contain any number of things. It will adapt to the width of the content so be careful not to squeeze in elements that wont fit on small screens.
+//
+//Markup:
+//<button class="wfm-btn wfm-btn-default" ng-click="toggle =!toggle">Default</button>
+//<wfm-popup show="toggle">
+//  <div class="sub-header">
+//    <h2>Popup Title</h2>
+//  </div>
+//  <div class="con-row">
+//    <div class="con-flex">
+//        Content
+//      </div>
+//  </div>
+//  <div class="con-footer">
+//    <button class="wfm-btn wfm-btn-invis-default">Advanced</button>
+//    <button class="wfm-btn wfm-btn-invis-primary">Options</button>
+//  </div>
+//</wfm-popup>
+//
+//Styleguide 1.20
+//
+
+.wfm-popup-wrap{
+  position: absolute;
+
+  .popup-panel{
+    z-index: 101;
+  }
+
+  .modalbg{
+    background: transparent;
+  }
+}

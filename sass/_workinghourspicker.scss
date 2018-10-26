@@ -1,0 +1,97 @@
+// Working hours picker
+//
+//A directive for specifying the week day and time range. It is built taking the time range picker as a dependency.
+//
+//<table class="wfm-table">
+//<tr><th>Attribute Name</th><th>Usage</th><th>Required</th></tr>
+//<tr><td>working-hours</td><td>The model</td><td>true</td></tr>
+//<tr><td>over-night-switch</td><td>Allow next-day switch</td><td>false</td></tr>
+//<tr><td>time-format-switch</td><td>Allow user to change between 24h/12h format</td><td>false</td></tr>
+//</table>
+//</br>
+//
+//Markup:
+//	<work-picker working-hours="model" over-night-switch="true" time-format-switch="true">
+//
+//Styleguide 2.10
+//
+
+.working-hour-picker{
+	.mini{
+		min-width: 32px;
+		color:$text-color-standard;
+		background: rgba(0,0,0,0.1);
+	}
+	.mini-active{
+		background: $secondary;
+		color:$white;
+		box-shadow: 0 8px 17px 0 rgba(0,0,0,.2);
+	}
+	.mini-success{
+		background: $highlight;
+		color:$text-color-standard;
+		box-shadow: 0 8px 17px 0 rgba(0,0,0,.2);
+	}
+	.work-day{
+		opacity: 1;
+		transition: $transition-timing;
+	}
+	.inactive-work-day{
+		opacity: 0;
+		transform: translate(-50px, 0px);
+	}
+	.working-hour-dropdown{
+		position: absolute;
+		top: 55px;
+		left: 0;
+		right: 0;
+		z-index: 20;
+		background: $white;
+	}
+	.day-row{
+		flex-direction:row;
+	}
+
+.uib-timepicker{
+	width: 100%;
+}
+
+	.uib-time{
+		.md-button{
+			margin:0px!important;
+			&:hover{
+				background-color: #ececec!important;
+			}
+		}
+	}
+
+	@media screen and (max-width:768px){
+		.day-row > .con-flex{
+			padding:0!important;
+		}
+	}
+}
+
+//Old working-hours-picker
+.working-hours-row {
+	border-bottom: 1px solid $hover;
+
+	.working-hours-period, .working-hours-day, .working-hours-action {
+		align-self: center;
+	}
+
+	.working-hours-period {
+		flex-grow: 2;
+	}
+
+	.working-hours-action {
+		flex-grow: 1.5;
+	}
+
+}
+
+.working-hours-picker-container {
+	display: inline-flex;
+	align-items: center;
+	margin-top: 10px;
+}

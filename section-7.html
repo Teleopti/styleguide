@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<!--[if lte IE 6]>            <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IEMobile 7]>          <html class="no-js iem7" lang="en"> <![endif]-->
+<!--[if (IE 7)&(!IEMobile)]>  <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>                <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!-->
+<html class="no-js" lang="en" ng-app="styleguideApp">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <title>Teleopti WFM Living Style Guide</title>
+
+  <meta name="description" content="Teleopti WFM Styleguide">
+  <meta name="generator" content="kss-node">
+  <meta name="viewport" content="width=device-width">
+  <link type="text/css" rel="stylesheet" href="./public/kss.css" />
+  <link type="text/css" rel="stylesheet" href="./dist/dependencies.min.css" />
+  <link type="text/css" rel="stylesheet" href="./dist/main.min.css" />
+  <script src="./dist/dependencies.min.js"></script>
+  <script src="./dist/templates.js"></script>
+  <script src="./dist/wfmdirectives.min.js"></script>
+  <script src="./dist/main.min.js"></script> 
+
+  <style>
+    #ribbon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    input {
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+
+<body id="kss-node" ng-view ng-controller="mainCtrl">
+
+  <a href="https://github.com/Teleopti/styleguide" id="ribbon">
+    <img src="public/github-fork--black.png" alt="fork on github">
+  </a>
+  
+  <!-- <div tabindex=0 class="context-menu card-context sidebar-toggle material-depth-2" ng-click="hideSidebar = !hideSidebar">
+  <i class="mdi mdi-backburger"></i>
+  <md-tooltip>Options</md-tooltip>
+</div> -->
+  <div class="kss-sidebar material-depth-2 kss-style" ng-class="{'kss-sidebar-hidden':hideSidebar}">
+    <header class="kss-header line-center">
+      <a href="index.html">
+        <img src="http://www.teleopti.com/system/images/teleopti_logo.png" alt="Teleopti logo" height="60px" style="vertical-align:bottom;">
+      </a>
+    </header>
+    <nav class="kss-nav">
+      <ul class="kss-nav__menu">
+        <li class="kss-nav__menu-item">
+          <a href="section-0.html">
+            <i class="mdi" ng-class="getChapteIcon('Overview')"></i>
+            <span class="kss-nav__name">Overview</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-1.html">
+            <i class="mdi" ng-class="getChapteIcon('Elements')"></i>
+            <span class="kss-nav__name">Elements</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-2.html">
+            <i class="mdi" ng-class="getChapteIcon('Components')"></i>
+            <span class="kss-nav__name">Components</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-3.html">
+            <i class="mdi" ng-class="getChapteIcon('Colors')"></i>
+            <span class="kss-nav__name">Colors</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-4.html">
+            <i class="mdi" ng-class="getChapteIcon('Containers')"></i>
+            <span class="kss-nav__name">Containers</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-5.html">
+            <i class="mdi" ng-class="getChapteIcon('Tree')"></i>
+            <span class="kss-nav__name">Tree</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-6.html">
+            <i class="mdi" ng-class="getChapteIcon('Language')"></i>
+            <span class="kss-nav__name">Language</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-7.html">
+            <i class="mdi" ng-class="getChapteIcon('Icons')"></i>
+            <span class="kss-nav__name">Icons</span>
+          </a>
+          <ul class="kss-nav__menu-child">
+               
+            <a href="section-7.html#kssref-7-1">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">7.1</span>
+                <span class="kss-nav__name">Quick symbol library</span>
+
+              </li>
+            </a>
+              
+            <a href="section-7.html#kssref-7-2">
+              <li class="kss-nav__menu-item">
+
+                <span class="kss-nav__ref">7.2</span>
+                <span class="kss-nav__name">Huge icon</span>
+
+              </li>
+            </a>
+             
+          </ul>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-8.html">
+            <i class="mdi" ng-class="getChapteIcon('Helper classes')"></i>
+            <span class="kss-nav__name">Helper classes</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-9.html">
+            <i class="mdi" ng-class="getChapteIcon('Naming and best practice')"></i>
+            <span class="kss-nav__name">Naming and best practice</span>
+          </a>
+        </li>
+        <li class="kss-nav__menu-item">
+          <a href="section-10.html">
+            <i class="mdi" ng-class="getChapteIcon('Resources')"></i>
+            <span class="kss-nav__name">Resources</span>
+          </a>
+        </li>
+      </ul>
+      <br/>
+    </nav>
+  </div>
+
+  <article role="main">
+  <article role="main" class="kss-main">
+      
+    <div id="kssref-7" class="kss-section section-hero kss-section--depth-1">
+
+        <div class="kss-style">
+          <h1 class="kss-title kss-title--level-1">
+            <a class="kss-title__permalink">
+              Icons
+            </a>
+          </h1>
+          <small class="kss-title__ref">7 </small>
+
+ 
+          <div class="kss-description">
+            <p>We only use <a href="http://materialdesignicons.com/">Material icons</a>.
+To use an icon, use the i-tag and apply the classes &quot;mdi&quot; and &quot;mdi-icon-name&quot; (replacing icon-name with the name form the icon index).</p>
+<p>Icons can for example be used as <a href=section-1.html#kssref-1-8-5>buttons</a> or <a href=section-1.html#kssref-1-3-1>prepend inputs.</a></p>
+<p>In the cases where icons appear in the defined markup throughout this styleguide, they might have special style rules applied to them so be sure that the functionality is intact if you opt to remove them.</p>
+
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Icons')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+ 
+    </div>
+        <section id="kssref-7-1" class="kss-section material-depth-1 kss-section--depth-2">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Quick symbol library
+            </a>
+          </h2>
+          <small class="kss-title__ref">7.1 </small>
+
+ 
+          <div class="kss-description">
+            <p>These icons are used in the project and have a definition of when they should be used.</p>
+<div class="con-row">
+<div class="con-flex">
+ <table class="wfm-table">
+   <thead><tr><th>Icon</th><th>Class name</th><th>Definition</th></tr></thead>
+   <tbody>
+     <tr><td><i class="mdi mdi-menu"></i></td><td>mdi mdi-menu</td><td>Trigger a major menu</td></tr>
+     <tr><td><i class="mdi mdi-dots-vertical"></i></td><td>mdi mdi-dots-vertical</td><td>Trigger a minor menu</td></tr>
+     <tr><td><i class="mdi mdi-menu-down"></i></td><td>mdi mdi-menu-down</td><td>Indicates a dropdown menu</td></tr>
+     <tr><td><i class="mdi mdi-chevron-left"></i> </td><td>mdi mdi-chevron-left</td><td>Indicate expandable row </td></tr>
+     <tr><td><i class="mdi mdi-chevron-right"></i> </td><td>mdi mdi-chevron-right</td><td>Indicate expandable row </td></tr>
+     <tr><td><i class="mdi mdi-alert"></i> </td><td>mdi mdi-alert</td><td>Used for warnings </td></tr>
+     <tr><td><i class='mdi mdi-thumb-up'></i> </td><td>mdi mdi-thumb-up</td><td>Used for positive feedback </td></tr>
+     <tr><td><i class="mdi mdi-alert-circle"></i> </td><td>mdi mdi-alert-circle</td><td>Used for general notifications </td></tr>
+     <tr><td><i class="mdi mdi-alert-octagon"></i> </td><td>mdi mdi-alert-octagon</td><td>Used for errors </td></tr>
+     <tr><td><i class="mdi mdi-plus"></i> </td><td>mdi mdi-plus</td><td>Add new item </td></tr>
+     <tr><td><i class="mdi mdi-content-copy"></i> </td><td>mdi mdi-content-copy</td><td>Duplicate the item </td></tr>
+     <tr><td><i class="mdi mdi-pencil"></i> </td><td>mdi mdi-pencil</td><td>Edit the item </td></tr>
+     <tr><td><i class="mdi mdi-delete"></i> </td><td>mdi mdi-delete</td><td>Delete the item </td></tr>
+     <tr><td><i class="mdi mdi-magnify"></i> </td><td>mdi mdi-magnify</td><td>Indicate a search </td></tr>
+     <tr><td><i class="mdi mdi-filter-outline"></i> </td><td>mdi mdi-filter-outline</td><td>Indicate a filter </td></tr>
+     <tr><td><i class="mdi mdi-eye-off"></i> </td><td>mdi mdi-eye-off</td><td>Hide </td></tr>
+     <tr><td><i class="mdi mdi-eye"></i> </td><td>mdi mdi-eye-off</td><td>Show </td></tr>
+    <tr><td><i class="mdi mdi-account"></i> </td><td>mdi mdi-account</td><td>User and account related actions </td></tr>
+   </tbody>
+ </table>
+</div>
+ <div class="con-flex">
+   <table class="wfm-table">
+     <thead><tr><th>Icon</th><th>Class name</th><th>Definition</th></tr></thead>
+     <tbody>
+       <tr><td><i class="mdi mdi-arrow-right"></i> </td><td>mdi mdi-arrow-right</td><td>Go, run, proceed </td></tr>
+       <tr><td><i class="mdi mdi-sort-ascending"></i> </td><td>mdi mdi-sort-ascending</td><td>Ascending sorting </td></tr>
+       <tr><td><i class="mdi mdi-sort-descending"></i> </td><td>mdi mdi-sort-descending</td><td>Descending sorting </td></tr>
+       <tr><td><i class="mdi mdi-arrow-up"></i> </td><td>mdi mdi-arrow-up</td><td>Currently sorting ascending</td></tr>
+       <tr><td><i class="mdi mdi-arrow-down"></i> </td><td>mdi mdi-arrow-down</td><td>Currently sorting descending</td></tr>
+       <tr><td><i class="mdi mdi-skip-previous"></i> </td><td>mdi mdi-skip-previous</td><td>Go to first </td></tr>
+       <tr><td><i class="mdi mdi-skip-next"></i> </td><td>mdi mdi-skip-next</td><td>Go to last</td></tr>
+       <tr><td><i class="mdi mdi-arrow-left-box"></i> </td><td>mdi mdi-arrow-left-bold-box</td><td>Open sidebar in panel</td></tr>
+       <tr><td><i class="mdi mdi-arrow-right-box"></i> </td><td>mdi mdi-arrow-right-bold-box</td><td>Close sidebar in panel</td></tr>
+       <tr><td><i class="mdi mdi-close"></i> </td><td>mdi mdi-close</td><td>Close or remove the item</td></tr>
+       <tr><td><i class="mdi mdi-check"></i> </td><td>mdi mdi-check</td><td>Selected</td></tr>
+       <tr><td><i class="mdi mdi-chart-bar"></i> </td><td>mdi mdi-chart-bar</td><td>Show a bar chart </td></tr>
+       <tr><td><i class="mdi mdi-chart-line"></i> </td><td>mdi mdi-chart-line</td><td>Show a line chart </td></tr>
+       <tr><td><i class="mdi mdi-help-circle"></i> </td><td>mdi mdi-help-circle</td><td>Indicate help tools </td></tr>
+       <tr><td><i class="mdi mdi-block-helper"></i> </td><td>mdi mdi-block-helper</td><td>Clear selections </td></tr>
+       <tr><td><i class="mdi mdi-school"></i> </td><td>mdi mdi-school</td><td>Training </td></tr>
+       <tr><td><i class="mdi mdi-settings"></i> </td><td>mdi mdi-settings</td><td>User defined settings </td></tr>
+       <tr><td><i class="mdi mdi-information-outline"></i> </td><td>mdi mdi-information-outline</td><td>Show more information about this view/panel</td></tr>
+     </tbody>
+   </table>
+ </div>
+</div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Quick symbol library')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+     </section>
+            <section id="kssref-7-2" class="kss-section material-depth-1 kss-section--depth-2">
+
+        <div class="kss-style">
+          <h2 class="kss-title kss-title--level-2">
+            <a class="kss-title__permalink">
+              Huge icon
+            </a>
+          </h2>
+          <small class="kss-title__ref">7.2 </small>
+
+ 
+          <div class="kss-description">
+            <p>Huge icons are used on big empty areas to grab user attention and in combination with some text initiate a module.</p>
+
+          </div>
+        </div>
+        <!--Only for resource page-->
+        <div ng-cloak ng-if="checkResourceSection('Huge icon')">
+          <div class="con-row">
+            <div class="con-flex inline-flex">
+              <i class="mdi mdi-filter-outline"></i>
+              <select ng-model="type.category">
+                <option value="" selected>All</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Tool">Tools</option>
+                <option value="UI">UI</option>
+                <option value="UX">UX</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="con-row" ng-repeat="item in resourceList | filter:type | orderBy: 'category'">
+            <div class="con-flex kss-style">
+              <b ng-bind-html="item.link"></b> -
+              <small class="text-muted" ng-bind="item.category"></small>
+              </br>
+              <span ng-bind="item.desc"></span>
+              </br>
+
+            </div>
+          </div>
+        </div>
+        <!--Only for resource page-->
+
+        <div class="jsprewrap" ng-cloak>
+          <div class="ksscopy kss-style" ng-click="markupShow['Huge icon'] = !markupShow['Huge icon']">
+            <span ng-hide="markupShow['Huge icon']">Show</span>
+            <span ng-show="markupShow['Huge icon']">Hide</span>
+            markup
+            <i class="mdi mdi-code-tags pull-right"></i>
+          </div>
+          <div class="animate-show" ng-show="markupShow['Huge icon']">
+            <code>
+              <pre class="prettyprint linenums lang-html" style="white-space: pre-line;">
+                &lt;i class=&quot;mdi mdi-information-outline huge-icon line-center&quot;&gt;&lt;/i&gt;
+              </pre>
+            </code>
+          </div>
+        </div>
+
+        <div class="kss-modifier__wrapper">
+          <!-- <div class="kss-modifier__heading kss-style">
+          Example
+        </div> -->
+          <div class="kss-modifier__example">
+            <i class="mdi mdi-information-outline huge-icon line-center"></i>
+          </div>
+        </div>
+
+
+             </section>
+      
+  </article>
+
+  <script src="public/kss.js"></script>
+  <script src="public/prettify.js"></script>
+
+  <script>
+    prettyPrint();
+  </script>   
+  <!-- Automatically generated using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
+</body>
+
+</html>

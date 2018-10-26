@@ -1,0 +1,632 @@
+/*Overrides bootstrap*/
+.wfm-datepicker-controllers-container {
+	display: flex;
+	display: -ms-flexbox;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.wfm-datepicker-container {
+	position: relative;
+}
+
+.wfm-datepicker-popup-row {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 40;
+}
+
+.date-range-picker .modal-box .modalbg {
+	background: transparent;
+}
+
+.modal-box .wfm-datepicker-popup-row {
+	z-index: 50;
+}
+
+.start-date-indicator {
+	margin-right: 20px;
+}
+
+.wfm-datepicker-wrap {
+	@extend .material-depth-1;
+	margin: $full-padding;
+	display: inline-block;
+	background-color: $white;
+	min-height: 270px;
+}
+
+.glyphicon {
+	display: inline-block;
+	font: normal normal normal 24px/1 MaterialDesignIcons;
+	font-size: 16px;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	transform: translate(0, 0);
+}
+
+.glyphicon:hover:before {
+	box-shadow: 0px 0px 0px 5px $hover;
+	background: $hover;
+	border-radius: 1px;
+}
+
+.glyphicon-chevron-left:before {
+	content: '«' !important;
+}
+.glyphicon-chevron-right:before {
+	content: '»' !important;
+}
+
+.wfm-datepicker {
+	padding: 5px;
+
+	table th {
+		border-color: transparent;
+	}
+
+	.btn-default {
+		border-color: transparent !important;
+		color: $text-color-standard;
+		background: $white;
+	}
+
+	.btn-info.active {
+		background-color: $secondary !important;
+		color: $btn-white;
+	}
+
+	tbody > tr > td.text-center.h6 {
+		opacity: 0.4;
+	}
+
+	.btn {
+		border-radius: 0;
+		outline: none !important;
+	}
+
+	.btn.active,
+	.btn:active {
+		background-image: none;
+		outline: 0;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+	}
+
+	.btn-info {
+		color: $gray100;
+		background-color: transparent;
+		border-color: transparent;
+	}
+
+	.text-info {
+		color: inherit;
+	}
+
+	.range > button {
+		background-color: $highlight;
+	}
+}
+
+.date-range-picker-wrap {
+	.pin-down {
+		background-color: $hover;
+		@extend .material-depth-1;
+	}
+
+	.popup-control {
+		height: 18px;
+		width: 18px;
+	}
+
+	.popup-control:hover {
+		background-color: $hover;
+	}
+
+	&.ng-invalid .popup-control .mdi-calendar {
+		color: $red-800;
+	}
+
+	input.ng-invalid {
+		border-bottom: 2px solid $red-600;
+	}
+
+	.in-date-range button {
+		background-color: $highlight;
+	}
+}
+
+.dropdown-menu {
+	text-align: center;
+	background-color: $white;
+}
+
+.popup-control {
+	box-sizing: initial;
+}
+
+.error-msg-container {
+	z-index: 30;
+	margin-top: 5px;
+	@extend .material-depth-2;
+	background: $red-600;
+}
+
+.error-msg-container.error-msg-popup-container {
+	position: absolute;
+	width: 490px;
+}
+
+.error-msg-popup {
+	margin-left: 10px;
+	top: 290px;
+	left: 0px;
+}
+
+// Single date picker
+//
+// The single date picker is based on Bootstrap's datepicker and use to take a single date easily.
+// To use the single date picker as pop-up style please wrap it into a <a href=section-1.html#kssref-1-20>pop-up menu</a> (section 1.20). <br><br>
+// Click on the calendar icon (left top corner) to quickly select 'today' within calendar view.<br>
+// Hover and click on the selected date section to reset the selected date to empty.
+// <div class="jsprewrap">
+//   <div class="ksscopy kss-style" ng-click="showJs['cardDemo1'] = !showJs['cardDemo1']">
+//       <span ng-hide="showJs['cardDemo1']">Show</span>
+//      <span ng-show="showJs['cardDemo1']">Hide</span>
+//     JavaScript
+//     <i class="mdi mdi-code-tags pull-right"></i>
+//   </div>
+//   <div class="animate-show" ng-show="showJs['cardDemo1']">
+//     <code>
+//       <pre class="prettyprint linenums lang-js">
+//          $scope.customValidateForDatePicker = function (date) {
+//            if(moment(date).diff(moment(), 'days') < 0) {
+//              return "[custom validation]: can not select dates before today";
+//            }
+//          }
+//       </pre>
+//     </code>
+//   </div>
+// </div>
+//
+//Markup:
+//<h1>With week numbers</h1>
+//<wfm-date-picker ng-model="singleDate" show-week="true"></wfm-date-picker>
+//<h1>Without week numbers</h1>
+//<wfm-date-picker ng-model="singleDate2" show-week="false"></wfm-date-picker>
+//<h1>With custom validation: can not select dates before today</h1>
+//<wfm-date-picker ng-model="singleDate3" show-week="true" custom-validate="customValidateForDatePicker(singleDate3)"></wfm-date-picker>
+//<h1>Popup date picker</h1>
+//<wfm-date-picker ng-model="singleDate4" show-week="true" popup-mode="true"></wfm-date-picker>
+//
+//Styleguide 2.1
+//
+
+// Date range picker
+//
+// The date range picker is based on Bootstrap's datepicker and all we do is wrapping it and applying some special classes to make it more compatible with material design.
+// To use the date range picker as pop-up style please wrap it into a <a href=section-1.html#kssref-1-20>pop-up menu</a> (section 1.20). <br><br>
+// Click on the calendar icon (left top corner) to quickly select 'today' within calendar view.<br>
+// Hover and click on the selected date section to reset the selected date to empty.
+//
+//<table class="wfm-table">
+//<tr><th>Attribute Name</th><th>Usage</th><th>Required</th></tr>
+//<tr><td>ng-model</td><td>Bind to a js-object representing the date range. The object is composed by <code>startDate</code> and <code>endDate</code> key-value pairs. The date obejct default value is <code>null</code>.</td><td>true</td></tr>
+//<tr><td>show-week</td><td>Bind to a Bool type <code>true</code> or <code>false</code> value to display week numbers on the side of calendar view. </td><td>false</td></tr>
+//<tr><td>interval-rule</td><td>select special interval rule to validate the date ranges by only <code>week</code> type or <code>month</code> type. </td><td>false</td></tr>
+//<tr><td>custom-validation-function</td><td>Define additional validations conditions by a binding function. The return of custom validation functions should be a $translated resource key string type that displays the validation errors/warning information.</td><td>false</td></tr>
+//</table>
+//
+//Markup:
+//<h1>With week numbers</h1>
+//<wfm-date-range-picker show-week="true" ng-model="dateRange1"></wfm-date-range-picker>
+//<h1>Without week numbers</h1>
+//<wfm-date-range-picker show-week="false" ng-model="dateRange2"></wfm-date-range-picker>
+//<h1>Pop up date range picker</h1>
+//<wfm-date-range-picker show-week="false" ng-model="popupDateRange1" popup-mode="true"></wfm-date-range-picker>
+//
+//Styleguide 2.2
+//
+
+// Date range picker with custom validation
+//
+// The date range picker is based on Bootstrap's datepicker and all we do is wrapping it and applying some special classes to make it more compatible with material design.
+// To use the date range picker as pop-up style please wrap it into a <a href=section-1.html#kssref-1-20>pop-up menu</a> (section 1.20).
+// Define additional validations by a binding function. The return of custom validation function should be a string that displays the validation errors/warning information. It could be a translate key supported by $translate. <br><br>
+// Click on the calendar icon (left top corner) to quickly select 'today' within calendar view.<br>
+// Hover and click on the selected date section to reset the selected date to empty.
+//
+// <div class="jsprewrap">
+//   <div class="ksscopy kss-style" ng-click="showJs['cardDemo1'] = !showJs['cardDemo1']">
+//       <span ng-hide="showJs['cardDemo1']">Show</span>
+//      <span ng-show="showJs['cardDemo1']">Hide</span>
+//     JavaScript
+//     <i class="mdi mdi-code-tags pull-right"></i>
+//   </div>
+//   <div class="animate-show" ng-show="showJs['cardDemo1']">
+//     <code>
+//       <pre class="prettyprint linenums lang-js">
+//
+//          $scope.customValid = function (data) {
+//            if(moment(data.endDate).diff(moment(data.startDate), 'days') > 7) {
+//              return "[custom validation]: your end date is 7 days later than your start date";
+//            }
+//          }
+//
+//       </pre>
+//     </code>
+//   </div>
+// </div>
+//
+//Markup:
+//<wfm-date-range-picker ng-model="anotherDateRange" show-week="false" custom-validate="customValid(anotherDateRange)"></wfm-date-range-picker>
+//
+//Styleguide 2.3
+//
+
+// Date range picker with only weeks/monthes interval
+//
+// The datepicker is based on Bootstrap's datepicker and all we do is wrapping it and applying some special classes to make it more compatible with material design.
+// To use the date range picker as pop-up style please wrap it into a <a href=section-1.html#kssref-1-20>pop-up menu</a> (section 1.20). <br><br>
+// Click on the calendar icon (left top corner) to quickly select 'today' within calendar view.<br>
+// Hover and click on the selected date section to reset the selected date to empty.
+//
+//Markup:
+//<h1>validate only exam with week interval</h1>
+//<wfm-date-range-picker ng-model="dateRange3" show-week="false" interval-rule="week"></wfm-date-range-picker>
+//<h1>validate only exam with month interval</h1>
+//<wfm-date-range-picker ng-model="dateRange4" show-week="false" interval-rule="month"></wfm-date-range-picker>
+//
+//Styleguide 2.4
+//
+
+// Date range picker with preselected date
+//
+// The datepicker is based on Bootstrap's datepicker and all we do is wrap it and apply some special classes to make it more compatible with material design.
+// To use the date range picker as pop-up style please wrap it into a <a href=section-1.html#kssref-1-20>pop-up menu</a> (section 1.20). <br><br>
+// Click on the calendar icon (left top corner) to quickly select 'today' within calendar view.<br>
+// Hover and click on the selected date section to reset the selected date to empty.
+//
+//Markup:
+//<h1>Date range picker with disabling endDate selection. </h1>
+//<wfm-date-range-picker ng-model="dateRange5" show-week="false" disable="end-date"></wfm-date-range-picker>
+//<h1>Date range picker with disabling startDate selection. </h1>
+//<wfm-date-range-picker ng-model="dateRange6" show-week="false" disable="start-date"></wfm-date-range-picker>
+//
+//Styleguide 2.5
+//
+
+//new date range picker
+
+wfm-date-picker,
+wfm-date-range-picker {
+	position: relative;
+	display: inline-block;
+	z-index: 10;
+
+	.wfm-datepicker-text {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: flex-start;
+		line-height: 1;
+		cursor: pointer;
+		margin: 5px;
+
+		& > * {
+			padding: 5px;
+			margin: 0;
+			cursor: pointer;
+		}
+		.wfm-datepicker-text-date,
+		.wfm-datepicker-text-from,
+		.wfm-datepicker-text-to {
+			min-width: 60px;
+			text-align: center;
+			white-space: nowrap;
+		}
+	}
+
+	& > wfm-popup {
+		position: absolute;
+		background-color: $white;
+
+		& > div {
+			padding: 0;
+			border: 1px solid $gray026;
+		}
+	}
+}
+
+wfm-date-picker-header,
+wfm-date-range-picker-header {
+	min-height: 35px;
+
+	.card-context {
+		margin: 0;
+	}
+
+	.notice-info,
+	.notice-warning {
+		text-align: left;
+	}
+}
+
+wfm-date-picker-body > .date-info-wrapper,
+wfm-date-range-picker-body > .date-info-wrapper {
+	height: 280px;
+	min-width: 200px;
+	padding: 0;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	position: relative;
+	background-color: $gray012;
+
+	@media screen and (max-width: 768px) {
+		height: auto;
+		min-width: 0;
+	}
+
+	.disabled {
+		opacity: 0.5;
+		pointer-events: none;
+		background-color: $gray087 !important;
+		color: $white;
+	}
+
+	hr {
+		height: 1px;
+		margin: 0;
+		padding: 0;
+		border: none;
+		background: $white;
+	}
+
+	.select-date-info-wrapper {
+		height: 50%;
+		background-color: transparent;
+		border-right: 1px $gray012 solid;
+		padding: 10px;
+		position: relative;
+		flex-grow: 1;
+		display: flex;
+		text-align: left;
+
+		@media screen and (max-width: 768px) {
+			min-height: 80px;
+		}
+	}
+
+	.select-date-info-wrapper.single-select-mode {
+		height: 100%;
+	}
+
+	.selecting-date {
+		background-color: $white;
+	}
+
+	.select-date-info-inner {
+		flex-grow: 1;
+		flex-basis: 100%;
+	}
+
+	.date-info-label {
+		font-size: 1em;
+	}
+
+	.transition-block {
+		border-left: 5px $secondary solid;
+		position: absolute;
+		top: 0;
+		height: 50%;
+		width: calc(100% - 5px);
+		background: white;
+	}
+
+	.transition-block.transit-to-start {
+		top: 0;
+		transition: top 0.5s ease-in-out;
+	}
+
+	.transition-block.transit-to-end {
+		top: 50%;
+		transition: top 0.5s ease-in-out;
+	}
+
+	.clear-select-date-grow-out {
+		display: table;
+		position: absolute;
+		height: 100%;
+		background-color: $gray026;
+		width: 20%;
+		top: 0;
+		right: 0;
+		transition: $transition-timing;
+		transform-origin: right center;
+		transform: translateX(100%);
+		visibility: hidden;
+		opacity: 0;
+
+		i {
+			display: table-cell;
+			vertical-align: middle;
+			text-align: center;
+			color: $text-color-standard;
+		}
+	}
+
+	.select-date-info-wrapper:hover .clear-select-date-grow-out {
+		transform: translateX(0);
+		visibility: visible;
+		opacity: 1;
+	}
+
+	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+		//For fixing close icon tranform issue on IE10+
+		.select-date-info-wrapper:hover .clear-select-date-grow-out {
+			transform: translateX(-60%);
+		}
+	}
+}
+
+wfm-date-picker-body > .date-info-calendar-wrapper,
+wfm-date-range-picker-body > .date-info-calendar-wrapper {
+	background: $white;
+	z-index: 5;
+	flex-basis: auto;
+
+	b,
+	strong {
+		font-size: large;
+	}
+
+	.in-date-range button {
+		background-color: $blue-100 !important;
+	}
+
+	.uib-daypicker:focus,
+	*:focus {
+		outline: none !important;
+	}
+
+	table {
+		width: 100%;
+		height: 100%;
+		border-spacing: 1px !important;
+		border-collapse: separate !important;
+	}
+
+	button.btn-default {
+		border: none;
+		box-shadow: none;
+		background-color: $white;
+		color: $text-color-standard;
+		border-radius: 0;
+		font-size: 12px;
+		padding: 5px 8px;
+		outline: none !important;
+		line-height: 1.5;
+	}
+
+	.btn-info.active {
+		background: transparent !important;
+		color: $text-color-standard;
+		font-weight: bold;
+	}
+
+	.single-date-calendar .btn-info.active {
+		background: $secondary !important;
+	}
+
+	tbody .selected-date-cell button.btn-info,
+	tbody .in-date-range button.btn-info {
+		background-color: $secondary !important;
+		color: $btn-white !important;
+		font-weight: normal;
+	}
+
+	//For fixing flicker issue of uib-datepicker
+	.uib-datepicker.show-week-numbers {
+		table tbody tr td:nth-child(n + 9) {
+			display: none;
+		}
+	}
+
+	.uib-datepicker.hide-week-numbers {
+		table tbody tr td:nth-child(n + 8) {
+			display: none;
+		}
+	}
+
+	.uib-datepicker,
+	& > div:first-child {
+		width: 266px;
+		height: 270px;
+		overflow: hidden;
+
+		.wfm-datepicker {
+			margin: 0 auto;
+		}
+
+		thead tr th:nth-child(2) button.btn-default {
+			padding: 5px 0;
+		}
+
+		thead button.btn-default.pull-left,
+		thead button.btn-default.pull-right {
+			padding: 15px 10px;
+		}
+
+		thead button.btn-default i:hover:before {
+			box-shadow: none;
+			background: none;
+		}
+
+		tbody td {
+			padding: 1px;
+		}
+
+		tbody td.current-date-cell button {
+			font-weight: bold;
+		}
+
+		tbody td.selected-date-cell button {
+			border-radius: 6px;
+			background-color: $secondary !important;
+		}
+
+		tbody td.start-date-cell button {
+			border-top-left-radius: 6px;
+			border-bottom-left-radius: 6px;
+		}
+
+		tbody td.end-date-cell button {
+			border-top-right-radius: 6px;
+			border-bottom-right-radius: 6px;
+		}
+
+		thead button.btn-default:hover,
+		tbody button.btn-default:hover {
+			border-radius: 6px;
+			background-color: $secondary !important;
+		}
+
+		.uib-monthpicker,
+		.uib-yearpicker,
+		.uib-daypicker {
+			height: 100%;
+		}
+
+		.uib-monthpicker,
+		.uib-yearpicker {
+			table {
+				margin: 0 auto;
+			}
+
+			thead th {
+				padding: 0;
+			}
+
+			tbody button.btn-default {
+				padding: 15px 10px;
+			}
+
+			.btn-default {
+				font-size: 14px;
+			}
+
+			button.btn-default.active {
+				border-radius: 6px;
+				background-color: $secondary !important;
+
+				.text-info {
+					color: $text-color-standard;
+				}
+			}
+		}
+	}
+}

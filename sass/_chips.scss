@@ -1,0 +1,56 @@
+// Chips
+//
+//Chips are used to build horizontal lists of items. They consists of an indicator and a string to give more information.
+//The indicator can have warning classes to show severity or a short category text.
+//
+//Markup: chips.hbs
+//
+//Styleguide 1.31
+//
+
+// Chips with filter
+//
+//Chips can be tied to a filter to hide or show them accordingly. It is possible to reverse the filter so that it filters in matches instead of out unmatched to save space.
+//
+//Note: The ng-bind is for styleguide demo purpose only, use <span style="word-spacing: -4px;">{ {item.Name} }</span> in the project.
+//
+//Markup: chips_filter.hbs
+//
+//Styleguide 1.32
+//
+
+
+.wfm-chip{
+  @extend .pointer;
+
+  .chip-text{
+    padding:$full-padding;
+    background:$hover;
+    margin-right: 5px;
+  }
+  .chip-handle{
+    padding:$full-padding;
+    background:$secondary;
+  }
+  .chip-success{
+    background: $green-100!important;
+  }
+  .chip-warning{
+    background: $orange-400!important;
+  }
+  .chip-error{
+    background: $red-600!important;
+  }
+}
+
+.chip-disabled{
+  .wfm-chip{
+    cursor: not-allowed!important;
+  }
+  color:$text-color-muted;
+}
+
+.wfm-chip-wrap{
+  display:inline-block;
+  margin:10px 0;
+}
