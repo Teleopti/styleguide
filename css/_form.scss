@@ -6,7 +6,8 @@ label {
 input[type='text'],
 [type='number'],
 input[type='password'],
-select, md-autocomplete {
+select,
+md-autocomplete {
 	border: 1px solid $hover;
 	color: $text-color-standard;
 	-webkit-appearance: none;
@@ -329,12 +330,17 @@ md-select {
 		height: 21px;
 	}
 
-	&:not([disabled]):focus .md-select-value {
-		color: inherit !important;
+	&:not([disabled]):focus .md-select-value > span {
+		color: $text-color-standard;
+	}
+
+	&:not([disabled]):focus .md-select-value.md-select-placeholder {
+		color: $text-color-standard;
 	}
 
 	.md-select-value.md-select-placeholder {
 		padding: 4px 11px;
+		color: $text-color-muted;
 	}
 
 	.md-select-value {
@@ -349,7 +355,6 @@ md-select {
 		border-radius: 4px;
 	}
 
-	.md-select-placeholder,
 	.md-select-icon {
 		color: $text-color-muted;
 	}
