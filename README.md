@@ -1,5 +1,7 @@
 # Teleopti styleguide [![Build Status](https://travis-ci.org/Teleopti/styleguide.svg?branch=master)](https://travis-ci.org/Teleopti/styleguide)
 
+This repository is now archived. Feel free to fork it and adopt your own.
+
 # Development
 1.  Fork the main repo https://github.com/Teleopti/styleguide.git to <your_github_username>/styleguide
 2.  Clone your repo to local `git clone https://github.com/<your_github_username>/styleguide.git`
